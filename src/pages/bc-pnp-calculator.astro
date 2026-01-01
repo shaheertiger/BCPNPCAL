@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CalculatorShell from '../components/CalculatorShell.astro';
+
+const title = 'BC PNP Calculator - Calculate Your Provincial Nominee Points | Free Tool';
+const description = 'Use our free BC PNP points calculator to estimate your Skills Immigration Ranking System score. Get instant results with detailed breakdown across all categories.';
+
+// Comprehensive JSON-LD for Calculator + FAQ
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'BC PNP Points Calculator',
+    description: 'Calculate your British Columbia Provincial Nominee Program points instantly',
+    applicationCategory: 'UtilityApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'CAD'
+    },
+    featureList: [
+      'Real-time BC PNP score calculation',
+      'Detailed points breakdown by category',
+      'Work experience scoring',
+      'Education level points',
+      'Language proficiency (CLB) scoring',
+      'Hourly wage calculation',
+      'Regional location bonus points'
+    ]
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is a competitive BC PNP score?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Draw scores fluctuate based on the specific stream (Tech, Healthcare, Childcare). Generally, a score above 115 is highly competitive, while scores between 95-110 are often sufficient for targeted draws.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How often are BC PNP draws held?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'BC typically conducts draws weekly, alternating between general draws and targeted draws for high-demand occupations like Tech, Healthcare, and Early Childhood Educators.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I improve my BC PNP score?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. The most effective ways to boost your BC PNP calculator result include obtaining a higher hourly wage, improving your CLB language results, or choosing a job offer in a regional district outside of Metro Vancouver.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Does a high score guarantee an invitation to apply?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'While our BC PNP score calculator provides a reliable estimate, an invitation to apply (ITA) depends on your profile meeting the minimum cutoff for the specific draw period.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the maximum BC PNP score?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The maximum possible score in the BC PNP points calculator is 200 points, distributed across five categories: Work Experience (40), Education (40), Language (40), Hourly Wage (55), and Regional Location (25).'
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <!-- Calculator React Island - Hydrated on Load -->
+  <CalculatorShell />
+
+  <!-- SEO Content Section (Static HTML) -->
+  <section class="bg-white border-t border-red-100 pt-20 pb-48 px-6">
+    <div class="max-w-3xl mx-auto space-y-20">
+      <!-- SEO Intro -->
+      <div class="space-y-6">
+        <h2 class="text-3xl font-black text-slate-900 tracking-tight leading-tight">
+          Using the <span class="text-red-600">BC PNP Calculator</span> for Your Immigration Strategy
+        </h2>
+        <p class="text-slate-600 text-base leading-relaxed">
+          The British Columbia Provincial Nominee Program (BC PNP) is a points-based immigration system designed to attract skilled workers to the province. Our <strong>BC PNP points calculator</strong> is an essential tool for prospective immigrants to estimate their Skills Immigration Ranking System (SIRS) score accurately. By understanding your <strong>BC PNP score calculator</strong> results, you can make informed decisions about your application strategy.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+          <div class="p-6 bg-red-50 rounded-3xl border border-red-100">
+            <h3 class="font-bold text-red-900 mb-2">How Points are Awarded</h3>
+            <p class="text-sm text-slate-600">Points are distributed across economic factors (work experience, education, and language) and human capital factors (hourly wage and regional location).</p>
+          </div>
+          <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-2">Maximum Points</h3>
+            <p class="text-sm text-slate-600">The total possible score in the <strong>BC PNP point calculator</strong> is 200. Most successful candidates score between 100 and 130.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Scoring Information -->
+      <div class="space-y-8">
+        <h2 class="text-2xl font-black text-slate-900 tracking-tight">Point Categories Explained</h2>
+
+        <div class="space-y-6">
+          <div class="p-8 bg-red-50/50 rounded-[2.5rem] border border-red-100">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-black text-red-900">Work Experience</h3>
+              <span class="text-red-600 font-black text-xl">40 pts max</span>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed mb-4">
+              Points are awarded based on years of directly related work experience, with additional bonuses for Canadian experience and current BC employment.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
+              <li>0-5+ years of experience: 0-20 points (4 points per year)</li>
+              <li>1+ year Canadian experience: +10 bonus points</li>
+              <li>Currently working in BC: +10 bonus points</li>
+            </ul>
+          </div>
+
+          <div class="p-8 bg-rose-50/50 rounded-[2.5rem] border border-rose-100">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-black text-rose-900">Education Level</h3>
+              <span class="text-rose-600 font-black text-xl">40 pts max</span>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed mb-4">
+              Your highest completed credential determines your education points. All credentials must be recognized by Canadian standards.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
+              <li>Master's or PhD: 27 points</li>
+              <li>Post-graduate diploma: 22 points</li>
+              <li>Bachelor's degree: 15 points</li>
+              <li>Associate degree: 4 points</li>
+            </ul>
+          </div>
+
+          <div class="p-8 bg-orange-50/50 rounded-[2.5rem] border border-orange-100">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-black text-orange-900">Language Proficiency</h3>
+              <span class="text-orange-600 font-black text-xl">40 pts max</span>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed mb-4">
+              Based on Canadian Language Benchmark (CLB) levels from approved tests like IELTS or CELPIP. Higher proficiency significantly boosts your score.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
+              <li>CLB 10+: 30 points (Maximum)</li>
+              <li>CLB 9: 25 points (Advanced)</li>
+              <li>CLB 8: 20 points (Proficient)</li>
+              <li>CLB 7: 15 points (Intermediate)</li>
+            </ul>
+          </div>
+
+          <div class="p-8 bg-red-50/60 rounded-[2.5rem] border border-red-100">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-black text-red-900">Hourly Wage</h3>
+              <span class="text-red-600 font-black text-xl">55 pts max</span>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed mb-4">
+              The highest-weighted category. Your BC job offer's hourly wage is the single most important factor in your SIRS score.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
+              <li>$50.00+/hour: 55 points (Maximum)</li>
+              <li>$35.00/hour: ~40 points (Competitive)</li>
+              <li>$25.00/hour: ~25 points (Moderate)</li>
+              <li>$16.75/hour: 0 points (Minimum wage)</li>
+            </ul>
+          </div>
+
+          <div class="p-8 bg-rose-50/60 rounded-[2.5rem] border border-rose-100">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-black text-rose-900">Regional Location</h3>
+              <span class="text-rose-600 font-black text-xl">25 pts max</span>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed mb-4">
+              BC incentivizes regional development by offering significant bonus points for jobs outside Metro Vancouver.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
+              <li>Remote/Rural districts: 25 points (Maximum)</li>
+              <li>Central Okanagan (Kelowna): 20 points</li>
+              <li>Nanaimo area: 15 points</li>
+              <li>Greater Victoria: 10 points</li>
+              <li>Metro Vancouver: 0 points</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="space-y-10">
+        <div class="text-center">
+          <h2 class="text-2xl font-black text-slate-900 uppercase tracking-widest">Frequently Asked Questions</h2>
+          <div class="h-1 w-20 bg-red-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="text-lg font-extrabold text-slate-900 mb-3">What is a competitive BC PNP score?</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">Draw scores fluctuate based on the specific stream (Tech, Healthcare, Childcare). Generally, a score above 115 is highly competitive, while scores between 95-110 are often sufficient for targeted draws.</p>
+          </div>
+
+          <div class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="text-lg font-extrabold text-slate-900 mb-3">How often are BC PNP draws held?</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">BC typically conducts draws weekly, alternating between general draws and targeted draws for high-demand occupations like Tech, Healthcare, and Early Childhood Educators.</p>
+          </div>
+
+          <div class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="text-lg font-extrabold text-slate-900 mb-3">Can I improve my score in the BC PNP points calculator?</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">Yes. The most effective ways to boost your <strong>BC PNP calculator</strong> result include obtaining a higher hourly wage, improving your CLB language results, or choosing a job offer in a regional district outside of Metro Vancouver.</p>
+          </div>
+
+          <div class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="text-lg font-extrabold text-slate-900 mb-3">Does a high score guarantee an invitation?</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">While our <strong>BC PNP score calculator</strong> provides a reliable estimate, an invitation to apply (ITA) depends on your profile meeting the minimum cutoff for the specific draw period.</p>
+          </div>
+
+          <div class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="text-lg font-extrabold text-slate-900 mb-3">What is the minimum eligible score?</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">While there is no official minimum score, applicants generally need at least 80 points to be considered. However, recent draws have had cutoffs ranging from 85 to 120+ depending on the stream and demand.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategic Tips -->
+      <div class="bg-gradient-to-br from-red-600 to-red-800 p-10 rounded-[3rem] text-white">
+        <h2 class="text-2xl font-black mb-6 uppercase tracking-widest">Strategic Tips</h2>
+        <div class="space-y-4 text-sm leading-relaxed">
+          <p><strong>Maximize Your Wage:</strong> Negotiate the highest possible hourly wage with your BC employer, as this category offers the most points (55 max).</p>
+          <p><strong>Consider Regional Jobs:</strong> Job offers outside Metro Vancouver can add up to 25 bonus points, potentially making the difference between receiving an ITA or not.</p>
+          <p><strong>Improve Language Scores:</strong> Investing in language training to move from CLB 7 to CLB 9 can add 10 crucial points to your score.</p>
+          <p><strong>Document Canadian Experience:</strong> If you have 1+ years of Canadian work experience, ensure you have proper documentation for the 10-point bonus.</p>
+        </div>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="text-center pt-10 border-t border-slate-100">
+        <p class="text-xs text-slate-400 font-medium uppercase tracking-[0.2em] leading-relaxed">
+          Disclaimer: This BC PNP point calculator is for informational purposes only. Official scores are determined by the Province of British Columbia.
+        </p>
+        <div class="mt-6">
+          <a href="/" class="text-sm text-red-600 hover:text-red-700 font-bold uppercase tracking-widest">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
