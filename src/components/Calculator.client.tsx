@@ -286,12 +286,44 @@ export const Calculator: React.FC = () => {
                 <span className="text-xs font-bold text-slate-500 uppercase tracking-widest mt-3">CAD Hourly Rate</span>
               </div>
 
-              <input
-                type="range" min="16.75" max="60" step="0.50"
-                value={state.wage}
-                onChange={(e) => handleUpdate({ wage: parseFloat(e.target.value) })}
-                className="w-full bg-red-50 rounded-full cursor-pointer accent-red-600 mb-6 sm:mb-10"
-              />
+              {/* Manual Input Field */}
+              <div className="w-full mb-6 sm:mb-8">
+                <label className="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-3 text-center">
+                  Enter Wage Manually
+                </label>
+                <div className="relative max-w-xs mx-auto">
+                  <span className="absolute left-6 top-1/2 -translate-y-1/2 text-2xl font-black text-slate-400">$</span>
+                  <input
+                    type="number"
+                    min="16.75"
+                    max="100"
+                    step="0.01"
+                    value={state.wage}
+                    onChange={(e) => {
+                      const value = parseFloat(e.target.value);
+                      if (!isNaN(value) && value >= 16.75) {
+                        handleUpdate({ wage: Math.min(value, 100) });
+                      }
+                    }}
+                    className="w-full bg-red-50/50 border-2 border-red-100 rounded-2xl px-6 pl-12 py-4 text-2xl font-black text-slate-900 text-center focus:outline-none focus:border-red-500 focus:ring-4 focus:ring-red-100 transition-all tabular-nums"
+                    placeholder="25.00"
+                  />
+                  <span className="absolute right-6 top-1/2 -translate-y-1/2 text-sm font-bold text-slate-400">/hr</span>
+                </div>
+              </div>
+
+              {/* Slider - Optional visual adjustment */}
+              <div className="w-full mb-6 sm:mb-8">
+                <label className="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-3 text-center">
+                  Or Use Slider
+                </label>
+                <input
+                  type="range" min="16.75" max="60" step="0.50"
+                  value={state.wage}
+                  onChange={(e) => handleUpdate({ wage: parseFloat(e.target.value) })}
+                  className="w-full bg-red-50 rounded-full cursor-pointer accent-red-600"
+                />
+              </div>
 
               <div className="w-full grid grid-cols-2 gap-4 sm:gap-6">
                 <div className="bg-slate-50 rounded-3xl p-5 border border-slate-100">

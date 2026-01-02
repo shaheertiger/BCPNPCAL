@@ -26,8 +26,23 @@ const siteUrl = Astro.site || 'https://bcpnpcalculator.ca';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Favicons - Optimized for SEO and all platforms -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
 
     <!-- PWA Manifest -->
     <link rel="manifest" href="/manifest.json" />
@@ -80,20 +95,23 @@ const siteUrl = Astro.site || 'https://bcpnpcalculator.ca';
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(ogImage, siteUrl).href} />
 
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="/_astro/bc-pnp-calculator.CiM8ipz_.css" as="style" />
-
-    <!-- DNS Prefetch & Preconnect -->
+    <!-- DNS Prefetch & Preconnect for Fonts -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- Preload critical font to prevent layout shift -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=optional" />
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_KU7NShXUEKi4Rw.woff2" crossorigin />
+
     <!-- Critical Inline CSS - Above the fold styles -->
     <style is:inline>
       /* Critical CSS for immediate render */
       *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}
-      html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif;tab-size:4}
+      /* Fallback font with size-adjust to prevent layout shift */
+      @font-face{font-family:'Plus Jakarta Sans Fallback';size-adjust:100.06%;ascent-override:95%;descent-override:25%;line-gap-override:0%;src:local('Arial')}
+      html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:'Plus Jakarta Sans','Plus Jakarta Sans Fallback',ui-sans-serif,system-ui,sans-serif;tab-size:4}
       body{margin:0;line-height:inherit}
       h1,h2,h3,p{margin:0}
       a{color:inherit;text-decoration:inherit}
@@ -124,10 +142,10 @@ const siteUrl = Astro.site || 'https://bcpnpcalculator.ca';
       .leading-none{line-height:1}
     </style>
 
-    <!-- Google Fonts - Async load -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <!-- Google Fonts - Async load with optional display to prevent layout shift -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=optional" rel="stylesheet" />
     </noscript>
 
     <!-- JSON-LD Structured Data -->
