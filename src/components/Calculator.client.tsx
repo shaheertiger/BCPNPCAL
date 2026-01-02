@@ -56,29 +56,29 @@ const ResultCard: React.FC<{ results: PointsResult; isUpdating: boolean }> = ({ 
   return (
     <div className="flex flex-col space-y-8 animate-in zoom-in-95 duration-500">
       {/* High Impact Score Hero */}
-      <div className={`bg-gradient-to-br ${getGradient()} p-12 rounded-[4rem] shadow-[0_30px_60px_-15px_rgba(220,38,38,0.4)] text-white relative overflow-hidden transition-all duration-700`}>
+      <div className={`bg-gradient-to-br ${getGradient()} p-12 mobile-p-reduce rounded-[4rem] mobile-rounded-adjust shadow-[0_30px_60px_-15px_rgba(220,38,38,0.4)] text-white relative overflow-hidden transition-all duration-700`}>
         <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -mr-32 -mt-32 animate-pulse duration-[4000ms]"></div>
 
         <div className="relative z-10 flex flex-col items-center">
-          <p className="text-xs font-black uppercase tracking-[0.4em] text-white/60 mb-10">Score Estimation</p>
+          <p className="text-xs font-black uppercase tracking-[0.4em] text-white/60 mb-6 sm:mb-10">Score Estimation</p>
 
-          <div className="flex items-baseline justify-center space-x-2 mb-10">
-            <span className={`text-[9rem] font-black tracking-tighter leading-none transition-all duration-500 tabular-nums ${isUpdating ? 'scale-110 blur-sm opacity-50' : 'scale-100'}`}>
+          <div className="flex items-baseline justify-center space-x-2 mb-6 sm:mb-10">
+            <span className={`text-[9rem] mobile-score-adjust font-black tracking-tighter leading-none transition-all duration-500 tabular-nums ${isUpdating ? 'scale-110 blur-sm opacity-50' : 'scale-100'}`}>
               {results.total}
             </span>
             <div className="flex flex-col">
-               <span className="text-3xl font-black text-white/30 tracking-tight">/200</span>
+               <span className="text-3xl sm:text-3xl font-black text-white/30 tracking-tight">/200</span>
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-2xl rounded-2xl py-4 px-10 border border-white/20 shadow-2xl">
-            <span className="text-sm font-black uppercase tracking-widest">{results.level} Ranking Profile</span>
+          <div className="bg-white/10 backdrop-blur-2xl rounded-2xl py-3 px-6 sm:py-4 sm:px-10 border border-white/20 shadow-2xl">
+            <span className="text-xs sm:text-sm font-black uppercase tracking-widest">{results.level} Ranking Profile</span>
           </div>
         </div>
       </div>
 
       {/* Modern Points Breakdown */}
-      <div className="bg-white p-12 rounded-[3.5rem] border border-red-50 shadow-sm space-y-10">
+      <div className="bg-white p-12 mobile-p-reduce rounded-[3.5rem] mobile-rounded-adjust border border-red-50 shadow-sm space-y-10">
         <div className="flex items-center space-x-4">
            <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest whitespace-nowrap">Point Allocation</h3>
            <div className="h-px w-full bg-red-50"></div>
@@ -148,11 +148,11 @@ export const Calculator: React.FC = () => {
         return (
           <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-300">
             <div>
-              <h2 className="text-3xl font-black text-slate-900 tracking-tight leading-tight">Work History</h2>
+              <h2 className="text-3xl mobile-heading-adjust font-black text-slate-900 tracking-tight leading-tight">Work History</h2>
               <p className="text-slate-600 text-sm font-medium mt-2 leading-relaxed">Experience must be directly related to your BC job offer's NOC level.</p>
             </div>
 
-            <div className="bg-white p-10 rounded-[2.5rem] border border-red-50 shadow-sm relative overflow-hidden">
+            <div className="bg-white p-6 sm:p-10 mobile-p-card rounded-[2.5rem] mobile-rounded-adjust border border-red-50 shadow-sm relative overflow-hidden">
               <div className="flex justify-between items-center mb-8">
                 <span className="text-xs font-extrabold text-slate-500 uppercase tracking-widest">Related Experience</span>
                 <span className="text-4xl font-black text-red-600 tracking-tighter">{state.experience.years >= 5 ? '5+ Years' : `${state.experience.years} Year${state.experience.years === 1 ? '' : 's'}`}</span>
@@ -206,7 +206,7 @@ export const Calculator: React.FC = () => {
         return (
           <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
             <div className="mb-6">
-              <h2 className="text-3xl font-black text-slate-900 tracking-tight">Education</h2>
+              <h2 className="text-3xl mobile-heading-adjust font-black text-slate-900 tracking-tight">Education</h2>
               <p className="text-slate-600 text-sm font-medium leading-relaxed mt-2">Points are awarded for your highest completed credential.</p>
             </div>
             {[
@@ -232,8 +232,8 @@ export const Calculator: React.FC = () => {
       case 'language':
         return (
           <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
-            <div className="mb-8 text-center">
-              <h2 className="text-3xl font-black text-slate-900 tracking-tight">Language Ability</h2>
+            <div className="mb-6 sm:mb-8 text-center">
+              <h2 className="text-3xl mobile-heading-adjust font-black text-slate-900 tracking-tight">Language Ability</h2>
               <p className="text-slate-600 text-sm font-medium mt-2 leading-relaxed">Based on your valid CLB benchmark (IELTS, CELPIP, etc.)</p>
             </div>
             <div className="grid grid-cols-1 gap-4">
@@ -267,20 +267,20 @@ export const Calculator: React.FC = () => {
 
       case 'wage':
         return (
-          <div className="space-y-12 py-6 animate-in fade-in slide-in-from-right-4 duration-300">
+          <div className="space-y-8 sm:space-y-12 py-6 animate-in fade-in slide-in-from-right-4 duration-300">
             <div className="text-center">
-              <h2 className="text-3xl font-black text-slate-900 tracking-tight">Annual Income</h2>
+              <h2 className="text-3xl mobile-heading-adjust font-black text-slate-900 tracking-tight">Annual Income</h2>
               <p className="text-slate-600 text-sm font-medium mt-2 leading-relaxed">Calculated based on your hourly wage in BC.</p>
             </div>
-            <div className="bg-white p-12 rounded-[4rem] shadow-2xl shadow-red-100/30 border border-red-50 flex flex-col items-center relative">
-              <div className="absolute top-8 left-1/2 -translate-x-1/2 flex items-center space-x-2">
+            <div className="bg-white p-8 sm:p-12 rounded-[3rem] sm:rounded-[4rem] mobile-rounded-adjust shadow-2xl shadow-red-100/30 border border-red-50 flex flex-col items-center relative">
+              <div className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2 flex items-center space-x-2">
                  <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
                  <span className="text-[10px] font-black text-red-500 uppercase tracking-widest">Live Wage Analysis</span>
               </div>
 
-              <div className="flex flex-col items-center mb-12 mt-6">
-                <div className="text-8xl font-black text-slate-900 flex items-start tabular-nums tracking-tighter">
-                  <span className="text-3xl mt-5 mr-1 text-slate-300 font-bold">$</span>
+              <div className="flex flex-col items-center mb-8 sm:mb-12 mt-6">
+                <div className="text-8xl mobile-wage-adjust font-black text-slate-900 flex items-start tabular-nums tracking-tighter">
+                  <span className="text-2xl sm:text-3xl mt-3 sm:mt-5 mr-1 text-slate-300 font-bold">$</span>
                   {state.wage.toFixed(2)}
                 </div>
                 <span className="text-xs font-bold text-slate-500 uppercase tracking-widest mt-3">CAD Hourly Rate</span>
@@ -290,10 +290,10 @@ export const Calculator: React.FC = () => {
                 type="range" min="16.75" max="60" step="0.50"
                 value={state.wage}
                 onChange={(e) => handleUpdate({ wage: parseFloat(e.target.value) })}
-                className="w-full h-5 bg-red-50 rounded-full appearance-none cursor-pointer accent-red-600 mb-10"
+                className="w-full bg-red-50 rounded-full cursor-pointer accent-red-600 mb-6 sm:mb-10"
               />
 
-              <div className="w-full grid grid-cols-2 gap-6">
+              <div className="w-full grid grid-cols-2 gap-4 sm:gap-6">
                 <div className="bg-slate-50 rounded-3xl p-5 border border-slate-100">
                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">Minimum Rate</p>
                    <p className="text-sm font-bold text-slate-800">$16.75/hr</p>
@@ -311,7 +311,7 @@ export const Calculator: React.FC = () => {
         return (
           <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
             <div className="mb-6">
-              <h2 className="text-3xl font-black text-slate-900 tracking-tight">Job Region</h2>
+              <h2 className="text-3xl mobile-heading-adjust font-black text-slate-900 tracking-tight">Job Region</h2>
               <p className="text-slate-600 text-sm font-medium leading-relaxed mt-2">Strategic regional employment provides critical bonus points.</p>
             </div>
             {[
@@ -352,22 +352,22 @@ export const Calculator: React.FC = () => {
         />
       </div>
 
-      <header className="bg-white border-b border-red-100 px-6 py-5 flex items-center justify-between sticky top-1.5 z-40 backdrop-blur-md bg-white/95">
-        <div className="flex items-center space-x-3">
-          <div className="w-9 h-9 bg-red-600 rounded-xl flex items-center justify-center text-white text-sm font-black shadow-lg shadow-red-200">BC</div>
-          <h1 className="text-base font-extrabold text-slate-900 tracking-tight uppercase">PNP Calculator</h1>
+      <header className="bg-white border-b border-red-100 px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between sticky top-1.5 z-40 backdrop-blur-md bg-white/95">
+        <div className="flex items-center space-x-2 sm:space-x-3">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 bg-red-600 rounded-xl flex items-center justify-center text-white text-xs sm:text-sm font-black shadow-lg shadow-red-200">BC</div>
+          <h1 className="text-sm sm:text-base font-extrabold text-slate-900 tracking-tight uppercase">PNP Calculator</h1>
         </div>
-        <div className="flex space-x-1.5">
+        <div className="flex space-x-1 sm:space-x-1.5">
           {STEPS.map((_, idx) => (
             <div
               key={idx}
-              className={`h-1.5 w-5 rounded-full transition-colors ${idx === currentStep ? 'bg-red-600' : idx < currentStep ? 'bg-red-200' : 'bg-red-100'}`}
+              className={`h-1.5 w-4 sm:w-5 rounded-full transition-colors ${idx === currentStep ? 'bg-red-600' : idx < currentStep ? 'bg-red-200' : 'bg-red-100'}`}
             />
           ))}
         </div>
       </header>
 
-      <main className="flex-1 max-w-lg mx-auto w-full px-5 pt-8 pb-16">
+      <main className="flex-1 max-w-lg mx-auto w-full px-4 sm:px-5 pt-6 sm:pt-8 pb-24 sm:pb-28">
         <div className="w-full max-w-lg mx-auto">
           {currentStep > 0 && currentStep < STEPS.length - 1 && (
             <button
@@ -395,24 +395,24 @@ export const Calculator: React.FC = () => {
 
       {/* Floating Action Navigation */}
       {currentStep < STEPS.length - 1 && (
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 w-[92%] max-w-md z-40">
-          <div className="bg-slate-900/95 backdrop-blur-md text-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-3 flex items-center justify-between border border-white/10">
-            <div className="flex flex-col pl-6 min-w-0">
+        <div className="fixed bottom-6 sm:bottom-8 safe-area-bottom left-1/2 -translate-x-1/2 w-[92%] max-w-md z-40">
+          <div className="bg-slate-900/95 backdrop-blur-md text-white rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-2.5 sm:p-3 flex items-center justify-between border border-white/10">
+            <div className="flex flex-col pl-4 sm:pl-6 min-w-0">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Current Score</span>
               <div className="flex items-baseline space-x-1">
-                <span className={`text-3xl font-black transition-transform duration-300 ${isUpdating ? 'scale-110 text-red-400' : 'scale-100'}`}>
+                <span className={`text-2xl sm:text-3xl font-black transition-transform duration-300 ${isUpdating ? 'scale-110 text-red-400' : 'scale-100'}`}>
                   {results.total}
                 </span>
-                <span className="text-sm text-slate-500 font-bold">/ 200</span>
+                <span className="text-xs sm:text-sm text-slate-500 font-bold">/ 200</span>
               </div>
             </div>
 
             <button
               onClick={nextStep}
-              className="shrink-0 bg-red-600 hover:bg-red-500 text-white px-8 py-5 rounded-[2rem] font-black text-sm uppercase tracking-widest shadow-xl shadow-red-900/30 active:scale-95 transition-all flex items-center ml-4"
+              className="shrink-0 bg-red-600 hover:bg-red-500 active:bg-red-700 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-[1.5rem] sm:rounded-[2rem] font-black text-xs sm:text-sm uppercase tracking-widest shadow-xl shadow-red-900/30 active:scale-95 transition-all flex items-center ml-3 sm:ml-4 min-h-[44px]"
             >
               {currentStep === STEPS.length - 2 ? 'Result' : 'Next'}
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-1.5 sm:ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" />
               </svg>
             </button>
