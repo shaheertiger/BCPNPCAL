@@ -5,11 +5,21 @@
 @layer base {
   html {
     font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    /* Mobile-first font smoothing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent text size adjustment on mobile */
+    -webkit-text-size-adjust: 100%;
   }
 
-  /* Custom scrollbar styling */
+  body {
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+  }
+
+  /* Mobile-optimized scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px; /* Thinner on mobile */
   }
 
   ::-webkit-scrollbar-track {
@@ -18,11 +28,29 @@
 
   ::-webkit-scrollbar-thumb {
     background: rgb(220, 38, 38);
-    border-radius: 5px;
+    border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(185, 28, 28);
+  }
+
+  /* Mobile-optimized tap targets */
+  button, a {
+    -webkit-tap-highlight-color: rgba(220, 38, 38, 0.1);
+    touch-action: manipulation; /* Prevent double-tap zoom */
+  }
+
+  /* Mobile input optimization */
+  input[type="range"] {
+    touch-action: pan-x; /* Allow horizontal swipe on sliders */
+  }
+
+  /* Smooth scrolling for mobile */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 }
 
@@ -67,5 +95,135 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile-optimized range input styling */
+@layer base {
+  input[type="range"] {
+    height: 44px; /* Ensure minimum touch target */
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgb(220, 38, 38);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+    transition: all 0.2s;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    background: rgb(185, 28, 28);
+    transform: scale(1.1);
+  }
+
+  input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 8px rgba(220, 38, 38, 0.1);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: rgb(220, 38, 38);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+    transition: all 0.2s;
+  }
+
+  input[type="range"]::-moz-range-thumb:hover {
+    background: rgb(185, 28, 28);
+    transform: scale(1.1);
+  }
+
+  input[type="range"]::-moz-range-thumb:active {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 8px rgba(220, 38, 38, 0.1);
+  }
+
+  /* Better focus states for mobile */
+  input[type="range"]:focus {
+    outline: none;
+  }
+
+  input[type="range"]:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 8px rgba(220, 38, 38, 0.15);
+  }
+
+  input[type="range"]:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 8px rgba(220, 38, 38, 0.15);
+  }
+}
+
+/* Mobile typography optimization */
+@layer utilities {
+  @media (max-width: 640px) {
+    /* Reduce oversized text on mobile */
+    .mobile-heading-adjust {
+      font-size: 2rem; /* Down from text-3xl */
+    }
+
+    .mobile-score-adjust {
+      font-size: 5rem; /* Down from text-[9rem] */
+    }
+
+    .mobile-wage-adjust {
+      font-size: 4rem; /* Down from text-8xl */
+    }
+
+    /* Tighter padding on mobile */
+    .mobile-p-reduce {
+      padding: 1.5rem; /* Down from p-12 */
+    }
+
+    .mobile-p-card {
+      padding: 1rem; /* Down from p-8/p-10 */
+    }
+
+    /* Smaller rounded corners on mobile */
+    .mobile-rounded-adjust {
+      border-radius: 1.5rem; /* Down from rounded-[4rem] */
+    }
+  }
+}
+
+/* Safe area handling for notched devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+
+  /* Ensure fixed elements respect safe areas */
+  .safe-area-bottom {
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Prevent zoom on input focus (iOS Safari) */
+@media screen and (max-width: 640px) {
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 16px !important; /* Prevents iOS zoom */
   }
 }

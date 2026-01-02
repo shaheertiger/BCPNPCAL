@@ -18,16 +18,30 @@ const {
   jsonLd
 } = Astro.props;
 
-const siteUrl = Astro.site || 'https://bcpnpcalculator.com';
+const siteUrl = Astro.site || 'https://bcpnpcalculator.ca';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#dc2626" />
+    <meta name="msapplication-TileColor" content="#dc2626" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="BC PNP Calc" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Humans.txt -->
+    <link type="text/plain" rel="author" href="/humans.txt" />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
@@ -35,12 +49,29 @@ const siteUrl = Astro.site || 'https://bcpnpcalculator.com';
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="author" content="BC PNP Calculator" />
+    <meta name="keywords" content="BC PNP calculator, BC PNP points calculator, BC Provincial Nominee Program, SIRS calculator, BC immigration calculator, Skills Immigration Ranking System, BC PNP score, British Columbia immigration" />
+
+    <!-- Geographic Meta Tags -->
+    <meta name="geo.region" content="CA-BC" />
+    <meta name="geo.placename" content="British Columbia" />
+    <meta name="geo.position" content="49.2827;-123.1207" />
+    <meta name="ICBM" content="49.2827, -123.1207" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, siteUrl).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="BC PNP Calculator" />
+    <meta property="og:locale" content="en_CA" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -101,7 +132,13 @@ const siteUrl = Astro.site || 'https://bcpnpcalculator.com';
 
     <!-- JSON-LD Structured Data -->
     {jsonLd && (
-      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+      Array.isArray(jsonLd) ? (
+        jsonLd.map((schema) => (
+          <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+        ))
+      ) : (
+        <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+      )
     )}
 
     <!-- Vercel Web Analytics -->
