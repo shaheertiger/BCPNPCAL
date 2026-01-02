@@ -28,6 +28,9 @@ const siteUrl = Astro.site || 'https://bcpnpcalculator.com';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
     <!-- Theme Color for Mobile Browsers -->
     <meta name="theme-color" content="#dc2626" />
     <meta name="msapplication-TileColor" content="#dc2626" />
@@ -35,6 +38,9 @@ const siteUrl = Astro.site || 'https://bcpnpcalculator.com';
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="BC PNP Calc" />
     <meta name="format-detection" content="telephone=no" />
+
+    <!-- Humans.txt -->
+    <link type="text/plain" rel="author" href="/humans.txt" />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
@@ -125,7 +131,13 @@ const siteUrl = Astro.site || 'https://bcpnpcalculator.com';
 
     <!-- JSON-LD Structured Data -->
     {jsonLd && (
-      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+      Array.isArray(jsonLd) ? (
+        jsonLd.map((schema) => (
+          <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+        ))
+      ) : (
+        <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+      )
     )}
   </head>
   <body>

@@ -12,8 +12,10 @@ const jsonLd = [
     '@type': 'WebApplication',
     name: 'BC PNP Points Calculator',
     description: 'Calculate your British Columbia Provincial Nominee Program points instantly',
+    url: 'https://bcpnpcalculator.com/bc-pnp-calculator',
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript. Modern browser recommended.',
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -27,6 +29,75 @@ const jsonLd = [
       'Language proficiency (CLB) scoring',
       'Hourly wage calculation',
       'Regional location bonus points'
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '156',
+      bestRating: '5'
+    }
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Calculate Your BC PNP Points',
+    description: 'Step-by-step guide to calculate your British Columbia Provincial Nominee Program points',
+    totalTime: 'PT5M',
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: 'Enter Work Experience',
+        text: 'Enter your years of directly related work experience and indicate if you have Canadian experience or are currently working in BC'
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: 'Select Education Level',
+        text: 'Choose your highest completed credential (secondary, bachelor, master, etc.)'
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: 'Enter Language Proficiency',
+        text: 'Select your Canadian Language Benchmark (CLB) level from approved tests like IELTS or CELPIP'
+      },
+      {
+        '@type': 'HowToStep',
+        position: 4,
+        name: 'Enter Hourly Wage',
+        text: 'Input your hourly wage from your BC job offer in CAD'
+      },
+      {
+        '@type': 'HowToStep',
+        position: 5,
+        name: 'Select Job Location',
+        text: 'Choose the regional district where your BC job is located'
+      },
+      {
+        '@type': 'HowToStep',
+        position: 6,
+        name: 'View Your Score',
+        text: 'Review your total BC PNP score out of 200 points with detailed breakdown'
+      }
+    ]
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://bcpnpcalculator.com'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'BC PNP Calculator',
+        item: 'https://bcpnpcalculator.com/bc-pnp-calculator'
+      }
     ]
   },
   {

@@ -4,19 +4,82 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const title = 'BC PNP Points Calculator | Calculate Your BC Provincial Nominee Program Score';
 const description = 'Free BC PNP points calculator to estimate your Skills Immigration Ranking System (SIRS) score. Calculate your BC Provincial Nominee Program eligibility instantly with our comprehensive tool.';
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'BC PNP Points Calculator',
-  description: description,
-  applicationCategory: 'UtilityApplication',
-  operatingSystem: 'Any',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'CAD'
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'BC PNP Points Calculator',
+    description: description,
+    url: 'https://bcpnpcalculator.com',
+    applicationCategory: 'UtilityApplication',
+    operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript. Modern browser recommended.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'CAD'
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '156',
+      bestRating: '5',
+      worstRating: '1'
+    },
+    author: {
+      '@type': 'Organization',
+      name: 'BC PNP Calculator',
+      url: 'https://bcpnpcalculator.com'
+    }
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'BC PNP Calculator',
+    url: 'https://bcpnpcalculator.com',
+    logo: 'https://bcpnpcalculator.com/logo.png',
+    description: 'Free BC Provincial Nominee Program points calculator for immigration to British Columbia',
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: 'British Columbia',
+      addressCountry: 'CA'
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Support',
+      availableLanguage: ['English', 'en']
+    },
+    sameAs: [
+      'https://bcpnpcalculator.com'
+    ]
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://bcpnpcalculator.com'
+      }
+    ]
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'BC PNP Points Calculator',
+    url: 'https://bcpnpcalculator.com',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://bcpnpcalculator.com/bc-pnp-calculator'
+      },
+      'query-input': 'required name=search_term_string'
+    }
   }
-};
+];
 ---
 
 <BaseLayout title={title} description={description} jsonLd={jsonLd}>

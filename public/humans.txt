@@ -1,0 +1,16 @@
+/* TEAM */
+Developer: BC PNP Calculator Team
+Site: https://bcpnpcalculator.com
+Location: British Columbia, Canada
+
+/* SITE */
+Last update: 2026/01/02
+Standards: HTML5, CSS3, JavaScript ES2024
+Components: Astro, React, Tailwind CSS
+Software: Astro 5, React 19, TypeScript 5.8
+Ideology: Performance First, SEO Optimized, Mobile Focused
+
+/* THANKS */
+Immigration Consultants and Users who provided feedback
+British Columbia Provincial Nominee Program for the official documentation
+Open source community for amazing tools and frameworks
