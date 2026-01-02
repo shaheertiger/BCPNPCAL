@@ -12,6 +12,18 @@ export default defineConfig({
   ],
   output: 'static',
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always', // Inline all CSS for better FCP
+    assets: '_astro',
+  },
+  vite: {
+    build: {
+      cssCodeSplit: false, // Single CSS bundle for better caching
+      minify: 'esbuild', // Use esbuild for faster minification
+      rollupOptions: {
+        output: {
+          manualChunks: undefined, // Prevent chunk splitting for better initial load
+        },
+      },
+    },
   },
 });
