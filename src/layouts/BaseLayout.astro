@@ -91,16 +91,12 @@ const siteUrl = Astro.site || 'https://bcpnpcalculator.com';
       .text-red-600{color:#dc2626}
       .tracking-tight{letter-spacing:-0.025em}
       .leading-none{line-height:1}
-
-      /* Hide non-critical content initially */
-      .bg-white,.border{visibility:hidden}
     </style>
 
     <!-- Google Fonts - Async load -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all';document.querySelectorAll('.bg-white,.border').forEach(el=>el.style.visibility='visible')" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-      <style>.bg-white,.border{visibility:visible!important}</style>
     </noscript>
 
     <!-- JSON-LD Structured Data -->
