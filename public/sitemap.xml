@@ -7,7 +7,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://bcpnpcalculator.com/</loc>
+    <loc>https://bcpnpcalculator.ca/</loc>
     <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -15,7 +15,7 @@
 
   <!-- Calculator Page -->
   <url>
-    <loc>https://bcpnpcalculator.com/bc-pnp-calculator</loc>
+    <loc>https://bcpnpcalculator.ca/bc-pnp-calculator</loc>
     <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
