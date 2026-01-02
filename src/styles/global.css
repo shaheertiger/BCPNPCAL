@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  /* Fallback font to prevent layout shift */
+  @font-face {
+    font-family: 'Plus Jakarta Sans Fallback';
+    size-adjust: 100.06%;
+    ascent-override: 95%;
+    descent-override: 25%;
+    line-gap-override: 0%;
+    src: local('Arial');
+  }
+
   html {
-    font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ui-sans-serif, system-ui, sans-serif;
     /* Mobile-first font smoothing */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
