@@ -12,6 +12,7 @@ interface Props {
   lang?: string;
   hreflangs?: { href: string; lang: string }[];
   ogLocale?: string;
+  keywords?: string;
 }
 
 const {
@@ -21,7 +22,8 @@ const {
   ogImage = '/og-image.png',
   jsonLd,
   lang = 'en',
-  hreflangs = []
+  hreflangs = [],
+  keywords = "BC PNP calculator, BC PNP points calculator, BC Provincial Nominee Program, SIRS calculator, BC immigration calculator, Skills Immigration Ranking System, BC PNP score, British Columbia immigration"
 } = Astro.props;
 
 const siteUrl = Astro.site || 'https://bcpnpcalculator.ca';
@@ -82,7 +84,7 @@ const dir = lang === 'ar' ? 'rtl' : 'ltr';
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
     <meta name="author" content="BC PNP Calculator" />
-    <meta name="keywords" content="BC PNP calculator, BC PNP points calculator, BC Provincial Nominee Program, SIRS calculator, BC immigration calculator, Skills Immigration Ranking System, BC PNP score, British Columbia immigration" />
+    <meta name="keywords" content={keywords} />
 
     <!-- Geographic Meta Tags -->
     <meta name="geo.region" content="CA-BC" />
@@ -107,6 +109,7 @@ const dir = lang === 'ar' ? 'rtl' : 'ltr';
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(ogImage, siteUrl).href} />
+    <meta property="twitter:creator" content="@bcpnpcalc" />
 
     <!-- DNS Prefetch & Preconnect for Fonts -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
