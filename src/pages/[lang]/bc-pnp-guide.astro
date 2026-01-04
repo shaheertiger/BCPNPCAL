@@ -102,6 +102,38 @@ const hreflangs = [
           <p class="text-slate-700 leading-relaxed" set:html={content.sections.wage.content} />
         </section>
 
+        {content.sections.process && (
+          <section>
+            <h2 class="text-3xl font-black text-slate-900 mb-8">{content.sections.process.title}</h2>
+            <div class={`relative border-l-4 border-slate-200 ${isRTL ? 'mr-4 pr-8 border-r-4 border-l-0' : 'ml-4 pl-8'} space-y-12`}>
+              {content.sections.process.steps.map((step, index) => (
+                <div class="relative">
+                  <span class={`absolute ${isRTL ? '-right-[45px]' : '-left-[45px]'} top-0 w-8 h-8 bg-slate-900 text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-white`}>
+                    {index + 1}
+                  </span>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
+                  <p class="text-slate-600">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {content.sections.mistakes && (
+          <section class="bg-red-50 p-8 rounded-[2rem] border border-red-100">
+            <h2 class="text-2xl font-black text-red-900 mb-6">{content.sections.mistakes.title}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {content.sections.mistakes.items.map((item) => (
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                  <div class="text-red-600 text-2xl mb-2">⚠</div>
+                  <h3 class="font-bold text-slate-900 mb-2">{item.title}</h3>
+                  <p class="text-sm text-slate-600">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         <section>
           <h2 class="text-3xl font-black text-slate-900 mb-8">{content.sections.faq.title}</h2>
           <div class="space-y-6">
