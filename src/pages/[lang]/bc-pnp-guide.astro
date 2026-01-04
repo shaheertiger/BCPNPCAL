@@ -36,6 +36,13 @@ const hreflangs = [
   lang={lang}
   canonical={`https://bcpnpcalculator.ca/${lang}/bc-pnp-guide`}
   hreflangs={hreflangs}
+  ogLocale={{
+    zh: 'zh_TW',
+    pa: 'pa_IN',
+    hi: 'hi_IN',
+    ar: 'ar_AE',
+    en: 'en_CA'
+  }[lang] || 'en_CA'}
 >
   <main class={`min-h-screen bg-slate-50 font-sans ${isRTL ? 'text-right' : 'text-left'}`}>
     <!-- Hero Section -->
@@ -75,7 +82,41 @@ const hreflangs = [
 
         <section class="bg-red-50 p-8 rounded-2xl border border-red-100">
           <h2 class="text-2xl font-black text-red-900 mb-4">{content.sections.regional.title}</h2>
-          <p class="text-slate-700 leading-relaxed" set:html={content.sections.regional.content} />
+          <p class="text-slate-700 leading-relaxed mb-6" set:html={content.sections.regional.content} />
+          {content.sections.regional.points_title && (
+            <div class="bg-white/50 p-4 rounded-xl inline-block border border-red-200">
+              <div class="text-xs font-bold text-red-600 uppercase tracking-wider mb-1">{content.sections.regional.points_title}</div>
+              <div class="text-2xl font-black text-slate-900">{content.sections.regional.points_value}</div>
+            </div>
+          )}
+        </section>
+
+        <section>
+          <h2 class="text-3xl font-black text-slate-900 mb-4">{content.sections.priority.title}</h2>
+          <p class="text-lg text-slate-600 leading-relaxed" set:html={content.sections.priority.content} />
+        </section>
+
+        <section class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+          <h2 class="text-2xl font-black text-slate-900 mb-4">{content.sections.wage.title}</h2>
+          <p class="text-slate-700 leading-relaxed" set:html={content.sections.wage.content} />
+        </section>
+
+        <section>
+          <h2 class="text-3xl font-black text-slate-900 mb-8">{content.sections.faq.title}</h2>
+          <div class="space-y-6">
+            <div class="bg-slate-50 p-6 rounded-2xl">
+              <h3 class="font-bold text-slate-900 mb-2">{content.sections.faq.q1}</h3>
+              <p class="text-slate-600">{content.sections.faq.a1}</p>
+            </div>
+            <div class="bg-slate-50 p-6 rounded-2xl">
+              <h3 class="font-bold text-slate-900 mb-2">{content.sections.faq.q2}</h3>
+              <p class="text-slate-600">{content.sections.faq.a2}</p>
+            </div>
+            <div class="bg-slate-50 p-6 rounded-2xl">
+              <h3 class="font-bold text-slate-900 mb-2">{content.sections.faq.q3}</h3>
+              <p class="text-slate-600">{content.sections.faq.a3}</p>
+            </div>
+          </div>
         </section>
 
         <section class="text-center pt-8">
