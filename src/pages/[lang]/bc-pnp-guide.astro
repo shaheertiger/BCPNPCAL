@@ -42,6 +42,14 @@ const hreflangs = [
     <section class="relative bg-slate-900 pt-24 pb-32 overflow-hidden">
       <div class="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-20"></div>
       <div class="relative max-w-5xl mx-auto px-4 text-center text-white z-20">
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+          <a href="/bc-pnp-guide" class="px-3 py-1 bg-transparent hover:bg-white/10 text-slate-400 hover:text-white rounded-full text-xs font-bold transition-all border border-transparent hover:border-white/10">English</a>
+          <a href="/zh/bc-pnp-guide" class={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${lang === 'zh' ? 'bg-white/20 text-white ring-1 ring-white/20' : 'bg-transparent hover:bg-white/10 text-slate-400 hover:text-white border-transparent hover:border-white/10'}`}>中文</a>
+          <a href="/pa/bc-pnp-guide" class={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${lang === 'pa' ? 'bg-white/20 text-white ring-1 ring-white/20' : 'bg-transparent hover:bg-white/10 text-slate-400 hover:text-white border-transparent hover:border-white/10'}`}>ਪੰਜਾਬੀ</a>
+          <a href="/hi/bc-pnp-guide" class={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${lang === 'hi' ? 'bg-white/20 text-white ring-1 ring-white/20' : 'bg-transparent hover:bg-white/10 text-slate-400 hover:text-white border-transparent hover:border-white/10'}`}>हिंदी</a>
+          <a href="/ar/bc-pnp-guide" class={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${lang === 'ar' ? 'bg-white/20 text-white ring-1 ring-white/20' : 'bg-transparent hover:bg-white/10 text-slate-400 hover:text-white border-transparent hover:border-white/10'}`}>عربي</a>
+        </div>
+
         <h1 class="text-4xl sm:text-6xl font-black mb-8" set:html={content.h1} />
         <p class="text-xl text-slate-300 mb-12 max-w-3xl mx-auto" set:html={content.hero_sub} />
         
