@@ -9,6 +9,8 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   jsonLd?: object;
+  lang?: string;
+  hreflangs?: { href: string; lang: string }[];
 }
 
 const {
@@ -16,24 +18,33 @@ const {
   description,
   canonical = Astro.url.href,
   ogImage = '/og-image.png',
-  jsonLd
+  jsonLd,
+  lang = 'en',
+  hreflangs = []
 } = Astro.props;
 
 const siteUrl = Astro.site || 'https://bcpnpcalculator.ca';
+const dir = lang === 'ar' ? 'rtl' : 'ltr';
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang} dir={dir}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Favicons - Optimized for SEO and all platforms -->
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Hreflang Tags -->
+    {hreflangs.map((link) => (
+      <link rel="alternate" hreflang={link.lang} href={link.href} />
+    ))}
 
     <!-- Apple Touch Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

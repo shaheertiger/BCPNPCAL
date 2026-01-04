@@ -11,6 +11,13 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "zh", "pa", "hi", "ar"],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   output: 'static',
   build: {
     inlineStylesheets: 'always', // Inline all CSS for better FCP

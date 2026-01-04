@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { guideContent } from '../../i18n/guide-content';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'zh' } },
+    { params: { lang: 'pa' } },
+    { params: { lang: 'hi' } },
+    { params: { lang: 'ar' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const content = guideContent[lang as keyof typeof guideContent];
+
+if (!content) {
+  throw new Error(`No content found for language: ${lang}`);
+}
+
+const isRTL = lang === 'ar';
+
+const hreflangs = [
+  { lang: 'en', href: 'https://bcpnpcalculator.ca/bc-pnp-guide' },
+  { lang: 'zh', href: 'https://bcpnpcalculator.ca/zh/bc-pnp-guide' },
+  { lang: 'pa', href: 'https://bcpnpcalculator.ca/pa/bc-pnp-guide' },
+  { lang: 'hi', href: 'https://bcpnpcalculator.ca/hi/bc-pnp-guide' },
+  { lang: 'ar', href: 'https://bcpnpcalculator.ca/ar/bc-pnp-guide' },
+  { lang: 'x-default', href: 'https://bcpnpcalculator.ca/bc-pnp-guide' },
+];
+---
+
+<BaseLayout 
+  title={content.title} 
+  description={content.description} 
+  lang={lang}
+  canonical={`https://bcpnpcalculator.ca/${lang}/bc-pnp-guide`}
+  hreflangs={hreflangs}
+>
+  <main class={`min-h-screen bg-slate-50 font-sans ${isRTL ? 'text-right' : 'text-left'}`}>
+    <!-- Hero Section -->
+    <section class="relative bg-slate-900 pt-24 pb-32 overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-20"></div>
+      <div class="relative max-w-5xl mx-auto px-4 text-center text-white z-20">
+        <h1 class="text-4xl sm:text-6xl font-black mb-8" set:html={content.h1} />
+        <p class="text-xl text-slate-300 mb-12 max-w-3xl mx-auto" set:html={content.hero_sub} />
+        
+        <a href="/bc-pnp-calculator" class="inline-block px-10 py-5 bg-red-600 hover:bg-red-500 text-white font-black rounded-2xl transition-all shadow-xl active:scale-95 text-lg uppercase">
+          {content.cta}
+        </a>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-12 -mt-20 relative z-20">
+      
+      <!-- Sticky TOC (Simplified) -->
+      <nav class="bg-white/90 backdrop-blur p-4 rounded-xl shadow-lg mb-10 flex flex-wrap gap-4 justify-center text-sm font-bold text-slate-700">
+        <span>{content.toc_strategy}</span> / <span>{content.toc_regional}</span> / <span>{content.toc_priority}</span>
+      </nav>
+
+      <article class="bg-white p-8 sm:p-12 rounded-[2rem] shadow-sm space-y-12">
+        <section>
+          <h2 class="text-3xl font-black text-slate-900 mb-4">{content.sections.intro.title}</h2>
+          <p class="text-lg text-slate-600 leading-relaxed" set:html={content.sections.intro.content} />
+        </section>
+
+        <section class="bg-red-50 p-8 rounded-2xl border border-red-100">
+          <h2 class="text-2xl font-black text-red-900 mb-4">{content.sections.regional.title}</h2>
+          <p class="text-slate-700 leading-relaxed" set:html={content.sections.regional.content} />
+        </section>
+
+        <section class="text-center pt-8">
+           <a href={`/bc-pnp-calculator?lang=${lang}`} class="inline-flex items-center text-red-600 font-black uppercase tracking-widest border-b-2 border-red-600 pb-1 hover:text-red-700">
+             {content.cta} 
+             <span class={`mx-2 text-xl ${isRTL ? 'rotate-180' : ''}`}>→</span>
+           </a>
+        </section>
+
+      </article>
+
+    </div>
+  </main>
+</BaseLayout>
