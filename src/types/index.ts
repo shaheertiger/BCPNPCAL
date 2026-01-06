@@ -100,5 +100,9 @@ export interface PointsResult {
     area: number;                 // N (max 15)
     workedOutsideArea1: number;   // O (max 10)
     graduatedOutsideArea1: number; // P (max 10)
+
+    // Group Totals (Capped)
+    educationTotal: number;       // Capped at 40
+    languageTotal: number;        // Capped at 40
   };
 }

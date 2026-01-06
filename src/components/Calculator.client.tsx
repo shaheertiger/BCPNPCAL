@@ -514,37 +514,79 @@ export const Calculator: React.FC = () => {
               <p className="text-xs font-bold text-indigo-300 uppercase tracking-[0.3em] mb-3">Total BC PNP Score</p>
               <div className="text-7xl font-black tracking-tighter leading-none mb-3">{results.total}</div>
               <div className="inline-block px-4 py-1 rounded-full bg-white/10 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-                Max Possible: 230
+                Max Possible: 200
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm space-y-3">
-              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Score Breakdown</h3>
-              {[
-                { label: 'A) Work Experience', val: results.breakdown.experience, max: 20 },
-                { label: 'B) Canadian Experience', val: results.breakdown.canadianExp, max: 10 },
-                { label: 'C) Current BC Job', val: results.breakdown.currentBCJob, max: 10 },
-                { label: 'D) Education Level', val: results.breakdown.education, max: 27 },
-                { label: 'F) Canadian Education', val: results.breakdown.educationLocation, max: 8 },
-                { label: 'H) Professional Designation', val: results.breakdown.professionalDesignation, max: 5 },
-                { label: 'J) English CLB', val: results.breakdown.englishClb, max: 30 },
-                { label: 'L) French CLB', val: results.breakdown.frenchClb, max: 30 },
-                { label: 'M) Hourly Wage', val: results.breakdown.wage, max: 55 },
-                { label: 'N) Job Location', val: results.breakdown.area, max: 15 },
-                { label: 'O) Worked Outside Area 1', val: results.breakdown.workedOutsideArea1, max: 10 },
-                { label: 'P) Graduated Outside Area 1', val: results.breakdown.graduatedOutsideArea1, max: 10 },
-              ].map((item, i) => (
-                <div key={i} className="flex justify-between items-center py-2 border-b border-slate-50 last:border-0">
-                  <span className="text-sm font-medium text-slate-600">{item.label}</span>
-                  <div className="flex items-center gap-2">
-                    <span className={`font-black px-2.5 py-0.5 rounded-lg min-w-[2.5rem] text-center ${item.val > 0 ? 'bg-indigo-100 text-indigo-700' : 'bg-slate-100 text-slate-400'
-                      }`}>
-                      {item.val}
-                    </span>
-                    <span className="text-xs text-slate-400">/ {item.max}</span>
+            <div className="space-y-3">
+              {/* Human Capital Section */}
+              <div className="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm space-y-3">
+                <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">Human Capital Factors</h3>
+
+                {/* Experience */}
+                <div className="bg-slate-50 p-4 rounded-xl space-y-2">
+                  <div className="flex justify-between items-center text-slate-900">
+                    <span className="text-sm font-bold">Experience Factors</span>
+                    <span className="text-sm font-black">{results.breakdown.experience + results.breakdown.canadianExp + results.breakdown.currentBCJob} / 40</span>
+                  </div>
+                  <div className="text-[10px] text-slate-500 space-y-1 pl-2 border-l-2 border-slate-200">
+                    <div className="flex justify-between"><span>Direct Experience</span><span>{results.breakdown.experience}</span></div>
+                    <div className="flex justify-between"><span>Canadian Exp</span><span>{results.breakdown.canadianExp}</span></div>
+                    <div className="flex justify-between"><span>Current BC Job</span><span>{results.breakdown.currentBCJob}</span></div>
                   </div>
                 </div>
-              ))}
+
+                {/* Education (Capped at 40) */}
+                <div className="bg-slate-50 p-4 rounded-xl space-y-2">
+                  <div className="flex justify-between items-center text-slate-900">
+                    <span className="text-sm font-bold">Education (Max 40)</span>
+                    <span className={`text-sm font-black ${results.breakdown.educationTotal === 40 ? 'text-green-600' : ''}`}>
+                      {results.breakdown.educationTotal} / 40
+                    </span>
+                  </div>
+                  <div className="text-[10px] text-slate-500 space-y-1 pl-2 border-l-2 border-slate-200">
+                    <div className="flex justify-between"><span>Education Level</span><span>{results.breakdown.education}</span></div>
+                    <div className="flex justify-between"><span>BC/Canada Bonus</span><span>{results.breakdown.educationLocation}</span></div>
+                    <div className="flex justify-between"><span>Professional Desig.</span><span>{results.breakdown.professionalDesignation}</span></div>
+                  </div>
+                </div>
+
+                {/* Language (Capped at 40) */}
+                <div className="bg-slate-50 p-4 rounded-xl space-y-2">
+                  <div className="flex justify-between items-center text-slate-900">
+                    <span className="text-sm font-bold">Language (Max 40)</span>
+                    <span className={`text-sm font-black ${results.breakdown.languageTotal === 40 ? 'text-green-600' : ''}`}>
+                      {results.breakdown.languageTotal} / 40
+                    </span>
+                  </div>
+                  <div className="text-[10px] text-slate-500 space-y-1 pl-2 border-l-2 border-slate-200">
+                    <div className="flex justify-between"><span>English CLB</span><span>{results.breakdown.englishClb}</span></div>
+                    <div className="flex justify-between"><span>French CLB</span><span>{results.breakdown.frenchClb}</span></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Economic Factors Section */}
+              <div className="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm space-y-3">
+                <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">Economic Factors</h3>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center py-2 border-b border-slate-50">
+                    <span className="text-sm font-medium text-slate-600">Hourly Wage</span>
+                    <span className="font-black text-slate-900 bg-slate-100 px-2 py-0.5 rounded-lg text-xs">{results.breakdown.wage} / 55</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-slate-50">
+                    <span className="text-sm font-medium text-slate-600">Area of Employment</span>
+                    <span className="font-black text-slate-900 bg-slate-100 px-2 py-0.5 rounded-lg text-xs">{results.breakdown.area} / 15</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2">
+                    <span className="text-sm font-medium text-slate-600">Regional Bonuses</span>
+                    <span className="font-black text-slate-900 bg-slate-100 px-2 py-0.5 rounded-lg text-xs">
+                      {results.breakdown.workedOutsideArea1 + results.breakdown.graduatedOutsideArea1} / 10
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <button

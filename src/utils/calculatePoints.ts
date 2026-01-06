@@ -88,23 +88,29 @@ export const calculateTotalPoints = (state: CalculatorState): PointsResult => {
   // D) Education Level (max 27)
   const education = EDUCATION_POINTS[state.education] ?? 0;
 
-  // F) Education Location Bonus (max 8) - only if E=yes (hasCanadianEducation)
-  // When gate is off, educationLocation should be 'none' from UI, but we double-check here
+  // F) Education Location Bonus (max 8)
   const educationLocation = state.hasCanadianEducation
     ? (EDUCATION_LOCATION_POINTS[state.educationLocation] ?? 0)
     : 0;
 
-  // H) Professional Designation (max 5) - requires valid selection when gate is on
+  // H) Professional Designation (max 5)
   const professionalDesignation =
     state.hasProfessionalDesignation && state.selectedProfession?.trim()
       ? 5
       : 0;
 
-  // J) English CLB (max 30) - only if I=yes (hasEnglishTest)
+  // Education Group Cap: Max 40 points
+  // Includes: Education Level + Location Bonus + Professional Designation
+  const educationTotal = Math.min(40, education + educationLocation + professionalDesignation);
+
+  // J) English CLB (max 30)
   const englishClb = state.hasEnglishTest ? getClbPoints(state.englishClb) : 0;
 
-  // L) French CLB (max 30) - only if K=yes (hasFrenchTest)
+  // L) French CLB (max 30)
   const frenchClb = state.hasFrenchTest ? getClbPoints(state.frenchClb) : 0;
+
+  // Language Group Cap: Max 40 points
+  const languageTotal = Math.min(40, englishClb + frenchClb);
 
   // M) Wage (max 55)
   const safeHourlyWage = Math.max(0, Number.isFinite(state.hourlyWage) ? state.hourlyWage : 0);
@@ -119,20 +125,21 @@ export const calculateTotalPoints = (state: CalculatorState): PointsResult => {
   // P) Graduated Outside Area 1 (max 10)
   const graduatedOutsideArea1 = state.hasGraduatedOutsideArea1 ? 10 : 0;
 
-  // Total (max 230)
-  const total =
+  // Total (max 200)
+  // Human Capital (max 120) + Economic Factors (max 80)
+  // But we just sum capped groups and clamp to 200 for safety
+  const rawTotal =
     experience +
     canadianExp +
     currentBCJob +
-    education +
-    educationLocation +
-    professionalDesignation +
-    englishClb +
-    frenchClb +
+    educationTotal + // Capped at 40
+    languageTotal +  // Capped at 40
     wage +
     area +
     workedOutsideArea1 +
     graduatedOutsideArea1;
+
+  const total = Math.min(200, rawTotal);
 
   return {
     total,
@@ -149,6 +156,8 @@ export const calculateTotalPoints = (state: CalculatorState): PointsResult => {
       area,
       workedOutsideArea1,
       graduatedOutsideArea1,
+      educationTotal,
+      languageTotal,
     },
   };
 };
