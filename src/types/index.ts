@@ -1,41 +1,60 @@
 
 export type EducationLevel =
   | 'secondary'
-  | 'post-secondary'
-  | 'associate'
+  | 'diploma'     // Post-secondary diploma
   | 'bachelor'
-  | 'post-grad'
-  | 'master-phd';
+  | 'master'
+  | 'doctorate';
 
+// Updated specific locations per user request
 export type AreaZone =
-  | 'vancouver'
+  | 'metro_vancouver'
+  | 'abbotsford'
   | 'squamish'
-  | 'victoria'
-  | 'nanaimo'
-  | 'kelowna'
-  | 'other';
+  | 'vernon'
+  | 'kamloops'
+  | 'northeast';
 
 export interface CalculatorState {
-  experience: {
-    years: number;
-    hasCanadianExp: boolean;
-    hasCurrentBCJob: boolean;
-  };
-  education: EducationLevel;
-  language: number; // CLB Level
-  wage: number; // Hourly wage
+  // Section A: Directly Related Work Experience
+  experience: number; // years
+
+  // Section B: Canadian Work Experience
+  hasCanadianExp: boolean;
+
+  // Section C: Current BC Employment
+  hasCurrentBCJob: boolean;
+
+  // Section D: Wage (Hourly input, converted to annual)
+  hourlyWage: number;
+
+  // Section E: Job Location
   area: AreaZone;
+
+  // Section F: Education Level
+  education: EducationLevel;
+
+  // Section G: Education Completed in Canada
+  hasCanadianEducation: boolean;
+
+  // Section H: Language Proficiency (Lowest CLB)
+  clb: number;
+
+  // Section I: Occupation Bonus
+  hasOccupationBonus: boolean;
 }
 
 export interface PointsResult {
   total: number;
   breakdown: {
-    experience: number;
-    education: number;
-    language: number;
-    wage: number;
-    area: number;
+    experience: number;       // A
+    canadianExp: number;      // B
+    currentBCJob: number;     // C
+    wage: number;             // D
+    area: number;             // E
+    education: number;        // F
+    canadianEducation: number;// G
+    language: number;         // H
+    occupationBonus: number;  // I
   };
-  isEligible: boolean;
-  level: 'Low' | 'Moderate' | 'Good' | 'Excellent';
 }

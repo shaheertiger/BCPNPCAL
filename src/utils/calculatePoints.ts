@@ -2,82 +2,110 @@
 import { CalculatorState, PointsResult, EducationLevel, AreaZone } from '../types';
 
 const EDUCATION_POINTS: Record<EducationLevel, number> = {
-  'secondary': 0,
-  'post-secondary': 2,
-  'associate': 4,
-  'bachelor': 15,
-  'post-grad': 22,
-  'master-phd': 27
+  secondary: 0,
+  diploma: 4,
+  bachelor: 8,
+  master: 11,
+  doctorate: 17,
 };
 
 const AREA_POINTS: Record<AreaZone, number> = {
-  'vancouver': 0,
-  'squamish': 5,
-  'victoria': 10,
-  'nanaimo': 15,
-  'kelowna': 20,
-  'other': 25
+  metro_vancouver: 0,
+  abbotsford: 5,
+  squamish: 10,
+  vernon: 15,
+  kamloops: 20,
+  northeast: 25,
 };
 
-const LANGUAGE_POINTS: Record<number, number> = {
-  4: 0,
-  5: 5,
-  6: 10,
-  7: 15,
-  8: 20,
-  9: 25,
-  10: 30
+const getLanguagePoints = (clb: number): number => {
+  if (clb >= 9) return 30;
+  if (clb === 8) return 26;
+  if (clb === 7) return 22;
+  if (clb === 6) return 18;
+  if (clb === 5) return 14;
+  if (clb === 4) return 10;
+  return 0;
+};
+
+const getExperiencePoints = (years: number): number => {
+  if (years >= 5) return 20;
+  if (years >= 4) return 16;
+  if (years >= 3) return 12;
+  if (years >= 2) return 8;
+  if (years >= 1) return 4;
+  if (years > 0) return 1;
+  return 0;
+};
+
+const HOURS_PER_WEEK = 40;
+const WEEKS_PER_YEAR = 52;
+const ANNUAL_MIN = 40000;
+const ANNUAL_MAX = 100000;
+const STEP_SIZE = 2500;
+const STEP_POINTS = 2;
+const BASE_POINTS = 2;
+const MAX_WAGE_POINTS = 50;
+
+export const calculateAnnualWage = (hourlyWage: number): number => {
+  const safeHourly = Number.isFinite(hourlyWage) && hourlyWage > 0 ? hourlyWage : 0;
+  const annual = safeHourly * HOURS_PER_WEEK * WEEKS_PER_YEAR;
+  return Math.floor(annual); // avoids threshold rounding surprises
+};
+
+const getWagePointsFromAnnual = (annualWage: number): number => {
+  const annual = Number.isFinite(annualWage) && annualWage > 0 ? annualWage : 0;
+
+  if (annual < ANNUAL_MIN) return 0;
+  if (annual >= ANNUAL_MAX) return MAX_WAGE_POINTS;
+
+  const steps = Math.floor((annual - ANNUAL_MIN) / STEP_SIZE);
+  return Math.min(MAX_WAGE_POINTS, BASE_POINTS + steps * STEP_POINTS);
+};
+
+const getWagePoints = (hourlyWage: number): number => {
+  const annual = calculateAnnualWage(hourlyWage);
+  return getWagePointsFromAnnual(annual);
 };
 
 export const calculateTotalPoints = (state: CalculatorState): PointsResult => {
-  // 1. Work Experience (Max 40)
-  // 0=0, 1=4, 2=8, 3=12, 4=16, 5+=20
-  let expPoints = Math.min(state.experience.years, 5) * 4;
+  const safeExperience = Math.floor(Math.max(0, Number.isFinite(state.experience) ? state.experience : 0));
+  const safeCLB = Math.min(12, Math.max(0, Number.isFinite(state.clb) ? state.clb : 0));
+  const safeHourlyWage = Math.max(0, Number.isFinite(state.hourlyWage) ? state.hourlyWage : 0);
 
-  if (state.experience.hasCanadianExp) expPoints += 10;
-  if (state.experience.hasCurrentBCJob) expPoints += 10;
-  expPoints = Math.min(expPoints, 40);
+  const experience = getExperiencePoints(safeExperience);
+  const canadianExp = state.hasCanadianExp ? 10 : 0;
+  const currentBCJob = state.hasCurrentBCJob ? 10 : 0;
+  const wage = getWagePoints(safeHourlyWage);
+  const area = AREA_POINTS[state.area] ?? 0;
+  const education = EDUCATION_POINTS[state.education] ?? 0;
+  const canadianEducation = state.hasCanadianEducation ? 8 : 0;
+  const language = getLanguagePoints(safeCLB);
+  const occupationBonus = state.hasOccupationBonus ? 10 : 0;
 
-  // 2. Education (Max 40)
-  let eduPoints = EDUCATION_POINTS[state.education] || 0;
-  eduPoints = Math.min(eduPoints, 40);
-
-  // 3. Language (Max 40)
-  // CLB 4=0, 5=5, 6=10, 7=15, 8=20, 9=25, 10+=30
-  let langPoints = LANGUAGE_POINTS[Math.max(4, Math.min(10, state.language))] || 0;
-  langPoints = Math.min(langPoints, 40);
-
-  // 4. Hourly Wage (Max 55)
-  // $16.75 is min (0 pts), $50.00+ is max (55 pts)
-  let wagePoints = 0;
-  if (state.wage >= 50) {
-    wagePoints = 55;
-  } else if (state.wage >= 16.75) {
-    // BC PNP uses a specific tiered table, but linear mapping is the standard approximation tool logic
-    wagePoints = Math.floor(((state.wage - 16.75) / (50 - 16.75)) * 55);
-  }
-  wagePoints = Math.max(0, Math.min(wagePoints, 55));
-
-  // 5. Area (Max 25)
-  let areaPoints = AREA_POINTS[state.area] || 0;
-
-  const total = expPoints + eduPoints + langPoints + wagePoints + areaPoints;
-
-  let level: PointsResult['level'] = 'Low';
-  if (total >= 125) level = 'Excellent';
-  else if (total >= 105) level = 'Good';
-  else if (total >= 85) level = 'Moderate';
+  const total =
+    experience +
+    canadianExp +
+    currentBCJob +
+    wage +
+    area +
+    education +
+    canadianEducation +
+    language +
+    occupationBonus;
 
   return {
     total,
     breakdown: {
-      experience: expPoints,
-      education: eduPoints,
-      language: langPoints,
-      wage: wagePoints,
-      area: areaPoints
+      experience,
+      canadianExp,
+      currentBCJob,
+      wage,
+      area,
+      education,
+      canadianEducation,
+      language,
+      occupationBonus,
     },
-    isEligible: total >= 80,
-    level
   };
 };
