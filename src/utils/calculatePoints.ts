@@ -1,98 +1,138 @@
 
-import { CalculatorState, PointsResult, EducationLevel, AreaZone } from '../types';
+import { CalculatorState, PointsResult, EducationLevel, AreaZone, EducationLocation, ExperienceLevel, CLBLevel } from '../types';
 
+// A) Directly Related Work Experience (max 20)
+const getExperiencePoints = (level: ExperienceLevel): number => {
+  switch (level) {
+    case '5+': return 20;
+    case '4': return 16;
+    case '3': return 12;
+    case '2': return 8;
+    case '1': return 4;
+    case '<1': return 1;
+    case '0':
+    default: return 0;
+  }
+};
+
+// D) Highest Education Level (max 27)
 const EDUCATION_POINTS: Record<EducationLevel, number> = {
-  secondary: 0,
-  diploma: 4,
-  bachelor: 8,
-  master: 11,
-  doctorate: 17,
+  secondary: 0,        // High school or less
+  trades_cert: 5,      // Post-secondary Diploma/Certificate (Trades or Non-trades)
+  associate: 5,        // Associate Degree
+  bachelor: 15,        // Bachelor's
+  post_grad_cert: 15,  // Post-Graduate Certificate/Diploma
+  master: 22,          // Master's
+  doctorate: 27,       // Doctoral
 };
 
+// F) Education Location Bonus (max 8, only if hasCanadianEducation=true)
+const EDUCATION_LOCATION_POINTS: Record<EducationLocation, number> = {
+  none: 0,
+  canada_outside_bc: 6,  // Completed in Canada (outside BC)
+  bc: 8,                 // Completed in BC
+};
+
+// J & L) CLB Points (max 30 each)
+// Uses CLBLevel union type: 0 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+const getClbPoints = (clb: CLBLevel): number => {
+  switch (clb) {
+    case 9: return 30;  // CLB 9+
+    case 8: return 25;
+    case 7: return 20;
+    case 6: return 15;
+    case 5: return 10;
+    case 4: return 5;
+    case 3:
+    case 0:
+    default: return 0;  // Below CLB 4 or no test
+  }
+};
+
+// M) Hourly Wage (max 55)
+// $70.00+ → 55, $69.00-69.99 → 54, ..., $16.00-16.99 → 1, <$16 → 0
+const getWagePoints = (hourlyWage: number): number => {
+  const wage = Number.isFinite(hourlyWage) && hourlyWage > 0 ? hourlyWage : 0;
+
+  if (wage >= 70) return 55;
+  if (wage < 16) return 0;
+
+  // Each $1 band from $16 to $69.99 gives points from 1 to 54
+  // $16.00-16.99 → 1, $17.00-17.99 → 2, ..., $69.00-69.99 → 54
+  const floorWage = Math.floor(wage);
+  return floorWage - 15; // $16 floor - 15 = 1, $69 floor - 15 = 54
+};
+
+// N) Area of Employment (max 15)
 const AREA_POINTS: Record<AreaZone, number> = {
-  metro_vancouver: 0,
-  abbotsford: 5,
-  squamish: 10,
-  vernon: 15,
-  kamloops: 20,
-  northeast: 25,
+  area1: 0,   // Metro Vancouver Regional District
+  area2: 5,   // Squamish / Abbotsford / Agassiz / Mission / Chilliwack
+  area3: 15,  // All other BC areas
 };
-
-const getLanguagePoints = (clb: number): number => {
-  if (clb >= 9) return 30;
-  if (clb === 8) return 26;
-  if (clb === 7) return 22;
-  if (clb === 6) return 18;
-  if (clb === 5) return 14;
-  if (clb === 4) return 10;
-  return 0;
-};
-
-const getExperiencePoints = (years: number): number => {
-  if (years >= 5) return 20;
-  if (years >= 4) return 16;
-  if (years >= 3) return 12;
-  if (years >= 2) return 8;
-  if (years >= 1) return 4;
-  if (years > 0) return 1;
-  return 0;
-};
-
-const HOURS_PER_WEEK = 40;
-const WEEKS_PER_YEAR = 52;
-const ANNUAL_MIN = 40000;
-const ANNUAL_MAX = 100000;
-const STEP_SIZE = 2500;
-const STEP_POINTS = 2;
-const BASE_POINTS = 2;
-const MAX_WAGE_POINTS = 50;
 
 export const calculateAnnualWage = (hourlyWage: number): number => {
   const safeHourly = Number.isFinite(hourlyWage) && hourlyWage > 0 ? hourlyWage : 0;
-  const annual = safeHourly * HOURS_PER_WEEK * WEEKS_PER_YEAR;
-  return Math.floor(annual); // avoids threshold rounding surprises
-};
-
-const getWagePointsFromAnnual = (annualWage: number): number => {
-  const annual = Number.isFinite(annualWage) && annualWage > 0 ? annualWage : 0;
-
-  if (annual < ANNUAL_MIN) return 0;
-  if (annual >= ANNUAL_MAX) return MAX_WAGE_POINTS;
-
-  const steps = Math.floor((annual - ANNUAL_MIN) / STEP_SIZE);
-  return Math.min(MAX_WAGE_POINTS, BASE_POINTS + steps * STEP_POINTS);
-};
-
-const getWagePoints = (hourlyWage: number): number => {
-  const annual = calculateAnnualWage(hourlyWage);
-  return getWagePointsFromAnnual(annual);
+  return Math.floor(safeHourly * 40 * 52);
 };
 
 export const calculateTotalPoints = (state: CalculatorState): PointsResult => {
-  const safeExperience = Math.floor(Math.max(0, Number.isFinite(state.experience) ? state.experience : 0));
-  const safeCLB = Math.min(12, Math.max(0, Number.isFinite(state.clb) ? state.clb : 0));
-  const safeHourlyWage = Math.max(0, Number.isFinite(state.hourlyWage) ? state.hourlyWage : 0);
+  // A) Work Experience (max 20) - uses ExperienceLevel directly
+  const experience = getExperiencePoints(state.experience);
 
-  const experience = getExperiencePoints(safeExperience);
+  // B) Canadian Experience (max 10)
   const canadianExp = state.hasCanadianExp ? 10 : 0;
-  const currentBCJob = state.hasCurrentBCJob ? 10 : 0;
-  const wage = getWagePoints(safeHourlyWage);
-  const area = AREA_POINTS[state.area] ?? 0;
-  const education = EDUCATION_POINTS[state.education] ?? 0;
-  const canadianEducation = state.hasCanadianEducation ? 8 : 0;
-  const language = getLanguagePoints(safeCLB);
-  const occupationBonus = state.hasOccupationBonus ? 10 : 0;
 
+  // C) Current BC Job (max 10)
+  const currentBCJob = state.hasCurrentBCJob ? 10 : 0;
+
+  // D) Education Level (max 27)
+  const education = EDUCATION_POINTS[state.education] ?? 0;
+
+  // F) Education Location Bonus (max 8) - only if E=yes (hasCanadianEducation)
+  // When gate is off, educationLocation should be 'none' from UI, but we double-check here
+  const educationLocation = state.hasCanadianEducation
+    ? (EDUCATION_LOCATION_POINTS[state.educationLocation] ?? 0)
+    : 0;
+
+  // H) Professional Designation (max 5) - requires valid selection when gate is on
+  const professionalDesignation =
+    state.hasProfessionalDesignation && state.selectedProfession?.trim()
+      ? 5
+      : 0;
+
+  // J) English CLB (max 30) - only if I=yes (hasEnglishTest)
+  const englishClb = state.hasEnglishTest ? getClbPoints(state.englishClb) : 0;
+
+  // L) French CLB (max 30) - only if K=yes (hasFrenchTest)
+  const frenchClb = state.hasFrenchTest ? getClbPoints(state.frenchClb) : 0;
+
+  // M) Wage (max 55)
+  const safeHourlyWage = Math.max(0, Number.isFinite(state.hourlyWage) ? state.hourlyWage : 0);
+  const wage = getWagePoints(safeHourlyWage);
+
+  // N) Area (max 15)
+  const area = AREA_POINTS[state.area] ?? 0;
+
+  // O) Worked Outside Area 1 (max 10)
+  const workedOutsideArea1 = state.hasWorkedOutsideArea1 ? 10 : 0;
+
+  // P) Graduated Outside Area 1 (max 10)
+  const graduatedOutsideArea1 = state.hasGraduatedOutsideArea1 ? 10 : 0;
+
+  // Total (max 230)
   const total =
     experience +
     canadianExp +
     currentBCJob +
+    education +
+    educationLocation +
+    professionalDesignation +
+    englishClb +
+    frenchClb +
     wage +
     area +
-    education +
-    canadianEducation +
-    language +
-    occupationBonus;
+    workedOutsideArea1 +
+    graduatedOutsideArea1;
 
   return {
     total,
@@ -100,12 +140,15 @@ export const calculateTotalPoints = (state: CalculatorState): PointsResult => {
       experience,
       canadianExp,
       currentBCJob,
+      education,
+      educationLocation,
+      professionalDesignation,
+      englishClb,
+      frenchClb,
       wage,
       area,
-      education,
-      canadianEducation,
-      language,
-      occupationBonus,
+      workedOutsideArea1,
+      graduatedOutsideArea1,
     },
   };
 };
