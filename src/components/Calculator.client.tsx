@@ -526,7 +526,7 @@ export const Calculator: React.FC = () => {
                 {/* Experience */}
                 <div className="bg-slate-50 p-4 rounded-xl space-y-2">
                   <div className="flex justify-between items-center text-slate-900">
-                    <span className="text-sm font-bold">Experience Factors</span>
+                    <span className="text-sm font-bold">Work Experience Category (Max 40)</span>
                     <span className="text-sm font-black">{results.breakdown.experience + results.breakdown.canadianExp + results.breakdown.currentBCJob} / 40</span>
                   </div>
                   <div className="text-[10px] text-slate-500 space-y-1 pl-2 border-l-2 border-slate-200">
@@ -539,7 +539,7 @@ export const Calculator: React.FC = () => {
                 {/* Education (Capped at 40) */}
                 <div className="bg-slate-50 p-4 rounded-xl space-y-2">
                   <div className="flex justify-between items-center text-slate-900">
-                    <span className="text-sm font-bold">Education (Max 40)</span>
+                    <span className="text-sm font-bold">Education Category (Max 40)</span>
                     <span className={`text-sm font-black ${results.breakdown.educationTotal === 40 ? 'text-green-600' : ''}`}>
                       {results.breakdown.educationTotal} / 40
                     </span>
@@ -554,7 +554,7 @@ export const Calculator: React.FC = () => {
                 {/* Language (Capped at 40) */}
                 <div className="bg-slate-50 p-4 rounded-xl space-y-2">
                   <div className="flex justify-between items-center text-slate-900">
-                    <span className="text-sm font-bold">Language (Max 40)</span>
+                    <span className="text-sm font-bold">Language Category (Max 40)</span>
                     <span className={`text-sm font-black ${results.breakdown.languageTotal === 40 ? 'text-green-600' : ''}`}>
                       {results.breakdown.languageTotal} / 40
                     </span>
