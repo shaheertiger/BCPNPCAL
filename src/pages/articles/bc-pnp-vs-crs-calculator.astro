@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Scale, Info, CheckCircle, XCircle } from 'lucide-react';
+
+const title = "BC PNP vs CRS Calculator: Which One Should You Use in 2026?";
+const description = "Understand the difference between BC PNP points and Express Entry CRS scores. Learn how a provincial nomination can boost your federal immigration profile.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-12 text-center">
+      <div class="inline-flex items-center justify-center p-3 bg-purple-50 dark:bg-purple-900/10 rounded-xl mb-6 text-purple-600">
+        <Scale size={48} />
+      </div>
+      <h1 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
+        BC PNP vs. CRS Calculator: <span class="text-purple-600">The 2026 Showdown</span>
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Confused by all the points systems? Here is the simple truth about how Provincial Nomination interacts with Federal Express Entry.
+      </p>
+    </header>
+
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      
+      <h2>The Core Difference: Fed vs. Prov</h2>
+      <p>
+        The <strong>Comprehensive Ranking System (CRS)</strong> is the federal calculator used for Canada's Express Entry system. It ranks you against <em>everyone in the world</em> who wants to move to Canada.
+      </p>
+      <p>
+        The <strong>SIRS (Skills Immigration Registration System)</strong> is British Columbia's specific calculator. It ranks you only against people who want to move to <em>BC</em> and usually have a job offer there.
+      </p>
+
+      <div class="not-prose my-12">
+        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white uppercase font-bold">
+              <tr>
+                <th class="px-6 py-4">Feature</th>
+                <th class="px-6 py-4 text-purple-600">BC PNP (SIRS)</th>
+                <th class="px-6 py-4 text-blue-600">Express Entry (CRS)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-900">
+              <tr>
+                <td class="px-6 py-4 font-medium">Job Offer</td>
+                <td class="px-6 py-4 text-green-600 font-bold">Mandatory (99% of streams)</td>
+                <td class="px-6 py-4 text-gray-500">Optional (but helpful)</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">Age Penalty</td>
+                <td class="px-6 py-4 text-green-600 font-bold">None (0 Points)</td>
+                <td class="px-6 py-4 text-red-500">starts at 30 (-5 pts/year)</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">Wage Importance</td>
+                <td class="px-6 py-4 text-green-600 font-bold">Critical (Up to 55 pts)</td>
+                <td class="px-6 py-4 text-gray-500">Irrelevant (Only NOC matters)</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">Location</td>
+                <td class="px-6 py-4">Bonus for Regional BC</td>
+                <td class="px-6 py-4">No difference</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">Cost</td>
+                <td class="px-6 py-4">$1,150 (Application Fee)</td>
+                <td class="px-6 py-4">Free to create profile</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>The "Golden Ticket": 600 Points</h2>
+      <p>
+        Here is why the BC PNP calculator matters even if your goal is federal Express Entry.
+      </p>
+      <p>
+        If you score high enough on the <a href="/">BC PNP Calculator</a> to get a nomination, you automatically receive <strong>600 bonus points</strong> in your Express Entry profile.
+      </p>
+      <div class="bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/20 dark:to-blue-900/20 p-8 rounded-2xl my-8 border border-purple-200 dark:border-purple-800">
+        <h4 class="text-2xl font-bold mb-4 mt-0">The Math of Success</h4>
+        <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-center">
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm w-full">
+            <div class="text-sm text-gray-500">Your Base CRS</div>
+            <div class="text-3xl font-black text-gray-400">380</div>
+          </div>
+          <div class="text-2xl font-bold text-gray-400">+</div>
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm w-full border-2 border-purple-500">
+            <div class="text-sm text-purple-600 font-bold">BC Nomination</div>
+            <div class="text-3xl font-black text-purple-600">600</div>
+          </div>
+          <div class="text-2xl font-bold text-gray-400">=</div>
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm w-full border-2 border-green-500">
+            <div class="text-sm text-green-600 font-bold">Create New Score</div>
+            <div class="text-3xl font-black text-green-600">980</div>
+          </div>
+        </div>
+        <p class="text-center mt-4 text-sm font-medium opacity-75">
+          *Since federal draws rarely go above 540, a score of 980 is a guaranteed invitation.
+        </p>
+      </div>
+
+      <h2>Detailed Scenario: "The Aging Professional"</h2>
+      <p>
+        Let's look at <strong>Carlos</strong>. He is a 42-year-old Senior Marketing Manager.
+      </p>
+      <ul>
+        <li><strong>CRS Problem:</strong> At 42, Carlos has lost over 60 points due to age. His CRS score is stuck at <strong>390</strong>. He has zero chance of a federal invite.</li>
+        <li><strong>BC PNP Solution:</strong> Carlos gets a job offer in Victoria for $50/hr.
+          <ul>
+            <li><strong>Wage:</strong> High points ($50/hr).</li>
+            <li><strong>Experience:</strong> Max points (10+ years).</li>
+            <li><strong>Region:</strong> Bonus points (Victoria).</li>
+            <li><strong>Age:</strong> 0 penalty.</li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        <strong>Result:</strong> Carlos scores highly in the BC PNP calculator, gets nominated, and then uses the +600 points to bypass the CRS age penalty entirely.
+      </p>
+
+      <h2>When NOT to use BC PNP</h2>
+      <p>
+         Despite its power, BC PNP isn't for everyone. You should consider sticking to pure Express Entry if:
+      </p>
+      <ul>
+        <li><strong>You don't have a job offer:</strong> Unless you completed a Master's in Science in BC, you almost certainly need an employer to support you.</li>
+        <li><strong>You want to save money:</strong> The BC PNP application fee is $1,150, which is non-refundable. Express Entry profiles are free until you are invited.</li>
+        <li><strong>Processing Time:</strong> BC PNP adds an extra "step" (2-3 months) before you can apply for PR. If you already have a CRS of 520+, applying directly is faster.</li>
+      </ul>
+
+      <div class="mt-12 p-8 bg-gray-900 rounded-3xl text-center text-white">
+        <h3 class="text-white mb-4">Check your eligibility now</h3>
+        <p class="mb-8 text-gray-300">Run the numbers on our 2026 calculator to see if you qualify for the nomination.</p>
+        <a href="/" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
+          Calculate BC PNP Score
+        </a>
+      </div>
+
+      <section class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
+        <h2 class="text-3xl font-bold mb-8">More Calculator Guides</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <a href="/articles/how-to-use-bc-pnp-calculator-2026" class="block group no-underline">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-blue-500">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 mt-0">How to Use the Calculator</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-0">Step-by-step instructions for 2026.</p>
+            </div>
+          </a>
+          <a href="/articles/maximize-bc-pnp-score-tips" class="block group no-underline">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-green-500">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 mt-0">Maximize Your Score</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-0">Hidden points and Reddit strategies.</p>
+            </div>
+          </a>
+          <a href="/articles/bc-pnp-calculator-faq" class="block group no-underline">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-yellow-500">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-yellow-600 mt-0">FAQ & Troubleshooting</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-0">Answers to common errors.</p>
+            </div>
+          </a>
+          <a href="/articles/bc-pnp-calculator-for-tech" class="block group no-underline">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-indigo-500">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 mt-0">Tech & High-Demand</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-0">Special lookup for priority jobs.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

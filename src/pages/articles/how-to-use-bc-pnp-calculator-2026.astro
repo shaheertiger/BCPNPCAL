@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Calculator } from 'lucide-react';
+
+const title = "Complete Guide: How to Use the BC PNP Calculator in 2026";
+const description = "Step-by-step guide to estimating your BC PNP score. Learn how to calculate points for education, work experience, and language skills in 2026.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-12 text-center">
+      <div class="inline-flex items-center justify-center p-3 bg-blue-50 dark:bg-blue-900/10 rounded-xl mb-6 text-blue-600">
+        <Calculator size={48} />
+      </div>
+      <h1 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
+        How to Use the <span class="text-blue-600">BC PNP Calculator</span> in 2026
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Stop guessing. Here is the definitive step-by-step guide to calculating your eligibility score for British Columbia's Provincial Nominee Program.
+      </p>
+    </header>
+
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-2xl border border-blue-100 dark:border-blue-800 mb-10">
+        <h3 class="text-blue-900 dark:text-blue-300 m-0">Why Your Score Matters</h3>
+        <p class="m-0 mt-2 text-blue-800 dark:text-blue-200">
+          The BC PNP operates on a points-based invitation system called SIRS (Skills Immigration Registration System). You aren't just applying; you are competing. Only candidates with scores above the "cut-off" in each draw receive an Invitation to Apply (ITA) for Permanent Residence.
+        </p>
+      </div>
+
+      <h2>Step 1: The Core Factors</h2>
+      <p>
+        The 2026 scoring system evaluates you on two main categories: <strong>Human Capital</strong> (your skills) and <strong>Economic Factors</strong> (your job).
+      </p>
+      
+      <h3>1. Human Capital Factors (Max 120 Points)</h3>
+      <ul>
+        <li><strong>Directly Related Work Experience:</strong> Points are awarded for experience that matches your job offer. 5+ years gets you maximum points.</li>
+        <li><strong>Education:</strong> A Master's or Doctorate gives you a significant edge over a Bachelor's degree.</li>
+        <li><strong>Language Proficiency:</strong> CLB 9 is the new gold standard. Every CLB level matters.</li>
+      </ul>
+
+      <h3>2. Economic Factors (Max 80 Points)</h3>
+      <ul>
+        <li><strong>Wage:</strong> Your hourly rate is crucial. Wages over $55/hr maximize this category.</li>
+        <li><strong>Area of Employment:</strong> Jobs outside of Metro Vancouver receive regional bonus points.</li>
+      </ul>
+
+      <hr class="my-12 border-gray-200 dark:border-gray-800" />
+
+      <h2>Step-by-Step Calculator Tutorial</h2>
+      
+      <h3>1. Enter Your Job Offer Details</h3>
+      <p>
+        The job offer is the anchor of your application.
+      </p>
+      <ul>
+        <li><strong>NOC Code:</strong> Use the 2021 TEER system. Tech and Healthcare codes often have lower draw cut-offs.</li>
+        <li><strong>Wage:</strong> Enter your <em>guaranteed</em> hourly rate. Do not include bonuses or overtime.</li>
+        <li><strong>Location:</strong> Be precise. Working in Burnaby (Metro Vancouver) vs. Squamish (Regional) is a difference of 15+ points.</li>
+      </ul>
+
+      <div class="bg-yellow-50 dark:bg-yellow-900/10 p-6 rounded-xl my-6 border-l-4 border-yellow-400">
+        <strong>Reddit Insight 💡</strong>
+        <p class="mb-0">"Don't calculate points for a job you <em>hope</em> to get. BC PNP requires an indeterminate, full-time job offer (or full-time experience for some graduate streams)."</p>
+      </div>
+
+      <h3>2. Calculate Work Experience</h3>
+      <p>
+        Only count experience that is <strong>directly related</strong> to your BC job offer. If you are a Software Engineer in BC, your previous experience as a Barista does not count towards the "Directly Related Experience" score, though it might count for basic eligibility in some streams.
+      </p>
+
+      <h3>3. Add Language Scores</h3>
+      <p>
+        Input your results from IELTS (General) or CELPIP. Combining the calculator with a "what-if" scenario is powerful here:
+      </p>
+      <blockquote class="italic border-l-4 pl-4 border-gray-300 dark:border-gray-700">
+        "If I retake IELTS and get CLB 9 instead of CLB 7, my score jumps by 10 points. That's often the difference between rejection and an ITA."
+      </blockquote>
+
+      <h2>Field-by-Field Point Breakdown</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+        <table class="min-w-full bg-white dark:bg-gray-800 text-sm">
+            <thead class="bg-gray-100 dark:bg-gray-900">
+                <tr>
+                    <th class="py-3 px-4 text-left font-bold">Category</th>
+                    <th class="py-3 px-4 text-left font-bold">Max Points</th>
+                    <th class="py-3 px-4 text-left font-bold">Key Strategy</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                <tr><td class="py-3 px-4">Direct Work Experience</td><td class="py-3 px-4">40</td><td class="py-3 px-4">Ensure reference letters match your new NOC duties.</td></tr>
+                <tr><td class="py-3 px-4">Education</td><td class="py-3 px-4">40</td><td class="py-3 px-4">Evaluate foreign degrees with WES (ECA).</td></tr>
+                <tr><td class="py-3 px-4">Language</td><td class="py-3 px-4">40</td><td class="py-3 px-4">Retake tests until you hit CLB 9.</td></tr>
+                <tr><td class="py-3 px-4">Wage</td><td class="py-3 px-4">55</td><td class="py-3 px-4">Negotiate wages; $0.50/hr makes a difference.</td></tr>
+                <tr><td class="py-3 px-4">Area of Employment</td><td class="py-3 px-4">25</td><td class="py-3 px-4">Consider moving to Area 2 or 3 (Regional).</td></tr>
+            </tbody>
+        </table>
+      </div>
+
+      <hr class="my-12 border-gray-200 dark:border-gray-800" />
+
+      <h2>Common Mistakes & Reddit Troubleshooting</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h4 class="font-bold text-red-500 mb-2">Mistake 1: Wrong NOC Code</h4>
+          <p class="text-sm">Choosing a NOC that "sounds like" your job title but doesn't match your actual duties. Always match the <strong>duties</strong> listed on the ESDC website.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h4 class="font-bold text-red-500 mb-2">Mistake 2: Inflating Wages</h4>
+          <p class="text-sm">Including tips, bonuses, or overtime in the hourly wage calculation. Use the base rate only.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 p-8 bg-gray-900 rounded-3xl text-center text-white">
+        <h3 class="text-white mb-4">Ready to find your score?</h3>
+        <p class="mb-8 text-gray-300">Use our free, instant calculator updated for the 2026 intake.</p>
+        <a href="/" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
+          Calculate Score Now
+        </a>
+      </div>
+
+      <section class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
+        <h2 class="text-3xl font-bold mb-8">Related Strategy Guides</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <a href="/articles/bc-pnp-vs-crs-calculator" class="block group no-underline">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-blue-500">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 mt-0">BC PNP vs CRS</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-0">Understand the difference and how to get +600 points.</p>
+            </div>
+          </a>
+          <a href="/articles/maximize-bc-pnp-score-tips" class="block group no-underline">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-green-500">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 mt-0">Maximize Your Score</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-0">Top tips from Reddit users to urge your score up.</p>
+            </div>
+          </a>
+          <a href="/articles/bc-pnp-calculator-faq" class="block group no-underline">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-yellow-500">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-yellow-600 mt-0">FAQ & Troubleshooting</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-0">Common mistakes and calculation errors solved.</p>
+            </div>
+          </a>
+          <a href="/articles/bc-pnp-calculator-for-tech" class="block group no-underline">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-indigo-500">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 mt-0">Tech & High-Demand</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-0">Special scoring rules for Tech, Health, and Trades.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
