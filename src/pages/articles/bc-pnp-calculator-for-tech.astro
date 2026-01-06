@@ -1,154 +1,397 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Cpu, Briefcase, Code } from 'lucide-react';
 
 const title = "BC PNP Calculator for Tech Workers & High-Demand Occupations (2026)";
 const description = "Special guide for Tech, Healthcare, and Construction workers. See why your BC PNP score requirements are lower and how to qualify for targeted draws.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="max-w-4xl mx-auto px-4 py-12">
-    <header class="mb-12 text-center">
-      <div class="inline-flex items-center justify-center p-3 bg-indigo-50 dark:bg-indigo-900/10 rounded-xl mb-6 text-indigo-600">
-        <Cpu size={48} />
+  <div class="max-w-4xl mx-auto px-4 py-12 sm:py-20">
+    
+    <!-- Hero Header -->
+    <header class="mb-16 text-center">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl mb-8 shadow-xl shadow-indigo-200">
+        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+        </svg>
       </div>
-      <h1 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-        BC PNP for <span class="text-indigo-600">Tech & High-Demand</span> Workers
+      <h1 class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+        BC PNP for <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Tech & High-Demand</span> Workers
       </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        If you are an engineer, developer, nurse, or trade worker, the rules are different for you. In a good way.
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        If you're an engineer, developer, nurse, or trade worker, the rules are different for you. In a good way.
       </p>
     </header>
 
-    <div class="prose prose-lg dark:prose-invert max-w-none">
+    <!-- Main Content -->
+    <div class="space-y-16">
       
-      <h2>The "Targeted Draw" Advantage</h2>
-      <p>
-        In 2026, British Columbia drastically favors specific sectors. While a general administrative worker might need <strong>110+ points</strong> to get invited, a Software Engineer or Registered Nurse might only need <strong>80-90 points</strong>.
-      </p>
-
-      <div class="grid md:grid-cols-3 gap-6 my-8">
-        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-100 dark:border-blue-800">
-          <Code class="text-blue-600 mb-3" size={32} />
-          <h3 class="text-lg font-bold m-0 mb-2">BC PNP Tech</h3>
-          <p class="text-sm m-0">35 specific tech NOCs. Draws happen almost every week. Faster processing.</p>
+      <!-- Advantage Section -->
+      <section>
+        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-[2rem] p-8 sm:p-10 border border-indigo-100">
+          <h2 class="text-2xl font-black text-slate-900 mb-4">The "Targeted Draw" Advantage</h2>
+          <p class="text-slate-700 text-lg leading-relaxed">
+            In 2026, British Columbia drastically favors specific sectors. While a general administrative worker might need <strong class="text-red-600">110-120 points</strong> to get invited, a Software Engineer or Registered Nurse might only need <strong class="text-green-600">80-90 points</strong>. This guide explains how to calculate your "Targeted" score and navigate the special streams.
+          </p>
         </div>
-        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl border border-green-100 dark:border-green-800">
-          <Briefcase class="text-green-600 mb-3" size={32} />
-          <h3 class="text-lg font-bold m-0 mb-2">Healthcare</h3>
-          <p class="text-sm m-0">Physicians, nurses, allied health. Often the lowest cut-off scores of all.</p>
+      </section>
+
+      <!-- Three Pillars -->
+      <section>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="font-black text-slate-900 text-lg mb-3">BC PNP Tech</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">35 specific tech NOCs. Draws happen almost every week, offering faster processing and lower cut-offs than general draws.</p>
+          </div>
+          
+          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-black text-slate-900 text-lg mb-3">Healthcare</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Physicians, nurses, allied health. Often has the <strong>lowest of all cut-off scores</strong> (sometimes as low as 60 points).</p>
+          </div>
+          
+          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <h3 class="font-black text-slate-900 text-lg mb-3">Construction</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Carpenters, plumbers, electricians (NOCs 72xxx, 73xxx). Critical for BC's housing goals, receiving priority invitations.</p>
+          </div>
         </div>
-        <div class="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-xl border border-orange-100 dark:border-orange-800">
-          <Briefcase class="text-orange-600 mb-3" size={32} />
-          <h3 class="text-lg font-bold m-0 mb-2">Construction</h3>
-          <p class="text-sm m-0">Carpenters, plumbers, electricians. Critical for BC's housing goals.</p>
+      </section>
+
+      <!-- NOC Table Section -->
+      <section>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Top 10 High-Demand Tech NOCs</h2>
+          <p class="text-slate-600">If your job falls under one of these codes, you are in the Tech stream (lower cut-offs).</p>
         </div>
-      </div>
-
-      <h2>Top 10 High-Demand Tech NOCs (2026)</h2>
-      <p>
-        If your job offer falls under one of these codes, you are in the "Tech" stream. This means lower score cut-offs and faster invitations.
-      </p>
-      <div class="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 my-8">
-        <table class="min-w-full bg-white dark:bg-gray-800 text-sm">
-            <thead class="bg-gray-100 dark:bg-gray-900">
-                <tr>
-                    <th class="py-3 px-4 text-left font-bold text-gray-900 dark:text-gray-100">NOC Code</th>
-                    <th class="py-3 px-4 text-left font-bold text-gray-900 dark:text-gray-100">Job Title</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                <tr><td class="py-3 px-4">20012</td><td class="py-3 px-4">Computer and information systems managers</td></tr>
-                <tr><td class="py-3 px-4">21231</td><td class="py-3 px-4">Software engineers and designers</td></tr>
-                <tr><td class="py-3 px-4">21232</td><td class="py-3 px-4">Software developers and programmers</td></tr>
-                <tr><td class="py-3 px-4">21230</td><td class="py-3 px-4">Computer systems developers and programmers</td></tr>
-                <tr><td class="py-3 px-4">21234</td><td class="py-3 px-4">Web developers and programmers</td></tr>
-                <tr><td class="py-3 px-4">21233</td><td class="py-3 px-4">Web designers</td></tr>
-                <tr><td class="py-3 px-4">21211</td><td class="py-3 px-4">Data scientists</td></tr>
-                <tr><td class="py-3 px-4">21223</td><td class="py-3 px-4">Database analysts and data administrators</td></tr>
-                <tr><td class="py-3 px-4">21310</td><td class="py-3 px-4">Electrical and electronics engineers</td></tr>
-                <tr><td class="py-3 px-4">22220</td><td class="py-3 px-4">Computer network technicians</td></tr>
-            </tbody>
-        </table>
-      </div>
-
-      <h2>How to Calculate Scores for Tech Jobs</h2>
-      
-      <h3>1. Wage is King for Tech</h3>
-      <p>
-        Tech salaries in Vancouver are high. If you are earning $80,000+, you are likely maximizing the <strong>Wage Points</strong> category in the calculator.
-      </p>
-      <ul>
-        <li>$55.00/hr = Max points (55 points)</li>
-        <li>Tech offers often exceed this, giving you a massive head start.</li>
-      </ul>
-
-      <h3>2. Education Requirements</h3>
-      <p>
-        Most Tech stream applicants have a Bachelor’s degree.
-      </p>
-      <ul>
-        <li>Bachelor's: 15 points</li>
-        <li>Master's: 22 points</li>
-      </ul>
-      <p>
-        <em>Tip:</em> If you are a self-taught developer without a degree, you rely heavily on your <strong>wage</strong> and <strong>experience</strong> points. You strictly need that job offer.
-      </p>
-
-      <h2>Case Study: The "Software Engineer"</h2>
-      <div class="bg-white dark:bg-gray-800 border-l-4 border-indigo-500 p-6 shadow-sm my-6">
-        <h4 class="font-bold mb-2">Profile: Priya (NOC 21231)</h4>
-        <ul class="text-sm space-y-1">
-          <li><strong>Job:</strong> Senior Developer in Vancouver</li>
-          <li><strong>Wage:</strong> $60/hr ($115k/yr) -> <strong>Max Wage Points</strong></li>
-          <li><strong>Experience:</strong> 5 Years -> <strong>Max Exp Points</strong></li>
-          <li><strong>Education:</strong> Bachelor's</li>
-          <li><strong>English:</strong> CLB 8</li>
-        </ul>
-        <p class="font-bold mt-4 text-green-600">Result: 115 Points (Invited in Tech Draw)</p>
-      </div>
-
-      <h2>Strategies for High-Demand Applicants</h2>
-      <ol>
-        <li><strong>Don't lowball your salary:</strong> If you are negotiating a job offer, aim for $55/hr as your "golden number" for max points.</li>
-        <li><strong>Consider the startup scene:</strong> BC PNP Tech doesn't require the employer to have a specific LMIA in many cases, but the company must be established.</li>
-        <li><strong>Look at Victoria:</strong> Vancouver has high tech wages, but Victoria has a growing tech hub (VIATEC) and offers <strong>Regional Points</strong> which Vancouver does not.</li>
-      </ol>
-      
-      <div class="mt-12 p-8 bg-gray-900 rounded-3xl text-center text-white">
-        <h3 class="text-white mb-4">Calculate your Tech Score</h3>
-        <p class="mb-8 text-gray-300">See if you meet the cut-off for the next Tech Draw.</p>
-        <a href="/" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
-          Open Calculator
-        </a>
-      </div>
-
-      <section class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
-        <h2 class="text-3xl font-bold mb-8">Related Strategy Guides</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <a href="/articles/how-to-use-bc-pnp-calculator-2026" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-blue-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 mt-0">How to Use the Calculator</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Step-by-step instructions for 2026.</p>
+        
+        <div class="bg-white rounded-[2rem] border border-slate-200 overflow-hidden shadow-sm">
+          <div class="grid grid-cols-2 bg-slate-900 text-white">
+            <div class="px-6 py-4 font-bold text-sm uppercase tracking-wider">NOC Code</div>
+            <div class="px-6 py-4 font-bold text-sm uppercase tracking-wider">Job Title</div>
+          </div>
+          <div class="divide-y divide-slate-100">
+            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">20012</div>
+              <div class="px-6 py-4 text-slate-700">Computer and information systems managers</div>
             </div>
+            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21231</div>
+              <div class="px-6 py-4 text-slate-700">Software engineers and designers</div>
+            </div>
+            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21232</div>
+              <div class="px-6 py-4 text-slate-700">Software developers and programmers</div>
+            </div>
+            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21230</div>
+              <div class="px-6 py-4 text-slate-700">Computer systems developers and programmers</div>
+            </div>
+            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21234</div>
+              <div class="px-6 py-4 text-slate-700">Web developers and programmers</div>
+            </div>
+            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21211</div>
+              <div class="px-6 py-4 text-slate-700">Data scientists</div>
+            </div>
+            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21223</div>
+              <div class="px-6 py-4 text-slate-700">Database analysts and data administrators</div>
+            </div>
+            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21310</div>
+              <div class="px-6 py-4 text-slate-700">Electrical and electronics engineers</div>
+            </div>
+            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">22220</div>
+              <div class="px-6 py-4 text-slate-700">Computer network technicians</div>
+            </div>
+             <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">22221</div>
+              <div class="px-6 py-4 text-slate-700">User support technicians (Helpdesk)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW: The "Tech Draw" Process Explained -->
+      <section>
+         <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Weekly Tech Draws: How It Works</h2>
+          <p class="text-slate-600">The "BC PNP Tech" isn't a separate stream—it's a special processing system.</p>
+        </div>
+
+        <div class="bg-slate-900 rounded-[2rem] p-8 sm:p-12 text-white relative overflow-hidden">
+          <div class="absolute top-0 right-0 p-32 bg-indigo-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+          
+          <div class="grid md:grid-cols-2 gap-12 relative z-10">
+            <div>
+              <h3 class="text-2xl font-black mb-6 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-sm">1</span>
+                Draw Schedule
+              </h3>
+              <p class="text-slate-300 leading-relaxed mb-6">
+                Unlike general draws (which are unpredictable), BC PNP Tech draws happen <strong>almost every Tuesday</strong>. This gives you regular opportunities to be invited.
+              </p>
+              
+              <h3 class="text-2xl font-black mb-6 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-sm">2</span>
+                Priority Processing
+              </h3>
+              <p class="text-slate-300 leading-relaxed">
+                 Once you submit your full application, Tech files are prioritized. While standard processing can take 3-4 months, Tech files are often assigned to an officer within <strong>2-3 weeks</strong>.
+              </p>
+            </div>
+            
+            <div class="bg-white/10 rounded-xl p-8 border border-white/10">
+              <h4 class="font-bold text-indigo-300 uppercase tracking-wider text-sm mb-4">Typical Tech vs. General Cut-offs</h4>
+              <div class="space-y-6">
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span>General Draw (Admin, Marketing)</span>
+                    <span class="font-bold">115+ Points</span>
+                  </div>
+                  <div class="w-full bg-white/20 h-2 rounded-full overflow-hidden">
+                    <div class="bg-slate-500 h-full w-[95%]"></div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="text-white font-bold">Tech Draw (Dev, Engineer)</span>
+                    <span class="font-bold text-green-400">85-95 Points</span>
+                  </div>
+                  <div class="w-full bg-white/20 h-2 rounded-full overflow-hidden">
+                    <div class="bg-green-500 h-full w-[75%] shadow-[0_0_15px_rgba(34,197,94,0.6)]"></div>
+                  </div>
+                </div>
+
+                 <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="text-white font-bold">Healthcare Draw</span>
+                    <span class="font-bold text-green-400">60-70 Points</span>
+                  </div>
+                  <div class="w-full bg-white/20 h-2 rounded-full overflow-hidden">
+                    <div class="bg-green-500 h-full w-[55%] shadow-[0_0_15px_rgba(34,197,94,0.6)]"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-6 text-xs text-slate-400 italic">*Based on average draw scores from late 2024 - 2025.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scoring Tips -->
+      <section class="space-y-8">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 text-center">How to Calculate Scores for Tech Jobs</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 font-black text-xl">1</div>
+              <h3 class="font-black text-slate-900 text-lg">Wage is King</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">
+              Tech salaries in Vancouver are high. If you're earning $80,000+, you're likely maximizing the Wage Points category.
+            </p>
+            <div class="bg-green-50 rounded-xl p-4 border border-green-100">
+              <p class="text-green-800 font-bold text-sm">$55.00/hr = Max 55 points</p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 font-black text-xl">2</div>
+              <h3 class="font-black text-slate-900 text-lg">Education Points</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">
+              Most Tech stream applicants have a Bachelor's degree. A Master's gives you an edge.
+            </p>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Bachelor's Degree</span>
+                <span class="font-bold text-slate-900">15 points</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Master's Degree</span>
+                <span class="font-bold text-slate-900">22 points</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Application Process Roadmap -->
+       <section>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Your Application Roadmap</h2>
+          <p class="text-slate-600">From job offer to Permanent Residence.</p>
+        </div>
+        
+        <div class="relative max-w-3xl mx-auto">
+          <div class="absolute left-[20px] top-0 bottom-0 w-1 bg-slate-100"></div>
+          
+          <div class="space-y-12">
+            <div class="relative pl-16">
+              <div class="absolute left-0 top-1 w-11 h-11 bg-white border-4 border-indigo-500 rounded-full flex items-center justify-center font-bold text-indigo-700 z-10">1</div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">Get a Valid Job Offer</h3>
+              <p class="text-slate-600 leading-relaxed">
+                You need a full-time offer from a BC employer. For Tech, it does <em>not</em> need to be "indeterminate" (permanent)—it can be a 1-year contract as long as there are at least 120 days remaining at time of application.
+              </p>
+            </div>
+
+            <div class="relative pl-16">
+              <div class="absolute left-0 top-1 w-11 h-11 bg-white border-4 border-indigo-500 rounded-full flex items-center justify-center font-bold text-indigo-700 z-10">2</div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">Register with SIRS</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Create a profile on BC PNP Online. It's free. You'll get a score immediately. This is where you enter the "Pool".
+              </p>
+            </div>
+
+            <div class="relative pl-16">
+              <div class="absolute left-0 top-1 w-11 h-11 bg-white border-4 border-indigo-500 rounded-full flex items-center justify-center font-bold text-indigo-700 z-10">3</div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">Wait for a Tech Draw</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Check your email every Tuesday. If your score is above the cut-off (e.g. 90 points), you will receive an ITA (Invitation to Apply).
+              </p>
+            </div>
+
+            <div class="relative pl-16">
+               <div class="absolute left-0 top-1 w-11 h-11 bg-green-500 border-4 border-white rounded-full flex items-center justify-center text-white z-10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">Submit Full Application</h3>
+              <p class="text-slate-600 leading-relaxed">
+                You have 30 days to pay the $1,150 fee and upload all documents. Tech applications are processed in ~2-3 months.
+              </p>
+            </div>
+             <div class="relative pl-16">
+              <div class="absolute left-0 top-1 w-11 h-11 bg-slate-200 border-4 border-white rounded-full flex items-center justify-center font-bold text-slate-500 z-10">5</div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">Apply for PR</h3>
+              <p class="text-slate-600 leading-relaxed">
+                Once nominated, you get a "Work Permit Support Letter" (to keep working) and apply to IRCC for federal Permanent Residence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Employer Requirements -->
+      <section>
+        <div class="bg-orange-50 rounded-[2rem] p-8 sm:p-10 border border-orange-100">
+          <div class="flex items-start gap-6">
+            <div class="hidden sm:block w-16 h-16 bg-orange-100 rounded-2xl flex-shrink-0 flex items-center justify-center text-3xl">🏢</div>
+            <div>
+              <h3 class="text-2xl font-black text-slate-900 mb-4">Does My Employer Need a LMIA?</h3>
+              <p class="text-slate-700 leading-relaxed mb-6">
+                <strong>Usually, NO.</strong> This is the biggest benefit of BC PNP. Unlike the federal system which often requires a Labour Market Impact Assessment (LMIA), BC PNP Tech exempts employers from this lengthy process if they support your provincial nomination.
+              </p>
+              <div class="bg-white/60 p-6 rounded-xl space-y-2">
+                <p class="font-bold text-orange-900">Your Employer Must:</p>
+                <ul class="space-y-2">
+                  <li class="flex items-center gap-2 text-sm text-slate-700"><span class="text-orange-500">✓</span> Be established in BC for at least 1 year.</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-700"><span class="text-orange-500">✓</span> Have at least 5 full-time employees (or 3 if you are Tech).</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-700"><span class="text-orange-500">✓</span> Offer you a market-rate wage.</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-700"><span class="text-orange-500">✓</span> Sign the "Job Offer Form" for your application.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Strategies -->
+      <section>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 text-center mb-10">Strategic Tips</h2>
+        
+        <div class="space-y-4">
+          <div class="bg-white p-6 rounded-[1.5rem] border border-slate-100 shadow-sm flex gap-6">
+            <div class="w-12 h-12 bg-red-50 rounded-xl flex-shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Don't lowball your salary</h3>
+              <p class="text-slate-600 text-sm">If you're negotiating a job offer, aim for $55/hr as your "golden number" for max points.</p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-[1.5rem] border border-slate-100 shadow-sm flex gap-6">
+            <div class="w-12 h-12 bg-purple-50 rounded-xl flex-shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Consider the startup scene</h3>
+              <p class="text-slate-600 text-sm">BC PNP Tech doesn't require the employer to have a specific LMIA in many cases, but the company must be established.</p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-[1.5rem] border border-slate-100 shadow-sm flex gap-6">
+            <div class="w-12 h-12 bg-teal-50 rounded-xl flex-shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Look at Victoria</h3>
+              <p class="text-slate-600 text-sm">Vancouver has high tech wages, but Victoria has a growing tech hub (VIATEC) and offers <strong>Regional Points</strong> which Vancouver does not.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section>
+        <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-[2rem] p-10 sm:p-12 text-center text-white">
+          <h3 class="text-2xl sm:text-3xl font-black mb-4">Calculate Your Tech Score</h3>
+          <p class="text-red-100 mb-8 max-w-md mx-auto">See if you meet the cut-off for the next Tech Draw.</p>
+          <a href="/" class="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-[1.5rem] font-black text-lg hover:bg-red-50 transition-colors shadow-xl">
+            Open Calculator
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
           </a>
-          <a href="/articles/bc-pnp-vs-crs-calculator" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-purple-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 mt-0">BC PNP vs CRS</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Which system is right for you?</p>
-            </div>
+        </div>
+      </section>
+
+      <!-- Related Guides -->
+      <section class="pt-8 border-t border-slate-200">
+        <h2 class="text-xl font-black text-slate-900 uppercase tracking-widest mb-8 text-center">Related Guides</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/articles/how-to-use-bc-pnp-calculator-2026" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">How to Use the Calculator</h3>
+            <p class="text-slate-500 text-sm">Step-by-step instructions for 2026.</p>
           </a>
-          <a href="/articles/maximize-bc-pnp-score-tips" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-green-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 mt-0">Maximize Your Score</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Hidden points and Reddit strategies.</p>
-            </div>
+          <a href="/articles/bc-pnp-vs-crs-calculator" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">BC PNP vs CRS</h3>
+            <p class="text-slate-500 text-sm">Which system is right for you?</p>
           </a>
-          <a href="/articles/bc-pnp-calculator-faq" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-yellow-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-yellow-600 mt-0">FAQ & Troubleshooting</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Answers to common errors.</p>
-            </div>
+          <a href="/articles/maximize-bc-pnp-score-tips" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">Maximize Your Score</h3>
+            <p class="text-slate-500 text-sm">Hidden points and Reddit strategies.</p>
+          </a>
+          <a href="/articles/bc-pnp-calculator-faq" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">FAQ & Troubleshooting</h3>
+            <p class="text-slate-500 text-sm">Answers to common errors.</p>
           </a>
         </div>
       </section>

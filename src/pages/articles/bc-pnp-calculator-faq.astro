@@ -1,154 +1,216 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { HelpCircle, AlertTriangle, CheckSquare } from 'lucide-react';
 
-const title = "BC PNP Calculator FAQ & Troubleshooting (2026)";
-const description = "Answers to the most common questions about the BC PNP points calculator. Troubleshooting issues with scores, job offers, and eligibility.";
+const title = "BC PNP Calculator FAQ & Troubleshooting Guide";
+const description = "Answers to the most common BC PNP calculator questions. Troubleshoot errors, understand terminology, and get unstuck.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="max-w-4xl mx-auto px-4 py-12">
-    <header class="mb-12 text-center">
-      <div class="inline-flex items-center justify-center p-3 bg-yellow-50 dark:bg-yellow-900/10 rounded-xl mb-6 text-yellow-600">
-        <HelpCircle size={48} />
+  <div class="max-w-4xl mx-auto px-4 py-12 sm:py-20">
+    
+    <!-- Hero Header -->
+    <header class="mb-16 text-center">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-3xl mb-8 shadow-xl shadow-amber-200">
+        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
       </div>
-      <h1 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-        BC PNP Calculator <span class="text-yellow-600">FAQ & Troubleshooting</span>
+      <h1 class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">FAQ</span> & Troubleshooting
       </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        Stuck? Confused? Here are the answers to the questions everyone asks.
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Got stuck? Here are answers to the most common BC PNP calculator questions and problems.
       </p>
     </header>
 
-    <div class="prose prose-lg dark:prose-invert max-w-none">
+    <!-- Main Content -->
+    <div class="space-y-16">
       
-      <h2>Troubleshooting Calculator Issues</h2>
-
-      <div class="space-y-6 my-8">
-        <div class="border-l-4 border-red-500 pl-4 py-2">
-          <h3 class="text-lg font-bold m-0">"My score seems too low."</h3>
-          <p>
-            <strong>Check this:</strong> Did you calculate your hourly wage correctly? Did you remember to select "Regional" if you work outside Vancouver? Often, missing a single field like specific "Area of Employment" bonuses causes a 10-15 point drop.
-          </p>
+      <!-- Troubleshooting Section -->
+      <section>
+        <div class="bg-gradient-to-b from-red-50 to-white rounded-[2rem] p-8 sm:p-10 border border-red-100">
+          <div class="text-center mb-10">
+             <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Troubleshooting Common Errors</h2>
+             <p class="text-slate-600">Why is your score lower than expected?</p>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500">
+              <h3 class="font-black text-slate-900 text-lg mb-2">"My score dropped by 10 points."</h3>
+              <p class="text-slate-600 leading-relaxed text-sm">
+                <strong>Check this:</strong> Did you cross a wage threshold? Wages like $24.99 and $25.00 are in different brackets. Also check your "District" selection. Area 1 (Vancouver) gives 0 points, but Area 2 (Squamish, Abbotsford) gives 5.
+              </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500">
+              <h3 class="font-black text-slate-900 text-lg mb-2">"I can't find my University on the list."</h3>
+              <p class="text-slate-600 leading-relaxed text-sm">
+                <strong>Fix:</strong> BC PNP doesn't have a dropdown of universities. You simply select "Bachelor's Degree" or "Master's Degree". Only <em>where</em> you got it matters (BC vs. Canada vs. Foreign).
+              </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500">
+              <h3 class="font-black text-slate-900 text-lg mb-2">"The wage slider is stuck."</h3>
+              <p class="text-slate-600 leading-relaxed text-sm">
+                <strong>Fix:</strong> Ensure you are entering the <em>hourly</em> rate. If you only know your annual salary, divide it by 52 weeks and then by your standard weekly hours (usually 40).
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="border-l-4 border-red-500 pl-4 py-2">
-          <h3 class="text-lg font-bold m-0">"I don't know my NOC TEER category."</h3>
-          <p>
-            <strong>Fix:</strong> Use the official Canada.ca NOC search tool. Don't guess. Your TEER category (0, 1, 2, 3, 4, 5) determines your basic eligibility. Use <a href="/articles/bc-pnp-calculator-for-tech">our Tech Guide</a> if you are in IT.
-          </p>
+      </section>
+
+      <!-- Detailed FAQ Section -->
+      <section>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Frequently Asked Questions</h2>
         </div>
-        <div class="border-l-4 border-red-500 pl-4 py-2">
-            <h3 class="text-lg font-bold m-0">"The wage slider is stuck/incorrect."</h3>
-            <p>
-              <strong>Fix:</strong> Ensure you are entering the base hourly wage. Do not include overtime, tips, or bonuses. Convert your annual salary: <code>Salary / 52 weeks / 40 hours</code> (or your contract hours).
-            </p>
-          </div>
-      </div>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="space-y-4">
-        <details class="group bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 open:ring-2 open:ring-yellow-400">
-          <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none">
-            <span>Do I strictly need a job offer to apply?</span>
-            <span class="text-yellow-500 group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <div class="mt-4 text-gray-600 dark:text-gray-300">
-            <p>For almost all BC PNP streams (Skills Immigration, Tech, Health Authority), <strong>YES</strong>. You need an indeterminate, full-time job offer. The only major exceptions are some "International Post-Graduate" streams for science/health graduates from BC institutions.</p>
-          </div>
-        </details>
-
-        <details class="group bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 open:ring-2 open:ring-yellow-400">
-          <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none">
-            <span>What applies as "Directly Related Work Experience"?</span>
-            <span class="text-yellow-500 group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <div class="mt-4 text-gray-600 dark:text-gray-300">
-            <p>This is strict. If your BC job offer is for a "Software Engineer" (NOC 21231), experience as a "Web Designer" might count if the duties overlap significantly, but experience as a "Sales Manager" will absolutely not count towards related exp points, even if it was at a tech company.</p>
-          </div>
-        </details>
-
-        <details class="group bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 open:ring-2 open:ring-yellow-400">
-          <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none">
-            <span>Can I update my profile after submitting?</span>
-            <span class="text-yellow-500 group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <div class="mt-4 text-gray-600 dark:text-gray-300">
-            <p>Yes. Your profile stays in the pool for up to 12 months (or until invited). If you get a raise, complete a new degree, or improve your English scores, you can—and should—update your profile to increase your score.</p>
-          </div>
-        </details>
-
-        <details class="group bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 open:ring-2 open:ring-yellow-400">
-          <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none">
-            <span>What is a "Targeted Draw"?</span>
-            <span class="text-yellow-500 group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <div class="mt-4 text-gray-600 dark:text-gray-300">
-            <p>BC holds general draws (for everyone) and targeted draws (for specific NOCs like Tech, Healthcare, Childcare, Construction). Targeted draws usually have <strong>much lower score cut-offs</strong> (e.g., 60-80 points vs 100+ for general).</p>
-          </div>
-        </details>
-
-        <details class="group bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 open:ring-2 open:ring-yellow-400">
-            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none">
-              <span>What happens if my score drops after I get an invitation?</span>
-              <span class="text-yellow-500 group-open:rotate-180 transition-transform">▼</span>
+        
+        <div class="space-y-4">
+           <!-- Category: Eligibility -->
+           <h3 class="font-bold text-slate-500 uppercase tracking-widest text-sm pl-4 mt-8 mb-4">Eligibility & Rules</h3>
+           
+          <details class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm">
+            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+              <span class="font-bold text-slate-900 text-lg pr-4">Do I strictly need a job offer to apply?</span>
+              <span class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
             </summary>
-            <div class="mt-4 text-gray-600 dark:text-gray-300">
-              <p>This is dangerous. Your information is "locked in" when you apply. If you claimed points for a job offer and then lose that job <em>before</em> submitting your full application, you must withdraw. You cannot submit an application that scores lower than the cut-off for the draw you were invited in.</p>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>For almost all BC PNP streams (Skills Immigration, Tech, Health Authority), <strong>YES</strong>. You need an indeterminate, full-time job offer. The only major exceptions are some "International Post-Graduate" streams for science/health graduates from BC institutions.</p>
             </div>
           </details>
-      </div>
+          
+          <details class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm">
+            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+              <span class="font-bold text-slate-900 text-lg pr-4">Can self-employed people apply?</span>
+              <span class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>Generally, <strong>NO</strong>. The Skills Immigration stream is for employees. If you own more than 10% of the company offering you the job, you are ineligible. You would need to look at the "Entrepreneur Immigration" stream instead.</p>
+            </div>
+          </details>
+          
+          <details class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm">
+            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+              <span class="font-bold text-slate-900 text-lg pr-4">What counts as "Directly Related Work Experience"?</span>
+              <span class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>This is strict. If your BC job offer is for a "Software Engineer" (NOC 21231), experience as a "Web Designer" might count if the duties overlap significantly, but experience as a "Sales Manager" will absolutely not count towards related exp points, even if it was at a tech company.</p>
+            </div>
+          </details>
 
-      <h2>BC PNP Glossary</h2>
-      <div class="grid sm:grid-cols-2 gap-4 text-sm mt-8">
-        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-            <strong>SIRS:</strong> Skills Immigration Registration System. The "pool" where your points are calculated.
-        </div>
-        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-            <strong>ITA:</strong> Invitation to Apply. The "golden ticket" you get if your score is high enough.
-        </div>
-        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-            <strong>NOC:</strong> National Occupational Classification. The code that defines your job duties.
-        </div>
-        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-            <strong>IPG:</strong> International Post-Graduate. A special stream for Masters/PhD grads in sciences.
-        </div>
-      </div>
+           <!-- Category: After Application -->
+           <h3 class="font-bold text-slate-500 uppercase tracking-widest text-sm pl-4 mt-8 mb-4">After You Apply</h3>
 
-      <div class="mt-12 p-8 bg-gray-900 rounded-3xl text-center text-white">
-        <h3 class="text-white mb-4">Still have questions?</h3>
-        <p class="mb-8 text-gray-300">Run your specific scenario through the calculator to get a definite answer.</p>
-        <a href="/" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full transition-colors">
-          Start Calculation
-        </a>
-      </div>
+          <details class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm">
+            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+              <span class="font-bold text-slate-900 text-lg pr-4">Can I update my profile after submitting?</span>
+              <span class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>Yes. Your profile stays in the pool for up to 12 months (or until invited). If you get a raise, complete a new degree, or improve your English scores, you can—and should—update your profile to increase your score.</p>
+            </div>
+          </details>
+          
+           <details class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm">
+            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+              <span class="font-bold text-slate-900 text-lg pr-4">Why are applications refused?</span>
+              <span class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>The #1 reason is <strong>Inflation of Information</strong>. If you claimed you earn $30/hr but your paystubs show $28/hr, you will be refused. If you claimed 3 years of experience but only prove 2.5 years, you will be refused. The officer must verify that your score at the time of application matched or exceeded the draw cut-off.</p>
+            </div>
+          </details>
+        </div>
+      </section>
 
-      <section class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
-        <h2 class="text-3xl font-bold mb-8">Related Strategy Guides</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <a href="/articles/how-to-use-bc-pnp-calculator-2026" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-blue-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 mt-0">How to Use the Calculator</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Step-by-step instructions for 2026.</p>
-            </div>
+      <!-- Glossary -->
+      <section>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">BC PNP Glossary</h2>
+        </div>
+        
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-slate-50 p-6 rounded-[1.5rem]">
+            <p class="font-black text-slate-900 mb-1">SIRS</p>
+            <p class="text-slate-600 text-sm">Skills Immigration Registration System. The "pool" where your points are calculated.</p>
+          </div>
+          <div class="bg-slate-50 p-6 rounded-[1.5rem]">
+            <p class="font-black text-slate-900 mb-1">ITA</p>
+            <p class="text-slate-600 text-sm">Invitation to Apply. The "golden ticket" you get if your score is high enough.</p>
+          </div>
+          <div class="bg-slate-50 p-6 rounded-[1.5rem]">
+            <p class="font-black text-slate-900 mb-1">NOC</p>
+            <p class="text-slate-600 text-sm">National Occupational Classification. The code that defines your job duties.</p>
+          </div>
+          <div class="bg-slate-50 p-6 rounded-[1.5rem]">
+            <p class="font-black text-slate-900 mb-1">TEER</p>
+            <p class="text-slate-600 text-sm">Training, Education, Experience, Responsibility. The category (0-5) of your NOC code.</p>
+          </div>
+          <div class="bg-slate-50 p-6 rounded-[1.5rem]">
+            <p class="font-black text-slate-900 mb-1">IPG</p>
+            <p class="text-slate-600 text-sm">International Post-Graduate. A special stream for Masters/PhD grads in sciences.</p>
+          </div>
+          <div class="bg-slate-50 p-6 rounded-[1.5rem]">
+            <p class="font-black text-slate-900 mb-1">CLB</p>
+            <p class="text-slate-600 text-sm">Canadian Language Benchmark. The standard scale for English/French proficiency.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section>
+        <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-[2rem] p-10 sm:p-12 text-center text-white">
+          <h3 class="text-2xl sm:text-3xl font-black mb-4">Still Have Questions?</h3>
+          <p class="text-red-100 mb-8 max-w-md mx-auto">Run your specific scenario through the calculator to get a definite answer.</p>
+          <a href="/" class="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-[1.5rem] font-black text-lg hover:bg-red-50 transition-colors shadow-xl">
+            Start Calculation
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
           </a>
-          <a href="/articles/bc-pnp-vs-crs-calculator" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-purple-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 mt-0">BC PNP vs CRS</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Which system is right for you?</p>
-            </div>
+        </div>
+      </section>
+
+      <!-- Related Guides -->
+      <section class="pt-8 border-t border-slate-200">
+        <h2 class="text-xl font-black text-slate-900 uppercase tracking-widest mb-8 text-center">Related Guides</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/articles/how-to-use-bc-pnp-calculator-2026" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">How to Use the Calculator</h3>
+            <p class="text-slate-500 text-sm">Step-by-step instructions for 2026.</p>
           </a>
-          <a href="/articles/maximize-bc-pnp-score-tips" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-green-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 mt-0">Maximize Your Score</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Hidden points and Reddit strategies.</p>
-            </div>
+          <a href="/articles/bc-pnp-vs-crs-calculator" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">BC PNP vs CRS</h3>
+            <p class="text-slate-500 text-sm">Which system is right for you?</p>
           </a>
-          <a href="/articles/bc-pnp-calculator-for-tech" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-indigo-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 mt-0">Tech & High-Demand</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Special lookup for priority jobs.</p>
-            </div>
+          <a href="/articles/maximize-bc-pnp-score-tips" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">Maximize Your Score</h3>
+            <p class="text-slate-500 text-sm">Hidden points and Reddit strategies.</p>
+          </a>
+          <a href="/articles/bc-pnp-calculator-for-tech" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">Tech & High-Demand</h3>
+            <p class="text-slate-500 text-sm">Special lookup for priority jobs.</p>
           </a>
         </div>
       </section>

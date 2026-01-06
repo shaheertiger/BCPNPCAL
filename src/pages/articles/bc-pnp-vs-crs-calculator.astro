@@ -1,169 +1,341 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Scale, Info, CheckCircle, XCircle } from 'lucide-react';
 
-const title = "BC PNP vs CRS Calculator: Which One Should You Use in 2026?";
-const description = "Understand the difference between BC PNP points and Express Entry CRS scores. Learn how a provincial nomination can boost your federal immigration profile.";
+const title = "BC PNP vs CRS Calculator: Which One Should You Use?";
+const description = "Comprehensive comparison between the BC PNP Skills Immigration Ranking System and Canada Express Entry CRS. Find out which pathway gives you the best chance for PR.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="max-w-4xl mx-auto px-4 py-12">
-    <header class="mb-12 text-center">
-      <div class="inline-flex items-center justify-center p-3 bg-purple-50 dark:bg-purple-900/10 rounded-xl mb-6 text-purple-600">
-        <Scale size={48} />
+  <div class="max-w-4xl mx-auto px-4 py-12 sm:py-20">
+    
+    <!-- Hero Header -->
+    <header class="mb-16 text-center">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-3xl mb-8 shadow-xl shadow-purple-200">
+        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+        </svg>
       </div>
-      <h1 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-        BC PNP vs. CRS Calculator: <span class="text-purple-600">The 2026 Showdown</span>
+      <h1 class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">BC PNP vs CRS:</span> Which One?
       </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        Confused by all the points systems? Here is the simple truth about how Provincial Nomination interacts with Federal Express Entry.
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Two pathways to Canadian PR. One might be significantly easier for you. Here's how to decide.
       </p>
     </header>
 
-    <div class="prose prose-lg dark:prose-invert max-w-none">
+    <!-- Main Content -->
+    <div class="space-y-16">
       
-      <h2>The Core Difference: Fed vs. Prov</h2>
-      <p>
-        The <strong>Comprehensive Ranking System (CRS)</strong> is the federal calculator used for Canada's Express Entry system. It ranks you against <em>everyone in the world</em> who wants to move to Canada.
-      </p>
-      <p>
-        The <strong>SIRS (Skills Immigration Registration System)</strong> is British Columbia's specific calculator. It ranks you only against people who want to move to <em>BC</em> and usually have a job offer there.
-      </p>
-
-      <div class="not-prose my-12">
-        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
-          <table class="w-full text-left text-sm">
-            <thead class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white uppercase font-bold">
-              <tr>
-                <th class="px-6 py-4">Feature</th>
-                <th class="px-6 py-4 text-purple-600">BC PNP (SIRS)</th>
-                <th class="px-6 py-4 text-blue-600">Express Entry (CRS)</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-900">
-              <tr>
-                <td class="px-6 py-4 font-medium">Job Offer</td>
-                <td class="px-6 py-4 text-green-600 font-bold">Mandatory (99% of streams)</td>
-                <td class="px-6 py-4 text-gray-500">Optional (but helpful)</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-4 font-medium">Age Penalty</td>
-                <td class="px-6 py-4 text-green-600 font-bold">None (0 Points)</td>
-                <td class="px-6 py-4 text-red-500">starts at 30 (-5 pts/year)</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-4 font-medium">Wage Importance</td>
-                <td class="px-6 py-4 text-green-600 font-bold">Critical (Up to 55 pts)</td>
-                <td class="px-6 py-4 text-gray-500">Irrelevant (Only NOC matters)</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-4 font-medium">Location</td>
-                <td class="px-6 py-4">Bonus for Regional BC</td>
-                <td class="px-6 py-4">No difference</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-4 font-medium">Cost</td>
-                <td class="px-6 py-4">$1,150 (Application Fee)</td>
-                <td class="px-6 py-4">Free to create profile</td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- Quick Answer -->
+      <section>
+        <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-[2rem] p-8 sm:p-10 border border-purple-100">
+          <h2 class="text-2xl font-black text-slate-900 mb-4">The Quick Answer</h2>
+          <p class="text-slate-700 text-lg leading-relaxed">
+            <strong>BC PNP</strong> is the provincial system for British Columbia. <strong>CRS</strong> (Comprehensive Ranking System) is the federal Express Entry system for all of Canada. If you have a job offer in BC, especially in tech or healthcare, BC PNP often has <strong class="text-green-600">much lower score requirements</strong>.
+          </p>
         </div>
-      </div>
+      </section>
 
-      <h2>The "Golden Ticket": 600 Points</h2>
-      <p>
-        Here is why the BC PNP calculator matters even if your goal is federal Express Entry.
-      </p>
-      <p>
-        If you score high enough on the <a href="/">BC PNP Calculator</a> to get a nomination, you automatically receive <strong>600 bonus points</strong> in your Express Entry profile.
-      </p>
-      <div class="bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/20 dark:to-blue-900/20 p-8 rounded-2xl my-8 border border-purple-200 dark:border-purple-800">
-        <h4 class="text-2xl font-bold mb-4 mt-0">The Math of Success</h4>
-        <div class="flex flex-col md:flex-row gap-4 items-center justify-center text-center">
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm w-full">
-            <div class="text-sm text-gray-500">Your Base CRS</div>
-            <div class="text-3xl font-black text-gray-400">380</div>
+      <!-- Comparison Table -->
+      <section>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Side-by-Side Comparison</h2>
+        </div>
+        
+        <div class="bg-white rounded-[2rem] border border-slate-200 overflow-hidden shadow-sm">
+          <div class="grid grid-cols-3">
+            <div class="bg-slate-900 px-6 py-4 text-white font-bold text-sm uppercase tracking-wider">Factor</div>
+            <div class="bg-purple-600 px-6 py-4 text-white font-bold text-sm uppercase tracking-wider text-center">BC PNP</div>
+            <div class="bg-blue-600 px-6 py-4 text-white font-bold text-sm uppercase tracking-wider text-center">Express Entry CRS</div>
           </div>
-          <div class="text-2xl font-bold text-gray-400">+</div>
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm w-full border-2 border-purple-500">
-            <div class="text-sm text-purple-600 font-bold">BC Nomination</div>
-            <div class="text-3xl font-black text-purple-600">600</div>
-          </div>
-          <div class="text-2xl font-bold text-gray-400">=</div>
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm w-full border-2 border-green-500">
-            <div class="text-sm text-green-600 font-bold">Create New Score</div>
-            <div class="text-3xl font-black text-green-600">980</div>
+          <div class="divide-y divide-slate-100">
+            <div class="grid grid-cols-3">
+              <div class="px-6 py-4 font-medium text-slate-900 bg-slate-50">Max Score</div>
+              <div class="px-6 py-4 text-center text-slate-700">200 points</div>
+              <div class="px-6 py-4 text-center text-slate-700">1200 points</div>
+            </div>
+            <div class="grid grid-cols-3">
+              <div class="px-6 py-4 font-medium text-slate-900 bg-slate-50">Job Offer Required?</div>
+              <div class="px-6 py-4 text-center"><span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-bold">Yes (Usually)</span></div>
+              <div class="px-6 py-4 text-center"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold">No</span></div>
+            </div>
+            <div class="grid grid-cols-3">
+              <div class="px-6 py-4 font-medium text-slate-900 bg-slate-50">Typical Cut-off</div>
+              <div class="px-6 py-4 text-center font-bold text-green-600">85-115 points</div>
+              <div class="px-6 py-4 text-center font-bold text-red-600">480-520+ points</div>
+            </div>
+            <div class="grid grid-cols-3">
+              <div class="px-6 py-4 font-medium text-slate-900 bg-slate-50">Draw Frequency</div>
+              <div class="px-6 py-4 text-center text-slate-700">Weekly</div>
+              <div class="px-6 py-4 text-center text-slate-700">Bi-weekly</div>
+            </div>
+            <div class="grid grid-cols-3">
+              <div class="px-6 py-4 font-medium text-slate-900 bg-slate-50">Targeted Draws</div>
+              <div class="px-6 py-4 text-center"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold">Yes (Tech, Health)</span></div>
+              <div class="px-6 py-4 text-center"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold">Yes (Category-based)</span></div>
+            </div>
+            <div class="grid grid-cols-3">
+              <div class="px-6 py-4 font-medium text-slate-900 bg-slate-50">PNP Nomination Bonus</div>
+              <div class="px-6 py-4 text-center text-slate-400">N/A</div>
+              <div class="px-6 py-4 text-center font-bold text-purple-600">+600 points</div>
+            </div>
           </div>
         </div>
-        <p class="text-center mt-4 text-sm font-medium opacity-75">
-          *Since federal draws rarely go above 540, a score of 980 is a guaranteed invitation.
-        </p>
-      </div>
+      </section>
 
-      <h2>Detailed Scenario: "The Aging Professional"</h2>
-      <p>
-        Let's look at <strong>Carlos</strong>. He is a 42-year-old Senior Marketing Manager.
-      </p>
-      <ul>
-        <li><strong>CRS Problem:</strong> At 42, Carlos has lost over 60 points due to age. His CRS score is stuck at <strong>390</strong>. He has zero chance of a federal invite.</li>
-        <li><strong>BC PNP Solution:</strong> Carlos gets a job offer in Victoria for $50/hr.
-          <ul>
-            <li><strong>Wage:</strong> High points ($50/hr).</li>
-            <li><strong>Experience:</strong> Max points (10+ years).</li>
-            <li><strong>Region:</strong> Bonus points (Victoria).</li>
-            <li><strong>Age:</strong> 0 penalty.</li>
-          </ul>
-        </li>
-      </ul>
-      <p>
-        <strong>Result:</strong> Carlos scores highly in the BC PNP calculator, gets nominated, and then uses the +600 points to bypass the CRS age penalty entirely.
-      </p>
-
-      <h2>When NOT to use BC PNP</h2>
-      <p>
-         Despite its power, BC PNP isn't for everyone. You should consider sticking to pure Express Entry if:
-      </p>
-      <ul>
-        <li><strong>You don't have a job offer:</strong> Unless you completed a Master's in Science in BC, you almost certainly need an employer to support you.</li>
-        <li><strong>You want to save money:</strong> The BC PNP application fee is $1,150, which is non-refundable. Express Entry profiles are free until you are invited.</li>
-        <li><strong>Processing Time:</strong> BC PNP adds an extra "step" (2-3 months) before you can apply for PR. If you already have a CRS of 520+, applying directly is faster.</li>
-      </ul>
-
-      <div class="mt-12 p-8 bg-gray-900 rounded-3xl text-center text-white">
-        <h3 class="text-white mb-4">Check your eligibility now</h3>
-        <p class="mb-8 text-gray-300">Run the numbers on our 2026 calculator to see if you qualify for the nomination.</p>
-        <a href="/" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
-          Calculate BC PNP Score
-        </a>
-      </div>
-
-      <section class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
-        <h2 class="text-3xl font-bold mb-8">More Calculator Guides</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <a href="/articles/how-to-use-bc-pnp-calculator-2026" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-blue-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 mt-0">How to Use the Calculator</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Step-by-step instructions for 2026.</p>
+      <!-- Who Benefits -->
+      <section>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Who Benefits from BC PNP?</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-8 rounded-[2rem] border-2 border-green-200 shadow-sm">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <h3 class="font-black text-green-800 text-lg">Great for BC PNP</h3>
             </div>
+            <ul class="space-y-3 text-slate-700">
+              <li class="flex items-start gap-2">
+                <span class="text-green-500 font-bold">✓</span>
+                <span>Already have a job offer in BC</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500 font-bold">✓</span>
+                <span>Work in Tech, Healthcare, or Trades</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500 font-bold">✓</span>
+                <span>Lower CRS score (under 470)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500 font-bold">✓</span>
+                <span>Strong wage ($50+/hr)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500 font-bold">✓</span>
+                <span>Want to live specifically in BC</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white p-8 rounded-[2rem] border-2 border-blue-200 shadow-sm">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <h3 class="font-black text-blue-800 text-lg">Better for Express Entry</h3>
+            </div>
+            <ul class="space-y-3 text-slate-700">
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold">✓</span>
+                <span>No job offer yet</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold">✓</span>
+                <span>High CRS score (500+)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold">✓</span>
+                <span>Canadian education (bonus points)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold">✓</span>
+                <span>Flexible on which province</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold">✓</span>
+                <span>French language skills</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW: Cost & Timeline Analysis -->
+      <section>
+          <div class="text-center mb-10">
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Cost & Timeline Analysis</h2>
+            <p class="text-slate-600">BC PNP is more expensive but often more predictable for workers in BC.</p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+             <div class="bg-slate-900 rounded-[2rem] p-8 text-white relative">
+                 <div class="absolute top-4 right-4 bg-purple-600 text-xs font-bold px-3 py-1 rounded-full uppercase">BC PNP + Federal</div>
+                 <h3 class="text-xl font-bold mb-6">Cost Breakdown</h3>
+                 <div class="space-y-4">
+                    <div class="flex justify-between border-b border-white/10 pb-2">
+                       <span class="text-slate-300">Registration (SIRS)</span>
+                       <span class="font-mono text-green-400">Free</span>
+                    </div>
+                    <div class="flex justify-between border-b border-white/10 pb-2">
+                       <span class="text-slate-300">BC PNP Application Fee</span>
+                       <span class="font-mono text-white">$1,475</span>
+                    </div>
+                    <div class="flex justify-between border-b border-white/10 pb-2">
+                       <span class="text-slate-300">Federal PR Processing</span>
+                       <span class="font-mono text-white">$950</span>
+                    </div>
+                     <div class="flex justify-between border-b border-white/10 pb-2">
+                       <span class="text-slate-300">Right of PR Fee</span>
+                       <span class="font-mono text-white">$575</span>
+                    </div>
+                    <div class="flex justify-between pt-2">
+                       <span class="font-bold">Total Estimate</span>
+                       <span class="font-bold text-2xl text-purple-400">~$3,000</span>
+                    </div>
+                 </div>
+                 <p class="text-xs text-slate-400 mt-4 italic">*Single applicant. Prices subject to change.</p>
+             </div>
+
+             <div class="bg-white rounded-[2rem] border border-slate-200 p-8">
+                 <h3 class="text-xl font-bold mb-6 text-slate-900">Processing Timeline</h3>
+                 <div class="relative space-y-8 pl-8 border-l-2 border-slate-100">
+                    <div class="relative">
+                       <div class="absolute -left-[39px] top-1 w-5 h-5 bg-purple-600 rounded-full border-4 border-white"></div>
+                       <h4 class="font-bold text-slate-900">BC PNP Registration</h4>
+                       <p class="text-slate-500 text-sm">Instant score.</p>
+                    </div>
+                    <div class="relative">
+                       <div class="absolute -left-[39px] top-1 w-5 h-5 bg-purple-600 rounded-full border-4 border-white"></div>
+                       <h4 class="font-bold text-slate-900">Invitation to Apply</h4>
+                       <p class="text-slate-500 text-sm">1-4 weeks (if score is high enough).</p>
+                    </div>
+                     <div class="relative">
+                       <div class="absolute -left-[39px] top-1 w-5 h-5 bg-purple-600 rounded-full border-4 border-white"></div>
+                       <h4 class="font-bold text-slate-900">Provincial Processing</h4>
+                       <p class="text-slate-500 text-sm">2-3 months (Tech) to 3-4 months (Skills).</p>
+                    </div>
+                     <div class="relative">
+                       <div class="absolute -left-[39px] top-1 w-5 h-5 bg-blue-600 rounded-full border-4 border-white"></div>
+                       <h4 class="font-bold text-slate-900">Federal PR Application</h4>
+                       <p class="text-slate-500 text-sm">Non-Express Entry: 12-16 months.<br>Express Entry linked: 4-6 months.</p>
+                    </div>
+                 </div>
+             </div>
+          </div>
+      </section>
+
+      <!-- Hybrid Strategy -->
+      <section>
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2rem] p-8 sm:p-10 text-white">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <span class="text-amber-400 font-bold uppercase text-sm tracking-wider">Pro Strategy</span>
+          </div>
+          
+          <h3 class="text-2xl font-black mb-4">The Hybrid Approach (EEBC)</h3>
+          <p class="text-slate-300 leading-relaxed mb-6">
+            This is the "Gold Standard" for immigration strategy. It combines the ease of BC PNP with the speed of Express Entry.
+          </p>
+          
+          <div class="space-y-4">
+             <div class="bg-white/10 rounded-xl p-6 border-l-4 border-amber-400">
+               <h4 class="font-bold text-amber-400 mb-2">Step 1: Enter Express Entry Pool</h4>
+               <p class="text-sm text-slate-300">Create a federal profile. Even if your score is 350 (too low), just get into the pool to get your "Express Entry Profile Number" and "Job Seeker Validation Code".</p>
+             </div>
+             
+             <div class="bg-white/10 rounded-xl p-6 border-l-4 border-amber-400">
+               <h4 class="font-bold text-amber-400 mb-2">Step 2: Apply to BC PNP "Express Entry BC"</h4>
+               <p class="text-sm text-slate-300">When registering with SIRS, select the "Express Entry BC" option. You will need your federal profile numbers.</p>
+             </div>
+             
+              <div class="bg-white/10 rounded-xl p-6 border-l-4 border-amber-400">
+               <h4 class="font-bold text-amber-400 mb-2">Step 3: Get Nominated & Claim +600 Points</h4>
+               <p class="text-sm text-slate-300">Once BC nominates you, they notify the federal system. Your CRS score jumps by 600 points (e.g., 350 -> 950). You are now guaranteed an ITA in the next federal draw.</p>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- When NOT to use BC PNP -->
+      <section>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">When NOT to Use BC PNP</h2>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="bg-red-50 p-6 rounded-[1.5rem] border border-red-100 flex gap-4">
+            <div class="w-10 h-10 bg-red-100 rounded-full flex-shrink-0 flex items-center justify-center">
+              <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-red-900 mb-1">No Valid BC Job Offer</h3>
+              <p class="text-red-800 text-sm">Without a full-time, indeterminate job offer from a BC employer, you cannot apply to most BC PNP streams.</p>
+            </div>
+          </div>
+          
+          <div class="bg-red-50 p-6 rounded-[1.5rem] border border-red-100 flex gap-4">
+            <div class="w-10 h-10 bg-red-100 rounded-full flex-shrink-0 flex items-center justify-center">
+              <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-red-900 mb-1">Committed to Another Province</h3>
+              <p class="text-red-800 text-sm">Each province has its own PNP. If you want to live in Ontario, Alberta, etc., use their program instead.</p>
+            </div>
+          </div>
+          
+          <div class="bg-red-50 p-6 rounded-[1.5rem] border border-red-100 flex gap-4">
+            <div class="w-10 h-10 bg-red-100 rounded-full flex-shrink-0 flex items-center justify-center">
+              <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-red-900 mb-1">Very High CRS Score Already</h3>
+              <p class="text-red-800 text-sm">If you have a CRS of 500+, you might get an ITA directly through Express Entry without needing the PNP pathway.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section>
+        <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-[2rem] p-10 sm:p-12 text-center text-white">
+          <h3 class="text-2xl sm:text-3xl font-black mb-4">Calculate Your BC PNP Score</h3>
+          <p class="text-red-100 mb-8 max-w-md mx-auto">Find out if BC PNP is your better pathway.</p>
+          <a href="/" class="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-[1.5rem] font-black text-lg hover:bg-red-50 transition-colors shadow-xl">
+            Open Calculator
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
           </a>
-          <a href="/articles/maximize-bc-pnp-score-tips" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-green-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 mt-0">Maximize Your Score</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Hidden points and Reddit strategies.</p>
-            </div>
+        </div>
+      </section>
+
+      <!-- Related Guides -->
+      <section class="pt-8 border-t border-slate-200">
+        <h2 class="text-xl font-black text-slate-900 uppercase tracking-widest mb-8 text-center">Related Guides</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/articles/how-to-use-bc-pnp-calculator-2026" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">How to Use the Calculator</h3>
+            <p class="text-slate-500 text-sm">Step-by-step instructions for 2026.</p>
           </a>
-          <a href="/articles/bc-pnp-calculator-faq" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-yellow-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-yellow-600 mt-0">FAQ & Troubleshooting</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Answers to common errors.</p>
-            </div>
+          <a href="/articles/bc-pnp-vs-crs-calculator" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">BC PNP vs CRS</h3>
+            <p class="text-slate-500 text-sm">Which system is right for you?</p>
           </a>
-          <a href="/articles/bc-pnp-calculator-for-tech" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-indigo-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 mt-0">Tech & High-Demand</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Special lookup for priority jobs.</p>
-            </div>
+          <a href="/articles/maximize-bc-pnp-score-tips" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">Maximize Your Score</h3>
+            <p class="text-slate-500 text-sm">Hidden points and Reddit strategies.</p>
+          </a>
+          <a href="/articles/bc-pnp-calculator-for-tech" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">Tech & High-Demand</h3>
+            <p class="text-slate-500 text-sm">Special lookup for priority jobs.</p>
           </a>
         </div>
       </section>

@@ -1,155 +1,295 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Calculator } from 'lucide-react';
 
-const title = "Complete Guide: How to Use the BC PNP Calculator in 2026";
-const description = "Step-by-step guide to estimating your BC PNP score. Learn how to calculate points for education, work experience, and language skills in 2026.";
+const title = "How to Use the BC PNP Calculator in 2026 | Step-by-Step Guide";
+const description = "Complete guide to using the BC PNP points calculator. Learn how to calculate your SIRS score, understand point categories, and avoid common mistakes.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="max-w-4xl mx-auto px-4 py-12">
-    <header class="mb-12 text-center">
-      <div class="inline-flex items-center justify-center p-3 bg-blue-50 dark:bg-blue-900/10 rounded-xl mb-6 text-blue-600">
-        <Calculator size={48} />
+  <div class="max-w-4xl mx-auto px-4 py-12 sm:py-20">
+    
+    <!-- Hero Header -->
+    <header class="mb-16 text-center">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl mb-8 shadow-xl shadow-blue-200">
+        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+        </svg>
       </div>
-      <h1 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-        How to Use the <span class="text-blue-600">BC PNP Calculator</span> in 2026
+      <h1 class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+        How to Use the <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">BC PNP Calculator</span>
       </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        Stop guessing. Here is the definitive step-by-step guide to calculating your eligibility score for British Columbia's Provincial Nominee Program.
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Step-by-step instructions to accurately calculate your 2026 SIRS score and understand exactly where your points come from.
       </p>
     </header>
 
-    <div class="prose prose-lg dark:prose-invert max-w-none">
-      <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-2xl border border-blue-100 dark:border-blue-800 mb-10">
-        <h3 class="text-blue-900 dark:text-blue-300 m-0">Why Your Score Matters</h3>
-        <p class="m-0 mt-2 text-blue-800 dark:text-blue-200">
-          The BC PNP operates on a points-based invitation system called SIRS (Skills Immigration Registration System). You aren't just applying; you are competing. Only candidates with scores above the "cut-off" in each draw receive an Invitation to Apply (ITA) for Permanent Residence.
-        </p>
-      </div>
-
-      <h2>Step 1: The Core Factors</h2>
-      <p>
-        The 2026 scoring system evaluates you on two main categories: <strong>Human Capital</strong> (your skills) and <strong>Economic Factors</strong> (your job).
-      </p>
+    <!-- Main Content -->
+    <div class="space-y-16">
       
-      <h3>1. Human Capital Factors (Max 120 Points)</h3>
-      <ul>
-        <li><strong>Directly Related Work Experience:</strong> Points are awarded for experience that matches your job offer. 5+ years gets you maximum points.</li>
-        <li><strong>Education:</strong> A Master's or Doctorate gives you a significant edge over a Bachelor's degree.</li>
-        <li><strong>Language Proficiency:</strong> CLB 9 is the new gold standard. Every CLB level matters.</li>
-      </ul>
-
-      <h3>2. Economic Factors (Max 80 Points)</h3>
-      <ul>
-        <li><strong>Wage:</strong> Your hourly rate is crucial. Wages over $55/hr maximize this category.</li>
-        <li><strong>Area of Employment:</strong> Jobs outside of Metro Vancouver receive regional bonus points.</li>
-      </ul>
-
-      <hr class="my-12 border-gray-200 dark:border-gray-800" />
-
-      <h2>Step-by-Step Calculator Tutorial</h2>
-      
-      <h3>1. Enter Your Job Offer Details</h3>
-      <p>
-        The job offer is the anchor of your application.
-      </p>
-      <ul>
-        <li><strong>NOC Code:</strong> Use the 2021 TEER system. Tech and Healthcare codes often have lower draw cut-offs.</li>
-        <li><strong>Wage:</strong> Enter your <em>guaranteed</em> hourly rate. Do not include bonuses or overtime.</li>
-        <li><strong>Location:</strong> Be precise. Working in Burnaby (Metro Vancouver) vs. Squamish (Regional) is a difference of 15+ points.</li>
-      </ul>
-
-      <div class="bg-yellow-50 dark:bg-yellow-900/10 p-6 rounded-xl my-6 border-l-4 border-yellow-400">
-        <strong>Reddit Insight 💡</strong>
-        <p class="mb-0">"Don't calculate points for a job you <em>hope</em> to get. BC PNP requires an indeterminate, full-time job offer (or full-time experience for some graduate streams)."</p>
-      </div>
-
-      <h3>2. Calculate Work Experience</h3>
-      <p>
-        Only count experience that is <strong>directly related</strong> to your BC job offer. If you are a Software Engineer in BC, your previous experience as a Barista does not count towards the "Directly Related Experience" score, though it might count for basic eligibility in some streams.
-      </p>
-
-      <h3>3. Add Language Scores</h3>
-      <p>
-        Input your results from IELTS (General) or CELPIP. Combining the calculator with a "what-if" scenario is powerful here:
-      </p>
-      <blockquote class="italic border-l-4 pl-4 border-gray-300 dark:border-gray-700">
-        "If I retake IELTS and get CLB 9 instead of CLB 7, my score jumps by 10 points. That's often the difference between rejection and an ITA."
-      </blockquote>
-
-      <h2>Field-by-Field Point Breakdown</h2>
-      <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
-        <table class="min-w-full bg-white dark:bg-gray-800 text-sm">
-            <thead class="bg-gray-100 dark:bg-gray-900">
-                <tr>
-                    <th class="py-3 px-4 text-left font-bold">Category</th>
-                    <th class="py-3 px-4 text-left font-bold">Max Points</th>
-                    <th class="py-3 px-4 text-left font-bold">Key Strategy</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                <tr><td class="py-3 px-4">Direct Work Experience</td><td class="py-3 px-4">40</td><td class="py-3 px-4">Ensure reference letters match your new NOC duties.</td></tr>
-                <tr><td class="py-3 px-4">Education</td><td class="py-3 px-4">40</td><td class="py-3 px-4">Evaluate foreign degrees with WES (ECA).</td></tr>
-                <tr><td class="py-3 px-4">Language</td><td class="py-3 px-4">40</td><td class="py-3 px-4">Retake tests until you hit CLB 9.</td></tr>
-                <tr><td class="py-3 px-4">Wage</td><td class="py-3 px-4">55</td><td class="py-3 px-4">Negotiate wages; $0.50/hr makes a difference.</td></tr>
-                <tr><td class="py-3 px-4">Area of Employment</td><td class="py-3 px-4">25</td><td class="py-3 px-4">Consider moving to Area 2 or 3 (Regional).</td></tr>
-            </tbody>
-        </table>
-      </div>
-
-      <hr class="my-12 border-gray-200 dark:border-gray-800" />
-
-      <h2>Common Mistakes & Reddit Troubleshooting</h2>
-      
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
-          <h4 class="font-bold text-red-500 mb-2">Mistake 1: Wrong NOC Code</h4>
-          <p class="text-sm">Choosing a NOC that "sounds like" your job title but doesn't match your actual duties. Always match the <strong>duties</strong> listed on the ESDC website.</p>
+      <!-- Why Score Matters -->
+      <section>
+        <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-[2rem] p-8 sm:p-10 border border-blue-100">
+          <h2 class="text-2xl font-black text-slate-900 mb-4">Why Your Score Matters</h2>
+          <p class="text-slate-700 text-lg leading-relaxed">
+            The BC PNP operates on a points-based invitation system called <strong>SIRS</strong> (Skills Immigration Ranking System). You aren't just applying—you're competing. Only candidates with scores above the "cut-off" in each draw receive an Invitation to Apply (ITA) for Permanent Residence.
+          </p>
         </div>
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
-          <h4 class="font-bold text-red-500 mb-2">Mistake 2: Inflating Wages</h4>
-          <p class="text-sm">Including tips, bonuses, or overtime in the hourly wage calculation. Use the base rate only.</p>
+      </section>
+
+      <!-- NEW: Pre-Calculation Checklist -->
+      <section>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Before You Start</h2>
+          <p class="text-slate-600">Have these documents ready to ensure accuracy.</p>
         </div>
-      </div>
+        
+        <div class="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm">
+           <div class="grid md:grid-cols-2 gap-8">
+             <div>
+               <h3 class="font-bold text-slate-900 flex items-center gap-2 mb-4">
+                 <span class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">1</span>
+                 Language Results
+               </h3>
+               <p class="text-slate-600 text-sm mb-4">Don't guess your CLB. Use your actual IELTS (General) or CELPIP results. A single band difference can change your SIRS score by 5-10 points.</p>
+               <div class="bg-slate-50 p-3 rounded-lg text-xs text-slate-500">
+                 <strong>Example:</strong> IELTS Listening 7.5 is CLB 8. Listening 8.0 is CLB 9. That's a huge difference!
+               </div>
+             </div>
+             
+             <div>
+               <h3 class="font-bold text-slate-900 flex items-center gap-2 mb-4">
+                 <span class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">2</span>
+                 Job Offer Details
+               </h3>
+               <p class="text-slate-600 text-sm mb-4">You need the exact <strong>NOC 2021 code</strong> and your <strong>written hourly wage</strong>. Do not use your "Take Home" pay.</p>
+               <div class="bg-slate-50 p-3 rounded-lg text-xs text-slate-500">
+                 <strong>Tip:</strong> If you are salaried, divide your annual gross by 52, then by your standard weekly hours (e.g. 40 or 37.5).
+               </div>
+             </div>
+             
+             <div>
+               <h3 class="font-bold text-slate-900 flex items-center gap-2 mb-4">
+                 <span class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">3</span>
+                 Education Credentials
+               </h3>
+               <p class="text-slate-600 text-sm mb-4">If your degree is from outside Canada, you ideally need an <strong>ECA</strong> (Educational Credential Assessment) to confirm its Canadian equivalent.</p>
+             </div>
+             
+             <div>
+               <h3 class="font-bold text-slate-900 flex items-center gap-2 mb-4">
+                 <span class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">4</span>
+                 Location Data
+               </h3>
+               <p class="text-slate-600 text-sm mb-4">Know exact office location. "Greater Vancouver" is Area 1 (0 points). "Squamish" is Area 2 (5 points). This distinction is critical.</p>
+             </div>
+           </div>
+        </div>
+      </section>
 
-      <div class="mt-12 p-8 bg-gray-900 rounded-3xl text-center text-white">
-        <h3 class="text-white mb-4">Ready to find your score?</h3>
-        <p class="mb-8 text-gray-300">Use our free, instant calculator updated for the 2026 intake.</p>
-        <a href="/" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
-          Calculate Score Now
-        </a>
-      </div>
+      <!-- Core Factors -->
+      <section>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">The Core Factors</h2>
+          <p class="text-slate-600">The 2026 scoring system evaluates you on two main categories.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center">
+                <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+              </div>
+              <h3 class="font-black text-slate-900 text-lg">Human Capital</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-6">Your skills, education, and language abilities.</p>
+            <div class="space-y-3">
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Work Experience</span>
+                <span class="font-bold text-purple-600">40 pts max</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Education Level</span>
+                <span class="font-bold text-purple-600">40 pts max</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Language Proficiency</span>
+                <span class="font-bold text-purple-600">40 pts max</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center">
+                <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h3 class="font-black text-slate-900 text-lg">Economic Factors</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-6">Your job offer details and location.</p>
+            <div class="space-y-3">
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Hourly Wage</span>
+                <span class="font-bold text-green-600">55 pts max</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Regional Location</span>
+                <span class="font-bold text-green-600">25 pts max</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
-        <h2 class="text-3xl font-bold mb-8">Related Strategy Guides</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <a href="/articles/bc-pnp-vs-crs-calculator" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-blue-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 mt-0">BC PNP vs CRS</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Understand the difference and how to get +600 points.</p>
+      <!-- Point Breakdown Table -->
+      <section>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Field-by-Field Point Breakdown</h2>
+        </div>
+        
+        <div class="bg-white rounded-[2rem] border border-slate-200 overflow-hidden shadow-sm">
+          <div class="grid grid-cols-3 bg-slate-900 text-white">
+            <div class="px-6 py-4 font-bold text-sm uppercase tracking-wider">Category</div>
+            <div class="px-6 py-4 font-bold text-sm uppercase tracking-wider text-center">Max Points</div>
+            <div class="px-6 py-4 font-bold text-sm uppercase tracking-wider">Key Strategy</div>
+          </div>
+          <div class="divide-y divide-slate-100">
+            <div class="grid grid-cols-3 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-medium text-slate-900">Work Experience</div>
+              <div class="px-6 py-4 text-center font-bold text-red-600">40</div>
+              <div class="px-6 py-4 text-slate-600 text-sm">Only count experience that matches your BC job offer's NOC code.</div>
             </div>
-          </a>
-          <a href="/articles/maximize-bc-pnp-score-tips" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-green-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 mt-0">Maximize Your Score</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Top tips from Reddit users to urge your score up.</p>
+            <div class="grid grid-cols-3 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-medium text-slate-900">Education</div>
+              <div class="px-6 py-4 text-center font-bold text-red-600">40</div>
+              <div class="px-6 py-4 text-slate-600 text-sm">Bonus points for graduating from a BC university.</div>
             </div>
-          </a>
-          <a href="/articles/bc-pnp-calculator-faq" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-yellow-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-yellow-600 mt-0">FAQ & Troubleshooting</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Common mistakes and calculation errors solved.</p>
+            <div class="grid grid-cols-3 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-medium text-slate-900">Language</div>
+              <div class="px-6 py-4 text-center font-bold text-red-600">40</div>
+              <div class="px-6 py-4 text-slate-600 text-sm">Aim for CLB 9. It's the "sweet spot" for max efficiency.</div>
             </div>
-          </a>
-          <a href="/articles/bc-pnp-calculator-for-tech" class="block group no-underline">
-            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 transition hover:shadow-lg hover:border-indigo-500">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 mt-0">Tech & High-Demand</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-0">Special scoring rules for Tech, Health, and Trades.</p>
+            <div class="grid grid-cols-3 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-medium text-slate-900">Wage</div>
+              <div class="px-6 py-4 text-center font-bold text-red-600">55</div>
+              <div class="px-6 py-4 text-slate-600 text-sm">Points cap at $55.00/hr. Every $1 below that loses points.</div>
             </div>
+            <div class="grid grid-cols-3 hover:bg-slate-50 transition-colors">
+              <div class="px-6 py-4 font-medium text-slate-900">Area of Employment</div>
+              <div class="px-6 py-4 text-center font-bold text-red-600">25</div>
+              <div class="px-6 py-4 text-slate-600 text-sm">Metro Vancouver = 0. Anywhere else = at least 5-15 points.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW: Post-Calculation Roadmap -->
+      <section>
+        <div class="bg-indigo-50 rounded-[2rem] p-8 sm:p-12 border border-indigo-100">
+          <div class="text-center mb-10">
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">After the Calculator: What Next?</h2>
+            <p class="text-slate-600">You have your estimated score. Here is how to interpret it.</p>
+          </div>
+          
+          <div class="grid md:grid-cols-3 gap-6 text-center">
+             <div class="bg-white p-6 rounded-[1.5rem] shadow-sm">
+                <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-black">&lt; 80</div>
+                <h3 class="font-bold text-slate-900 mb-2">Likely Too Low</h3>
+                <p class="text-slate-600 text-sm">You need to make major changes. Move to a regional area, improve language to CLB 9, or get a pay raise.</p>
+             </div>
+             
+             <div class="bg-white p-6 rounded-[1.5rem] shadow-sm ring-4 ring-indigo-100">
+                <div class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-black">80-100</div>
+                <h3 class="font-bold text-slate-900 mb-2">Competitive Zone</h3>
+                <p class="text-slate-600 text-sm">Competitive for Tech and Healthcare. For general streams, you are on the borderline. Every point counts.</p>
+             </div>
+
+             <div class="bg-white p-6 rounded-[1.5rem] shadow-sm">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-black">110+</div>
+                <h3 class="font-bold text-slate-900 mb-2">High Probability</h3>
+                <p class="text-slate-600 text-sm">You are in a very strong position for almost any draw. Focus on preparing your documents for the ITA.</p>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Common Mistakes -->
+      <section>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Common Mistakes to Avoid</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-red-50 p-6 rounded-[1.5rem] border border-red-100">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-red-900">Wrong NOC Code</h3>
+            </div>
+            <p class="text-red-800 text-sm">
+              Choosing a NOC that "sounds like" your job title but doesn't match your actual duties. Always match the <strong>duties</strong> listed on the ESDC website.
+            </p>
+          </div>
+          
+          <div class="bg-red-50 p-6 rounded-[1.5rem] border border-red-100">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-red-900">Inflating Wages</h3>
+            </div>
+            <p class="text-red-800 text-sm">
+              Including tips, bonuses, or overtime in the hourly wage calculation. Use the base rate only.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section>
+        <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-[2rem] p-10 sm:p-12 text-center text-white">
+          <h3 class="text-2xl sm:text-3xl font-black mb-4">Ready to Find Your Score?</h3>
+          <p class="text-red-100 mb-8 max-w-md mx-auto">Use our free, instant calculator updated for the 2026 intake.</p>
+          <a href="/" class="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-[1.5rem] font-black text-lg hover:bg-red-50 transition-colors shadow-xl">
+            Calculate Score Now
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
           </a>
         </div>
       </section>
+
+      <!-- Related Guides -->
+      <section class="pt-8 border-t border-slate-200">
+        <h2 class="text-xl font-black text-slate-900 uppercase tracking-widest mb-8 text-center">Related Guides</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/articles/bc-pnp-vs-crs-calculator" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">BC PNP vs CRS</h3>
+            <p class="text-slate-500 text-sm">Which system is right for you?</p>
+          </a>
+          <a href="/articles/maximize-bc-pnp-score-tips" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">Maximize Your Score</h3>
+            <p class="text-slate-500 text-sm">Hidden points and Reddit strategies.</p>
+          </a>
+          <a href="/articles/bc-pnp-calculator-for-tech" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">Tech & High-Demand</h3>
+            <p class="text-slate-500 text-sm">Special lookup for priority jobs.</p>
+          </a>
+          <a href="/articles/bc-pnp-calculator-faq" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
+            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">FAQ & Troubleshooting</h3>
+            <p class="text-slate-500 text-sm">Answers to common errors.</p>
+          </a>
+        </div>
+      </section>
+
     </div>
   </div>
 </BaseLayout>
