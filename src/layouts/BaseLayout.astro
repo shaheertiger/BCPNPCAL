@@ -1,8 +1,8 @@
 ---
-import Analytics from '@vercel/analytics/astro';
-import SpeedInsights from '@vercel/speed-insights/astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import Analytics from "@vercel/analytics/astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -20,22 +20,25 @@ const {
   title,
   description,
   canonical = Astro.url.href,
-  ogImage = '/og-image.png',
+  ogImage = "/og-image.png",
   jsonLd,
-  lang = 'en',
+  lang = "en",
   hreflangs = [],
-  keywords = "BC PNP calculator, BC PNP points calculator, BC Provincial Nominee Program, SIRS calculator, BC immigration calculator, Skills Immigration Ranking System, BC PNP score, British Columbia immigration"
+  keywords = "BC PNP calculator, BC PNP points calculator, BC Provincial Nominee Program, SIRS calculator, BC immigration calculator, Skills Immigration Ranking System, BC PNP score, British Columbia immigration",
 } = Astro.props;
 
-const siteUrl = Astro.site || 'https://bcpnpcalculator.ca';
-const dir = lang === 'ar' ? 'rtl' : 'ltr';
+const siteUrl = Astro.site || "https://bcpnpcalculator.ca";
+const dir = lang === "ar" ? "rtl" : "ltr";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={lang} dir={dir}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Favicons -->
@@ -46,15 +49,29 @@ const dir = lang === 'ar' ? 'rtl' : 'ltr';
     <link rel="shortcut icon" href="/favicon.ico" />
 
     <!-- Hreflang Tags -->
-    {hreflangs.map((link) => (
-      <link rel="alternate" hreflang={link.lang} href={link.href} />
-    ))}
+    {
+      hreflangs.map((link) => (
+        <link rel="alternate" hreflang={link.lang} href={link.href} />
+      ))
+    }
 
     <!-- Apple Touch Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/apple-touch-icon-76x76.png"
+    />
 
     <!-- Microsoft Tiles -->
     <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
@@ -81,7 +98,10 @@ const dir = lang === 'ar' ? 'rtl' : 'ltr';
     <link rel="canonical" href={canonical} />
 
     <!-- Additional SEO Meta Tags -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
     <meta name="author" content="BC PNP Calculator" />
@@ -102,7 +122,7 @@ const dir = lang === 'ar' ? 'rtl' : 'ltr';
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="BC PNP Calculator" />
-    <meta property="og:locale" content={Astro.props.ogLocale || 'en_CA'} />
+    <meta property="og:locale" content={Astro.props.ogLocale || "en_CA"} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -119,70 +139,194 @@ const dir = lang === 'ar' ? 'rtl' : 'ltr';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Preload critical font to prevent layout shift -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=optional" />
-    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_KU7NShXUEKi4Rw.woff2" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=optional"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_KU7NShXUEKi4Rw.woff2"
+      crossorigin
+    />
 
     <!-- Critical Inline CSS - Above the fold styles -->
     <style is:inline>
       /* Critical CSS for immediate render */
-      *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e5e7eb;
+      }
       /* Fallback font with size-adjust to prevent layout shift */
-      @font-face{font-family:'Plus Jakarta Sans Fallback';size-adjust:100.06%;ascent-override:95%;descent-override:25%;line-gap-override:0%;src:local('Arial')}
-      html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:'Plus Jakarta Sans','Plus Jakarta Sans Fallback',ui-sans-serif,system-ui,sans-serif;tab-size:4}
-      body{margin:0;line-height:inherit}
-      h1,h2,h3,p{margin:0}
-      a{color:inherit;text-decoration:inherit}
-      button{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0;background-color:transparent;background-image:none}
-      button{cursor:pointer}
-      svg{display:block;vertical-align:middle}
+      @font-face {
+        font-family: "Plus Jakarta Sans Fallback";
+        size-adjust: 100.06%;
+        ascent-override: 95%;
+        descent-override: 25%;
+        line-gap-override: 0%;
+        src: local("Arial");
+      }
+      html {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        font-family:
+          "Plus Jakarta Sans", "Plus Jakarta Sans Fallback", ui-sans-serif,
+          system-ui, sans-serif;
+        tab-size: 4;
+      }
+      body {
+        margin: 0;
+        line-height: inherit;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      button {
+        font-family: inherit;
+        font-size: 100%;
+        font-weight: inherit;
+        line-height: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        background-image: none;
+      }
+      button {
+        cursor: pointer;
+      }
+      svg {
+        display: block;
+        vertical-align: middle;
+      }
 
       /* Critical layout */
-      .min-h-screen{min-height:100vh}
-      .flex{display:flex}
-      .flex-col{flex-direction:column}
-      .items-center{align-items:center}
-      .justify-center{justify-content:center}
-      .text-center{text-align:center}
-      .bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}
-      .from-red-50{--tw-gradient-from:#fef2f2;--tw-gradient-to:rgb(254 242 242 / 0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}
-      .via-white{--tw-gradient-to:rgb(255 255 255 / 0);--tw-gradient-stops:var(--tw-gradient-from),#fff,var(--tw-gradient-to)}
-      .to-rose-50{--tw-gradient-to:#fff1f2}
-      .px-6{padding-left:1.5rem;padding-right:1.5rem}
-      .py-20{padding-top:5rem;padding-bottom:5rem}
+      .min-h-screen {
+        min-height: 100vh;
+      }
+      .flex {
+        display: flex;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .bg-gradient-to-br {
+        background-image: linear-gradient(
+          to bottom right,
+          var(--tw-gradient-stops)
+        );
+      }
+      .from-red-50 {
+        --tw-gradient-from: #fef2f2;
+        --tw-gradient-to: rgb(254 242 242 / 0);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+      }
+      .via-white {
+        --tw-gradient-to: rgb(255 255 255 / 0);
+        --tw-gradient-stops:
+          var(--tw-gradient-from), #fff, var(--tw-gradient-to);
+      }
+      .to-rose-50 {
+        --tw-gradient-to: #fff1f2;
+      }
+      .px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      .py-20 {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
 
       /* Typography */
-      .text-5xl{font-size:3rem;line-height:1}
-      .font-black{font-weight:900}
-      .text-slate-900{color:#0f172a}
-      .text-red-600{color:#dc2626}
-      .tracking-tight{letter-spacing:-0.025em}
-      .leading-none{line-height:1}
+      .text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+      }
+      .font-black {
+        font-weight: 900;
+      }
+      .text-slate-900 {
+        color: #0f172a;
+      }
+      .text-red-600 {
+        color: #dc2626;
+      }
+      .tracking-tight {
+        letter-spacing: -0.025em;
+      }
+      .leading-none {
+        line-height: 1;
+      }
     </style>
 
     <!-- Google Fonts - Async load with optional display to prevent layout shift -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=optional"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=optional" rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=optional"
+        rel="stylesheet"
+      />
     </noscript>
 
     <!-- JSON-LD Structured Data -->
-    {jsonLd && (
-      Array.isArray(jsonLd) ? (
-        jsonLd.map((schema) => (
-          <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    {
+      jsonLd &&
+        (Array.isArray(jsonLd) ? (
+          jsonLd.map((schema) => (
+            <script
+              type="application/ld+json"
+              set:html={JSON.stringify(schema)}
+            />
+          ))
+        ) : (
+          <script
+            type="application/ld+json"
+            set:html={JSON.stringify(jsonLd)}
+          />
         ))
-      ) : (
-        <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-      )
-    )}
+    }
 
     <!-- Vercel Web Analytics -->
     <Analytics />
     <!-- Vercel Speed Insights -->
     <SpeedInsights />
+
+    <!-- Google AdSense -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1832558194011336"
+      crossorigin="anonymous"></script>
   </head>
   <body>
     <slot />
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

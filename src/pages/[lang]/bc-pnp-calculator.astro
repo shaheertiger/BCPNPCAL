@@ -1,0 +1,224 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CalculatorShell from "../../components/CalculatorShell.astro";
+
+export function getStaticPaths() {
+    return [
+        { params: { lang: "zh" } },
+        // { params: { lang: 'pa' } },
+        // { params: { lang: 'hi' } },
+        // { params: { lang: 'ar' } },
+    ];
+}
+
+const { lang } = Astro.params;
+
+// Localized Metadata
+const title =
+    lang === "zh" ? "2026 BC PNP 分數計算器" : "BC PNP Calculator 2026";
+const description =
+    lang === "zh"
+        ? "BC PNP 計算器，用於評估您在 BC 省提名技術移民項目的分數。立即聯繫我們獲取指導！"
+        : "BC PNP Calculator to assess your points for permanent residence under the BC PNP Skills Immigration Stream. Contact us for guidance today!";
+
+const isRTL = lang === "ar";
+
+// TODO: Translate JSON-LD for localized page if needed, for now using English structure or simplified.
+// Keeping it simple for now to avoid massive duplication without a proper content file for this page yet.
+// Ideally, we move this content to a `calculator-content.ts` later.
+
+const hreflangs = [
+    { lang: "en", href: "https://bcpnpcalculator.ca/bc-pnp-calculator" },
+    { lang: "zh", href: "https://bcpnpcalculator.ca/zh/bc-pnp-calculator" },
+    { lang: "x-default", href: "https://bcpnpcalculator.ca/bc-pnp-calculator" },
+];
+---
+
+<BaseLayout
+    title={title}
+    description={description}
+    lang={lang}
+    hreflangs={hreflangs}
+    keywords={lang === "zh"
+        ? "BC PNP 計算器, BC PNP 分數, SIRS 分數計算器, BC 移民分數, BC 省提名"
+        : undefined}
+>
+    <!-- Language Switcher -->
+    <nav
+        class="absolute top-4 right-4 z-50 flex items-center gap-3 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full border border-red-100 shadow-sm"
+    >
+        <a
+            href="/bc-pnp-calculator"
+            class="text-sm font-bold text-slate-500 hover:text-red-600 transition-colors"
+            >EN</a
+        >
+        <span class="text-slate-300">/</span>
+        <a
+            href="/zh/bc-pnp-calculator"
+            class={`text-sm font-bold ${lang === "zh" ? "text-red-600 font-black" : "text-slate-500 hover:text-red-600 transition-colors"}`}
+            >中文</a
+        >
+    </nav>
+    <!-- Calculator React Island - Hydrated on Load -->
+    <!-- Note: The Calculator React component itself might need i18n support. 
+       For this pass, we are focusing on the page wrapper. 
+       If CalculatorShell contains text, it needs to be passed props or use a context.
+       Checking CalculatorShell... it likely wraps Calculator.client.tsx.
+   -->
+    <CalculatorShell />
+
+    <!-- SEO Content Section (Static HTML) -->
+    <section
+        class="bg-white border-t border-red-100 pt-12 sm:pt-20 pb-32 sm:pb-48 px-4 sm:px-6"
+    >
+        <div class="max-w-3xl mx-auto space-y-12 sm:space-y-20">
+            {
+                lang === "zh" ? (
+                    // Chinese Content
+                    <>
+                        <div class="space-y-6">
+                            <h2 class="text-3xl font-black text-slate-900 tracking-tight leading-tight">
+                                使用{" "}
+                                <span class="text-red-600">BC PNP 計算器</span>{" "}
+                                制定您的移民策略
+                            </h2>
+                            <p class="text-slate-600 text-base leading-relaxed">
+                                卑詩省省提名計劃 (BC PNP)
+                                是一個積分制移民系統，旨在吸引技術工人來到該省。我們的{" "}
+                                <strong>BC PNP 分數計算器</strong>{" "}
+                                是潛在移民準確估算其技術移民註冊系統 (SIRS)
+                                分數的重要工具。
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                                <div class="p-6 bg-red-50 rounded-3xl border border-red-100">
+                                    <h3 class="font-bold text-red-900 mb-2">
+                                        分數如何分配
+                                    </h3>
+                                    <p class="text-sm text-slate-600">
+                                        分數分佈在經濟因素（工作經驗、教育和語言）和人力資本因素（時薪和地區位置）中。
+                                    </p>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+                                    <h3 class="font-bold text-slate-900 mb-2">
+                                        最高分數
+                                    </h3>
+                                    <p class="text-sm text-slate-600">
+                                        <strong>BC PNP 分數計算器</strong>{" "}
+                                        中的總分最高為 200
+                                        分。大多數成功的申請人分數在 100 到 130
+                                        分之間。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h2 class="text-2xl font-black text-slate-900 tracking-tight">
+                                評分細項詳解
+                            </h2>
+
+                            <div class="space-y-6">
+                                <div class="p-8 bg-red-50/50 rounded-[2.5rem] border border-red-100">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-black text-red-900">
+                                            工作經驗
+                                        </h3>
+                                        <span class="text-red-600 font-black text-xl">
+                                            最高 40 分
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                        根據直接相關的工作經驗年限評分，加拿大工作經驗和目前在
+                                        BC 省就業有額外加分。
+                                    </p>
+                                    <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
+                                        <li>
+                                            0-5+ 年經驗：0-20 分（每年 4 分）
+                                        </li>
+                                        <li>1年以上加拿大經驗：+10 加分</li>
+                                        <li>目前在 BC 省工作：+10 加分</li>
+                                    </ul>
+                                </div>
+
+                                <div class="p-8 bg-rose-50/50 rounded-[2.5rem] border border-rose-100">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-black text-rose-900">
+                                            教育程度
+                                        </h3>
+                                        <span class="text-rose-600 font-black text-xl">
+                                            最高 40 分
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                        您的最高學歷決定了教育分數。所有學歷必須經過加拿大標準認證
+                                        (ECA)。
+                                    </p>
+                                </div>
+
+                                <div class="p-8 bg-orange-50/50 rounded-[2.5rem] border border-orange-100">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-black text-orange-900">
+                                            語言能力
+                                        </h3>
+                                        <span class="text-orange-600 font-black text-xl">
+                                            最高 40 分
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                        基於 CLB (Canadian Language Benchmark)
+                                        級別，如 IELTS 或
+                                        CELPIP。更高的語言能力顯著提高分數。
+                                    </p>
+                                </div>
+
+                                <div class="p-8 bg-red-50/60 rounded-[2.5rem] border border-red-100">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-black text-red-900">
+                                            時薪
+                                        </h3>
+                                        <span class="text-red-600 font-black text-xl">
+                                            最高 55 分
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                        權重最高的類別。您 BC省工作的時薪是 SIRS
+                                        分數中最重要的單一因素。
+                                    </p>
+                                </div>
+
+                                <div class="p-8 bg-rose-50/60 rounded-[2.5rem] border border-rose-100">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-black text-rose-900">
+                                            地區位置
+                                        </h3>
+                                        <span class="text-rose-600 font-black text-xl">
+                                            最高 25 分
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                        BC
+                                        省鼓勵區域發展，為大溫哥華地區以外的工作提供顯著的加分。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center pt-10 border-t border-slate-100">
+                            <div class="mt-6">
+                                <a
+                                    href={`/${lang}`}
+                                    class="text-sm text-red-600 hover:text-red-700 font-bold uppercase tracking-widest"
+                                >
+                                    ← 返回首頁
+                                </a>
+                            </div>
+                        </div>
+                    </>
+                ) : (
+                    // Fallback to English if somehow needed, though routing handles it.
+                    <p>No content for this language.</p>
+                )
+            }
+        </div>
+    </section>
+</BaseLayout>

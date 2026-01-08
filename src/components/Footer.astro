@@ -1,5 +1,21 @@
 ---
+import { ui } from "../i18n/ui";
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = "en" } = Astro.props;
 const currentYear = new Date().getFullYear();
+const t = ui[lang as keyof typeof ui] || ui.en;
+
+const homeLink = lang === "en" ? "/" : `/${lang}`;
+const calculatorLink =
+  lang === "en" ? "/bc-pnp-calculator" : `/${lang}/bc-pnp-calculator`;
+const drawsLink = lang === "en" ? "/bc-pnp-draws" : `/${lang}/bc-pnp-draws`;
+// Note: Article links might be localized or stay English if no translation exists yet.
+// For now, we'll keep article links as English except for the prefix if we implement localized routing for them later.
+// Assuming localized calculator exists.
 ---
 
 <footer class="bg-slate-900 border-t border-slate-800">
@@ -7,49 +23,80 @@ const currentYear = new Date().getFullYear();
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
       <!-- Brand Section -->
       <div class="col-span-1 md:col-span-2 space-y-4">
-        <a href="/" class="inline-flex items-center space-x-2 group">
-          <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white font-black text-sm group-hover:bg-red-500 transition-colors">
+        <a href={homeLink} class="inline-flex items-center space-x-2 group">
+          <div
+            class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white font-black text-sm group-hover:bg-red-500 transition-colors"
+          >
             BC
           </div>
-          <span class="text-xl font-black text-white tracking-tight">PNP Calculator</span>
+          <span class="text-xl font-black text-white tracking-tight"
+            >PNP Calculator</span
+          >
         </a>
         <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
-          The most comprehensive and up-to-date BC PNP points calculator. Estimate your Skills Immigration Ranking System (SIRS) score instantly.
+          {t["footer.brand_desc"]}
         </p>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Tools & Guides</h3>
+        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">
+          {t["footer.tools_guides"]}
+        </h3>
         <ul class="space-y-3">
           <li>
-            <a href="/bc-pnp-calculator" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
-              <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>
-              Points Calculator
+            <a
+              href={calculatorLink}
+              class="text-sm text-slate-400 hover:text-white transition-colors flex items-center"
+            >
+              <span
+                class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"
+              ></span>
+              {t["footer.link.calculator"]}
             </a>
           </li>
           <li>
-            <a href="/bc-pnp-draws" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
-              <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>
-              Latest Draws
+            <a
+              href={drawsLink}
+              class="text-sm text-slate-400 hover:text-white transition-colors flex items-center"
+            >
+              <span
+                class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"
+              ></span>
+              {t["footer.link.draws"]}
             </a>
           </li>
           <li>
-            <a href="/articles/how-to-apply-bc-pnp" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
-              <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>
-              How to Apply
+            <a
+              href="/articles/how-to-apply-bc-pnp"
+              class="text-sm text-slate-400 hover:text-white transition-colors flex items-center"
+            >
+              <span
+                class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"
+              ></span>
+              {t["footer.link.apply"]}
             </a>
           </li>
           <li>
-            <a href="/articles/bc-pnp-processing-times" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
-              <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>
-              Processing Times
+            <a
+              href="/articles/bc-pnp-processing-times"
+              class="text-sm text-slate-400 hover:text-white transition-colors flex items-center"
+            >
+              <span
+                class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"
+              ></span>
+              {t["footer.link.processing"]}
             </a>
           </li>
           <li>
-            <a href="/articles/bc-pnp-documents-checklist" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
-              <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>
-              Document Checklist
+            <a
+              href="/articles/bc-pnp-documents-checklist"
+              class="text-sm text-slate-400 hover:text-white transition-colors flex items-center"
+            >
+              <span
+                class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"
+              ></span>
+              {t["footer.link.checklist"]}
             </a>
           </li>
         </ul>
@@ -57,21 +104,32 @@ const currentYear = new Date().getFullYear();
 
       <!-- Legal & Sitemap -->
       <div>
-        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Resources</h3>
+        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">
+          {t["footer.resources"]}
+        </h3>
         <ul class="space-y-3">
           <li>
-            <a href="/sitemap" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
-              Sitemap
-            </a>
-          </li>
-           <li>
-            <a href="/privacy-policy" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
-              Privacy Policy
+            <a
+              href="/sitemap"
+              class="text-sm text-slate-400 hover:text-white transition-colors flex items-center"
+            >
+              {t["footer.sitemap"]}
             </a>
           </li>
           <li>
-            <a href="/terms" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
-              Terms of Service
+            <a
+              href="/privacy-policy"
+              class="text-sm text-slate-400 hover:text-white transition-colors flex items-center"
+            >
+              {t["footer.privacy"]}
+            </a>
+          </li>
+          <li>
+            <a
+              href="/terms"
+              class="text-sm text-slate-400 hover:text-white transition-colors flex items-center"
+            >
+              {t["footer.terms"]}
             </a>
           </li>
         </ul>
@@ -79,12 +137,14 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- Bottom Bar -->
-    <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div
+      class="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4"
+    >
       <p class="text-xs text-slate-500">
-        &copy; {currentYear} BC PNP Calculator. All rights reserved.
+        &copy; {currentYear} BC PNP Calculator. {t["footer.rights"]}
       </p>
       <p class="text-xs text-slate-600">
-        Not affiliated with the Government of British Columbia.
+        {t["footer.disclaimer"]}
       </p>
     </div>
   </div>

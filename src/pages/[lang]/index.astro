@@ -1,0 +1,439 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { homeContent } from "../../i18n/home-content";
+
+export function getStaticPaths() {
+    return [
+        { params: { lang: "zh" } },
+        // { params: { lang: 'pa' } }, // TODO: Add content for these languages
+        // { params: { lang: 'hi' } },
+        // { params: { lang: 'ar' } },
+    ];
+}
+
+const { lang } = Astro.params;
+const content = homeContent[lang as keyof typeof homeContent];
+
+if (!content) {
+    return Astro.redirect("/404");
+}
+
+const title =
+    lang === "zh" ? "2026 BC PNP 分數計算器" : "BC PNP Calculator 2026";
+const description =
+    lang === "zh"
+        ? "免費的 BC PNP 分數計算器，用於估算您的技術移民註冊系統 (SIRS) 分數。立即計算您的 BC 省提名資格。"
+        : "Free BC PNP points calculator to estimate your Skills Immigration Ranking System score. Calculate your BC Provincial Nominee Program eligibility instantly with our comprehensive tool.";
+
+const isRTL = lang === "ar";
+
+const jsonLd = [
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: "BC PNP Points Calculator",
+        description: description,
+        url: `https://bcpnpcalculator.ca/${lang}`,
+        applicationCategory: "UtilityApplication",
+        operatingSystem: "Any",
+        browserRequirements: "Requires JavaScript. Modern browser recommended.",
+        offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "CAD",
+        },
+        author: {
+            "@type": "Organization",
+            name: "BC PNP Calculator",
+            url: "https://bcpnpcalculator.com",
+        },
+    },
+];
+
+const hreflangs = [
+    { lang: "en", href: "https://bcpnpcalculator.ca/" },
+    { lang: "zh", href: "https://bcpnpcalculator.ca/zh" },
+    // { lang: 'pa', href: 'https://bcpnpcalculator.ca/pa' },
+    // { lang: 'hi', href: 'https://bcpnpcalculator.ca/hi' },
+    // { lang: 'ar', href: 'https://bcpnpcalculator.ca/ar' },
+    { lang: "x-default", href: "https://bcpnpcalculator.ca/" },
+];
+---
+
+<BaseLayout
+    title={title}
+    description={description}
+    jsonLd={jsonLd}
+    lang={lang}
+    hreflangs={hreflangs}
+    ogLocale={lang === "zh" ? "zh_TW" : "en_CA"}
+>
+    <main
+        class={`min-h-screen bg-gradient-to-br from-red-50 via-white to-rose-50 flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-20 ${isRTL ? "rtl" : ""} relative`}
+        dir={isRTL ? "rtl" : "ltr"}
+    >
+        <!-- Language Switcher -->
+        <nav
+            class="absolute top-6 right-6 sm:top-10 sm:right-10 z-50 flex items-center gap-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-red-100 shadow-sm"
+        >
+            <a
+                href="/"
+                class="text-sm font-bold text-slate-500 hover:text-red-600 transition-colors"
+                >EN</a
+            >
+            <span class="text-slate-300">/</span>
+            <a
+                href="/zh"
+                class={`text-sm font-bold ${lang === "zh" ? "text-red-600 font-black" : "text-slate-500 hover:text-red-600 transition-colors"}`}
+                >中文</a
+            >
+        </nav>
+        <div class="max-w-4xl mx-auto text-center space-y-8 sm:space-y-10">
+            <!-- Hero Section -->
+            <div class="space-y-4 sm:space-y-6">
+                <div
+                    class="inline-flex items-center space-x-2 sm:space-x-3 bg-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-lg shadow-red-100/50 border border-red-100"
+                >
+                    <div
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-red-600 rounded-xl flex items-center justify-center text-white text-xs sm:text-sm font-black shadow-lg shadow-red-200"
+                    >
+                        BC
+                    </div>
+                    <span
+                        class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-widest"
+                        >{content.hero.badge}</span
+                    >
+                </div>
+
+                <h1
+                    class="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 tracking-tight leading-none px-2"
+                >
+                    {content.hero.title_prefix}<br />
+                    <span class="text-red-600"
+                        >{content.hero.title_highlight}</span
+                    >
+                </h1>
+
+                <p
+                    class="text-lg sm:text-xl md:text-2xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto px-4"
+                    set:html={content.hero.subtitle}
+                />
+            </div>
+
+            <!-- CTA Button -->
+            <div class="pt-4 sm:pt-6 flex flex-col items-center space-y-4">
+                <a
+                    href={`/${lang}/bc-pnp-calculator`}
+                    class="inline-flex items-center bg-red-600 hover:bg-red-700 active:bg-red-800 text-white px-8 sm:px-12 py-5 sm:py-6 rounded-[1.5rem] sm:rounded-[2rem] font-black text-base sm:text-lg uppercase tracking-widest shadow-2xl shadow-red-600/30 active:scale-95 transition-all min-h-[44px]"
+                >
+                    {content.hero.cta_primary}
+                    <svg
+                        class={`w-5 h-5 sm:w-6 sm:h-6 ${isRTL ? "mr-2 sm:mr-3 rotate-180" : "ml-2 sm:ml-3"}`}
+                        aria-hidden="true"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="3"
+                            d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+
+                <a
+                    href={`/${lang}/bc-pnp-guide`}
+                    class="text-slate-600 hover:text-red-600 font-bold text-sm sm:text-base underline underline-offset-4 decoration-2 decoration-red-100 hover:decoration-red-600 transition-all"
+                >
+                    {content.hero.cta_secondary}
+                </a>
+            </div>
+
+            <!-- Features Grid -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pt-10 sm:pt-16"
+            >
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] border border-red-100 shadow-sm min-h-[200px]"
+                >
+                    <div
+                        class="w-14 h-14 mb-4 flex items-center justify-center bg-red-50 rounded-2xl mx-auto"
+                    >
+                        <svg
+                            class="w-8 h-8 text-red-600"
+                            aria-hidden="true"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <p class="font-bold text-slate-900 mb-2 text-lg">
+                        {content.features.instant.title}
+                    </p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        {content.features.instant.desc}
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] border border-red-100 shadow-sm min-h-[200px]"
+                >
+                    <div
+                        class="w-14 h-14 mb-4 flex items-center justify-center bg-red-50 rounded-2xl mx-auto"
+                    >
+                        <svg
+                            class="w-8 h-8 text-red-600"
+                            aria-hidden="true"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <p class="font-bold text-slate-900 mb-2 text-lg">
+                        {content.features.accurate.title}
+                    </p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        {content.features.accurate.desc}
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] border border-red-100 shadow-sm min-h-[200px]"
+                >
+                    <div
+                        class="w-14 h-14 mb-4 flex items-center justify-center bg-red-50 rounded-2xl mx-auto"
+                    >
+                        <svg
+                            class="w-8 h-8 text-red-600"
+                            aria-hidden="true"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <p class="font-bold text-slate-900 mb-2 text-lg">
+                        {content.features.detailed.title}
+                    </p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        {content.features.detailed.desc}
+                    </p>
+                </div>
+            </div>
+
+            <!-- SEO Content Section -->
+            <div
+                class="pt-12 sm:pt-20 text-left space-y-8 sm:space-y-12 max-w-3xl mx-auto"
+            >
+                <div class="space-y-4 sm:space-y-6">
+                    <h2
+                        class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight text-center"
+                    >
+                        {content.seo_section.title}
+                    </h2>
+                    <div class="prose prose-slate max-w-none text-center">
+                        <p
+                            class="text-slate-600 text-base leading-relaxed"
+                            set:html={content.seo_section.p1}
+                        />
+                        <p
+                            class="text-slate-600 text-base leading-relaxed"
+                            set:html={content.seo_section.p2}
+                        />
+                    </div>
+                </div>
+
+                <!-- Point Categories -->
+                <div
+                    class="bg-red-50/50 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 border border-red-100"
+                >
+                    <h3
+                        class="text-lg sm:text-xl font-black text-slate-900 mb-4 sm:mb-6 uppercase tracking-widest text-center"
+                    >
+                        {content.points_grid.title}
+                    </h3>
+                    <div class="space-y-4">
+                        <div
+                            class="flex justify-between items-center py-3 border-b border-red-100"
+                        >
+                            <span class="font-bold text-slate-800"
+                                >{content.points_grid.experience}</span
+                            >
+                            <span class="text-red-600 font-black"
+                                >40 {content.points_grid.max}</span
+                            >
+                        </div>
+                        <div
+                            class="flex justify-between items-center py-3 border-b border-red-100"
+                        >
+                            <span class="font-bold text-slate-800"
+                                >{content.points_grid.education}</span
+                            >
+                            <span class="text-red-600 font-black"
+                                >40 {content.points_grid.max}</span
+                            >
+                        </div>
+                        <div
+                            class="flex justify-between items-center py-3 border-b border-red-100"
+                        >
+                            <span class="font-bold text-slate-800"
+                                >{content.points_grid.language}</span
+                            >
+                            <span class="text-red-600 font-black"
+                                >40 {content.points_grid.max}</span
+                            >
+                        </div>
+                        <div
+                            class="flex justify-between items-center py-3 border-b border-red-100"
+                        >
+                            <span class="font-bold text-slate-800"
+                                >{content.points_grid.wage}</span
+                            >
+                            <span class="text-red-600 font-black"
+                                >55 {content.points_grid.max}</span
+                            >
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="font-bold text-slate-800"
+                                >{content.points_grid.region}</span
+                            >
+                            <span class="text-red-600 font-black"
+                                >25 {content.points_grid.max}</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest Guides Section -->
+                <div class="space-y-8 sm:space-y-10">
+                    <div class="text-center">
+                        <h2
+                            class="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-widest"
+                        >
+                            {content.guides.title}
+                        </h2>
+                        <div
+                            class="h-1 w-20 bg-red-600 mx-auto mt-4 rounded-full"
+                        >
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        {
+                            content.guides.cards.map((card) => (
+                                <a
+                                    href={card.link}
+                                    class="block group no-underline"
+                                >
+                                    <div class="h-full bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg hover:border-red-100 transition-all">
+                                        <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-2">
+                                            {card.title}
+                                        </h3>
+                                        <p class="text-sm text-slate-600">
+                                            {card.desc}
+                                        </p>
+                                    </div>
+                                </a>
+                            ))
+                        }
+                    </div>
+
+                    <div class="text-center">
+                        <a
+                            href={`/${lang}/bc-pnp-calculator-faq`}
+                            class="text-slate-600 hover:text-red-600 text-sm font-bold underline decoration-2 underline-offset-4 decoration-red-100 hover:decoration-red-600 transition-colors"
+                        >
+                            {content.guides.view_all}
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="space-y-8 sm:space-y-10">
+                    <div class="text-center">
+                        <h2
+                            class="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-widest"
+                        >
+                            {content.faq.title}
+                        </h2>
+                        <div
+                            class="h-1 w-20 bg-red-600 mx-auto mt-4 rounded-full"
+                        >
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        {
+                            content.faq.items.map((item) => (
+                                <div class="p-6 sm:p-8 bg-white border border-slate-100 rounded-[2rem] sm:rounded-[2.5rem] shadow-sm">
+                                    <h3 class="text-base sm:text-lg font-extrabold text-slate-900 mb-3">
+                                        {item.q}
+                                    </h3>
+                                    <p
+                                        class="text-slate-600 text-sm leading-relaxed"
+                                        set:html={item.a}
+                                    />
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center pt-8 sm:pt-10">
+                    <a
+                        href={`/${lang}/bc-pnp-calculator`}
+                        class="inline-flex items-center bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white px-8 sm:px-10 py-5 rounded-[1.5rem] sm:rounded-[2rem] font-bold text-sm uppercase tracking-widest shadow-xl active:scale-95 transition-all min-h-[44px]"
+                    >
+                        {content.bottom_cta.text}
+                        <svg
+                            class={`w-4 h-4 sm:w-5 sm:h-5 ${isRTL ? "mr-2 sm:mr-3 rotate-180" : "ml-2 sm:ml-3"}`}
+                            aria-hidden="true"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="3"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="text-center pt-10 border-t border-slate-100">
+                    <p
+                        class="text-xs text-slate-400 font-medium uppercase tracking-[0.2em] leading-relaxed"
+                    >
+                        {content.disclaimer}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</BaseLayout>
