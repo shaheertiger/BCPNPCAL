@@ -1,0 +1,79 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-slate-900 border-t border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+      <!-- Brand Section -->
+      <div class="col-span-1 md:col-span-2 space-y-4">
+        <a href="/" class="inline-flex items-center space-x-2 group">
+          <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white font-black text-sm group-hover:bg-red-500 transition-colors">
+            BC
+          </div>
+          <span class="text-xl font-black text-white tracking-tight">PNP Calculator</span>
+        </a>
+        <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+          The most comprehensive and up-to-date BC PNP points calculator. Estimate your Skills Immigration Ranking System (SIRS) score instantly.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Tools & Updates</h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="/bc-pnp-calculator" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
+              <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>
+              Points Calculator
+            </a>
+          </li>
+          <li>
+            <a href="/bc-pnp-draws" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
+              <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>
+              Latest Draws
+            </a>
+          </li>
+           <li>
+            <a href="/bc-pnp-guide" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
+              <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-2 opacity-0 hover:opacity-100 transition-opacity"></span>
+              Ultimate Guide 2026
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Legal & Sitemap -->
+      <div>
+        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Resources</h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="/sitemap" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
+              Sitemap
+            </a>
+          </li>
+           <li>
+            <a href="/privacy-policy" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="/terms" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center">
+              Terms of Service
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-slate-500">
+        &copy; {currentYear} BC PNP Calculator. All rights reserved.
+      </p>
+      <p class="text-xs text-slate-600">
+        Not affiliated with the Government of British Columbia.
+      </p>
+    </div>
+  </div>
+</footer>
