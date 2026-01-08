@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "How to Apply for BC PNP 2025: Step-by-Step Process & Login";
+const description = "Beginner's guide to applying for the British Columbia Provincial Nominee Program. Learn about SIRS registration, documents needed, fees, and the login process.";
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto space-y-8">
+      
+      <!-- Header -->
+      <header class="space-y-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          How to Apply for BC PNP: <span class="text-green-600">The 2025 Guide</span>
+        </h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          From creating your profile to receiving your nomination. An easy-to-follow roadmap for your immigration journey to British Columbia.
+        </p>
+      </header>
+
+      <!-- Main Content -->
+      <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
+        
+        <h2>Overview of the Process</h2>
+        <p>
+            The BC PNP process is entirely online. It operates on an "Expression of Interest" (EOI) system called <strong>SIRS</strong>. This means you cannot simply apply whenever you want; you must be invited first.
+        </p>
+        
+        <div class="not-prose grid gap-6 md:grid-cols-5 my-10">
+            <div class="text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-black text-xl mx-auto mb-2">1</div>
+                <div class="text-sm font-bold text-slate-900">Choose Stream</div>
+            </div>
+             <div class="text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-black text-xl mx-auto mb-2">2</div>
+                <div class="text-sm font-bold text-slate-900">Register (SIRS)</div>
+            </div>
+             <div class="text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-black text-xl mx-auto mb-2">3</div>
+                <div class="text-sm font-bold text-slate-900">Invitation</div>
+            </div>
+             <div class="text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-black text-xl mx-auto mb-2">4</div>
+                <div class="text-sm font-bold text-slate-900">Application</div>
+            </div>
+             <div class="text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-black text-xl mx-auto mb-2">5</div>
+                <div class="text-sm font-bold text-slate-900">Nomination</div>
+            </div>
+        </div>
+
+        <h2>Step 1: Choose Your Stream</h2>
+        <p>
+            Before you log in, you must know which category fits you. Common streams include:
+        </p>
+        <ul>
+            <li><strong>Skills Immigration:</strong> For workers with job offers (Skilled Worker, Health Authority, International Graduate).</li>
+            <li><strong>Entrepreneur Immigration:</strong> For business owners.</li>
+        </ul>
+
+        <h2>Step 2: Register with SIRS (BC PNP Login)</h2>
+        <p>
+            Visit the <strong>BCPNP Online</strong> portal. You will need to create a BCeID account first. Registration is free for most, but some streams may have a small registration fee.
+        </p>
+        <p>
+            <strong>What you need:</strong>
+        </p>
+        <ul>
+            <li>Passport details</li>
+            <li>Job offer details (wage, location, employer info)</li>
+            <li>Language test results (IELTS/CELPIP)</li>
+            <li>Education history</li>
+        </ul>
+        <p>
+            Once submitted, you will receive a registration score out of 200.
+        </p>
+
+        <h2>Step 3: Wait for an Invitation (ITA)</h2>
+        <p>
+            B.C. conducts draws approximately every week. If your score meets the cut-off for that round, you will receive an invitation to apply via email.
+        </p>
+
+        <h2>Step 4: Submit Full Application</h2>
+        <p>
+            You have <strong>30 days</strong> from the date of invitation to submit your complete application. This requires:
+        </p>
+        <ul>
+            <li>Paying the processing fee ($1,150 for Skills Immigration).</li>
+            <li>Uploading all supporting documents (Reference letters, pay stubs, diplomas).</li>
+        </ul>
+
+        <h2>Step 5: Nomination</h2>
+        <p>
+            If approved, you receive a "Confirmation of Nomination". You can then apply to the federal government (IRCC) for Permanent Residence. B.C. will also support your work permit application so you can start working while you wait.
+        </p>
+
+      </div>
+
+      <!-- Links -->
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="https://studentaidbc.ca/apply/bceid" rel="nofollow" class="block p-6 bg-white rounded-2xl border border-slate-200 hover:border-green-400 transition-colors group">
+            <h3 class="font-bold text-slate-900 group-hover:text-green-600 mb-1">Create BCeID</h3>
+            <p class="text-sm text-slate-500">Official government login creation.</p>
+        </a>
+        <a href="/bc-pnp-calculator" class="block p-6 bg-white rounded-2xl border border-slate-200 hover:border-green-400 transition-colors group">
+            <h3 class="font-bold text-slate-900 group-hover:text-green-600 mb-1">Estimate Your Score</h3>
+            <p class="text-sm text-slate-500">See if you qualify for an invite.</p>
+        </a>
+      </div>
+
+    </div>
+  </article>
+</BaseLayout>

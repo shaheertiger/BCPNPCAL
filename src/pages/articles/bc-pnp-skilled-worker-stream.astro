@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "BC PNP Skilled Worker Stream 2025: Requirements & Eligibility";
+const description = "Everything you need to know about the BC PNP Skilled Worker stream. Learn about the 'directly related work experience' rule, wage requirements, and how to qualify.";
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto space-y-8">
+      
+      <!-- Header -->
+      <header class="space-y-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          BC PNP <span class="text-purple-600">Skilled Worker Stream</span>
+        </h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          The primary pathway for experienced professionals to immigrate to British Columbia. Do you have the required experience?
+        </p>
+      </header>
+
+      <!-- Main Content -->
+      <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
+        
+        <h2>Who is this stream for?</h2>
+        <p>
+            The Skilled Worker stream is for individuals who have received a job offer in a skilled occupation (NOC TEER 0, 1, 2, or 3) and have several years of experience in that field. Unlike the International Graduate stream, you do <strong>not</strong> need a recent Canadian degree.
+        </p>
+
+        <h2>Core Eligibility Criteria</h2>
+        <ul>
+            <li><strong>Job Offer:</strong> A full-time, indeterminate (permanent) job offer from an eligible B.C. employer.</li>
+            <li><strong>Wage:</strong> The wage must meet industry standards for B.C.</li>
+            <li><strong>Experience:</strong> Minimum of <strong>2 years of directly related work experience</strong>.</li>
+            <li><strong>Language:</strong> Minimum CLB 4 for TEER 2 and 3 occupations. (TEER 0 and 1 technically have no minimum, but CLB 4+ is highly recommended for points).</li>
+        </ul>
+
+        <div class="bg-purple-50 p-6 rounded-2xl border border-purple-100 my-8 not-prose">
+            <h3 class="font-bold text-purple-900 text-lg mb-2">What counts as "Directly Related"?</h3>
+            <p class="text-purple-800 text-sm leading-relaxed mb-4">
+                This is the #1 reason for refusal. Your 2 years of experience must generally be in the <strong>same NOC code</strong> as the B.C. job offer.
+            </p>
+            <p class="text-purple-800 text-sm leading-relaxed">
+                <em>Exception:</em> Experience in a higher-level position may count. For example, experience as a "Software Engineering Manager" (TEER 0) usually counts for a "Software Engineer" (TEER 1) job offer. But experience as a "Junior Tech Support" may not count for a "Network Engineer" role.
+            </p>
+        </div>
+
+        <h2>Skilled Worker vs International Graduate</h2>
+        <div class="not-prose overflow-x-auto">
+             <table class="min-w-full text-left text-sm whitespace-nowrap">
+                <thead class="bg-slate-50 border-b border-slate-200">
+                    <tr>
+                        <th class="px-4 py-3 font-bold text-slate-900">Feature</th>
+                        <th class="px-4 py-3 font-bold text-purple-700">Skilled Worker</th>
+                        <th class="px-4 py-3 font-bold text-blue-700">Intl. Graduate</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                     <tr>
+                        <th class="px-4 py-3 font-bold text-slate-900">Prior Experience</th>
+                        <td class="px-4 py-3">2 Years Required</td>
+                        <td class="px-4 py-3">None Required</td>
+                    </tr>
+                     <tr>
+                        <th class="px-4 py-3 font-bold text-slate-900">BC Degree</th>
+                        <td class="px-4 py-3">Not Required</td>
+                        <td class="px-4 py-3">Required (Last 3 years)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>How to Increase Your Chances</h2>
+        <p>
+            Because this is the most popular stream, competition can be high. To boost your SIRS score:
+        </p>
+         <ol>
+            <li><strong>Work in B.C.:</strong> Start working on a temporary work permit first to gain "current employment in B.C." points.</li>
+            <li><strong>Move Regional:</strong> Job offers outside of Metro Vancouver get huge bonus points.</li>
+            <li><strong>Improve English:</strong> Aim for CLB 9 if possible.</li>
+        </ol>
+
+      </div>
+
+         <div class="flex justify-center mt-8">
+            <a href="/bc-pnp-calculator" class="text-slate-600 hover:text-purple-600 font-bold underline decoration-2 underline-offset-4 decoration-purple-200 hover:decoration-purple-600 transition-colors">
+                Calculate your Skilled Worker Score
+            </a>
+        </div>
+
+    </div>
+  </article>
+</BaseLayout>
