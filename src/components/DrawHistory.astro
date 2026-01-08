@@ -1,0 +1,232 @@
+---
+interface Props {
+  type: "skills" | "entrepreneur";
+}
+
+const { type } = Astro.props;
+
+// Data from user prompt
+const skillsDraws = [
+  {
+    date: "December 10, 2025",
+    invitations: 410,
+    criteria: [
+      "Minimum wage of $87/hour and $170,000/year, and a job offer in NOC TEER 0, 1, 2 or 3 (96 candidates)",
+      "A minimum score of 138 points (314 candidates)"
+    ]
+  },
+  {
+    date: "October 2, 2025",
+    invitations: 474,
+    criteria: [
+      "Minimum wage of $90/hour and $175,000/year, and a job offer in NOC TEER 0, 1, 2 or 3 (114 candidates)",
+      "A minimum score of 140 points (360 candidates)"
+    ]
+  },
+  {
+    date: "May 8, 2025",
+    invitations: 94,
+    criteria: [
+      "Minimum wage of $105/hr, full-time in BC, NOC TEER 0 or 1 (47 candidates)",
+      "A minimum score of 150 points (47 candidates)"
+    ]
+  },
+  {
+    date: "December 10, 2024",
+    invitations: "Various",
+    details: [
+      { stream: "Skilled Worker", score: 148, invites: "6 - General draw" },
+      { stream: "Skilled Worker - EEBC", score: 148, invites: "" },
+      { stream: "Entry Level and Semi-Skilled", score: 121, invites: "" },
+      { stream: "Childcare (Targeted)", score: 101, invites: "<5" },
+      { stream: "Construction (Targeted)", score: 112, invites: "<5" },
+      { stream: "Healthcare (Targeted)", score: 121, invites: "<5" },
+      { stream: "Veterinary Care (Targeted)", score: 80, invites: "<5" }
+    ]
+  },
+  {
+    date: "December 3, 2024",
+    invitations: "Various",
+    details: [
+        { stream: "Childcare (Targeted)", score: 102, invites: "<5" },
+        { stream: "Construction (Targeted)", score: 108, invites: "<5" },
+        { stream: "Healthcare (Targeted)", score: 121, invites: "6" },
+        { stream: "Tech (Targeted)", score: 141, invites: "<5" }
+    ]
+  },
+  {
+    date: "November 26, 2024",
+    invitations: "Various",
+    details: [
+        { stream: "Skilled Worker", score: 146, invites: "7 - General draw" },
+        { stream: "International Graduate", score: 146, invites: "" },
+        { stream: "Entry Level & Semi-Skilled", score: 125, invites: "" },
+        { stream: "Childcare", score: 102, invites: "<5" },
+        { stream: "Construction", score: 108, invites: "<5" },
+        { stream: "Healthcare", score: 121, invites: "<5" },
+        { stream: "Veterinary Care", score: 80, invites: "<5" }
+    ]
+  }
+];
+
+const entrepreneurDraws = [
+  { date: "December 16, 2025", stream: "Base", score: 115, invites: 17 },
+  { date: "December 16, 2025", stream: "Regional", score: 107, invites: "<5" },
+  { date: "November 18, 2025", stream: "Base", score: 121, invites: 19 },
+  { date: "November 18, 2025", stream: "Regional", score: 115, invites: "<5" },
+  { date: "October 2, 2025", stream: "Base", score: 123, invites: 11 },
+  { date: "August 19, 2025", stream: "Base", score: 124, invites: 11 },
+  { date: "August 19, 2025", stream: "Regional", score: 115, invites: "<5" },
+  { date: "July 8, 2025", stream: "Base", score: 121, invites: 12 },
+  { date: "July 8, 2025", stream: "Regional", score: 115, invites: "<5" },
+  { date: "May 28, 2025", stream: "Base", score: 115, invites: 9 },
+  { date: "May 28, 2025", stream: "Regional", score: 123, invites: "<5" },
+];
+---
+
+<div class="w-full">
+  {type === 'skills' ? (
+    <div class="space-y-6">
+       <!-- Desktop Table -->
+      <div class="hidden md:block overflow-hidden rounded-[1.5rem] border border-slate-100 shadow-sm">
+        <table class="w-full text-left bg-white">
+          <thead class="bg-slate-50 border-b border-slate-100">
+            <tr>
+              <th class="px-6 py-4 text-xs font-black text-slate-500 uppercase tracking-wider">Date</th>
+              <th class="px-6 py-4 text-xs font-black text-slate-500 uppercase tracking-wider">Details</th>
+              <th class="px-6 py-4 text-xs font-black text-slate-500 uppercase tracking-wider text-right">Invitations</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {skillsDraws.map((draw, index) => (
+              <tr class={index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                <td class="px-6 py-4 whitespace-nowrap align-top">
+                  <div class="text-sm font-bold text-slate-900">{draw.date}</div>
+                  {index === 0 && <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800 mt-1">Latest</span>}
+                </td>
+                <td class="px-6 py-4 align-top">
+                    {draw.criteria ? (
+                        <ul class="list-disc list-inside space-y-1">
+                            {draw.criteria.map(c => <li class="text-sm text-slate-600">{c}</li>)}
+                        </ul>
+                    ) : (
+                        <div class="space-y-2">
+                             {draw.details?.map(d => (
+                                 <div class="flex justify-between text-sm">
+                                     <span class="text-slate-600">{d.stream}</span>
+                                     <span class="font-medium text-slate-900">{d.score} pts</span>
+                                 </div>
+                             ))}
+                        </div>
+                    )}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right align-top text-sm font-bold text-red-600">
+                  {draw.invitations}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Mobile Cards -->
+      <div class="md:hidden space-y-4">
+        {skillsDraws.map((draw, index) => (
+          <div class="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm">
+             <div class="flex justify-between items-start mb-4">
+                 <div>
+                    <div class="text-lg font-black text-slate-900">{draw.date}</div>
+                    {index === 0 && <span class="inline-block mt-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-700 uppercase tracking-wide">Latest Draw</span>}
+                 </div>
+                 <div class="text-right">
+                     <div class="text-xs text-slate-400 font-bold uppercase tracking-wider">Invites</div>
+                     <div class="text-xl font-black text-red-600">{draw.invitations}</div>
+                 </div>
+             </div>
+             
+             <div class="space-y-3 pt-3 border-t border-slate-100">
+                {draw.criteria ? (
+                    <ul class="space-y-2">
+                        {draw.criteria.map(c => (
+                            <li class="flex items-start text-sm text-slate-600">
+                                <span class="mr-2 text-red-400">•</span>
+                                {c}
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <div class="grid gap-2">
+                        {draw.details?.map(d => (
+                            <div class="flex justify-between text-sm p-2 bg-slate-50 rounded-lg">
+                                <span class="text-slate-700 font-medium">{d.stream}</span>
+                                <div class="text-right">
+                                    <span class="block font-bold text-slate-900">{d.score} pts</span>
+                                    {d.invites && <span class="text-xs text-slate-500">{d.invites}</span>}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  ) : (
+    <div class="space-y-6">
+      <!-- Desktop Table -->
+      <div class="hidden md:block overflow-hidden rounded-[1.5rem] border border-slate-100 shadow-sm">
+        <table class="w-full text-left bg-white">
+          <thead class="bg-slate-50 border-b border-slate-100">
+            <tr>
+              <th class="px-6 py-4 text-xs font-black text-slate-500 uppercase tracking-wider">Date</th>
+              <th class="px-6 py-4 text-xs font-black text-slate-500 uppercase tracking-wider">Stream</th>
+              <th class="px-6 py-4 text-xs font-black text-slate-500 uppercase tracking-wider text-center">Score</th>
+              <th class="px-6 py-4 text-xs font-black text-slate-500 uppercase tracking-wider text-right">Invites</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {entrepreneurDraws.map((draw, index) => (
+              <tr class={index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900">
+                    {draw.date}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600">
+                  {draw.stream}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 text-center">
+                  {draw.score}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-red-600 text-right">
+                  {draw.invites}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+       <!-- Mobile Cards -->
+      <div class="md:hidden grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {entrepreneurDraws.map((draw) => (
+            <div class="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm text-center">
+                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">{draw.date}</div>
+                <div class="text-lg font-black text-slate-900 mb-2">{draw.stream}</div>
+                
+                <div class="flex justify-center gap-4 py-2 border-t border-b border-slate-50 mb-2">
+                    <div>
+                        <div class="text-[10px] uppercase text-slate-400 font-bold">Score</div>
+                        <div class="text-xl font-bold text-slate-900">{draw.score}</div>
+                    </div>
+                    <div class="w-px bg-slate-100"></div>
+                    <div>
+                        <div class="text-[10px] uppercase text-slate-400 font-bold">Invites</div>
+                        <div class="text-xl font-bold text-red-600">{draw.invites}</div>
+                    </div>
+                </div>
+            </div>
+        ))}
+      </div>
+    </div>
+  )}
+</div>

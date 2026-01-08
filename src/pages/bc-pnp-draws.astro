@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DrawHistory from '../components/DrawHistory.astro';
+
+const title = "Latest BC PNP Draws 2026: Live Updates, Cut-off Scores & Invitations";
+const description = "⚡ Just Updated: See the latest BC PNP draw results for 2026. Check cut-off scores for Skills & Entrepreneur streams, number of invitations, and next draw dates.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": title,
+  "description": description,
+  "datePublished": "2026-01-07T08:00:00+08:00",
+  "dateModified": new Date().toISOString(),
+  "author": {
+    "@type": "Organization",
+    "name": "BC PNP Calculator"
+  }
+};
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} keywords="BC PNP draw 2026, British Columbia PNP latest draw, BC PNP points cutoff, next BC PNP draw, BC PNP invitation to apply">
+  <main class="min-h-screen bg-slate-50">
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-b from-red-50 to-white pt-32 pb-16 px-4 sm:px-6">
+      <div class="max-w-5xl mx-auto space-y-6 text-center">
+        <!-- Breadcrumbs -->
+        <nav class="flex justify-center items-center space-x-2 text-sm text-slate-500 font-medium mb-8">
+            <a href="/" class="hover:text-red-600 transition-colors">Home</a>
+            <span class="text-slate-300">/</span>
+            <a href="#" class="hover:text-red-600 transition-colors">Canada</a>
+            <span class="text-slate-300">/</span>
+            <span class="text-red-600 font-bold">Latest BC PNP Draw</span>
+        </nav>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+          Latest BC PNP Draw <span class="text-red-600">2026</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          British Columbia regularly selects candidates for provincial nomination. Check the latest scores, invitations, and trends below.
+        </p>
+
+        <div class="pt-8 flex justify-center gap-4">
+             <a href="#skills-draws" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-red-600 text-white font-bold text-sm uppercase tracking-wider hover:bg-red-700 transition-colors shadow-lg shadow-red-200">
+                View Latest Scores
+             </a>
+             <a href="#next-draw" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-slate-900 border border-slate-200 font-bold text-sm uppercase tracking-wider hover:bg-slate-50 transition-colors">
+                Next Draw Prediction
+             </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 pb-24 space-y-16">
+      
+      <!-- Immigration Intro -->
+      <section class="prose prose-lg prose-slate max-w-none">
+        <h2 class="text-3xl font-black text-slate-900 tracking-tight mb-6">Immigrating to British Columbia in 2026</h2>
+        <p>
+          British Columbia provides its residents with a high standard of living and better career growth opportunities. In 2025, BC PNP invited over 10,000 candidates across Skills Immigration and Entrepreneur Immigration draws. BC PNP conducted 2-3 draws almost every month in 2025. The same trend is expected to be carried on for 2026 as well.
+        </p>
+        <p>The BC PNP has two main components:</p>
+        <div class="grid sm:grid-cols-2 gap-6 not-prose my-8">
+            <div class="p-6 bg-white rounded-[2rem] border border-slate-100 shadow-sm">
+                <h3 class="font-bold text-lg text-slate-900 mb-3 flex items-center">
+                    <span class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mr-3 text-sm">SI</span>
+                    Skills Immigration
+                </h3>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li>• Skilled Worker</li>
+                    <li>• Health Authority</li>
+                    <li>• Entry Level and Semi-Skilled (ELSS)</li>
+                    <li>• International Graduate</li>
+                    <li>• International Post-Graduate</li>
+                </ul>
+            </div>
+             <div class="p-6 bg-white rounded-[2rem] border border-slate-100 shadow-sm">
+                <h3 class="font-bold text-lg text-slate-900 mb-3 flex items-center">
+                    <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mr-3 text-sm">EI</span>
+                    Entrepreneur Immigration
+                </h3>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li>• Base Stream</li>
+                    <li>• Regional Pilot</li>
+                </ul>
+            </div>
+        </div>
+        <p>
+            If you are nominated under any of the two components, you and your family can apply for Canada PR visa to the IRCC. At current times, most applications under the BC PNP are processed within 12-15 months.
+        </p>
+      </section>
+
+      <!-- Next Draw Prediction -->
+      <section id="next-draw" class="bg-indigo-900 rounded-[2.5rem] p-8 sm:p-12 text-white text-center relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-10"></div>
+          <div class="relative z-10 space-y-4">
+              <h2 class="text-3xl font-black mb-2">When will the next BC PNP draw take place?</h2>
+              <p class="text-indigo-200 text-lg leading-relaxed max-w-2xl mx-auto">
+                  BC PNP draws are usually held on a bi-weekly basis, with some exceptions. The government of British Columbia does not publish this information beforehand.
+              </p>
+              <div class="inline-block bg-indigo-800/50 backdrop-blur-sm px-6 py-3 rounded-xl border border-indigo-700 mt-6">
+                  <span class="block text-indigo-300 text-xs font-bold uppercase tracking-widest mb-1">Predicted Date</span>
+                  <span class="text-2xl font-bold">January 14, 2026</span>
+              </div>
+          </div>
+      </section>
+
+      <!-- Skills Immigration Table -->
+      <section id="skills-draws">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Skills Immigration Draws</h2>
+            <span class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700 uppercase tracking-wide">
+                Updated Live
+            </span>
+        </div>
+        <DrawHistory type="skills" />
+      </section>
+
+      <!-- Entrepreneur Immigration Table -->
+      <section id="entrepreneur-draws">
+        <div class="flex items-center justify-between mb-8 pt-8 border-t border-slate-200">
+             <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Entrepreneur Immigration Draws</h2>
+        </div>
+        <DrawHistory type="entrepreneur" />
+      </section>
+
+      <!-- FAQ Accordion (Simple) -->
+      <section class="max-w-3xl mx-auto pt-12">
+          <h2 class="text-2xl font-black text-slate-900 text-center mb-10">Common Questions</h2>
+          <div class="space-y-4">
+              <details class="group bg-white rounded-2xl border border-slate-100 p-6 [&_summary::-webkit-details-marker]:hidden">
+                  <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-slate-900 font-bold marker:content-none">
+                      What is the minimum score for BC PNP?
+                      <svg class="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                  </summary>
+                  <p class="mt-4 leading-relaxed text-slate-600 text-sm">
+                      The minimum score varies by stream. For Skilled Workers, it typically ranges between 100-140 points. Targeted draws (Tech, Healthcare) often have lower cut-off scores.
+                  </p>
+              </details>
+
+              <details class="group bg-white rounded-2xl border border-slate-100 p-6 [&_summary::-webkit-details-marker]:hidden">
+                  <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-slate-900 font-bold marker:content-none">
+                      How do I apply for a BC PNP draw?
+                      <svg class="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                  </summary>
+                  <p class="mt-4 leading-relaxed text-slate-600 text-sm">
+                      To secure a nomination, you must first confirm your eligibility and submit an Expression of Interest (EOI) online. High-scoring candidates are then invited to apply in the bi-weekly draws.
+                  </p>
+              </details>
+          </div>
+      </section>
+
+    </div>
+  </main>
+</BaseLayout>
