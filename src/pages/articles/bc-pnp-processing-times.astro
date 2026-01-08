@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "BC PNP Processing Times 2025: Current Wait Periods";
+const description = "Current BC PNP processing times for Skills Immigration, Express Entry, and Entrepreneur streams. Learn what affects your application speed.";
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto space-y-8">
+      
+      <!-- Header -->
+      <header class="space-y-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          BC PNP <span class="text-green-600">Processing Times</span>
+        </h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          How long does it take to get nominated? Here are the latest estimated processing times for 2025 across all streams.
+        </p>
+      </header>
+
+      <!-- Main Content -->
+      <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
+        
+        <h2>Skills Immigration Processing Times</h2>
+        <p>
+            This category includes Skilled Worker, International Graduate, and Entry Level & Semi-Skilled streams.
+        </p>
+        
+        <div class="not-prose overflow-x-auto my-6">
+            <table class="min-w-full text-left text-sm">
+                <thead class="bg-gray-100 border-b border-gray-200">
+                    <tr>
+                        <th class="px-4 py-3 font-bold text-slate-900">Stream</th>
+                        <th class="px-4 py-3 font-bold text-slate-900">Estimated Time</th>
+                        <th class="px-4 py-3 font-bold text-slate-900">Notes</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                     <tr>
+                        <td class="px-4 py-3 font-medium">Generic Skills Immigration</td>
+                        <td class="px-4 py-3 text-green-700 font-bold">2 - 3 Months</td>
+                        <td class="px-4 py-3 text-slate-500">Standard processing</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium">BC PNP Tech</td>
+                        <td class="px-4 py-3 text-green-700 font-bold">2 - 3 Months</td>
+                        <td class="px-4 py-3 text-slate-500">Often faster due to priority</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium">Health Authority</td>
+                        <td class="px-4 py-3 text-green-700 font-bold">2 - 3 Months</td>
+                        <td class="px-4 py-3 text-slate-500">Priority processing</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 font-medium">Entry Level & Semi-Skilled</td>
+                        <td class="px-4 py-3 text-green-700 font-bold">3 - 4 Months</td>
+                        <td class="px-4 py-3 text-slate-500">May require more verification</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-xl text-sm border border-slate-200 mb-8">
+            <strong>Note:</strong> This time starts from the day you submit your <em>complete application</em> (after receiving an invitation), not from the day you register in SIRS.
+        </div>
+
+        <h2>Federal Processing (After Nomination)</h2>
+        <p>
+            Getting the provincial nomination is only half the battle. You then apply to the federal government (IRCC) for permanent residence. This stage takes longer.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 not-prose">
+            <div class="border border-slate-200 p-6 rounded-2xl">
+                <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Express Entry</div>
+                <div class="text-3xl font-black text-slate-900 mb-1">5 - 8 Months</div>
+                <p class="text-slate-600 text-sm">Online system. Much faster.</p>
+            </div>
+             <div class="border border-slate-200 p-6 rounded-2xl">
+                <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Non-Express Entry</div>
+                <div class="text-3xl font-black text-slate-900 mb-1">11 - 18 Months</div>
+                <p class="text-slate-600 text-sm">Paper-based/Portal. Slower.</p>
+            </div>
+        </div>
+
+        <h2 class="mt-12">Factors That Delay Processing</h2>
+        <p>
+            Your application might move slower than average if:
+        </p>
+        <ul>
+            <li><strong>Incomplete Documents:</strong> Missing signatures, blurry scans, or wrong forms.</li>
+            <li><strong>Employer Verification:</strong> If BC PNP cannot reach your employer to verify your job offer.</li>
+            <li><strong>Complexity:</strong> Unusual business structures or complex work history.</li>
+            <li><strong>Volume:</strong> If there is a sudden spike in applications (e.g., after a large draw).</li>
+        </ul>
+
+        <h2>How to Speed It Up?</h2>
+        <p>
+            You cannot pay for faster processing. The only way to ensure the fastest possible result is to:
+        </p>
+        <ol>
+            <li><strong>Triple-check your checklist:</strong> Don't miss a single file.</li>
+            <li><strong>Inform your employer:</strong> Tell them BC PNP might call or email, and to respond quickly.</li>
+            <li><strong>Use the Tech Stream:</strong> If eligible, it is prioritized.</li>
+        </ol>
+
+      </div>
+    </div>
+  </article>
+</BaseLayout>

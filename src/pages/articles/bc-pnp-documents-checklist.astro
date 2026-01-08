@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "BC PNP Document Checklist 2025: Required Forms & PDFs";
+const description = "The ultimate checklist for your BC PNP application. Ensure you have all required documents for registration and application to avoid delays.";
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto space-y-8">
+      
+      <!-- Header -->
+      <header class="space-y-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          BC PNP <span class="text-blue-600">Document Checklist</span>
+        </h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Missing a single document can lead to your application being returned or refused. Use this checklist to get everything ready before you apply.
+        </p>
+      </header>
+
+      <!-- Main Content -->
+      <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
+        
+        <h2>General Formatting Rules</h2>
+        <p>
+            Before you start scanning, keep these rules in mind:
+        </p>
+        <ul class="text-sm">
+            <li><strong>Format:</strong> All files must be <strong>PDF</strong> (except photos, which can be JPG).</li>
+            <li><strong>Quality:</strong> Scans must be in colour and legible.</li>
+            <li><strong>Size:</strong> Max 3MB per file (usually).</li>
+            <li><strong>Translation:</strong> Anything not in English or French must be accompanied by a certified translation <em>and</em> a copy of the original.</li>
+        </ul>
+
+        <hr class="my-8 border-slate-100" />
+
+        <h2>1. Personal Information</h2>
+        <ul>
+            <li><strong>Passport:</strong> Bio-data hood (photo page) for you and all dependents. Must be valid.</li>
+            <li><strong>Photo:</strong> A recent passport-style photo of the principal applicant.</li>
+            <li><strong>Status Documents in Canada:</strong> Work permits, study permits, or visitor records (if currently in Canada).</li>
+            <li><strong>Marriage Certificate:</strong> If applicable.</li>
+        </ul>
+
+        <h2>2. Employer Documents</h2>
+        <p>
+            Your employer needs to provide several critical documents. Do not leave this to the last minute.
+        </p>
+        <ul>
+            <li><strong>BC PNP Job Offer Form:</strong> Must be signed by the authorized employer rep and you.</li>
+            <li><strong>Job Description:</strong> Detailed outline of duties on company letterhead.</li>
+            <li><strong>Company Info:</strong> Certificate of Incorporation and valid municipal business license.</li>
+            <li><strong>Recommendation Letter:</strong> Explaining why you are the best fit for the role and recruitment efforts made (if applicable).</li>
+        </ul>
+
+        <h2>3. Education & Certifications</h2>
+        <ul>
+            <li><strong>Degree/Diploma:</strong> Copies of your actual degree or diploma certificates.</li>
+            <li><strong>Transcripts:</strong> Official transcripts showing completed courses and grades.</li>
+            <li><strong>ECA Report:</strong> Educational Credential Assessment (WES, ICAS, etc.) if your degree is from outside Canada.</li>
+            <li><strong>Professional Designation:</strong> If working in a regulated trade or healthcare role.</li>
+        </ul>
+
+        <h2>4. Language Results</h2>
+        <ul>
+            <li><strong>Test Report Form:</strong> Valid results from IELTS (General), CELPIP (General), TEF, or TCF.</li>
+            <li>Must be less than <strong>2 years old</strong> at the time of registration.</li>
+        </ul>
+
+        <h2>5. Work Experience</h2>
+        <p>
+            To prove your previous experience (especially for the "Directly Related Experience" points):
+        </p>
+        <ul>
+            <li><strong>Reference Letters:</strong> From past employers, on letterhead, signed, listing dates, hours, duties, and salary.</li>
+            <li><strong>Pay Stubs:</strong> A selection of pay stubs to prove employment history.</li>
+            <li><strong>T4s / Tax Documents:</strong> Official government tax records matching your employment dates.</li>
+        </ul>
+        
+        <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 my-8 not-prose">
+            <h3 class="font-bold text-blue-900 mb-2">Tip: Organize Early</h3>
+            <p class="text-blue-800 text-sm">
+                You only have 30 days to submit your application after receiving an invitation. Start gathering your employer documents (which take the longest) as soon as you register in SIRS.
+            </p>
+        </div>
+
+      </div>
+
+    </div>
+  </article>
+</BaseLayout>

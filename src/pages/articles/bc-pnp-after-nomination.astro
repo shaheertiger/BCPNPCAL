@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "After BC PNP Nomination 2025: Next Steps for PR";
+const description = "You received your BC PNP nomination! Now what? Learn how to apply for Permanent Residence, get a work permit support letter, and maintain your status.";
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto space-y-8">
+      
+      <!-- Header -->
+      <header class="space-y-4 text-center">
+        <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-700 uppercase tracking-wide">
+          Final Stage
+        </div>
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          After Your <span class="text-purple-600">BC PNP Nomination</span>
+        </h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Congratulations! You've been nominated. But you aren't a Permanent Resident yet. Here is exactly what you need to do next to seal the deal.
+        </p>
+      </header>
+
+      <!-- Main Content -->
+      <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
+        
+        <p class="lead">
+            Receiving a nomination means B.C. has selected you. Now, you must pass the federal checks (security, medical, etc.) conducted by IRCC (Immigration, Refugees and Citizenship Canada).
+        </p>
+
+        <h2>1. Apply for Permanent Residence</h2>
+        <p>
+            How you apply depends on which stream you were nominated under:
+        </p>
+        
+        <div class="grid sm:grid-cols-2 gap-6 not-prose my-8">
+            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <h3 class="font-bold text-slate-900 mb-2">Express Entry BC</h3>
+                <p class="text-sm text-slate-600 mb-4">
+                    You will receive <strong>600 points</strong> added to your CRS score.
+                </p>
+                <ol class="text-sm space-y-2 list-decimal list-inside">
+                    <li>Accept nomination in your IRCC profile.</li>
+                    <li>Wait for the next federal draw (usually 2 weeks).</li>
+                    <li>Receive ITA and submit online within 60 days.</li>
+                    <li><strong>Time:</strong> ~6 months.</li>
+                </ol>
+            </div>
+             <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <h3 class="font-bold text-slate-900 mb-2">Non-Express Entry (Base)</h3>
+                <p class="text-sm text-slate-600 mb-4">
+                    This includes most ELSS, Tech, and regular Skills Immigration nominees.
+                </p>
+                <ol class="text-sm space-y-2 list-decimal list-inside">
+                    <li>Submit application via the <strong>PR Portal</strong>.</li>
+                    <li>Upload nomination certificate.</li>
+                    <li>Pay fees online.</li>
+                    <li><strong>Time:</strong> 12-18 months.</li>
+                </ol>
+            </div>
+        </div>
+
+        <h2>2. Work Permit Support Letter</h2>
+        <p>
+            Does your current work permit expire soon? A BC PNP nomination gives you a special benefit: the <strong>Work Permit Support Letter</strong>.
+        </p>
+        <p>
+            This letter allows you to apply for a new, closed work permit without your employer needing an LMIA (Labor Market Impact Assessment). This bridges the gap while you wait for your PR.
+        </p>
+        <ul>
+            <li>You must request this from BC PNP (it is not automatic).</li>
+            <li>It is intended for you to keep working for your nominating employer.</li>
+        </ul>
+
+        <h2>3. Conditions of Nomination</h2>
+        <div class="bg-red-50 border-l-4 border-red-500 p-4 my-6 not-prose">
+            <h3 class="font-bold text-red-900 text-sm uppercase tracking-wide">Warning: Do not quit your job!</h3>
+            <p class="text-red-800 text-sm mt-1">
+                Your nomination is conditional on you maintaining the conditions under which you were nominated.
+            </p>
+        </div>
+        <p>
+            Until you receive your Permanent Residence (COPR), you generally must:
+        </p>
+        <ul>
+            <li>Continue working for the employer who supported your application.</li>
+            <li>Maintain your full-time status and wage.</li>
+            <li>Reside in British Columbia.</li>
+        </ul>
+        <p>
+            If you lose your job or want to switch employers, you <strong>must inform BC PNP immediately</strong>. Failure to do so can lead to your nomination being withdrawn, which cancels your PR application.
+        </p>
+
+        <h2>4. Medical and Security Checks</h2>
+        <p>
+            After you apply for PR, IRCC will ask for:
+        </p>
+        <ul>
+            <li><strong>Medical Exam:</strong> You and your family must pass a medical exam by a panel physician.</li>
+            <li><strong>Police Certificates:</strong> Required for every country you lived in for 6+ months since age 18.</li>
+            <li><strong>Biometrics:</strong> Fingerprints and photo at a Service Canada location.</li>
+        </ul>
+
+      </div>
+      
+      <!-- CTA -->
+      <div class="bg-purple-50 rounded-2xl p-8 text-center border border-purple-100">
+        <h3 class="font-bold text-purple-900 text-xl mb-2">Need to calculate your points again?</h3>
+        <p class="text-purple-700 mb-6">If your nomination is at risk and you need to re-apply, check your current score.</p>
+        <a href="/bc-pnp-calculator" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-bold transition-colors">
+            Go to Calculator
+        </a>
+      </div>
+
+    </div>
+  </article>
+</BaseLayout>
