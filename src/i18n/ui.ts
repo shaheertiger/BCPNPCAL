@@ -17,6 +17,8 @@ export const ui = {
         'footer.link.apply': 'How to Apply',
         'footer.link.processing': 'Processing Times',
         'footer.link.checklist': 'Document Checklist',
+        'footer.link.news': 'BC PNP News',
+        'footer.link.guide2026': '2026 Ultimate Guide',
     },
     zh: {
         'nav.home': '首頁',
@@ -36,5 +38,7 @@ export const ui = {
         'footer.link.apply': '如何申請',
         'footer.link.processing': '審理時間',
         'footer.link.checklist': '文件清單',
+        'footer.link.news': 'BC PNP 新聞',
+        'footer.link.guide2026': '2026 完整攻略',
     },
 } as const;
