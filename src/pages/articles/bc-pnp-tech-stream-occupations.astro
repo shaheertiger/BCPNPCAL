@@ -1,178 +1,540 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const title = "BC PNP Tech Stream 2025: Eligible Occupations & Requirements";
-const description = "The ultimate guide to the BC PNP Tech stream in 2025. See the full list of 35 eligible occupations (NOCs) and learn about the 1-year job offer requirement.";
+const title = "BC PNP Tech Stream 2026: Complete Guide & Occupations List";
+const description =
+    "The ultimate guide to the BC PNP Tech stream in 2026. See the full list of 35 eligible occupations (NOCs), learn about the 1-year job offer requirement, processing times, and employer obligations.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
-    <div class="max-w-3xl mx-auto space-y-8">
-      
-      <!-- Header -->
-      <header class="space-y-4 text-center">
-        <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-700 uppercase tracking-wide">
-          Tech Draws 2025
-        </div>
-        <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-          BC PNP <span class="text-indigo-600">Tech Stream</span> Occupations List
-        </h1>
-        <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Tech talent is in high demand in British Columbia. If you have a job offer in one of these 35 occupations, you qualify for priority processing and lower score requirements.
-        </p>
-      </header>
+    <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
+        <div class="max-w-3xl mx-auto space-y-8">
+            <header class="space-y-4 text-center">
+                <div
+                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-700 uppercase tracking-wide"
+                >
+                    Priority Processing
+                </div>
+                <h1
+                    class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight"
+                >
+                    BC PNP <span class="text-indigo-600">Tech Stream</span> Guide
+                </h1>
+                <p
+                    class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
+                >
+                    Tech talent is in high demand in British Columbia. If you
+                    have a job offer in one of these 35 occupations, you qualify
+                    for priority processing, lower score requirements, and
+                    weekly draws.
+                </p>
+            </header>
 
-      <!-- Main Content -->
-      <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
-        
-        <h2>What is the BC PNP Tech Stream?</h2>
-        <p>
-            The BC PNP Tech stream is not a separate immigration category but a "priority processing" measure applied to the existing Skills Immigration streams (Skilled Worker and International Graduate).
-        </p>
-        <p>
-            Its goal is to help B.C. employers recruit international talent faster. If your job offer is in one of the 35 eligible occupations, you benefit from:
-        </p>
-        <ul class="marker:text-indigo-600">
-            <li><strong>Weekly Draws:</strong> Tech-specific invitations are issued almost every week.</li>
-            <li><strong>Lower Cut-Off Scores:</strong> Often 10-20 points lower than general draws.</li>
-            <li><strong>Priority Processing:</strong> Applications are fast-tracked.</li>
-        </ul>
+            <div class="grid sm:grid-cols-3 gap-4">
+                <div
+                    class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
+                >
+                    <div class="text-3xl font-black text-indigo-600 mb-2">
+                        Weekly
+                    </div>
+                    <div class="text-sm text-slate-600 font-medium">
+                        Draw frequency
+                    </div>
+                </div>
+                <div
+                    class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
+                >
+                    <div class="text-3xl font-black text-blue-600 mb-2">
+                        1 Year
+                    </div>
+                    <div class="text-sm text-slate-600 font-medium">
+                        Minimum job offer duration
+                    </div>
+                </div>
+                <div
+                    class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
+                >
+                    <div class="text-3xl font-black text-green-600 mb-2">
+                        Lower
+                    </div>
+                    <div class="text-sm text-slate-600 font-medium">
+                        Cut-off scores vs. general
+                    </div>
+                </div>
+            </div>
 
-        <h2>Key Requirements (2025 Update)</h2>
-        <div class="grid sm:grid-cols-2 gap-6 not-prose my-8">
-            <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100">
-                <h3 class="font-bold text-indigo-900 mb-2">Job Offer Duration</h3>
-                <p class="text-sm text-indigo-800">
-                    Unlike other streams that require an "indeterminate" (permanent) offer, Tech stream offers must be <strong>at least one year (365 days)</strong> in duration.
+            <div
+                class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm"
+            >
+                <h2>What is the BC PNP Tech Stream?</h2>
+                <p>
+                    The BC PNP Tech stream is not a separate immigration
+                    category but a "priority processing" measure applied to the
+                    existing Skills Immigration streams (Skilled Worker and
+                    International Graduate).
+                </p>
+                <p>
+                    Its goal is to help B.C. employers recruit international
+                    talent faster. If your job offer is in one of the 35
+                    eligible occupations, you benefit from:
+                </p>
+                <ul class="marker:text-indigo-600">
+                    <li>
+                        <strong>Weekly Draws:</strong> Tech-specific invitations are
+                        issued almost every week (typically Tuesdays), minimizing
+                        wait times in the pool.
+                    </li>
+                    <li>
+                        <strong>Lower Cut-Off Scores:</strong> Tech draws often have
+                        cut-off scores 10-20 points lower than general Skilled Worker
+                        draws.
+                    </li>
+                    <li>
+                        <strong>Priority Processing:</strong> Applications are fast-tracked,
+                        with 80% processed within 2-3 months.
+                    </li>
+                    <li>
+                        <strong>Concierge Service:</strong> Employers have access
+                        to dedicated BC PNP staff for support.
+                    </li>
+                </ul>
+
+                <h2>Key Eligibility Requirements</h2>
+                <div class="grid sm:grid-cols-2 gap-6 not-prose my-8">
+                    <div
+                        class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100"
+                    >
+                        <h3 class="font-bold text-indigo-900 mb-2">
+                            Job Offer Duration
+                        </h3>
+                        <p class="text-sm text-indigo-800">
+                            Unlike other streams that require an "indeterminate"
+                            (permanent) offer, Tech stream offers must be <strong
+                                >at least one year (365 days)</strong
+                            > in duration.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100"
+                    >
+                        <h3 class="font-bold text-indigo-900 mb-2">
+                            Days Remaining
+                        </h3>
+                        <p class="text-sm text-indigo-800">
+                            At the time of application, the job offer must still
+                            have at least <strong>120 calendar days</strong> remaining.
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    Additionally, you must meet the base requirements of either
+                    the <strong>Skilled Worker</strong> or <strong
+                        >International Graduate</strong
+                    > stream, including:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Wage:</strong> Competitive market rate for the occupation
+                        in BC.
+                    </li>
+                    <li>
+                        <strong>Language:</strong> Minimum CLB 4 (though higher is
+                        usually needed for a competitive score).
+                    </li>
+                    <li>
+                        <strong>Experience:</strong> 2 years directly related experience
+                        (Skilled Worker) or recent BC degree (International Graduate).
+                    </li>
+                </ul>
+
+                <h2>The 35 Eligible Tech Occupations (NOC List)</h2>
+                <p>
+                    Your job offer must fall under one of these specific
+                    National Occupational Classification (NOC) codes to qualify
+                    for BC PNP Tech:
+                </p>
+
+                <h3>Management & Data (7 Occupations)</h3>
+                <div class="not-prose grid gap-2 text-sm mb-6">
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>10030</span>
+                        <span>Telecommunication carriers managers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>20012</span>
+                        <span>Computer and information systems managers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21211</span>
+                        <span>Data scientists</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21220</span>
+                        <span>Cybersecurity specialists</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21221</span>
+                        <span>Business systems specialists</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21222</span>
+                        <span>Information systems specialists</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21223</span>
+                        <span>Database analysts and data administrators</span>
+                    </div>
+                </div>
+
+                <h3>Development & Programming (5 Occupations)</h3>
+                <div class="not-prose grid gap-2 text-sm mb-6">
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21230</span>
+                        <span>Computer systems developers and programmers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21231</span>
+                        <span>Software engineers and designers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21232</span>
+                        <span>Software developers and programmers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21233</span>
+                        <span>Web designers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21234</span>
+                        <span>Web developers and programmers</span>
+                    </div>
+                </div>
+
+                <h3>Engineering (9 Occupations)</h3>
+                <div class="not-prose grid gap-2 text-sm mb-6">
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21300</span>
+                        <span>Civil engineers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21301</span>
+                        <span>Mechanical engineers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21310</span>
+                        <span>Electrical and electronics engineers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21311</span>
+                        <span
+                            >Computer engineers (except software engineers)</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21320</span>
+                        <span>Chemical engineers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21330</span>
+                        <span>Mining engineers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>21399</span>
+                        <span>Other professional engineers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>22301</span>
+                        <span
+                            >Mechanical engineering technologists and
+                            technicians</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>22302</span>
+                        <span
+                            >Industrial engineering and manufacturing
+                            technologists</span>
+                    </div>
+                </div>
+
+                <h3>Creative & Digital Media (9 Occupations)</h3>
+                <div class="not-prose grid gap-2 text-sm mb-6">
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>50011</span>
+                        <span
+                            >Managers - publishing, motion pictures,
+                            broadcasting and performing arts</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>51111</span>
+                        <span>Authors and writers (except technical)</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>51112</span>
+                        <span>Technical writers</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>51120</span>
+                        <span
+                            >Producers, directors, choreographers, and related
+                            occupations</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>52120</span>
+                        <span>Graphic designers and illustrators</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>53111</span>
+                        <span
+                            >Motion pictures, broadcasting, photography and
+                            performing arts assistants</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>52119</span>
+                        <span
+                            >Other technical and coordinating occupations in
+                            motion pictures, broadcasting and the performing
+                            arts</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>52112</span>
+                        <span>Broadcast technicians</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>52113</span>
+                        <span>Audio and video recording technicians</span>
+                    </div>
+                </div>
+
+                <h3>Other Technical Roles (5 Occupations)</h3>
+                <div class="not-prose grid gap-2 text-sm mb-6">
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>22110</span>
+                        <span>Biological technologists and technicians</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>22220</span>
+                        <span>Computer network and web technicians</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>22221</span>
+                        <span>User support technicians</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>22222</span>
+                        <span>Information systems testing technicians</span>
+                    </div>
+                    <div
+                        class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium"
+                    >
+                        <span>22310</span>
+                        <span
+                            >Electrical and electronics engineering
+                            technologists and technicians</span>
+                    </div>
+                </div>
+
+                <h2>BC PNP Tech Draw Trends (2024-2025)</h2>
+                <p>
+                    Tech draws are the most reliable way to gauge your chances
+                    of invitation. Unlike general draws that fluctuate wildly,
+                    tech draws have shown consistent patterns.
+                </p>
+                <div class="not-prose grid sm:grid-cols-2 gap-4 my-6">
+                    <div class="bg-indigo-50 p-4 rounded-xl">
+                        <h4 class="font-bold text-indigo-900">Consistency</h4>
+                        <p class="text-indigo-800 text-sm">
+                            Draws happen almost every single Tuesday, except
+                            holidays.
+                        </p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-xl">
+                        <h4 class="font-bold text-indigo-900">Score Range</h4>
+                        <p class="text-indigo-800 text-sm">
+                            Scores have largely hovered between <strong
+                                >100 and 120 points</strong
+                            >.
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    This consistency makes it easier to plan. If your score is
+                    120, you are almost guaranteed an invitation in the next
+                    tech draw.
+                </p>
+
+                <h2>Step-by-Step Application Process</h2>
+
+                <h3>1. Secure a Job Offer</h3>
+                <p>
+                    Find a BC employer willing to offer you a full-time job (30+
+                    hours/week) for at least 1 year in one of the 35 eligible
+                    NOCs.
+                </p>
+
+                <h3>2. Register in SIRS</h3>
+                <p>
+                    Create a profile in BC PNP Online. The system will
+                    automatically detect if your NOC code is eligible for the
+                    Tech stream and place you in the pool for tech draws.
+                </p>
+
+                <h3>3. Receive Invitation to Apply (ITA)</h3>
+                <p>
+                    Check your email on Tuesdays. If your score meets the
+                    cut-off, you'll receive an ITA.
+                </p>
+
+                <h3>4. Submit Full Application</h3>
+                <p>
+                    You have 30 days to upload all documents and pay the $1,475
+                    fee.
+                </p>
+
+                <h3>5. Nomination & Work Permit Support</h3>
+                <p>
+                    Once nominated (usually within 2-3 months), you can apply
+                    for PR. You can also get a <strong
+                        >Work Permit Support Letter</strong
+                    > to apply for or renew your work permit without an LMIA.
+                </p>
+
+                <h2>Employer Requirements for Tech Stream</h2>
+                <p>
+                    Your employer does <strong>not</strong> need to be a "tech company."
+                    They can be any eligible BC employer, as long as the <em
+                        >role</em
+                    > is one of the 35 tech occupations.
+                </p>
+                <p>
+                    Example: A mining company hiring a Data Scientist (NOC
+                    21211) qualifies for the Tech stream.
+                </p>
+                <p>The employer must still meet standard criteria:</p>
+                <ul>
+                    <li>Established in BC for at least 1 year</li>
+                    <li>
+                        Have min. 3 full-time employees (or 5 if established
+                        less than 1 year)
+                    </li>
+                    <li>Good standing with WorkSafeBC and BC Registries</li>
+                </ul>
+
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>Can I work remotely?</h3>
+                <p>
+                    Yes, but with conditions. You must reside in British
+                    Columbia. You cannot live in Ontario and work remotely for a
+                    BC company. Your "work location" must be in BC.
+                </p>
+
+                <h3>What if I get laid off?</h3>
+                <p>
+                    If you lose your job during the nomination process, you must
+                    notify BC PNP. Because tech jobs are in demand, BC PNP may
+                    give you opportunities to find a new employer, but this is
+                    case-by-case.
+                </p>
+
+                <h3>Can I apply with a 1-year contract?</h3>
+                <p>
+                    Yes. The Tech stream is unique in allowing 1-year job
+                    offers. The offer must have at least 120 days remaining at
+                    the time you submit your application.
+                </p>
+
+                <h3>Is there a specific "Tech Stream" application form?</h3>
+                <p>
+                    No. You apply through the regular Skilled Worker or
+                    International Graduate streams. Your NOC code simply tags
+                    your application for priority tech processing.
                 </p>
             </div>
-             <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100">
-                <h3 class="font-bold text-indigo-900 mb-2">Days Remaining</h3>
-                <p class="text-sm text-indigo-800">
-                    At the time of application, the job offer must still have at least <strong>120 calendar days</strong> remaining.
+
+            <div
+                class="bg-indigo-900 rounded-[2rem] p-8 sm:p-12 text-center text-white mt-12"
+            >
+                <h2 class="text-2xl font-black mb-4">
+                    Check Your Eligibility Score
+                </h2>
+                <p class="text-indigo-200 mb-8 max-w-xl mx-auto">
+                    See if you qualify for the next Tech Draw with our
+                    calculator.
                 </p>
+                <a
+                    href="/bc-pnp-calculator"
+                    class="inline-flex items-center bg-white text-indigo-900 px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-all hover:bg-indigo-50"
+                >
+                    Calculate Score Now
+                </a>
             </div>
         </div>
-
-        <h2>The 35 Eligible Tech Occupations</h2>
-        <p>Your job offer must fall under one of these specific National Occupational Classification (NOC) codes:</p>
-
-        <div class="not-prose grid gap-2 text-sm">
-            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>10030</span> <span>Telecommunication carriers managers</span>
-            </div>
-            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>20012</span> <span>Computer and information systems managers</span>
-            </div>
-            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21211</span> <span>Data scientists</span>
-            </div>
-            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21220</span> <span>Cybersecurity specialists</span>
-            </div>
-            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21221</span> <span>Business systems specialists</span>
-            </div>
-            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21222</span> <span>Information systems specialists</span>
-            </div>
-             <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21223</span> <span>Database analysts and data administrators</span>
-            </div>
-             <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21230</span> <span>Computer systems developers and programmers</span>
-            </div>
-             <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21231</span> <span>Software engineers and designers</span>
-            </div>
-             <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21232</span> <span>Software developers and programmers</span>
-            </div>
-             <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21233</span> <span>Web designers</span>
-            </div>
-             <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21234</span> <span>Web developers and programmers</span>
-            </div>
-             <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21300</span> <span>Civil engineers</span>
-            </div>
-             <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21301</span> <span>Mechanical engineers</span>
-            </div>
-            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21310</span> <span>Electrical and electronics engineers</span>
-            </div>
-             <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex justify-between font-medium">
-                <span>21311</span> <span>Computer engineers (except software engineers)</span>
-            </div>
-            <!-- Add remaining or use a condensed list for brevity in artifact -->
-            <div class="text-center text-slate-400 text-xs mt-2 uppercase tracking-widest">
-                ...and other engineering/technical roles
-            </div>
-        </div>
-
-        <p class="mt-4 text-sm text-slate-500">
-            These 35 jobs are considered <strong>priority occupations</strong> by the province. This list is reviewed periodically to ensure it meets the needs of B.C.'s tech sector.
-        </p>
-
-        <h2>BC PNP Tech Draw History (2024-2025)</h2>
-        <p>
-            Tech draws occur more frequently than any other category. Understanding the draw history can help you plan your application.
-        </p>
-        <div class="not-prose grid sm:grid-cols-2 gap-4 my-6">
-            <div class="bg-indigo-50 p-4 rounded-xl">
-                <h4 class="font-bold text-indigo-900">Frequency</h4>
-                <p class="text-indigo-800 text-sm">Draws are held <strong>weekly</strong> (almost every Tuesday).</p>
-            </div>
-            <div class="bg-indigo-50 p-4 rounded-xl">
-                <h4 class="font-bold text-indigo-900">Score Trends</h4>
-                <p class="text-indigo-800 text-sm">Scores have remained stable between <strong>100-120 points</strong> for most of 2024 and early 2025.</p>
-            </div>
-        </div>
-        <p>
-            Because of the consistent frequency, the Tech stream offers the most predictable pathway for eligible candidates.
-        </p>
-
-        <p class="mt-4 text-sm text-slate-500">
-            These 35 jobs are considered <strong>priority occupations</strong> by the province. This list is reviewed periodically to ensure it meets the needs of B.C.'s tech sector.
-        </p>
-
-        <h2>BC PNP Tech Draw History (2024-2025)</h2>
-        <p>
-            Tech draws occur more frequently than any other category. Understanding the draw history can help you plan your application.
-        </p>
-        <div class="not-prose grid sm:grid-cols-2 gap-4 my-6">
-            <div class="bg-indigo-50 p-4 rounded-xl">
-                <h4 class="font-bold text-indigo-900">Frequency</h4>
-                <p class="text-indigo-800 text-sm">Draws are held <strong>weekly</strong> (almost every Tuesday).</p>
-            </div>
-            <div class="bg-indigo-50 p-4 rounded-xl">
-                <h4 class="font-bold text-indigo-900">Score Trends</h4>
-                <p class="text-indigo-800 text-sm">Scores have remained stable between <strong>100-120 points</strong> for most of 2024 and early 2025.</p>
-            </div>
-        </div>
-        <p>
-            Because of the consistent frequency, the Tech stream offers the most predictable pathway for eligible candidates.
-        </p>
-
-        <h2>How to Apply</h2>
-        <ol>
-            <li><strong>Get a Job Offer:</strong> Must be in one of the 35 NOCs above.</li>
-            <li><strong>Register with SIRS:</strong> Create a profile online.</li>
-            <li><strong>Wait for a Tech Draw:</strong> These happen weekly.</li>
-            <li><strong>Receive Invitation:</strong> Apply within 30 days.</li>
-        </ol>
-
-      </div>
-      
-      <!-- CTA -->
-      <div class="text-center space-y-4">
-        <a href="/bc-pnp-draws" class="text-slate-600 hover:text-indigo-600 font-bold underline decoration-2 underline-offset-4 decoration-indigo-200 hover:decoration-indigo-600 transition-colors">
-            Check Latest Tech Draw Cuts-Offs
-        </a>
-      </div>
-
-    </div>
-  </article>
+    </article>
 </BaseLayout>

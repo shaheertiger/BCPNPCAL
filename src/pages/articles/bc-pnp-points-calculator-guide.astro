@@ -1,182 +1,573 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const title = "BC PNP Points Calculator Guide 2026: How to Increase Your Score";
-const description = "Ultimate guide to the BC PNP Skills Immigration Registration System (SIRS). Learn how points are calculated for wage, education, and language, and 5 ways to increase your score.";
+const title = "BC PNP Points Calculator Guide 2026: How to Maximize Your Score";
+const description =
+    "Complete guide to the BC PNP Skills Immigration Registration System (SIRS). Learn exactly how points are calculated for wage, education, language, experience, and discover 10 proven ways to increase your score.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
-    <div class="max-w-3xl mx-auto space-y-8">
-      
-      <!-- Header -->
-      <header class="space-y-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-          Master the <span class="text-red-600">BC PNP Points</span> System
-        </h1>
-        <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          The Skills Immigration Registration System (SIRS) is competitive. This guide reveals exactly how to maximize your 200 points in 2025.
-        </p>
-      </header>
+    <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
+        <div class="max-w-3xl mx-auto space-y-8">
+            <header class="space-y-4 text-center">
+                <div
+                    class="inline-block bg-red-100 text-red-700 px-4 py-1 rounded-full text-sm font-bold mb-4"
+                >
+                    Score Optimization Guide
+                </div>
+                <h1
+                    class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight"
+                >
+                    Master the <span class="text-red-600">BC PNP Points</span> System
+                </h1>
+                <p
+                    class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
+                >
+                    The Skills Immigration Registration System (SIRS) is
+                    competitive. This guide reveals exactly how to maximize your
+                    200 points in 2026.
+                </p>
+            </header>
 
-      <!-- Main Content -->
-      <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
-        
-        <h2>How Scoring Works (200 Points Total)</h2>
-        <p>
-            Your score is divided into two main categories: <strong>Human Capital</strong> (what you bring) and <strong>Economic Factors</strong> (your job offer).
-        </p>
+            <div class="grid sm:grid-cols-3 gap-4">
+                <div
+                    class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
+                >
+                    <div class="text-3xl font-black text-red-600 mb-2">200</div>
+                    <div class="text-sm text-slate-600 font-medium">
+                        Maximum possible points
+                    </div>
+                </div>
+                <div
+                    class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
+                >
+                    <div class="text-3xl font-black text-blue-600 mb-2">
+                        100-130
+                    </div>
+                    <div class="text-sm text-slate-600 font-medium">
+                        Typical invitation range
+                    </div>
+                </div>
+                <div
+                    class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
+                >
+                    <div class="text-3xl font-black text-green-600 mb-2">
+                        Weekly
+                    </div>
+                    <div class="text-sm text-slate-600 font-medium">
+                        Draw frequency
+                    </div>
+                </div>
+            </div>
 
-        <div class="grid sm:grid-cols-2 gap-8 my-8 not-prose">
-            <div>
-                <h3 class="font-black text-slate-900 text-xl mb-4 border-b border-slate-100 pb-2">Human Capital (120 pts)</h3>
-                <ul class="space-y-3 text-slate-600 text-sm">
-                    <li class="flex justify-between">
-                        <span>Directly Related Experience</span>
-                        <span class="font-bold">40 pts</span>
+            <div
+                class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm"
+            >
+                <h2>How the SIRS Scoring System Works</h2>
+                <p>
+                    Your BC PNP score is calculated out of a maximum <strong
+                        >200 points</strong
+                    >, divided into two main categories: Human Capital (what you
+                    bring) and Economic Factors (your job offer).
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-8 my-8 not-prose">
+                    <div>
+                        <h3
+                            class="font-black text-slate-900 text-xl mb-4 border-b border-slate-100 pb-2"
+                        >
+                            Human Capital (120 pts max)
+                        </h3>
+                        <ul class="space-y-3 text-slate-600 text-sm">
+                            <li class="flex justify-between">
+                                <span>Directly Related Experience</span>
+                                <span class="font-bold text-slate-900"
+                                    >40 pts</span
+                                >
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Education Level</span>
+                                <span class="font-bold text-slate-900"
+                                    >40 pts</span
+                                >
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Language Ability (CLB)</span>
+                                <span class="font-bold text-slate-900"
+                                    >40 pts</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-black text-slate-900 text-xl mb-4 border-b border-slate-100 pb-2"
+                        >
+                            Economic Factors (80 pts max)
+                        </h3>
+                        <ul class="space-y-3 text-slate-600 text-sm">
+                            <li class="flex justify-between">
+                                <span>Hourly Wage of Job Offer</span>
+                                <span class="font-bold text-slate-900"
+                                    >55 pts</span
+                                >
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Regional Location</span>
+                                <span class="font-bold text-slate-900"
+                                    >25 pts</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Detailed Points Breakdown</h2>
+
+                <h3>Wage Points (55 pts max)</h3>
+                <p>
+                    Wage is the <strong>single largest factor</strong> in your score.
+                    Points increase progressively based on your hourly wage:
+                </p>
+                <div class="not-prose overflow-x-auto my-6">
+                    <table class="min-w-full text-left text-sm">
+                        <thead class="bg-gray-100 border-b border-gray-200">
+                            <tr>
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Hourly Wage</th
+                                >
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Approximate Points</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-4 py-3">$20/hr</td>
+                                <td class="px-4 py-3">~15 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">$25/hr</td>
+                                <td class="px-4 py-3">~20 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">$35/hr</td>
+                                <td class="px-4 py-3">~30 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">$50/hr</td>
+                                <td class="px-4 py-3">~40 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">$60/hr</td>
+                                <td class="px-4 py-3">~48 points</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="px-4 py-3 font-bold"
+                                    >$70/hr or higher</td
+                                >
+                                <td class="px-4 py-3 font-bold text-green-700"
+                                    >55 points (maximum)</td
+                                >
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div
+                    class="bg-amber-50 p-5 rounded-xl text-sm border border-amber-200 mb-6"
+                >
+                    <strong>⚠️ Important:</strong> Only your guaranteed base hourly
+                    rate counts. Do NOT include overtime, tips, commissions, or annual
+                    bonuses in your calculation—officers will verify.
+                </div>
+
+                <h3>Experience Points (40 pts max)</h3>
+                <p>
+                    Points are awarded for directly related work experience (see <a
+                        href="/articles/bc-pnp-skilled-worker-stream"
+                        >Skilled Worker requirements</a
+                    >):
+                </p>
+                <div class="not-prose overflow-x-auto my-6">
+                    <table class="min-w-full text-left text-sm">
+                        <thead class="bg-gray-100 border-b border-gray-200">
+                            <tr>
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Years of Experience</th
+                                >
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Points</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-4 py-3">Less than 1 year</td>
+                                <td class="px-4 py-3">0 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">1-2 years</td>
+                                <td class="px-4 py-3">~10 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">2-3 years</td>
+                                <td class="px-4 py-3">~20 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">3-4 years</td>
+                                <td class="px-4 py-3">~28 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">4-5 years</td>
+                                <td class="px-4 py-3">~35 points</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="px-4 py-3 font-bold">5+ years</td>
+                                <td class="px-4 py-3 font-bold text-green-700"
+                                    >40 points (maximum)</td
+                                >
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>
+                    <strong>Bonus:</strong> Having 1+ year of Canadian work experience
+                    can add additional points.
+                </p>
+
+                <h3>Education Points (40 pts max)</h3>
+                <div class="not-prose overflow-x-auto my-6">
+                    <table class="min-w-full text-left text-sm">
+                        <thead class="bg-gray-100 border-b border-gray-200">
+                            <tr>
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Credential</th
+                                >
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Points</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-4 py-3">High School</td>
+                                <td class="px-4 py-3">0 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Post-secondary certificate (1 year)</td
+                                >
+                                <td class="px-4 py-3">2 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Diploma (2 years)</td>
+                                <td class="px-4 py-3">11 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Trade Certification (BC)</td
+                                >
+                                <td class="px-4 py-3">22 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Bachelor's Degree</td>
+                                <td class="px-4 py-3">28 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Post-Graduate Diploma/Certificate</td
+                                >
+                                <td class="px-4 py-3">32 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Master's Degree</td>
+                                <td class="px-4 py-3">36 points</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="px-4 py-3 font-bold"
+                                    >Doctoral Degree (PhD)</td
+                                >
+                                <td class="px-4 py-3 font-bold text-green-700"
+                                    >40 points (maximum)</td
+                                >
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Language Points (40 pts max)</h3>
+                <p>
+                    Points are based on your Canadian Language Benchmark (CLB)
+                    level:
+                </p>
+                <div class="not-prose overflow-x-auto my-6">
+                    <table class="min-w-full text-left text-sm">
+                        <thead class="bg-gray-100 border-b border-gray-200">
+                            <tr>
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >CLB Level</th
+                                >
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Points</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-4 py-3">CLB 4</td>
+                                <td class="px-4 py-3">10 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">CLB 5</td>
+                                <td class="px-4 py-3">15 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">CLB 6</td>
+                                <td class="px-4 py-3">20 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">CLB 7</td>
+                                <td class="px-4 py-3">25 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">CLB 8</td>
+                                <td class="px-4 py-3">30 points</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="px-4 py-3 font-bold">CLB 9+</td>
+                                <td class="px-4 py-3 font-bold text-green-700"
+                                    >40 points (maximum)</td
+                                >
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Regional Location Points (25 pts max)</h3>
+                <p>Jobs outside Metro Vancouver receive bonus points:</p>
+                <div class="not-prose overflow-x-auto my-6">
+                    <table class="min-w-full text-left text-sm">
+                        <thead class="bg-gray-100 border-b border-gray-200">
+                            <tr>
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Region</th
+                                >
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Points</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="bg-red-50">
+                                <td class="px-4 py-3">Metro Vancouver</td>
+                                <td class="px-4 py-3 font-bold text-red-700"
+                                    >0 points</td
+                                >
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Vancouver Island, Okanagan</td
+                                >
+                                <td class="px-4 py-3">10 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Cariboo, Kootenay</td>
+                                <td class="px-4 py-3">15 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">North Coast, Nechako</td>
+                                <td class="px-4 py-3">20 points</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="px-4 py-3 font-bold"
+                                    >Northeast (Fort St. John, etc.)</td
+                                >
+                                <td class="px-4 py-3 font-bold text-green-700"
+                                    >25 points (maximum)</td
+                                >
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>BC PNP Cut-Off Scores (2025-2026)</h2>
+                <p>
+                    Understanding typical cut-off scores helps you assess your
+                    competitiveness:
+                </p>
+                <div class="not-prose overflow-x-auto my-6">
+                    <table class="min-w-full text-left text-sm">
+                        <thead class="bg-slate-50 border-b border-slate-200">
+                            <tr>
+                                <th class="px-4 py-3 font-bold">Stream</th>
+                                <th class="px-4 py-3 font-bold"
+                                    >Typical Cut-Off</th
+                                >
+                                <th class="px-4 py-3 font-bold">Lowest Seen</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Skilled Worker (General)</td
+                                >
+                                <td class="px-4 py-3">115-130 points</td>
+                                <td class="px-4 py-3">105 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">BC PNP Tech</td>
+                                <td class="px-4 py-3">100-115 points</td>
+                                <td class="px-4 py-3">85 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Healthcare</td>
+                                <td class="px-4 py-3">90-105 points</td>
+                                <td class="px-4 py-3">60 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">International Graduate</td
+                                >
+                                <td class="px-4 py-3">100-120 points</td>
+                                <td class="px-4 py-3">95 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Childcare</td>
+                                <td class="px-4 py-3">60-75 points</td>
+                                <td class="px-4 py-3">60 points</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>
+                    Check the <a href="/bc-pnp-draws"
+                        >latest BC PNP draw results</a
+                    > for current cut-off scores.
+                </p>
+
+                <h2>10 Proven Ways to Increase Your Score</h2>
+
+                <h3>1. Negotiate a Higher Wage</h3>
+                <p>
+                    This is the single biggest "swing" factor. Points are
+                    awarded for every dollar increase up to $70/hr. Even a $2/hr
+                    raise can add 3-5 points. Before accepting a job offer,
+                    negotiate if possible.
+                </p>
+
+                <h3>2. Move Outside Metro Vancouver</h3>
+                <p>
+                    Regional locations can add up to <strong
+                        >25 bonus points</strong
+                    >. A $35/hr job in Fort St. John scores higher than a $45/hr
+                    job in Vancouver due to regional bonuses.
+                </p>
+
+                <h3>3. Retake Your Language Test</h3>
+                <p>
+                    The difference between CLB 7 and CLB 9 is <strong
+                        >15 points</strong
+                    >. Investing in an IELTS tutor or taking a preparation
+                    course can be one of the cheapest ways to gain points.
+                </p>
+
+                <h3>4. Gain Canadian Work Experience</h3>
+                <p>
+                    You get bonus points for having at least 1 year of
+                    experience <em>in Canada</em>. If you're close, waiting a
+                    few months to hit that 1-year mark might be worth it.
+                </p>
+
+                <h3>5. Secure a Professional Designation</h3>
+                <p>
+                    If you work in trades or certified professions, having a
+                    valid BC certification adds significant points to your
+                    Education score.
+                </p>
+
+                <h3>6. Pursue Additional Education</h3>
+                <p>
+                    If you're between credential levels (e.g., diploma vs.
+                    bachelor's), completing an additional program can boost your
+                    score. A Canadian credential may carry additional weight.
+                </p>
+
+                <h3>7. Apply Through Priority Streams</h3>
+                <p>
+                    If your occupation qualifies for BC PNP Tech, Healthcare, or
+                    Childcare targeted draws, the cut-off scores are typically
+                    10-40 points lower than general draws.
+                </p>
+
+                <h3>8. Work Full-Time in Your Claimed Role</h3>
+                <p>
+                    Ensure your current work experience is full-time (30+ hours)
+                    and directly related to your NOC code. Part-time work counts
+                    proportionally less.
+                </p>
+
+                <h3>9. Get a Higher-Skill NOC Classification</h3>
+                <p>
+                    If your duties support it, negotiate with your employer for
+                    a job title and duties that align with a higher TEER level
+                    NOC code.
+                </p>
+
+                <h3>10. Verify Your Score Accurately</h3>
+                <p>
+                    Use our <a href="/bc-pnp-calculator">BC PNP Calculator</a> to
+                    get an accurate score. Many applicants overestimate or underestimate
+                    their points.
+                </p>
+
+                <h2>Common Scoring Mistakes to Avoid</h2>
+                <ul>
+                    <li>
+                        <strong>Overclaiming experience:</strong> Only claim "directly
+                        related" experience. Officers verify this and will refuse
+                        applications where claimed experience doesn't match reality.
                     </li>
-                     <li class="flex justify-between">
-                        <span>Education Level</span>
-                        <span class="font-bold">40 pts</span>
+                    <li>
+                        <strong>Including bonuses in wage:</strong> Only your guaranteed
+                        base hourly rate counts. Don't include overtime, tips, or
+                        annual bonuses.
                     </li>
-                     <li class="flex justify-between">
-                        <span>Language Ability (CLB)</span>
-                        <span class="font-bold">40 pts</span>
+                    <li>
+                        <strong>Wrong NOC code:</strong> Selecting a higher-skill
+                        NOC than your actual duties support will lead to refusal.
+                    </li>
+                    <li>
+                        <strong>Expired language test:</strong> Your test must be
+                        valid (less than 2 years old) throughout the application process.
                     </li>
                 </ul>
+
+                <div
+                    class="bg-green-50 p-6 rounded-xl text-sm border border-green-200 mt-8"
+                >
+                    <strong>💡 Pro Tip:</strong> Calculate your score before registering.
+                    If you're below typical cut-offs, consider which factors you can
+                    realistically improve before entering the pool.
+                </div>
             </div>
-             <div>
-                <h3 class="font-black text-slate-900 text-xl mb-4 border-b border-slate-100 pb-2">Economic Factors (80 pts)</h3>
-                <ul class="space-y-3 text-slate-600 text-sm">
-                    <li class="flex justify-between">
-                        <span>Hourly Wage of Offer</span>
-                        <span class="font-bold">55 pts</span>
-                    </li>
-                     <li class="flex justify-between">
-                        <span>Area of Employment</span>
-                        <span class="font-bold">25 pts</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
-        <h2>Top 5 Ways to Increase Your Score</h2>
-        
-        <h3>1. Negotiate a Higher Wage</h3>
-        <p>
-            This is the single biggest "swing" factor. Points are awarded for every dollar increase up to $70/hr. Even a $2/hr raise can sometimes add critical points.
-        </p>
-
-        <h3>2. Move Outside Metro Vancouver</h3>
-        <p>
-            The B.C. government wants people in regional areas.
-        </p>
-        <ul>
-            <li><strong>Metro Vancouver:</strong> 0 points for location.</li>
-            <li><strong>Squamish/Abbotsford:</strong> 5 points.</li>
-            <li><strong>Far North/Interior:</strong> Up to 15-25 points (depending on regional experience bonuses).</li>
-        </ul>
-
-        <h3>3. Retake Your Language Test</h3>
-        <p>
-            The difference between CLB 7 and CLB 9 is huge (+10 points). If you are stuck at CLB 7, investing in an IELTS tutor to reach CLB 9 is one of the cheapest ways to gain points.
-        </p>
-
-        <h3>4. Gain 1 Year of Canadian Experience</h3>
-        <p>
-            You get bonus points for having at least 1 year of experience <em>in Canada</em>. If you are close, waiting a few months to hit that 1-year mark might trigger the bonus.
-        </p>
-        
-        <h3>5. Secure a Professional Designation</h3>
-        <p>
-            If you work in trades or certified professions, having your valid B.C. certification adds points to your Education score.
-        </p>
-
-        <h2>Common Mistakes to Avoid</h2>
-        <ul>
-            <li><strong>Overclaiming Experience:</strong> Only claim "Directly Related" experience. If the officer decides your past job isn't relevant, they act like it doesn't exist, causing your score to plummet and your application to be refused.</li>
-            <li><strong>Including Bonuses in Wage:</strong> Only your guaranteed base hourly rate counts. Do not include overtime, tips, or annual bonuses in your calculation.</li>
-        </ul>
-
-        <hr class="my-8 border-slate-100" />
-
-        <h2>BC PNP Cut Off Scores (Recent History)</h2>
-        <p>
-            Understanding the BC PNP cut off score trends helps you know if you are competitive. Here are typical ranges by stream:
-        </p>
-        <div class="not-prose overflow-x-auto my-6">
-            <table class="min-w-full text-left text-sm">
-                <thead class="bg-slate-50 border-b border-slate-200">
-                    <tr>
-                        <th class="px-4 py-3 font-bold">Stream</th>
-                        <th class="px-4 py-3 font-bold">Typical Cut-Off</th>
-                        <th class="px-4 py-3 font-bold">Lowest Seen</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-100">
-                    <tr>
-                        <td class="px-4 py-3">Skilled Worker (General)</td>
-                        <td class="px-4 py-3">115-130 points</td>
-                        <td class="px-4 py-3">105 points</td>
-                    </tr>
-                    <tr>
-                        <td class="px-4 py-3">BC PNP Tech</td>
-                        <td class="px-4 py-3">100-115 points</td>
-                        <td class="px-4 py-3">85 points</td>
-                    </tr>
-                    <tr>
-                        <td class="px-4 py-3">Healthcare</td>
-                        <td class="px-4 py-3">90-105 points</td>
-                        <td class="px-4 py-3">60 points</td>
-                    </tr>
-                    <tr>
-                        <td class="px-4 py-3">International Graduate</td>
-                        <td class="px-4 py-3">100-120 points</td>
-                        <td class="px-4 py-3">95 points</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <p>
-            Check the <a href="/bc-pnp-draws">latest BC PNP draw results</a> for the most current cut-off scores.
-        </p>
-
-        <h2>BC PNP Score Chart Breakdown</h2>
-        <p>
-            Here is how the BC PNP scoring system allocates the maximum 200 points:
-        </p>
-        <div class="not-prose grid gap-4 sm:grid-cols-2 my-6">
-            <div class="bg-red-50 p-4 rounded-xl border border-red-100">
-                <h4 class="font-bold text-red-900 mb-2">Wage (55 pts max)</h4>
-                <p class="text-sm text-red-800">The largest single factor. $25/hr = ~20 pts, $50/hr = ~40 pts, $70+/hr = 55 pts.</p>
-            </div>
-            <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                <h4 class="font-bold text-blue-900 mb-2">Experience (40 pts max)</h4>
-                <p class="text-sm text-blue-800">5+ years directly related = 40 pts. Canadian experience adds bonus.</p>
-            </div>
-            <div class="bg-green-50 p-4 rounded-xl border border-green-100">
-                <h4 class="font-bold text-green-900 mb-2">Education (40 pts max)</h4>
-                <p class="text-sm text-green-800">PhD/Masters = 34-40 pts. Bachelor's = 28 pts. Trade cert = 22 pts.</p>
-            </div>
-            <div class="bg-purple-50 p-4 rounded-xl border border-purple-100">
-                <h4 class="font-bold text-purple-900 mb-2">Language (40 pts max)</h4>
-                <p class="text-sm text-purple-800">CLB 9+ = 30-40 pts. CLB 7 = 20 pts. CLB 4 = 10 pts.</p>
+            <div
+                class="bg-slate-900 rounded-[2rem] p-8 sm:p-12 text-center text-white"
+            >
+                <h2 class="text-2xl font-black mb-4">
+                    Ready to Calculate Your Score?
+                </h2>
+                <p class="text-slate-300 mb-8 max-w-xl mx-auto">
+                    Use our calculator to see your exact BC PNP score based on
+                    these official rules.
+                </p>
+                <a
+                    href="/bc-pnp-calculator"
+                    class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-all shadow-lg shadow-red-900/50"
+                >
+                    Start Calculator
+                </a>
             </div>
         </div>
-
-      </div>
-      
-      <!-- CTA -->
-      <div class="bg-slate-900 rounded-[2rem] p-8 sm:p-12 text-center text-white">
-        <h2 class="text-2xl font-black mb-4">Ready to Calculate?</h2>
-        <p class="text-slate-300 mb-8 max-w-xl mx-auto">
-           Use our official calculator to see your exact score based on these rules.
-        </p>
-        <a href="/bc-pnp-calculator" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-all shadow-lg shadow-red-900/50">
-            Start Calculator
-        </a>
-      </div>
-
-    </div>
-  </article>
+    </article>
 </BaseLayout>

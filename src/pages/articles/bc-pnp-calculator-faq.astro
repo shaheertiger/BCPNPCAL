@@ -1,144 +1,342 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const title = "BC PNP Calculator FAQ & Troubleshooting Guide";
-const description = "Answers to the most common BC PNP calculator questions. Troubleshoot errors, understand terminology, and get unstuck.";
+const title = "BC PNP Calculator FAQ & Troubleshooting Guide 2026";
+const description =
+  "The ultimate troubleshooting guide for the BC PNP calculator. Fix 'score drops', screen vague error messages, and learn how to calculate your points manually with our printable worksheet.";
 ---
 
 <BaseLayout title={title} description={description}>
   <div class="max-w-4xl mx-auto px-4 py-12 sm:py-20">
-    
     <!-- Hero Header -->
     <header class="mb-16 text-center">
-      <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-3xl mb-8 shadow-xl shadow-amber-200">
-        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      <div
+        class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-3xl mb-8 shadow-xl shadow-amber-200"
+      >
+        <svg
+          class="w-10 h-10 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
         </svg>
       </div>
-      <h1 class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6">
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">FAQ</span> & Troubleshooting
+      <h1
+        class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6"
+      >
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600"
+          >FAQ</span
+        > & Troubleshooting
       </h1>
       <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        Got stuck? Here are answers to the most common BC PNP calculator questions and problems.
+        Got stuck? Here is the definitive manual for fixing calculator errors,
+        understanding tricky rules, and verifying your score manually.
       </p>
     </header>
 
     <!-- Main Content -->
     <div class="space-y-16">
-      
       <!-- Troubleshooting Section -->
       <section>
-        <div class="bg-gradient-to-b from-red-50 to-white rounded-[2rem] p-8 sm:p-10 border border-red-100">
+        <div
+          class="bg-gradient-to-b from-red-50 to-white rounded-[2rem] p-8 sm:p-10 border border-red-100"
+        >
           <div class="text-center mb-10">
-             <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Troubleshooting Common Errors</h2>
-             <p class="text-slate-600">Why is your score lower than expected?</p>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+              Troubleshooting Common Errors
+            </h2>
+            <p class="text-slate-600">Why is your score lower than expected?</p>
           </div>
-          
+
           <div class="space-y-4">
-            <div class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500">
-              <h3 class="font-black text-slate-900 text-lg mb-2">"My score dropped by 10 points."</h3>
+            <div
+              class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500"
+            >
+              <h3 class="font-black text-slate-900 text-lg mb-2">
+                "My score dropped by 10 points."
+              </h3>
               <p class="text-slate-600 leading-relaxed text-sm">
-                <strong>Check this:</strong> Did you cross a wage threshold? Wages like $24.99 and $25.00 are in different brackets. Also check your "District" selection. Area 1 (Vancouver) gives 0 points, but Area 2 (Squamish, Abbotsford) gives 5.
+                <strong>Check this:</strong> Did you cross a wage threshold? Wages
+                like $24.99 and $25.00 are in different brackets. Also check your
+                "District" selection. Area 1 (Vancouver) gives 0 points, but Area
+                2 (Squamish, Abbotsford) gives 5.
               </p>
             </div>
-            
-            <div class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500">
-              <h3 class="font-black text-slate-900 text-lg mb-2">"I can't find my University on the list."</h3>
+
+            <div
+              class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500"
+            >
+              <h3 class="font-black text-slate-900 text-lg mb-2">
+                "I can't find my University on the list."
+              </h3>
               <p class="text-slate-600 leading-relaxed text-sm">
-                <strong>Fix:</strong> BC PNP doesn't have a dropdown of universities. You simply select "Bachelor's Degree" or "Master's Degree". Only <em>where</em> you got it matters (BC vs. Canada vs. Foreign).
+                <strong>Fix:</strong> BC PNP doesn't have a dropdown of universities.
+                You simply select "Bachelor's Degree" or "Master's Degree". Only <em
+                  >where</em
+                > you got it matters (BC vs. Canada vs. Foreign).
               </p>
             </div>
-            
-            <div class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500">
-              <h3 class="font-black text-slate-900 text-lg mb-2">"The wage slider is stuck."</h3>
+
+            <div
+              class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500"
+            >
+              <h3 class="font-black text-slate-900 text-lg mb-2">
+                "The wage slider is stuck."
+              </h3>
               <p class="text-slate-600 leading-relaxed text-sm">
-                <strong>Fix:</strong> Ensure you are entering the <em>hourly</em> rate. If you only know your annual salary, divide it by 52 weeks and then by your standard weekly hours (usually 40).
+                <strong>Fix:</strong> Ensure you are entering the <em>hourly</em
+                > rate. If you only know your annual salary, divide it by 52 weeks
+                and then by your standard weekly hours (usually 40).
+              </p>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500"
+            >
+              <h3 class="font-black text-slate-900 text-lg mb-2">
+                "My Directly Related Experience isn't counting."
+              </h3>
+              <p class="text-slate-600 leading-relaxed text-sm">
+                <strong>Fix:</strong> The calculator assumes all entered experience
+                is "Directly Related". If you are switching careers (e.g., Accountant
+                becoming a Web Developer), you generally cannot count your past experience.
+                You must manually enter "0 years" if your past work doesn't match
+                your new BC PNP job offer.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Detailed FAQ Section -->
+      <!-- Manual Calculation Worksheet -->
+      <section>
+        <div class="bg-slate-900 text-white rounded-[2rem] p-8 sm:p-12">
+          <h2 class="text-2xl font-black mb-6 border-b border-slate-700 pb-4">
+            Manual Calculation Worksheet
+          </h2>
+          <p class="mb-6 text-slate-300">
+            Don't trust the computer? Calculate it yourself on paper.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8 text-sm">
+            <div>
+              <h3
+                class="text-amber-500 font-bold mb-3 uppercase tracking-widest"
+              >
+                Human Capital (120 Max)
+              </h3>
+              <ul class="space-y-4">
+                <li class="flex justify-between border-b border-slate-700 pb-2">
+                  <span>Directly Related Experience</span>
+                  <span class="text-slate-400">_____ / 40</span>
+                </li>
+                <li class="flex justify-between border-b border-slate-700 pb-2">
+                  <span>Highest Education</span>
+                  <span class="text-slate-400">_____ / 40</span>
+                </li>
+                <li class="flex justify-between border-b border-slate-700 pb-2">
+                  <span>Language (CLB)</span>
+                  <span class="text-slate-400">_____ / 40</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                class="text-blue-500 font-bold mb-3 uppercase tracking-widest"
+              >
+                Economic Factors (80 Max)
+              </h3>
+              <ul class="space-y-4">
+                <li class="flex justify-between border-b border-slate-700 pb-2">
+                  <span>Hourly Wage</span>
+                  <span class="text-slate-400">_____ / 55</span>
+                </li>
+                <li class="flex justify-between border-b border-slate-700 pb-2">
+                  <span>Area of Employment</span>
+                  <span class="text-slate-400">_____ / 25</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="mt-8 pt-8 border-t-2 border-slate-700 flex justify-between items-center"
+          >
+            <span class="text-xl font-bold">TOTAL SCORE</span>
+            <span class="text-4xl font-black text-amber-500">_____ / 200</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Niche Scenarios FAQ -->
       <section>
         <div class="text-center mb-10">
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Frequently Asked Questions</h2>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+            Niche Scenarios & Edge Cases
+          </h2>
         </div>
-        
+
         <div class="space-y-4">
-           <!-- Category: Eligibility -->
-           <h3 class="font-bold text-slate-500 uppercase tracking-widest text-sm pl-4 mt-8 mb-4">Eligibility & Rules</h3>
-           
-          <details class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm">
-            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-              <span class="font-bold text-slate-900 text-lg pr-4">Do I strictly need a job offer to apply?</span>
-              <span class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
+          <!-- Category: Wages -->
+          <h3
+            class="font-bold text-slate-500 uppercase tracking-widest text-sm pl-4 mt-8 mb-4"
+          >
+            Wage & Salary Complexities
+          </h3>
+
+          <details
+            class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm"
+          >
+            <summary
+              class="flex justify-between items-center p-6 cursor-pointer list-none"
+            >
+              <span class="font-bold text-slate-900 text-lg pr-4"
+                >Can I include commission/tips in my wage points?</span
+              >
+              <span
+                class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                >
               </span>
             </summary>
             <div class="px-6 pb-6 text-slate-600 leading-relaxed">
-              <p>For almost all BC PNP streams (Skills Immigration, Tech, Health Authority), <strong>YES</strong>. You need an indeterminate, full-time job offer. The only major exceptions are some "International Post-Graduate" streams for science/health graduates from BC institutions.</p>
-            </div>
-          </details>
-          
-          <details class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm">
-            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-              <span class="font-bold text-slate-900 text-lg pr-4">Can self-employed people apply?</span>
-              <span class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </span>
-            </summary>
-            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
-              <p>Generally, <strong>NO</strong>. The Skills Immigration stream is for employees. If you own more than 10% of the company offering you the job, you are ineligible. You would need to look at the "Entrepreneur Immigration" stream instead.</p>
-            </div>
-          </details>
-          
-          <details class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm">
-            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-              <span class="font-bold text-slate-900 text-lg pr-4">What counts as "Directly Related Work Experience"?</span>
-              <span class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </span>
-            </summary>
-            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
-              <p>This is strict. If your BC job offer is for a "Software Engineer" (NOC 21231), experience as a "Web Designer" might count if the duties overlap significantly, but experience as a "Sales Manager" will absolutely not count towards related exp points, even if it was at a tech company.</p>
+              <p>
+                No. BC PNP uses your <strong>guaranteed base wage</strong> only. Bonuses,
+                overtime, tips, profit-sharing, and commissions are excluded unless
+                guaranteed in the employment contract as a fixed minimum.
+              </p>
             </div>
           </details>
 
-           <!-- Category: After Application -->
-           <h3 class="font-bold text-slate-500 uppercase tracking-widest text-sm pl-4 mt-8 mb-4">After You Apply</h3>
-
-          <details class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm">
-            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-              <span class="font-bold text-slate-900 text-lg pr-4">Can I update my profile after submitting?</span>
-              <span class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
+          <details
+            class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm"
+          >
+            <summary
+              class="flex justify-between items-center p-6 cursor-pointer list-none"
+            >
+              <span class="font-bold text-slate-900 text-lg pr-4"
+                >I work a split shift or irregular hours. How do I calculate?</span
+              >
+              <span
+                class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                >
               </span>
             </summary>
             <div class="px-6 pb-6 text-slate-600 leading-relaxed">
-              <p>Yes. Your profile stays in the pool for up to 12 months (or until invited). If you get a raise, complete a new degree, or improve your English scores, you can—and should—update your profile to increase your score.</p>
+              <p>
+                You must be a full-time employee (average 30+ hours/week).
+                Convert your annual guaranteed income into an hourly equivalent
+                based on a standard work year (1560-2080 hours), but be careful:
+                BC PNP officers will look at your paystubs to verify the <em
+                  >hours worked</em
+                > match the claim.
+              </p>
             </div>
           </details>
-          
-           <details class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm">
-            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-              <span class="font-bold text-slate-900 text-lg pr-4">Why are applications refused?</span>
-              <span class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
+
+          <!-- Category: Experience -->
+          <h3
+            class="font-bold text-slate-500 uppercase tracking-widest text-sm pl-4 mt-8 mb-4"
+          >
+            Work Experience Gaps
+          </h3>
+
+          <details
+            class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm"
+          >
+            <summary
+              class="flex justify-between items-center p-6 cursor-pointer list-none"
+            >
+              <span class="font-bold text-slate-900 text-lg pr-4"
+                >Does maternity/paternity leave count as experience?</span
+              >
+              <span
+                class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                >
               </span>
             </summary>
             <div class="px-6 pb-6 text-slate-600 leading-relaxed">
-              <p>The #1 reason is <strong>Inflation of Information</strong>. If you claimed you earn $30/hr but your paystubs show $28/hr, you will be refused. If you claimed 3 years of experience but only prove 2.5 years, you will be refused. The officer must verify that your score at the time of application matched or exceeded the draw cut-off.</p>
+              <p>
+                Generally, leave periods where you are not performing duties do <strong
+                  >not</strong
+                > count toward the years of experience points. However, your employment
+                status remains "employed," so it doesn't break your continuity of
+                employment.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm"
+          >
+            <summary
+              class="flex justify-between items-center p-6 cursor-pointer list-none"
+            >
+              <span class="font-bold text-slate-900 text-lg pr-4"
+                >I worked part-time during university. Does it count?</span
+              >
+              <span
+                class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                >
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>
+                <strong>Maybe.</strong> Student work experience <em>can</em> count
+                if it was paid, continuous, and at a skilled level (TEER 0, 1, 2,
+                or 3). Part-time hours count pro-rata (e.g., 20 hours/week for 2 years
+                = 1 year full-time). Co-op terms can also count if paid and skilled.
+              </p>
             </div>
           </details>
         </div>
@@ -147,74 +345,87 @@ const description = "Answers to the most common BC PNP calculator questions. Tro
       <!-- Glossary -->
       <section>
         <div class="text-center mb-10">
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">BC PNP Glossary</h2>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+            BC PNP Glossary
+          </h2>
         </div>
-        
+
         <div class="grid sm:grid-cols-2 gap-4">
           <div class="bg-slate-50 p-6 rounded-[1.5rem]">
             <p class="font-black text-slate-900 mb-1">SIRS</p>
-            <p class="text-slate-600 text-sm">Skills Immigration Registration System. The "pool" where your points are calculated.</p>
+            <p class="text-slate-600 text-sm">
+              Skills Immigration Registration System. The "pool" where your
+              points are calculated.
+            </p>
           </div>
           <div class="bg-slate-50 p-6 rounded-[1.5rem]">
             <p class="font-black text-slate-900 mb-1">ITA</p>
-            <p class="text-slate-600 text-sm">Invitation to Apply. The "golden ticket" you get if your score is high enough.</p>
+            <p class="text-slate-600 text-sm">
+              Invitation to Apply. The "golden ticket" you get if your score is
+              high enough.
+            </p>
           </div>
           <div class="bg-slate-50 p-6 rounded-[1.5rem]">
             <p class="font-black text-slate-900 mb-1">NOC</p>
-            <p class="text-slate-600 text-sm">National Occupational Classification. The code that defines your job duties.</p>
+            <p class="text-slate-600 text-sm">
+              National Occupational Classification. The code that defines your
+              job duties.
+            </p>
           </div>
           <div class="bg-slate-50 p-6 rounded-[1.5rem]">
             <p class="font-black text-slate-900 mb-1">TEER</p>
-            <p class="text-slate-600 text-sm">Training, Education, Experience, Responsibility. The category (0-5) of your NOC code.</p>
-          </div>
-          <div class="bg-slate-50 p-6 rounded-[1.5rem]">
-            <p class="font-black text-slate-900 mb-1">IPG</p>
-            <p class="text-slate-600 text-sm">International Post-Graduate. A special stream for Masters/PhD grads in sciences.</p>
+            <p class="text-slate-600 text-sm">
+              Training, Education, Experience, Responsibility. The category
+              (0-5) of your NOC code.
+            </p>
           </div>
           <div class="bg-slate-50 p-6 rounded-[1.5rem]">
             <p class="font-black text-slate-900 mb-1">CLB</p>
-            <p class="text-slate-600 text-sm">Canadian Language Benchmark. The standard scale for English/French proficiency.</p>
+            <p class="text-slate-600 text-sm">
+              Canadian Language Benchmark. The standard scale for English/French
+              proficiency.
+            </p>
+          </div>
+          <div class="bg-slate-50 p-6 rounded-[1.5rem]">
+            <p class="font-black text-slate-900 mb-1">Indeterminate</p>
+            <p class="text-slate-600 text-sm">
+              A permanent job offer with no set end date.
+            </p>
           </div>
         </div>
       </section>
 
       <!-- CTA -->
       <section>
-        <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-[2rem] p-10 sm:p-12 text-center text-white">
-          <h3 class="text-2xl sm:text-3xl font-black mb-4">Still Have Questions?</h3>
-          <p class="text-red-100 mb-8 max-w-md mx-auto">Run your specific scenario through the calculator to get a definite answer.</p>
-          <a href="/" class="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-[1.5rem] font-black text-lg hover:bg-red-50 transition-colors shadow-xl">
-            Start Calculation
-            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        <div
+          class="bg-gradient-to-r from-red-600 to-red-700 rounded-[2rem] p-10 sm:p-12 text-center text-white"
+        >
+          <h3 class="text-2xl sm:text-3xl font-black mb-4">
+            Start Your Calculation
+          </h3>
+          <p class="text-red-100 mb-8 max-w-md mx-auto">
+            Now that you understand the rules, check your official score.
+          </p>
+          <a
+            href="/"
+            class="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-[1.5rem] font-black text-lg hover:bg-red-50 transition-colors shadow-xl"
+          >
+            Start Calculator
+            <svg
+              class="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
             </svg>
           </a>
         </div>
       </section>
-
-      <!-- Related Guides -->
-      <section class="pt-8 border-t border-slate-200">
-        <h2 class="text-xl font-black text-slate-900 uppercase tracking-widest mb-8 text-center">Related Guides</h2>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <a href="/articles/how-to-use-bc-pnp-calculator-2026" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
-            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">How to Use the Calculator</h3>
-            <p class="text-slate-500 text-sm">Step-by-step instructions for 2026.</p>
-          </a>
-          <a href="/articles/bc-pnp-vs-crs-calculator" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
-            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">BC PNP vs CRS</h3>
-            <p class="text-slate-500 text-sm">Which system is right for you?</p>
-          </a>
-          <a href="/articles/maximize-bc-pnp-score-tips" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
-            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">Maximize Your Score</h3>
-            <p class="text-slate-500 text-sm">Hidden points and Reddit strategies.</p>
-          </a>
-          <a href="/articles/bc-pnp-calculator-for-tech" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
-            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">Tech & High-Demand</h3>
-            <p class="text-slate-500 text-sm">Special lookup for priority jobs.</p>
-          </a>
-        </div>
-      </section>
-
     </div>
   </div>
 </BaseLayout>

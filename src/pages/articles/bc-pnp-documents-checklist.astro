@@ -1,92 +1,452 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const title = "BC PNP Document Checklist 2025: Required Forms & PDFs";
-const description = "The ultimate checklist for your BC PNP application. Ensure you have all required documents for registration and application to avoid delays.";
+const title =
+  "BC PNP Document Checklist 2026: Complete List of Required Documents";
+const description =
+  "Complete BC PNP document checklist for 2026. All required forms, employer documents, education proofs, and language tests needed for your Skills Immigration or Express Entry BC application.";
 ---
 
 <BaseLayout title={title} description={description}>
   <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
     <div class="max-w-3xl mx-auto space-y-8">
-      
       <!-- Header -->
       <header class="space-y-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        <h1
+          class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight"
+        >
           BC PNP <span class="text-blue-600">Document Checklist</span>
         </h1>
         <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Missing a single document can lead to your application being returned or refused. Use this checklist to get everything ready before you apply.
+          Missing a single document can get your application returned or
+          refused. Use this comprehensive checklist to prepare everything before
+          you apply.
         </p>
       </header>
 
+      <!-- Warning Box -->
+      <div class="bg-red-50 border border-red-200 p-6 rounded-2xl">
+        <div class="font-bold text-red-800 mb-2">
+          ⚠️ Critical: 30-Day Deadline
+        </div>
+        <p class="text-red-700 text-sm">
+          After receiving an invitation, you have exactly <strong
+            >30 calendar days</strong
+          > to submit a complete application. Start gathering documents NOW, before
+          you get invited.
+        </p>
+      </div>
+
       <!-- Main Content -->
-      <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
-        
+      <div
+        class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm"
+      >
         <h2>General Formatting Rules</h2>
         <p>
-            Before you start scanning, keep these rules in mind:
+          Before you start scanning, keep these rules in mind for ALL documents:
         </p>
-        <ul class="text-sm">
-            <li><strong>Format:</strong> All files must be <strong>PDF</strong> (except photos, which can be JPG).</li>
-            <li><strong>Quality:</strong> Scans must be in colour and legible.</li>
-            <li><strong>Size:</strong> Max 3MB per file (usually).</li>
-            <li><strong>Translation:</strong> Anything not in English or French must be accompanied by a certified translation <em>and</em> a copy of the original.</li>
+        <ul>
+          <li>
+            <strong>Format:</strong> All files must be <strong>PDF</strong> (except
+            photos, which can be JPG/JPEG)
+          </li>
+          <li>
+            <strong>Quality:</strong> Scans must be in colour, clear, and fully legible
+          </li>
+          <li>
+            <strong>Size:</strong> Maximum 3MB per file (compress large PDFs if needed)
+          </li>
+          <li>
+            <strong>Orientation:</strong> Documents must be right-side up and not
+            cropped
+          </li>
+          <li>
+            <strong>Translation:</strong> Non-English/French documents need certified
+            translation PLUS the original
+          </li>
+          <li>
+            <strong>Certification:</strong> Some documents require notarization or
+            attestation
+          </li>
+        </ul>
+
+        <div
+          class="bg-blue-50 p-6 rounded-xl text-sm border border-blue-200 mb-8"
+        >
+          <strong>💡 Pro Tip:</strong> Use a proper scanner instead of phone photos.
+          Scanner apps like Adobe Scan or Microsoft Lens produce better quality if
+          you must use your phone.
+        </div>
+
+        <hr class="my-8 border-slate-100" />
+
+        <h2>1. Personal Identification Documents</h2>
+
+        <h3>For Principal Applicant</h3>
+        <ul>
+          <li>
+            <strong>Valid Passport:</strong> Bio-data page (photo page). Must be valid
+            for the duration of processing.
+          </li>
+          <li>
+            <strong>Passport Photo:</strong> Recent passport-style photograph (35mm
+            x 45mm, white background)
+          </li>
+          <li>
+            <strong>Birth Certificate:</strong> If available, with certified translation
+          </li>
+          <li>
+            <strong>Name Change Documents:</strong> Marriage certificate, divorce
+            decree, or legal name change certificate if your name has changed
+          </li>
+        </ul>
+
+        <h3>Immigration Status Documents (If in Canada)</h3>
+        <ul>
+          <li>
+            <strong>Current Work Permit:</strong> Both sides, must be valid
+          </li>
+          <li>
+            <strong>Previous Work Permits:</strong> To prove continuous status and
+            work history
+          </li>
+          <li><strong>Study Permits:</strong> If applicable to your history</li>
+          <li><strong>Visitor Records:</strong> If you changed status</li>
+          <li>
+            <strong>Port of Entry Stamp:</strong> Page showing your most recent entry
+            to Canada
+          </li>
+        </ul>
+
+        <h3>For Spouse/Common-Law Partner</h3>
+        <ul>
+          <li><strong>Passport:</strong> Bio-data page</li>
+          <li>
+            <strong>Marriage Certificate:</strong> Official document with certified
+            translation
+          </li>
+          <li>
+            <strong>Common-Law Declaration:</strong> If applicable, with proof of
+            cohabitation (12+ months)
+          </li>
+          <li><strong>Work/Study Permit:</strong> If they are in Canada</li>
+        </ul>
+
+        <h3>For Dependent Children</h3>
+        <ul>
+          <li><strong>Passport:</strong> Bio-data page for each child</li>
+          <li>
+            <strong>Birth Certificate:</strong> Showing both parents' names
+          </li>
+          <li><strong>Adoption Papers:</strong> If applicable</li>
+          <li>
+            <strong>Custody Documents:</strong> If parents are separated/divorced
+          </li>
         </ul>
 
         <hr class="my-8 border-slate-100" />
 
-        <h2>1. Personal Information</h2>
-        <ul>
-            <li><strong>Passport:</strong> Bio-data hood (photo page) for you and all dependents. Must be valid.</li>
-            <li><strong>Photo:</strong> A recent passport-style photo of the principal applicant.</li>
-            <li><strong>Status Documents in Canada:</strong> Work permits, study permits, or visitor records (if currently in Canada).</li>
-            <li><strong>Marriage Certificate:</strong> If applicable.</li>
-        </ul>
-
-        <h2>2. Employer Documents</h2>
+        <h2>2. Employer Documents (Critical Section)</h2>
         <p>
-            Your employer needs to provide several critical documents. Do not leave this to the last minute.
+          These documents take the longest to obtain. Start requesting them from
+          your employer immediately after registering in SIRS.
         </p>
+
+        <h3>BC PNP Employer Declaration</h3>
         <ul>
-            <li><strong>BC PNP Job Offer Form:</strong> Must be signed by the authorized employer rep and you.</li>
-            <li><strong>Job Description:</strong> Detailed outline of duties on company letterhead.</li>
-            <li><strong>Company Info:</strong> Certificate of Incorporation and valid municipal business license.</li>
-            <li><strong>Recommendation Letter:</strong> Explaining why you are the best fit for the role and recruitment efforts made (if applicable).</li>
+          <li>
+            Official BC PNP form signed by authorized company representative
+          </li>
+          <li>
+            Must include company details, your job details, and declaration
+            statements
+          </li>
+          <li>Signature must be original (not digitally typed)</li>
         </ul>
 
-        <h2>3. Education & Certifications</h2>
+        <h3>Job Offer Letter</h3>
+        <p>The job offer must be on company letterhead and include:</p>
         <ul>
-            <li><strong>Degree/Diploma:</strong> Copies of your actual degree or diploma certificates.</li>
-            <li><strong>Transcripts:</strong> Official transcripts showing completed courses and grades.</li>
-            <li><strong>ECA Report:</strong> Educational Credential Assessment (WES, ICAS, etc.) if your degree is from outside Canada.</li>
-            <li><strong>Professional Designation:</strong> If working in a regulated trade or healthcare role.</li>
+          <li>Your full legal name (matching passport)</li>
+          <li>Job title</li>
+          <li>NOC code (2021 version)</li>
+          <li>Detailed job duties (matching NOC description)</li>
+          <li>Wage or salary (hourly or annual)</li>
+          <li>Hours per week (must be 30+ for full-time)</li>
+          <li>Start date</li>
+          <li>Employment type: Full-time and permanent/indeterminate</li>
+          <li>Work location (full address in BC)</li>
+          <li>Supervisor's name, title, signature, and contact information</li>
+          <li>Date of letter</li>
         </ul>
 
-        <h2>4. Language Results</h2>
+        <h3>Company Registration Documents</h3>
         <ul>
-            <li><strong>Test Report Form:</strong> Valid results from IELTS (General), CELPIP (General), TEF, or TCF.</li>
-            <li>Must be less than <strong>2 years old</strong> at the time of registration.</li>
+          <li>
+            <strong>Certificate of Incorporation:</strong> From BC Registries
+          </li>
+          <li>
+            <strong>Business License:</strong> Valid municipal business license
+          </li>
+          <li>
+            <strong>BC Corporate Summary:</strong> Recent printout showing company
+            is in good standing
+          </li>
         </ul>
 
-        <h2>5. Work Experience</h2>
-        <p>
-            To prove your previous experience (especially for the "Directly Related Experience" points):
-        </p>
+        <h3>Employer Recommendation Letter (If Applicable)</h3>
         <ul>
-            <li><strong>Reference Letters:</strong> From past employers, on letterhead, signed, listing dates, hours, duties, and salary.</li>
-            <li><strong>Pay Stubs:</strong> A selection of pay stubs to prove employment history.</li>
-            <li><strong>T4s / Tax Documents:</strong> Official government tax records matching your employment dates.</li>
+          <li>Explains why you are the best candidate</li>
+          <li>Describes recruitment efforts made to find Canadians/PRs</li>
+          <li>Details your unique qualifications</li>
         </ul>
-        
-        <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 my-8 not-prose">
-            <h3 class="font-bold text-blue-900 mb-2">Tip: Organize Early</h3>
-            <p class="text-blue-800 text-sm">
-                You only have 30 days to submit your application after receiving an invitation. Start gathering your employer documents (which take the longest) as soon as you register in SIRS.
-            </p>
+
+        <div
+          class="bg-amber-50 p-6 rounded-xl text-sm border border-amber-200 mb-8"
+        >
+          <strong>⚠️ Common Mistake:</strong> Employers sometimes provide letters
+          with vague job duties. Make sure duties match the NOC description word-for-word
+          where possible.
         </div>
 
+        <hr class="my-8 border-slate-100" />
+
+        <h2>3. Education & Professional Credentials</h2>
+
+        <h3>Educational Documents</h3>
+        <ul>
+          <li>
+            <strong>Degree/Diploma Certificate:</strong> Original copy of your highest
+            credential
+          </li>
+          <li>
+            <strong>Official Transcripts:</strong> Showing all courses, grades, and
+            graduation date
+          </li>
+          <li>
+            <strong>ECA Report:</strong> Educational Credential Assessment from WES,
+            ICAS, IQAS, or other designated organizations (required for foreign credentials)
+          </li>
+        </ul>
+
+        <h3>Professional Certifications</h3>
+        <ul>
+          <li>
+            <strong>Professional License:</strong> Required for regulated occupations
+            (nurses, engineers, electricians, etc.)
+          </li>
+          <li>
+            <strong>Trade Certification:</strong> Red Seal or BC provincial certification
+          </li>
+          <li>
+            <strong>Professional Membership:</strong> If required by your occupation
+          </li>
+        </ul>
+
+        <h3>Technical Certifications</h3>
+        <ul>
+          <li>IT certifications (AWS, Microsoft, Google, etc.)</li>
+          <li>Project management (PMP, PRINCE2)</li>
+          <li>Industry-specific certifications</li>
+        </ul>
+
+        <hr class="my-8 border-slate-100" />
+
+        <h2>4. Language Test Results</h2>
+        <p>
+          Your language test is one of the most important documents.
+          Double-check validity!
+        </p>
+
+        <h3>Accepted Tests</h3>
+        <ul>
+          <li><strong>IELTS General Training</strong> (NOT Academic)</li>
+          <li><strong>CELPIP General</strong> (NOT CELPIP-LS)</li>
+          <li><strong>PTE Core</strong></li>
+          <li><strong>TEF Canada</strong> (French)</li>
+          <li><strong>TCF Canada</strong> (French)</li>
+        </ul>
+
+        <h3>Requirements</h3>
+        <ul>
+          <li>
+            Test results must be less than <strong>2 years old</strong> at time of
+            application
+          </li>
+          <li>
+            All four components required (Listening, Reading, Writing, Speaking)
+          </li>
+          <li>Must meet minimum CLB level for your stream</li>
+        </ul>
+
+        <div
+          class="bg-green-50 p-6 rounded-xl text-sm border border-green-200 mb-8"
+        >
+          <strong>✓ Validity Check:</strong> If your test expires before you might
+          receive an invitation, book a new test now. Processing can take 3-6 months
+          after invitation.
+        </div>
+
+        <hr class="my-8 border-slate-100" />
+
+        <h2>5. Work Experience Documents</h2>
+        <p>
+          You need to prove your work experience claims with solid
+          documentation.
+        </p>
+
+        <h3>Reference Letters from Past Employers</h3>
+        <p>Each letter must include:</p>
+        <ul>
+          <li>Company letterhead with full address and contact info</li>
+          <li>Your full name and job title</li>
+          <li>Dates of employment (start and end)</li>
+          <li>Hours worked per week</li>
+          <li>Salary/wage</li>
+          <li>Detailed job duties</li>
+          <li>Supervisor's name, title, signature, and date</li>
+        </ul>
+
+        <h3>Supporting Documents</h3>
+        <ul>
+          <li>
+            <strong>Pay Stubs:</strong> At least 3-6 recent pay stubs from current
+            employer
+          </li>
+          <li>
+            <strong>T4 Slips:</strong> For each year of Canadian work experience
+          </li>
+          <li>
+            <strong>Notice of Assessment:</strong> From CRA for each tax year
+          </li>
+          <li>
+            <strong>Employment Contracts:</strong> Original signed contracts
+          </li>
+          <li><strong>Promotion Letters:</strong> If you've been promoted</li>
+        </ul>
+
+        <h3>For Self-Employment (If Applicable)</h3>
+        <ul>
+          <li>Business registration documents</li>
+          <li>Client contracts or invoices</li>
+          <li>Bank statements showing business income</li>
+          <li>Tax returns (T1 with business income)</li>
+        </ul>
+
+        <hr class="my-8 border-slate-100" />
+
+        <h2>6. Additional Documents by Stream</h2>
+
+        <h3>Express Entry BC (EEBC)</h3>
+        <ul>
+          <li>Express Entry Profile Number</li>
+          <li>Job Seeker Validation Code</li>
+          <li>Screenshot of Express Entry profile showing eligibility</li>
+        </ul>
+
+        <h3>Entry Level & Semi-Skilled (ELSS)</h3>
+        <ul>
+          <li>
+            Proof of 9+ months continuous employment with current BC employer
+          </li>
+          <li>High school diploma or equivalent</li>
+        </ul>
+
+        <h3>Healthcare Authority</h3>
+        <ul>
+          <li>Letter from BC Health Authority confirming job offer</li>
+          <li>Professional registration/licensing with BC regulatory body</li>
+        </ul>
+
+        <hr class="my-8 border-slate-100" />
+
+        <h2>Document Preparation Checklist</h2>
+        <div class="not-prose bg-slate-50 p-6 rounded-xl">
+          <div class="grid gap-3 text-sm">
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" />
+              <span>All documents scanned in colour, clear and legible</span>
+            </label>
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" />
+              <span>Foreign documents translated by certified translator</span>
+            </label>
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" />
+              <span>Language test results valid (less than 2 years old)</span>
+            </label>
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" />
+              <span>Passport valid for duration of processing</span>
+            </label>
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" />
+              <span>Job offer letter contains all required elements</span>
+            </label>
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" />
+              <span>Employer documents signed and dated</span>
+            </label>
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" />
+              <span>Reference letters from all past employers claimed</span>
+            </label>
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" />
+              <span>ECA report received (if foreign education)</span>
+            </label>
+            <label class="flex items-start gap-3">
+              <input type="checkbox" class="mt-1" />
+              <span>All files under 3MB and in PDF format</span>
+            </label>
+          </div>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What if my employer won't provide documents?</h3>
+        <p>
+          This is a red flag. A legitimate employer supporting your BC PNP
+          application should readily provide required documents. If they refuse,
+          you may need to find a new employer or consult an immigration lawyer.
+        </p>
+
+        <h3>Can I use expired language test results?</h3>
+        <p>
+          No. Your language test must be valid (less than 2 years old) at the
+          time you submit your BC PNP application AND when you apply for PR.
+        </p>
+
+        <h3>Do I need original documents or copies?</h3>
+        <p>
+          BC PNP accepts scanned copies uploaded to their portal. Keep your
+          originals safe—you may need them for the federal PR stage.
+        </p>
+
+        <h3>What happens if I miss a document?</h3>
+        <p>
+          BC PNP may request the missing document, which delays processing. In
+          some cases, incomplete applications are returned or refused.
+        </p>
       </div>
 
+      <!-- CTA -->
+      <div
+        class="bg-gradient-to-br from-blue-600 to-blue-700 p-8 rounded-2xl text-center text-white"
+      >
+        <h2 class="text-2xl font-bold mb-3">
+          Ready to Check Your Eligibility?
+        </h2>
+        <p class="text-blue-100 mb-6">
+          Calculate your BC PNP score before gathering documents.
+        </p>
+        <a
+          href="/bc-pnp-calculator"
+          class="inline-block bg-white text-blue-700 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors"
+        >
+          Use the Calculator →
+        </a>
+      </div>
     </div>
   </article>
 </BaseLayout>

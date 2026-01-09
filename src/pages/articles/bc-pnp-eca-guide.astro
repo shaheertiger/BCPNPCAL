@@ -1,0 +1,392 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "BC PNP Education Credential Assessment (ECA) Guide 2026";
+const description =
+    "Complete guide to Education Credential Assessment for BC PNP. Learn which organizations to use, processing times, costs, and how ECA affects your points.";
+---
+
+<BaseLayout title={title} description={description}>
+    <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
+        <div class="max-w-3xl mx-auto space-y-8">
+            <header class="space-y-4 text-center">
+                <h1
+                    class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight"
+                >
+                    <span class="text-violet-600">ECA Guide</span> for BC PNP
+                </h1>
+                <p
+                    class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
+                >
+                    If you studied outside Canada, you may need an Educational
+                    Credential Assessment. Here's everything you need to know.
+                </p>
+            </header>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div
+                    class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
+                >
+                    <div class="text-3xl font-black text-violet-600 mb-2">
+                        4-8 weeks
+                    </div>
+                    <div class="text-sm text-slate-600 font-medium">
+                        Typical processing time
+                    </div>
+                </div>
+                <div
+                    class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
+                >
+                    <div class="text-3xl font-black text-green-600 mb-2">
+                        $200-300
+                    </div>
+                    <div class="text-sm text-slate-600 font-medium">
+                        Average cost
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm"
+            >
+                <h2>What is an ECA?</h2>
+                <p>
+                    An <strong>Educational Credential Assessment (ECA)</strong> is
+                    a document that verifies whether your foreign degree, diploma,
+                    or certificate is equal to a Canadian credential. It's issued
+                    by designated organizations approved by IRCC.
+                </p>
+
+                <h2>Do You Need an ECA for BC PNP?</h2>
+                <p>ECA requirements depend on your situation:</p>
+
+                <div class="not-prose overflow-x-auto my-6">
+                    <table class="min-w-full text-left text-sm">
+                        <thead class="bg-gray-100 border-b border-gray-200">
+                            <tr>
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Scenario</th
+                                >
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >ECA Required?</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Canadian degree/diploma</td
+                                >
+                                <td class="px-4 py-3 text-green-700 font-bold"
+                                    >No</td
+                                >
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Foreign credential + BC PNP only</td
+                                >
+                                <td class="px-4 py-3 text-amber-700 font-bold"
+                                    >Recommended (for points)</td
+                                >
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Foreign credential + Express Entry BC</td
+                                >
+                                <td class="px-4 py-3 text-red-700 font-bold"
+                                    >Yes (required for EE profile)</td
+                                >
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Regulated profession (nursing, engineering)</td
+                                >
+                                <td class="px-4 py-3 text-red-700 font-bold"
+                                    >Yes (licensing requirement)</td
+                                >
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Designated ECA Organizations</h2>
+                <p>IRCC recognizes these organizations for immigration ECAs:</p>
+
+                <div class="not-prose overflow-x-auto my-6">
+                    <table class="min-w-full text-left text-sm">
+                        <thead class="bg-gray-100 border-b border-gray-200">
+                            <tr>
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Organization</th
+                                >
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Best For</th
+                                >
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Processing Time</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="bg-green-50">
+                                <td class="px-4 py-3 font-bold"
+                                    >WES (World Education Services)</td
+                                >
+                                <td class="px-4 py-3"
+                                    >Most countries, fastest</td
+                                >
+                                <td class="px-4 py-3">7-20 business days</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-bold">IQAS</td>
+                                <td class="px-4 py-3">Alberta applicants</td>
+                                <td class="px-4 py-3">8-12 weeks</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-bold">ICAS</td>
+                                <td class="px-4 py-3">All countries</td>
+                                <td class="px-4 py-3">10-12 weeks</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-bold"
+                                    >Comparative Education Service (UofT)</td
+                                >
+                                <td class="px-4 py-3">Academic purposes</td>
+                                <td class="px-4 py-3">12-16 weeks</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-bold"
+                                    >MCC (Medical Council of Canada)</td
+                                >
+                                <td class="px-4 py-3">Physicians only</td>
+                                <td class="px-4 py-3">Varies</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-bold"
+                                    >PEBC (Pharmacy Examining Board)</td
+                                >
+                                <td class="px-4 py-3">Pharmacists only</td>
+                                <td class="px-4 py-3">Varies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div
+                    class="bg-green-50 p-6 rounded-xl text-sm border border-green-200 mb-8"
+                >
+                    <strong>💡 Recommendation:</strong> WES is the most popular choice
+                    due to fast processing times and availability for most countries.
+                    They also have agreements with many institutions for direct document
+                    transfer.
+                </div>
+
+                <h2>How ECA Affects Your BC PNP Score</h2>
+                <p>Your education level affects your SIRS score:</p>
+
+                <div class="not-prose overflow-x-auto my-6">
+                    <table class="min-w-full text-left text-sm">
+                        <thead class="bg-gray-100 border-b border-gray-200">
+                            <tr>
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Equivalent Education Level</th
+                                >
+                                <th class="px-4 py-3 font-bold text-slate-900"
+                                    >Points</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-4 py-3">Doctoral degree (PhD)</td>
+                                <td class="px-4 py-3 text-green-700 font-bold"
+                                    >17 points</td
+                                >
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Master's degree</td>
+                                <td class="px-4 py-3 text-green-700 font-bold"
+                                    >11 points</td
+                                >
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Post-secondary diploma/certificate (3+
+                                    years)</td
+                                >
+                                <td class="px-4 py-3 font-bold">10 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">Bachelor's degree</td>
+                                <td class="px-4 py-3 font-bold">8 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Post-secondary diploma (2 years)</td
+                                >
+                                <td class="px-4 py-3 font-bold">4 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Post-secondary diploma (1 year)</td
+                                >
+                                <td class="px-4 py-3 font-bold">2 points</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"
+                                    >Secondary school (high school)</td
+                                >
+                                <td class="px-4 py-3 font-bold">0 points</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Step-by-Step ECA Process</h2>
+                <ol>
+                    <li>
+                        <strong>Choose an organization:</strong>
+                        <p class="text-sm text-slate-600 mt-1">
+                            WES is recommended for most applicants due to speed.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Create an account:</strong>
+                        <p class="text-sm text-slate-600 mt-1">
+                            Register on the organization's website and get your
+                            reference number.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Request documents:</strong>
+                        <p class="text-sm text-slate-600 mt-1">
+                            Ask your institution to send official transcripts
+                            and degree certificates directly to the ECA
+                            organization.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Pay the fee:</strong>
+                        <p class="text-sm text-slate-600 mt-1">
+                            Fees range from $200-350 CAD depending on the
+                            organization.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Wait for assessment:</strong>
+                        <p class="text-sm text-slate-600 mt-1">
+                            Processing takes 1-12 weeks depending on the
+                            organization and document availability.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Receive your report:</strong>
+                        <p class="text-sm text-slate-600 mt-1">
+                            The ECA report shows the Canadian equivalency of
+                            your foreign credential.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>ECA Validity</h2>
+                <ul>
+                    <li>
+                        <strong>For Express Entry:</strong> ECA must be less than
+                        5 years old when you submit your profile
+                    </li>
+                    <li>
+                        <strong>For BC PNP:</strong> No strict validity period, but
+                        recent ECAs are preferred
+                    </li>
+                    <li>
+                        <strong>Keep the original:</strong> You may need it for licensing
+                        or employer verification
+                    </li>
+                </ul>
+
+                <h2>Common ECA Issues</h2>
+
+                <h3>Document Verification Problems</h3>
+                <ul>
+                    <li>
+                        <strong>Institution not recognized:</strong> Some smaller
+                        institutions may need additional verification
+                    </li>
+                    <li>
+                        <strong>Documents in non-English:</strong> Need certified
+                        translations
+                    </li>
+                    <li>
+                        <strong>Institution unresponsive:</strong> May significantly
+                        delay processing
+                    </li>
+                </ul>
+
+                <h3>Lower-Than-Expected Equivalency</h3>
+                <p>
+                    Sometimes your credential may be assessed at a lower level
+                    than expected. For example, a 3-year bachelor's degree might
+                    be assessed as equivalent to a Canadian diploma. This
+                    affects your points.
+                </p>
+
+                <div
+                    class="bg-amber-50 p-6 rounded-xl text-sm border border-amber-200 mb-8"
+                >
+                    <strong>⚠️ Tip:</strong> If you disagree with your ECA result,
+                    you can request a review or try a different designated organization.
+                </div>
+
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>Can I use the same ECA for BC PNP and Express Entry?</h3>
+                <p>
+                    Yes, as long as the ECA is from a designated organization
+                    and is still valid (less than 5 years old for Express Entry
+                    purposes).
+                </p>
+
+                <h3>Do I need to assess all my credentials?</h3>
+                <p>
+                    No. Typically you only need to assess your highest completed
+                    credential. However, assess additional credentials if
+                    they're relevant to your occupation.
+                </p>
+
+                <h3>What if my institution closed?</h3>
+                <p>
+                    Contact the Ministry of Education in your country for
+                    archived records. Some ECA organizations have special
+                    processes for closed institutions.
+                </p>
+
+                <h3>
+                    Is a Canadian degree from an online foreign university
+                    accepted?
+                </h3>
+                <p>
+                    It depends on the institution's accreditation. Online
+                    degrees from non-accredited institutions may not be
+                    recognized.
+                </p>
+            </div>
+
+            <div
+                class="bg-gradient-to-br from-violet-600 to-violet-700 p-8 rounded-2xl text-center text-white"
+            >
+                <h2 class="text-2xl font-bold mb-3">
+                    Calculate Your Education Points
+                </h2>
+                <p class="text-violet-100 mb-6">
+                    See how your education affects your BC PNP score.
+                </p>
+                <a
+                    href="/bc-pnp-calculator"
+                    class="inline-block bg-white text-violet-700 font-bold px-8 py-3 rounded-xl hover:bg-violet-50 transition-colors"
+                >
+                    Use the Calculator →
+                </a>
+            </div>
+        </div>
+    </article>
+</BaseLayout>

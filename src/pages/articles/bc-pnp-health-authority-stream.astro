@@ -1,101 +1,469 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const title = "BC PNP Health Authority Stream 2025: Occupations & Requirements";
-const description = "Complete guide for healthcare professionals. Check if your occupation is eligible for the BC PNP Health Authority stream and learn about the requirements for doctors, nurses, and allied health.";
+const title =
+  "BC PNP Health Authority Stream 2026: Complete Guide for Healthcare Workers";
+const description =
+  "Comprehensive guide to the BC PNP Health Authority stream. Eligibility requirements, eligible NOC codes, licensing requirements, and step-by-step application process for healthcare professionals.";
 ---
 
 <BaseLayout title={title} description={description}>
   <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
     <div class="max-w-3xl mx-auto space-y-8">
-      
       <!-- Header -->
       <header class="space-y-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        <div
+          class="inline-block bg-sky-100 text-sky-700 px-4 py-1 rounded-full text-sm font-bold mb-4"
+        >
+          Priority Stream
+        </div>
+        <h1
+          class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight"
+        >
           BC PNP <span class="text-sky-600">Health Authority Stream</span>
         </h1>
         <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          The priority pathway for physicians, nurses, and allied health professionals helping to keep British Columbia healthy.
+          The priority pathway for physicians, nurses, and allied health
+          professionals helping to keep British Columbia healthy.
         </p>
       </header>
 
+      <!-- Key Stats -->
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div
+          class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
+        >
+          <div class="text-3xl font-black text-green-600 mb-2">90-100</div>
+          <div class="text-sm text-slate-600 font-medium">
+            Typical cut-off score
+          </div>
+        </div>
+        <div
+          class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
+        >
+          <div class="text-3xl font-black text-sky-600 mb-2">Priority</div>
+          <div class="text-sm text-slate-600 font-medium">
+            Processing status
+          </div>
+        </div>
+        <div
+          class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
+        >
+          <div class="text-3xl font-black text-purple-600 mb-2">Weekly</div>
+          <div class="text-sm text-slate-600 font-medium">Targeted draws</div>
+        </div>
+      </div>
+
       <!-- Main Content -->
-      <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
-        
-        <h2>Why Apply as a Healthcare Professional?</h2>
+      <div
+        class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm"
+      >
+        <h2>Why Healthcare Workers Get Priority</h2>
         <p>
-            B.C. has a critical shortage of healthcare workers. As a result, this stream offers some of the most favorable terms in the entire designated program:
+          British Columbia is experiencing a <strong
+            >critical healthcare worker shortage</strong
+          >. Hospitals throughout the province urgently need nurses, physicians,
+          and allied health professionals. This shortage has made the Health
+          Authority stream one of the most favorable pathways in BC PNP.
         </p>
+
+        <h3>Key Advantages</h3>
         <ul class="marker:text-sky-600">
-            <li><strong>Low Cut-Off Scores:</strong> Targeted healthcare draws often have cut-offs around 90-100 points, compared to 120+ for general skilled workers.</li>
-            <li><strong>Direct Entry:</strong> If working for a public health authority, you may not need the standard "2 years experience" if the authority sponsors you directly.</li>
+          <li>
+            <strong>Lower Cut-Off Scores:</strong> Targeted healthcare draws often
+            have cut-offs around 90-100 points, compared to 120+ for general skilled
+            workers.
+          </li>
+          <li>
+            <strong>Direct Entry Option:</strong> If working for a public health authority,
+            you may not need the standard job experience requirements.
+          </li>
+          <li>
+            <strong>Priority Processing:</strong> Healthcare applications are typically
+            processed faster (2-3 months).
+          </li>
+          <li>
+            <strong>Weekly Draws:</strong> BC PNP frequently conducts healthcare-specific
+            draws.
+          </li>
+          <li>
+            <strong>Express Entry Eligible:</strong> Most healthcare occupations qualify
+            for EEBC, meaning faster federal processing.
+          </li>
         </ul>
 
         <h2>Who is Eligible?</h2>
         <p>
-            You must have a full-time, indeterminate job offer from a <strong>Public Health Authority</strong>.
+          To apply through the Health Authority stream, you must have a
+          full-time, indeterminate job offer from a <strong
+            >Public Health Authority</strong
+          > in BC.
         </p>
-        <p>This includes:</p>
-        <ul>
-            <li>Provincial Health Services Authority (PHSA)</li>
-            <li>Fraser Health</li>
-            <li>Vancouver Coastal Health</li>
-            <li>Interior Health</li>
-            <li>Island Health</li>
-            <li>Northern Health</li>
-            <li>New Providence Health Care</li>
-        </ul>
-        <p>
-            <em>Note:</em> Job offers from private clinics usually <strong>do not qualify</strong> for this specific stream unless the clinic is affiliated with a public authority. Private clinic offers typically fall under the standard Skilled Worker stream.
-        </p>
+
+        <h3>Eligible BC Health Authorities</h3>
+        <div class="not-prose grid sm:grid-cols-2 gap-4 my-6">
+          <div class="bg-sky-50 p-5 rounded-xl">
+            <ul class="text-sm text-sky-800 space-y-2">
+              <li>✓ Provincial Health Services Authority (PHSA)</li>
+              <li>✓ Fraser Health</li>
+              <li>✓ Vancouver Coastal Health</li>
+              <li>✓ Interior Health</li>
+            </ul>
+          </div>
+          <div class="bg-sky-50 p-5 rounded-xl">
+            <ul class="text-sm text-sky-800 space-y-2">
+              <li>✓ Island Health</li>
+              <li>✓ Northern Health</li>
+              <li>✓ Providence Health Care</li>
+              <li>✓ First Nations Health Authority</li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="bg-amber-50 p-6 rounded-xl text-sm border border-amber-200 mb-8"
+        >
+          <strong>⚠️ Important:</strong> Job offers from private clinics usually <strong
+            >do not qualify</strong
+          > for this specific stream unless the clinic is affiliated with a public
+          authority. Private clinic offers typically fall under the standard Skilled
+          Worker stream.
+        </div>
 
         <h2>Eligible Occupations (NOC List)</h2>
+        <p>Your job must fall under one of the priority health NOCs:</p>
+
+        <h3>Physicians & Medical Specialists</h3>
+        <div class="not-prose overflow-x-auto my-6">
+          <table class="min-w-full text-left text-sm">
+            <thead class="bg-gray-100 border-b border-gray-200">
+              <tr>
+                <th class="px-4 py-3 font-bold text-slate-900">NOC Code</th>
+                <th class="px-4 py-3 font-bold text-slate-900">Occupation</th>
+                <th class="px-4 py-3 font-bold text-slate-900">TEER</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="px-4 py-3 font-mono">31100</td>
+                <td class="px-4 py-3"
+                  >Specialists in Surgery/Clinical Medicine</td
+                >
+                <td class="px-4 py-3">0</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">31101</td>
+                <td class="px-4 py-3"
+                  >Specialists in Clinical/Laboratory Medicine</td
+                >
+                <td class="px-4 py-3">0</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">31102</td>
+                <td class="px-4 py-3"
+                  >General Practitioners & Family Physicians</td
+                >
+                <td class="px-4 py-3">0</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">31103</td>
+                <td class="px-4 py-3">Veterinarians</td>
+                <td class="px-4 py-3">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Nursing Professionals</h3>
+        <div class="not-prose overflow-x-auto my-6">
+          <table class="min-w-full text-left text-sm">
+            <thead class="bg-gray-100 border-b border-gray-200">
+              <tr>
+                <th class="px-4 py-3 font-bold text-slate-900">NOC Code</th>
+                <th class="px-4 py-3 font-bold text-slate-900">Occupation</th>
+                <th class="px-4 py-3 font-bold text-slate-900">TEER</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-green-50">
+                <td class="px-4 py-3 font-mono">31301</td>
+                <td class="px-4 py-3 font-medium">Registered Nurses (RNs)</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+              <tr class="bg-green-50">
+                <td class="px-4 py-3 font-mono">31302</td>
+                <td class="px-4 py-3 font-medium">Nurse Practitioners</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">31303</td>
+                <td class="px-4 py-3">Physician Assistants</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">32101</td>
+                <td class="px-4 py-3">Licensed Practical Nurses (LPNs)</td>
+                <td class="px-4 py-3">2</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">33102</td>
+                <td class="px-4 py-3"
+                  >Nurse Aides & Patient Service Associates</td
+                >
+                <td class="px-4 py-3">3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Allied Health Professionals</h3>
+        <div class="not-prose overflow-x-auto my-6">
+          <table class="min-w-full text-left text-sm">
+            <thead class="bg-gray-100 border-b border-gray-200">
+              <tr>
+                <th class="px-4 py-3 font-bold text-slate-900">NOC Code</th>
+                <th class="px-4 py-3 font-bold text-slate-900">Occupation</th>
+                <th class="px-4 py-3 font-bold text-slate-900">TEER</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="px-4 py-3 font-mono">31120</td>
+                <td class="px-4 py-3">Pharmacists</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">31121</td>
+                <td class="px-4 py-3">Optometrists</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">31202</td>
+                <td class="px-4 py-3">Physiotherapists</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">31203</td>
+                <td class="px-4 py-3">Occupational Therapists</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">31204</td>
+                <td class="px-4 py-3">Kinesiologists</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">31112</td>
+                <td class="px-4 py-3">Dietitians & Nutritionists</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">31209</td>
+                <td class="px-4 py-3"
+                  >Other Professional Occupations in Health</td
+                >
+                <td class="px-4 py-3">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Diagnostic & Laboratory</h3>
+        <div class="not-prose overflow-x-auto my-6">
+          <table class="min-w-full text-left text-sm">
+            <thead class="bg-gray-100 border-b border-gray-200">
+              <tr>
+                <th class="px-4 py-3 font-bold text-slate-900">NOC Code</th>
+                <th class="px-4 py-3 font-bold text-slate-900">Occupation</th>
+                <th class="px-4 py-3 font-bold text-slate-900">TEER</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="px-4 py-3 font-mono">32120</td>
+                <td class="px-4 py-3">Medical Laboratory Technologists</td>
+                <td class="px-4 py-3">2</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">32121</td>
+                <td class="px-4 py-3">Medical Radiation Technologists</td>
+                <td class="px-4 py-3">2</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">32122</td>
+                <td class="px-4 py-3">Medical Sonographers</td>
+                <td class="px-4 py-3">2</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">32123</td>
+                <td class="px-4 py-3">Cardiology Technologists</td>
+                <td class="px-4 py-3">2</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">32124</td>
+                <td class="px-4 py-3">Pharmacy Technicians</td>
+                <td class="px-4 py-3">2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Mental Health & Social Services</h3>
+        <div class="not-prose overflow-x-auto my-6">
+          <table class="min-w-full text-left text-sm">
+            <thead class="bg-gray-100 border-b border-gray-200">
+              <tr>
+                <th class="px-4 py-3 font-bold text-slate-900">NOC Code</th>
+                <th class="px-4 py-3 font-bold text-slate-900">Occupation</th>
+                <th class="px-4 py-3 font-bold text-slate-900">TEER</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="px-4 py-3 font-mono">31110</td>
+                <td class="px-4 py-3">Dentists</td>
+                <td class="px-4 py-3">0</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">31200</td>
+                <td class="px-4 py-3">Psychologists</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">41300</td>
+                <td class="px-4 py-3">Social Workers</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-mono">41301</td>
+                <td class="px-4 py-3">Therapists in Counselling</td>
+                <td class="px-4 py-3">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Licensing Requirements</h2>
         <p>
-            Your job must fall under one of the priority health NOCs:
+          Most healthcare occupations in BC are <strong
+            >regulated professions</strong
+          >. You must be registered or eligible for registration with the
+          appropriate BC regulatory body:
         </p>
 
-        <div class="not-prose grid gap-6 md:grid-cols-2 text-sm my-8">
-            <div class="bg-sky-50 p-6 rounded-2xl">
-                <h3 class="font-bold text-sky-900 mb-4">Physicians & Nursing</h3>
-                <ul class="space-y-2 text-sky-800">
-                     <li><strong>31102</strong> General Practitioners</li>
-                     <li><strong>31100</strong> Specialists in Surgery/Medicine</li>
-                     <li><strong>31301</strong> Registered Nurses (RNs)</li>
-                     <li><strong>31302</strong> Nurse Practitioners</li>
-                     <li><strong>32101</strong> Licensed Practical Nurses (LPNs)</li>
-                </ul>
-            </div>
-             <div class="bg-sky-50 p-6 rounded-2xl">
-                <h3 class="font-bold text-sky-900 mb-4">Allied Health</h3>
-                <ul class="space-y-2 text-sky-800">
-                     <li><strong>31202</strong> Physiotherapists</li>
-                     <li><strong>31203</strong> Occupational Therapists</li>
-                     <li><strong>31204</strong> Kinesiologists</li>
-                     <li><strong>31120</strong> Pharmacists</li>
-                     <li><strong>32120</strong> Medical Lab Technologists</li>
-                     <li><strong>41300</strong> Social Workers</li>
-                </ul>
-            </div>
+        <ul>
+          <li>
+            <strong>Nurses:</strong> BC College of Nurses and Midwives (BCCNM)
+          </li>
+          <li>
+            <strong>Physicians:</strong> College of Physicians and Surgeons of BC
+          </li>
+          <li><strong>Pharmacists:</strong> College of Pharmacists of BC</li>
+          <li>
+            <strong>Physiotherapists:</strong> College of Physical Therapists of BC
+          </li>
+          <li>
+            <strong>Lab Technologists:</strong> BC Society of Laboratory Science
+          </li>
+        </ul>
+
+        <div
+          class="bg-green-50 p-6 rounded-xl text-sm border border-green-200 mb-8"
+        >
+          <strong>💡 Pro Tip:</strong> Start your licensing process early—it can take
+          3-12 months. You can apply to BC PNP while your licensing is in progress,
+          but you'll need to be fully licensed before starting work.
         </div>
 
         <h2>Midwives & Physicians in Private Practice</h2>
         <p>
-            There is a special exception for Midwives and certain Physicians. Even if not directly employed by a health authority, you can apply if you have a letter of support from:
+          There is a special exception for Midwives and certain Physicians. Even
+          if not directly employed by a health authority, you can apply if you
+          have a letter of support from:
         </p>
         <ul>
-            <li>An established practice group in B.C. (for Midwives).</li>
-            <li>A public health authority confirming your privileges (for Physicians).</li>
+          <li>An established practice group in B.C. (for Midwives)</li>
+          <li>
+            A public health authority confirming your privileges (for
+            Physicians)
+          </li>
         </ul>
 
-      </div>
-      
-      <!-- CTA -->
-      <div class="text-center space-y-4">
-        <a href="/bc-pnp-draws" class="text-slate-600 hover:text-sky-600 font-bold underline decoration-2 underline-offset-4 decoration-sky-200 hover:decoration-sky-600 transition-colors">
-            Check Latest Healthcare Draw Scores
-        </a>
+        <h2>Application Process</h2>
+        <ol>
+          <li>
+            <strong>Secure Job Offer:</strong> Get a full-time, indeterminate position
+            with a BC health authority
+          </li>
+          <li>
+            <strong>Start Licensing:</strong> Begin your registration with the appropriate
+            regulatory body
+          </li>
+          <li>
+            <strong>Register in SIRS:</strong> Create your BC PNP profile and await
+            an invitation
+          </li>
+          <li>
+            <strong>Submit Application:</strong> You have 30 days after invitation
+            to submit
+          </li>
+          <li>
+            <strong>Receive Nomination:</strong> Processing typically takes 2-3 months
+          </li>
+          <li>
+            <strong>Apply for PR:</strong> Through Express Entry (faster) or paper-based
+            portal
+          </li>
+        </ol>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Can I apply if I work for a private hospital?</h3>
+        <p>
+          Private hospitals that are not affiliated with a public health
+          authority typically don't qualify for the Health Authority stream.
+          However, you may still be eligible under the regular Skilled Worker
+          stream.
+        </p>
+
+        <h3>What if I'm still waiting for my nursing license?</h3>
+        <p>
+          You can register in SIRS and receive an invitation while your license
+          is pending. However, you must have your license before your health
+          authority can finalize your job offer.
+        </p>
+
+        <h3>Do I need Canadian work experience?</h3>
+        <p>
+          Not necessarily. If you have a job offer from a public health
+          authority and meet other requirements, you may qualify without prior
+          Canadian experience.
+        </p>
+
+        <h3>What language score do I need?</h3>
+        <p>
+          Most healthcare regulatory bodies require CLB 7 or higher for
+          registration. BC PNP itself may accept lower scores, but your
+          professional regulator's requirements will apply.
+        </p>
       </div>
 
+      <!-- CTA -->
+      <div class="text-center space-y-4">
+        <a
+          href="/bc-pnp-draws"
+          class="text-slate-600 hover:text-sky-600 font-bold underline decoration-2 underline-offset-4 decoration-sky-200 hover:decoration-sky-600 transition-colors"
+        >
+          Check Latest Healthcare Draw Scores
+        </a>
+        <span class="text-slate-300 mx-4">|</span>
+        <a
+          href="/bc-pnp-calculator"
+          class="text-slate-600 hover:text-sky-600 font-bold underline decoration-2 underline-offset-4 decoration-sky-200 hover:decoration-sky-600 transition-colors"
+        >
+          Calculate Your Score
+        </a>
+      </div>
     </div>
   </article>
 </BaseLayout>
