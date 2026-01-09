@@ -18,7 +18,9 @@ const description =
                 <h1
                     class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight"
                 >
-                    BC PNP <span class="text-teal-600">Regional City Guide</span
+                    BC PNP <span
+                        class="bg-gradient-to-r from-teal-600 to-green-600 bg-clip-text text-transparent"
+                        >Regional City Guide</span
                     >
                 </h1>
                 <p
@@ -56,150 +58,336 @@ const description =
                 <hr class="my-12 border-slate-200" />
 
                 <h2>City Profile 1: Prince George (The Northern Capital)</h2>
-                <p>
-                    Prince George is the largest city in Northern BC and acts as
-                    the service hub for the entire upper half of the province.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-6 not-prose my-6">
+                <div
+                    class="bg-slate-900 rounded-2xl overflow-hidden shadow-xl not-prose mb-12"
+                >
                     <div
-                        class="bg-slate-50 p-6 rounded-xl border border-slate-200"
+                        class="h-32 bg-gradient-to-r from-blue-900 to-slate-900 flex items-center justify-center"
                     >
-                        <h4 class="font-bold text-slate-900 mb-2">Key Stats</h4>
-                        <ul class="text-sm space-y-2">
-                            <li class="flex justify-between">
-                                <span>Population:</span>
-                                <span class="font-bold">~80,000</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Points bonus:</span>
-                                <span class="font-bold text-green-600"
-                                    >+15 (Area 3)</span
-                                >
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Avg 2-Bed Rent:</span>
-                                <span class="font-bold">$1,450</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div
-                        class="bg-slate-50 p-6 rounded-xl border border-slate-200"
-                    >
-                        <h4 class="font-bold text-slate-900 mb-2">
-                            Top Employers
-                        </h4>
-                        <ul
-                            class="text-sm space-y-1 list-disc list-inside text-slate-700"
+                        <h3
+                            class="text-3xl font-black text-white tracking-tight"
                         >
-                            <li>Northern Health Authority (UHNBC)</li>
-                            <li>Canfor (Forestry)</li>
-                            <li>UNBC (University)</li>
-                            <li>CN Rail</li>
-                        </ul>
+                            PRINCE GEORGE
+                        </h3>
+                    </div>
+                    <div class="p-8 bg-slate-50">
+                        <p class="text-slate-600 mb-6 font-medium">
+                            The largest city in Northern BC and service hub for
+                            the upper half of the province. Feels like a real
+                            city, not a village (Costco, University, Malls).
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div
+                                class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm"
+                            >
+                                <h4
+                                    class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-3"
+                                >
+                                    Vital Stats
+                                </h4>
+                                <ul class="space-y-3 text-sm">
+                                    <li
+                                        class="flex justify-between border-b border-slate-100 pb-2"
+                                    >
+                                        <span class="text-slate-500"
+                                            >Population</span
+                                        >
+                                        <span class="font-bold text-slate-900"
+                                            >~80,000</span
+                                        >
+                                    </li>
+                                    <li
+                                        class="flex justify-between border-b border-slate-100 pb-2"
+                                    >
+                                        <span class="text-slate-500"
+                                            >Points Bonus</span
+                                        >
+                                        <span class="font-bold text-green-600"
+                                            >+15 (Area 3)</span
+                                        >
+                                    </li>
+                                    <li class="flex justify-between">
+                                        <span class="text-slate-500"
+                                            >Avg 2-Bed Rent</span
+                                        >
+                                        <span class="font-bold text-slate-900"
+                                            >$1,450</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                            <div
+                                class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm"
+                            >
+                                <h4
+                                    class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-3"
+                                >
+                                    Top Employers
+                                </h4>
+                                <ul class="space-y-2 text-sm text-slate-700">
+                                    <li class="flex items-center">
+                                        <span
+                                            class="w-2 h-2 bg-blue-500 rounded-full mr-2"
+                                        ></span> Northern Health (UHNBC)
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span
+                                            class="w-2 h-2 bg-blue-500 rounded-full mr-2"
+                                        ></span> Canfor (Forestry)
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span
+                                            class="w-2 h-2 bg-blue-500 rounded-full mr-2"
+                                        ></span> UNBC (University)
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span
+                                            class="w-2 h-2 bg-blue-500 rounded-full mr-2"
+                                        ></span> CN Rail
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p>
-                    <strong>Livability:</strong> It has a Costco, malls, and a university.
-                    It feels like a real city, not a village. Winters are cold (-20°C
-                    is common), but sunny.
-                </p>
 
                 <hr class="my-12 border-slate-200" />
 
                 <h2>City Profile 2: Kelowna (The Okanagan)</h2>
-                <p>
-                    Famous for wineries, lakes, and hot summers. It is rapidly
-                    becoming a tech hub.
-                </p>
-                <div class="grid md:grid-cols-2 gap-6 not-prose my-6">
+                <div
+                    class="bg-indigo-900 rounded-2xl overflow-hidden shadow-xl not-prose mb-12"
+                >
                     <div
-                        class="bg-indigo-50 p-6 rounded-xl border border-indigo-200"
+                        class="h-32 bg-gradient-to-r from-indigo-900 to-purple-900 flex items-center justify-center"
                     >
-                        <h4 class="font-bold text-indigo-900 mb-2">
-                            Key Stats
-                        </h4>
-                        <ul class="text-sm space-y-2">
-                            <li class="flex justify-between">
-                                <span>Population:</span>
-                                <span class="font-bold">~150,000</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Points bonus:</span>
-                                <span class="font-bold text-green-600"
-                                    >+10 (Area 2/3)</span
-                                >
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Avg 2-Bed Rent:</span>
-                                <span class="font-bold">$2,200</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div
-                        class="bg-indigo-50 p-6 rounded-xl border border-indigo-200"
-                    >
-                        <h4 class="font-bold text-indigo-900 mb-2">
-                            Top Industries
-                        </h4>
-                        <ul
-                            class="text-sm space-y-1 list-disc list-inside text-indigo-800"
+                        <h3
+                            class="text-3xl font-black text-white tracking-tight"
                         >
-                            <li>Technology (Accelerate Okanagan)</li>
-                            <li>Tourism & Hospitality</li>
-                            <li>Healthcare (Kelowna General Hospital)</li>
-                            <li>Agriculture</li>
-                        </ul>
+                            KELOWNA
+                        </h3>
+                    </div>
+                    <div class="p-8 bg-slate-50">
+                        <p class="text-slate-600 mb-6 font-medium">
+                            Famous for wineries and hot summers. Rapidly
+                            becoming a tech hub. Warning: Expensive ("Vancouver
+                            prices without Vancouver wages").
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div
+                                class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm"
+                            >
+                                <h4
+                                    class="font-bold text-indigo-900 text-sm uppercase tracking-wide mb-3"
+                                >
+                                    Vital Stats
+                                </h4>
+                                <ul class="space-y-3 text-sm">
+                                    <li
+                                        class="flex justify-between border-b border-slate-100 pb-2"
+                                    >
+                                        <span class="text-slate-500"
+                                            >Population</span
+                                        >
+                                        <span class="font-bold text-slate-900"
+                                            >~150,000</span
+                                        >
+                                    </li>
+                                    <li
+                                        class="flex justify-between border-b border-slate-100 pb-2"
+                                    >
+                                        <span class="text-slate-500"
+                                            >Points Bonus</span
+                                        >
+                                        <span class="font-bold text-green-600"
+                                            >+10 (Area 2/3)</span
+                                        >
+                                    </li>
+                                    <li class="flex justify-between">
+                                        <span class="text-slate-500"
+                                            >Avg 2-Bed Rent</span
+                                        >
+                                        <span class="font-bold text-slate-900"
+                                            >$2,200</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                            <div
+                                class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm"
+                            >
+                                <h4
+                                    class="font-bold text-indigo-900 text-sm uppercase tracking-wide mb-3"
+                                >
+                                    Key Industries
+                                </h4>
+                                <ul class="space-y-2 text-sm text-slate-700">
+                                    <li class="flex items-center">
+                                        <span
+                                            class="w-2 h-2 bg-indigo-500 rounded-full mr-2"
+                                        ></span> Tech (Accelerate Okanagan)
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span
+                                            class="w-2 h-2 bg-indigo-500 rounded-full mr-2"
+                                        ></span> Tourism & Hospitality
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span
+                                            class="w-2 h-2 bg-indigo-500 rounded-full mr-2"
+                                        ></span> Healthcare (KGH)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p>
-                    <strong>Warning:</strong> Kelowna is expensive ("Vancouver prices
-                    without Vancouver wages"). Ensure you have a good job offer before
-                    moving here.
-                </p>
 
                 <hr class="my-12 border-slate-200" />
 
                 <h2>City Profile 3: Nanaimo (The Harbour City)</h2>
-                <p>
-                    Located on Vancouver Island, a 1.5-hour ferry ride from
-                    Vancouver.
-                </p>
-                <ul>
-                    <li><strong>Bonus Points:</strong> +10.</li>
-                    <li>
-                        <strong>Vibe:</strong> Laid back, ocean-front, very popular
-                        with retirees and young families.
-                    </li>
-                    <li>
-                        <strong>Jobs:</strong> Construction, Education (VIU), Health,
-                        Retail.
-                    </li>
-                </ul>
+                <div
+                    class="bg-teal-900 rounded-2xl overflow-hidden shadow-xl not-prose mb-12"
+                >
+                    <div
+                        class="h-32 bg-gradient-to-r from-teal-800 to-cyan-900 flex items-center justify-center"
+                    >
+                        <h3
+                            class="text-3xl font-black text-white tracking-tight"
+                        >
+                            NANAIMO
+                        </h3>
+                    </div>
+                    <div class="p-8 bg-slate-50">
+                        <p class="text-slate-600 mb-6 font-medium">
+                            Located on Vancouver Island, 1.5h ferry from
+                            Vancouver. Laid back, ocean-front, very popular with
+                            young families.
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div
+                                class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm"
+                            >
+                                <h4
+                                    class="font-bold text-teal-900 text-sm uppercase tracking-wide mb-3"
+                                >
+                                    Vital Stats
+                                </h4>
+                                <ul class="space-y-3 text-sm">
+                                    <li
+                                        class="flex justify-between border-b border-slate-100 pb-2"
+                                    >
+                                        <span class="text-slate-500">Bonus</span
+                                        >
+                                        <span class="font-bold text-green-600"
+                                            >+10 Points</span
+                                        >
+                                    </li>
+                                    <li
+                                        class="flex justify-between border-b border-slate-100 pb-2"
+                                    >
+                                        <span class="text-slate-500"
+                                            >Cost of Living</span
+                                        >
+                                        <span class="font-bold text-slate-900"
+                                            >Moderate</span
+                                        >
+                                    </li>
+                                    <li class="flex justify-between">
+                                        <span class="text-slate-500"
+                                            >Best For</span
+                                        >
+                                        <span class="font-bold text-slate-900"
+                                            >Families / Retirees</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                            <div
+                                class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm"
+                            >
+                                <h4
+                                    class="font-bold text-teal-900 text-sm uppercase tracking-wide mb-3"
+                                >
+                                    Jobs
+                                </h4>
+                                <ul class="space-y-2 text-sm text-slate-700">
+                                    <li class="flex items-center">
+                                        <span
+                                            class="w-2 h-2 bg-teal-500 rounded-full mr-2"
+                                        ></span> Construction & Trades
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span
+                                            class="w-2 h-2 bg-teal-500 rounded-full mr-2"
+                                        ></span> Education (VIU)
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span
+                                            class="w-2 h-2 bg-teal-500 rounded-full mr-2"
+                                        ></span> Retail & Services
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <hr class="my-12 border-slate-200" />
 
                 <h2>Area 4: The "Deep North" (Maximum Points)</h2>
-                <p>
-                    If you move to <strong>Fort St. John</strong>, <strong
-                        >Dawson Creek</strong
-                    >, or <strong>Terrace</strong>, you enter "Area 4".
-                </p>
                 <div
-                    class="bg-green-100 p-6 rounded-xl border border-green-200 my-6"
+                    class="bg-green-50 border-l-4 border-green-500 p-8 rounded-r-2xl not-prose my-8"
                 >
-                    <h3 class="font-black text-green-900 text-xl mb-2">
-                        Why Fort St. John?
+                    <h3 class="font-black text-2xl text-green-900 mb-4">
+                        Why Choose Area 4?
                     </h3>
-                    <p class="text-green-800">
-                        It has the highest average wage in BC (due to Oil &
-                        Gas).
+                    <p class="text-green-800 mb-6 max-w-2xl">
+                        Towns like <strong>Fort St. John</strong>, <strong
+                            >Dawson Creek</strong
+                        >, and <strong>Terrace</strong> offer the absolute maximum
+                        advantage for immigration.
                     </p>
-                    <ul class="mt-4 space-y-2 text-green-900 font-bold">
-                        <li>✔️ +25 Regional Points (Maximum)</li>
-                        <li>✔️ ELSS Eligibility for ANY TEER 4/5 job</li>
-                        <li>✔️ High Wages</li>
-                    </ul>
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div
+                            class="bg-white p-4 rounded-xl shadow-sm text-center"
+                        >
+                            <span
+                                class="block text-3xl font-bold text-green-600 mb-1"
+                                >+25</span
+                            >
+                            <span
+                                class="text-xs font-bold text-green-800 uppercase"
+                                >Max Points</span
+                            >
+                        </div>
+                        <div
+                            class="bg-white p-4 rounded-xl shadow-sm text-center"
+                        >
+                            <span
+                                class="block text-3xl font-bold text-green-600 mb-1"
+                                >$$$</span
+                            >
+                            <span
+                                class="text-xs font-bold text-green-800 uppercase"
+                                >Highest Wages</span
+                            >
+                        </div>
+                        <div
+                            class="bg-white p-4 rounded-xl shadow-sm text-center"
+                        >
+                            <span
+                                class="block text-3xl font-bold text-green-600 mb-1"
+                                >ELSS</span
+                            >
+                            <span
+                                class="text-xs font-bold text-green-800 uppercase"
+                                >Easy Entry</span
+                            >
+                        </div>
+                    </div>
                 </div>
 
                 <h2>Family Guide: Moving with Kids</h2>
@@ -303,27 +491,34 @@ const description =
 
                 <h2>Regional Success Stories</h2>
 
-                <div class="space-y-8">
+                <div class="grid md:grid-cols-2 gap-6 not-prose my-8">
                     <div
-                        class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm"
+                        class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm relative overflow-hidden"
                     >
-                        <div class="flex items-center mb-4">
-                            <div
-                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-xl"
+                        <div class="absolute top-0 right-0 p-4 opacity-10">
+                            <span class="text-9xl text-slate-900 font-serif"
+                                >"</span
                             >
-                                1
+                        </div>
+                        <div class="flex items-center mb-6 relative z-10">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                            >
+                                RS
                             </div>
                             <div class="ml-4">
-                                <h4 class="font-bold text-lg">
+                                <h4 class="font-bold text-slate-900 text-lg">
                                     From Surrey to Smithers
                                 </h4>
                                 <p class="text-sm text-slate-500">
-                                    Profile: Retail Manager (TEER 2)
+                                    Retail Manager (TEER 2)
                                 </p>
                             </div>
                         </div>
-                        <p class="text-slate-700 italic">
-                            "I was stuck at 90 points in Surrey. I couldn't get
+                        <p
+                            class="text-slate-600 italic relative z-10 leading-relaxed"
+                        >
+                            "I was stuck at 90 points in Surrey and couldn't get
                             invited. I applied for a job at a grocery store in
                             Smithers (Area 4). Immediately, my score jumped to
                             115 (+25 points). I was invited in the very next
@@ -332,24 +527,31 @@ const description =
                     </div>
 
                     <div
-                        class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm"
+                        class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm relative overflow-hidden"
                     >
-                        <div class="flex items-center mb-4">
-                            <div
-                                class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold text-xl"
+                        <div class="absolute top-0 right-0 p-4 opacity-10">
+                            <span class="text-9xl text-slate-900 font-serif"
+                                >"</span
                             >
-                                2
+                        </div>
+                        <div class="flex items-center mb-6 relative z-10">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                            >
+                                JD
                             </div>
                             <div class="ml-4">
-                                <h4 class="font-bold text-lg">
+                                <h4 class="font-bold text-slate-900 text-lg">
                                     The Kelowna Tech Shift
                                 </h4>
                                 <p class="text-sm text-slate-500">
-                                    Profile: Software Engineer
+                                    Software Engineer
                                 </p>
                             </div>
                         </div>
-                        <p class="text-slate-700 italic">
+                        <p
+                            class="text-slate-600 italic relative z-10 leading-relaxed"
+                        >
                             "I wanted to live in a city, not a village. Kelowna
                             gave me the best of both worlds. I got +10 regional
                             points, plus I qualified for the Tech Stream. It was
@@ -362,30 +564,56 @@ const description =
 
                 <h2>Strategic FAQ</h2>
 
-                <h3>Can I live in Vancouver and work in the region?</h3>
-                <p>
-                    <strong>NO.</strong> BC PNP requires you to live within "commuting
-                    distance" of your job. If your job is in Kelowna, you must live
-                    in the Okanagan. Living in Vancouver and working remotely for
-                    a Kelowna company counts as "Vancouver employment" (0 points).
-                </p>
+                <div class="grid md:grid-cols-2 gap-6 not-prose my-8">
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm md:col-span-2"
+                    >
+                        <h3 class="font-bold text-slate-900 text-lg mb-3">
+                            Can I live in Vancouver and work in the region?
+                        </h3>
+                        <div class="flex items-start">
+                            <span class="text-red-500 text-2xl mr-3 font-bold"
+                                >✕</span
+                            >
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                <strong>NO.</strong> You must live within "commuting
+                                distance" of your job. If your employer is in Kelowna,
+                                you must live in the Okanagan. Remote work from Vancouver
+                                for a regional company counts as "Vancouver employment"
+                                (0 points).
+                            </p>
+                        </div>
+                    </div>
 
-                <h3>What if I get laid off?</h3>
-                <p>
-                    If you lose your regional job, you lose your regional
-                    points. If this happens <em>after</em> you are nominated, you
-                    must immediately inform BC PNP. They may allow you to find another
-                    job in the <em>same</em> region, but moving back to Vancouver
-                    would void your nomination.
-                </p>
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm"
+                    >
+                        <h3 class="font-bold text-slate-900 text-lg mb-3">
+                            What if I get laid off?
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            If you lose your regional job, you lose your
+                            regional points. Immediate notification to BC PNP is
+                            mandatory. You may be allowed to find a new job in
+                            the <em>same</em> region, but moving back to Vancouver
+                            typically voids a nomination.
+                        </p>
+                    </div>
 
-                <h3>Do I need a car?</h3>
-                <p>
-                    <strong>YES.</strong> Public transit in regional BC is limited.
-                    In Vancouver, you can survive with a Compass Card. In Prince George
-                    or Kelowna, a vehicle is essential for getting to work and buying
-                    groceries, especially in winter.
-                </p>
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm"
+                    >
+                        <h3 class="font-bold text-slate-900 text-lg mb-3">
+                            Do I need a car?
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            <strong>YES.</strong> Public transit in regional BC is
+                            limited. Unlike Vancouver, where a Compass Card suffices,
+                            a vehicle is essential in Prince George or Kelowna for
+                            daily life and winter commuting.
+                        </p>
+                    </div>
+                </div>
 
                 <div
                     class="bg-gradient-to-r from-teal-600 to-teal-800 text-white p-8 rounded-2xl text-center mt-12"

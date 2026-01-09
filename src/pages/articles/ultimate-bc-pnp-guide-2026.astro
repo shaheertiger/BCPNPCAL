@@ -12,22 +12,70 @@ const description =
             <!-- Header -->
             <header class="space-y-4 text-center">
                 <div
-                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700 uppercase tracking-wide"
+                    class="inline-block bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-blue-200 shadow-sm"
                 >
-                    Updated January 2026
+                    Updated for January 2026
                 </div>
                 <h1
-                    class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight"
+                    class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-6"
                 >
-                    Ultimate BC PNP Guide <span class="text-red-600">2026</span>
+                    The Ultimate <span
+                        class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+                        >BC PNP Guide</span
+                    > 2026
                 </h1>
                 <p
-                    class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
+                    class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8"
                 >
-                    Everything you need to know about the British Columbia
-                    Provincial Nominee Program in 2026—including the allocation
-                    crisis, suspended streams, and how to maximize your chances.
+                    Your definitive roadmap to Permanent Residency in British
+                    Columbia. From point calculations to regional strategies, we
+                    cover everything you need to know.
                 </p>
+
+                <!-- Table of Contents Card -->
+                <div
+                    class="bg-white p-6 rounded-2xl border border-slate-200 shadow-lg text-left inline-block max-w-lg w-full transform transition hover:-translate-y-1 duration-300"
+                >
+                    <p
+                        class="font-bold text-slate-900 mb-4 border-b pb-2 flex items-center"
+                    >
+                        <span class="mr-2">📂</span> In this guide:
+                    </p>
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-sm"
+                    >
+                        <a
+                            href="#streams"
+                            class="text-blue-600 hover:text-blue-800 hover:underline flex items-center"
+                            >• Skills Immigration</a
+                        >
+                        <a
+                            href="#points"
+                            class="text-blue-600 hover:text-blue-800 hover:underline flex items-center"
+                            >• Points System</a
+                        >
+                        <a
+                            href="#tech"
+                            class="text-blue-600 hover:text-blue-800 hover:underline flex items-center"
+                            >• BC PNP Tech</a
+                        >
+                        <a
+                            href="#health"
+                            class="text-blue-600 hover:text-blue-800 hover:underline flex items-center"
+                            >• Healthcare</a
+                        >
+                        <a
+                            href="#faq"
+                            class="text-blue-600 hover:text-blue-800 hover:underline flex items-center"
+                            >• Strategic FAQ</a
+                        >
+                        <a
+                            href="#calculator"
+                            class="text-blue-600 hover:text-blue-800 hover:underline flex items-center"
+                            >• Calculator</a
+                        >
+                    </div>
+                </div>
             </header>
 
             <!-- Main Content -->
@@ -136,7 +184,9 @@ const description =
 
                 <h2>Stream Status for 2026</h2>
 
-                <h3>✅ Skills Immigration (Skilled Worker, ELSS)</h3>
+                <h3 id="streams">
+                    ✅ Skills Immigration (Skilled Worker, ELSS)
+                </h3>
                 <p>
                     The core Skills Immigration streams remain open. However,
                     with limited allocations, BC PNP is prioritizing candidates
@@ -145,7 +195,7 @@ const description =
                     matter more than ever.
                 </p>
 
-                <h3>✅ BC PNP Tech</h3>
+                <h3 id="tech">✅ BC PNP Tech</h3>
                 <p>
                     The BC PNP Tech program, which focuses on 35 priority
                     technology occupations, is expected to continue operating in
@@ -168,7 +218,7 @@ const description =
                     </p>
                 </div>
 
-                <h3>✅ Healthcare Priority</h3>
+                <h3 id="health">✅ Healthcare Priority</h3>
                 <p>
                     Healthcare professionals remain a top priority for BC PNP.
                     Nurses, physicians, and allied health workers with valid job
@@ -305,46 +355,127 @@ const description =
                     </div>
                 </div>
 
-                <h2>Frequently Asked Questions</h2>
+                <h2 id="faq">Frequently Asked Questions</h2>
 
-                <h3>Will there be more BC PNP nominations added in 2026?</h3>
-                <p>
-                    It's possible. In 2025, BC received additional allocations
-                    in October and December. BC PNP has stated it will continue
-                    discussions with IRCC, so mid-year top-ups could happen
-                    again.
-                </p>
+                <div class="space-y-4 not-prose my-8">
+                    <details
+                        class="group bg-slate-50 p-5 rounded-xl border border-slate-200 open:bg-white open:ring-1 open:ring-blue-100 open:shadow-md transition-all"
+                    >
+                        <summary
+                            class="font-bold text-slate-900 text-lg cursor-pointer list-none flex justify-between items-center outline-none"
+                        >
+                            <span
+                                >Will there be more BC PNP nominations added in
+                                2026?</span
+                            >
+                            <span
+                                class="transition-transform duration-300 group-open:rotate-180 text-blue-500"
+                                >▼</span
+                            >
+                        </summary>
+                        <div
+                            class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 animate-fadeIn"
+                        >
+                            It's possible. In 2025, BC received additional
+                            allocations in October and December. BC PNP has
+                            stated it will continue discussions with IRCC, so
+                            mid-year top-ups could happen again.
+                        </div>
+                    </details>
 
-                <h3>When will BC PNP draws resume?</h3>
-                <p>
-                    The last Skills Immigration draw was December 10, 2025. BC
-                    PNP is expected to announce its 2026 draw schedule after
-                    releasing its priorities in early January 2026.
-                </p>
+                    <details
+                        class="group bg-slate-50 p-5 rounded-xl border border-slate-200 open:bg-white open:ring-1 open:ring-blue-100 open:shadow-md transition-all"
+                    >
+                        <summary
+                            class="font-bold text-slate-900 text-lg cursor-pointer list-none flex justify-between items-center outline-none"
+                        >
+                            <span>When will BC PNP draws resume?</span>
+                            <span
+                                class="transition-transform duration-300 group-open:rotate-180 text-blue-500"
+                                >▼</span
+                            >
+                        </summary>
+                        <div
+                            class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 animate-fadeIn"
+                        >
+                            The last Skills Immigration draw was December 10,
+                            2025. BC PNP is expected to announce its 2026 draw
+                            schedule after releasing its priorities in early
+                            January 2026.
+                        </div>
+                    </details>
 
-                <h3>Can I still apply under Express Entry?</h3>
-                <p>
-                    Yes. If you have a valid Express Entry profile and receive a
-                    BC PNP nomination, you can apply through the Express Entry
-                    BC (EEBC) stream. The January 5, 2026 federal draw issued
-                    574 ITAs to PNP candidates with a CRS of 711.
-                </p>
+                    <details
+                        class="group bg-slate-50 p-5 rounded-xl border border-slate-200 open:bg-white open:ring-1 open:ring-blue-100 open:shadow-md transition-all"
+                    >
+                        <summary
+                            class="font-bold text-slate-900 text-lg cursor-pointer list-none flex justify-between items-center outline-none"
+                        >
+                            <span>Can I still apply under Express Entry?</span>
+                            <span
+                                class="transition-transform duration-300 group-open:rotate-180 text-blue-500"
+                                >▼</span
+                            >
+                        </summary>
+                        <div
+                            class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 animate-fadeIn"
+                        >
+                            Yes. If you have a valid Express Entry profile and
+                            receive a BC PNP nomination, you can apply through
+                            the Express Entry BC (EEBC) stream. The January 5,
+                            2026 federal draw issued 574 ITAs to PNP candidates
+                            with a CRS of 711.
+                        </div>
+                    </details>
 
-                <h3>What if I'm an international student in BC?</h3>
-                <p>
-                    Unfortunately, the graduate-specific streams are suspended.
-                    Your best option is to secure a qualifying job offer and
-                    apply under the <strong>Skilled Worker</strong> stream. Make sure
-                    you meet the CLB 8 language requirement.
-                </p>
+                    <details
+                        class="group bg-slate-50 p-5 rounded-xl border border-slate-200 open:bg-white open:ring-1 open:ring-blue-100 open:shadow-md transition-all"
+                    >
+                        <summary
+                            class="font-bold text-slate-900 text-lg cursor-pointer list-none flex justify-between items-center outline-none"
+                        >
+                            <span
+                                >What if I'm an international student in BC?</span
+                            >
+                            <span
+                                class="transition-transform duration-300 group-open:rotate-180 text-blue-500"
+                                >▼</span
+                            >
+                        </summary>
+                        <div
+                            class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 animate-fadeIn"
+                        >
+                            Unfortunately, the graduate-specific streams are
+                            suspended. Your best option is to secure a
+                            qualifying job offer and apply under the <strong
+                                >Skilled Worker</strong
+                            > stream. Make sure you meet the CLB 8 language requirement.
+                        </div>
+                    </details>
 
-                <h3>Is Tech still a good pathway?</h3>
-                <p>
-                    Yes. The BC PNP Tech program remains one of the most
-                    reliable pathways, with faster processing and frequent
-                    targeted draws. If you work in one of the 35 priority
-                    occupations, this is your strongest option.
-                </p>
+                    <details
+                        class="group bg-slate-50 p-5 rounded-xl border border-slate-200 open:bg-white open:ring-1 open:ring-blue-100 open:shadow-md transition-all"
+                    >
+                        <summary
+                            class="font-bold text-slate-900 text-lg cursor-pointer list-none flex justify-between items-center outline-none"
+                        >
+                            <span>Is Tech still a good pathway?</span>
+                            <span
+                                class="transition-transform duration-300 group-open:rotate-180 text-blue-500"
+                                >▼</span
+                            >
+                        </summary>
+                        <div
+                            class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 animate-fadeIn"
+                        >
+                            Yes. The BC PNP Tech program remains one of the most
+                            reliable pathways, with faster processing and
+                            frequent targeted draws. If you work in one of the
+                            35 priority occupations, this is your strongest
+                            option.
+                        </div>
+                    </details>
+                </div>
             </div>
 
             <!-- CTA -->
