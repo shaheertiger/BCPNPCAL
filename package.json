@@ -7,6 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "astro": "astro",
+    "update-ads": "curl -L https://srv.adstxtmanager.com/19390/bcpnpcalculator.ca -o public/ads.txt",
     "generate:favicons": "node generate-favicons.mjs"
   },
   "dependencies": {
