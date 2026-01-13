@@ -13,6 +13,12 @@ export default defineConfig({
     }),
     sitemap(),
   ],
+  redirects: {
+    '/ads.txt': {
+      status: 301,
+      destination: 'https://srv.adstxtmanager.com/19390/bcpnpcalculator.ca',
+    },
+  },
   i18n: {
     defaultLocale: "en",
     locales: ["en", "zh", "pa", "hi", "ar"],
