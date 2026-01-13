@@ -50,9 +50,11 @@ const description =
         >
           <div class="text-center mb-10">
             <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
-              Troubleshooting Common Errors
+              Error Message Dictionary
             </h2>
-            <p class="text-slate-600">Why is your score lower than expected?</p>
+            <p class="text-slate-600">
+              Translation of common calculator warnings.
+            </p>
           </div>
 
           <div class="space-y-4">
@@ -109,6 +111,33 @@ const description =
                 becoming a Web Developer), you generally cannot count your past experience.
                 You must manually enter "0 years" if your past work doesn't match
                 your new BC PNP job offer.
+              </p>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500"
+            >
+              <h3 class="font-black text-slate-900 text-lg mb-2">
+                "Wage below minimum threshold"
+              </h3>
+              <p class="text-slate-600 leading-relaxed text-sm">
+                <strong>Fix:</strong> BC PNP has minimum wage requirements for certain
+                streams (often $26.44/hr or family supporting wage). Ensure your entered
+                hourly rate meets the specific stream criteria.
+              </p>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-[1.5rem] shadow-sm border-l-4 border-red-500"
+            >
+              <h3 class="font-black text-slate-900 text-lg mb-2">
+                "Language Test Expired"
+              </h3>
+              <p class="text-slate-600 leading-relaxed text-sm">
+                <strong>Fix:</strong> IELTS and CELPIP results are valid for <strong
+                  >2 years</strong
+                >. If your test is older than that, the calculator (and the BC
+                PNP) will reject it. You must retake the test.
               </p>
             </div>
           </div>
@@ -336,6 +365,215 @@ const description =
                 if it was paid, continuous, and at a skilled level (TEER 0, 1, 2,
                 or 3). Part-time hours count pro-rata (e.g., 20 hours/week for 2 years
                 = 1 year full-time). Co-op terms can also count if paid and skilled.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm"
+          >
+            <summary
+              class="flex justify-between items-center p-6 cursor-pointer list-none"
+            >
+              <span class="font-bold text-slate-900 text-lg pr-4"
+                >Does self-employed experience count?</span
+              >
+              <span
+                class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                >
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>
+                Only if you can prove it with third-party evidence (contracts,
+                invoices, annual tax returns). Letters from yourself or a
+                partner are not accepted. The experience must also be directly
+                related to your BC job offer.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm"
+          >
+            <summary
+              class="flex justify-between items-center p-6 cursor-pointer list-none"
+            >
+              <span class="font-bold text-slate-900 text-lg pr-4"
+                >I work remotely for a BC company. Am I eligible?</span
+              >
+              <span
+                class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                >
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>
+                <strong>Conditional Yes.</strong> You must reside in BC. If you live
+                outside BC (even elsewhere in Canada) while working for a BC company,
+                you are <strong>not</strong> eligible. The program is for people settling
+                in BC.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm"
+          >
+            <summary
+              class="flex justify-between items-center p-6 cursor-pointer list-none"
+            >
+              <span class="font-bold text-slate-900 text-lg pr-4"
+                >Can I change employers after I apply?</span
+              >
+              <span
+                class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                >
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>
+                <strong>Risky.</strong> You must notify BC PNP immediately. If the
+                new job meets all criteria and the employer signs the forms, it might
+                be allowed. However, if the new job has a lower wage or different
+                location that affects your score below the cutoff, your nomination
+                will be cancelled.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm"
+          >
+            <summary
+              class="flex justify-between items-center p-6 cursor-pointer list-none"
+            >
+              <span class="font-bold text-slate-900 text-lg pr-4"
+                >I got a promotion. Do I update my NOC?</span
+              >
+              <span
+                class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                >
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>
+                If your duties have changed significantly, you effectively have
+                a new job offer. You must update your registration or
+                application. Ensure the new NOC code is still eligible and that
+                you meet the requirements for it.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm"
+          >
+            <summary
+              class="flex justify-between items-center p-6 cursor-pointer list-none"
+            >
+              <span class="font-bold text-slate-900 text-lg pr-4"
+                >I am on Implied (Maintained) Status. Can I apply?</span
+              >
+              <span
+                class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                >
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>
+                <strong>Yes.</strong> As long as you have proof that you applied for
+                a work permit extension before your previous one expired, you are
+                legally allowed to work and can register/apply to BC PNP.
+              </p>
+            </div>
+          </details>
+
+          <details
+            class="group bg-white rounded-[1.5rem] border border-slate-200 overflow-hidden shadow-sm"
+          >
+            <summary
+              class="flex justify-between items-center p-6 cursor-pointer list-none"
+            >
+              <span class="font-bold text-slate-900 text-lg pr-4"
+                >Does severance pay count towards income?</span
+              >
+              <span
+                class="w-8 h-8 bg-amber-100 rounded-full flex-shrink-0 flex items-center justify-center text-amber-600 group-open:rotate-180 transition-transform"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                >
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              <p>
+                <strong>No.</strong> Severance packages are not employment income
+                for the purpose of BC PNP wage points or income thresholds. Only earnings
+                from active employment count.
               </p>
             </div>
           </details>
