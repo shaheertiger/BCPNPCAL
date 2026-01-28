@@ -5,8 +5,8 @@ import CalculatorShell from "../../components/CalculatorShell.astro";
 export function getStaticPaths() {
     return [
         { params: { lang: "zh" } },
+        { params: { lang: "hi" } },
         // { params: { lang: 'pa' } },
-        // { params: { lang: 'hi' } },
         // { params: { lang: 'ar' } },
     ];
 }
@@ -14,14 +14,16 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 
 // Localized Metadata
-const title =
-    lang === "zh"
-        ? "免費 BC PNP 分數計算器 | 即時查詢您的 SIRS 分數 2026"
-        : "Free BC PNP Points Calculator | Check Your SIRS Score 2026";
-const description =
-    lang === "zh"
-        ? "BC PNP 計算器，用於評估您在 BC 省提名技術移民項目的分數。立即聯繫我們獲取指導！"
-        : "BC PNP Calculator to assess your points for permanent residence under the BC PNP Skills Immigration Stream. Contact us for guidance today!";
+const titles: Record<string, string> = {
+    zh: "免費 BC PNP 分數計算器 | 即時查詢您的 SIRS 分數 2026",
+    hi: "मुफ्त BC PNP पॉइंट्स कैलकुलेटर | अपना SIRS स्कोर 2026 जांचें",
+};
+const descriptions: Record<string, string> = {
+    zh: "BC PNP 計算器，用於評估您在 BC 省提名技術移民項目的分數。立即聯繫我們獲取指導！",
+    hi: "BC PNP स्किल्स इमिग्रेशन स्ट्रीम के तहत स्थायी निवास के लिए अपने पॉइंट्स का आकलन करने के लिए BC PNP कैलकुलेटर। आज ही मार्गदर्शन के लिए संपर्क करें!",
+};
+const title = titles[lang as string] || "Free BC PNP Points Calculator | Check Your SIRS Score 2026";
+const description = descriptions[lang as string] || "BC PNP Calculator to assess your points for permanent residence under the BC PNP Skills Immigration Stream. Contact us for guidance today!";
 
 const isRTL = lang === "ar";
 
@@ -32,6 +34,7 @@ const isRTL = lang === "ar";
 const hreflangs = [
     { lang: "en", href: "https://bcpnpcalculator.ca/bc-pnp-calculator" },
     { lang: "zh", href: "https://bcpnpcalculator.ca/zh/bc-pnp-calculator" },
+    { lang: "hi", href: "https://bcpnpcalculator.ca/hi/bc-pnp-calculator" },
     { lang: "x-default", href: "https://bcpnpcalculator.ca/bc-pnp-calculator" },
 ];
 ---
@@ -43,6 +46,8 @@ const hreflangs = [
     hreflangs={hreflangs}
     keywords={lang === "zh"
         ? "BC PNP 計算器, BC PNP 分數, SIRS 分數計算器, BC 移民分數, BC 省提名"
+        : lang === "hi"
+        ? "BC PNP कैलकुलेटर, BC PNP स्कोर, SIRS स्कोर कैलकुलेटर, BC इमिग्रेशन पॉइंट्स, BC प्रोविंशियल नॉमिनी"
         : undefined}
 >
     <!-- Language Switcher -->
@@ -59,6 +64,12 @@ const hreflangs = [
             href="/zh/bc-pnp-calculator"
             class={`text-sm font-bold ${lang === "zh" ? "text-red-600 font-black" : "text-slate-500 hover:text-red-600 transition-colors"}`}
             >中文</a
+        >
+        <span class="text-slate-300">/</span>
+        <a
+            href="/hi/bc-pnp-calculator"
+            class={`text-sm font-bold ${lang === "hi" ? "text-red-600 font-black" : "text-slate-500 hover:text-red-600 transition-colors"}`}
+            >हिंदी</a
         >
     </nav>
     <!-- Calculator React Island - Hydrated on Load -->
@@ -212,6 +223,138 @@ const hreflangs = [
                                     class="text-sm text-red-600 hover:text-red-700 font-bold uppercase tracking-widest"
                                 >
                                     ← 返回首頁
+                                </a>
+                            </div>
+                        </div>
+                    </>
+                ) : lang === "hi" ? (
+                    // Hindi Content
+                    <>
+                        <div class="space-y-6">
+                            <h2 class="text-3xl font-black text-slate-900 tracking-tight leading-tight">
+                                <span class="text-red-600">BC PNP कैलकुलेटर</span>{" "}
+                                से अपनी इमिग्रेशन रणनीति बनाएं
+                            </h2>
+                            <p class="text-slate-600 text-base leading-relaxed">
+                                ब्रिटिश कोलंबिया प्रोविंशियल नॉमिनी प्रोग्राम (BC PNP)
+                                एक पॉइंट-आधारित इमिग्रेशन सिस्टम है जो प्रांत में कुशल कर्मचारियों को आकर्षित करने के लिए डिज़ाइन किया गया है। हमारा{" "}
+                                <strong>BC PNP पॉइंट्स कैलकुलेटर</strong>{" "}
+                                संभावित आप्रवासियों के लिए अपने स्किल्स इमिग्रेशन रैंकिंग सिस्टम (SIRS)
+                                स्कोर का सटीक अनुमान लगाने के लिए एक आवश्यक उपकरण है।
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                                <div class="p-6 bg-red-50 rounded-3xl border border-red-100">
+                                    <h3 class="font-bold text-red-900 mb-2">
+                                        पॉइंट्स कैसे आवंटित होते हैं
+                                    </h3>
+                                    <p class="text-sm text-slate-600">
+                                        पॉइंट्स आर्थिक कारकों (कार्य अनुभव, शिक्षा और भाषा) और मानव पूंजी कारकों (प्रति घंटा वेतन और क्षेत्रीय स्थान) में वितरित होते हैं।
+                                    </p>
+                                </div>
+                                <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+                                    <h3 class="font-bold text-slate-900 mb-2">
+                                        अधिकतम स्कोर
+                                    </h3>
+                                    <p class="text-sm text-slate-600">
+                                        <strong>BC PNP पॉइंट्स कैलकुलेटर</strong>{" "}
+                                        में कुल अधिकतम स्कोर 200 पॉइंट्स है। अधिकांश सफल आवेदक 100 से 130 पॉइंट्स के बीच स्कोर करते हैं।
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h2 class="text-2xl font-black text-slate-900 tracking-tight">
+                                स्कोरिंग श्रेणियों की विस्तृत जानकारी
+                            </h2>
+
+                            <div class="space-y-6">
+                                <div class="p-8 bg-red-50/50 rounded-[2.5rem] border border-red-100">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-black text-red-900">
+                                            कार्य अनुभव
+                                        </h3>
+                                        <span class="text-red-600 font-black text-xl">
+                                            अधिकतम 40 पॉइंट्स
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                        सीधे संबंधित कार्य अनुभव के वर्षों के आधार पर स्कोर किया जाता है, कनाडाई कार्य अनुभव और वर्तमान में BC में रोजगार के लिए अतिरिक्त बोनस के साथ।
+                                    </p>
+                                    <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
+                                        <li>
+                                            0-5+ वर्ष अनुभव: 0-20 पॉइंट्स (प्रति वर्ष 4 पॉइंट्स)
+                                        </li>
+                                        <li>1+ वर्ष कनाडाई अनुभव: +10 बोनस</li>
+                                        <li>वर्तमान में BC में कार्यरत: +10 बोनस</li>
+                                    </ul>
+                                </div>
+
+                                <div class="p-8 bg-rose-50/50 rounded-[2.5rem] border border-rose-100">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-black text-rose-900">
+                                            शिक्षा स्तर
+                                        </h3>
+                                        <span class="text-rose-600 font-black text-xl">
+                                            अधिकतम 40 पॉइंट्स
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                        आपकी उच्चतम शिक्षा योग्यता शिक्षा स्कोर निर्धारित करती है। सभी क्रेडेंशियल्स को कनाडाई मानकों (ECA) द्वारा प्रमाणित किया जाना चाहिए।
+                                    </p>
+                                </div>
+
+                                <div class="p-8 bg-orange-50/50 rounded-[2.5rem] border border-orange-100">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-black text-orange-900">
+                                            भाषा प्रवीणता
+                                        </h3>
+                                        <span class="text-orange-600 font-black text-xl">
+                                            अधिकतम 40 पॉइंट्स
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                        CLB (Canadian Language Benchmark) स्तरों पर आधारित, जैसे IELTS या CELPIP द्वारा। उच्च भाषा प्रवीणता स्कोर को काफी बढ़ाती है।
+                                    </p>
+                                </div>
+
+                                <div class="p-8 bg-red-50/60 rounded-[2.5rem] border border-red-100">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-black text-red-900">
+                                            प्रति घंटा वेतन
+                                        </h3>
+                                        <span class="text-red-600 font-black text-xl">
+                                            अधिकतम 55 पॉइंट्स
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                        सबसे अधिक भारित श्रेणी। BC में आपकी नौकरी के लिए प्रति घंटा वेतन आपके SIRS स्कोर में सबसे महत्वपूर्ण एकल कारक है।
+                                    </p>
+                                </div>
+
+                                <div class="p-8 bg-rose-50/60 rounded-[2.5rem] border border-rose-100">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-black text-rose-900">
+                                            क्षेत्रीय स्थान
+                                        </h3>
+                                        <span class="text-rose-600 font-black text-xl">
+                                            अधिकतम 25 पॉइंट्स
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                        BC क्षेत्रीय विकास को प्रोत्साहित करता है, मेट्रो वैंकूवर के बाहर नौकरियों के लिए महत्वपूर्ण बोनस पॉइंट्स प्रदान करता है।
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center pt-10 border-t border-slate-100">
+                            <div class="mt-6">
+                                <a
+                                    href={`/${lang}`}
+                                    class="text-sm text-red-600 hover:text-red-700 font-bold uppercase tracking-widest"
+                                >
+                                    ← होम पेज पर वापस जाएं
                                 </a>
                             </div>
                         </div>
