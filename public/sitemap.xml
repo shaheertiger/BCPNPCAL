@@ -5,10 +5,12 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
+  <!-- ==================== MAIN PAGES ==================== -->
+
   <!-- Homepage -->
   <url>
     <loc>https://bcpnpcalculator.ca/</loc>
-    <lastmod>2026-01-02</lastmod>
+    <lastmod>2026-01-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -16,43 +18,361 @@
   <!-- Calculator Page -->
   <url>
     <loc>https://bcpnpcalculator.ca/bc-pnp-calculator</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-01-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Guides (English) -->
+  <!-- Draws Page -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/bc-pnp-draws</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Guide (English) -->
   <url>
     <loc>https://bcpnpcalculator.ca/bc-pnp-guide</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Guides (International) -->
+  <!-- News Page -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/news</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sitemap Page -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/sitemap</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/privacy-policy</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/terms</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ==================== LOCALIZED PAGES ==================== -->
+
+  <!-- Chinese (zh) -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/zh</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/zh/bc-pnp-calculator</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://bcpnpcalculator.ca/zh/bc-pnp-guide</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Punjabi (pa) -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/pa</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/pa/bc-pnp-calculator</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bcpnpcalculator.ca/pa/bc-pnp-guide</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Hindi (hi) -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/hi</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/hi/bc-pnp-calculator</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bcpnpcalculator.ca/hi/bc-pnp-guide</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Arabic (ar) -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/ar</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/ar/bc-pnp-calculator</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/ar/bc-pnp-guide</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ==================== ARTICLES ==================== -->
+
+  <!-- Ultimate Guide -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/ultimate-bc-pnp-guide-2026</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Stream Guides -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-international-graduate-stream-2025</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-skilled-worker-stream</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-tech-stream-occupations</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-health-authority-stream</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-entrepreneur-immigration</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-entry-level-semi-skilled</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-express-entry-vs-skills-immigration</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-caregivers-childcare</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Application & Process Guides -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/how-to-apply-bc-pnp</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-documents-checklist</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-after-nomination</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-processing-times</loc>
+    <lastmod>2026-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bcpnpcalculator.ca/ar/bc-pnp-guide</loc>
-    <lastmod>2026-01-04</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-work-permit-guide</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-common-mistakes</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Calculator & Points Guides -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-points-calculator-guide</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/how-to-use-bc-pnp-calculator-2026</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/maximize-bc-pnp-score-tips</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-vs-crs-calculator</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-calculator-for-tech</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-calculator-faq</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Requirements & Eligibility -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-language-requirements</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-eca-guide</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-employer-guide</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Cost & Planning -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-cost-guide-2026</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/canada-pr-planning-guide-french-advantage-2026</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-spouse-family-guide-2026</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Priorities & Allocations -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-2026-allocation-priorities</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-regional-priorities</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Provincial Comparison Articles -->
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-vs-ontario-oinp-2026</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-vs-alberta-aaip-2026</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-vs-manitoba-mpnp-2026</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-vs-saskatchewan-sinp-2026</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bcpnpcalculator.ca/articles/bc-pnp-vs-atlantic-immigration-2026</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

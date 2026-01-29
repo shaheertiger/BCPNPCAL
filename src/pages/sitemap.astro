@@ -7,15 +7,15 @@ const description = "Complete list of pages on BC PNP Calculator. Find calculato
 
 <BaseLayout title={title} description={description}>
   <main class="min-h-screen bg-slate-50 py-16 px-4 sm:px-6">
-    <div class="max-w-3xl mx-auto space-y-12">
-      
+    <div class="max-w-5xl mx-auto space-y-12">
+
       <!-- Header -->
       <div class="text-center space-y-4">
         <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Sitemap</h1>
         <p class="text-slate-600">Overview of all content available on our site.</p>
       </div>
 
-      <div class="grid gap-8 sm:grid-cols-2">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <!-- Main Pages -->
         <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
           <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
@@ -47,54 +47,75 @@ const description = "Complete list of pages on BC PNP Calculator. Find calculato
                 Ultimate Guide
               </a>
             </li>
+            <li>
+              <a href="/news" class="group flex items-center text-slate-600 hover:text-red-600 font-medium transition-colors">
+                <svg class="w-4 h-4 mr-3 text-slate-400 group-hover:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2"/></svg>
+                News
+              </a>
+            </li>
           </ul>
         </div>
 
-        <!-- Resources -->
+        <!-- Immigration Streams -->
         <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
           <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
-            <span class="w-2 h-8 bg-slate-400 rounded-full mr-3"></span>
-            Articles & Guides
+            <span class="w-2 h-8 bg-blue-600 rounded-full mr-3"></span>
+            Immigration Streams
           </h2>
-          <ul class="space-y-4">
+          <ul class="space-y-3">
             <li>
-                <a href="/articles/bc-pnp-international-graduate-stream-2025" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
-                   International Graduate Stream
-                </a>
+              <a href="/articles/bc-pnp-skilled-worker-stream" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Skilled Worker Stream
+              </a>
             </li>
-             <li>
-                <a href="/articles/bc-pnp-skilled-worker-stream" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
-                   Skilled Worker Stream
-                </a>
+            <li>
+              <a href="/articles/bc-pnp-international-graduate-stream-2025" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                International Graduate Stream
+              </a>
             </li>
-             <li>
-                <a href="/articles/bc-pnp-tech-stream-occupations" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
-                   Tech Stream Occupations
-                </a>
+            <li>
+              <a href="/articles/bc-pnp-tech-stream-occupations" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Tech Stream Occupations
+              </a>
             </li>
-             <li>
-                <a href="/articles/bc-pnp-health-authority-stream" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
-                   Health Authority Stream
-                </a>
+            <li>
+              <a href="/articles/bc-pnp-health-authority-stream" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Health Authority Stream
+              </a>
             </li>
-             <li>
-                <a href="/articles/bc-pnp-entrepreneur-immigration" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
-                   Entrepreneur Immigration
-                </a>
-            </li>
-             <li>
-                <a href="/articles/how-to-apply-bc-pnp" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
-                   How to Apply (Step-by-Step)
-                </a>
-            </li>
-             <li>
-                <a href="/articles/bc-pnp-points-calculator-guide" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
-                   Points Calculator Guide 2026
-                </a>
-            </li>
-            <li class="pt-4 border-t border-slate-100">
+            <li>
               <a href="/articles/bc-pnp-entry-level-semi-skilled" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
                 Entry Level & Semi-Skilled
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-entrepreneur-immigration" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Entrepreneur Immigration
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-express-entry-vs-skills-immigration" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Express Entry vs Skills Immigration
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-caregivers-childcare" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Caregivers & Childcare
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Application Process -->
+        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+            <span class="w-2 h-8 bg-green-600 rounded-full mr-3"></span>
+            Application Process
+          </h2>
+          <ul class="space-y-3">
+            <li>
+              <a href="/articles/how-to-apply-bc-pnp" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                How to Apply (Step-by-Step)
               </a>
             </li>
             <li>
@@ -109,32 +130,207 @@ const description = "Complete list of pages on BC PNP Calculator. Find calculato
             </li>
             <li>
               <a href="/articles/bc-pnp-processing-times" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
-                Processing Times 2025
+                Processing Times
               </a>
             </li>
-            <li class="pt-4 border-t border-slate-100">
-              <a href="/articles/how-to-use-bc-pnp-calculator-2026" class="text-slate-500 hover:text-red-600 text-sm transition-colors block">
+            <li>
+              <a href="/articles/bc-pnp-work-permit-guide" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Work Permit Guide
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-common-mistakes" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Common Mistakes to Avoid
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Calculator & Points -->
+        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+            <span class="w-2 h-8 bg-purple-600 rounded-full mr-3"></span>
+            Calculator & Points
+          </h2>
+          <ul class="space-y-3">
+            <li>
+              <a href="/articles/bc-pnp-points-calculator-guide" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Points Calculator Guide 2026
+              </a>
+            </li>
+            <li>
+              <a href="/articles/how-to-use-bc-pnp-calculator-2026" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
                 How to Use the Calculator
               </a>
             </li>
             <li>
-              <a href="/articles/maximize-bc-pnp-score-tips" class="text-slate-500 hover:text-red-600 text-sm transition-colors block">
+              <a href="/articles/maximize-bc-pnp-score-tips" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
                 Maximize Your Score
               </a>
             </li>
             <li>
-              <a href="/articles/bc-pnp-vs-crs-calculator" class="text-slate-500 hover:text-red-600 text-sm transition-colors block">
+              <a href="/articles/bc-pnp-vs-crs-calculator" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
                 BC PNP vs CRS System
               </a>
             </li>
             <li>
-              <a href="/articles/bc-pnp-calculator-for-tech" class="text-slate-500 hover:text-red-600 text-sm transition-colors block">
-                Tech & Healthcare Guide (Legacy)
+              <a href="/articles/bc-pnp-calculator-for-tech" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Tech & Healthcare Guide
               </a>
             </li>
-             <li>
-              <a href="/articles/bc-pnp-calculator-faq" class="text-slate-500 hover:text-red-600 text-sm transition-colors block">
+            <li>
+              <a href="/articles/bc-pnp-calculator-faq" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
                 Frequently Asked Questions
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Requirements & Eligibility -->
+        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+            <span class="w-2 h-8 bg-orange-600 rounded-full mr-3"></span>
+            Requirements & Eligibility
+          </h2>
+          <ul class="space-y-3">
+            <li>
+              <a href="/articles/bc-pnp-language-requirements" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Language Requirements
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-eca-guide" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                ECA Guide
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-employer-guide" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Employer Guide
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-spouse-family-guide-2026" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Spouse & Family Guide
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Planning & Costs -->
+        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+            <span class="w-2 h-8 bg-teal-600 rounded-full mr-3"></span>
+            Planning & Costs
+          </h2>
+          <ul class="space-y-3">
+            <li>
+              <a href="/articles/ultimate-bc-pnp-guide-2026" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Ultimate BC PNP Guide 2026
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-cost-guide-2026" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Cost Guide 2026
+              </a>
+            </li>
+            <li>
+              <a href="/articles/canada-pr-planning-guide-french-advantage-2026" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Canada PR Planning Guide
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-2026-allocation-priorities" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                2026 Allocation Priorities
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-regional-priorities" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Regional Priorities
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Provincial Comparisons -->
+        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm sm:col-span-2 lg:col-span-1">
+          <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+            <span class="w-2 h-8 bg-indigo-600 rounded-full mr-3"></span>
+            Provincial Comparisons
+          </h2>
+          <ul class="space-y-3">
+            <li>
+              <a href="/articles/bc-pnp-vs-ontario-oinp-2026" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                BC PNP vs Ontario OINP
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-vs-alberta-aaip-2026" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                BC PNP vs Alberta AAIP
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-vs-manitoba-mpnp-2026" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                BC PNP vs Manitoba MPNP
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-vs-saskatchewan-sinp-2026" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                BC PNP vs Saskatchewan SINP
+              </a>
+            </li>
+            <li>
+              <a href="/articles/bc-pnp-vs-atlantic-immigration-2026" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                BC PNP vs Atlantic Immigration
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Languages -->
+        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+            <span class="w-2 h-8 bg-slate-400 rounded-full mr-3"></span>
+            Other Languages
+          </h2>
+          <ul class="space-y-3">
+            <li>
+              <a href="/zh" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                中文 (Chinese)
+              </a>
+            </li>
+            <li>
+              <a href="/pa" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                ਪੰਜਾਬੀ (Punjabi)
+              </a>
+            </li>
+            <li>
+              <a href="/hi" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                हिन्दी (Hindi)
+              </a>
+            </li>
+            <li>
+              <a href="/ar" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                العربية (Arabic)
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+            <span class="w-2 h-8 bg-gray-400 rounded-full mr-3"></span>
+            Legal
+          </h2>
+          <ul class="space-y-3">
+            <li>
+              <a href="/privacy-policy" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="/terms" class="text-slate-600 hover:text-red-600 font-medium transition-colors block">
+                Terms of Service
               </a>
             </li>
           </ul>
