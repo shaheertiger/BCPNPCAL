@@ -209,6 +209,11 @@ export const Calculator: React.FC = () => {
               {/* F) Education Location (only if E=yes) */}
               {state.hasCanadianEducation && (
                 <div className="mt-3 ml-4 space-y-2 animate-in fade-in slide-in-from-top-2">
+                  {state.educationLocation === 'none' && (
+                    <div className="mb-3 px-4 py-2 rounded-xl bg-amber-50 border border-amber-200">
+                      <p className="text-xs font-bold text-amber-700">Select where you completed your education to get bonus points</p>
+                    </div>
+                  )}
                   <CardOption
                     selected={state.educationLocation === 'bc'}
                     onClick={() => handleUpdate({ educationLocation: 'bc' })}
@@ -272,10 +277,16 @@ export const Calculator: React.FC = () => {
                   </div>
                 </div>
 
-                <div className={`mt-4 text-center transition-opacity ${state.selectedProfession ? 'opacity-100' : 'opacity-0'}`}>
-                  <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-600 text-white text-xs font-bold animate-in zoom-in">
-                    +5 points applied
-                  </span>
+                <div className="mt-4 text-center">
+                  {state.selectedProfession ? (
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-600 text-white text-xs font-bold animate-in zoom-in">
+                      +5 points applied
+                    </span>
+                  ) : (
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 text-xs font-bold animate-in zoom-in">
+                      Please select an occupation to get +5 points
+                    </span>
+                  )}
                 </div>
               </div>
             )}
@@ -311,6 +322,11 @@ export const Calculator: React.FC = () => {
               {state.hasEnglishTest && (
                 <div className="mt-3 animate-in fade-in slide-in-from-top-2">
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">English CLB Level</p>
+                  {state.englishClb === 0 && (
+                    <div className="mb-2 px-3 py-1.5 rounded-lg bg-amber-50 border border-amber-200">
+                      <p className="text-[10px] font-bold text-amber-700">Select your CLB level (CLB 4+ earns points)</p>
+                    </div>
+                  )}
                   <div className="grid grid-cols-4 gap-2">
                     {[9, 8, 7, 6, 5, 4, 3, 0].map((level) => {
                       const pts = level >= 9 ? 30 : level === 8 ? 25 : level === 7 ? 20 : level === 6 ? 15 : level === 5 ? 10 : level === 4 ? 5 : 0;
@@ -354,6 +370,11 @@ export const Calculator: React.FC = () => {
               {state.hasFrenchTest && (
                 <div className="mt-3 animate-in fade-in slide-in-from-top-2">
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">French CLB Level</p>
+                  {state.frenchClb === 0 && (
+                    <div className="mb-2 px-3 py-1.5 rounded-lg bg-amber-50 border border-amber-200">
+                      <p className="text-[10px] font-bold text-amber-700">Select your CLB level (CLB 4+ earns points)</p>
+                    </div>
+                  )}
                   <div className="grid grid-cols-4 gap-2">
                     {[9, 8, 7, 6, 5, 4, 3, 0].map((level) => {
                       const pts = level >= 9 ? 30 : level === 8 ? 25 : level === 7 ? 20 : level === 6 ? 15 : level === 5 ? 10 : level === 4 ? 5 : 0;
@@ -582,7 +603,7 @@ export const Calculator: React.FC = () => {
                   <div className="flex justify-between items-center py-2">
                     <span className="text-sm font-medium text-slate-600">Regional Bonuses</span>
                     <span className="font-black text-slate-900 bg-slate-100 px-2 py-0.5 rounded-lg text-xs">
-                      {results.breakdown.workedOutsideArea1 + results.breakdown.graduatedOutsideArea1} / 10
+                      {results.breakdown.workedOutsideArea1 + results.breakdown.graduatedOutsideArea1} / 20
                     </span>
                   </div>
                 </div>
