@@ -5,7 +5,7 @@ export const guideContent = {
         h1: "2026年 <span class='text-red-500'>BC PNP</span> 權威指南",
         hero_sub: "從最新的標準到 <strong class='text-white'>SIRS 評分系統</strong>，這裡有您需要知道的一切。",
         cta: "立即計算您的分數",
-        ogImage: "/og-zh.png", // TODO: Create this image
+        ogImage: "/og-zh.png",
         toc_strategy: "提分策略",
         toc_regional: "偏遠地區加分",
         toc_priority: "優先職位",
@@ -62,7 +62,7 @@ export const guideContent = {
         h1: "2026 <span class='text-red-500'>BC PNP</span> ਅਲਟੀਮੇਟ ਗਾਈਡ",
         hero_sub: "<strong class='text-white'>SIRS ਸਕੋਰਿੰਗ ਸਿਸਟਮ</strong> ਤੋਂ ਲੈ ਕੇ ਨਵੀਨਤਮ ਡਰਾਅ ਤੱਕ, ਤੁਹਾਨੂੰ ਜੋ ਵੀ ਜਾਣਨ ਦੀ ਲੋੜ ਹੈ ਉਹ ਇੱਥੇ ਹੈ।",
         cta: "ਆਪਣਾ ਸਕੋਰ ਚੈੱਕ ਕਰੋ",
-        ogImage: "/og-pa.png", // TODO: Create this image
+        ogImage: "/og-pa.png",
         toc_strategy: "ਰਣਨੀਤੀ",
         toc_regional: "ਖੇਤਰੀ ਅੰਕ",
         toc_priority: "ਤਰਜੀਹੀ ਸਟ੍ਰੀਮ",
@@ -119,7 +119,7 @@ export const guideContent = {
         h1: "2026 <span class='text-red-500'>BC PNP</span> अल्टीमेट गाइड",
         hero_sub: "<strong class='text-white'>SIRS स्कोरिंग सिस्टम</strong> से लेकर लेटेस्‍ट ड्रा तक, आपको जो कुछ भी जानने की जरूरत है, वह यहाँ है।",
         cta: "अपना स्कोर चेक करें",
-        ogImage: "/og-hi.png", // TODO: Create this image
+        ogImage: "/og-hi.png",
         toc_strategy: "रणनीति",
         toc_regional: "क्षेत्रीय अंक",
         toc_priority: "प्राथमिकता स्ट्रीम",
@@ -176,7 +176,7 @@ export const guideContent = {
         h1: "الدليل النهائي لبرنامج <span class='text-red-500'>BC PNP</span> 2026",
         hero_sub: "كل ما تحتاج لمعرفته حول <strong class='text-white'>نظام تسجيل SIRS</strong> وأحدث متطلبات الهجرة.",
         cta: "احسب نقاطك الآن",
-        ogImage: "/og-ar.png", // TODO: Create this image
+        ogImage: "/og-ar.png",
         toc_strategy: "استراتيجية",
         toc_regional: "نقاط إقليمية",
         toc_priority: "الأولويات",
