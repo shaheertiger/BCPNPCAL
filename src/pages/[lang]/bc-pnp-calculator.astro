@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CalculatorShell from "../../components/CalculatorShell.astro";
+import { calculatorContent } from "../../i18n/calculator-content";
 
 export function getStaticPaths() {
     return [
@@ -76,9 +77,10 @@ const hreflangs = [
     <!-- Note: The Calculator React component itself might need i18n support. 
        For this pass, we are focusing on the page wrapper. 
        If CalculatorShell contains text, it needs to be passed props or use a context.
+       If CalculatorShell contains text, it needs to be passed props or use a context.
        Checking CalculatorShell... it likely wraps Calculator.client.tsx.
    -->
-    <CalculatorShell />
+    <CalculatorShell t={calculatorContent[lang as keyof typeof calculatorContent] || calculatorContent.en} />
 
     <!-- SEO Content Section (Static HTML) -->
     <section

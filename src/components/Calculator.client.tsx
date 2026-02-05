@@ -1,7 +1,10 @@
 
 import React, { useState, useMemo } from 'react';
 import { calculateTotalPoints, calculateAnnualWage } from '../utils/calculatePoints';
-import { CalculatorState, EducationLevel, AreaZone, ExperienceLevel, CLBLevel } from '../types';
+import { CalculatorState, EducationLevel, ExperienceLevel, CLBLevel } from '../types';
+import { calculatorContent } from '../i18n/calculator-content';
+
+type Translation = typeof calculatorContent.en;
 
 const INITIAL_STATE: CalculatorState = {
   experience: '0',
@@ -22,39 +25,14 @@ const INITIAL_STATE: CalculatorState = {
   hasGraduatedOutsideArea1: false,
 };
 
-const STEPS = [
-  { id: 'experience', label: 'Experience', icon: '💼' },
-  { id: 'education', label: 'Education', icon: '🎓' },
-  { id: 'profession', label: 'Profession', icon: '⚕️' },
-  { id: 'language', label: 'Language', icon: '🗣️' },
-  { id: 'wage', label: 'Wage', icon: '💰' },
-  { id: 'location', label: 'Location', icon: '📍' },
-  { id: 'result', label: 'Summary', icon: '📊' }
-];
-
-// Professional Designations List
+// Professional Designations List (Kept as constant strings for now as they are specific titles)
 const PROFESSIONAL_DESIGNATIONS = [
-  'Audiologist',
-  'Chiropractor',
-  'Dental Hygienist',
-  'Dentist',
-  'Dietitian',
-  'Medical Laboratory Technologist',
-  'Medical Radiation Technologist',
-  'Midwife',
-  'Nurse Practitioner',
-  'Occupational Therapist',
-  'Optometrist',
-  'Pharmacist',
-  'Physical Therapist / Physiotherapist',
-  'Physician',
-  'Podiatrist',
-  'Psychologist',
-  'Registered Nurse',
-  'Registered Psychiatric Nurse',
-  'Respiratory Therapist',
-  'Speech-Language Pathologist',
-  'Veterinarian',
+  'Audiologist', 'Chiropractor', 'Dental Hygienist', 'Dentist', 'Dietitian',
+  'Medical Laboratory Technologist', 'Medical Radiation Technologist', 'Midwife',
+  'Nurse Practitioner', 'Occupational Therapist', 'Optometrist', 'Pharmacist',
+  'Physical Therapist / Physiotherapist', 'Physician', 'Podiatrist', 'Psychologist',
+  'Registered Nurse', 'Registered Psychiatric Nurse', 'Respiratory Therapist',
+  'Speech-Language Pathologist', 'Veterinarian',
 ];
 
 // Reusable Components
@@ -93,23 +71,43 @@ const Toggle = ({ active, onClick, title, subtitle }: any) => (
   </button>
 );
 
-// Typed Experience Options
-const EXPERIENCE_OPTIONS: { id: ExperienceLevel; label: string; pts: number }[] = [
-  { id: '0', label: 'No experience', pts: 0 },
-  { id: '<1', label: 'Less than 1 year', pts: 1 },
-  { id: '1', label: '1 to <2 years', pts: 4 },
-  { id: '2', label: '2 to <3 years', pts: 8 },
-  { id: '3', label: '3 to <4 years', pts: 12 },
-  { id: '4', label: '4 to <5 years', pts: 16 },
-  { id: '5+', label: '5+ years', pts: 20 },
-];
-
-export const Calculator: React.FC = () => {
+export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
   const [state, setState] = useState<CalculatorState>(INITIAL_STATE);
   const [currentStep, setCurrentStep] = useState(0);
 
   const results = useMemo(() => calculateTotalPoints(state), [state]);
   const annualWage = useMemo(() => calculateAnnualWage(state.hourlyWage), [state.hourlyWage]);
+
+  // Derived Data (Steps & Options) based on 't'
+  const STEPS = [
+    { id: 'experience', label: t.steps.experience, icon: '💼' },
+    { id: 'education', label: t.steps.education, icon: '🎓' },
+    { id: 'profession', label: t.steps.profession, icon: '⚕️' },
+    { id: 'language', label: t.steps.language, icon: '🗣️' },
+    { id: 'wage', label: t.steps.wage, icon: '💰' },
+    { id: 'location', label: t.steps.location, icon: '📍' },
+    { id: 'result', label: t.steps.result, icon: '📊' }
+  ];
+
+  const EXPERIENCE_OPTIONS: { id: ExperienceLevel; label: string; pts: number }[] = [
+    { id: '0', label: t.experience.options.none, pts: 0 },
+    { id: '<1', label: t.experience.options.less_than_1, pts: 1 },
+    { id: '1', label: t.experience.options.one_to_two, pts: 4 },
+    { id: '2', label: t.experience.options.two_to_three, pts: 8 },
+    { id: '3', label: t.experience.options.three_to_four, pts: 12 },
+    { id: '4', label: t.experience.options.four_to_five, pts: 16 },
+    { id: '5+', label: t.experience.options.five_plus, pts: 20 },
+  ];
+
+  const EDUCATION_OPTIONS = [
+    { id: 'secondary', label: t.education.options.secondary, pts: 0 },
+    { id: 'trades_cert', label: t.education.options.trades_cert, subtitle: t.education.options.trades_cert_sub, pts: 5 },
+    { id: 'associate', label: t.education.options.associate, pts: 5 },
+    { id: 'bachelor', label: t.education.options.bachelor, pts: 15 },
+    { id: 'post_grad_cert', label: t.education.options.post_grad_cert, pts: 15 },
+    { id: 'master', label: t.education.options.master, pts: 22 },
+    { id: 'doctorate', label: t.education.options.doctorate, pts: 27 },
+  ];
 
   const handleUpdate = (updates: Partial<CalculatorState>) => {
     setState(prev => ({ ...prev, ...updates }));
@@ -124,8 +122,8 @@ export const Calculator: React.FC = () => {
         return (
           <div className="space-y-5 animate-in fade-in slide-in-from-right-4 duration-300">
             <div>
-              <h2 className="text-xl font-black text-slate-900 tracking-tight">Work Experience</h2>
-              <p className="text-slate-500 text-sm font-medium mt-1">Directly related to BC job offer occupation.</p>
+              <h2 className="text-xl font-black text-slate-900 tracking-tight">{t.experience.title}</h2>
+              <p className="text-slate-500 text-sm font-medium mt-1">{t.experience.subtitle}</p>
             </div>
 
             {/* A) Experience Level Selection */}
@@ -147,16 +145,16 @@ export const Calculator: React.FC = () => {
               <Toggle
                 active={state.hasCanadianExp}
                 onClick={() => handleUpdate({ hasCanadianExp: !state.hasCanadianExp })}
-                title="1+ Year Canadian Work Experience"
-                subtitle="+10 Points"
+                title={t.experience.canadian_exp.title}
+                subtitle={t.experience.canadian_exp.subtitle}
               />
 
               {/* C) Current BC Employment */}
               <Toggle
                 active={state.hasCurrentBCJob}
                 onClick={() => handleUpdate({ hasCurrentBCJob: !state.hasCurrentBCJob })}
-                title="Currently Working Full-Time in BC"
-                subtitle="+10 Points (For this employer/occupation)"
+                title={t.experience.current_job.title}
+                subtitle={t.experience.current_job.subtitle}
               />
             </div>
           </div>
@@ -166,21 +164,13 @@ export const Calculator: React.FC = () => {
         return (
           <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
             <div>
-              <h2 className="text-xl font-black text-slate-900 tracking-tight">Education</h2>
-              <p className="text-slate-500 text-sm font-medium mt-1">Highest completed credential.</p>
+              <h2 className="text-xl font-black text-slate-900 tracking-tight">{t.education.title}</h2>
+              <p className="text-slate-500 text-sm font-medium mt-1">{t.education.subtitle}</p>
             </div>
 
             {/* D) Education Level */}
             <div className="max-h-[60vh] overflow-y-auto pr-1">
-              {[
-                { id: 'secondary', label: 'High school or less', pts: 0 },
-                { id: 'trades_cert', label: 'Post-secondary Diploma/Certificate', subtitle: 'Trades or Non-trades', pts: 5 },
-                { id: 'associate', label: 'Associate Degree', pts: 5 },
-                { id: 'bachelor', label: 'Bachelor\'s Degree', pts: 15 },
-                { id: 'post_grad_cert', label: 'Post-Graduate Certificate/Diploma', pts: 15 },
-                { id: 'master', label: 'Master\'s Degree', pts: 22 },
-                { id: 'doctorate', label: 'Doctorate (PhD)', pts: 27 },
-              ].map((edu) => (
+              {EDUCATION_OPTIONS.map((edu) => (
                 <CardOption
                   key={edu.id}
                   selected={state.education === edu.id}
@@ -194,16 +184,15 @@ export const Calculator: React.FC = () => {
 
             {/* E) Canadian Education Gate */}
             <div className="mt-6 pt-4 border-t border-slate-100">
-              <h3 className="text-sm font-bold text-slate-700 mb-3">Post-Secondary in Canada?</h3>
+              <h3 className="text-sm font-bold text-slate-700 mb-3">{t.education.canadian_education.title}?</h3>
               <Toggle
                 active={state.hasCanadianEducation}
                 onClick={() => handleUpdate({
                   hasCanadianEducation: !state.hasCanadianEducation,
-                  // Always default to 'none' to force an explicit selection for bonus points
                   educationLocation: 'none'
                 })}
-                title="Completed post-secondary education in Canada"
-                subtitle="Unlocks bonus points"
+                title={t.education.canadian_education.title}
+                subtitle={t.education.canadian_education.subtitle}
               />
 
               {/* F) Education Location (only if E=yes) */}
@@ -211,20 +200,20 @@ export const Calculator: React.FC = () => {
                 <div className="mt-3 ml-4 space-y-2 animate-in fade-in slide-in-from-top-2">
                   {state.educationLocation === 'none' && (
                     <div className="mb-3 px-4 py-2 rounded-xl bg-amber-50 border border-amber-200">
-                      <p className="text-xs font-bold text-amber-700">Select where you completed your education to get bonus points</p>
+                      <p className="text-xs font-bold text-amber-700">{t.education.location.none_label}</p>
                     </div>
                   )}
                   <CardOption
                     selected={state.educationLocation === 'bc'}
                     onClick={() => handleUpdate({ educationLocation: 'bc' })}
-                    title="Completed in BC"
+                    title={t.education.location.bc}
                     subtitle=""
                     points={8}
                   />
                   <CardOption
                     selected={state.educationLocation === 'canada_outside_bc'}
                     onClick={() => handleUpdate({ educationLocation: 'canada_outside_bc' })}
-                    title="Completed in Canada (outside BC)"
+                    title={t.education.location.canada}
                     subtitle=""
                     points={6}
                   />
@@ -238,8 +227,8 @@ export const Calculator: React.FC = () => {
         return (
           <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
             <div>
-              <h2 className="text-xl font-black text-slate-900 tracking-tight">Professional Designation</h2>
-              <p className="text-slate-500 text-sm font-medium mt-1">Job offer in an eligible regulated profession?</p>
+              <h2 className="text-xl font-black text-slate-900 tracking-tight">{t.profession.title}</h2>
+              <p className="text-slate-500 text-sm font-medium mt-1">{t.profession.subtitle}</p>
             </div>
 
             {/* G) Professional Designation Gate */}
@@ -249,17 +238,17 @@ export const Calculator: React.FC = () => {
                 const newValue = !state.hasProfessionalDesignation;
                 handleUpdate({
                   hasProfessionalDesignation: newValue,
-                  selectedProfession: newValue ? state.selectedProfession : null // Clear if turning off
+                  selectedProfession: newValue ? state.selectedProfession : null
                 });
               }}
-              title="Eligible Professional Designation"
-              subtitle="+5 Points (Healthcare/Regulated)"
+              title={t.profession.toggle.title}
+              subtitle={t.profession.toggle.subtitle}
             />
 
             {/* H) Professional Designation List (only if G=yes) */}
             {state.hasProfessionalDesignation && (
               <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm animate-in fade-in slide-in-from-top-2">
-                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Select Occupation</h3>
+                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">{t.profession.select_label}</h3>
 
                 <div className="relative">
                   <select
@@ -267,7 +256,7 @@ export const Calculator: React.FC = () => {
                     onChange={(e) => handleUpdate({ selectedProfession: e.target.value })}
                     className="w-full p-4 rounded-xl bg-slate-50 border-2 border-slate-100 font-medium text-slate-700 appearance-none focus:border-indigo-500 focus:outline-none transition-colors"
                   >
-                    <option value="" disabled>Choose an occupation...</option>
+                    <option value="" disabled>{t.profession.default_option}</option>
                     {PROFESSIONAL_DESIGNATIONS.map(p => (
                       <option key={p} value={p}>{p}</option>
                     ))}
@@ -280,11 +269,11 @@ export const Calculator: React.FC = () => {
                 <div className="mt-4 text-center">
                   {state.selectedProfession ? (
                     <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-600 text-white text-xs font-bold animate-in zoom-in">
-                      +5 points applied
+                      {t.profession.applied}
                     </span>
                   ) : (
                     <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 text-xs font-bold animate-in zoom-in">
-                      Please select an occupation to get +5 points
+                      {t.profession.instruction}
                     </span>
                   )}
                 </div>
@@ -297,8 +286,8 @@ export const Calculator: React.FC = () => {
         return (
           <div className="space-y-5 animate-in fade-in slide-in-from-right-4 duration-300">
             <div>
-              <h2 className="text-xl font-black text-slate-900 tracking-tight">Language Proficiency</h2>
-              <p className="text-slate-500 text-sm font-medium mt-1">CLB level (lowest of 4 skills). Tests must be within last 2 years.</p>
+              <h2 className="text-xl font-black text-slate-900 tracking-tight">{t.language.title}</h2>
+              <p className="text-slate-500 text-sm font-medium mt-1">{t.language.subtitle}</p>
             </div>
 
             {/* I) English Test Gate */}
@@ -307,24 +296,22 @@ export const Calculator: React.FC = () => {
                 active={state.hasEnglishTest}
                 onClick={() => {
                   const newState = !state.hasEnglishTest;
-                  // If turning ON, preserve existing value (don't update it)
-                  // If turning OFF, reset to 0
                   handleUpdate({
                     hasEnglishTest: newState,
                     ...(newState ? {} : { englishClb: 0 })
                   });
                 }}
-                title="English Test Completed"
-                subtitle="IELTS, CELPIP, etc."
+                title={t.language.english.title}
+                subtitle={t.language.english.subtitle}
               />
 
               {/* J) English CLB (only if I=yes) */}
               {state.hasEnglishTest && (
                 <div className="mt-3 animate-in fade-in slide-in-from-top-2">
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">English CLB Level</p>
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">{t.language.english.label}</p>
                   {state.englishClb === 0 && (
                     <div className="mb-2 px-3 py-1.5 rounded-lg bg-amber-50 border border-amber-200">
-                      <p className="text-[10px] font-bold text-amber-700">Select your CLB level (CLB 4+ earns points)</p>
+                      <p className="text-[10px] font-bold text-amber-700">{t.language.english.instruction}</p>
                     </div>
                   )}
                   <div className="grid grid-cols-4 gap-2">
@@ -362,17 +349,17 @@ export const Calculator: React.FC = () => {
                     ...(newState ? {} : { frenchClb: 0 })
                   });
                 }}
-                title="French Test Completed"
-                subtitle="TEF, TCF, etc."
+                title={t.language.french.title}
+                subtitle={t.language.french.subtitle}
               />
 
               {/* L) French CLB (only if K=yes) */}
               {state.hasFrenchTest && (
                 <div className="mt-3 animate-in fade-in slide-in-from-top-2">
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">French CLB Level</p>
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">{t.language.french.label}</p>
                   {state.frenchClb === 0 && (
                     <div className="mb-2 px-3 py-1.5 rounded-lg bg-amber-50 border border-amber-200">
-                      <p className="text-[10px] font-bold text-amber-700">Select your CLB level (CLB 4+ earns points)</p>
+                      <p className="text-[10px] font-bold text-amber-700">{t.language.french.instruction}</p>
                     </div>
                   )}
                   <div className="grid grid-cols-4 gap-2">
@@ -405,21 +392,21 @@ export const Calculator: React.FC = () => {
         return (
           <div className="space-y-5 animate-in fade-in slide-in-from-right-4 duration-300">
             <div>
-              <h2 className="text-xl font-black text-slate-900 tracking-tight">Hourly Wage</h2>
-              <p className="text-slate-500 text-sm font-medium mt-1">Base hourly wage of your BC job offer.</p>
+              <h2 className="text-xl font-black text-slate-900 tracking-tight">{t.wage.title}</h2>
+              <p className="text-slate-500 text-sm font-medium mt-1">{t.wage.subtitle}</p>
             </div>
 
             <div className="bg-white p-6 rounded-[2rem] shadow-xl shadow-indigo-100 border border-indigo-50 flex flex-col items-center relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
 
               <div className="text-center mb-5">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Hourly Wage</p>
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">{t.wage.title}</p>
                 <div className="text-4xl font-black text-slate-900 tabular-nums tracking-tight">
                   ${state.hourlyWage.toFixed(2)}/hr
                 </div>
-                <p className="text-sm text-slate-500 mt-1">Annual: ${annualWage.toLocaleString()}</p>
+                <p className="text-sm text-slate-500 mt-1">{t.wage.annual} ${annualWage.toLocaleString()}</p>
                 <div className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-600 text-white">
-                  <span className="text-xs font-bold uppercase tracking-wider">Wage Points</span>
+                  <span className="text-xs font-bold uppercase tracking-wider">{t.wage.points_badge}</span>
                   <span className="text-lg font-black">{results.breakdown.wage}</span>
                 </div>
               </div>
@@ -429,11 +416,6 @@ export const Calculator: React.FC = () => {
                   <span>$15/hr</span>
                   <span>$70+/hr</span>
                 </div>
-                {/*
-                  Slider logic:
-                  - Range 14-75 to allow going below threshold easily
-                  - Step 1 for integer alignment
-                */}
                 <input
                   type="range" min="14" max="75" step="1"
                   value={state.hourlyWage}
@@ -460,14 +442,14 @@ export const Calculator: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-3 w-full text-center">
                 <div className={`p-3 rounded-xl border transition-all ${state.hourlyWage < 16 ? 'bg-red-50 border-red-200' : 'bg-slate-50 border-slate-100'}`}>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase">Min ($16/hr)</p>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase">{t.wage.min_label}</p>
                   <p className={`text-sm font-black ${state.hourlyWage < 16 ? 'text-red-500' : 'text-slate-700'}`}>
-                    {state.hourlyWage < 16 ? '0 points' : '1 point'}
+                    {state.hourlyWage < 16 ? t.wage.min_points : t.wage.one_point}
                   </p>
                 </div>
                 <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                  <p className="text-[10px] font-bold text-slate-400 uppercase">Max ($70+/hr)</p>
-                  <p className="text-sm font-black text-slate-700">55 points</p>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase">{t.wage.max_label}</p>
+                  <p className="text-sm font-black text-slate-700">{t.wage.max_points}</p>
                 </div>
               </div>
             </div>
@@ -478,51 +460,51 @@ export const Calculator: React.FC = () => {
         return (
           <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
             <div>
-              <h2 className="text-xl font-black text-slate-900 tracking-tight">Job Location</h2>
-              <p className="text-slate-500 text-sm font-medium mt-1">Where is your BC job offer located?</p>
+              <h2 className="text-xl font-black text-slate-900 tracking-tight">{t.location_step.title}</h2>
+              <p className="text-slate-500 text-sm font-medium mt-1">{t.location_step.subtitle}</p>
             </div>
 
             {/* N) Area of Employment */}
             <CardOption
               selected={state.area === 'area1'}
               onClick={() => handleUpdate({ area: 'area1' })}
-              title="Area 1: Metro Vancouver"
-              subtitle="Vancouver, Burnaby, Richmond, Surrey, etc."
+              title={t.location_step.options.area1}
+              subtitle={t.location_step.options.area1_sub}
               points={0}
             />
             <CardOption
               selected={state.area === 'area2'}
               onClick={() => handleUpdate({ area: 'area2' })}
-              title="Area 2: Near-Metro"
-              subtitle="Squamish, Abbotsford, Agassiz, Mission, Chilliwack"
+              title={t.location_step.options.area2}
+              subtitle={t.location_step.options.area2_sub}
               points={5}
             />
             <CardOption
               selected={state.area === 'area3'}
               onClick={() => handleUpdate({ area: 'area3' })}
-              title="Area 3: Rest of BC"
-              subtitle="All other BC regions"
+              title={t.location_step.options.area3}
+              subtitle={t.location_step.options.area3_sub}
               points={15}
             />
 
             {/* Regional Bonuses */}
             <div className="mt-6 pt-4 border-t border-slate-100">
-              <h3 className="text-sm font-bold text-slate-700 mb-3">Regional Bonuses</h3>
+              <h3 className="text-sm font-bold text-slate-700 mb-3">{t.location_step.bonuses.title}</h3>
 
               {/* O) Worked Outside Area 1 */}
               <Toggle
                 active={state.hasWorkedOutsideArea1}
                 onClick={() => handleUpdate({ hasWorkedOutsideArea1: !state.hasWorkedOutsideArea1 })}
-                title="1+ Year Employment Outside Area 1"
-                subtitle="+10 Points (Within last 5 years)"
+                title={t.location_step.bonuses.worked_outside.title}
+                subtitle={t.location_step.bonuses.worked_outside.subtitle}
               />
 
               {/* P) Graduated Outside Area 1 */}
               <Toggle
                 active={state.hasGraduatedOutsideArea1}
                 onClick={() => handleUpdate({ hasGraduatedOutsideArea1: !state.hasGraduatedOutsideArea1 })}
-                title="Graduated from BC Institution Outside Area 1"
-                subtitle="+10 Points (Public institution, within 3 years)"
+                title={t.location_step.bonuses.graduated_outside.title}
+                subtitle={t.location_step.bonuses.graduated_outside.subtitle}
               />
             </div>
           </div>
@@ -532,76 +514,76 @@ export const Calculator: React.FC = () => {
         return (
           <div className="space-y-5 animate-in zoom-in-95 duration-500">
             <div className="bg-slate-900 p-8 rounded-[2rem] text-center relative overflow-hidden text-white shadow-2xl shadow-indigo-900/50">
-              <p className="text-xs font-bold text-indigo-300 uppercase tracking-[0.3em] mb-3">Total BC PNP Score</p>
+              <p className="text-xs font-bold text-indigo-300 uppercase tracking-[0.3em] mb-3">{t.result.total_score}</p>
               <div className="text-7xl font-black tracking-tighter leading-none mb-3">{results.total}</div>
               <div className="inline-block px-4 py-1 rounded-full bg-white/10 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-                Max Possible: 200
+                {t.result.max_possible}
               </div>
             </div>
 
             <div className="space-y-3">
               {/* Human Capital Section */}
               <div className="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm space-y-3">
-                <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">Human Capital Factors</h3>
+                <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">{t.result.human_capital}</h3>
 
                 {/* Experience */}
                 <div className="bg-slate-50 p-4 rounded-xl space-y-2">
                   <div className="flex justify-between items-center text-slate-900">
-                    <span className="text-sm font-bold">Work Experience Category (Max 40)</span>
+                    <span className="text-sm font-bold">{t.result.categories.experience}</span>
                     <span className="text-sm font-black">{results.breakdown.experience + results.breakdown.canadianExp + results.breakdown.currentBCJob} / 40</span>
                   </div>
                   <div className="text-[10px] text-slate-500 space-y-1 pl-2 border-l-2 border-slate-200">
-                    <div className="flex justify-between"><span>Direct Experience</span><span>{results.breakdown.experience}</span></div>
-                    <div className="flex justify-between"><span>Canadian Exp</span><span>{results.breakdown.canadianExp}</span></div>
-                    <div className="flex justify-between"><span>Current BC Job</span><span>{results.breakdown.currentBCJob}</span></div>
+                    <div className="flex justify-between"><span>{t.result.categories.direct}</span><span>{results.breakdown.experience}</span></div>
+                    <div className="flex justify-between"><span>{t.result.categories.canadian}</span><span>{results.breakdown.canadianExp}</span></div>
+                    <div className="flex justify-between"><span>{t.result.categories.current_job}</span><span>{results.breakdown.currentBCJob}</span></div>
                   </div>
                 </div>
 
                 {/* Education (Capped at 40) */}
                 <div className="bg-slate-50 p-4 rounded-xl space-y-2">
                   <div className="flex justify-between items-center text-slate-900">
-                    <span className="text-sm font-bold">Education Category (Max 40)</span>
+                    <span className="text-sm font-bold">{t.result.categories.education}</span>
                     <span className={`text-sm font-black ${results.breakdown.educationTotal === 40 ? 'text-green-600' : ''}`}>
                       {results.breakdown.educationTotal} / 40
                     </span>
                   </div>
                   <div className="text-[10px] text-slate-500 space-y-1 pl-2 border-l-2 border-slate-200">
-                    <div className="flex justify-between"><span>Education Level</span><span>{results.breakdown.education}</span></div>
-                    <div className="flex justify-between"><span>BC/Canada Bonus</span><span>{results.breakdown.educationLocation}</span></div>
-                    <div className="flex justify-between"><span>Professional Desig.</span><span>{results.breakdown.professionalDesignation}</span></div>
+                    <div className="flex justify-between"><span>{t.result.categories.edu_level}</span><span>{results.breakdown.education}</span></div>
+                    <div className="flex justify-between"><span>{t.result.categories.location_bonus}</span><span>{results.breakdown.educationLocation}</span></div>
+                    <div className="flex justify-between"><span>{t.result.categories.prof_desig}</span><span>{results.breakdown.professionalDesignation}</span></div>
                   </div>
                 </div>
 
                 {/* Language (Capped at 40) */}
                 <div className="bg-slate-50 p-4 rounded-xl space-y-2">
                   <div className="flex justify-between items-center text-slate-900">
-                    <span className="text-sm font-bold">Language Category (Max 40)</span>
+                    <span className="text-sm font-bold">{t.result.categories.language}</span>
                     <span className={`text-sm font-black ${results.breakdown.languageTotal === 40 ? 'text-green-600' : ''}`}>
                       {results.breakdown.languageTotal} / 40
                     </span>
                   </div>
                   <div className="text-[10px] text-slate-500 space-y-1 pl-2 border-l-2 border-slate-200">
-                    <div className="flex justify-between"><span>English CLB</span><span>{results.breakdown.englishClb}</span></div>
-                    <div className="flex justify-between"><span>French CLB</span><span>{results.breakdown.frenchClb}</span></div>
+                    <div className="flex justify-between"><span>{t.result.categories.english}</span><span>{results.breakdown.englishClb}</span></div>
+                    <div className="flex justify-between"><span>{t.result.categories.french}</span><span>{results.breakdown.frenchClb}</span></div>
                   </div>
                 </div>
               </div>
 
               {/* Economic Factors Section */}
               <div className="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm space-y-3">
-                <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">Economic Factors</h3>
+                <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">{t.result.economic_factors}</h3>
 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center py-2 border-b border-slate-50">
-                    <span className="text-sm font-medium text-slate-600">Hourly Wage</span>
+                    <span className="text-sm font-medium text-slate-600">{t.result.categories.wage}</span>
                     <span className="font-black text-slate-900 bg-slate-100 px-2 py-0.5 rounded-lg text-xs">{results.breakdown.wage} / 55</span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-b border-slate-50">
-                    <span className="text-sm font-medium text-slate-600">Area of Employment</span>
+                    <span className="text-sm font-medium text-slate-600">{t.result.categories.area}</span>
                     <span className="font-black text-slate-900 bg-slate-100 px-2 py-0.5 rounded-lg text-xs">{results.breakdown.area} / 15</span>
                   </div>
                   <div className="flex justify-between items-center py-2">
-                    <span className="text-sm font-medium text-slate-600">Regional Bonuses</span>
+                    <span className="text-sm font-medium text-slate-600">{t.result.categories.regional}</span>
                     <span className="font-black text-slate-900 bg-slate-100 px-2 py-0.5 rounded-lg text-xs">
                       {results.breakdown.workedOutsideArea1 + results.breakdown.graduatedOutsideArea1} / 20
                     </span>
@@ -617,7 +599,7 @@ export const Calculator: React.FC = () => {
               }}
               className="w-full py-4 text-slate-400 font-bold text-xs uppercase tracking-[0.2em] hover:text-indigo-600 transition-colors"
             >
-              Restart Calculator
+              {t.result.restart}
             </button>
           </div>
         );
@@ -652,12 +634,12 @@ export const Calculator: React.FC = () => {
               onClick={nextStep}
               className="w-full py-4 rounded-[1.5rem] bg-indigo-600 text-white font-black text-sm uppercase tracking-widest shadow-xl shadow-indigo-600/30 hover:bg-indigo-500 active:scale-[0.98] transition-all flex items-center justify-center"
             >
-              Next Step
+              {t.nav.next}
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </button>
             {currentStep > 0 && (
               <button onClick={prevStep} className="w-full mt-3 text-slate-400 font-bold text-xs uppercase tracking-widest hover:text-indigo-600 transition-colors">
-                Back
+                {t.nav.back}
               </button>
             )}
           </div>

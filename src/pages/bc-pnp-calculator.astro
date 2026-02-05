@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CalculatorShell from "../components/CalculatorShell.astro";
+import { calculatorContent } from "../i18n/calculator-content";
 
 const title = "Free BC PNP Points Calculator | Check Your SIRS Score 2026";
 const description =
@@ -167,7 +168,7 @@ const jsonLd = [
   </nav>
 
   <!-- Calculator React Island - Hydrated on Load -->
-  <CalculatorShell />
+  <CalculatorShell t={calculatorContent.en} />
 
   <!-- SEO Content Section (Static HTML) -->
   <section

@@ -1,7 +1,14 @@
 ---
 import { Calculator } from './Calculator.client';
+import type { calculatorContent } from '../i18n/calculator-content';
+
+interface Props {
+  t: typeof calculatorContent.en;
+}
+
+const { t } = Astro.props;
 ---
 
 <div id="calculator-root">
-  <Calculator client:load />
+  <Calculator client:load t={t} />
 </div>

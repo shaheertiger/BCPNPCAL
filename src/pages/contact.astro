@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Contact Us - BC PNP Calculator";
+const description = "Contact the BC PNP Calculator team. Get in touch for support, feedback, or advertising inquiries.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="min-h-screen bg-slate-50 py-16 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-4">Contact Us</h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          We're here to help. Whether you have a question about the calculator, found a bug, or want to discuss advertising opportunities, we're ready to listen.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Contact Info Card -->
+        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm h-full">
+          <h2 class="text-2xl font-bold text-slate-900 mb-6">Get in Touch</h2>
+          
+          <div class="space-y-8">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900 mb-1">Email Us</h3>
+                <p class="text-slate-600 text-sm mb-2">For general inquiries, support, and feedback:</p>
+                <a href="mailto:contact@bcpnpcalculator.ca" class="text-red-600 font-bold hover:underline text-lg">contact@bcpnpcalculator.ca</a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900 mb-1">Advertising & Privacy</h3>
+                <p class="text-slate-600 text-sm">
+                  For inquiries related to advertising or data privacy, please reference "Privacy" or "Ads" in your subject line.
+                </p>
+              </div>
+            </div>
+            
+            <div class="pt-6 border-t border-slate-100">
+               <p class="text-xs text-slate-500 leading-relaxed">
+                 <strong>Note:</strong> We are unable to provide personal legal immigration advice. Please consult a licensed Regulated Canadian Immigration Consultant (RCIC) or immigration lawyer for case-specific questions.
+               </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- FAQ Quick Links -->
+        <div class="bg-slate-900 text-white p-8 rounded-[2rem] shadow-lg h-full flex flex-col justify-between">
+          <div>
+            <h2 class="text-2xl font-bold mb-6">Common Questions</h2>
+            <ul class="space-y-4">
+              <li>
+                <a href="/bc-pnp-calculator" class="group flex items-center justify-between p-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors">
+                  <span class="font-medium">How do I calculate my score?</span>
+                  <svg class="w-5 h-5 text-slate-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="/bc-pnp-draws" class="group flex items-center justify-between p-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors">
+                  <span class="font-medium">When is the next draw?</span>
+                  <svg class="w-5 h-5 text-slate-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="/privacy-policy" class="group flex items-center justify-between p-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors">
+                  <span class="font-medium">How is my data used?</span>
+                  <svg class="w-5 h-5 text-slate-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="mt-8 pt-6 border-t border-slate-700">
+             <p class="text-slate-400 text-sm">
+               We typically respond to inquiries within 24-48 business hours.
+             </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</BaseLayout>

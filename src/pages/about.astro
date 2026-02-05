@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "About Us - BC PNP Calculator";
+const description = "About BC PNP Calculator. Learn about our mission to help immigrants navigate the British Columbia Provincial Nominee Program with accurate, free tools.";
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="min-h-screen bg-slate-50 py-16 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto">
+
+      <header class="mb-12 text-center">
+        <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-4">About Us</h1>
+        <div class="h-1 w-20 bg-red-600 mx-auto rounded-full"></div>
+      </header>
+
+      <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
+
+        <h2>Our Mission</h2>
+        <p>
+          Welcome to <strong>BC PNP Calculator</strong>, your dedicated resource for navigating the British Columbia Provincial Nominee Program (BC PNP).
+        </p>
+        <p>
+          Immigration processes can be complex, overwhelming, and filled with uncertainty. Our mission is to simplify this journey by providing <strong>free, accurate, and easy-to-use tools</strong> that help prospective immigrants understand their eligibility and potential scores under the Skills Immigration Registration System (SIRS).
+        </p>
+
+        <h2>Who We Are</h2>
+        <p>
+          We are a team of technology enthusiasts and immigration advocates who believe that access to information should be free and transparent. Having navigated various immigration systems ourselves, we understand the anxiety that comes with calculating points and waiting for invitations.
+        </p>
+        <p>
+            We created this platform to bridge the gap between complex government policy documents and the practical needs of applicants.
+        </p>
+
+        <h2>What We Offer</h2>
+        <ul>
+          <li><strong>Instant Score Calculation:</strong> Our calculator is constantly updated to reflect the latest BC PNP scoring criteria.</li>
+          <li><strong>Privacy First:</strong> We believe your data belongs to you. Our calculator runs entirely in your browser—we do not store or transmit your personal profile data.</li>
+          <li><strong>Educational Guides:</strong> We provide detailed breakdowns of scoring sections, processing times, and draw history to keep you informed.</li>
+        </ul>
+
+        <h2>Transparency & Disclaimer</h2>
+        <div class="bg-amber-50 border-l-4 border-amber-400 p-4 my-6 not-prose rounded-r-lg">
+            <p class="text-amber-800 text-sm font-medium m-0">
+                <strong>Important:</strong> BC PNP Calculator is an independent, private initiative. We are <strong>not affiliated with, endorsed by, or connected to the Government of British Columbia</strong> or any official immigration authority.
+            </p>
+        </div>
+        <p>
+          While we strive for maximum accuracy, official policies can change rapidly. Our tools should be used for estimation and planning purposes only. For official advice, we always recommend consulting the official BC Government website or a licensed immigration consultant.
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>
+          Have a suggestion, found a bug, or just want to say hello? We'd love to hear from you. Please visit our <a href="/contact">Contact Page</a> to get in touch.
+        </p>
+
+      </div>
+
+    </div>
+  </article>
+</BaseLayout>
