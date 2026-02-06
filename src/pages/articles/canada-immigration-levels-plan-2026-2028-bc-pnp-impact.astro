@@ -1,0 +1,373 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Canada Immigration Levels Plan 2026–2028: How the PNP Surge and TR Cuts Reshape BC PNP Strategy";
+const description = "Detailed analysis of Canada's 2026–2028 Immigration Levels Plan and its direct impact on BC PNP candidates. Covers the 66% PNP increase, TR cuts, new TR-to-PR pathways, pool competition, and strategic advice.";
+const canonical = "https://bcpnpcalculator.ca/articles/canada-immigration-levels-plan-2026-2028-bc-pnp-impact";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": "2026-02-06",
+  "dateModified": "2026-02-06",
+  "author": {
+    "@type": "Organization",
+    "name": "BC PNP Calculator"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "BC PNP Calculator"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does the 2026–2028 Immigration Levels Plan affect BC PNP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Levels Plan increased Canada's national PNP target by 66%, from 55,000 to 91,500 admissions in 2026. BC received 5,254 nomination spots—a 31% increase over the initial 2025 allocation of 4,000. However, with 11,210 candidates in the registration pool, competition remains fierce."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the new TR-to-PR pathways in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IRCC introduced several new pathways: an accelerated track for up to 33,000 temporary foreign workers, a pathway for US H-1B visa holders, 14,000 spots for construction workers, and 5,000 spots for physicians. These are separate from standard PNP allocations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will temporary resident cuts affect BC PNP pool competition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Work permits are dropping from 367,750 in 2025 to 230,000 in 2026, and study permits from 305,900 to 155,000. Over time, fewer new temporary residents entering Canada means a gradually shrinking BC PNP pool, potentially lowering score cutoffs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the current BC PNP score cutoff in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The February 4, 2026 draw issued invitations at a minimum score of 138 points, down from 150 in previous rounds. A separate wage-based category invited candidates with job offers paying at least $70/hour, down from the $105/hour threshold used in early 2025."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many candidates are in the BC PNP pool for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of January 6, 2026, the BC PNP Skills Immigration registration pool contained 11,210 candidates competing for approximately 5,254 nomination spots. Only 76 candidates scored 140 or above, while over 3,500 candidates scored between 110 and 139."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        February 2026 Analysis
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Canada Immigration Levels Plan 2026–2028: How the PNP Surge and TR Cuts Reshape BC PNP Strategy
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        The federal government's new immigration blueprint dramatically shifts the landscape for BC PNP candidates. Here's what it means and how to adapt.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-02-06">February 6, 2026</time>
+        <span>&bull;</span>
+        <span>12 min read</span>
+      </div>
+    </header>
+
+    <!-- Key Stats -->
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">91,500</div>
+        <div class="text-sm text-slate-600 font-medium">2026 National PNP Target</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-green-600 mb-2">5,254</div>
+        <div class="text-sm text-slate-600 font-medium">BC Nomination Spots</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-red-600 mb-2">11,210</div>
+        <div class="text-sm text-slate-600 font-medium">Candidates in Pool</div>
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        In November 2025, Immigration, Refugees and Citizenship Canada (IRCC) released the <strong>2026–2028 Immigration Levels Plan</strong>, a document that sets the course for who Canada admits and how many over the next three years. For anyone pursuing permanent residence through the British Columbia Provincial Nominee Program, this plan is not an abstract policy exercise — it directly determines how many nomination spots BC receives, how competitive the pool becomes, and which alternative pathways might open up. This article breaks down every element of the Levels Plan that matters for BC PNP candidates and provides actionable strategies for navigating the new landscape.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The Big Picture: Permanent Residence Holds Steady, Temporary Entry Shrinks</h2>
+
+      <p>
+        Canada will admit <strong>380,000 permanent residents per year</strong> from 2026 through 2028. That number is stable, not growing — a deliberate pivot after years of aggressive expansion that saw targets climb as high as 500,000 in 2025. The economic class will constitute roughly 64% of admissions by 2027, making it the dominant pathway.
+      </p>
+
+      <p>
+        The more dramatic shift is on the temporary resident side. IRCC is cutting temporary resident arrivals from 673,650 in 2025 to <strong>385,000 in 2026</strong> — a 43% reduction. Work permits drop from 367,750 to 230,000 (a 37% cut), and study permits from 305,900 to 155,000 (a 49% cut). The government's stated goal is to reduce the temporary resident population below 5% of the total Canadian population by late 2027.
+      </p>
+
+      <p>
+        For BC PNP candidates, these numbers create a dual dynamic. On one hand, fewer new temporary residents entering the country means fewer new entrants into provincial nominee pools over time. On the other hand, there is a large existing population of temporary residents already in Canada who will be competing fiercely for a limited number of nomination spots.
+      </p>
+
+      <p>
+        The Levels Plan also stabilizes the family class at 69,000 admissions in 2026 (dropping slightly to 66,000 in 2027 and 2028), and increases the Francophone immigration target outside Quebec to 10.5% by 2028. A separate one-time initiative will streamline the transition of approximately 115,000 Protected Persons already on a pathway to permanent residence over a two-year period. While none of these categories directly compete with PNP, they do consume a share of the overall 380,000 annual PR cap — reinforcing why BC's PNP allocation is capped at 5,254 rather than the 9,000 the province requested.
+      </p>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+        <p class="font-semibold text-blue-900 mb-2">Key Takeaway</p>
+        <p class="text-blue-800">The short-term effect is intensified competition from candidates already in Canada. The medium-term effect (late 2026 and into 2027) should be a gradually easing pool as fewer new temporary residents arrive to replace those who transition to PR or leave.</p>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The PNP Surge: 66% More National Spots</h2>
+
+      <p>
+        The headline number for provincial nominee candidates is the national PNP admission target jumping from <strong>55,000 in 2025 to 91,500 in 2026</strong>. That is a 66% increase, and it signals that the federal government is putting more weight on provinces to select immigrants who match local labour market needs.
+      </p>
+
+      <p>
+        However, national targets do not translate into equal increases for every province. British Columbia received an allocation of <strong>5,254 nominations</strong> for 2026. While this is a 31% increase over the initial 2025 allocation of 4,000, it is 15% lower than the final 2025 figure of 6,214 (which included mid-year top-ups). Critically, BC had requested 9,000 spots — nearly double what it received.
+      </p>
+
+      <p>
+        The gap between the 91,500 national target and BC's 5,254 allocation tells us that provinces like Ontario, Alberta, and Saskatchewan are absorbing a larger share of the PNP increase. For BC candidates, the practical implication is clear: do not assume that the national PNP surge will translate into dramatically more invitations from BC. The province remains constrained.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Where Did the Extra National Spots Go?</h3>
+
+      <p>
+        Several provinces received proportionally larger increases. Ontario, which processes the most PNP applications nationally, absorbed a significant share. Alberta's AAIP and Saskatchewan's SINP also saw meaningful jumps. Manitoba, despite being smaller, has been actively issuing invitations — 102 Letters of Advice to Apply in January alone, with 70% tied to specific labour-market recruitment in agri-food processing, advanced manufacturing, and long-term care.
+      </p>
+
+      <p>
+        For BC PNP candidates who hold flexible work authorization, this raises a strategic question: <strong>is applying to another province's PNP a viable parallel strategy?</strong> Candidates with in-demand occupations and the willingness to relocate may find faster pathways through Alberta's technology streams or Saskatchewan's employer-driven categories.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">New TR-to-PR Pathways: Alternatives to PNP</h2>
+
+      <p>
+        One of the most consequential but under-discussed elements of the 2026 landscape is the emergence of new pathways from temporary to permanent residence that operate outside the standard PNP framework. Understanding these is essential because they may be more accessible for some candidates than waiting for a BC PNP invitation.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Temporary Foreign Worker Accelerated Track</h3>
+
+      <p>
+        IRCC announced in Budget 2025 that over 2026 and 2027, up to <strong>33,000 temporary foreign workers</strong> will receive an accelerated path to permanent residence. This initiative focuses on work permit holders in high-demand sectors, with a clear emphasis on workers in <strong>rural regions</strong>. If you hold a work permit in BC outside the Lower Mainland — particularly in healthcare, agriculture, or manufacturing — this pathway could supplement or replace a PNP application.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Construction Worker Allocation</h3>
+
+      <p>
+        Recognizing the national housing crisis, IRCC has set aside <strong>14,000 PR spots specifically for construction workers</strong> in 2026. This is separate from PNP allocations. BC's housing market and infrastructure expansion make the province a natural beneficiary of this program. Construction workers in NOC codes related to residential and commercial building should monitor IRCC announcements closely for application details.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Physician Pathway</h3>
+
+      <p>
+        IRCC is reserving <strong>5,000 federal admission spaces for physicians</strong> nominated by provinces and territories. These spots are in addition to standard PNP allocations. For licensed doctors with valid job offers in BC, this could be a faster route than the BC PNP Health Authority stream, which competes for spots within BC's limited 5,254 allocation.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">US H-1B Visa Holder Pathway</h3>
+
+      <p>
+        Following the success of the 2023 pilot that reached capacity almost immediately, Canada is launching a <strong>permanent pathway for US H-1B visa holders</strong> in 2026. This targets high-skilled technology workers and could draw talent from the US tech sector to BC's already robust technology ecosystem. For current H-1B holders considering a move north, this pathway avoids the PNP point system entirely.
+      </p>
+
+      <div class="bg-green-50 border-l-4 border-green-500 p-6 my-8">
+        <p class="font-semibold text-green-900 mb-2">Strategic Insight</p>
+        <p class="text-green-800">These new pathways are not replacements for PNP but they reduce pressure on the system. If even 5–10% of candidates who would have competed in BC PNP pools qualify for these alternative routes instead, the effective competition for remaining PNP spots decreases.</p>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">BC PNP Pool Competition: The Numbers Behind the Odds</h2>
+
+      <p>
+        As of January 6, 2026, the BC PNP Skills Immigration registration pool contained <strong>11,210 candidates</strong> competing for a share of 5,254 nomination spots. The math alone suggests that fewer than half of current registrants will receive an invitation this year, but the score distribution reveals a more nuanced picture.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Score Distribution Breakdown</h3>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-6 py-3 text-left text-sm font-bold text-slate-700">Score Range</th>
+              <th class="px-6 py-3 text-left text-sm font-bold text-slate-700">Candidates</th>
+              <th class="px-6 py-3 text-left text-sm font-bold text-slate-700">Outlook</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="bg-green-50">
+              <td class="px-6 py-3 font-medium">150+</td>
+              <td class="px-6 py-3">9</td>
+              <td class="px-6 py-3 text-green-700 font-medium">Very likely invited</td>
+            </tr>
+            <tr class="bg-green-50">
+              <td class="px-6 py-3 font-medium">140–149</td>
+              <td class="px-6 py-3">67</td>
+              <td class="px-6 py-3 text-green-700 font-medium">Strong chances</td>
+            </tr>
+            <tr class="bg-yellow-50">
+              <td class="px-6 py-3 font-medium">130–139</td>
+              <td class="px-6 py-3">791</td>
+              <td class="px-6 py-3 text-yellow-700 font-medium">Competitive — depends on draw pace</td>
+            </tr>
+            <tr class="bg-orange-50">
+              <td class="px-6 py-3 font-medium">120–129</td>
+              <td class="px-6 py-3">1,170</td>
+              <td class="px-6 py-3 text-orange-700 font-medium">Possible if cutoffs continue dropping</td>
+            </tr>
+            <tr class="bg-red-50">
+              <td class="px-6 py-3 font-medium">110–119</td>
+              <td class="px-6 py-3">1,635</td>
+              <td class="px-6 py-3 text-red-700 font-medium">Unlikely without score improvements</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3 font-medium">Below 110</td>
+              <td class="px-6 py-3">7,538</td>
+              <td class="px-6 py-3 text-red-700 font-medium">Very unlikely in 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The February 4, 2026 draw set the minimum score at <strong>138 points</strong>, down from 150 in earlier rounds. A separate wage-based category invited candidates with job offers paying at least <strong>$70 per hour</strong>, down from the $105/hour threshold that dominated early 2025 draws. Both thresholds moving downward is a positive signal that competition is easing — modestly, but measurably.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">What This Means for International Graduates in BC</h2>
+
+      <p>
+        International graduates face a particularly challenging intersection of Levels Plan changes. The legacy International Post-Graduate (IPG) stream officially closed on January 7, 2026, and the replacement streams — Bachelor's, Master's, and Doctorate categories announced in early 2025 — remain suspended indefinitely due to limited nomination allocations. At the same time, study permit issuances are being cut by 49%, which means fewer new international students arriving in BC over the coming years.
+      </p>
+
+      <p>
+        For graduates currently in BC, the path to permanent residence now runs almost exclusively through the Skills Immigration streams, which require a qualifying job offer. This makes the employer relationship more critical than ever. Graduates who secure full-time employment in NOC TEER 0–3 occupations with wages above the median for their region can still compete effectively in the SIRS pool. Those in the tech sector benefit from BC's historic emphasis on technology occupations, though the specific priority list for 2026 has not yet been published. The 49% study permit reduction will eventually thin the pool of future graduate competitors, but current graduates already in the workforce should focus on maximizing their SIRS score now — particularly through language testing, as a CLB 10 score in English yields maximum language points.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Why Cutoffs Are Dropping — And Whether the Trend Will Continue</h2>
+
+      <p>
+        Three factors explain the downward movement in BC PNP cutoffs:
+      </p>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Inventory clearing:</strong> The BC PNP nearly cleared its International Graduate Program (IGP) inventory in late 2025, freeing up nomination spots for the Skills Immigration streams. With only a few hundred IGP invitations remaining for 2026, more of BC's 5,254 allocation flows to the main SI pool.</li>
+        <li><strong>Predictable draw resumption:</strong> At a January 27, 2026 meeting with the Canadian Bar Association, BC PNP representatives confirmed their intention to resume <strong>consistent and predictable draws</strong> — a departure from the sporadic, high-threshold draws of 2025. Regular draws naturally lower cutoffs because the pool is drained incrementally rather than in large, infrequent bursts.</li>
+        <li><strong>Temporary resident contraction:</strong> Fewer new work and study permits means fewer new high-scoring candidates entering the pool to replace those who are invited. This creates a gradual deflationary pressure on scores throughout the year.</li>
+      </ol>
+
+      <p>
+        Should the trend continue? The structural factors point to <strong>yes</strong>, though with caveats. If IRCC grants BC additional nominations mid-year (as it did in 2025), cutoffs could drop further. If BC introduces new priority occupations that target a narrow band of candidates, some draws may see artificially higher cutoffs for those categories while general draws continue to ease.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Priority Occupations: What BC PNP Told the CBA</h2>
+
+      <p>
+        At the January 27 CBA meeting, BC PNP officials offered several significant clarifications about program direction for 2026:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>No points system overhaul:</strong> The SIRS scoring model is staying. Candidates should not expect structural changes to how education, work experience, language, wage, and regional factors are weighted.</li>
+        <li><strong>Priority occupation changes coming:</strong> The program will adjust which occupations receive priority, though specific NOC codes were not disclosed. Officials described the goal as <strong>"rightsizing both the number and depth of priorities"</strong> — suggesting fewer but more targeted priority categories.</li>
+        <li><strong>Express Entry emphasis:</strong> The balance between Express Entry BC (EEBC) and non-Express Entry Skills Immigration streams will remain similar to 2025, with a <strong>slight tilt toward Express Entry</strong>. Candidates with active Express Entry profiles gain a marginal advantage.</li>
+        <li><strong>Regional points staying:</strong> No plans to remove the regional bonus. Candidates working outside Metro Vancouver continue to benefit from up to 25 extra SIRS points.</li>
+        <li><strong>No profile editing feature:</strong> The ability to edit existing profiles remains unavailable. If your circumstances change — a new job, updated language scores, additional work experience — you must submit an entirely new registration. This creates friction but also opportunity: a fresh profile with higher scores starts at the top of the queue for the next draw.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Strategic Recommendations for 2026</h2>
+
+      <p>
+        Given the Levels Plan context and BC PNP's stated direction, here are concrete strategies to maximize your chances.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">1. Pursue Express Entry Alignment</h3>
+      <p>
+        If you qualify for both the EEBC and the standard SI stream, prioritize the Express Entry-aligned pathway. BC PNP has signalled a slight emphasis on EEBC, and a provincial nomination through Express Entry adds 600 CRS points to your federal profile — virtually guaranteeing a federal invitation. Processing times through Express Entry (approximately 6 months) are also faster than the traditional paper-based SI route.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">2. Investigate Alternative TR-to-PR Routes</h3>
+      <p>
+        Do not treat BC PNP as your only pathway. The new TFW accelerated track, construction worker allocation, and physician pathway may be faster and less competitive. If you are a temporary foreign worker in a rural BC community, the 33,000-spot TFW program deserves serious attention. Apply to BC PNP and simultaneously monitor IRCC for these parallel programs.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">3. Resubmit Profiles When Your Score Improves</h3>
+      <p>
+        Since profile editing is unavailable, your only option when circumstances change is to submit a new registration. Do not wait. If you have completed additional work experience, received higher language test scores, or secured a higher-paying job offer, create a fresh profile immediately. With cutoffs at 138 and trending downward, even a 5–10 point improvement could move you from the competitive zone into the strong-chances zone.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">4. Consider Regional Employment</h3>
+      <p>
+        BC PNP's regional points bonus (up to 25 points) is staying, and officials hinted at potential future draws focused on regions north of the Lower Mainland, possibly targeting clean-tech occupations. A job offer in the Interior, Northern BC, or Vancouver Island provides a meaningful score boost and may align with emerging priority categories.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">5. Monitor Other Provinces</h3>
+      <p>
+        With the national PNP target at 91,500, provinces beyond BC are issuing more invitations. Manitoba is actively targeting skilled trades workers and recently added 16 new skilled trades occupations to its Temporary Resident Retention Pilot while removing hospitality and food services — a clear signal of shifting sector priorities. New Brunswick issued 379 invitations across three streams in January alone, covering Express Entry, Skilled Worker, and Strategic Initiative pathways. Alberta's tech-focused streams continue to expand, and Saskatchewan's employer-driven International Skilled Worker category remains one of the most accessible PNP pathways nationally.
+      </p>
+      <p>
+        If your occupation and personal circumstances allow geographic flexibility, a multi-province strategy increases your odds of receiving at least one nomination. Keep in mind that you can hold active PNP registrations in multiple provinces simultaneously — there is no rule preventing parallel applications, though you can only accept one nomination at a time.
+      </p>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+        <p class="font-semibold text-amber-900 mb-2">Important Reminder</p>
+        <p class="text-amber-800">BC PNP application fees increased from $1,475 to $1,750 effective January 22, 2026. Factor this into your budget alongside federal PR application fees, language testing, credential assessment, and settlement costs. Our <a href="/articles/bc-pnp-cost-guide-2026" class="text-amber-700 underline font-semibold">BC PNP Cost Guide 2026</a> provides a complete budget breakdown.</p>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The Bottom Line</h2>
+
+      <p>
+        The 2026–2028 Immigration Levels Plan reshapes the BC PNP environment in ways that are broadly positive but demand strategic adaptation. The national PNP quota surge does not automatically translate into proportionally more BC invitations — the province's 5,254 allocation is constrained. But declining cutoff scores, regular draws, and new federal TR-to-PR pathways collectively improve the outlook for well-prepared candidates.
+      </p>
+
+      <p>
+        The candidates who will succeed in 2026 are those who treat immigration as a portfolio strategy: maintaining a competitive BC PNP registration while actively pursuing parallel pathways, continuously improving their scores, and staying informed as BC PNP releases its priority occupation updates throughout the year.
+      </p>
+
+      <p>
+        Use our <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">free BC PNP Calculator</a> to estimate your current SIRS score and identify where you can gain additional points. With cutoffs at 138 and trending downward, a clear-eyed assessment of your score — and a plan to improve it — is the most valuable thing you can do right now.
+      </p>
+
+    </div>
+
+    <!-- Related Articles -->
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-2026-allocation-priorities" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Allocation</div>
+          <div class="font-bold text-gray-900">BC PNP 2026 Allocation: 5,254 Nominations & Priorities</div>
+        </a>
+        <a href="/articles/maximize-bc-pnp-score-tips" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">Strategy</div>
+          <div class="font-bold text-gray-900">How to Maximize Your BC PNP Score</div>
+        </a>
+        <a href="/articles/bc-pnp-cost-guide-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Budget</div>
+          <div class="font-bold text-gray-900">BC PNP Cost Guide 2026: Complete Breakdown</div>
+        </a>
+        <a href="/articles/canada-pnp-news-2026-all-provinces" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">News</div>
+          <div class="font-bold text-gray-900">Canada PR News 2026: All Provinces</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
