@@ -1,0 +1,105 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  keywords?: string;
+  datePublished?: string;
+  dateModified?: string;
+  articleSection?: string;
+  breadcrumbLabel?: string;
+  slug: string;
+  jsonLd?: object | object[];
+  hreflangs?: { href: string; lang: string }[];
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  keywords,
+  datePublished = "2026-01-29",
+  dateModified = "2026-02-09",
+  articleSection = "Immigration Guide",
+  breadcrumbLabel,
+  slug,
+  jsonLd: extraJsonLd,
+  hreflangs = [],
+} = Astro.props;
+
+const pageUrl = `https://bcpnpcalculator.ca/articles/${slug}`;
+const canonicalUrl = canonical || pageUrl;
+const crumbLabel = breadcrumbLabel || title.replace(/ [-|:].*/g, "").slice(0, 60);
+
+// Check if extra schemas already include an Article type
+const extraSchemas: object[] = extraJsonLd
+  ? Array.isArray(extraJsonLd)
+    ? extraJsonLd
+    : [extraJsonLd]
+  : [];
+
+const hasExistingArticle = extraSchemas.some(
+  (s: any) => s["@type"] === "Article" || s["@type"] === "NewsArticle"
+);
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: description,
+  url: pageUrl,
+  datePublished: datePublished,
+  dateModified: dateModified,
+  articleSection: articleSection,
+  inLanguage: "en",
+  author: {
+    "@type": "Organization",
+    name: "BC PNP Calculator",
+    url: "https://bcpnpcalculator.ca",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "BC PNP Calculator",
+    url: "https://bcpnpcalculator.ca",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://bcpnpcalculator.ca/android-chrome-512x512.png",
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": pageUrl,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://bcpnpcalculator.ca" },
+    { "@type": "ListItem", position: 2, name: "Articles", item: "https://bcpnpcalculator.ca/news" },
+    { "@type": "ListItem", position: 3, name: crumbLabel, item: pageUrl },
+  ],
+};
+
+// Build final schema list: only add auto Article schema if page doesn't have one
+let allSchemas: object[] = hasExistingArticle ? [] : [articleSchema];
+allSchemas.push(breadcrumbSchema);
+allSchemas = [...allSchemas, ...extraSchemas];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  ogImage={ogImage}
+  keywords={keywords}
+  jsonLd={allSchemas}
+  hreflangs={hreflangs}
+>
+  <slot />
+</BaseLayout>

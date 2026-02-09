@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 const title = "BC PNP Application Refused? Complete 2026 Guide to Appeals and Reconsideration";
 const description = "Learn what to do if your BC PNP application is refused. This guide covers common refusal reasons, the reconsideration process, judicial review options, and how to strengthen your next application in 2026.";
@@ -23,7 +23,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<ArticleLayout slug="bc-pnp-refusal-appeal-reconsideration-guide-2026" datePublished="2026-02-09" dateModified="2026-02-09" keywords="BC PNP refusal, BC PNP appeal, BC PNP reconsideration, BC PNP rejected" title={title} description={description} canonical={canonical}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   
   <article class="max-w-4xl mx-auto px-4 py-12">
@@ -424,4 +424,4 @@ const articleSchema = {
     </div>
 
   </article>
-</BaseLayout>
+</ArticleLayout>

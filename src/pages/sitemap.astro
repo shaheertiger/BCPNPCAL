@@ -3,9 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "Sitemap - BC PNP Calculator";
 const description = "Complete list of pages on BC PNP Calculator. Find calculators, guides, and latest draw updates easily.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://bcpnpcalculator.ca" },
+    { "@type": "ListItem", position: 2, name: "Sitemap", item: "https://bcpnpcalculator.ca/sitemap" },
+  ],
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} canonical="https://bcpnpcalculator.ca/sitemap" jsonLd={jsonLd}>
   <main class="min-h-screen bg-slate-50 py-16 px-4 sm:px-6">
     <div class="max-w-5xl mx-auto space-y-12">
 

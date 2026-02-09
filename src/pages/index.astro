@@ -66,23 +66,57 @@ const jsonLd = [
     "@type": "WebSite",
     name: "BC PNP Points Calculator",
     url: "https://bcpnpcalculator.ca",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://bcpnpcalculator.ca/bc-pnp-calculator",
-      },
-      "query-input": "required name=search_term_string",
+    inLanguage: ["en", "zh", "hi"],
+    publisher: {
+      "@type": "Organization",
+      name: "BC PNP Calculator",
+      url: "https://bcpnpcalculator.ca",
     },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is a competitive BC PNP score?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Draw scores fluctuate based on the specific stream (Tech, Healthcare, Childcare). Generally, a score above 115 is highly competitive, while scores between 95-110 are often sufficient for targeted draws.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How often are BC PNP draws held?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "BC typically conducts draws weekly, alternating between general draws and targeted draws for high-demand occupations like Tech, Healthcare, and Early Childhood Educators.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I improve my BC PNP score?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. The most effective ways to boost your BC PNP calculator result include obtaining a higher hourly wage, improving your CLB language results, or choosing a job offer in a regional district outside of Metro Vancouver.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does a high score guarantee an invitation to apply?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "While our BC PNP score calculator provides a reliable estimate, an invitation to apply (ITA) depends on your profile meeting the minimum cutoff for the specific draw period.",
+        },
+      },
+    ],
   },
 ];
 
 const hreflangs = [
   { lang: "en", href: "https://bcpnpcalculator.ca/" },
   { lang: "zh", href: "https://bcpnpcalculator.ca/zh" },
-  // { lang: 'pa', href: 'https://bcpnpcalculator.ca/pa' },
-  // { lang: 'hi', href: 'https://bcpnpcalculator.ca/hi' },
-  // { lang: 'ar', href: 'https://bcpnpcalculator.ca/ar' },
+  { lang: "hi", href: "https://bcpnpcalculator.ca/hi" },
   { lang: "x-default", href: "https://bcpnpcalculator.ca/" },
 ];
 ---

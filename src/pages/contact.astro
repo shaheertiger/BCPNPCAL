@@ -3,9 +3,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "Contact Us - BC PNP Calculator";
 const description = "Contact the BC PNP Calculator team. Get in touch for support, feedback, or advertising inquiries.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: title,
+    description: description,
+    url: "https://bcpnpcalculator.ca/contact",
+    mainEntity: {
+      "@type": "Organization",
+      name: "BC PNP Calculator",
+      url: "https://bcpnpcalculator.ca",
+      email: "contact@bcpnpcalculator.ca",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Customer Support",
+        email: "contact@bcpnpcalculator.ca",
+        availableLanguage: "English",
+      },
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://bcpnpcalculator.ca" },
+      { "@type": "ListItem", position: 2, name: "Contact", item: "https://bcpnpcalculator.ca/contact" },
+    ],
+  },
+];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} canonical="https://bcpnpcalculator.ca/contact" jsonLd={jsonLd} keywords="contact BC PNP Calculator, BC PNP support, immigration calculator help">
   <div class="min-h-screen bg-slate-50 py-16 px-4 sm:px-6">
     <div class="max-w-4xl mx-auto">
       
