@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 const title = "BC PNP for International Students & Graduates: Complete 2026 Pathway Guide";
 const description = "Comprehensive guide to the BC PNP pathways for international students and recent graduates in 2026. Learn about the new Bachelor's, Master's, and Doctorate streams, eligibility requirements, and step-by-step application process.";
@@ -23,7 +23,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<ArticleLayout slug="bc-pnp-international-students-graduates-pathway-2026" datePublished="2026-02-09" dateModified="2026-02-09" keywords="BC PNP international students, BC PNP graduate pathway 2026, student immigration BC" title={title} description={description} canonical={canonical}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   
   <article class="max-w-4xl mx-auto px-4 py-12">
@@ -359,4 +359,4 @@ const articleSchema = {
     </div>
 
   </article>
-</BaseLayout>
+</ArticleLayout>

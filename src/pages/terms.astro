@@ -3,9 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "Terms of Service - BC PNP Calculator";
 const description = "Terms of Service for BC PNP Calculator. Read the terms and conditions for using our website, calculator tools, and our advertising policies.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://bcpnpcalculator.ca" },
+    { "@type": "ListItem", position: 2, name: "Terms of Service", item: "https://bcpnpcalculator.ca/terms" },
+  ],
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} canonical="https://bcpnpcalculator.ca/terms" jsonLd={jsonLd} keywords="BC PNP Calculator terms of service, terms and conditions, disclaimer">
   <article class="min-h-screen bg-slate-50 py-16 px-4 sm:px-6">
     <div class="max-w-3xl mx-auto">
 

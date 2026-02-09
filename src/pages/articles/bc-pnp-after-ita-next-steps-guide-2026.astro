@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 const title = "BC PNP After ITA: Complete 2026 Guide to Your Next Steps";
 const description = "Received your BC PNP Invitation to Apply? This comprehensive guide covers everything from your 30-day deadline to PR application, including required documents, fees, and timeline expectations for 2026.";
@@ -23,7 +23,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<ArticleLayout slug="bc-pnp-after-ita-next-steps-guide-2026" datePublished="2026-02-09" dateModified="2026-02-09" keywords="BC PNP after ITA, BC PNP next steps after invitation, ITA response guide" title={title} description={description} canonical={canonical}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   
   <article class="max-w-4xl mx-auto px-4 py-12">
@@ -482,4 +482,4 @@ const articleSchema = {
     </div>
 
   </article>
-</BaseLayout>
+</ArticleLayout>

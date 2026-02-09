@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 const title = "Canada Immigration Levels Plan 2026–2028: How the PNP Surge and TR Cuts Reshape BC PNP Strategy";
 const description = "Detailed analysis of Canada's 2026–2028 Immigration Levels Plan and its direct impact on BC PNP candidates. Covers the 66% PNP increase, TR cuts, new TR-to-PR pathways, pool competition, and strategic advice.";
@@ -70,7 +70,7 @@ const faqSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<ArticleLayout slug="canada-immigration-levels-plan-2026-2028-bc-pnp-impact" datePublished="2026-02-06" dateModified="2026-02-06" keywords="Canada immigration levels plan 2026, PNP allocation 2026-2028, BC PNP impact" title={title} description={description} canonical={canonical}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
@@ -370,4 +370,4 @@ const faqSchema = {
       </div>
     </div>
   </article>
-</BaseLayout>
+</ArticleLayout>
