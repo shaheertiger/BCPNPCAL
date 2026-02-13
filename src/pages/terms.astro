@@ -16,177 +16,339 @@ const jsonLd = {
 
 <BaseLayout title={title} description={description} canonical="https://bcpnpcalculator.ca/terms" jsonLd={jsonLd} keywords="BC PNP Calculator terms of service, terms and conditions, disclaimer">
   <article class="min-h-screen bg-slate-50 py-16 px-4 sm:px-6">
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-4xl mx-auto">
 
+      <!-- Header -->
       <header class="mb-12 text-center">
-        <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-4">Terms of Service</h1>
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-2xl mb-6">
+          <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+        <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-3">Terms of Service</h1>
         <p class="text-slate-500 text-sm">Last updated: February 2026</p>
       </header>
 
-      <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
+      <!-- Important Disclaimer Banner -->
+      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 mb-10 flex items-start gap-4">
+        <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+          </svg>
+        </div>
+        <div>
+          <p class="text-amber-800 font-semibold text-sm mb-1">Independent Resource</p>
+          <p class="text-amber-700 text-sm leading-relaxed">BC PNP Calculator is <strong>not affiliated with, endorsed by, or connected to the Government of British Columbia</strong> or any official immigration authority. This is an independent educational tool.</p>
+        </div>
+      </div>
 
-        <h2>Acceptance of Terms</h2>
-        <p>
-          By accessing and using BC PNP Calculator (bcpnpcalculator.ca), you accept and agree to be bound by these Terms of Service and our <a href="/privacy-policy">Privacy Policy</a>. If you do not agree to these terms, please do not use our website.
-        </p>
-        <p>
-          We reserve the right to modify these Terms of Service at any time. Your continued use of the website following any changes constitutes your acceptance of the modified terms.
-        </p>
+      <!-- Table of Contents -->
+      <nav class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 mb-10">
+        <h2 class="text-lg font-bold text-slate-900 mb-4">On This Page</h2>
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-2">
+          <a href="#acceptance" class="text-sm text-slate-600 hover:text-red-600 transition-colors py-1.5 border-b border-slate-100 flex items-center gap-2">
+            <span class="text-slate-400 font-mono text-xs w-5">01</span> Acceptance of Terms
+          </a>
+          <a href="#disclaimer" class="text-sm text-slate-600 hover:text-red-600 transition-colors py-1.5 border-b border-slate-100 flex items-center gap-2">
+            <span class="text-slate-400 font-mono text-xs w-5">02</span> Disclaimer &amp; Accuracy
+          </a>
+          <a href="#calculator" class="text-sm text-slate-600 hover:text-red-600 transition-colors py-1.5 border-b border-slate-100 flex items-center gap-2">
+            <span class="text-slate-400 font-mono text-xs w-5">03</span> Use of the Calculator
+          </a>
+          <a href="#advertising" class="text-sm text-slate-600 hover:text-red-600 transition-colors py-1.5 border-b border-slate-100 flex items-center gap-2">
+            <span class="text-slate-400 font-mono text-xs w-5">04</span> Advertising
+          </a>
+          <a href="#conduct" class="text-sm text-slate-600 hover:text-red-600 transition-colors py-1.5 border-b border-slate-100 flex items-center gap-2">
+            <span class="text-slate-400 font-mono text-xs w-5">05</span> User Conduct
+          </a>
+          <a href="#liability" class="text-sm text-slate-600 hover:text-red-600 transition-colors py-1.5 border-b border-slate-100 flex items-center gap-2">
+            <span class="text-slate-400 font-mono text-xs w-5">06</span> Liability &amp; Indemnification
+          </a>
+          <a href="#ip" class="text-sm text-slate-600 hover:text-red-600 transition-colors py-1.5 border-b border-slate-100 flex items-center gap-2">
+            <span class="text-slate-400 font-mono text-xs w-5">07</span> Intellectual Property
+          </a>
+          <a href="#general" class="text-sm text-slate-600 hover:text-red-600 transition-colors py-1.5 border-b border-slate-100 flex items-center gap-2">
+            <span class="text-slate-400 font-mono text-xs w-5">08</span> General Provisions
+          </a>
+        </div>
+      </nav>
 
-        <h2>Disclaimer</h2>
-        <p>
-          BC PNP Calculator is an independent educational resource and is <strong>not affiliated with, endorsed by, or connected to the Government of British Columbia</strong> or any official immigration authority.
-        </p>
-        <p>
-          The calculator and information provided on this website are for informational purposes only and should not be considered legal or immigration advice. Always consult with a licensed immigration consultant or lawyer for professional guidance.
-        </p>
+      <!-- Sections -->
+      <div class="space-y-8">
 
-        <h2>Accuracy of Information</h2>
-        <p>
-          While we strive to provide accurate and up-to-date information, we make no warranties or representations about the accuracy, completeness, or reliability of any content on this website. Immigration policies and point systems are subject to change without notice.
-        </p>
-        <p>
-          We are not responsible for any errors or omissions in the content provided, nor for the results obtained from the use of this information.
-        </p>
+        <!-- Section 1: Acceptance -->
+        <section id="acceptance" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-red-100 text-red-600 rounded-lg text-sm font-bold">1</span>
+            <h2 class="text-xl font-bold text-slate-900">Acceptance of Terms</h2>
+          </div>
+          <div class="text-slate-600 leading-relaxed space-y-4 text-[0.95rem]">
+            <p>
+              By accessing and using BC PNP Calculator (bcpnpcalculator.ca), you accept and agree to be bound by these Terms of Service and our <a href="/privacy-policy" class="text-red-600 hover:underline font-medium">Privacy Policy</a>. If you do not agree to these terms, please do not use our website.
+            </p>
+            <p>
+              We reserve the right to modify these Terms of Service at any time. Your continued use of the website following any changes constitutes your acceptance of the modified terms.
+            </p>
+          </div>
+        </section>
 
-        <h2>Use of the Calculator</h2>
-        <p>
-          The BC PNP points calculator is a tool designed to help you estimate your score under the Skills Immigration Registration System (SIRS). The results are estimates only and do not guarantee eligibility or an invitation to apply.
-        </p>
-        <p>
-          Your actual score may differ based on official assessment criteria applied by the BC PNP. All calculator inputs are processed locally in your browser and are not stored on our servers.
-        </p>
+        <!-- Section 2: Disclaimer & Accuracy -->
+        <section id="disclaimer" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-red-100 text-red-600 rounded-lg text-sm font-bold">2</span>
+            <h2 class="text-xl font-bold text-slate-900">Disclaimer &amp; Accuracy</h2>
+          </div>
+          <div class="text-slate-600 leading-relaxed space-y-4 text-[0.95rem]">
+            <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+              <p class="text-red-800 text-sm leading-relaxed">
+                <strong>Important:</strong> The calculator and information provided on this website are for <strong>informational purposes only</strong> and should not be considered legal or immigration advice. Always consult with a licensed immigration consultant or lawyer for professional guidance.
+              </p>
+            </div>
+            <p>
+              While we strive to provide accurate and up-to-date information, we make no warranties or representations about the accuracy, completeness, or reliability of any content on this website. Immigration policies and point systems are subject to change without notice.
+            </p>
+            <p>
+              We are not responsible for any errors or omissions in the content provided, nor for the results obtained from the use of this information.
+            </p>
+          </div>
+        </section>
 
-        <h2>Advertising and Sponsored Content</h2>
-        <p>
-          Our website displays advertisements provided by third-party advertising networks, including Google AdSense. By using our website, you acknowledge and agree to the following:
-        </p>
-        <ul>
-          <li><strong>Third-Party Advertisements:</strong> Advertisements displayed on our website are provided by third-party advertising networks. We do not endorse and are not responsible for the content, products, or services advertised.</li>
-          <li><strong>Cookies and Tracking:</strong> Third-party advertisers may use cookies and similar tracking technologies to serve personalized ads based on your browsing history. For more information, please see our <a href="/privacy-policy">Privacy Policy</a>.</li>
-          <li><strong>Ad Content:</strong> While we strive to ensure advertisements are appropriate, we do not control the specific ads displayed. If you encounter any inappropriate or offensive advertisements, please report them to us.</li>
-          <li><strong>Click-Through Responsibility:</strong> When you click on an advertisement, you will be directed to the advertiser's website. You are subject to that website's terms of service and privacy policy. We are not responsible for any transactions or interactions you have with advertisers.</li>
-          <li><strong>No Affiliation:</strong> The appearance of advertisements on our website does not imply endorsement of the advertised products, services, or companies.</li>
-        </ul>
+        <!-- Section 3: Calculator -->
+        <section id="calculator" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-red-100 text-red-600 rounded-lg text-sm font-bold">3</span>
+            <h2 class="text-xl font-bold text-slate-900">Use of the Calculator</h2>
+          </div>
+          <div class="text-slate-600 leading-relaxed space-y-4 text-[0.95rem]">
+            <p>
+              The BC PNP points calculator is a tool designed to help you estimate your score under the Skills Immigration Registration System (SIRS). The results are <strong>estimates only</strong> and do not guarantee eligibility or an invitation to apply.
+            </p>
+            <p>
+              Your actual score may differ based on official assessment criteria applied by the BC PNP.
+            </p>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-start gap-3">
+              <svg class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <p class="text-emerald-700 text-sm leading-relaxed">
+                <strong>Privacy note:</strong> All calculator inputs are processed locally in your browser and are not stored on our servers.
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <h2>Consent to Advertising</h2>
-        <p>
-          By using this website, you consent to:
-        </p>
-        <ul>
-          <li>The display of advertisements on our website pages</li>
-          <li>The use of cookies and similar technologies by advertising networks to serve relevant advertisements</li>
-          <li>The collection of certain non-personal information by advertising partners as described in our <a href="/privacy-policy">Privacy Policy</a></li>
-        </ul>
-        <p>
-          You may manage your advertising preferences through your browser settings or through the opt-out mechanisms described in our <a href="/privacy-policy">Privacy Policy</a>.
-        </p>
+        <!-- Section 4: Advertising -->
+        <section id="advertising" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-red-100 text-red-600 rounded-lg text-sm font-bold">4</span>
+            <h2 class="text-xl font-bold text-slate-900">Advertising &amp; Sponsored Content</h2>
+          </div>
+          <div class="text-slate-600 leading-relaxed space-y-4 text-[0.95rem]">
+            <p>
+              Our website may display advertisements provided by third-party advertising networks, including Google AdSense. By using our website, you acknowledge and agree to the following:
+            </p>
+            <div class="space-y-3">
+              <div class="flex items-start gap-3 bg-slate-50 rounded-xl p-4 border border-slate-100">
+                <svg class="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                <div>
+                  <p class="font-semibold text-slate-800 text-sm">Third-Party Advertisements</p>
+                  <p class="text-sm text-slate-500 mt-1">Ads are provided by third-party networks. We do not endorse and are not responsible for the content, products, or services advertised.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 bg-slate-50 rounded-xl p-4 border border-slate-100">
+                <svg class="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                <div>
+                  <p class="font-semibold text-slate-800 text-sm">Cookies &amp; Tracking</p>
+                  <p class="text-sm text-slate-500 mt-1">Third-party advertisers may use cookies and similar technologies to serve personalized ads. See our <a href="/privacy-policy" class="text-red-600 hover:underline">Privacy Policy</a> for details.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 bg-slate-50 rounded-xl p-4 border border-slate-100">
+                <svg class="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                <div>
+                  <p class="font-semibold text-slate-800 text-sm">Click-Through Responsibility</p>
+                  <p class="text-sm text-slate-500 mt-1">When you click on an ad, you are directed to the advertiser's website and are subject to their terms and privacy policy.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 bg-slate-50 rounded-xl p-4 border border-slate-100">
+                <svg class="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                <div>
+                  <p class="font-semibold text-slate-800 text-sm">No Endorsement</p>
+                  <p class="text-sm text-slate-500 mt-1">The appearance of advertisements does not imply endorsement of the advertised products, services, or companies.</p>
+                </div>
+              </div>
+            </div>
 
-        <h2>Google AdSense Terms</h2>
-        <p>
-          As a publisher using Google AdSense, we are required to inform you that:
-        </p>
-        <ul>
-          <li>Google, as a third-party vendor, uses cookies to serve ads on our website</li>
-          <li>Google's use of the DoubleClick cookie enables it and its partners to serve ads based on your visits to our site and other sites on the Internet</li>
-          <li>You may opt out of the use of the DoubleClick cookie for interest-based advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ads Settings</a></li>
-        </ul>
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 mt-4">
+              <p class="text-blue-800 font-semibold text-sm mb-2">Google AdSense</p>
+              <ul class="text-blue-700 text-sm space-y-1.5 leading-relaxed">
+                <li>Google uses cookies, including the DoubleClick cookie, to serve ads on our website.</li>
+                <li>You may opt out of the DoubleClick cookie at <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="underline font-medium hover:text-blue-900">Google Ads Settings</a>.</li>
+              </ul>
+            </div>
 
-        <h2>Prohibited Actions</h2>
-        <p>
-          When using our website, you agree not to:
-        </p>
-        <ul>
-          <li>Click on advertisements with the intent to generate fraudulent revenue</li>
-          <li>Use automated systems, bots, or scripts to interact with advertisements</li>
-          <li>Encourage others to click on advertisements in a deceptive manner</li>
-          <li>Attempt to circumvent or interfere with ad-serving technologies</li>
-          <li>Use the website for any unlawful purpose or in violation of any applicable laws</li>
-          <li>Attempt to gain unauthorized access to our systems or interfere with the proper functioning of the website</li>
-          <li>Reproduce, duplicate, copy, sell, or exploit any portion of the website without our express written permission</li>
-        </ul>
+            <p>
+              You may manage your advertising preferences through your browser settings or the opt-out mechanisms described in our <a href="/privacy-policy" class="text-red-600 hover:underline font-medium">Privacy Policy</a>.
+            </p>
+          </div>
+        </section>
 
-        <h2>User-Generated Content</h2>
-        <p>
-          If you submit any content to our website (such as comments or feedback), you grant us a non-exclusive, royalty-free, perpetual, and worldwide license to use, reproduce, modify, and distribute such content. You represent that you own or have the necessary rights to submit such content and that it does not violate any third-party rights.
-        </p>
+        <!-- Section 5: User Conduct -->
+        <section id="conduct" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-red-100 text-red-600 rounded-lg text-sm font-bold">5</span>
+            <h2 class="text-xl font-bold text-slate-900">User Conduct &amp; Prohibited Actions</h2>
+          </div>
+          <div class="text-slate-600 leading-relaxed space-y-4 text-[0.95rem]">
+            <p>When using our website, you agree not to:</p>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div class="flex items-start gap-2.5 bg-red-50 rounded-xl p-3 border border-red-100">
+                <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <span class="text-sm">Click ads to generate fraudulent revenue</span>
+              </div>
+              <div class="flex items-start gap-2.5 bg-red-50 rounded-xl p-3 border border-red-100">
+                <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <span class="text-sm">Use bots or scripts to interact with ads</span>
+              </div>
+              <div class="flex items-start gap-2.5 bg-red-50 rounded-xl p-3 border border-red-100">
+                <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <span class="text-sm">Encourage deceptive ad clicking</span>
+              </div>
+              <div class="flex items-start gap-2.5 bg-red-50 rounded-xl p-3 border border-red-100">
+                <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <span class="text-sm">Circumvent ad-serving technologies</span>
+              </div>
+              <div class="flex items-start gap-2.5 bg-red-50 rounded-xl p-3 border border-red-100">
+                <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <span class="text-sm">Use the site for unlawful purposes</span>
+              </div>
+              <div class="flex items-start gap-2.5 bg-red-50 rounded-xl p-3 border border-red-100">
+                <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <span class="text-sm">Gain unauthorized access to our systems</span>
+              </div>
+            </div>
 
-        <h2>Limitation of Liability</h2>
-        <p>
-          BC PNP Calculator, its owners, operators, and affiliates shall not be liable for any direct, indirect, incidental, consequential, special, or punitive damages arising from:
-        </p>
-        <ul>
-          <li>Your use of or inability to use the website</li>
-          <li>Any errors, omissions, or inaccuracies in the content</li>
-          <li>Decisions made based on information provided on this website</li>
-          <li>Any unauthorized access to or use of our servers</li>
-          <li>Any interruption or cessation of transmission to or from the website</li>
-          <li>Any bugs, viruses, or other harmful code that may be transmitted through the website</li>
-          <li>Any content or conduct of any third party on the website, including advertisements</li>
-          <li>Any products, services, or content obtained through advertisements on our website</li>
-        </ul>
-        <p>
-          This limitation of liability applies to the fullest extent permitted by applicable law.
-        </p>
+            <div class="pt-2">
+              <h3 class="text-base font-semibold text-slate-800 mb-2">User-Generated Content</h3>
+              <p>
+                If you submit any content to our website (such as comments or feedback), you grant us a non-exclusive, royalty-free, perpetual, and worldwide license to use, reproduce, modify, and distribute such content. You represent that you own or have the necessary rights to submit such content and that it does not violate any third-party rights.
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <h2>Indemnification</h2>
-        <p>
-          You agree to indemnify, defend, and hold harmless BC PNP Calculator, its owners, operators, affiliates, and their respective officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising from your use of the website, your violation of these Terms of Service, or your violation of any rights of a third party.
-        </p>
+        <!-- Section 6: Liability -->
+        <section id="liability" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-red-100 text-red-600 rounded-lg text-sm font-bold">6</span>
+            <h2 class="text-xl font-bold text-slate-900">Limitation of Liability &amp; Indemnification</h2>
+          </div>
+          <div class="text-slate-600 leading-relaxed space-y-6 text-[0.95rem]">
+            <div>
+              <h3 class="text-base font-semibold text-slate-800 mb-3">Limitation of Liability</h3>
+              <p class="mb-3">
+                BC PNP Calculator, its owners, operators, and affiliates shall not be liable for any direct, indirect, incidental, consequential, special, or punitive damages arising from:
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  <span class="text-sm">Your use of or inability to use the website</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  <span class="text-sm">Errors, omissions, or inaccuracies in the content</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  <span class="text-sm">Decisions made based on information provided</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  <span class="text-sm">Unauthorized access to or use of our servers</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-slate-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  <span class="text-sm">Third-party content, including advertisements</span>
+                </li>
+              </ul>
+              <p class="mt-3 text-sm text-slate-500 italic">This limitation applies to the fullest extent permitted by applicable law.</p>
+            </div>
 
-        <h2>Intellectual Property</h2>
-        <p>
-          All content on this website, including but not limited to text, graphics, logos, images, software, and the compilation thereof, is the property of BC PNP Calculator and is protected by Canadian and international copyright laws.
-        </p>
-        <p>
-          You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any content from our website without our prior written consent, except for:
-        </p>
-        <ul>
-          <li>Temporary storage in RAM incidental to your accessing and viewing the content</li>
-          <li>Storing files that are automatically cached by your browser for display enhancement purposes</li>
-          <li>Printing or downloading a reasonable number of pages for personal, non-commercial use</li>
-        </ul>
+            <div class="border-t border-slate-100 pt-6">
+              <h3 class="text-base font-semibold text-slate-800 mb-2">Indemnification</h3>
+              <p>
+                You agree to indemnify, defend, and hold harmless BC PNP Calculator, its owners, operators, affiliates, and their respective officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, or expenses arising from your use of the website, violation of these Terms, or violation of any third-party rights.
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <h2>External Links</h2>
-        <p>
-          This website may contain links to third-party websites, including those of advertisers, government agencies, and other resources. These links are provided for your convenience and informational purposes only.
-        </p>
-        <p>
-          We are not responsible for the content, accuracy, or practices of these external sites. The inclusion of any link does not imply endorsement by BC PNP Calculator. You access these external websites at your own risk.
-        </p>
+        <!-- Section 7: IP -->
+        <section id="ip" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-red-100 text-red-600 rounded-lg text-sm font-bold">7</span>
+            <h2 class="text-xl font-bold text-slate-900">Intellectual Property</h2>
+          </div>
+          <div class="text-slate-600 leading-relaxed space-y-4 text-[0.95rem]">
+            <p>
+              All content on this website, including text, graphics, logos, images, software, and the compilation thereof, is the property of BC PNP Calculator and is protected by Canadian and international copyright laws.
+            </p>
+            <p>You may not reproduce, distribute, modify, or create derivative works without our prior written consent, except for:</p>
+            <div class="grid sm:grid-cols-3 gap-3 mt-2">
+              <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 text-center">
+                <svg class="w-6 h-6 text-slate-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <p class="text-sm text-slate-600">Temporary storage in browser cache</p>
+              </div>
+              <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 text-center">
+                <svg class="w-6 h-6 text-slate-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                <p class="text-sm text-slate-600">Automatic browser caching</p>
+              </div>
+              <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 text-center">
+                <svg class="w-6 h-6 text-slate-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /></svg>
+                <p class="text-sm text-slate-600">Personal, non-commercial printing</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <h2>Service Availability</h2>
-        <p>
-          We strive to keep our website available at all times, but we do not guarantee uninterrupted access. The website may be temporarily unavailable due to maintenance, updates, or circumstances beyond our control.
-        </p>
-        <p>
-          We reserve the right to modify, suspend, or discontinue any aspect of the website at any time without notice.
-        </p>
+        <!-- Section 8: General Provisions -->
+        <section id="general" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-red-100 text-red-600 rounded-lg text-sm font-bold">8</span>
+            <h2 class="text-xl font-bold text-slate-900">General Provisions</h2>
+          </div>
+          <div class="text-slate-600 leading-relaxed space-y-6 text-[0.95rem]">
+            <div>
+              <h3 class="text-base font-semibold text-slate-800 mb-2">External Links</h3>
+              <p>This website may contain links to third-party websites, including advertiser and government sites. We are not responsible for their content, accuracy, or practices. You access external websites at your own risk.</p>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-slate-800 mb-2">Service Availability</h3>
+              <p>We strive to keep our website available at all times, but do not guarantee uninterrupted access. The website may be temporarily unavailable due to maintenance, updates, or circumstances beyond our control. We reserve the right to modify, suspend, or discontinue any aspect of the website at any time without notice.</p>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-slate-800 mb-2">Privacy</h3>
+              <p>Your privacy is important to us. Please review our <a href="/privacy-policy" class="text-red-600 hover:underline font-medium">Privacy Policy</a>, which describes how we collect, use, and protect your information.</p>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-slate-800 mb-2">Severability &amp; Entire Agreement</h3>
+              <p>If any provision of these Terms is found to be unenforceable, that provision shall be limited or eliminated to the minimum extent necessary so that the remaining Terms remain in full force. These Terms, together with our Privacy Policy, constitute the entire agreement between you and BC PNP Calculator regarding your use of the website.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
+              <h3 class="text-base font-semibold text-slate-800 mb-2">Governing Law</h3>
+              <p>These Terms of Service are governed by the laws of the <strong>Province of British Columbia, Canada</strong>. You agree to submit to the exclusive jurisdiction of the courts located in British Columbia for the resolution of any disputes.</p>
+            </div>
+          </div>
+        </section>
 
-        <h2>Privacy</h2>
-        <p>
-          Your privacy is important to us. Please review our <a href="/privacy-policy">Privacy Policy</a>, which describes how we collect, use, and protect your information, including our use of cookies and third-party advertising services.
-        </p>
-
-        <h2>Severability</h2>
-        <p>
-          If any provision of these Terms of Service is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that these Terms of Service shall otherwise remain in full force and effect.
-        </p>
-
-        <h2>Entire Agreement</h2>
-        <p>
-          These Terms of Service, together with our Privacy Policy, constitute the entire agreement between you and BC PNP Calculator regarding your use of the website and supersede all prior and contemporaneous agreements, representations, and understandings.
-        </p>
-
-        <h2>Governing Law</h2>
-        <p>
-          These Terms of Service are governed by and construed in accordance with the laws of the Province of British Columbia, Canada, without regard to its conflict of law provisions. You agree to submit to the exclusive jurisdiction of the courts located in British Columbia, Canada, for the resolution of any disputes.
-        </p>
-
-        <h2>Contact Information</h2>
-        <p>
-          If you have any questions about these Terms of Service, please contact us through the website at bcpnpcalculator.ca.
-        </p>
+        <!-- Contact CTA -->
+        <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 text-center">
+          <h2 class="text-xl font-bold mb-2">Questions About These Terms?</h2>
+          <p class="text-slate-400 text-sm mb-5 max-w-lg mx-auto">If you have any questions about these Terms of Service, we're happy to help clarify.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-colors">
+            Contact Us
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+          </a>
+        </div>
 
       </div>
 
