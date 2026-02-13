@@ -1,6 +1,7 @@
 ---
 import Analytics from "@vercel/analytics/astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
@@ -327,6 +328,7 @@ const dir = lang === "ar" ? "rtl" : "ltr";
     <meta name="google-adsense-account" content="ca-pub-6957094173303840">
   </head>
   <body>
+    <Navigation lang={lang} />
     <slot />
     <Footer lang={lang} />
   </body>

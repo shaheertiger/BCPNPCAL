@@ -36,6 +36,18 @@ const drawsLink = lang === "en" ? "/bc-pnp-draws" : `/${lang}/bc-pnp-draws`;
         <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
           {t["footer.brand_desc"]}
         </p>
+        <div class="flex flex-col gap-3 pt-2">
+          <div class="flex items-center gap-2 text-[10px] font-bold text-green-400 uppercase tracking-widest bg-green-400/10 px-3 py-1 rounded-full w-fit">
+            <span class="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+            Updated Jan 2026
+          </div>
+          <div class="flex items-center gap-2 text-[10px] font-bold text-blue-400 uppercase tracking-widest bg-blue-400/10 px-3 py-1 rounded-full w-fit">
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            Privacy-First Tool
+          </div>
+        </div>
       </div>
 
       <!-- Quick Links -->
@@ -130,6 +142,14 @@ const drawsLink = lang === "en" ? "/bc-pnp-draws" : `/${lang}/bc-pnp-draws`;
           {t["footer.resources"]}
         </h3>
         <ul class="space-y-3">
+          <li>
+            <a
+              href="/guides"
+              class="text-sm text-slate-400 hover:text-white transition-colors flex items-center"
+            >
+              Guides Hub
+            </a>
+          </li>
           <li>
             <a
               href="/sitemap"

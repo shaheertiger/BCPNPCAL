@@ -1,0 +1,95 @@
+---
+import { ui } from "../i18n/ui";
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = "en" } = Astro.props;
+const t = ui[lang as keyof typeof ui] || ui.en;
+
+const homeLink = lang === "en" ? "/" : `/${lang}`;
+const calculatorLink = lang === "en" ? "/bc-pnp-calculator" : `/${lang}/bc-pnp-calculator`;
+const drawsLink = lang === "en" ? "/bc-pnp-draws" : `/${lang}/bc-pnp-draws`;
+const guidesLink = "/guides";
+const newsLink = "/news";
+const aboutLink = "/about";
+
+// Labels for navigation
+const labels = {
+  en: {
+    calculator: "Calculator",
+    draws: "Draws",
+    guides: "Guides",
+    news: "News",
+    about: "About"
+  },
+  zh: {
+    calculator: "计算器",
+    draws: "抽分历史",
+    guides: "攻略指南",
+    news: "新闻",
+    about: "关于我们"
+  }
+};
+
+const l = labels[lang as keyof typeof labels] || labels.en;
+---
+
+<header class="sticky top-0 z-[100] bg-white/80 backdrop-blur-md border-b border-slate-100 shadow-sm">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+    <!-- Brand -->
+    <a href={homeLink} id="nav-brand-link" class="flex items-center space-x-2 group">
+      <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white font-black text-sm group-hover:bg-red-500 transition-colors">
+        BC
+      </div>
+      <span class="text-xl font-black text-slate-900 tracking-tight hidden sm:block">
+        PNP Calculator
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center space-x-1" id="desktop-nav-menu">
+      <a href={calculatorLink} id="nav-link-calculator" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-red-600 hover:bg-red-50 transition-all">
+        {l.calculator}
+      </a>
+      <a href={drawsLink} id="nav-link-draws" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-red-600 hover:bg-red-50 transition-all">
+        {l.draws}
+      </a>
+      <a href={guidesLink} id="nav-link-guides" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-red-600 hover:bg-red-50 transition-all">
+        {l.guides}
+      </a>
+      <a href={newsLink} id="nav-link-news" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-red-600 hover:bg-red-50 transition-all">
+        {l.news}
+      </a>
+      <a href={aboutLink} id="nav-link-about" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-red-600 hover:bg-red-50 transition-all">
+        {l.about}
+      </a>
+    </div>
+
+    <!-- Right Side CTA & Mobile Menu -->
+    <div class="flex items-center space-x-4">
+      <!-- Language Switcher -->
+      <div class="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-200" id="lang-switcher-container">
+        <a href="/" id="lang-toggle-en" class={`text-xs font-bold ${lang === 'en' ? 'text-red-600' : 'text-slate-400 hover:text-slate-600'}`}>EN</a>
+        <span class="text-slate-300">|</span>
+        <a href="/zh" id="lang-toggle-zh" class={`text-xs font-bold ${lang === 'zh' ? 'text-red-600' : 'text-slate-400 hover:text-slate-600'}`}>中文</a>
+      </div>
+
+      <a 
+        href={calculatorLink}
+        id="nav-cta-button"
+        class="hidden sm:inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-lg shadow-red-600/20 active:scale-95"
+      >
+        Free Score Check
+      </a>
+      
+      <!-- Mobile Menu Toggle (Simplified for now) -->
+      <button class="md:hidden p-2 text-slate-600 hover:text-red-600 transition-colors" id="mobile-menu-toggle" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>

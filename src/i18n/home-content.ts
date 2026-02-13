@@ -10,13 +10,13 @@ export const homeContent = {
         },
         features: {
             instant: { title: "Instant Results", desc: "Real-time calculation of your SIRS score as you input your information." },
-            accurate: { title: "Accurate Scoring", desc: "Based on official BC PNP scoring criteria for all immigration streams." },
-            detailed: { title: "Detailed Breakdown", desc: "See exactly how points are allocated across all categories." }
+            accurate: { title: "100% Privacy-First", desc: "Your data never leaves your browser. No uploads, no tracking, no storage. Completely private and secure." },
+            detailed: { title: "Detailed Breakdown", desc: "See exactly how points are allocated across all categories with official SIRS criteria." }
         },
         seo_section: {
             title: "Understanding the BC PNP Points System",
-            p1: "The British Columbia Provincial Nominee Program (BC PNP) uses a sophisticated points-based system called the <strong>Skills Immigration Ranking System (SIRS)</strong> to evaluate candidates. Our <strong>BC PNP points calculator</strong> helps you understand where you stand before submitting your application.",
-            p2: "The maximum possible score is <strong>200 points</strong>, distributed across five key categories: work experience (40 points), education level (40 points), language proficiency (40 points), hourly wage (55 points), and regional location (25 points). Most successful applicants score between 100 and 130 points."
+            p1: "The British Columbia Provincial Nominee Program (BC PNP) uses a sophisticated points-based system called the <strong>Skills Immigration Ranking System (SIRS)</strong> to evaluate candidates. Our <strong>BC PNP points calculator</strong> helps you understand where you stand before submitting your application. Unlike other calculators that upload your data to servers, our tool processes everything <strong>locally in your browser</strong>—ensuring complete privacy and security.",
+            p2: "The maximum possible score is <strong>200 points</strong>, distributed across five key categories: work experience (40 points), education level (40 points), language proficiency (40 points), hourly wage (55 points), and regional location (25 points). Most successful applicants score between 100 and 130 points. Our calculator is <strong>updated regularly</strong> to reflect the latest BC PNP policy changes, ensuring you always get accurate estimates."
         },
         points_grid: {
             title: "Point Categories",
@@ -38,12 +38,18 @@ export const homeContent = {
             view_all: "View All Guides & Troubleshooting"
         },
         faq: {
-            title: "Common Questions",
+            title: "Frequently Asked Questions",
             items: [
-                { q: "What is a competitive BC PNP score?", a: "Draw scores fluctuate based on the specific stream (Tech, Healthcare, Childcare). Generally, a score above 115 is highly competitive, while scores between 95-110 are often sufficient for targeted draws." },
-                { q: "How often are BC PNP draws held?", a: "BC typically conducts draws weekly, alternating between general draws and targeted draws for high-demand occupations like Tech, Healthcare, and Early Childhood Educators." },
-                { q: "Can I improve my score?", a: "Yes. The most effective ways to boost your <strong>BC PNP calculator</strong> result include obtaining a higher hourly wage, improving your CLB language results, or choosing a job offer in a regional district outside of Metro Vancouver." },
-                { q: "Does a high score guarantee an invitation?", a: "While our <strong>BC PNP score calculator</strong> provides a reliable estimate, an invitation to apply (ITA) depends on your profile meeting the minimum cutoff for the specific draw period." }
+                { q: "What is BC PNP?", a: "The British Columbia Provincial Nominee Program (BC PNP) is an immigration pathway that allows the province to nominate skilled workers, international graduates, and entrepreneurs for Canadian permanent residence. Our <strong>BC PNP calculator</strong> helps you estimate your eligibility score." },
+                { q: "How does the calculator work?", a: "Our calculator uses the official Skills Immigration Ranking System (SIRS) criteria to evaluate your profile across five categories: work experience, education, language skills, wage, and regional location. Simply input your information, and the calculator instantly shows your estimated score out of 200 points." },
+                { q: "Is my data private and secure?", a: "Absolutely. Your data is processed <strong>entirely in your browser</strong>—we never send your personal information to our servers or store it anywhere. Your immigration profile stays 100% private on your device." },
+                { q: "Is this calculator official or affiliated with the BC government?", a: "No. BC PNP Calculator is an independent tool created to help applicants. We are <strong>not affiliated with</strong> the Province of British Columbia or any government agency. Always verify your results with official BC PNP resources or a licensed immigration consultant." },
+                { q: "How accurate is the calculator?", a: "Our <strong>BC PNP score calculator</strong> is updated regularly to reflect the latest SIRS criteria. However, official scores are determined by the BC government during application review. Use our tool for planning and estimation purposes." },
+                { q: "Do I need to create an account?", a: "No account required! Simply visit the calculator, enter your details, and get your score instantly. No email, no password, no signup—completely free and anonymous." },
+                { q: "What is a competitive BC PNP score?", a: "Draw scores fluctuate based on the specific stream (Tech, Healthcare, Childcare). Generally, a score above 115 is highly competitive, while scores between 95-110 are often sufficient for targeted draws. Check our <a href='/bc-pnp-draws' class='text-red-600 hover:text-red-700 font-bold underline'>latest draw results</a> for current trends." },
+                { q: "Can I improve my score?", a: "Yes! The most effective ways to boost your score include: (1) negotiating a higher hourly wage, (2) improving your language test results (CLB/IELTS), (3) obtaining higher education credentials, (4) gaining more work experience, or (5) accepting a job offer in a regional district outside Metro Vancouver for bonus points." },
+                { q: "How often is the calculator updated?", a: "We monitor BC PNP policy changes and update the calculator whenever the province announces changes to the SIRS scoring system. Major updates are typically announced on the official BC PNP website, and we implement them within 24-48 hours." },
+                { q: "Can I use this calculator on my phone?", a: "Yes! Our BC PNP calculator is fully mobile-responsive and works on all devices—smartphones, tablets, and desktops. Your calculations are saved locally in your browser, so you can return and review them later." }
             ]
         },
         bottom_cta: {
