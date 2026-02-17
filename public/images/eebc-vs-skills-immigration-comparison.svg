@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <filter id="sh" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="580" rx="16" fill="url(#bgG)" stroke="#e2e8f0"/>
+
+  <!-- Title -->
+  <text x="450" y="42" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Express Entry BC vs. Skills Immigration — Side-by-Side Comparison</text>
+  <line x1="250" y1="54" x2="650" y2="54" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Header Row -->
+  <rect x="30" y="72" width="260" height="44" rx="8" fill="#0f172a"/>
+  <text x="160" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="white">Feature</text>
+
+  <rect x="310" y="72" width="270" height="44" rx="8" fill="#dc2626"/>
+  <text x="445" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="white">Express Entry BC (EEBC)</text>
+
+  <rect x="600" y="72" width="270" height="44" rx="8" fill="#2563eb"/>
+  <text x="735" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="white">Skills Immigration (SI)</text>
+
+  <!-- Row 1 - Federal Connection -->
+  <rect x="30" y="126" width="260" height="50" rx="0" fill="white" stroke="#e2e8f0" filter="url(#sh)"/>
+  <text x="50" y="156" font-size="13" font-weight="600" fill="#0f172a">Federal Connection</text>
+
+  <rect x="310" y="126" width="270" height="50" rx="0" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="330" y="150" font-size="12" fill="#991b1b" font-weight="600">Linked to Express Entry</text>
+  <text x="330" y="166" font-size="11" fill="#b91c1c">+600 CRS → guaranteed ITA</text>
+
+  <rect x="600" y="126" width="270" height="50" rx="0" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="620" y="150" font-size="12" fill="#1e3a5f" font-weight="600">No federal link</text>
+  <text x="620" y="166" font-size="11" fill="#1d4ed8">Paper-based PR application</text>
+
+  <!-- Row 2 - PR Processing -->
+  <rect x="30" y="186" width="260" height="50" rx="0" fill="white" stroke="#e2e8f0" filter="url(#sh)"/>
+  <text x="50" y="216" font-size="13" font-weight="600" fill="#0f172a">PR Processing Time</text>
+
+  <rect x="310" y="186" width="270" height="50" rx="0" fill="#f0fdf4" stroke="#bbf7d0"/>
+  <text x="330" y="210" font-size="13" fill="#166534" font-weight="700">~6 months</text>
+  <text x="330" y="226" font-size="11" fill="#15803d">Faster via Express Entry</text>
+
+  <rect x="600" y="186" width="270" height="50" rx="0" fill="#fefce8" stroke="#fef08a"/>
+  <text x="620" y="210" font-size="13" fill="#854d0e" font-weight="700">12-18 months</text>
+  <text x="620" y="226" font-size="11" fill="#a16207">Standard paper processing</text>
+
+  <!-- Row 3 - Eligibility -->
+  <rect x="30" y="246" width="260" height="50" rx="0" fill="white" stroke="#e2e8f0" filter="url(#sh)"/>
+  <text x="50" y="276" font-size="13" font-weight="600" fill="#0f172a">Eligibility Requirement</text>
+
+  <rect x="310" y="246" width="270" height="50" rx="0" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="330" y="266" font-size="12" fill="#991b1b" font-weight="600">Must have active EE profile</text>
+  <text x="330" y="282" font-size="11" fill="#b91c1c">+ qualify for FSWP, CEC, or FSTP</text>
+
+  <rect x="600" y="246" width="270" height="50" rx="0" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="620" y="266" font-size="12" fill="#1e3a5f" font-weight="600">No EE profile needed</text>
+  <text x="620" y="282" font-size="11" fill="#1d4ed8">Broader eligibility criteria</text>
+
+  <!-- Row 4 - Score System -->
+  <rect x="30" y="306" width="260" height="50" rx="0" fill="white" stroke="#e2e8f0" filter="url(#sh)"/>
+  <text x="50" y="336" font-size="13" font-weight="600" fill="#0f172a">Scoring System</text>
+
+  <rect x="310" y="306" width="270" height="50" rx="0" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="330" y="326" font-size="12" fill="#991b1b" font-weight="600">SIRS (0-200) + CRS</text>
+  <text x="330" y="342" font-size="11" fill="#b91c1c">Two scores, dual advantage</text>
+
+  <rect x="600" y="306" width="270" height="50" rx="0" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="620" y="326" font-size="12" fill="#1e3a5f" font-weight="600">SIRS only (0-200)</text>
+  <text x="620" y="342" font-size="11" fill="#1d4ed8">Single provincial score</text>
+
+  <!-- Row 5 - Streams -->
+  <rect x="30" y="366" width="260" height="50" rx="0" fill="white" stroke="#e2e8f0" filter="url(#sh)"/>
+  <text x="50" y="396" font-size="13" font-weight="600" fill="#0f172a">Available Sub-Streams</text>
+
+  <rect x="310" y="366" width="270" height="50" rx="0" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="330" y="386" font-size="12" fill="#991b1b" font-weight="600">EEBC Skilled Worker</text>
+  <text x="330" y="402" font-size="11" fill="#b91c1c">EEBC International Graduate</text>
+
+  <rect x="600" y="366" width="270" height="50" rx="0" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="620" y="386" font-size="12" fill="#1e3a5f" font-weight="600">SI Skilled Worker, ELSS</text>
+  <text x="620" y="402" font-size="11" fill="#1d4ed8">SI Int'l Graduate, Health Auth.</text>
+
+  <!-- Row 6 - Best For -->
+  <rect x="30" y="426" width="260" height="50" rx="0" fill="white" stroke="#e2e8f0" filter="url(#sh)"/>
+  <text x="50" y="456" font-size="13" font-weight="600" fill="#0f172a">Best For</text>
+
+  <rect x="310" y="426" width="270" height="50" rx="0" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="330" y="446" font-size="12" fill="#991b1b" font-weight="600">Candidates wanting fast PR</text>
+  <text x="330" y="462" font-size="11" fill="#b91c1c">with strong EE profiles</text>
+
+  <rect x="600" y="426" width="270" height="50" rx="0" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="620" y="446" font-size="12" fill="#1e3a5f" font-weight="600">Candidates without EE</text>
+  <text x="620" y="462" font-size="11" fill="#1d4ed8">eligibility or lower CRS</text>
+
+  <!-- Winner badge -->
+  <rect x="310" y="492" width="270" height="64" rx="12" fill="#dc2626"/>
+  <text x="445" y="516" text-anchor="middle" font-size="11" font-weight="700" fill="#fecaca" letter-spacing="2">RECOMMENDED IF ELIGIBLE</text>
+  <text x="445" y="540" text-anchor="middle" font-size="16" font-weight="800" fill="white">EEBC = Fastest to PR</text>
+
+  <rect x="600" y="492" width="270" height="64" rx="12" fill="#2563eb"/>
+  <text x="735" y="516" text-anchor="middle" font-size="11" font-weight="700" fill="#bfdbfe" letter-spacing="2">BROADER ACCESS</text>
+  <text x="735" y="540" text-anchor="middle" font-size="16" font-weight="800" fill="white">SI = More Inclusive</text>
+</svg>
