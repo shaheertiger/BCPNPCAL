@@ -29,6 +29,14 @@ const jsonLd = [
 
 const newsItems = [
   {
+    date: "February 17, 2026",
+    category: "Guide",
+    categoryColor: "indigo",
+    title: "BC PNP Express Entry BC (EEBC) 2026: Complete Guide to the Fastest Path to Canadian PR",
+    summary: "Everything you need to know about the Express Entry BC stream — the fastest BC PNP pathway to permanent residence. Covers the 600-point CRS boost, eligibility requirements, EEBC vs Skills Immigration, 2026 score cutoffs, and step-by-step application process with infographics.",
+    link: "/articles/bc-pnp-express-entry-bc-eebc-guide-2026"
+  },
+  {
     date: "February 11, 2026",
     category: "Guide",
     categoryColor: "indigo",
@@ -160,6 +168,7 @@ const newsItems = [
                     ${item.categoryColor === 'blue' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : ''}
                     ${item.categoryColor === 'purple' ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' : ''}
                     ${item.categoryColor === 'slate' ? 'bg-slate-500/20 text-slate-400 border border-slate-500/30' : ''}
+                    ${item.categoryColor === 'indigo' ? 'bg-indigo-500/20 text-indigo-400 border border-indigo-500/30' : ''}
                   `}>
                     {item.category}
                   </span>

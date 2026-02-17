@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9333ea"/>
+      <stop offset="100%" stop-color="#7e22ce"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" rx="16" fill="url(#bg)" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="450" y="42" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Express Entry BC (EEBC) — 6-Step Process to Canadian PR</text>
+  <line x1="300" y1="54" x2="600" y2="54" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Step 1 -->
+  <rect x="30" y="80" width="260" height="120" rx="14" fill="white" stroke="#e2e8f0" filter="url(#shadow)"/>
+  <rect x="30" y="80" width="260" height="6" rx="3" fill="url(#redGrad)"/>
+  <circle cx="60" cy="118" r="16" fill="url(#redGrad)"/>
+  <text x="60" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="white">1</text>
+  <text x="84" y="122" font-size="14" font-weight="700" fill="#0f172a">Create Express Entry</text>
+  <text x="84" y="140" font-size="14" font-weight="700" fill="#0f172a">Profile (IRCC)</text>
+  <text x="50" y="168" font-size="11" fill="#64748b">Submit to federal Express</text>
+  <text x="50" y="182" font-size="11" fill="#64748b">Entry pool with CRS score</text>
+
+  <!-- Arrow 1→2 -->
+  <path d="M290 140 L320 140" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 2 -->
+  <rect x="320" y="80" width="260" height="120" rx="14" fill="white" stroke="#e2e8f0" filter="url(#shadow)"/>
+  <rect x="320" y="80" width="260" height="6" rx="3" fill="url(#blueGrad)"/>
+  <circle cx="350" cy="118" r="16" fill="url(#blueGrad)"/>
+  <text x="350" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="white">2</text>
+  <text x="374" y="122" font-size="14" font-weight="700" fill="#0f172a">Register in BC PNP</text>
+  <text x="374" y="140" font-size="14" font-weight="700" fill="#0f172a">SIRS (Provincial)</text>
+  <text x="340" y="168" font-size="11" fill="#64748b">Select EEBC stream, get</text>
+  <text x="340" y="182" font-size="11" fill="#64748b">SIRS score (0-200 points)</text>
+
+  <!-- Arrow 2→3 -->
+  <path d="M580 140 L610 140" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 3 -->
+  <rect x="610" y="80" width="260" height="120" rx="14" fill="white" stroke="#e2e8f0" filter="url(#shadow)"/>
+  <rect x="610" y="80" width="260" height="6" rx="3" fill="url(#greenGrad)"/>
+  <circle cx="640" cy="118" r="16" fill="url(#greenGrad)"/>
+  <text x="640" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="white">3</text>
+  <text x="664" y="122" font-size="14" font-weight="700" fill="#0f172a">Receive ITA from</text>
+  <text x="664" y="140" font-size="14" font-weight="700" fill="#0f172a">BC PNP Draw</text>
+  <text x="630" y="168" font-size="11" fill="#64748b">Invited when score meets</text>
+  <text x="630" y="182" font-size="11" fill="#64748b">draw cutoff (30 days to apply)</text>
+
+  <!-- Arrow 3→4 (going down) -->
+  <path d="M740 200 L740 240" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 4 -->
+  <rect x="610" y="250" width="260" height="120" rx="14" fill="white" stroke="#e2e8f0" filter="url(#shadow)"/>
+  <rect x="610" y="250" width="260" height="6" rx="3" fill="url(#purpleGrad)"/>
+  <circle cx="640" cy="288" r="16" fill="url(#purpleGrad)"/>
+  <text x="640" y="293" text-anchor="middle" font-size="14" font-weight="700" fill="white">4</text>
+  <text x="664" y="288" font-size="14" font-weight="700" fill="#0f172a">Submit Application</text>
+  <text x="664" y="306" font-size="14" font-weight="700" fill="#0f172a">&amp; Get Nominated</text>
+  <text x="630" y="336" font-size="11" fill="#64748b">BC reviews &amp; issues Provincial</text>
+  <text x="630" y="350" font-size="11" fill="#64748b">Nomination (2-3 months)</text>
+
+  <!-- Arrow 4→5 -->
+  <path d="M610 310 L580 310" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead2)"/>
+
+  <!-- Step 5 -->
+  <rect x="320" y="250" width="260" height="120" rx="14" fill="white" stroke="#e2e8f0" filter="url(#shadow)"/>
+  <rect x="320" y="250" width="260" height="6" rx="3" fill="url(#amberGrad)"/>
+  <circle cx="350" cy="288" r="16" fill="url(#amberGrad)"/>
+  <text x="350" y="293" text-anchor="middle" font-size="14" font-weight="700" fill="white">5</text>
+  <text x="374" y="288" font-size="14" font-weight="700" fill="#0f172a">Get +600 CRS Boost</text>
+  <text x="374" y="306" font-size="14" font-weight="700" fill="#0f172a">&amp; Federal ITA</text>
+  <text x="340" y="336" font-size="11" fill="#64748b">Nomination adds 600 CRS points</text>
+  <text x="340" y="350" font-size="11" fill="#64748b">→ guaranteed federal ITA</text>
+
+  <!-- Arrow 5→6 -->
+  <path d="M320 310 L290 310" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead2)"/>
+
+  <!-- Step 6 -->
+  <rect x="30" y="250" width="260" height="120" rx="14" fill="white" stroke="#e2e8f0" filter="url(#shadow)"/>
+  <rect x="30" y="250" width="260" height="6" rx="3" fill="url(#redGrad)"/>
+  <circle cx="60" cy="288" r="16" fill="url(#redGrad)"/>
+  <text x="60" y="293" text-anchor="middle" font-size="14" font-weight="700" fill="white">6</text>
+  <text x="84" y="288" font-size="14" font-weight="700" fill="#0f172a">Apply for Permanent</text>
+  <text x="84" y="306" font-size="14" font-weight="700" fill="#0f172a">Residence (IRCC)</text>
+  <text x="50" y="336" font-size="11" fill="#64748b">Submit PR application via</text>
+  <text x="50" y="350" font-size="11" fill="#64748b">Express Entry (6 months)</text>
+
+  <!-- Timeline bar -->
+  <rect x="30" y="410" width="840" height="90" rx="12" fill="#0f172a"/>
+  <text x="450" y="435" text-anchor="middle" font-size="13" font-weight="700" fill="#94a3b8" letter-spacing="2">TYPICAL EEBC TIMELINE</text>
+
+  <rect x="55" y="452" width="120" height="32" rx="6" fill="#dc2626"/>
+  <text x="115" y="473" text-anchor="middle" font-size="11" font-weight="600" fill="white">EE Profile: 1-2 wk</text>
+
+  <rect x="185" y="452" width="140" height="32" rx="6" fill="#2563eb"/>
+  <text x="255" y="473" text-anchor="middle" font-size="11" font-weight="600" fill="white">SIRS + Draw: 1-6 mo</text>
+
+  <rect x="335" y="452" width="140" height="32" rx="6" fill="#16a34a"/>
+  <text x="405" y="473" text-anchor="middle" font-size="11" font-weight="600" fill="white">BC Review: 2-3 mo</text>
+
+  <rect x="485" y="452" width="120" height="32" rx="6" fill="#9333ea"/>
+  <text x="545" y="473" text-anchor="middle" font-size="11" font-weight="600" fill="white">CRS Boost: 1-2 wk</text>
+
+  <rect x="615" y="452" width="130" height="32" rx="6" fill="#d97706"/>
+  <text x="680" y="473" text-anchor="middle" font-size="11" font-weight="600" fill="white">PR Process: ~6 mo</text>
+
+  <text x="790" y="473" font-size="12" font-weight="800" fill="#22c55e">✓ PR</text>
+
+  <!-- Arrowhead markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#94a3b8"/>
+    </marker>
+  </defs>
+</svg>
