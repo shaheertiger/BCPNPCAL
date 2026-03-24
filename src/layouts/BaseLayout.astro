@@ -3,6 +3,7 @@ import Analytics from "@vercel/analytics/astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -135,6 +136,12 @@ const dir = lang === "ar" ? "rtl" : "ltr";
     <meta name="twitter:image" content={new URL(ogImage, siteUrl).href} />
     <meta name="twitter:image:alt" content={title} />
     <meta name="twitter:creator" content="@bcpnpcalc" />
+
+    <!-- DNS Prefetch & Preconnect for AdSense -->
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+    <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
+    <link rel="dns-prefetch" href="https://tpc.googlesyndication.com" />
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
 
     <!-- DNS Prefetch & Preconnect for Fonts -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -325,11 +332,12 @@ const dir = lang === "ar" ? "rtl" : "ltr";
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2963693328827195" crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-2128579868272786">
+    <meta name="google-adsense-account" content="ca-pub-2963693328827195">
   </head>
   <body>
     <Navigation lang={lang} />
     <slot />
     <Footer lang={lang} />
+    <CookieConsent />
   </body>
 </html>

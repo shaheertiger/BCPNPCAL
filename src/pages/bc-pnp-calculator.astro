@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CalculatorShell from "../components/CalculatorShell.astro";
+import AdUnit from "../components/AdUnit.astro";
 import { calculatorContent } from "../i18n/calculator-content";
 
 const title = "Free BC PNP Points Calculator | Check Your SIRS Score 2026";
@@ -203,6 +204,11 @@ const jsonLd = [
 
   <!-- Calculator React Island - Hydrated on Load -->
   <CalculatorShell t={calculatorContent.en} />
+
+  <!-- Ad Unit -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 pt-8">
+    <AdUnit slot="3456789012" format="horizontal" />
+  </div>
 
   <!-- SEO Content Section (Static HTML) -->
   <section
@@ -480,6 +486,9 @@ const jsonLd = [
           </div>
         </div>
       </div>
+
+      <!-- Ad Unit -->
+      <AdUnit slot="4567890123" format="auto" />
 
       <!-- Strategic Tips -->
       <div

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AdUnit from "../components/AdUnit.astro";
 import { homeContent } from "../i18n/home-content";
 
 const content = homeContent.en;
@@ -284,6 +285,11 @@ const hreflangs = [
         </div>
       </div>
 
+      <!-- Ad Unit -->
+      <div class="max-w-3xl mx-auto pt-8">
+        <AdUnit slot="1234567890" format="horizontal" />
+      </div>
+
       <!-- SEO Content Section -->
       <div
         class="pt-12 sm:pt-20 text-left space-y-8 sm:space-y-12 max-w-3xl mx-auto"
@@ -402,6 +408,9 @@ const hreflangs = [
             </a>
           </div>
         </div>
+
+        <!-- Ad Unit -->
+        <AdUnit slot="2345678901" format="auto" />
 
         <!-- FAQ Section -->
         <div class="space-y-8 sm:space-y-10">
