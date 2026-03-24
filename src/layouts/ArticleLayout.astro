@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import AdUnit from "../components/AdUnit.astro";
 
 interface Props {
   title: string;
@@ -102,4 +103,8 @@ allSchemas = [...allSchemas, ...extraSchemas];
   hreflangs={hreflangs}
 >
   <slot />
+  <!-- Article Bottom Ad -->
+  <div class="max-w-4xl mx-auto px-4 pb-12">
+    <AdUnit slot="5678901234" format="auto" />
+  </div>
 </BaseLayout>
