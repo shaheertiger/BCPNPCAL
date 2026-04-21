@@ -11,8 +11,17 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
+    sitemap({
+      serialize(item) {
+        // Ensure sitemap URLs never have trailing slashes (except bare root /)
+        if (item.url !== 'https://bcpnpcalculator.ca/') {
+          item.url = item.url.replace(/\/$/, '');
+        }
+        return item;
+      },
+    }),
   ],
+  trailingSlash: 'never',
   i18n: {
     defaultLocale: "en",
     locales: ["en", "zh", "pa", "hi", "ar"],

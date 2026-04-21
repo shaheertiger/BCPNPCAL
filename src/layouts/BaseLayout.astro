@@ -21,7 +21,7 @@ interface Props {
 const {
   title,
   description,
-  canonical = Astro.url.href,
+  canonical: canonicalProp,
   ogImage = "/og-image.png",
   jsonLd,
   lang = "en",
@@ -31,6 +31,12 @@ const {
 
 const siteUrl = Astro.site || "https://bcpnpcalculator.ca";
 const dir = lang === "ar" ? "rtl" : "ltr";
+
+// Normalize canonical: no www, no trailing slash (except bare domain root)
+const rawCanonical = canonicalProp || Astro.url.href;
+const canonical = rawCanonical
+  .replace(/^https?:\/\/www\./, "https://")
+  .replace(/([^/])\/$/, "$1");
 ---
 
 <!doctype html>
