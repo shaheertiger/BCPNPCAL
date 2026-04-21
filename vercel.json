@@ -1,8 +1,21 @@
 {
+    "trailingSlash": false,
     "redirects": [
         {
             "source": "/ads.txt",
             "destination": "https://srv.adstxtmanager.com/19390/bcpnpcalculator.ca",
+            "permanent": true
+        },
+        {
+            "source": "/(.*)",
+            "has": [{ "type": "host", "value": "www.bcpnpcalculator.ca" }],
+            "destination": "https://bcpnpcalculator.ca/$1",
+            "permanent": true
+        },
+        {
+            "source": "/bc-pnp-calculator",
+            "has": [{ "type": "query", "key": "lang" }],
+            "destination": "/bc-pnp-calculator",
             "permanent": true
         }
     ]
