@@ -1,5 +1,4 @@
 {
-    "trailingSlash": false,
     "redirects": [
         {
             "source": "/ads.txt",
@@ -7,9 +6,8 @@
             "permanent": true
         },
         {
-            "source": "/(.*)",
-            "has": [{ "type": "host", "value": "www.bcpnpcalculator.ca" }],
-            "destination": "https://bcpnpcalculator.ca/$1",
+            "source": "/:path+/",
+            "destination": "/:path+",
             "permanent": true
         },
         {
