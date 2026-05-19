@@ -36,6 +36,14 @@ const pageUrl = `https://bcpnpcalculator.ca/articles/${slug}`;
 const canonicalUrl = canonical || pageUrl;
 const crumbLabel = breadcrumbLabel || title.replace(/ [-|:].*/g, "").slice(0, 60);
 
+function formatDate(iso: string) {
+  const d = new Date(iso);
+  return d.toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric" });
+}
+const publishedLabel = formatDate(datePublished);
+const updatedLabel = formatDate(dateModified);
+const showUpdated = dateModified && dateModified !== datePublished;
+
 // Check if extra schemas already include an Article type
 const extraSchemas: object[] = extraJsonLd
   ? Array.isArray(extraJsonLd)
@@ -58,9 +66,10 @@ const articleSchema = {
   articleSection: articleSection,
   inLanguage: "en",
   author: {
-    "@type": "Organization",
-    name: "BC PNP Calculator",
-    url: "https://bcpnpcalculator.ca",
+    "@type": "Person",
+    name: "BC PNP Calculator Editorial Team",
+    url: "https://bcpnpcalculator.ca/about",
+    jobTitle: "Immigration Research & Analysis",
   },
   publisher: {
     "@type": "Organization",
@@ -102,7 +111,67 @@ allSchemas = [...allSchemas, ...extraSchemas];
   jsonLd={allSchemas}
   hreflangs={hreflangs}
 >
+  <!-- Article byline bar -->
+  <div class="bg-white border-b border-slate-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm text-slate-500">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+          <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+          </svg>
+        </div>
+        <span>
+          <span class="font-semibold text-slate-700">BC PNP Editorial Team</span>
+          <span class="text-slate-400 hidden sm:inline"> &middot; Immigration Research</span>
+        </span>
+      </div>
+      <span class="text-slate-200 hidden sm:inline" aria-hidden="true">|</span>
+      <div class="flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        <span>Published <time datetime={datePublished}>{publishedLabel}</time></span>
+      </div>
+      {showUpdated && (
+        <div class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+          <span>Updated <time datetime={dateModified}>{updatedLabel}</time></span>
+        </div>
+      )}
+    </div>
+  </div>
+
   <slot />
+
+  <!-- Author bio -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8">
+      <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">About the Author</p>
+      <div class="flex gap-4 items-start">
+        <div class="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+          <span class="text-white font-black text-lg">BC</span>
+        </div>
+        <div>
+          <p class="font-bold text-slate-900 text-lg leading-tight">BC PNP Calculator Editorial Team</p>
+          <p class="text-sm text-slate-500 mt-0.5 mb-3">Immigration Research &amp; Analysis &middot; British Columbia, Canada</p>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Our editorial team has firsthand experience navigating Canada's immigration system, including the BC Provincial Nominee Program. We track official government policy bulletins, analyze every draw result, and update our content within 24–48 hours of any regulatory changes. Articles are fact-checked against the <a href="https://www.welcomebc.ca/Immigrate-to-B-C/BC-PNP-Skills-Immigration" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:underline">official BC PNP website</a> before publication.
+          </p>
+          <p class="text-xs text-slate-400 mt-3">
+            <strong>Disclaimer:</strong> This content is for informational purposes only and does not constitute legal immigration advice. For guidance specific to your situation, consult a licensed Regulated Canadian Immigration Consultant (RCIC).
+          </p>
+          <div class="mt-4 flex items-center gap-5 text-sm">
+            <a href="/about" class="font-semibold text-red-600 hover:underline">About Us</a>
+            <a href="/contact" class="text-slate-500 hover:underline">Contact</a>
+            <a href="/articles/bc-pnp-calculator-faq" class="text-slate-500 hover:underline">FAQ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Article Bottom Ad -->
   <div class="max-w-4xl mx-auto px-4 pb-12">
     <AdUnit slot="5678901234" format="auto" />
