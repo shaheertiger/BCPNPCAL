@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "update-ads": "curl -L https://srv.adstxtmanager.com/19390/bcpnpcalculator.ca -o public/ads.txt",
-    "generate:favicons": "node generate-favicons.mjs"
+    "generate:favicons": "node generate-favicons.mjs",
+    "indexnow": "node scripts/indexnow-submit.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
