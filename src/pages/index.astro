@@ -67,11 +67,33 @@ const jsonLd = [
     "@type": "WebSite",
     name: "BC PNP Points Calculator",
     url: "https://bcpnpcalculator.ca",
-    inLanguage: ["en", "zh", "hi"],
+    inLanguage: ["en", "zh", "hi", "pa", "ar"],
     publisher: {
       "@type": "Organization",
       name: "BC PNP Calculator",
       url: "https://bcpnpcalculator.ca",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description: description,
+    url: "https://bcpnpcalculator.ca",
+    inLanguage: "en",
+    dateModified: "2026-05-29",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "BC PNP Points Calculator",
+      url: "https://bcpnpcalculator.ca",
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: "https://bcpnpcalculator.ca/og-image.png",
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2"],
     },
   },
   {
