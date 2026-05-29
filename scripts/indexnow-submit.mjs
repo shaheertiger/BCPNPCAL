@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 // One-off IndexNow submission for bcpnpcalculator.ca
-// Submits every URL in public/sitemap.xml to Bing's IndexNow endpoint.
+// Submits every URL in the generated sitemap to Bing's IndexNow endpoint.
+//
+// Reads the auto-generated sitemap (dist/sitemap-0.xml) so the submitted URLs
+// always match what Astro actually built. Run `npm run build` first.
 //
 // Usage:
 //   node scripts/indexnow-submit.mjs            # submit all sitemap URLs
@@ -24,8 +27,23 @@ const ENDPOINT = 'https://api.indexnow.org/IndexNow';
 const BATCH_SIZE = 100;
 
 function readSitemapUrls() {
-  const xml = fs.readFileSync(path.join(ROOT, 'public', 'sitemap.xml'), 'utf-8');
-  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1].trim());
+  // Prefer the freshly-built sitemap; fall back to any other generated shards.
+  const candidates = [
+    path.join(ROOT, 'dist', 'sitemap-0.xml'),
+    path.join(ROOT, 'dist', 'sitemap-index.xml'),
+  ];
+  const sitemapPath = candidates.find((p) => fs.existsSync(p));
+  if (!sitemapPath) {
+    console.error(
+      'No generated sitemap found in dist/. Run `npm run build` before submitting.'
+    );
+    process.exit(1);
+  }
+  const xml = fs.readFileSync(sitemapPath, 'utf-8');
+  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
+    .map((m) => m[1].trim())
+    // sitemap-index.xml lists child sitemaps, not pages — drop those.
+    .filter((u) => !/sitemap[-\w]*\.xml$/.test(u));
 }
 
 async function submitBatch(urlList) {

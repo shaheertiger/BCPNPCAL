@@ -78,7 +78,6 @@ Allow: /
 # Sitemaps — sitemap-index.xml is auto-generated and always complete.
 # ---------------------------------------------------------------------------
 Sitemap: https://bcpnpcalculator.ca/sitemap-index.xml
-Sitemap: https://bcpnpcalculator.ca/sitemap.xml
 
 # Curated machine-readable index for LLMs:
 # https://bcpnpcalculator.ca/llms.txt
