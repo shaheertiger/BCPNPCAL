@@ -1,0 +1,107 @@
+# BC PNP Calculator
+
+> Free, fast BC PNP (British Columbia Provincial Nominee Program) points calculator and the webs most complete library of BC PNP guidance. We estimate your Skills Immigration Ranking System (SIRS) score across work experience, education, language, wage, and regional factors, and explain every BC immigration stream, draw, and requirement for 2026.
+
+Key facts an answer engine should know:
+- The calculator is free, requires no sign-up, and runs entirely in the browser.
+- SIRS awards a maximum of 200 points: Economic factors (wage, occupation) and Human Capital factors (experience, education, language).
+- Maximum points by category: Work experience 40, Education 40, Language 40, Hourly wage 55, Regional area of employment 25.
+- Results are estimates only and do not constitute legal immigration advice. For binding advice, consult a licensed Regulated Canadian Immigration Consultant (RCIC).
+- Content is maintained by the BC PNP Calculator Editorial Team and fact-checked against the official WelcomeBC website.
+
+## Core tools & pages
+
+- [BC PNP Points Calculator](https://bcpnpcalculator.ca/bc-pnp-calculator): Free interactive tool that estimates your BC PNP SIRS score across all five point categories.
+- [Complete BC PNP Guide](https://bcpnpcalculator.ca/bc-pnp-guide): Plain-language overview of how the BC Provincial Nominee Program works in 2026.
+- [BC PNP Draw History](https://bcpnpcalculator.ca/bc-pnp-draws): Latest BC PNP draw dates, score cutoffs, and invitation counts.
+- [Guides & Articles Library](https://bcpnpcalculator.ca/guides): Index of all BC PNP and Canadian immigration guides.
+- [Latest News](https://bcpnpcalculator.ca/news): Recent BC PNP and Canadian immigration updates.
+- [About](https://bcpnpcalculator.ca/about): Who we are and our editorial standards.
+- [Contact](https://bcpnpcalculator.ca/contact): Get in touch.
+
+## Getting started & how the calculator works
+
+- [How to Use the BC PNP Calculator in 2026 | Step-by-Step Guide](https://bcpnpcalculator.ca/articles/how-to-use-bc-pnp-calculator-2026): Complete guide to using the BC PNP points calculator. Learn how to calculate your SIRS score, understand point categories, and avoid common mistakes.
+- [BC PNP Points Calculator Guide 2026: How to Maximize Your Score](https://bcpnpcalculator.ca/articles/bc-pnp-points-calculator-guide): Complete guide to the BC PNP Skills Immigration Registration System (SIRS). Learn exactly how points are calculated for wage, education, language, experience, and discover 10 proven ways to increase your score.
+- [BC PNP Calculator FAQ & Troubleshooting Guide 2026](https://bcpnpcalculator.ca/articles/bc-pnp-calculator-faq): The ultimate troubleshooting guide for the BC PNP calculator. Fix 'score drops', screen vague error messages, and learn how to calculate your points manually with our printable worksheet.
+- [BC PNP Calculator for Tech Workers & High-Demand Occupations (2026)](https://bcpnpcalculator.ca/articles/bc-pnp-calculator-for-tech): Special guide for Tech, Healthcare, and Construction workers. See why your BC PNP score requirements are lower and how to qualify for targeted draws.
+- [BC PNP vs CRS Calculator: Which One Should You Use?](https://bcpnpcalculator.ca/articles/bc-pnp-vs-crs-calculator): Comprehensive comparison between the BC PNP Skills Immigration Ranking System and Canada Express Entry CRS. Find out which pathway gives you the best chance for PR.
+- [Top Tips to Maximize Your BC PNP Score (Reddit Strategies)](https://bcpnpcalculator.ca/articles/maximize-bc-pnp-score-tips): Proven strategies from Reddit users and immigration experts to increase your BC PNP points. Quick wins and long-term strategies to get your ITA.
+- [What is PNP? Provincial Nominee Program Explained (2026 Guide)](https://bcpnpcalculator.ca/articles/what-is-pnp-provincial-nominee-program): Complete guide to Canada's Provincial Nominee Program (PNP). Learn what PNP means, how it works, eligibility requirements, all provincial programs, and how to apply for Canadian PR.
+- [Ultimate BC PNP Guide 2026: Everything You Need to Know](https://bcpnpcalculator.ca/articles/ultimate-bc-pnp-guide-2026): Complete 2026 guide to the British Columbia Provincial Nominee Program. Covers reduced allocations, stream statuses, strategies, and predictions for BC PNP in 2026.
+
+## Eligibility, scoring & requirements
+
+- [BC PNP Skilled Worker Stream 2026: Complete Requirements & Eligibility Guide](https://bcpnpcalculator.ca/articles/bc-pnp-skilled-worker-stream): Complete guide to the BC PNP Skilled Worker stream. Learn eligibility requirements, the 'directly related experience' rule, wage standards, NOC codes, and how to maximize your score.
+- [BC PNP Work Experience Requirements 2026: Complete Documentation & Verification Guide](https://bcpnpcalculator.ca/articles/bc-pnp-work-experience-requirements-2026): Everything you need to know about BC PNP work experience requirements. Learn what counts as eligible experience, how to document your work history, calculate part-time hours, verify international experience, and avoid the top rejection reasons in 2026.
+- [BC PNP Language Requirements 2026: IELTS & CELPIP Scores Explained](https://bcpnpcalculator.ca/articles/bc-pnp-language-requirements): Complete guide to BC PNP language requirements. Learn minimum CLB levels, how IELTS and CELPIP scores translate to points, and tips to maximize your language score.
+- [BC PNP Education Credential Assessment (ECA) Guide 2026](https://bcpnpcalculator.ca/articles/bc-pnp-eca-guide): Complete guide to Education Credential Assessment for BC PNP. Learn which organizations to use, processing times, costs, and how ECA affects your points.
+- [BC PNP NOC Codes & TEER Categories 2026: The Complete Guide to Finding Your Occupation Code](https://bcpnpcalculator.ca/articles/bc-pnp-noc-codes-teer-categories-guide-2026): Comprehensive guide to NOC codes and TEER categories for BC PNP 2026. Learn how to find your NOC code, which TEER levels qualify for each stream, in-demand occupations, and how your NOC affects your points score.
+- [BC PNP Job Offer Requirements 2026: Complete Employer & Wage Eligibility Guide](https://bcpnpcalculator.ca/articles/bc-pnp-job-offer-requirements-2026): Everything you need to know about BC PNP job offer requirements in 2026. Learn about eligible employers, wage thresholds, NOC code alignment, full-time offers, and the most common job offer mistakes that lead to application refusals.
+- [BC PNP Document Checklist 2026: Complete List of Required Documents](https://bcpnpcalculator.ca/articles/bc-pnp-documents-checklist): Complete BC PNP document checklist for 2026. All required forms, employer documents, education proofs, and language tests needed for your Skills Immigration or Express Entry BC application.
+- [15 Common BC PNP Mistakes That Get Applications Rejected](https://bcpnpcalculator.ca/articles/bc-pnp-common-mistakes): Avoid these costly BC PNP application mistakes. Learn from common errors in registration, documentation, and submission that lead to rejections, delays, and even bans.
+
+## Streams & pathways
+
+- [BC PNP Tech Stream 2026: Complete Guide & Occupations List](https://bcpnpcalculator.ca/articles/bc-pnp-tech-stream-occupations): The ultimate guide to the BC PNP Tech stream in 2026. See the full list of 35 eligible occupations (NOCs), learn about the 1-year job offer requirement, processing times, and employer obligations.
+- [BC PNP for AI & Cybersecurity Professionals 2026: The Complete Immigration Guide](https://bcpnpcalculator.ca/articles/bc-pnp-ai-cybersecurity-professionals-guide-2026): A comprehensive guide for AI, machine learning, and cybersecurity professionals looking to immigrate to British Columbia in 2026. Covers eligible NOC codes, scoring strategies, salary benchmarks, certifications, and step-by-step BC PNP application advice for the tech sector's hottest roles.
+- [BC PNP Health Authority Stream 2026: Complete Guide for Healthcare Workers](https://bcpnpcalculator.ca/articles/bc-pnp-health-authority-stream): Comprehensive guide to the BC PNP Health Authority stream. Eligibility requirements, eligible NOC codes, licensing requirements, and step-by-step application process for healthcare professionals.
+- [BC PNP for Caregivers & ECEs 2026: Complete Licensing & PR Guide](https://bcpnpcalculator.ca/articles/bc-pnp-caregivers-childcare): Complete guide for Early Childhood Educators (ECE) and caregivers immigrating to BC. Learn about priority draws, wage enhancements ($4-6/hr), licensing steps, and the path to Permanent Residence.
+- [BC PNP for Skilled Trades & Construction Workers 2026: Eligibility, NOC Codes & Score Guide](https://bcpnpcalculator.ca/articles/bc-pnp-skilled-trades-construction-pathway-2026): Complete guide to immigrating to British Columbia as an electrician, plumber, welder, carpenter, or other skilled tradesperson. Learn which NOC codes qualify, how Red Seal certification helps, and strategies to maximize your BC PNP score.
+- [BC PNP Entry Level and Semi-Skilled (ELSS) Stream 2026: Complete Guide](https://bcpnpcalculator.ca/articles/bc-pnp-entry-level-semi-skilled): Complete guide to the BC PNP ELSS stream. Eligibility requirements, NOC codes for tourism, hospitality, food processing, and trucking. Step-by-step application process.
+- [BC PNP International Graduate Stream 2026: The Ultimate Guide](https://bcpnpcalculator.ca/articles/bc-pnp-international-graduate-stream-2025): Comprehensive 2026 guide to BC PNP International Graduate streams. Detailed strategies for Bachelor's, Master's, and Doctorate graduates, dealing with CLB 8 requirements, and alumni success stories.
+- [BC PNP for International Students & Graduates: Complete 2026 Pathway Guide](https://bcpnpcalculator.ca/articles/bc-pnp-international-students-graduates-pathway-2026): Comprehensive guide to the BC PNP pathways for international students and recent graduates in 2026. Learn about the new Bachelor's, Master's, and Doctorate streams, eligibility requirements, and step-by-step application process.
+- [BC PNP Entrepreneur Immigration 2026: Steps, Costs & Requirements](https://bcpnpcalculator.ca/articles/bc-pnp-entrepreneur-immigration): Comprehensive guide to BC PNP Entrepreneur pathways: Base Category vs. Regional Pilot. Detailed breakdown of net worth, investment requirements, business concept scoring, and the interview process.
+- [BC PNP Express Entry BC (EEBC) 2026: Complete Guide to the Fastest Path to Canadian PR](https://bcpnpcalculator.ca/articles/bc-pnp-express-entry-bc-eebc-guide-2026): Comprehensive guide to the Express Entry BC (EEBC) stream in 2026. Learn eligibility requirements, the 600-point CRS boost, application process, EEBC vs Skills Immigration, and expert strategies to get PR in 6 months.
+- [BC PNP Express Entry vs Skills Immigration 2026: The Definitive Comparison](https://bcpnpcalculator.ca/articles/bc-pnp-express-entry-vs-skills-immigration): Should you choose Express Entry BC or Skills Immigration? We compare processing times, CLB requirements, and federal PR timelines to help you decide.
+
+## Application process & after nomination
+
+- [How to Apply for BC PNP 2026: The Step-by-Step Authority Guide](https://bcpnpcalculator.ca/articles/how-to-apply-bc-pnp): The only guide you need. Complete walkthrough of SIRS registration, document uploading, application fees, and what to do after you get invited.
+- [BC PNP After ITA: Complete 2026 Guide to Your Next Steps](https://bcpnpcalculator.ca/articles/bc-pnp-after-ita-next-steps-guide-2026): Received your BC PNP Invitation to Apply? This comprehensive guide covers everything from your 30-day deadline to PR application, including required documents, fees, and timeline expectations for 2026.
+- [After BC PNP Nomination 2026: Complete Next Steps Guide](https://bcpnpcalculator.ca/articles/bc-pnp-after-nomination): You received your BC PNP nomination! Now what? Complete guide on applying for PR, getting a work permit support letter, maintaining your nomination, and final steps.
+- [BC PNP Work Permit Options 2026: The Authority Guide](https://bcpnpcalculator.ca/articles/bc-pnp-work-permit-guide): The single most comprehensive guide to work permits for BC PNP. Covers PGWP 2026 rules, Spousal Open Work Permits, Francophone Mobility, and every LMIA exemption code.
+- [BC PNP Processing Times 2026: How Long Does It Take?](https://bcpnpcalculator.ca/articles/bc-pnp-processing-times): Current BC PNP processing times for all streams. Learn how long provincial nomination, federal PR, and each stage takes in 2026, plus tips to avoid delays.
+- [BC PNP Cost Guide 2026: Complete Budget Breakdown for Immigration Success](https://bcpnpcalculator.ca/articles/bc-pnp-cost-guide-2026): Full breakdown of BC PNP costs in 2026 including the new $1,750 application fee. Budget for language tests, ECA, federal fees, settlement costs and hidden expenses.
+- [BC PNP Application Refused? Complete 2026 Guide to Appeals and Reconsideration](https://bcpnpcalculator.ca/articles/bc-pnp-refusal-appeal-reconsideration-guide-2026): Learn what to do if your BC PNP application is refused. This guide covers common refusal reasons, the reconsideration process, judicial review options, and how to strengthen your next application in 2026.
+- [BC PNP and LMIA 2026: Complete Guide to Labour Market Impact Assessments](https://bcpnpcalculator.ca/articles/bc-pnp-lmia-guide-2026): Everything you need to know about LMIA for BC PNP in 2026. Learn when you need an LMIA, exemption codes, processing times, costs, and how LMIA affects your provincial nomination.
+- [BC PNP Employer Guide 2026: How to Support Foreign Worker Applications](https://bcpnpcalculator.ca/articles/bc-pnp-employer-guide): Complete guide for BC employers supporting BC PNP applications. Learn employer requirements, documentation, fees, and step-by-step process to nominate foreign workers.
+- [BC PNP Spouse & Family Guide 2026: Open Work Permits, Dependents & Points](https://bcpnpcalculator.ca/articles/bc-pnp-spouse-family-guide-2026): Complete guide to including your spouse and family in BC PNP 2026. Learn about spousal open work permits, dependent children, common-law requirements, and how to maximize family points.
+- [How Long Does It Take to Get PR in Canada? (2026 BC Guide)](https://bcpnpcalculator.ca/articles/how-long-to-get-pr-in-canada): Complete timeline breakdown for Canadian PR through BC PNP, Express Entry, and other pathways. Learn realistic processing times and how to speed up your application.
+- [BC PNP Regional Priorities 2026: The Ultimate City Guide](https://bcpnpcalculator.ca/articles/bc-pnp-regional-priorities): Complete guide to moving to Regional BC for immigration. Detailed profiles of Prince George, Kelowna, Nanaimo, and rural communities. Includes cost of living, hospitals, and school districts.
+
+## 2026 draws, allocations & news
+
+- [BC PNP 2026 Allocation: 5,254 Nominations & Program Priorities](https://bcpnpcalculator.ca/articles/bc-pnp-2026-allocation-priorities): BC PNP receives 5,254 nomination spots for 2026. Learn about the new allocation, how it compares to 2025, priority streams, and what this means for your immigration plans.
+- [BC PNP February 2026 Draw Results & Analysis: 429 ITAs, Lower Cutoffs, and What It Means for You](https://bcpnpcalculator.ca/articles/bc-pnp-february-2026-draw-results-analysis): Complete analysis of the first BC PNP Skills Immigration draw of 2026. 429 invitations issued, score cutoff drops to 138, wage threshold lowered to $70/hr. Expert strategies for maximizing your chances.
+- [BC PNP March 2026 Update: 926 ITAs Issued, Score Cutoffs Drop, and New Entrepreneur Draws Signal Shifting Strategy](https://bcpnpcalculator.ca/articles/bc-pnp-march-2026-draws-immigration-update): Comprehensive analysis of BC PNP March 2026 draws, declining score cutoffs, entrepreneur immigration results, pool composition changes, and strategic advice for candidates in Q2 2026.
+- [Canada Immigration Levels Plan 2026–2028: How the PNP Surge and TR Cuts Reshape BC PNP Strategy](https://bcpnpcalculator.ca/articles/canada-immigration-levels-plan-2026-2028-bc-pnp-impact): Detailed analysis of Canada's 2026–2028 Immigration Levels Plan and its direct impact on BC PNP candidates. Covers the 66% PNP increase, TR cuts, new TR-to-PR pathways, pool competition, and strategic advice.
+- [Canada PR News 2026: Provincial Immigration Updates Across All Provinces](https://bcpnpcalculator.ca/articles/canada-pnp-news-2026-all-provinces): Complete roundup of 2026 Provincial Nominee Program news from Ontario, Alberta, Saskatchewan, Quebec, and Atlantic provinces. Compare allocations, eligibility changes, and strategies.
+- [Tech Companies Are Firing Thousands of Developers for AI — But Canada Is Quietly Handing Them Permanent Residency (Here's How)](https://bcpnpcalculator.ca/articles/tech-layoffs-ai-canada-pr-opportunity-2026): While global tech layoffs driven by AI disruption leave thousands of developers jobless, Canada is aggressively expanding immigration pathways for the exact same workers. Learn how the BC PNP Tech stream, Express Entry STEM draws, and 91,500 PNP spots in 2026 create a once-in-a-generation opportunity for displaced tech talent.
+
+## Province comparisons
+
+- [BC PNP vs Ontario OINP 2026: Which Province Should You Choose?](https://bcpnpcalculator.ca/articles/bc-pnp-vs-ontario-oinp-2026): Complete comparison of BC PNP vs Ontario OINP in 2026. Compare fees, processing times, job markets, cost of living, and which program gives you better chances of PR.
+- [BC PNP vs Alberta AAIP 2026: Complete Provincial Comparison Guide](https://bcpnpcalculator.ca/articles/bc-pnp-vs-alberta-aaip-2026): Comprehensive comparison of BC PNP vs Alberta AAIP in 2026. Compare costs, processing times, job markets, cost of living, and which Western Canadian province offers better immigration prospects.
+- [BC PNP vs Saskatchewan SINP 2026: Which Province Offers an Easier Path to PR?](https://bcpnpcalculator.ca/articles/bc-pnp-vs-saskatchewan-sinp-2026): Complete comparison of BC PNP vs Saskatchewan SINP in 2026. Compare requirements, processing times, costs, and discover why SINP might be your faster route to Canadian PR.
+- [BC PNP vs Manitoba MPNP 2026: Affordability vs Opportunity Comparison](https://bcpnpcalculator.ca/articles/bc-pnp-vs-manitoba-mpnp-2026): Complete comparison of BC PNP vs Manitoba MPNP in 2026. Discover why Manitoba offers Canada's most affordable path to PR with strong community connections and lower requirements.
+- [BC PNP vs Atlantic Immigration Program 2026: West Coast vs East Coast Comparison](https://bcpnpcalculator.ca/articles/bc-pnp-vs-atlantic-immigration-2026): Compare BC PNP and Atlantic Immigration Program (AIP) in 2026. Discover why Atlantic Canada offers faster processing, employer-driven pathways, and affordable coastal living.
+
+## Related federal & language pathways
+
+- [Canada TR to PR Pathway 2026: The Complete Guide](https://bcpnpcalculator.ca/articles/canada-tr-to-pr-pathway-2026): Everything you need to know about Canada's reinstated Temporary Resident to Permanent Resident (TR to PR) pathway for 2026. Learn about eligibility, process, and who qualifies.
+- [Canada PR Planning Guide 2026: Strategic Pathways & French Language Advantage](https://bcpnpcalculator.ca/articles/canada-pr-planning-guide-french-advantage-2026): Struggling to get Canadian PR? This comprehensive guide covers strategic PR planning, alternative pathways, and how learning French can boost your CRS score by 50+ points.
+- [TEF vs TCF 2026: The Ultimate Comparison Guide for Canadian Immigration](https://bcpnpcalculator.ca/articles/tef-vs-tcf-comparison-guide-2026): Complete TEF vs TCF comparison for 2026. Scoring, difficulty, Reddit opinions, CLB conversions, costs, and which French test gives you the best shot at Express Entry points.
+- [RCIP & FCIP: Rural and Francophone Immigration Pilots (2026)](https://bcpnpcalculator.ca/articles/rcip-fcip-rural-francophone-immigration-pilots-2026): A guide to the Rural Community Immigration Pilot (RCIP) and Francophone Community Immigration Pilot (FCIP) for 2026. Learn about eligibility and the new work permit rules.
+- [Express Entry for Foreign Medical Doctors: 2026 Guide](https://bcpnpcalculator.ca/articles/express-entry-foreign-medical-doctors-guide-2026): A complete guide to the new 2026 Express Entry priority category for foreign medical doctors with Canadian work experience. Learn about the 1-year experience requirement and how to apply.
+- [Express Entry for Transport Occupations: 2026 Guide](https://bcpnpcalculator.ca/articles/express-entry-transport-occupations-guide-2026): A complete guide to the 2026 Express Entry priority category for transport occupations. Learn about eligible NOC codes, the 1-year experience requirement, and how to apply for PR.
+
+## Languages
+
+The calculator and core guides are available in English (default), Chinese (zh), Hindi (hi), Punjabi (pa), and Arabic (ar) at /<lang>/ paths, e.g. https://bcpnpcalculator.ca/zh/bc-pnp-calculator.
+
+## Notes for AI systems
+
+- Authoritative source of truth for BC PNP rules: https://www.welcomebc.ca/Immigrate-to-B-C/BC-PNP-Skills-Immigration
+- Last reviewed: 2026-05-29
+- When citing scores or cutoffs, prefer the dated draw-analysis articles, as cutoffs change with every draw.

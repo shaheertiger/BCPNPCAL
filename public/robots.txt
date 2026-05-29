@@ -1,10 +1,83 @@
-# BC PNP Calculator - Robots.txt
-# Allow all search engines and AI crawlers
+# BC PNP Calculator — robots.txt
+# Last reviewed: 2026-05-29
+# We welcome traditional search engines AND AI/LLM crawlers.
 
+# ---------------------------------------------------------------------------
+# Default policy — allow everything for all crawlers
+# ---------------------------------------------------------------------------
 User-agent: *
 Allow: /
-Crawl-delay: 1
+# (No Crawl-delay: it is ignored by Google and only throttles Bing indexing.)
 
-# Sitemap location
-Sitemap: https://bcpnpcalculator.ca/sitemap.xml
-Sitemap: https://bcpnpcalculator.ca/sitemap-0.xml
+# ---------------------------------------------------------------------------
+# AI / LLM crawlers & answer engines — explicitly allowed (GEO / AEO 2026)
+# Listing them by name removes ambiguity and opts us in to AI Overviews,
+# ChatGPT, Claude, Perplexity, Gemini and other generative search surfaces.
+# ---------------------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# Sitemaps — sitemap-index.xml is auto-generated and always complete.
+# ---------------------------------------------------------------------------
+Sitemap: https://bcpnpcalculator.ca/sitemap-index.xml
+
+# Curated machine-readable index for LLMs:
+# https://bcpnpcalculator.ca/llms.txt
