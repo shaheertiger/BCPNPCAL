@@ -45,10 +45,10 @@ const CardOption = ({ selected, onClick, title, subtitle, points }: any) => (
       }`}
   >
     <div className="flex-1 pr-3">
-      <h4 className={`text-sm font-bold transition-colors ${selected ? 'text-indigo-950' : 'text-slate-700'}`}>{title}</h4>
-      {subtitle && <p className={`text-[10px] uppercase tracking-wider font-semibold mt-0.5 transition-colors ${selected ? 'text-indigo-600' : 'text-slate-400'}`}>{subtitle}</p>}
+      <span className={`block text-sm font-bold transition-colors ${selected ? 'text-indigo-950' : 'text-slate-700'}`}>{title}</span>
+      {subtitle && <p className={`text-[10px] uppercase tracking-wider font-semibold mt-0.5 transition-colors ${selected ? 'text-indigo-600' : 'text-slate-500'}`}>{subtitle}</p>}
     </div>
-    <div className={`shrink-0 px-2.5 py-1 rounded-xl text-xs font-black tracking-widest uppercase transition-all ${selected ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200' : 'bg-slate-100 text-slate-400'
+    <div className={`shrink-0 px-2.5 py-1 rounded-xl text-xs font-black tracking-widest uppercase transition-all ${selected ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200' : 'bg-slate-100 text-slate-600'
       }`}>
       +{points}
     </div>
@@ -66,7 +66,7 @@ const Toggle = ({ active, onClick, title, subtitle }: any) => (
     </div>
     <div className="text-left">
       <span className="text-sm font-bold text-slate-700 block">{title}</span>
-      <span className={`text-[10px] font-bold uppercase tracking-wider ${active ? 'text-indigo-600' : 'text-slate-400'}`}>{subtitle}</span>
+      <span className={`text-[10px] font-bold uppercase tracking-wider ${active ? 'text-indigo-600' : 'text-slate-500'}`}>{subtitle}</span>
     </div>
   </button>
 );
@@ -248,7 +248,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
             {/* H) Professional Designation List (only if G=yes) */}
             {state.hasProfessionalDesignation && (
               <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm animate-in fade-in slide-in-from-top-2">
-                <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">{t.profession.select_label}</h3>
+                <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">{t.profession.select_label}</h3>
 
                 <div className="relative">
                   <select
@@ -261,7 +261,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
                       <option key={p} value={p}>{p}</option>
                     ))}
                   </select>
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                   </div>
                 </div>
@@ -308,7 +308,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
               {/* J) English CLB (only if I=yes) */}
               {state.hasEnglishTest && (
                 <div className="mt-3 animate-in fade-in slide-in-from-top-2">
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">{t.language.english.label}</p>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">{t.language.english.label}</p>
                   {state.englishClb === 0 && (
                     <div className="mb-2 px-3 py-1.5 rounded-lg bg-amber-50 border border-amber-200">
                       <p className="text-[10px] font-bold text-amber-700">{t.language.english.instruction}</p>
@@ -327,7 +327,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
                             }`}
                         >
                           <span className="text-lg font-black">{level >= 9 ? '9+' : level === 0 ? '<4' : level}</span>
-                          <span className={`text-[9px] font-bold ${state.englishClb === level ? 'text-indigo-200' : 'text-slate-400'}`}>
+                          <span className={`text-[9px] font-bold ${state.englishClb === level ? 'text-indigo-200' : 'text-slate-500'}`}>
                             +{pts}
                           </span>
                         </button>
@@ -356,7 +356,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
               {/* L) French CLB (only if K=yes) */}
               {state.hasFrenchTest && (
                 <div className="mt-3 animate-in fade-in slide-in-from-top-2">
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">{t.language.french.label}</p>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">{t.language.french.label}</p>
                   {state.frenchClb === 0 && (
                     <div className="mb-2 px-3 py-1.5 rounded-lg bg-amber-50 border border-amber-200">
                       <p className="text-[10px] font-bold text-amber-700">{t.language.french.instruction}</p>
@@ -375,7 +375,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
                             }`}
                         >
                           <span className="text-lg font-black">{level >= 9 ? '9+' : level === 0 ? '<4' : level}</span>
-                          <span className={`text-[9px] font-bold ${state.frenchClb === level ? 'text-indigo-200' : 'text-slate-400'}`}>
+                          <span className={`text-[9px] font-bold ${state.frenchClb === level ? 'text-indigo-200' : 'text-slate-500'}`}>
                             +{pts}
                           </span>
                         </button>
@@ -400,7 +400,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
 
               <div className="text-center mb-5">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">{t.wage.title}</p>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">{t.wage.title}</p>
                 <div className="text-4xl font-black text-slate-900 tabular-nums tracking-tight">
                   ${state.hourlyWage.toFixed(2)}/hr
                 </div>
@@ -426,7 +426,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
                 {/* Manual Input */}
                 <div className="mt-4 flex justify-center">
                   <div className="relative">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-bold">$</span>
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 font-bold">$</span>
                     <input
                       type="number"
                       value={state.hourlyWage}
@@ -442,13 +442,13 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
 
               <div className="grid grid-cols-2 gap-3 w-full text-center">
                 <div className={`p-3 rounded-xl border transition-all ${state.hourlyWage < 16 ? 'bg-red-50 border-red-200' : 'bg-slate-50 border-slate-100'}`}>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase">{t.wage.min_label}</p>
+                  <p className="text-[10px] font-bold text-slate-500 uppercase">{t.wage.min_label}</p>
                   <p className={`text-sm font-black ${state.hourlyWage < 16 ? 'text-red-500' : 'text-slate-700'}`}>
                     {state.hourlyWage < 16 ? t.wage.min_points : t.wage.one_point}
                   </p>
                 </div>
                 <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                  <p className="text-[10px] font-bold text-slate-400 uppercase">{t.wage.max_label}</p>
+                  <p className="text-[10px] font-bold text-slate-500 uppercase">{t.wage.max_label}</p>
                   <p className="text-sm font-black text-slate-700">{t.wage.max_points}</p>
                 </div>
               </div>
@@ -524,7 +524,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
             <div className="space-y-3">
               {/* Human Capital Section */}
               <div className="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm space-y-3">
-                <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">{t.result.human_capital}</h3>
+                <h3 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest pl-1">{t.result.human_capital}</h3>
 
                 {/* Experience */}
                 <div className="bg-slate-50 p-4 rounded-xl space-y-2">
@@ -571,7 +571,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
 
               {/* Economic Factors Section */}
               <div className="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm space-y-3">
-                <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">{t.result.economic_factors}</h3>
+                <h3 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest pl-1">{t.result.economic_factors}</h3>
 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center py-2 border-b border-slate-50">
@@ -597,7 +597,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
                 setState(INITIAL_STATE);
                 setCurrentStep(0);
               }}
-              className="w-full py-4 text-slate-400 font-bold text-xs uppercase tracking-[0.2em] hover:text-indigo-600 transition-colors"
+              className="w-full py-4 text-slate-500 font-bold text-xs uppercase tracking-[0.2em] hover:text-indigo-600 transition-colors"
             >
               {t.result.restart}
             </button>
@@ -638,7 +638,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </button>
             {currentStep > 0 && (
-              <button onClick={prevStep} className="w-full mt-3 text-slate-400 font-bold text-xs uppercase tracking-widest hover:text-indigo-600 transition-colors">
+              <button onClick={prevStep} className="w-full mt-3 text-slate-500 font-bold text-xs uppercase tracking-widest hover:text-indigo-600 transition-colors">
                 {t.nav.back}
               </button>
             )}

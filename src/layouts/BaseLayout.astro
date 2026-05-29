@@ -365,7 +365,9 @@ const canonical = rawCanonical
   </head>
   <body>
     <Navigation lang={lang} />
-    <slot />
+    <main id="main-content">
+      <slot />
+    </main>
     <Footer lang={lang} />
     <CookieConsent />
   </body>

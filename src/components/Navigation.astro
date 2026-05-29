@@ -71,9 +71,9 @@ const l = labels[lang as keyof typeof labels] || labels.en;
     <div class="flex items-center space-x-4">
       <!-- Language Switcher -->
       <div class="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-200" id="lang-switcher-container">
-        <a href="/" id="lang-toggle-en" class={`text-xs font-bold ${lang === 'en' ? 'text-red-600' : 'text-slate-400 hover:text-slate-600'}`}>EN</a>
+        <a href="/" id="lang-toggle-en" class={`text-xs font-bold ${lang === 'en' ? 'text-red-600' : 'text-slate-600 hover:text-slate-800'}`}>EN</a>
         <span class="text-slate-300">|</span>
-        <a href="/zh" id="lang-toggle-zh" class={`text-xs font-bold ${lang === 'zh' ? 'text-red-600' : 'text-slate-400 hover:text-slate-600'}`}>中文</a>
+        <a href="/zh" id="lang-toggle-zh" class={`text-xs font-bold ${lang === 'zh' ? 'text-red-600' : 'text-slate-600 hover:text-slate-800'}`}>中文</a>
       </div>
 
       <a 

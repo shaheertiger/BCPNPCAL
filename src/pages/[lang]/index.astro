@@ -73,7 +73,7 @@ const hreflangs = [
     hreflangs={hreflangs}
     ogLocale={lang === "zh" ? "zh_TW" : lang === "hi" ? "hi_IN" : "en_CA"}
 >
-    <main
+    <div
         class={`min-h-screen bg-gradient-to-br from-red-50 via-white to-rose-50 flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-20 ${isRTL ? "rtl" : ""} relative`}
         dir={isRTL ? "rtl" : "ltr"}
     >
@@ -446,5 +446,5 @@ const hreflangs = [
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 </BaseLayout>
