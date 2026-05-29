@@ -166,11 +166,11 @@ const canonical = rawCanonical
     <meta name="twitter:image:alt" content={title} />
     <meta name="twitter:creator" content="@bcpnpcalc" />
 
-    <!-- DNS Prefetch & Preconnect for AdSense -->
+    <!-- DNS Prefetch for AdSense (script itself is lazy-loaded; no eager
+         preconnect so it doesn't compete with critical-path connections) -->
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
     <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
     <link rel="dns-prefetch" href="https://tpc.googlesyndication.com" />
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
 
     <!-- DNS Prefetch & Preconnect for Fonts -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -359,8 +359,69 @@ const canonical = rawCanonical
     <!-- Vercel Speed Insights -->
     <SpeedInsights />
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2963693328827195" crossorigin="anonymous"></script>
+    <!-- Google AdSense — loaded lazily to keep it off the critical path.
+         The script is injected on the first user interaction, when an ad unit
+         nears the viewport, or shortly after load (whichever comes first), so
+         it never blocks initial render. Real users still see ads on engagement;
+         AdUnit's queued `adsbygoogle.push({})` calls are drained once it loads. -->
+    <script is:inline>
+      (function () {
+        var CLIENT = "ca-pub-2963693328827195";
+        var loaded = false;
+        var EVENTS = ["scroll", "pointerdown", "touchstart", "keydown", "mousemove"];
+        var opts = { once: true, passive: true, capture: true };
+
+        function cleanup() {
+          EVENTS.forEach(function (e) {
+            window.removeEventListener(e, load, opts);
+          });
+        }
+
+        function load() {
+          if (loaded) return;
+          loaded = true;
+          cleanup();
+          var s = document.createElement("script");
+          s.async = true;
+          s.crossOrigin = "anonymous";
+          s.src =
+            "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" +
+            CLIENT;
+          document.head.appendChild(s);
+        }
+
+        EVENTS.forEach(function (e) {
+          window.addEventListener(e, load, opts);
+        });
+
+        // Load when an ad unit is about to scroll into view.
+        if ("IntersectionObserver" in window) {
+          var startObserver = function () {
+            var io = new IntersectionObserver(
+              function (entries) {
+                for (var i = 0; i < entries.length; i++) {
+                  if (entries[i].isIntersecting) {
+                    load();
+                    io.disconnect();
+                    return;
+                  }
+                }
+              },
+              { rootMargin: "600px" }
+            );
+            var units = document.querySelectorAll("ins.adsbygoogle");
+            for (var i = 0; i < units.length; i++) io.observe(units[i]);
+          };
+          if (document.readyState !== "loading") startObserver();
+          else document.addEventListener("DOMContentLoaded", startObserver);
+        }
+
+        // Fallback for sessions with no interaction (e.g. lab tests still get ads).
+        window.addEventListener("load", function () {
+          setTimeout(load, 3000);
+        });
+      })();
+    </script>
     <meta name="google-adsense-account" content="ca-pub-2963693328827195">
   </head>
   <body>
