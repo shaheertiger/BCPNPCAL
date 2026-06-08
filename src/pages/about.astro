@@ -17,6 +17,21 @@ const jsonLd = [
       url: "https://bcpnpcalculator.ca",
       logo: "https://bcpnpcalculator.ca/android-chrome-512x512.png",
       description: "Free BC Provincial Nominee Program points calculator for immigration to British Columbia",
+      founder: {
+        "@type": "Person",
+        name: "Shaheer Ali Khan",
+        jobTitle: "Regulated Canadian Immigration Consultant (RCIC)",
+        hasCredential: {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Regulated Canadian Immigration Consultant (RCIC)",
+          identifier: "R816383",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "College of Immigration and Citizenship Consultants (CICC)",
+            url: "https://college-ic.ca",
+          },
+        },
+      },
       address: {
         "@type": "PostalAddress",
         addressRegion: "British Columbia",
@@ -72,7 +87,7 @@ const jsonLd = [
               This platform was born from personal experience — the frustration, confusion, and sleepless nights that come with navigating Canada's immigration system. We know what it's like to refresh government websites at midnight, desperately trying to understand if your profile is competitive enough.
             </p>
             <p>
-              BC PNP Calculator was created by someone who walked the same path you're on right now. After years of working in Canada on a work permit, struggling to understand the intricate point calculations, our founder decided enough was enough.
+              BC PNP Calculator was created by <strong>Shaheer Ali Khan</strong>, a Regulated Canadian Immigration Consultant (RCIC, CICC #R816383) who walked the same path many applicants are on right now. After years working alongside applicants struggling to understand the intricate SIRS point calculations, he decided enough was enough.
             </p>
             <p>
               The turning point came during a family gathering in 2024. Watching friends and relatives navigate the same confusing BC PNP documentation — with some paying hundreds of dollars for simple score calculations — made it clear that there had to be a better way. That night, the first prototype of this calculator was built. What started as a simple spreadsheet evolved into a comprehensive web tool that has now helped <strong>thousands of aspiring permanent residents</strong> understand their immigration prospects.
@@ -240,10 +255,10 @@ const jsonLd = [
                 <svg class="w-6 h-6 text-amber-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
                 <p class="text-sm font-semibold text-amber-900">Official BC PNP Website</p>
               </a>
-              <div class="bg-white/60 rounded-xl p-4 border border-amber-200 text-center">
+              <a href="https://college-ic.ca/protecting-the-public/find-an-immigration-consultant" target="_blank" rel="noopener noreferrer" class="bg-white/60 rounded-xl p-4 border border-amber-200 hover:bg-white transition-colors text-center block">
                 <svg class="w-6 h-6 text-amber-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                <p class="text-sm font-semibold text-amber-900">Licensed RCIC Consultant</p>
-              </div>
+                <p class="text-sm font-semibold text-amber-900">Verify an RCIC (CICC Register)</p>
+              </a>
               <div class="bg-white/60 rounded-xl p-4 border border-amber-200 text-center">
                 <svg class="w-6 h-6 text-amber-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                 <p class="text-sm font-semibold text-amber-900">Latest Policy Bulletins</p>
@@ -306,7 +321,7 @@ const jsonLd = [
           </div>
           <div class="text-slate-600 leading-relaxed text-[0.95rem] space-y-4">
             <p>
-              Every article on this site is produced by our editorial team — individuals who have personally gone through the BC PNP application process or have spent years researching Canadian immigration policy. We do not publish AI-generated content without expert review.
+              Content on this site is authored and reviewed by <strong>Shaheer Ali Khan</strong>, a Regulated Canadian Immigration Consultant (RCIC) registered with the <a href="https://college-ic.ca/protecting-the-public/find-an-immigration-consultant" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:underline">College of Immigration and Citizenship Consultants (CICC #R816383)</a>. We do not publish AI-generated content without expert review.
             </p>
             <div class="grid sm:grid-cols-3 gap-4 mt-4">
               <div class="bg-indigo-50 rounded-xl p-4 border border-indigo-100">
@@ -318,12 +333,12 @@ const jsonLd = [
                 <p class="text-xs text-indigo-700 leading-relaxed">All point values, fee amounts, and eligibility criteria are cross-referenced against official government sources before and after publication.</p>
               </div>
               <div class="bg-indigo-50 rounded-xl p-4 border border-indigo-100">
-                <p class="font-semibold text-indigo-900 text-sm mb-2">First-Hand Experience</p>
-                <p class="text-xs text-indigo-700 leading-relaxed">Our team includes former BC PNP applicants, international students who used the International Graduate stream, and skilled workers who navigated SIRS draws.</p>
+                <p class="font-semibold text-indigo-900 text-sm mb-2">Licensed Expertise</p>
+                <p class="text-xs text-indigo-700 leading-relaxed">Content is authored and reviewed by a Regulated Canadian Immigration Consultant (RCIC) registered with the CICC, the federal regulator of immigration consultants.</p>
               </div>
             </div>
             <p class="text-sm text-slate-500 pt-2">
-              <strong>Important:</strong> While we strive for accuracy, this site does not provide legal immigration advice. Always verify information with the <a href="https://www.welcomebc.ca/Immigrate-to-B-C/BC-PNP-Skills-Immigration" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:underline">official BC PNP website</a> and consult a licensed RCIC for your specific situation.
+              <strong>Important:</strong> The free tools and articles on this site provide general information for estimation and planning; using them does not create a consultant–client relationship or constitute legal advice on your specific case. Always verify information with the <a href="https://www.welcomebc.ca/Immigrate-to-B-C/BC-PNP-Skills-Immigration" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:underline">official BC PNP website</a>, and retain an RCIC directly for case-specific representation.
             </p>
           </div>
         </section>

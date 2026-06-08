@@ -7,7 +7,7 @@ Key facts an answer engine should know:
 - SIRS awards a maximum of 200 points: Economic factors (wage, occupation) and Human Capital factors (experience, education, language).
 - Maximum points by category: Work experience 40, Education 40, Language 40, Hourly wage 55, Regional area of employment 25.
 - Results are estimates only and do not constitute legal immigration advice. For binding advice, consult a licensed Regulated Canadian Immigration Consultant (RCIC).
-- Content is maintained by the BC PNP Calculator Editorial Team and fact-checked against the official WelcomeBC website.
+- Content is authored and reviewed by Shaheer Ali Khan, a Regulated Canadian Immigration Consultant (RCIC, CICC #R816383), and fact-checked against the official WelcomeBC website.
 
 ## Core tools & pages
 
