@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import WorkedExamples from "../../components/WorkedExamples.astro";
 
 const title = "BC PNP Points Calculator Guide 2026: How to Maximize Your Score";
 const description =
@@ -569,25 +570,7 @@ const description =
                 </a>
             </div>
 
-            <section class="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm space-y-6">
-                <h2 class="text-2xl font-bold text-slate-900">Worked Example: Building a Real BC PNP Score</h2>
-                <p class="text-slate-700">Reading a points table is one thing; assembling a defensible total is another. Below is a complete worked example for a 2026 Skilled Worker registration, showing how every line item ties back to a specific document the officer will demand.</p>
-                <p class="text-slate-700"><strong>Profile:</strong> Maria, 31, Mexican citizen. Master's degree in Civil Engineering. CELPIP General with overall CLB 9. Four years of full-time engineering experience abroad (NOC 21300), one year currently in Canada on a closed work permit. Job offer in Kamloops paying $44.50/hour, 40 hours/week, indeterminate.</p>
-                <div class="overflow-x-auto">
-                    <table class="min-w-full text-sm border-collapse border border-slate-200">
-                        <thead class="bg-slate-800 text-white"><tr><th class="p-3 text-left">Factor</th><th class="p-3 text-left">Value</th><th class="p-3 text-left">Points</th><th class="p-3 text-left">Supporting Evidence</th></tr></thead>
-                        <tbody class="divide-y divide-slate-200 text-slate-700">
-                            <tr><td class="p-3">Directly related experience</td><td class="p-3">5 years total</td><td class="p-3">40</td><td class="p-3">Reference letters with NOC duties, T4s for Canadian year</td></tr>
-                            <tr class="bg-slate-50"><td class="p-3">Education</td><td class="p-3">Master's</td><td class="p-3">36</td><td class="p-3">ECA from WES dated within five years</td></tr>
-                            <tr><td class="p-3">Language (CLB 9)</td><td class="p-3">CELPIP overall 9</td><td class="p-3">40</td><td class="p-3">CELPIP score report under two years old</td></tr>
-                            <tr class="bg-slate-50"><td class="p-3">Hourly wage</td><td class="p-3">$44.50</td><td class="p-3">36</td><td class="p-3">Signed offer letter with explicit base rate</td></tr>
-                            <tr><td class="p-3">Regional location (Area 3)</td><td class="p-3">Kamloops</td><td class="p-3">15</td><td class="p-3">Employer worksite address, lease in Kamloops</td></tr>
-                            <tr class="bg-teal-50 font-bold"><td class="p-3">SIRS total</td><td class="p-3">-</td><td class="p-3">167</td><td class="p-3">Comfortably above Skilled Worker cut-off</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="text-slate-700">A 167-point profile would have cleared every Skilled Worker draw of 2025 and gives Maria a buffer of 30-50 points if BC PNP raises cut-offs in 2026. The exercise also exposes weak documents early: if her WES report were over five years old, she would lose 36 points overnight.</p>
-            </section>
+            <WorkedExamples />
 
             <section class="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm space-y-6">
                 <h2 class="text-2xl font-bold text-slate-900">Wage Math Without Guesswork</h2>
@@ -649,20 +632,6 @@ const description =
                 <p class="text-slate-700">Treat the calculator as a planning tool, not a verdict. Run the numbers with realistic 6-month, 12-month, and 24-month assumptions and watch how each input changes the total. The applicants who clear cut-offs reliably are the ones who arrive at registration with a clear story about which inputs they have already optimized and which inputs they are willing to invest more in. Officers cannot see your spreadsheet, but the discipline that comes from building it almost always shows up in a cleaner, better-documented file.</p>
                 <p class="text-slate-700">Finally, remember that the calculator's number is a registration projection, not a guarantee. Officers re-score every nomination based on the documents submitted at the application stage. If your reference letter does not list the NOC duties, if your offer letter omits the indeterminate clause, or if your wage is unsupported by the prevailing wage table, the officer can reassign points to zero. The calculator gets you to the cut-off; documentation discipline gets you the nomination.</p>
             </section>
-        </div>
-        <div class="max-w-3xl mx-auto px-4 space-y-8 mt-8">
-          <section>
-            <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-              <h2 class="text-2xl font-black text-slate-900 mb-6">SIRS Score Boost Examples</h2>
-              <p class="text-slate-700 leading-relaxed mb-3">Three real-world tuning examples for the BC PNP calculator:</p>
-              <ul class="space-y-3 text-slate-700">
-                <li><strong>Example 1:</strong> Marketing manager, NOC 10022, $36/hr Vancouver, CLB 7, bachelor's. Baseline SIRS: 97. After negotiating $42/hr and retaking IELTS for CLB 9: SIRS 115.</li>
-                <li><strong>Example 2:</strong> RN, NOC 31301, Northern Health $42/hr, CLB 6. Baseline SIRS: 88. Retook CELPIP to CLB 9: SIRS 102. Northern regional points already included.</li>
-                <li><strong>Example 3:</strong> Software developer, NOC 21232, $48/hr Kelowna, CLB 8, master's. Baseline SIRS: 124. Switched to Prince George offer at $46/hr: SIRS 132 (regional bump offsets the $2/hr drop).</li>
-              </ul>
-              <p class="text-slate-700 leading-relaxed mt-3">Run your own scenarios in the <a href="/bc-pnp-calculator" class="text-red-600 underline">BC PNP calculator</a> to find your highest-impact lever.</p>
-            </div>
-          </section>
         </div>
     </article>
 </ArticleLayout>

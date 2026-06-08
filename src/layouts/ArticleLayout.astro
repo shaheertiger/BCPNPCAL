@@ -67,9 +67,19 @@ const articleSchema = {
   inLanguage: "en",
   author: {
     "@type": "Person",
-    name: "BC PNP Calculator Editorial Team",
+    name: "Shaheer Ali Khan",
     url: "https://bcpnpcalculator.ca/about",
-    jobTitle: "Immigration Research & Analysis",
+    jobTitle: "Regulated Canadian Immigration Consultant (RCIC)",
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Regulated Canadian Immigration Consultant (RCIC)",
+      identifier: "R816383",
+      recognizedBy: {
+        "@type": "Organization",
+        name: "College of Immigration and Citizenship Consultants (CICC)",
+        url: "https://college-ic.ca",
+      },
+    },
   },
   publisher: {
     "@type": "Organization",
@@ -125,8 +135,8 @@ allSchemas = [...allSchemas, ...extraSchemas];
           </svg>
         </div>
         <span>
-          <span class="font-semibold text-slate-700">BC PNP Editorial Team</span>
-          <span class="text-slate-500 hidden sm:inline"> &middot; Immigration Research</span>
+          <span class="font-semibold text-slate-700">Shaheer Ali Khan</span>
+          <span class="text-slate-500 hidden sm:inline"> &middot; RCIC #R816383</span>
         </span>
       </div>
       <span class="text-slate-200 hidden sm:inline" aria-hidden="true">|</span>
@@ -155,16 +165,16 @@ allSchemas = [...allSchemas, ...extraSchemas];
       <p class="text-xs font-semibold uppercase tracking-widest text-slate-600 mb-4">About the Author</p>
       <div class="flex gap-4 items-start">
         <div class="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0" aria-hidden="true">
-          <span class="text-white font-black text-lg">BC</span>
+          <span class="text-white font-black text-lg">SK</span>
         </div>
         <div>
-          <p class="font-bold text-slate-900 text-lg leading-tight">BC PNP Calculator Editorial Team</p>
-          <p class="text-sm text-slate-500 mt-0.5 mb-3">Immigration Research &amp; Analysis &middot; British Columbia, Canada</p>
+          <p class="font-bold text-slate-900 text-lg leading-tight">Shaheer Ali Khan, RCIC</p>
+          <p class="text-sm text-slate-500 mt-0.5 mb-3">Regulated Canadian Immigration Consultant &middot; CICC #R816383 &middot; British Columbia, Canada</p>
           <p class="text-sm text-slate-600 leading-relaxed">
-            Our editorial team has firsthand experience navigating Canada's immigration system, including the BC Provincial Nominee Program. We track official government policy bulletins, analyze every draw result, and update our content within 24–48 hours of any regulatory changes. Articles are fact-checked against the <a href="https://www.welcomebc.ca/Immigrate-to-B-C/BC-PNP-Skills-Immigration" target="_blank" rel="noopener noreferrer" class="text-red-600 underline">official BC PNP website</a> before publication.
+            Shaheer Ali Khan is a Regulated Canadian Immigration Consultant (RCIC) in good standing with the <a href="https://college-ic.ca/protecting-the-public/find-an-immigration-consultant" target="_blank" rel="noopener noreferrer" class="text-red-600 underline">College of Immigration and Citizenship Consultants (CICC)</a>, registration number R816383. He tracks official BC PNP policy bulletins, analyzes every draw result, and updates this content within 24–48 hours of any regulatory change. All point values and criteria are fact-checked against the <a href="https://www.welcomebc.ca/Immigrate-to-B-C/BC-PNP-Skills-Immigration" target="_blank" rel="noopener noreferrer" class="text-red-600 underline">official BC PNP website</a> before publication.
           </p>
           <p class="text-xs text-slate-600 mt-3">
-            <strong>Disclaimer:</strong> This content is for informational purposes only and does not constitute legal immigration advice. For guidance specific to your situation, consult a licensed Regulated Canadian Immigration Consultant (RCIC).
+            <strong>Disclaimer:</strong> These articles and the calculator provide general information for estimation and planning. They do not constitute legal advice or create a consultant–client relationship. For advice on your specific case, retain an RCIC directly.
           </p>
           <div class="mt-4 flex items-center gap-5 text-sm">
             <a href="/about" class="font-semibold text-red-600 hover:underline">About Us</a>

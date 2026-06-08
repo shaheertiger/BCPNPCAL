@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "Contact Us - BC PNP Calculator";
-const description = "Contact the BC PNP Calculator team. Get in touch for support, feedback, or advertising inquiries.";
+const description = "Contact the BC PNP Calculator team. Reach our editor for support, corrections, feedback, or advertising inquiries.";
 
 const jsonLd = [
   {
@@ -16,6 +16,21 @@ const jsonLd = [
       name: "BC PNP Calculator",
       url: "https://bcpnpcalculator.ca",
       email: "contact@bcpnpcalculator.ca",
+      founder: {
+        "@type": "Person",
+        name: "Shaheer Ali Khan",
+        jobTitle: "Regulated Canadian Immigration Consultant (RCIC)",
+        hasCredential: {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Regulated Canadian Immigration Consultant (RCIC)",
+          identifier: "R816383",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "College of Immigration and Citizenship Consultants (CICC)",
+            url: "https://college-ic.ca",
+          },
+        },
+      },
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "Customer Support",
@@ -42,7 +57,7 @@ const jsonLd = [
       <div class="text-center mb-12">
         <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-4">Contact Us</h1>
         <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-          We're here to help. Whether you have a question about the calculator, found a bug, or want to discuss advertising opportunities, we're ready to listen.
+          We're here to help. Whether you have a question about the calculator, found a bug, spotted something that needs a correction, or want to discuss advertising, a real person reads every message.
         </p>
       </div>
 
@@ -123,6 +138,55 @@ const jsonLd = [
         </div>
 
       </div>
+
+      <!-- Who runs this site -->
+      <div class="mt-8 bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Who Runs This Site</h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          BC PNP Calculator is published and edited by <strong>Shaheer Ali Khan</strong>, a
+          Regulated Canadian Immigration Consultant (RCIC) in good standing with the
+          College of Immigration and Citizenship Consultants (CICC), registration
+          <strong>R816383</strong>. You can verify this registration on the public
+          <a href="https://college-ic.ca" rel="noopener" target="_blank" class="text-red-600 font-bold hover:underline">CICC register</a>.
+          Read more about why this tool exists on our
+          <a href="/about" class="text-red-600 font-bold hover:underline">About page</a>.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Editorial responsibility for the calculator logic, guides, and draw analysis
+          on this site rests with the editor named above. Our content is reviewed against
+          the official BC PNP program criteria and updated within 24–48 hours of any
+          policy change we become aware of.
+        </p>
+      </div>
+
+      <!-- Editorial standards & corrections -->
+      <div class="mt-8 grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-4">Corrections & Accuracy</h2>
+          <p class="text-slate-600 text-sm leading-relaxed mb-3">
+            Immigration rules change often. If you believe a figure, date, or scoring
+            rule on this site is out of date or incorrect, please email us with the page
+            URL and what you think should change. We take corrections seriously and will
+            update the page or explain our reasoning.
+          </p>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Subject line tip: use <strong>"Correction"</strong> so it reaches the editor faster.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-4">What We Can &amp; Can't Do</h2>
+          <p class="text-slate-600 text-sm leading-relaxed mb-3">
+            We can help with how the calculator works, how SIRS points are structured,
+            and where to find official information.
+          </p>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We <strong>cannot</strong> give case-specific legal advice or represent you on an
+            application through this website. For personal advice, retain a licensed RCIC
+            or Canadian immigration lawyer for a formal consultation.
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 </BaseLayout>

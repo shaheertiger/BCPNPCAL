@@ -2,12 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { guideContent } from '../../i18n/guide-content';
 
+// Only generate localized guides for languages that also have complete
+// home + calculator content (zh, hi), so no localized CTA points at a 404.
 export function getStaticPaths() {
   return [
     { params: { lang: 'zh' } },
-    { params: { lang: 'pa' } },
     { params: { lang: 'hi' } },
-    { params: { lang: 'ar' } },
   ];
 }
 
@@ -23,9 +23,7 @@ const isRTL = lang === 'ar';
 const hreflangs = [
   { lang: 'en', href: 'https://bcpnpcalculator.ca/bc-pnp-guide' },
   { lang: 'zh', href: 'https://bcpnpcalculator.ca/zh/bc-pnp-guide' },
-  { lang: 'pa', href: 'https://bcpnpcalculator.ca/pa/bc-pnp-guide' },
   { lang: 'hi', href: 'https://bcpnpcalculator.ca/hi/bc-pnp-guide' },
-  { lang: 'ar', href: 'https://bcpnpcalculator.ca/ar/bc-pnp-guide' },
   { lang: 'x-default', href: 'https://bcpnpcalculator.ca/bc-pnp-guide' },
 ];
 ---
@@ -53,9 +51,7 @@ const hreflangs = [
         <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
           <a href="/bc-pnp-guide" class="px-3 py-1 bg-transparent hover:bg-white/10 text-slate-400 hover:text-white rounded-full text-xs font-bold transition-all border border-transparent hover:border-white/10">English</a>
           <a href="/zh/bc-pnp-guide" class={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${lang === 'zh' ? 'bg-white/20 text-white ring-1 ring-white/20' : 'bg-transparent hover:bg-white/10 text-slate-400 hover:text-white border-transparent hover:border-white/10'}`}>中文</a>
-          <a href="/pa/bc-pnp-guide" class={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${lang === 'pa' ? 'bg-white/20 text-white ring-1 ring-white/20' : 'bg-transparent hover:bg-white/10 text-slate-400 hover:text-white border-transparent hover:border-white/10'}`}>ਪੰਜਾਬੀ</a>
           <a href="/hi/bc-pnp-guide" class={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${lang === 'hi' ? 'bg-white/20 text-white ring-1 ring-white/20' : 'bg-transparent hover:bg-white/10 text-slate-400 hover:text-white border-transparent hover:border-white/10'}`}>हिंदी</a>
-          <a href="/ar/bc-pnp-guide" class={`px-3 py-1 rounded-full text-xs font-bold transition-all border ${lang === 'ar' ? 'bg-white/20 text-white ring-1 ring-white/20' : 'bg-transparent hover:bg-white/10 text-slate-400 hover:text-white border-transparent hover:border-white/10'}`}>عربي</a>
         </div>
 
         <h1 class="text-4xl sm:text-6xl font-black mb-8" set:html={content.h1} />
