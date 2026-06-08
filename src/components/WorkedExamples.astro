@@ -1,0 +1,222 @@
+---
+/**
+ * WorkedExamples.astro
+ *
+ * Renders fully worked BC PNP SIRS scenarios. Every score and line-item is
+ * computed at build time by `calculateTotalPoints` — the exact same engine
+ * that powers the live calculator — so the numbers can never drift away from
+ * the tool. This is deliberately non-substitutable content: a government page
+ * will never show you a complete, internally-consistent breakdown scored
+ * against the real recorded draw cut-offs.
+ */
+import { calculateTotalPoints } from "../utils/calculatePoints";
+import { calculateAnnualWage } from "../utils/calculatePoints";
+import type { CalculatorState } from "../types";
+
+interface Persona {
+  name: string;
+  summary: string;
+  state: CalculatorState;
+}
+
+const base: CalculatorState = {
+  experience: "0",
+  hasCanadianExp: false,
+  hasCurrentBCJob: false,
+  education: "secondary",
+  hasCanadianEducation: false,
+  educationLocation: "none",
+  hasProfessionalDesignation: false,
+  selectedProfession: null,
+  hasEnglishTest: false,
+  englishClb: 0,
+  hasFrenchTest: false,
+  frenchClb: 0,
+  hourlyWage: 0,
+  area: "area1",
+  hasWorkedOutsideArea1: false,
+  hasGraduatedOutsideArea1: false,
+};
+
+const personas: Persona[] = [
+  {
+    name: "Maria — Civil Engineer, Kamloops",
+    summary:
+      "Master's in Civil Engineering, CELPIP overall CLB 9, 5+ years' experience (1 in Canada), currently working full-time in BC. Indeterminate offer at $44.50/hr in Kamloops (Area 3).",
+    state: {
+      ...base,
+      experience: "5+",
+      hasCanadianExp: true,
+      hasCurrentBCJob: true,
+      education: "master",
+      hasEnglishTest: true,
+      englishClb: 9,
+      hourlyWage: 44.5,
+      area: "area3",
+      hasWorkedOutsideArea1: true,
+    },
+  },
+  {
+    name: "Daniel — Software Developer, Prince George",
+    summary:
+      "Bachelor's completed in Canada (outside BC), IELTS CLB 8, 4 years' experience (1 in Canada), currently working in BC. Indeterminate offer at $46/hr in Prince George (Area 3).",
+    state: {
+      ...base,
+      experience: "4",
+      hasCanadianExp: true,
+      hasCurrentBCJob: true,
+      education: "bachelor",
+      hasCanadianEducation: true,
+      educationLocation: "canada_outside_bc",
+      hasEnglishTest: true,
+      englishClb: 8,
+      hourlyWage: 46,
+      area: "area3",
+      hasWorkedOutsideArea1: true,
+    },
+  },
+  {
+    name: "Priya — Registered Nurse, Northern Health",
+    summary:
+      "Bachelor's of Nursing, eligible professional designation (RN), CELPIP CLB 9, 3 years' experience abroad, currently working in BC. Offer at $42/hr in a Northern Health community (Area 3).",
+    state: {
+      ...base,
+      experience: "3",
+      hasCanadianExp: false,
+      hasCurrentBCJob: true,
+      education: "bachelor",
+      hasProfessionalDesignation: true,
+      selectedProfession: "Registered Nurse",
+      hasEnglishTest: true,
+      englishClb: 9,
+      hourlyWage: 42,
+      area: "area3",
+      hasWorkedOutsideArea1: true,
+    },
+  },
+  {
+    name: "Sofia — Marketing Manager, Vancouver",
+    summary:
+      "Bachelor's degree, IELTS CLB 7, 4 years' experience abroad, no Canadian experience yet. Offer at $36/hr in Metro Vancouver (Area 1, no regional bonus).",
+    state: {
+      ...base,
+      experience: "4",
+      education: "bachelor",
+      hasEnglishTest: true,
+      englishClb: 7,
+      hourlyWage: 36,
+      area: "area1",
+    },
+  },
+];
+
+// Recent recorded BC PNP General (Skilled Worker / EEBC) minimum scores, used
+// purely as an honest reference band. Source: BC PNP published draw results.
+const generalCutoffLow = 138; // Dec 10, 2025
+const generalCutoffHigh = 150; // May 8, 2025
+
+// Human-readable labels for the breakdown rows, in display order.
+const rows: { key: keyof ReturnType<typeof calculateTotalPoints>["breakdown"]; label: string }[] = [
+  { key: "experience", label: "Directly related work experience" },
+  { key: "canadianExp", label: "1+ year Canadian experience" },
+  { key: "currentBCJob", label: "Currently working full-time in BC" },
+  { key: "educationTotal", label: "Education (level + location + designation, capped 40)" },
+  { key: "languageTotal", label: "Language / CLB (capped 40)" },
+  { key: "wage", label: "Hourly wage of job offer" },
+  { key: "area", label: "Area of employment" },
+  { key: "workedOutsideArea1", label: "Worked 1+ year outside Area 1" },
+];
+
+const computed = personas.map((p) => ({
+  ...p,
+  result: calculateTotalPoints(p.state),
+  annualWage: calculateAnnualWage(p.state.hourlyWage),
+}));
+---
+
+<section class="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm space-y-8">
+  <div class="space-y-3">
+    <h2 class="text-2xl font-bold text-slate-900">
+      Worked SIRS Examples — Scored by This Site's Calculator
+    </h2>
+    <p class="text-slate-700">
+      The four profiles below are scored at build time by the exact same engine
+      that powers our <a href="/bc-pnp-calculator" class="text-red-600 font-semibold underline">BC PNP points
+      calculator</a>, so every line item is internally consistent — not a
+      hand-typed estimate. Each total is then compared honestly against the
+      recorded <strong>General (Skilled Worker / EEBC)</strong> minimum scores
+      from recent draws, which ran between {generalCutoffLow} and {generalCutoffHigh}
+      points across 2025.
+    </p>
+  </div>
+
+  {
+    computed.map((p) => {
+      const total = p.result.total;
+      const clearsLow = total >= generalCutoffLow;
+      const verdict = clearsLow
+        ? `Clears the recent General cut-off band (${generalCutoffLow}–${generalCutoffHigh}).`
+        : total >= generalCutoffLow - 25
+          ? `Below the recent General band (${generalCutoffLow}–${generalCutoffHigh}), but competitive for lower-cut-off priority/targeted draws.`
+          : `Well below the recent General band — would need targeted-stream eligibility or score improvements.`;
+      return (
+        <div class="border border-slate-200 rounded-2xl overflow-hidden">
+          <div class="bg-slate-50 px-5 py-4 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">
+            <h3 class="font-black text-slate-900 text-lg">{p.name}</h3>
+            <span class="text-2xl font-black text-red-600">
+              {total} <span class="text-sm font-medium text-slate-500">/ 200</span>
+            </span>
+          </div>
+          <div class="px-5 py-4 space-y-4">
+            <p class="text-sm text-slate-600">{p.summary}</p>
+            <p class="text-sm text-slate-500">
+              Wage check: ${p.state.hourlyWage.toFixed(2)}/hr ≈ $
+              {p.annualWage.toLocaleString("en-CA")}/year (40 hrs × 52 weeks).
+            </p>
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-sm">
+                <thead class="bg-gray-100 border-b border-gray-200">
+                  <tr>
+                    <th class="px-4 py-2 text-left font-bold text-slate-900">Factor</th>
+                    <th class="px-4 py-2 text-right font-bold text-slate-900">Points</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  {rows.map((r) => (
+                    <tr>
+                      <td class="px-4 py-2 text-slate-700">{r.label}</td>
+                      <td class="px-4 py-2 text-right font-semibold text-slate-900">
+                        {p.result.breakdown[r.key]}
+                      </td>
+                    </tr>
+                  ))}
+                  <tr class="bg-slate-900 text-white">
+                    <td class="px-4 py-2 font-bold">SIRS total</td>
+                    <td class="px-4 py-2 text-right font-black">{total}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p
+              class={`text-sm font-semibold px-4 py-3 rounded-xl ${
+                clearsLow
+                  ? "bg-green-50 text-green-800 border border-green-200"
+                  : "bg-amber-50 text-amber-800 border border-amber-200"
+              }`}
+            >
+              {verdict}
+            </p>
+          </div>
+        </div>
+      );
+    })
+  }
+
+  <p class="text-xs text-slate-500">
+    Scores are projections based on the official SIRS factors and update
+    automatically with the calculator. BC PNP cut-offs vary by draw type and
+    date; targeted and priority-occupation draws frequently use lower minimum
+    scores than the General draws referenced above. Always verify your own
+    inputs in the <a href="/bc-pnp-calculator" class="text-red-600 underline">calculator</a>.
+  </p>
+</section>
