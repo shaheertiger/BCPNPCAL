@@ -10,7 +10,8 @@ const t = ui[lang as keyof typeof ui] || ui.en;
 
 const homeLink = lang === "en" ? "/" : `/${lang}`;
 const calculatorLink = lang === "en" ? "/bc-pnp-calculator" : `/${lang}/bc-pnp-calculator`;
-const drawsLink = lang === "en" ? "/bc-pnp-draws" : `/${lang}/bc-pnp-draws`;
+// Draws page only exists in English; localized routes are not built.
+const drawsLink = "/bc-pnp-draws";
 const guidesLink = "/guides";
 const newsLink = "/news";
 const aboutLink = "/about";
@@ -84,12 +85,54 @@ const l = labels[lang as keyof typeof labels] || labels.en;
         Free Score Check
       </a>
       
-      <!-- Mobile Menu Toggle (Simplified for now) -->
-      <button class="md:hidden p-2 text-slate-600 hover:text-red-600 transition-colors" id="mobile-menu-toggle" aria-label="Menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Mobile Menu Toggle -->
+      <button
+        class="md:hidden p-2 -mr-2 text-slate-600 hover:text-red-600 transition-colors"
+        id="mobile-menu-toggle"
+        aria-label="Toggle menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
     </div>
   </nav>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-slate-100 bg-white/95 backdrop-blur-md">
+    <div class="px-4 py-3 space-y-1">
+      <a href={calculatorLink} class="block px-4 py-3 rounded-xl text-sm font-bold text-slate-700 hover:text-red-600 hover:bg-red-50 transition-all">
+        {l.calculator}
+      </a>
+      <a href={drawsLink} class="block px-4 py-3 rounded-xl text-sm font-bold text-slate-700 hover:text-red-600 hover:bg-red-50 transition-all">
+        {l.draws}
+      </a>
+      <a href={guidesLink} class="block px-4 py-3 rounded-xl text-sm font-bold text-slate-700 hover:text-red-600 hover:bg-red-50 transition-all">
+        {l.guides}
+      </a>
+      <a href={newsLink} class="block px-4 py-3 rounded-xl text-sm font-bold text-slate-700 hover:text-red-600 hover:bg-red-50 transition-all">
+        {l.news}
+      </a>
+      <a href={aboutLink} class="block px-4 py-3 rounded-xl text-sm font-bold text-slate-700 hover:text-red-600 hover:bg-red-50 transition-all">
+        {l.about}
+      </a>
+      <a href={calculatorLink} class="block px-4 py-3 mt-1 rounded-xl text-sm font-black text-center bg-red-600 text-white shadow-lg shadow-red-600/20 active:scale-95 transition-all">
+        Free Score Check
+      </a>
+    </div>
+  </div>
 </header>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById("mobile-menu-toggle");
+    var menu = document.getElementById("mobile-menu");
+    if (!btn || !menu) return;
+    btn.addEventListener("click", function () {
+      var open = menu.classList.toggle("hidden") === false;
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  })();
+</script>
