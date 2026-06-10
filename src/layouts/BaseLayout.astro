@@ -356,12 +356,33 @@ const canonical = rawCanonical
     <!-- Vercel Speed Insights -->
     <SpeedInsights />
 
-    <!-- Ads are temporarily turned off: the lazy ad-script loader and the
-         Grow.me script have been removed so no ad requests fire. The account
-         verification meta tag is kept so the publisher account stays linked.
-         To re-enable, set ADS_ENABLED = true in src/components/AdUnit.astro and
-         restore the loader script (see git history of this file). -->
+    <!-- AdSense ads are temporarily turned off: the lazy ad-script loader has
+         been removed so no AdSense requests fire. The account verification meta
+         tag is kept so the publisher account stays linked. To re-enable, set
+         ADS_ENABLED = true in src/components/AdUnit.astro and restore the loader
+         script (see git history of this file). -->
     <meta name="google-adsense-account" content="ca-pub-2963693328827195">
+
+    <!-- Grow.me (Mediavine Grow) -->
+    <script is:inline data-grow-initializer="">
+      !(function () {
+        window.growMe ||
+          ((window.growMe = function (e) {
+            window.growMe._.push(e);
+          }),
+          (window.growMe._ = []));
+        var e = document.createElement("script");
+        (e.type = "text/javascript"),
+          (e.src = "https://faves.grow.me/main.js"),
+          (e.defer = !0),
+          e.setAttribute(
+            "data-grow-faves-site-id",
+            "U2l0ZTo4NjNjZTYyYi05YTA3LTRlZDUtYTNkYi0yM2JjOGI3OWNiZWU="
+          );
+        var t = document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(e, t);
+      })();
+    </script>
   </head>
   <body>
     <Navigation lang={lang} />
