@@ -9,11 +9,13 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
   # Content Security Policy
-  # NOTE: Must stay permissive enough for Google AdSense, Google Fonts,
-  # Grow.me and Vercel Analytics/Speed Insights. Ad creatives are served
-  # from a long tail of Google/DoubleClick domains, so script-src/frame-src/
+  # NOTE: Production runs on Vercel, which ignores this file — the canonical
+  # headers live in vercel.json. This copy is kept in sync for portability
+  # (e.g. Netlify) and must stay permissive enough for Google AdSense, Google
+  # Fonts, Grow.me and Vercel Analytics/Speed Insights. Ad creatives load from
+  # a long tail of Google/DoubleClick domains, so script-src/frame-src/
   # connect-src whitelist the Google ad-tech origins and img-src allows https:.
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://partner.googleadservices.com https://*.googleadservices.com https://adservice.google.com https://*.adtrafficquality.google https://tpc.googlesyndication.com https://www.googletagservices.com https://fonts.googleapis.com https://faves.grow.me https://*.grow.me https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; frame-src https://googleads.g.doubleclick.net https://*.doubleclick.net https://tpc.googlesyndication.com https://*.googlesyndication.com https://www.google.com https://*.adtrafficquality.google https://*.grow.me; connect-src 'self' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://*.adtrafficquality.google https://*.grow.me https://va.vercel-scripts.com https://vitals.vercel-insights.com https://*.vercel-insights.com; frame-ancestors 'none';
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://partner.googleadservices.com https://*.googleadservices.com https://adservice.google.com https://*.adtrafficquality.google https://tpc.googlesyndication.com https://www.googletagservices.com https://fundingchoicesmessages.google.com https://fonts.googleapis.com https://faves.grow.me https://*.grow.me https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; frame-src https://googleads.g.doubleclick.net https://*.doubleclick.net https://tpc.googlesyndication.com https://*.googlesyndication.com https://www.google.com https://fundingchoicesmessages.google.com https://*.adtrafficquality.google https://*.grow.me; connect-src 'self' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://*.adtrafficquality.google https://*.grow.me https://va.vercel-scripts.com https://vitals.vercel-insights.com https://*.vercel-insights.com; frame-ancestors 'none';
 
   # Performance Headers
   Cache-Control: public, max-age=31536000, immutable

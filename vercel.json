@@ -16,5 +16,17 @@
             "destination": "/bc-pnp-calculator",
             "permanent": true
         }
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                { "key": "X-Content-Type-Options", "value": "nosniff" },
+                { "key": "X-Frame-Options", "value": "DENY" },
+                { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+                { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" },
+                { "key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://partner.googleadservices.com https://*.googleadservices.com https://adservice.google.com https://*.adtrafficquality.google https://tpc.googlesyndication.com https://www.googletagservices.com https://fundingchoicesmessages.google.com https://fonts.googleapis.com https://faves.grow.me https://*.grow.me https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; frame-src https://googleads.g.doubleclick.net https://*.doubleclick.net https://tpc.googlesyndication.com https://*.googlesyndication.com https://www.google.com https://fundingchoicesmessages.google.com https://*.adtrafficquality.google https://*.grow.me; connect-src 'self' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://*.adtrafficquality.google https://*.grow.me https://va.vercel-scripts.com https://vitals.vercel-insights.com https://*.vercel-insights.com; frame-ancestors 'none'" }
+            ]
+        }
     ]
 }
