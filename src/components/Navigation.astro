@@ -10,7 +10,8 @@ const t = ui[lang as keyof typeof ui] || ui.en;
 
 const homeLink = lang === "en" ? "/" : `/${lang}`;
 const calculatorLink = lang === "en" ? "/bc-pnp-calculator" : `/${lang}/bc-pnp-calculator`;
-const drawsLink = lang === "en" ? "/bc-pnp-draws" : `/${lang}/bc-pnp-draws`;
+// Draws page only exists in English; localized routes are not built.
+const drawsLink = "/bc-pnp-draws";
 const guidesLink = "/guides";
 const newsLink = "/news";
 const aboutLink = "/about";

@@ -12,7 +12,8 @@ const t = ui[lang as keyof typeof ui] || ui.en;
 const homeLink = lang === "en" ? "/" : `/${lang}`;
 const calculatorLink =
   lang === "en" ? "/bc-pnp-calculator" : `/${lang}/bc-pnp-calculator`;
-const drawsLink = lang === "en" ? "/bc-pnp-draws" : `/${lang}/bc-pnp-draws`;
+// Draws page only exists in English; localized routes are not built.
+const drawsLink = "/bc-pnp-draws";
 // Note: Article links might be localized or stay English if no translation exists yet.
 // For now, we'll keep article links as English except for the prefix if we implement localized routing for them later.
 // Assuming localized calculator exists.
