@@ -356,69 +356,11 @@ const canonical = rawCanonical
     <!-- Vercel Speed Insights -->
     <SpeedInsights />
 
-    <!-- Google AdSense — loaded lazily to keep it off the critical path.
-         The script is injected on the first user interaction, when an ad unit
-         nears the viewport, or shortly after load (whichever comes first), so
-         it never blocks initial render. Real users still see ads on engagement;
-         AdUnit's queued `adsbygoogle.push({})` calls are drained once it loads. -->
-    <script is:inline>
-      (function () {
-        var CLIENT = "ca-pub-2963693328827195";
-        var loaded = false;
-        var EVENTS = ["scroll", "pointerdown", "touchstart", "keydown", "mousemove"];
-        var opts = { once: true, passive: true, capture: true };
-
-        function cleanup() {
-          EVENTS.forEach(function (e) {
-            window.removeEventListener(e, load, opts);
-          });
-        }
-
-        function load() {
-          if (loaded) return;
-          loaded = true;
-          cleanup();
-          var s = document.createElement("script");
-          s.async = true;
-          s.crossOrigin = "anonymous";
-          s.src =
-            "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" +
-            CLIENT;
-          document.head.appendChild(s);
-        }
-
-        EVENTS.forEach(function (e) {
-          window.addEventListener(e, load, opts);
-        });
-
-        // Load when an ad unit is about to scroll into view.
-        if ("IntersectionObserver" in window) {
-          var startObserver = function () {
-            var io = new IntersectionObserver(
-              function (entries) {
-                for (var i = 0; i < entries.length; i++) {
-                  if (entries[i].isIntersecting) {
-                    load();
-                    io.disconnect();
-                    return;
-                  }
-                }
-              },
-              { rootMargin: "600px" }
-            );
-            var units = document.querySelectorAll("ins.adsbygoogle");
-            for (var i = 0; i < units.length; i++) io.observe(units[i]);
-          };
-          if (document.readyState !== "loading") startObserver();
-          else document.addEventListener("DOMContentLoaded", startObserver);
-        }
-
-        // Fallback for sessions with no interaction (e.g. lab tests still get ads).
-        window.addEventListener("load", function () {
-          setTimeout(load, 3000);
-        });
-      })();
-    </script>
+    <!-- AdSense ads are temporarily turned off: the lazy ad-script loader has
+         been removed so no AdSense requests fire. The account verification meta
+         tag is kept so the publisher account stays linked. To re-enable, set
+         ADS_ENABLED = true in src/components/AdUnit.astro and restore the loader
+         script (see git history of this file). -->
     <meta name="google-adsense-account" content="ca-pub-2963693328827195">
 
     <!-- Grow.me (Mediavine Grow) -->
