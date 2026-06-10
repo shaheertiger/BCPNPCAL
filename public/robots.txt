@@ -47,6 +47,12 @@ Allow: /
 User-agent: GoogleOther
 Allow: /
 
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: Gemini-Deep-Research
+Allow: /
+
 User-agent: Applebot
 Allow: /
 
@@ -68,10 +74,19 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
+User-agent: meta-externalfetcher
+Allow: /
+
 User-agent: MistralAI-User
 Allow: /
 
 User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: PetalBot
 Allow: /
 
 # ---------------------------------------------------------------------------
