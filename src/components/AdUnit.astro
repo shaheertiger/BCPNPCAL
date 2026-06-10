@@ -1,6 +1,14 @@
 ---
 // Google AdSense Ad Unit Component
 // Usage: <AdUnit slot="1234567890" format="auto" />
+//
+// ⚠️ ADS TEMPORARILY DISABLED.
+// This component renders nothing so no ad blocks appear on the site. The
+// callers (<AdUnit ... />) are left in place so ads can be switched back on
+// in one spot. To re-enable: set ADS_ENABLED = true below (and make sure the
+// AdUnit slot IDs are real values from the AdSense dashboard, not placeholders).
+
+const ADS_ENABLED = false;
 
 interface Props {
   slot: string;
@@ -12,17 +20,21 @@ interface Props {
 const { slot, format = "auto", responsive = true, class: className = "" } = Astro.props;
 ---
 
-<div class:list={["ad-container my-8 text-center", className]}>
-  <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-1">Advertisement</div>
-  <ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-2963693328827195"
-    data-ad-slot={slot}
-    data-ad-format={format}
-    data-full-width-responsive={responsive ? "true" : "false"}
-  ></ins>
-  <script is:inline>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
+{
+  ADS_ENABLED && (
+    <div class:list={["ad-container my-8 text-center", className]}>
+      <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-1">Advertisement</div>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2963693328827195"
+        data-ad-slot={slot}
+        data-ad-format={format}
+        data-full-width-responsive={responsive ? "true" : "false"}
+      />
+      <script is:inline>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  )
+}
