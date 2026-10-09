@@ -1,8 +1,10 @@
 ---
 import Analytics from "@vercel/analytics/astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import AnnouncementBar from "../components/AnnouncementBar.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import NewsletterSignup from "../components/NewsletterSignup.astro";
 import CookieConsent from "../components/CookieConsent.astro";
 import "../styles/global.css";
 
@@ -385,10 +387,12 @@ const canonical = rawCanonical
     </script>
   </head>
   <body>
+    <AnnouncementBar lang={lang} />
     <Navigation lang={lang} />
     <main id="main-content">
       <slot />
     </main>
+    <NewsletterSignup lang={lang} />
     <Footer lang={lang} />
     <CookieConsent />
   </body>

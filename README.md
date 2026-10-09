@@ -168,6 +168,19 @@ export default defineConfig({
 });
 ```
 
+### Newsletter (Listmonk)
+The "draw alerts & PR news" signup card above the footer posts to a
+self-hosted [Listmonk](https://listmonk.app) instance (open source, free).
+It is hidden until configured, so no signups are lost.
+
+1. Deploy Listmonk with Postgres (Docker on any VPS, or a one-click
+   Railway/Render/Fly template) and set up SMTP under Settings → SMTP.
+2. Create a **public, double opt-in** list and copy its UUID.
+3. In Listmonk Settings → Security, leave the public subscription page enabled.
+4. Set these env vars in Vercel (see `.env.example`) and redeploy:
+   - `PUBLIC_LISTMONK_URL` – e.g. `https://newsletter.bcpnpcalculator.ca`
+   - `PUBLIC_LISTMONK_LIST_UUID` – the list UUID from step 2
+
 ## 🎯 Use Cases
 
 - **Prospective Immigrants** - Estimate BC PNP eligibility

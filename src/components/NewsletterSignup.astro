@@ -1,0 +1,194 @@
+---
+// Newsletter lead-capture card ("BC PNP draw alerts + PR news").
+//
+// Posts to a self-hosted Listmonk instance (open source, https://listmonk.app)
+// via its public subscription form endpoint, so it works on this static site
+// without a backend. Configure at build time:
+//   PUBLIC_LISTMONK_URL        e.g. https://newsletter.bcpnpcalculator.ca
+//   PUBLIC_LISTMONK_LIST_UUID  UUID of the public list (Lists -> list -> UUID)
+// If either is missing the card is not rendered, so no signups are lost.
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = "en" } = Astro.props;
+
+const listmonkUrl = (import.meta.env.PUBLIC_LISTMONK_URL || "").replace(/\/$/, "");
+const listUuid = import.meta.env.PUBLIC_LISTMONK_LIST_UUID || "";
+const enabled = Boolean(listmonkUrl && listUuid);
+
+const labels = {
+  en: {
+    eyebrow: "Free newsletter",
+    title: "Get BC PNP draw alerts & PR news in your inbox",
+    perks: [
+      "New BC PNP draw results and cutoff scores",
+      "Express Entry, PNP and PR policy changes",
+      "Score-boosting tips and new guides",
+    ],
+    name: "First name (optional)",
+    email: "Email address",
+    consent:
+      "Yes, email me BC PNP and Canadian PR news. I can unsubscribe at any time.",
+    submit: "Subscribe free",
+    sending: "Subscribing…",
+    success: "Almost done! Check your inbox and click the link to confirm.",
+    error: "Something went wrong. Please try again.",
+    privacy: "No spam. Read our",
+    privacyLink: "Privacy Policy",
+  },
+  zh: {
+    eyebrow: "免費電子報",
+    title: "BC PNP 抽籤提醒與移民新聞，直接寄到您的信箱",
+    perks: [
+      "最新 BC PNP 抽籤結果與分數線",
+      "Express Entry、PNP 及永居政策變動",
+      "提分技巧與最新攻略",
+    ],
+    name: "名字（選填）",
+    email: "電子郵件地址",
+    consent: "我同意接收 BC PNP 及加拿大永居相關新聞電郵，可隨時取消訂閱。",
+    submit: "免費訂閱",
+    sending: "訂閱中…",
+    success: "差一步！請到信箱點擊確認連結完成訂閱。",
+    error: "發生錯誤，請再試一次。",
+    privacy: "絕不濫發郵件。請參閱",
+    privacyLink: "隱私政策",
+  },
+};
+
+const l = labels[lang as keyof typeof labels] || labels.en;
+---
+
+{
+  enabled && (
+    <section
+      id="newsletter"
+      aria-labelledby="newsletter-title"
+      class="bg-slate-50 border-t border-slate-200 px-4 sm:px-6 py-10 sm:py-14"
+    >
+      <div class="max-w-5xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 p-6 sm:p-10 grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+        <div>
+          <p class="text-xs font-black uppercase tracking-widest text-red-600 mb-2">
+            {l.eyebrow}
+          </p>
+          <h2
+            id="newsletter-title"
+            class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-tight"
+          >
+            {l.title}
+          </h2>
+          <ul class="mt-4 space-y-2">
+            {l.perks.map((perk) => (
+              <li class="flex items-start gap-2 text-sm sm:text-base text-slate-600">
+                <svg class="w-5 h-5 mt-0.5 shrink-0 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                {perk}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <form
+          id="newsletter-form"
+          method="post"
+          action={`${listmonkUrl}/subscription/form`}
+          class="space-y-3"
+          data-sending={l.sending}
+          data-success={l.success}
+          data-error={l.error}
+        >
+          <input type="hidden" name="l" value={listUuid} />
+          {/* Listmonk honeypot: bots fill it, humans never see it. */}
+          <input type="text" name="nonce" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
+
+          <label class="block">
+            <span class="sr-only">{l.name}</span>
+            <input
+              type="text"
+              name="name"
+              autocomplete="given-name"
+              placeholder={l.name}
+              class="w-full h-12 px-4 rounded-xl border border-slate-300 bg-white text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+            />
+          </label>
+          <label class="block">
+            <span class="sr-only">{l.email}</span>
+            <input
+              type="email"
+              name="email"
+              required
+              autocomplete="email"
+              inputmode="email"
+              placeholder={l.email}
+              class="w-full h-12 px-4 rounded-xl border border-slate-300 bg-white text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+            />
+          </label>
+          <label class="flex items-start gap-3 py-1 cursor-pointer">
+            <input
+              type="checkbox"
+              required
+              class="mt-0.5 w-5 h-5 shrink-0 rounded border-slate-300 accent-red-600"
+            />
+            <span class="text-sm text-slate-600 leading-snug">{l.consent}</span>
+          </label>
+          <button
+            type="submit"
+            class="w-full h-12 rounded-xl bg-red-600 hover:bg-red-700 disabled:opacity-60 text-white font-black text-base shadow-lg shadow-red-600/20 active:scale-[0.98] transition-all"
+          >
+            {l.submit}
+          </button>
+          <p id="newsletter-status" role="status" aria-live="polite" class="text-sm font-semibold empty:hidden"></p>
+          <p class="text-xs text-slate-500">
+            {l.privacy}{" "}
+            <a href="/privacy-policy#newsletter" class="underline underline-offset-2 hover:text-red-600">
+              {l.privacyLink}
+            </a>.
+          </p>
+        </form>
+      </div>
+    </section>
+  )
+}
+
+{
+  enabled && (
+    <script is:inline>
+      // Submit in the background so visitors stay on the page. Listmonk's form
+      // endpoint does not send CORS headers, so the response is opaque; a
+      // network error is the only failure we can detect. Without JS the form
+      // falls back to a normal POST and Listmonk shows its own confirmation.
+      (function () {
+        var form = document.getElementById("newsletter-form");
+        var status = document.getElementById("newsletter-status");
+        if (!form || !status || !window.fetch) return;
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var btn = form.querySelector("button[type=submit]");
+          btn.disabled = true;
+          status.className = "text-sm font-semibold text-slate-600";
+          status.textContent = form.dataset.sending;
+          fetch(form.action, {
+            method: "POST",
+            mode: "no-cors",
+            body: new URLSearchParams(new FormData(form)),
+          })
+            .then(function () {
+              form.reset();
+              status.className = "text-sm font-semibold text-green-700";
+              status.textContent = form.dataset.success;
+            })
+            .catch(function () {
+              status.className = "text-sm font-semibold text-red-600";
+              status.textContent = form.dataset.error;
+            })
+            .finally(function () {
+              btn.disabled = false;
+            });
+        });
+      })();
+    </script>
+  )
+}
