@@ -1,0 +1,314 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Canada's 5% Temporary Resident Target: What It Means for BC Work Permit Holders in 2027";
+const description = "Canada wants temporary residents below 5% of the population by end-2027. What it means for BC work permit holders: PGWP expiry, maintained status, PR bridges.";
+const canonical = "https://bcpnpcalculator.ca/articles/canada-temporary-resident-cap-2027-bc-work-permit-holders";
+
+const faqs = [
+  {
+    q: "What exactly is Canada's 5% temporary resident target?",
+    a: "The federal government has committed to reducing Canada's temporary population to less than 5% of the total population by the end of 2027. Statistics Canada estimated 2,779,774 non-permanent residents on July 1, 2026, or 6.7% of the population, down from a peak of 7.2% on October 1, 2024 in its revised series.",
+  },
+  {
+    q: "Will my work permit be cancelled because of the 5% target?",
+    a: "No measure announced so far cancels valid work permits. The government's plan relies on fewer new arrivals, permits expiring, people leaving and people transitioning to permanent residence. The practical effect for you is that extensions and new permits are harder to get, so your expiry date becomes the date your plan must work around.",
+  },
+  {
+    q: "Can I extend my PGWP if my BC PNP application is still in progress?",
+    a: "Generally no. IRCC says post-graduation work permits are a one-time opportunity; the main exception is when your PGWP was shortened because your passport expired. Most PGWP holders need another basis to stay, such as an employer-specific permit, a BC PNP work permit support letter after nomination, or a bridging open work permit once a qualifying permanent residence application is in process.",
+  },
+  {
+    q: "What is maintained status and does it protect me?",
+    a: "If you apply to extend or change your work permit before it expires, you can legally stay in Canada until IRCC decides, and you can generally keep working under the same conditions. If you miss the deadline, you have no maintained status: you may apply to restore your status within 90 days, but you normally cannot work until status is restored and a new permit is issued.",
+  },
+  {
+    q: "Does the BC PNP help work permit holders whose permits are expiring?",
+    a: "After nomination, the BC PNP may issue a work permit support letter that lets you apply for a work permit without an LMIA, if your permit will expire in the near future and you continue to meet the conditions of nomination. The BC PNP cannot apply for the permit for you, and it will not nominate anyone who is out of status.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="canada-temporary-resident-cap-2027-bc-work-permit-holders" datePublished="2026-10-14" dateModified="2026-10-14" articleSection="Guide" keywords="Canada temporary resident cap 2027, 5% temporary residents target, BC work permit holders, PGWP expiry BC PNP, maintained status, bridging open work permit, BC PNP work permit support letter" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-rose-100 text-rose-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-rose-200 shadow-sm">
+        Guide &bull; Temporary Residents
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Canada's 5% Temporary Resident Target: What It Means for BC Work Permit Holders in 2027
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Ottawa has set the end of 2027 as its deadline to bring temporary residents below 5% of the population. If you are working in B.C. on a permit, here is how to keep your status and your path to PR intact.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-10-14">October 14, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-rose-600 mb-2">6.7%</div>
+        <div class="text-sm text-slate-600 font-medium">Non-permanent residents in Canada, July 1, 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">465,514</div>
+        <div class="text-sm text-slate-600 font-medium">Non-permanent residents in B.C., July 1, 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">370,000</div>
+        <div class="text-sm text-slate-600 font-medium">Notional 2027 target for new temporary arrivals</div>
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        The federal government's commitment is simple to state: reduce Canada's temporary population to <strong>less than 5% of the total population by the end of 2027</strong>. What it means for an individual worker in Kelowna or Surrey is less obvious. Nobody is going to cancel your valid permit because of a national percentage. But almost every rule that decides whether you can <em>stay</em> after your permit expires has been tightened, and those rules will matter more in 2027 than ever. This guide covers where the numbers stand, what the target does and does not do, and a practical plan for each common type of B.C. work permit holder.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Where the Numbers Stand in Late 2026</h2>
+
+      <p>
+        Statistics Canada's September 23, 2026 release estimated <strong>2,779,774 non-permanent residents</strong> on July 1, 2026, or 6.7% of the population. That is down from a peak of 2,984,285 (7.2%) on October 1, 2024. The decrease of 154,614 between July 2025 and July 2026 was the largest annual drop since comparable records began in 1971/1972.
+      </p>
+
+      <p>
+        For British Columbia, the same release shows <strong>465,514 non-permanent residents</strong> on July 1, 2026, down 1.4% over the quarter, in a total population of 5,710,598. By our calculation that is roughly 8.2% of B.C.'s population &mdash; well above the national share. B.C.'s population grew only 0.1% over the year to July 1, 2026, compared with 0.5% nationally.
+      </p>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+        <p class="font-semibold text-amber-900 mb-2">Why you will see different percentages</p>
+        <p class="text-amber-800">In March 2026, IRCC told a Commons committee that the non-permanent resident share had fallen from a 7.6% peak to 6.5%, and that a February 2026 Parliamentary Budget Officer report found Canada on track for the 5% goal. In September 2026, Statistics Canada made an unusually large revision to its estimates back to 2021, adding adjustments for people who leave before their permits expire and for people still in Canada waiting on extension applications. The revised series puts the peak at 7.2% and July 2026 at 6.7%. Both are official; they use different data vintages.</p>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">How the Government Plans to Hit 5%</h2>
+
+      <p>
+        The 2026&ndash;2028 Immigration Levels Plan sets these targets for new temporary arrivals:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">New arrivals</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">2026</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">2027 (notional)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">2028 (notional)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Total</td><td class="px-4 py-3">385,000</td><td class="px-4 py-3">370,000</td><td class="px-4 py-3">370,000</td></tr>
+            <tr><td class="px-4 py-3">Workers &ndash; International Mobility Program</td><td class="px-4 py-3">170,000</td><td class="px-4 py-3">170,000</td><td class="px-4 py-3">170,000</td></tr>
+            <tr><td class="px-4 py-3">Workers &ndash; Temporary Foreign Worker Program</td><td class="px-4 py-3">60,000</td><td class="px-4 py-3">50,000</td><td class="px-4 py-3">50,000</td></tr>
+            <tr><td class="px-4 py-3">Students</td><td class="px-4 py-3">155,000</td><td class="px-4 py-3">150,000</td><td class="px-4 py-3">150,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Three details from IRCC's supplementary information are worth knowing:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Extensions are not counted as arrivals</strong>, and PGWPs are excluded from the International Mobility Program target because IRCC treats them as changes of status. But in-Canada work and study permit applications <em>are</em> included in the methodology for the 5% goal. In other words, extensions do not use up an arrival target, but people who stay still count toward the population share.</li>
+        <li><strong>The 2027 and 2028 figures are notional.</strong> IRCC says they will be confirmed or adjusted by November 1 of each year. The 2027&ndash;2029 plan is expected in early November 2026.</li>
+        <li><strong>Other levers are already in place</strong>: tighter open work permit rules for family members, study permit caps, PGWP changes and tightening of the Temporary Foreign Worker Program, according to IRCC's March 2026 committee briefing.</li>
+      </ul>
+
+      <p>
+        IRCC lists the ways people leave the temporary population as permits expiring and people transitioning to permanent status. That second route is where the BC PNP fits: every nominee who lands as a permanent resident reduces the temporary count. See our analysis of the <a href="/articles/canada-immigration-levels-plan-2027-2029-what-to-expect" class="text-blue-600 hover:text-blue-800 underline">upcoming 2027&ndash;2029 Levels Plan</a>.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The Rules That Decide Whether You Can Stay</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Maintained status</h3>
+      <p>
+        If you apply to extend or change your work permit <strong>before it expires</strong>, IRCC says you can legally stay in Canada until a decision is made. If you are extending, you can keep working under the same conditions &mdash; for an employer-specific permit, the same employer, job and location. If you are applying to change employers, you must keep working for the employer on your current permit until a decision, unless you have separate authorization. While on maintained status, you usually cannot renew provincial documents such as a driver's licence or health card, and your SIN expires with your permit (you can keep working, but you can only update the SIN after the new permit arrives).
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Restoration</h3>
+      <p>
+        If your permit expires without an application in, you lose status. IRCC must receive a restoration application within <strong>90 days</strong> of expiry, and you "normally" cannot work until status is restored and a new permit issued. The fee for restoring status as a worker is $401.25 ($246.25 restoration plus the $155 work permit fee). The BC PNP will not nominate someone who is out of status unless they can show they applied for restoration within the 90-day period, so a lapse can also stall a provincial application.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">PGWPs are one-time</h3>
+      <p>
+        IRCC is clear that a post-graduation work permit is a one-time opportunity. The main exception is a PGWP that was cut short because your passport expired; you can then apply on paper to extend it with your new passport. Otherwise, you need a different basis to keep working once your PGWP ends.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Your Options, by Situation</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Your situation</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Main bridge to stay working</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Key condition</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="px-4 py-3 font-medium">PGWP, not yet in the BC PNP pool</td>
+              <td class="px-4 py-3">Employer-specific permit (LMIA or LMIA-exempt) or a qualifying spousal permit</td>
+              <td class="px-4 py-3">Employer must pay the $1,000 LMIA fee per position if an LMIA is needed; it cannot be recovered from you</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">Registered or invited, not yet nominated</td>
+              <td class="px-4 py-3">Keep current permit valid; extend before expiry where possible</td>
+              <td class="px-4 py-3">BC PNP application processing is about 3 months for around 80% of cases</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">Nominated by the BC PNP</td>
+              <td class="px-4 py-3">BC PNP work permit support letter (no LMIA needed)</td>
+              <td class="px-4 py-3">Permit expiring in the near future; employer may need to pay the $230 employer compliance fee</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">PR application filed (PNP via Express Entry)</td>
+              <td class="px-4 py-3">Bridging open work permit</td>
+              <td class="px-4 py-3">Principal applicant, application passed completeness check, no employment restriction in your nomination</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">PR application filed (PNP outside Express Entry)</td>
+              <td class="px-4 py-3">Bridging open work permit</td>
+              <td class="px-4 py-3">Application passed IRCC's eligibility assessment; acknowledgement letter alone is not enough</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">Spouse of a worker</td>
+              <td class="px-4 py-3">Family open work permit</td>
+              <td class="px-4 py-3">Worker in TEER 0/1 or select TEER 2/3 with 16+ months left, or an economic PR applicant whose permit was issued because of that PR application and has 6+ months left</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The BC PNP work permit support letter</h3>
+      <p>
+        Section 7.12 of the Skills Immigration Program Guide says a nomination does not, by itself, authorize you to work, and the BC PNP cannot apply for a permit on your behalf. It may include a support letter in your nomination package if you have no valid permit or yours will expire in the near future. After nomination, you can request one through BCPNP Online if you are nominated, your permit is expiring soon, you have applied (or are still within the deadline to apply) for PR as a nominee, and you still meet the conditions of nomination. The letter lets you apply for a work permit without an LMIA. If you have no valid permit at nomination, you must apply for one within three months.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Bridging open work permits</h3>
+      <p>
+        IRCC's bridging open work permit page (updated June 2026) requires you to live in Canada, intend to live outside Quebec, and hold valid status, maintained status or eligibility for restoration. You must still hold valid temporary resident status when IRCC decides the bridging permit. IRCC's main page does not set a fixed expiry window, although an older Help Centre answer still refers to permits expiring in four months or less; follow the current instructions when you apply.
+      </p>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+        <p class="font-semibold text-blue-900 mb-2">Express Entry BC has a timing advantage</p>
+        <p class="text-blue-800">A bridging permit for a non-Express Entry PNP application only starts processing after IRCC confirms you meet basic eligibility, while an Express Entry application qualifies once it passes the completeness check. If you are eligible for Express Entry, applying to the BC PNP through the Express Entry BC option can shorten the gap between nomination and a bridging permit. Our <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="text-blue-700 underline font-semibold">EEBC guide</a> explains the option.</p>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">A Countdown Plan From Your Permit Expiry Date</h2>
+
+      <p>
+        Work backwards from the date on your permit. The timings below are planning guides based on published rules and processing estimates, not guarantees.
+      </p>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>18+ months out:</strong> Check whether your job fits a BC PNP Care or Build priority or could compete in a High Economic Impact draw. If not, the job offer itself is the problem to solve. Take a language test now; results last two years. Run your numbers in our <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP calculator</a>.</li>
+        <li><strong>12 months out:</strong> Register in the BC PNP pool if you are eligible, and create an Express Entry profile if you qualify. If your spouse holds an open permit tied to yours, check the 16-month rule before you renew anything.</li>
+        <li><strong>6 to 9 months out:</strong> If you have not been invited, talk to your employer about an LMIA or other employer-specific permit. LMIAs take time and cost the employer $1,000 per position.</li>
+        <li><strong>3 to 6 months out:</strong> If nominated, request the work permit support letter and apply for the new permit. If your PR application is already in, check bridging permit eligibility.</li>
+        <li><strong>Before expiry:</strong> Submit any extension or change-of-conditions application online before midnight UTC on the expiry date to keep maintained status. Online applicants (except PGWP holders) receive a WP-EXT letter they can show an employer; otherwise keep your proof of submission.</li>
+      </ol>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The In-Canada Workers Initiative: A Quiet Advantage for Regional Workers</h2>
+
+      <p>
+        On May 4, 2026, IRCC said it would transition up to 33,000 work permit holders to permanent residence in 2026 and 2027, with at least 20,000 in 2026. It is not a new stream: IRCC is prioritizing applications already in its inventory from people who applied through programs including the PNP and have lived in "smaller communities" for 2 years or more. Eligible people do not need to do anything. IRCC reported 3,600 approvals between January 1 and February 28, 2026. The release does not define "smaller communities," so do not assume you qualify &mdash; but it is one more reason a regional B.C. job can shorten your path. See our <a href="/articles/bc-pnp-look-west-regional-nominations-2027" class="text-blue-600 hover:text-blue-800 underline">regional nominations guide</a>.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">What We Expect in 2027 (Analysis)</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>No easing on temporary entry.</strong> Using Statistics Canada's revised figures, the national share still has to fall by roughly 1.7 percentage points in about 18 months. We expect the 2027&ndash;2029 plan to keep temporary arrival targets at or below the notional 370,000, though only the plan itself will confirm that.</li>
+        <li><strong>Tighter scrutiny of extensions.</strong> Because in-Canada applications count toward the 5% methodology, we would not expect IRCC to loosen PGWP or spousal permit rules in 2027.</li>
+        <li><strong>Transitions to PR stay a priority.</strong> The PNP target in the current plan rises from 91,500 in 2026 to a notional 92,500 in 2027. Moving people already in Canada to PR helps the government on both its temporary and permanent goals. B.C.'s 2027 allocation has not been announced.</li>
+        <li><strong>B.C. faces more pressure than average.</strong> With a non-permanent resident share around 8.2% by our calculation, B.C. has further to fall than the country as a whole.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Common Mistakes</h2>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Waiting for an ITA before planning status.</strong> A BC PNP invitation is not status. Plan your permit as if the invitation will not come in time.</li>
+        <li><strong>Changing employers on maintained status.</strong> Maintained status only lets you keep working under your old conditions.</li>
+        <li><strong>Travelling at the wrong time.</strong> If your permit expires while you are outside Canada, you lose the status a bridging permit depends on.</li>
+        <li><strong>Letting status lapse during a BC PNP application.</strong> The program will not nominate someone who is out of status outside the 90-day restoration window.</li>
+        <li><strong>Paying a "fee" for a job offer.</strong> Your B.C. employer cannot make you pay recruitment fees or fees it normally pays, including the LMIA fee.</li>
+      </ol>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6 not-prose">
+        {faqs.map((f) => (
+          <div class="bg-white border border-slate-200 rounded-2xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{f.q}</h3>
+            <p class="text-gray-700">{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/corporate-initiatives/levels/supplementary-immigration-levels-2026-2028.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Supplementary Information for the 2026&ndash;2028 Immigration Levels Plan</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/committees/cimm-mar-23-2026/temporary-resident-targets.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: CIMM briefing on temporary resident targets (March 23, 2026)</a></li>
+        <li><a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260923/dq260923b-eng.htm" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Statistics Canada: Canada's population estimates, second quarter 2026</a></li>
+        <li><a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260923/dq260923a-eng.htm" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Statistics Canada: Canada's population estimates, age and gender, 2026</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/extend/expired-permit.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: What to do if your work permit expires or is expiring</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/extend/apply.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Extend or change the conditions on your work permit &ndash; how to apply</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/restore.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Restore your status and get a work permit</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/pr-work-permits/bridging.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Bridging open work permit for permanent residence applicants</a></li>
+        <li><a href="https://www.ircc.canada.ca/english/helpcentre/answer.asp?qnum=676&amp;top=29" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC Help Centre: Can I renew my post-graduation work permit?</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/special-instructions/spouses-dependent-children/eligibility.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Open work permits for family members of foreign workers &ndash; who can apply</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/04/filling-labour-gaps-in-smaller-communities-by-accelerating-permanent-residence-for-33000-workers.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Accelerating permanent residence for 33,000 workers in smaller communities</a></li>
+        <li><a href="https://ircc.canada.ca/english/information/fees/fees.asp" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Fee list</a></li>
+        <li><a href="https://www.canada.ca/en/employment-social-development/services/foreign-workers/median-wage/low/requirements.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">ESDC: Program requirements for low-wage positions (LMIA fee)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Skills Immigration Program Guide (effective June 10, 2026)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: Skills Immigration (fees and processing times)</a></li>
+      </ul>
+
+      <p class="text-sm text-gray-500 mt-6">
+        Information current as of October 14, 2026. Program rules change often; confirm on WelcomeBC or IRCC before applying.
+      </p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-work-permit-guide" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Work Permits</div>
+          <div class="font-bold text-gray-900">BC PNP Work Permit Guide</div>
+        </a>
+        <a href="/articles/international-graduates-bc-pr-options-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">Graduates</div>
+          <div class="font-bold text-gray-900">International Graduates: BC PR Options in 2027</div>
+        </a>
+        <a href="/articles/canada-tr-to-pr-pathway-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Pathways</div>
+          <div class="font-bold text-gray-900">Canada TR to PR Pathways</div>
+        </a>
+        <a href="/articles/bc-pnp-after-nomination" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-amber-600 font-bold mb-2">Next Steps</div>
+          <div class="font-bold text-gray-900">After Your BC PNP Nomination</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

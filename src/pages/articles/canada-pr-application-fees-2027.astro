@@ -1,0 +1,367 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Canada PR Application Fees in 2027: Every IRCC and BC PNP Fee, With Worked Budgets";
+const description = "Current IRCC permanent residence fees (processing, $600 RPRF, biometrics), the $1,750 BC PNP fee, how increases are scheduled, and what to budget for in 2027.";
+const canonical = "https://bcpnpcalculator.ca/articles/canada-pr-application-fees-2027";
+
+const faqs = [
+  {
+    q: "How much does a Canadian PR application cost for a provincial nominee in 2026?",
+    a: "IRCC's fee list shows $1,590 for a principal applicant in the economic class, including provincial nominees. That is a $990 processing fee plus the $600 right of permanent residence fee (RPRF). A spouse or partner pays the same $1,590 and each dependent child pays $270. Biometrics cost $85 per person or $170 for a family applying together.",
+  },
+  {
+    q: "Will Canada's PR fees go up in 2027?",
+    a: "Permanent residence fees rose on April 30, 2026 under a two-year inflation adjustment, and the Canada Gazette notice says the new rates apply from April 2026 to March 2028. If that schedule holds, we do not expect the core PR fees to change during 2027; the next adjustment would logically come around April 2028. Other fees, such as the right of citizenship fee, have been adjusted on different dates.",
+  },
+  {
+    q: "What does the BC PNP charge on top of IRCC fees?",
+    a: "For Skills Immigration, registration is free, the application fee is $1,750 (raised from $1,475 for applications submitted on or after January 22, 2026), and a request for review costs $500. Entrepreneur Immigration charges $300 to register and $3,500 to apply.",
+  },
+  {
+    q: "Can I pay the right of permanent residence fee later?",
+    a: "Yes. IRCC says you can pay the RPRF with your application to avoid delays, or pay it when IRCC asks after approving your application. It must be paid before you become a permanent resident. It is refunded if you withdraw or your application is refused, and it is the only fee IRCC can refund after processing starts.",
+  },
+  {
+    q: "Do dependent children pay the right of permanent residence fee?",
+    a: "No. IRCC's fee list says the RPRF does not apply to dependent children of a principal applicant or sponsor. Each dependent child included in an economic class application pays a $270 processing fee only.",
+  },
+  {
+    q: "Which costs are not set by IRCC or the BC PNP?",
+    a: "Immigration medical exams, police certificates, language tests, educational credential assessments, translations and professional representation are charged by third parties, and prices vary by provider and country. Check the current price with each provider before you budget.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="canada-pr-application-fees-2027" datePublished="2026-10-14" dateModified="2026-10-14" articleSection="Guide" keywords="Canada PR fees 2027, right of permanent residence fee 2027, IRCC fee increase, provincial nominee PR fee, BC PNP application fee 1750, biometrics fee, Canada citizenship fee" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-emerald-100 text-emerald-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-emerald-200 shadow-sm">
+        Guide &bull; Fees and Budgeting
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Canada PR Application Fees in 2027: Every IRCC and BC PNP Fee, With Worked Budgets
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        The current federal fee table, the BC PNP's own charges, how and when fees are increased, and realistic budgets for singles and families planning a 2027 application.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-10-14">October 14, 2026</time>
+        <span>&bull;</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-600 mb-2">$1,590</div>
+        <div class="text-sm text-slate-600 font-medium">IRCC fee per adult (economic class, incl. RPRF)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">$1,750</div>
+        <div class="text-sm text-slate-600 font-medium">BC PNP Skills Immigration application fee</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">Mar 2028</div>
+        <div class="text-sm text-slate-600 font-medium">End of the current PR fee period (Canada Gazette)</div>
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        If you are planning to apply for permanent residence in 2027 &mdash; through the BC PNP, Express Entry or another program &mdash; the good news is that the fee picture is unusually predictable. Canada's permanent residence fees were last increased on <strong>April 30, 2026</strong>, and the official notice says those rates cover April 2026 to March 2028. This guide lists every fee you are likely to pay, explains how increases are scheduled, and works through real budgets. All amounts are in Canadian dollars and come from IRCC's fee list (last modified September 21, 2026) and WelcomeBC.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The Federal PR Fee Table (Current Through 2027)</h2>
+
+      <p>
+        IRCC fees are made up of a <strong>processing fee</strong> (paid when you apply) and, for most adults, a <strong>right of permanent residence fee (RPRF)</strong> of $600. IRCC quotes most fees both "with RPRF" and "without RPRF":
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Program and person</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Processing fee</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">With RPRF</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-bold" colspan="3">Economic immigration (Provincial Nominee, Canadian Experience Class, Federal Skilled Worker/Trades, Atlantic, rural and francophone pilots)</td></tr>
+            <tr><td class="px-4 py-3">Principal applicant</td><td class="px-4 py-3">$990</td><td class="px-4 py-3">$1,590</td></tr>
+            <tr><td class="px-4 py-3">Spouse or partner</td><td class="px-4 py-3">$990</td><td class="px-4 py-3">$1,590</td></tr>
+            <tr><td class="px-4 py-3">Dependent child (no RPRF)</td><td class="px-4 py-3">$270 each</td><td class="px-4 py-3">&mdash;</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-bold" colspan="3">Business programs (federal and Quebec)</td></tr>
+            <tr><td class="px-4 py-3">Principal applicant</td><td class="px-4 py-3">$1,895</td><td class="px-4 py-3">$2,495</td></tr>
+            <tr><td class="px-4 py-3">Spouse or partner</td><td class="px-4 py-3">$990</td><td class="px-4 py-3">$1,590</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-bold" colspan="3">Family sponsorship (spouse/partner, parent or grandparent)</td></tr>
+            <tr><td class="px-4 py-3">Sponsored person (includes $90 sponsorship fee)</td><td class="px-4 py-3">$660</td><td class="px-4 py-3">$1,260</td></tr>
+            <tr><td class="px-4 py-3">Dependent child</td><td class="px-4 py-3">$180 each</td><td class="px-4 py-3">&mdash;</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-bold" colspan="3">Other classes</td></tr>
+            <tr><td class="px-4 py-3">Caregiver programs opened in 2025 (principal)</td><td class="px-4 py-3">$990</td><td class="px-4 py-3">$1,590</td></tr>
+            <tr><td class="px-4 py-3">Caregiver programs opened before 2025 (principal)</td><td class="px-4 py-3">$660</td><td class="px-4 py-3">$1,260</td></tr>
+            <tr><td class="px-4 py-3">Protected persons; humanitarian and compassionate (principal)</td><td class="px-4 py-3">$660</td><td class="px-4 py-3">&mdash;</td></tr>
+            <tr><td class="px-4 py-3">Permit holders class</td><td class="px-4 py-3">$390</td><td class="px-4 py-3">$990</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        A BC PNP nominee &mdash; including an Entrepreneur Immigration nominee &mdash; applies to IRCC as a provincial nominee, so the economic class fees apply. The higher business fee is for federal and Quebec business programs, not for provincial entrepreneur nominees. IRCC does not charge to create an Express Entry profile; you pay when you submit your PR application after an invitation.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Biometrics and documents</h3>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Fee</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Biometrics, per person</td><td class="px-4 py-3">$85</td></tr>
+            <tr><td class="px-4 py-3">Biometrics, family of 2 or more applying at the same time (maximum)</td><td class="px-4 py-3">$170</td></tr>
+            <tr><td class="px-4 py-3">Permanent resident card (replacement or renewal)</td><td class="px-4 py-3">$50</td></tr>
+            <tr><td class="px-4 py-3">Permanent resident travel document</td><td class="px-4 py-3">$50</td></tr>
+            <tr><td class="px-4 py-3">Verify status or replace an immigration document</td><td class="px-4 py-3">$30</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">BC PNP Fees</h2>
+
+      <p>
+        The BC PNP charges its own fees, separate from IRCC's, and accepts payment only through the BCPNP Online portal. WelcomeBC warns that if anyone asks you to pay a BC PNP fee another way (cheque, wire transfer, gift cards), you should report it to PNP.fraud.tips@gov.bc.ca.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Stage</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Skills Immigration</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Entrepreneur Immigration</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Registration</td><td class="px-4 py-3">No fee</td><td class="px-4 py-3">$300</td></tr>
+            <tr><td class="px-4 py-3">Application</td><td class="px-4 py-3">$1,750</td><td class="px-4 py-3">$3,500 (plus $1,000 per additional key staff in the Strategic Projects stream)</td></tr>
+            <tr><td class="px-4 py-3">Request for review</td><td class="px-4 py-3">$500</td><td class="px-4 py-3">$500</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The Skills Immigration application fee rose from $1,475 to $1,750 for applications submitted on or after January 22, 2026. Fees are refunded only if you withdraw before the BC PNP begins assessing your application, and the review fee is never refunded. For the full picture of BC-specific costs, see our <a href="/articles/bc-pnp-cost-guide-2026" class="text-blue-600 hover:text-blue-800 underline">BC PNP cost guide</a>.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Worked Budgets</h2>
+
+      <p>
+        These examples use only the government fees above. Add third-party costs (see the next section) on top.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Scenario</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">BC PNP</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">IRCC (incl. RPRF)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Biometrics</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Total</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Single BC PNP Skills Immigration nominee</td><td class="px-4 py-3">$1,750</td><td class="px-4 py-3">$1,590</td><td class="px-4 py-3">$85</td><td class="px-4 py-3 font-bold">$3,425</td></tr>
+            <tr><td class="px-4 py-3">BC PNP nominee + spouse</td><td class="px-4 py-3">$1,750</td><td class="px-4 py-3">$3,180</td><td class="px-4 py-3">$170</td><td class="px-4 py-3 font-bold">$5,100</td></tr>
+            <tr><td class="px-4 py-3">BC PNP nominee + spouse + 2 children</td><td class="px-4 py-3">$1,750</td><td class="px-4 py-3">$3,720</td><td class="px-4 py-3">$170 max</td><td class="px-4 py-3 font-bold">$5,640</td></tr>
+            <tr><td class="px-4 py-3">Single Express Entry (no PNP)</td><td class="px-4 py-3">&mdash;</td><td class="px-4 py-3">$1,590</td><td class="px-4 py-3">$85</td><td class="px-4 py-3 font-bold">$1,675</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        <strong>Cash-flow tip:</strong> the family of four could pay $2,520 to IRCC at submission ($990 + $990 + $270 + $270) and the remaining $1,200 in RPRF when asked. IRCC recommends paying the RPRF up front to avoid delays, but deferring it is allowed. The RPRF is the only IRCC fee refunded after processing starts (if you withdraw or are refused), and it does not apply to dependent children.
+      </p>
+
+      <p>
+        Before you budget, check that you can actually get an invitation. Our <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP calculator</a> shows how your score compares with recent draws.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Temporary Status Fees You May Pay Along the Way</h2>
+
+      <p>
+        Many BC PNP candidates also need to extend or change a work permit while they wait. From IRCC's fee list:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Work permit (including extensions):</strong> $155 per person.</li>
+        <li><strong>Open work permit holder fee:</strong> $100, on top of the $155 &mdash; for example, a bridging open work permit requires both.</li>
+        <li><strong>Restoring status as a worker:</strong> $401.25 ($246.25 restoration plus $155 work permit).</li>
+        <li><strong>Employer compliance fee:</strong> $230, paid by the employer. The BC PNP guide notes your employer may need to pay it before you can apply for a work permit using a BC PNP work permit support letter.</li>
+        <li><strong>LMIA processing fee:</strong> $1,000 per position, paid by the employer to Employment and Social Development Canada. Under the BC PNP guide, your employer cannot make you pay fees it would normally pay.</li>
+      </ul>
+
+      <p>
+        Planning around permit expiry is covered in our guide to <a href="/articles/canada-temporary-resident-cap-2027-bc-work-permit-holders" class="text-blue-600 hover:text-blue-800 underline">work permit holders and the temporary resident target</a>.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Costs Not Set by IRCC or the BC PNP</h2>
+
+      <p>
+        These are real costs, but their prices are set by private providers or foreign governments and change often, so we do not quote fixed figures:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Immigration medical exam</strong> by an IRCC panel physician, per person.</li>
+        <li><strong>Police certificates</strong> from each country where you lived for the required period.</li>
+        <li><strong>Language test</strong> (CELPIP-General, IELTS General Training, PTE Core, TEF Canada or TCF Canada). Results count for two years, so a test taken in early 2026 may need to be redone for a late-2027 application.</li>
+        <li><strong>Educational credential assessment</strong> if you studied outside Canada and need it for Express Entry or the BC PNP asks for it.</li>
+        <li><strong>Certified translations</strong> of documents not in English or French.</li>
+        <li><strong>Professional licensing</strong> (for example CVBC, BCCNM or SkilledTradesBC fees) if your occupation is regulated.</li>
+        <li><strong>Representation</strong> by a regulated consultant or lawyer, if you choose to use one.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">How Fee Increases Are Scheduled</h2>
+
+      <p>
+        Knowing how fees change helps you judge whether waiting will cost you more.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Permanent residence fees: every two years, tied to inflation</h3>
+      <p>
+        IRCC's notice says PR fees are adjusted every two years under the Immigration and Refugee Protection Regulations to offset program costs and keep pace with inflation. The April 4, 2026 Canada Gazette notice explains the formula: the cumulative increase in Statistics Canada's Consumer Price Index for the two previous years (2024 and 2025), rounded to the nearest five dollars, effective 9:00 a.m. Eastern on April 30, 2026, for the period April 2026 to March 2028.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Fee (principal applicant)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Before Apr 30, 2024</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Apr 30, 2024</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Apr 30, 2026 (current)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Right of permanent residence fee</td><td class="px-4 py-3">$515</td><td class="px-4 py-3">$575</td><td class="px-4 py-3">$600</td></tr>
+            <tr><td class="px-4 py-3">Express Entry / PNP processing</td><td class="px-4 py-3">$850</td><td class="px-4 py-3">$950</td><td class="px-4 py-3">$990</td></tr>
+            <tr><td class="px-4 py-3">Business processing</td><td class="px-4 py-3">$1,625</td><td class="px-4 py-3">$1,810</td><td class="px-4 py-3">$1,895</td></tr>
+            <tr><td class="px-4 py-3">Family class sponsored person</td><td class="px-4 py-3">&mdash;</td><td class="px-4 py-3">$545</td><td class="px-4 py-3">$570</td></tr>
+            <tr><td class="px-4 py-3">Sponsorship fee</td><td class="px-4 py-3">&mdash;</td><td class="px-4 py-3">$85</td><td class="px-4 py-3">$90</td></tr>
+            <tr><td class="px-4 py-3">Protected persons / H&amp;C</td><td class="px-4 py-3">&mdash;</td><td class="px-4 py-3">$635</td><td class="px-4 py-3">$660</td></tr>
+            <tr><td class="px-4 py-3">Permit holders</td><td class="px-4 py-3">&mdash;</td><td class="px-4 py-3">$375</td><td class="px-4 py-3">$390</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-sm text-gray-500">
+        Dashes mean the pre-2024 amount is not listed in the IRCC fee-change summary we used.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Citizenship: the right of citizenship fee</h3>
+      <p>
+        An adult citizenship application costs $653, which includes the $123 right of citizenship fee; a minor's application is $100. The right of citizenship fee has moved on March 31 in each of the last two years: from $100 to $119.75 in 2025, and to $123 in 2026.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">December 1 adjustments</h3>
+      <p>
+        IRCC's fee-change page shows some fees adjusted on December 1 in both 2024 and 2025, including inadmissibility-related fees (such as restoration of status) and the International Experience Canada fee.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">What We Expect for 2027 (Analysis)</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Core PR fees: likely unchanged.</strong> The Gazette notice sets the current rates through March 2028. Unless the government changes the regulations, a 2027 PR application should cost what it does today. The next biennial increase would logically take effect around April 2028, based on 2026 and 2027 inflation &mdash; that date is our inference, not an announcement.</li>
+        <li><strong>Citizenship: a small rise is possible on March 31, 2027.</strong> If the pattern of the last two years continues, the $123 right of citizenship fee could rise slightly. This is a pattern, not a published schedule.</li>
+        <li><strong>Restoration and IEC fees: watch December 1, 2026.</strong> Both were adjusted on December 1 in 2024 and 2025.</li>
+        <li><strong>BC PNP fees: no announced change.</strong> The province sets these and raised the Skills Immigration fee in January 2026. Nothing has been announced for 2027.</li>
+      </ul>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+        <p class="font-semibold text-blue-900 mb-2">If fees do change while your file is open</p>
+        <p class="text-blue-800">For PR applications, IRCC says online applications are received immediately, so check your payment before submitting. If you applied before a change without paying the RPRF, you must pay the new RPRF amount when asked. For mailed applications sent before a change, IRCC says it generally will not reject a complete application paid at the old rate; it will tell you how to pay the difference.</p>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Common Fee Mistakes</h2>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Forgetting the spouse's RPRF.</strong> A spouse or partner pays the same $1,590 as the principal applicant, not the child rate.</li>
+        <li><strong>Paying biometrics separately for each family member.</strong> If you apply together, the family maximum is $170.</li>
+        <li><strong>Assuming the BC PNP fee covers IRCC.</strong> They are separate applications to separate governments.</li>
+        <li><strong>Paying fees through a third party's account or by wire.</strong> BC PNP fees go only through BCPNP Online; IRCC fees are paid through IRCC's own payment tools.</li>
+        <li><strong>Budgeting for a language test you took too early.</strong> Results are valid for two years.</li>
+      </ol>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6 not-prose">
+        {faqs.map((f) => (
+          <div class="bg-white border border-slate-200 rounded-2xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{f.q}</h3>
+            <p class="text-gray-700">{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://ircc.canada.ca/english/information/fees/fees.asp" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Citizenship and immigration application fees &ndash; Fee list</a></li>
+        <li><a href="https://ircc.canada.ca/english/information/fees/fee-changes.asp" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Citizenship and immigration application fees &ndash; Fee changes</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/permanent-residence-fees-increasing.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC notice: Permanent residence fees increasing on April 30, 2026</a></li>
+        <li><a href="https://gazette.gc.ca/rp-pr/p1/2026/2026-04-04/html/notice-avis-eng.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canada Gazette, Part I, April 4, 2026: Notice of biennial increase of permanent residence fees</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: Skills Immigration fees</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/entrepreneur-immigration" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: Entrepreneur Immigration fees</a></li>
+        <li><a href="https://www.welcomebc.ca/Immigrate-to-B-C/News" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: BC PNP news (January 22, 2026 fee update)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Skills Immigration Program Guide (effective June 10, 2026)</a></li>
+        <li><a href="https://www.canada.ca/en/employment-social-development/services/foreign-workers/median-wage/low/requirements.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">ESDC: Program requirements for low-wage positions (LMIA fee)</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/pr-work-permits/bridging.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Bridging open work permit</a></li>
+      </ul>
+
+      <p class="text-sm text-gray-500 mt-6">
+        Information current as of October 14, 2026. Program rules change often; confirm on WelcomeBC or IRCC before applying.
+      </p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-cost-guide-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Budget</div>
+          <div class="font-bold text-gray-900">BC PNP Cost Guide: Complete Breakdown</div>
+        </a>
+        <a href="/articles/bc-pnp-after-nomination" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Next Steps</div>
+          <div class="font-bold text-gray-900">After Your BC PNP Nomination</div>
+        </a>
+        <a href="/articles/how-long-to-get-pr-in-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Timelines</div>
+          <div class="font-bold text-gray-900">How Long Does It Take to Get PR in Canada?</div>
+        </a>
+        <a href="/articles/bc-pnp-2027-outlook-predictions" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-amber-600 font-bold mb-2">Outlook</div>
+          <div class="font-bold text-gray-900">BC PNP 2027 Outlook and Predictions</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

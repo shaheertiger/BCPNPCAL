@@ -1,0 +1,360 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "BC PNP 2026 Draws Recap: Every Skills Immigration Draw and What It Signals for 2027";
+const description = "Every 2026 BC PNP Skills Immigration draw in one place: dates, Care, Build and Innovate cutoffs, wage thresholds, pool data and practical lessons for 2027.";
+const canonical = "https://bcpnpcalculator.ca/articles/bc-pnp-2026-draws-recap-2027-forecast";
+
+const faqs = [
+  {
+    q: "How many BC PNP Skills Immigration invitations were issued in 2026?",
+    a: "Adding up the draws published on WelcomeBC's invitations page from February 4 to October 8, 2026 gives at least 6,297 Skills Immigration invitations, plus four categories reported only as fewer than five. Invitations are not nominations, and Health Authority stream applications do not need an invitation, so this is not a count of nominations."
+  },
+  {
+    q: "What was the lowest BC PNP cutoff score in 2026?",
+    a: "Among Skills Immigration categories, the lowest published minimum score was 50 points in the July 23, 2026 Temporary Rural/Remote Health Support Initiative draw. In the regular priority draws, Care: Health fell to 76 points on September 10 and October 8, 2026, and Care: Education was 68 on August 6, 2026."
+  },
+  {
+    q: "What wage did the BC PNP High Economic Impact draws require in 2026?",
+    a: "The wage-based High Economic Impact track required both an hourly and an annual minimum plus a NOC TEER 0 to 3 job offer. It started at $70 per hour and $145,000 per year on February 4, 2026 and fell to $52 per hour and $105,000 per year on September 24, 2026."
+  },
+  {
+    q: "Will BC PNP cutoffs go down in 2027?",
+    a: "Nobody can know yet. The 2027 allocation has not been announced. Based on 2025 and 2026 patterns, we expect a slow start to the year and cutoffs that open higher before easing as the year's allocation is confirmed and used. Treat any exact 2027 cutoff prediction with suspicion."
+  },
+  {
+    q: "Do Care and Build draws still use the points score?",
+    a: "Yes. Care and Build draws first restrict the pool to eligible priority occupations and conditions, such as an ECE certificate or a SkilledTradesBC credential, and then invite the highest-scoring registrants in that group. That is why the Care: Health cutoff can be far lower than the points cutoff in Innovate draws."
+  },
+  {
+    q: "How big was the BC PNP registration pool in October 2026?",
+    a: "WelcomeBC reported 7,695 registrations in the Skills Immigration pool as of October 6, 2026. Only 203 of them scored 130 or higher, while the largest groups were in the 90 to 99 range (1,444) and the 100 to 109 range (1,426)."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+
+<ArticleLayout slug="bc-pnp-2026-draws-recap-2027-forecast" datePublished="2026-10-14" dateModified="2026-10-14" articleSection="Analysis" keywords="BC PNP draws 2026, BC PNP draw history, BC PNP cutoff scores 2026, BC PNP 2027 forecast, Care Build Innovate draws, High Economic Impact draw" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        Draw Analysis
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        BC PNP 2026 Draws Recap: Every Skills Immigration Draw and What It Signals for 2027
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        2026 was the year the BC PNP stopped running one big points contest and started running several smaller, targeted ones. Here is every published draw, the trends inside them, and what those trends do and do not tell you about 2027.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-10-14">October 14, 2026</time>
+        <span>&bull;</span>
+        <span>12 min read</span>
+      </div>
+    </header>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">6,297+</div>
+        <div class="text-sm text-slate-600 font-medium">Skills Immigration ITAs, Feb 4 – Oct 8, 2026 (our count)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-green-600 mb-2">16</div>
+        <div class="text-sm text-slate-600 font-medium">Skills Immigration draw dates in 2026 so far</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">7,695</div>
+        <div class="text-sm text-slate-600 font-medium">Registrations in the pool (Oct 6, 2026)</div>
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        If you only looked at BC PNP draws in 2025, you would have seen three Skills Immigration rounds all year, each aimed at very high earners or very high scorers. 2026 looked completely different. After the April 23, 2026 restructuring around three objectives (Care, Build and Innovate), the program settled into a rhythm of roughly two draw days a month: one for targeted Care and Build occupations, and one for "High Economic Impact" candidates under Innovate. This recap pulls every 2026 Skills Immigration draw from the official <a href="https://www.welcomebc.ca/immigrate-to-b-c/invitations-to-apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC invitations page</a> (last updated October 8, 2026) and explains what the numbers show.
+      </p>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+        <p class="font-semibold text-amber-900 mb-2">How to read this article</p>
+        <p class="text-amber-800">Everything in the tables comes from WelcomeBC. Totals and percentages are our own arithmetic from those tables. Anything about 2027 is analysis based on past patterns, not an official announcement. The BC PNP has not published its 2027 allocation or 2027 priorities.</p>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Phase 1 (February to April 2026): High Economic Impact only</h2>
+
+      <p>
+        There were no Skills Immigration draws in January or March 2026. The first three rounds of the year were all "high economic impact" draws, run before the new priorities were announced. Each used two separate tracks: a wage track (hourly <em>and</em> annual minimums plus a NOC TEER 0 to 3 job offer) and a points track.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Date</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Wage track</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Points track</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Total ITAs</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Feb 4, 2026</td><td class="px-4 py-3">$70/hr and $145,000/yr: 206</td><td class="px-4 py-3">138+: 223</td><td class="px-4 py-3 font-medium">429</td></tr>
+            <tr><td class="px-4 py-3">Feb 11, 2026</td><td class="px-4 py-3">$62/hr and $125,000/yr: 195</td><td class="px-4 py-3">135+: 265</td><td class="px-4 py-3 font-medium">460</td></tr>
+            <tr><td class="px-4 py-3">Apr 22, 2026</td><td class="px-4 py-3">$62/hr and $125,000/yr: 252</td><td class="px-4 py-3">138+: 232</td><td class="px-4 py-3 font-medium">484</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        These three draws alone (1,373 invitations) already exceeded everything the program issued through Skills Immigration in all of 2025. The 2025 archive on WelcomeBC lists only three Skills Immigration rounds that year: May 8 (94 invitations, $105/hr or 150 points), October 2 (474 invitations, $90/hr and $175,000/yr or 140 points) and December 10 (410 invitations, $84/hr and $170,000/yr or 138 points). That is 978 in total. The difference reflects a larger starting allocation in 2026 (5,254 versus 4,000), which you can read about in our <a href="/articles/bc-pnp-2026-allocation-priorities" class="text-blue-600 underline">2026 allocation guide</a>.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Phase 2 (May 2026 onward): targeted Care and Build draws</h2>
+
+      <p>
+        From May 6, 2026 the program began separate draws for priority occupations. Each Care or Build draw restricts the pool to people whose registration matches a priority occupation (and any extra condition, such as an ECE certificate or a SkilledTradesBC credential), then invites the highest scorers in that group. The full list of priority occupations is on WelcomeBC's <a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/about-the-bc-provincial-nominee-program" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">selection of workers page</a>; we break it down in our <a href="/articles/bc-pnp-care-healthcare-occupations-list-2027" class="text-blue-600 underline">Care occupations guide</a>.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Care and Build draws: minimum score (invitations)</h3>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Date</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Childcare (ECEs)</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Health</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Veterinary</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Construction trades</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">May 6</td><td class="px-4 py-3">115 (86)</td><td class="px-4 py-3">108 (117)</td><td class="px-4 py-3">100 (9)</td><td class="px-4 py-3">108 (121)</td></tr>
+            <tr><td class="px-4 py-3">Jun 2</td><td class="px-4 py-3">111 (91)</td><td class="px-4 py-3">100 (117)</td><td class="px-4 py-3">92 (6)</td><td class="px-4 py-3">101 (128)</td></tr>
+            <tr><td class="px-4 py-3">Jul 9</td><td class="px-4 py-3">108 (91)</td><td class="px-4 py-3">96 (116)</td><td class="px-4 py-3">88 (&lt;5)</td><td class="px-4 py-3">97 (136)</td></tr>
+            <tr><td class="px-4 py-3">Aug 6</td><td class="px-4 py-3">102 (183)</td><td class="px-4 py-3">84 (124)</td><td class="px-4 py-3">72 (6)</td><td class="px-4 py-3">88 (187)</td></tr>
+            <tr><td class="px-4 py-3">Sep 10</td><td class="px-4 py-3">99 (182)</td><td class="px-4 py-3">76 (143)</td><td class="px-4 py-3">90 (&lt;5)</td><td class="px-4 py-3">94 (104)</td></tr>
+            <tr><td class="px-4 py-3">Oct 8</td><td class="px-4 py-3">99 (86)</td><td class="px-4 py-3">76 (82)</td><td class="px-4 py-3">86 (&lt;5)</td><td class="px-4 py-3">94 (115)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Two additions round out the Care picture. On August 6, 2026 the program ran its only Care: Education draw so far (French-speaking teachers, minimum 68, fewer than five invitations). And the one-time <strong>Temporary Rural/Remote Health Support Initiative</strong>, for health-authority employees in cleaning and security jobs outside the excluded regional districts, had two draws: July 23 (minimum 50, 60 invitations) and September 17 (minimum 60, 33 invitations). That initiative is capped at up to 250 nominations and its registration window closed on October 7, 2026.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">What the Care and Build numbers show</h3>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Health fell fastest.</strong> The Care: Health cutoff dropped 32 points in four months, from 108 in May to 76 in September, and held at 76 in October. That is consistent with a fairly small pool of registrants in the 31 priority health occupations who also meet the program's conditions.</li>
+        <li><strong>Childcare eased slowly.</strong> ECE cutoffs slid from 115 to 99. The two biggest ECE rounds (183 and 182 invitations in August and September) came after the August 18 allocation increase.</li>
+        <li><strong>Construction bounced.</strong> Trades fell from 108 to 88 by August, then rose to 94 in September and October. A rising cutoff usually means the program reached deeper into the pool and is now waiting for new registrations to accumulate. Note that the May 6 Build draw explicitly included workers with apprenticeships registered with SkilledTradesBC, not only certified journeypersons.</li>
+        <li><strong>Veterinary is tiny and volatile.</strong> With fewer than 10 invitations per round, a single high or low scorer moves the cutoff, which is why it swung from 72 to 90.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Innovate: High Economic Impact draws</h2>
+
+      <p>
+        Innovate draws have no occupation list. They kept the same two-track design as the February to April rounds, and both thresholds drifted down through the year.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Date</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Wage track (hourly and annual)</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Wage ITAs</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Points cutoff</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Points ITAs</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">May 14</td><td class="px-4 py-3">$59/hr and $120,000</td><td class="px-4 py-3">225</td><td class="px-4 py-3">135</td><td class="px-4 py-3">212</td></tr>
+            <tr><td class="px-4 py-3">Jun 18</td><td class="px-4 py-3">$62/hr and $125,000</td><td class="px-4 py-3">130</td><td class="px-4 py-3">136</td><td class="px-4 py-3">149</td></tr>
+            <tr><td class="px-4 py-3">Jul 16</td><td class="px-4 py-3">$58/hr and $115,000</td><td class="px-4 py-3">223</td><td class="px-4 py-3">132</td><td class="px-4 py-3">346</td></tr>
+            <tr><td class="px-4 py-3">Aug 20</td><td class="px-4 py-3">$55/hr and $110,000</td><td class="px-4 py-3">337</td><td class="px-4 py-3">132</td><td class="px-4 py-3">265</td></tr>
+            <tr><td class="px-4 py-3">Sep 24</td><td class="px-4 py-3">$52/hr and $105,000</td><td class="px-4 py-3">426</td><td class="px-4 py-3">131</td><td class="px-4 py-3">288</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Two details matter here. First, the wage track needs <em>both</em> numbers. Someone earning $52 an hour on a 37.5-hour week makes about $101,400 a year, which would miss the $105,000 annual minimum used on September 24. Second, the points cutoff barely moved (138 in February, 131 in September) while the wage cutoff fell by $18 an hour. The pool is thin at the top: on October 6, only 203 registrations scored 130 or more. Each points round therefore reaches only a few points deeper. For a closer look at this route, see our <a href="/articles/bc-pnp-innovate-high-economic-impact-draws-2027" class="text-blue-600 underline">Innovate High Economic Impact guide</a>.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">2026 by the numbers</h2>
+
+      <p>
+        Adding every published Skills Immigration figure from February 4 to October 8 gives the totals below. Four rows were reported only as "&lt;5", so the real totals are slightly higher.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Draw type</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">ITAs (published figures)</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Share of total</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">High Economic Impact / Innovate, wage track</td><td class="px-4 py-3">1,994</td><td class="px-4 py-3">about 32%</td></tr>
+            <tr><td class="px-4 py-3">High Economic Impact / Innovate, points track</td><td class="px-4 py-3">1,980</td><td class="px-4 py-3">about 31%</td></tr>
+            <tr><td class="px-4 py-3">Build: Construction trades</td><td class="px-4 py-3">791</td><td class="px-4 py-3">about 13%</td></tr>
+            <tr><td class="px-4 py-3">Care: Childcare (ECEs)</td><td class="px-4 py-3">719</td><td class="px-4 py-3">about 11%</td></tr>
+            <tr><td class="px-4 py-3">Care: Health</td><td class="px-4 py-3">699</td><td class="px-4 py-3">about 11%</td></tr>
+            <tr><td class="px-4 py-3">Rural/Remote Health Support Initiative</td><td class="px-4 py-3">93</td><td class="px-4 py-3">about 1.5%</td></tr>
+            <tr><td class="px-4 py-3">Care: Veterinary (plus three &lt;5 rounds)</td><td class="px-4 py-3">21+</td><td class="px-4 py-3">under 1%</td></tr>
+            <tr><td class="px-4 py-3">Care: Education</td><td class="px-4 py-3">&lt;5</td><td class="px-4 py-3">under 0.1%</td></tr>
+            <tr class="bg-slate-50 font-semibold"><td class="px-4 py-3">Total</td><td class="px-4 py-3">6,297+</td><td class="px-4 py-3">100%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Two cautions before you draw conclusions. Invitations are not nominations: some invited people never apply, and some applications are refused. And the table leaves out the <a href="/articles/bc-pnp-health-authority-stream" class="text-blue-600 underline">Health Authority stream</a>, where eligible applicants apply directly without registering or receiving an invitation, as well as Entrepreneur Immigration. The table measures where <em>invitations</em> went, not the full use of the 6,254 nominations. Still, the split is clear. Roughly 63% of 2026 Skills Immigration invitations went through the Innovate tracks, which have no occupation list. Targeted Care and Build draws made up most of the rest.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The pool on October 6, 2026</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Score range</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Registrations</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Cumulative (this score or higher)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">150+</td><td class="px-4 py-3">9</td><td class="px-4 py-3">9</td></tr>
+            <tr><td class="px-4 py-3">140–149</td><td class="px-4 py-3">23</td><td class="px-4 py-3">32</td></tr>
+            <tr><td class="px-4 py-3">130–139</td><td class="px-4 py-3">171</td><td class="px-4 py-3">203</td></tr>
+            <tr><td class="px-4 py-3">120–129</td><td class="px-4 py-3">854</td><td class="px-4 py-3">1,057</td></tr>
+            <tr><td class="px-4 py-3">110–119</td><td class="px-4 py-3">1,189</td><td class="px-4 py-3">2,246</td></tr>
+            <tr><td class="px-4 py-3">100–109</td><td class="px-4 py-3">1,426</td><td class="px-4 py-3">3,672</td></tr>
+            <tr><td class="px-4 py-3">90–99</td><td class="px-4 py-3">1,444</td><td class="px-4 py-3">5,116</td></tr>
+            <tr><td class="px-4 py-3">80–89</td><td class="px-4 py-3">1,281</td><td class="px-4 py-3">6,397</td></tr>
+            <tr><td class="px-4 py-3">70–79</td><td class="px-4 py-3">718</td><td class="px-4 py-3">7,115</td></tr>
+            <tr><td class="px-4 py-3">60–69</td><td class="px-4 py-3">364</td><td class="px-4 py-3">7,479</td></tr>
+            <tr><td class="px-4 py-3">0–59</td><td class="px-4 py-3">216</td><td class="px-4 py-3">7,695</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Most registrants (about 71%) score below 110. The 131-point Innovate cutoff is out of reach for them, but a sub-100 score can still win an invitation if the person is in a priority Care or Build occupation. That is the single most important fact about the 2026 system. Your occupation and credentials now decide which contest you are in, and your score decides your rank within it. You can check where you would land with our <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP points calculator</a>.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Seven lessons from 2026 for 2027 applicants</h2>
+
+      <ol class="list-decimal pl-6 space-y-4">
+        <li><strong>Expect a slow first quarter.</strong> In 2025 the first Skills Immigration draw came on May 8. In 2026 it came on February 4, with nothing in January or March. Both years, BC was waiting to confirm its federal allocation and set priorities. If that pattern holds, early 2027 may be quiet too.</li>
+        <li><strong>Credentials are the gate, not a bonus.</strong> Targeted draws invite only people who meet the condition, such as an ECE One Year or Five Year certificate, Care Aide Registry registration for NOC 33102, or a SkilledTradesBC certificate or registered apprenticeship. Under section 7.3 of the Skills Immigration Program Guide, if you are invited on a factor you did not actually meet, your application will be refused.</li>
+        <li><strong>Thresholds eased as the year went on.</strong> Cutoffs and wage minimums drifted down through 2026, and the largest rounds (August 20: 602; September 24: 714) came right after the August 18 increase of 1,000 nominations. Applicants who registered early and kept their registration accurate benefited.</li>
+        <li><strong>Mind the 12-month clock.</strong> Under the program guide, a registration that is not invited within 12 months is removed from the pool automatically. A registration filed in late 2026 could expire before the 2027 rhythm settles. Note the date and plan to re-register if needed.</li>
+        <li><strong>The wage track is a two-part test.</strong> Hourly and annual minimums both apply, and bonuses, overtime and allowances do not count toward the hourly wage in the program guide.</li>
+        <li><strong>Regional work matters twice.</strong> A job outside Metro Vancouver earns up to 25 area points (15 for Area 3, 5 for Area 2, plus 10 for regional experience or regional alumni), and the program aims for at least 35% of nominations outside Metro Vancouver. See our <a href="/articles/bc-pnp-look-west-regional-nominations-2027" class="text-blue-600 underline">Look West regional guide</a>.</li>
+        <li><strong>Thirty days, no extensions.</strong> After an invitation you have 30 calendar days to submit a complete application, and that period cannot be extended. Prepare documents before you are invited; our <a href="/articles/bc-pnp-documents-checklist" class="text-blue-600 underline">documents checklist</a> helps.</li>
+      </ol>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">2027 forecast: what we expect (analysis, not official)</h2>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+        <p class="font-semibold text-blue-900 mb-2">Status as of October 14, 2026</p>
+        <p class="text-blue-800">BC has not received or announced a 2027 allocation. The federal 2027–2029 Immigration Levels Plan has not been tabled yet. Everything in this section is our reading of 2025 and 2026 patterns.</p>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Draw structure</h3>
+      <p>
+        We expect the Care, Build and Innovate framework to continue into 2027. It is written into the current program guide and the selection of workers page, and BC tied it to its Look West economic strategy. Nothing official says it will end on December 31. The program guide also says the BC PNP can change selection factors, scoring and draw frequency at any time. A change in the priority lists (for example, adding or removing an occupation) is more likely than a return to general points-only draws.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Cutoff direction</h3>
+      <p>
+        If early 2027 has a lull like early 2025 and 2026, registrations will build up in the pool. When draws restart, we expect first-round cutoffs in each category to open <em>higher</em> than the autumn 2026 levels, then ease as the year goes on. That is what happened in 2026. How far they fall will depend mostly on the size of BC's 2027 allocation. We are not publishing predicted cutoff numbers. A single policy decision, such as a new priority occupation or a mid-year allocation increase, can move a category by 10 to 20 points in one round, as Health and Veterinary did in 2026.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Category-by-category expectations</h3>
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">Category</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">2026 range seen</th>
+              <th class="px-4 py-3 text-left font-bold text-slate-700">What we will watch in 2027</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Care: Health</td><td class="px-4 py-3">108 → 76</td><td class="px-4 py-3">Whether the low autumn cutoffs pull in more health registrants, which could push early-2027 cutoffs back up</td></tr>
+            <tr><td class="px-4 py-3">Care: Childcare</td><td class="px-4 py-3">115 → 99</td><td class="px-4 py-3">Steady demand. Watch for ECE Five Year certificate holders with regional jobs</td></tr>
+            <tr><td class="px-4 py-3">Build: Trades</td><td class="px-4 py-3">108 → 88 → 94</td><td class="px-4 py-3">The rebound suggests the pool has been drawn down. New certifications will drive cutoffs</td></tr>
+            <tr><td class="px-4 py-3">Innovate: points</td><td class="px-4 py-3">138 → 131</td><td class="px-4 py-3">Thin top of pool; small moves only unless allocation grows</td></tr>
+            <tr><td class="px-4 py-3">Innovate: wage</td><td class="px-4 py-3">$70/hr → $52/hr</td><td class="px-4 py-3">Whether the threshold resets higher at the start of 2027</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Who should act differently because of this recap</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Priority-occupation workers without the credential:</strong> start the certification now (ECE Registry, SkilledTradesBC, Care Aide Registry or your licensing body). That paperwork is what decides whether you are in a 76-point contest or a 131-point one.</li>
+        <li><strong>Non-priority workers scoring under 120:</strong> 2026 offered no realistic BC PNP points route for you. Look at wage growth, a regional job offer, a higher language score, or other options in our <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="text-blue-600 underline">Express Entry BC guide</a>.</li>
+        <li><strong>High earners:</strong> the 2026 wage track went as low as $52/hr and $105,000/yr. Keep your registration current and accurate. Note that a wage raised only to hit a threshold can lead to refusal under the program guide.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-6 not-prose">
+        {faqs.map((f) => (
+          <div class="bg-white border border-slate-200 rounded-2xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{f.q}</h3>
+            <p class="text-gray-700">{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/invitations-to-apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: Invitations to apply (2026 draws and pool, updated Oct 8, 2026)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-invitations-to-apply-si-2025-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: Skills Immigration invitations to apply, 2025 archive (PDF)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: BC PNP news (April 23 and August 18, 2026 updates)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-archived-news-2025-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: BC PNP archived news 2025 (allocation history, PDF)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/about-the-bc-provincial-nominee-program" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: BC PNP program objectives and selection of workers</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Skills Immigration Program Guide (effective June 10, 2026, PDF)</a></li>
+      </ul>
+      <p class="text-sm text-slate-600 mt-4">Information current as of October 14, 2026. Program rules change often; confirm on WelcomeBC or IRCC before applying.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-2027-outlook-predictions" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Outlook</div>
+          <div class="font-bold text-gray-900">BC PNP 2027 Outlook: What to Expect and How to Prepare</div>
+        </a>
+        <a href="/articles/bc-pnp-care-healthcare-occupations-list-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">Occupations</div>
+          <div class="font-bold text-gray-900">BC PNP Care Priority List: All 36 Occupations Explained</div>
+        </a>
+        <a href="/articles/canada-immigration-levels-plan-2027-2029-what-to-expect" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Federal Policy</div>
+          <div class="font-bold text-gray-900">Immigration Levels Plan 2027–2029: What to Expect</div>
+        </a>
+        <a href="/articles/maximize-bc-pnp-score-tips" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Strategy</div>
+          <div class="font-bold text-gray-900">How to Maximize Your BC PNP Score</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
