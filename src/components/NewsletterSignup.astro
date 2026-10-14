@@ -180,12 +180,14 @@ const l = labels[lang as keyof typeof labels] || labels.en;
               status.className = "text-sm font-semibold text-green-700";
               status.textContent = form.dataset.success;
             })
-            .catch(function () {
-              status.className = "text-sm font-semibold text-red-600";
-              status.textContent = form.dataset.error;
-            })
-            .finally(function () {
+            .then(function () {
               btn.disabled = false;
+            })
+            .catch(function () {
+              // Blocked (e.g. the Listmonk host is not in the CSP connect-src
+              // in vercel.json) or offline: fall back to a normal form POST,
+              // which CSP does not restrict.
+              form.submit();
             });
         });
       })();
