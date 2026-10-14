@@ -59,6 +59,37 @@ const canonical = rawCanonical
     />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Google tag (gtag.js) - GA4. Consent defaults are set before the tag
+         loads: granted unless the visitor clicked "Reject" in CookieConsent,
+         and denied in the EEA/UK/CH until they click "Accept". -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      (function () {
+        var choice = null;
+        try {
+          choice = localStorage.getItem("cookie-consent");
+        } catch (e) {}
+        function state(v) {
+          return {
+            ad_storage: v,
+            ad_user_data: v,
+            ad_personalization: v,
+            analytics_storage: v,
+          };
+        }
+        gtag("consent", "default", state(choice === "rejected" ? "denied" : "granted"));
+        var optIn = state(choice === "accepted" ? "granted" : "denied");
+        optIn.region = ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO","GB","CH"];
+        gtag("consent", "default", optIn);
+      })();
+      gtag("js", new Date());
+      gtag("config", "G-E0BXKWMYNM");
+    </script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-E0BXKWMYNM"></script>
+
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />

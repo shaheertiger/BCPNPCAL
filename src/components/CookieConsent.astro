@@ -24,16 +24,28 @@
 
 <script is:inline>
   (function() {
+    // Mirror the visitor's choice into Google consent mode (gtag in BaseLayout).
+    function updateGoogleConsent(v) {
+      if (typeof window.gtag !== 'function') return;
+      window.gtag('consent', 'update', {
+        ad_storage: v,
+        ad_user_data: v,
+        ad_personalization: v,
+        analytics_storage: v
+      });
+    }
     var consent = localStorage.getItem('cookie-consent');
     if (!consent) {
       document.getElementById('cookie-consent').classList.remove('hidden');
     }
     document.getElementById('cookie-accept').addEventListener('click', function() {
       localStorage.setItem('cookie-consent', 'accepted');
+      updateGoogleConsent('granted');
       document.getElementById('cookie-consent').classList.add('hidden');
     });
     document.getElementById('cookie-reject').addEventListener('click', function() {
       localStorage.setItem('cookie-consent', 'rejected');
+      updateGoogleConsent('denied');
       document.getElementById('cookie-consent').classList.add('hidden');
     });
   })();
