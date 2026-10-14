@@ -1,0 +1,358 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Look West and the BC PNP's 35% Regional Goal: Where 2027 Nominations Could Go";
+const description = "How B.C.'s Look West strategy and the BC PNP's 35% outside-Metro-Vancouver goal shape 2027: area points, 2025 regional results, and job markets by region.";
+const canonical = "https://bcpnpcalculator.ca/articles/bc-pnp-look-west-regional-nominations-2027";
+
+const faqs = [
+  {
+    q: "What is the BC PNP's 35% regional goal?",
+    a: "When it announced its new Care, Build and Innovate priorities on April 23, 2026, the BC PNP said at least 35% of all nominations are anticipated to be for candidates working in communities outside Metro Vancouver. The BC PNP Statistical Report 2025 shows the program already beat that level in 2025, when 38% of Skills Immigration nominees were based outside the Metro Vancouver Regional District.",
+  },
+  {
+    q: "How many points do I get for working outside Metro Vancouver?",
+    a: "Under the Skills Immigration Program Guide, Area 1 (Metro Vancouver Regional District) earns 0 points, Area 2 (Squamish, Abbotsford, Agassiz, Mission and Chilliwack) earns 5, and Area 3 (the rest of B.C.) earns 15. You can add 10 more for regional experience or regional alumni status if your job is in Area 2 or 3, for a maximum of 25.",
+  },
+  {
+    q: "Are Victoria and Kelowna regional for BC PNP points?",
+    a: "Yes. Both are outside the Metro Vancouver Regional District and are not in the Area 2 list, so a job there scores as Area 3 (15 points). Note that the separate Temporary Rural/Remote Health Support Initiative excluded the Capital Regional District (apart from some Gulf Islands) and the Central Okanagan Regional District, so rural and regional are not always defined the same way.",
+  },
+  {
+    q: "Can I work remotely for a Vancouver employer and claim regional points?",
+    a: "Your area is based on your main work location, where you regularly and physically report to work. If you work from home, the BC PNP uses your residential address. The program can deny area points if it decides you cannot reasonably perform the job duties from the location you declared, so the arrangement must be genuine and documented.",
+  },
+  {
+    q: "Will the 35% regional target change in 2027?",
+    a: "Nothing has been announced for 2027. The 35% figure comes from the April 2026 announcement and the Statistical Report lists at least 35% as the 2026 target. If B.C. keeps the same approach, we expect a similar floor in 2027, but treat that as an expectation and check WelcomeBC for updates.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="bc-pnp-look-west-regional-nominations-2027" datePublished="2026-10-14" dateModified="2026-10-14" articleSection="Analysis" keywords="BC PNP regional nominations 2027, Look West strategy immigration, BC PNP 35% outside Metro Vancouver, BC PNP area points, regional experience points, BC PNP Vancouver Island Interior North" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-teal-100 text-teal-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-teal-200 shadow-sm">
+        2027 Analysis &bull; Regional Strategy
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Look West and the BC PNP's 35% Regional Goal: Where 2027 Nominations Could Go
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        B.C. wants more than a third of its nominees working outside Metro Vancouver. Here is how that goal works, what the 2025 numbers show, and which regional job markets are worth a serious look.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-10-14">October 14, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-teal-600 mb-2">35%</div>
+        <div class="text-sm text-slate-600 font-medium">Minimum share of nominations expected outside Metro Vancouver</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">38%</div>
+        <div class="text-sm text-slate-600 font-medium">Skills Immigration nominees outside Metro Vancouver in 2025</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">25</div>
+        <div class="text-sm text-slate-600 font-medium">Maximum registration points for area of employment</div>
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        On April 23, 2026, the BC Provincial Nominee Program rebuilt its priorities around Care, Build and Innovate "to support the provincial Look West strategy." Buried in that announcement was a number that matters to anyone choosing where to work in B.C.: <strong>at least 35% of all nominations are anticipated to be for candidates working in communities outside Metro Vancouver.</strong> This article explains what Look West is, how the regional goal is actually delivered through the points grid, what the 2025 data shows, and how to think about regions heading into 2027.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">What Look West Is &mdash; and Why It Touches Immigration</h2>
+
+      <p>
+        Look West (formally the Look West Jobs and Prosperity Strategy) is the B.C. government's economic plan for responding to U.S. tariffs and global economic instability. It has three main pillars: strengthening the workforce, delivering major projects faster, and diversifying markets and growing targeted sectors. The sectors it names include maritime, aerospace, natural resources, critical minerals, construction and energy, including LNG.
+      </p>
+
+      <p>
+        Many of the projects it highlights are outside the Lower Mainland: the North Coast Transmission Line (which the strategy says will create 9,700 direct jobs), faster permitting for critical mineral projects in northwestern B.C. (projects it values at more than $29 billion), and new clean electricity generation. The workforce pillar commits B.C. to "advocating to the federal government for increasing the BC PNP allocation" and describes the BC PNP as the province's tool for filling priority sectors "such as health care, child care, and construction."
+      </p>
+
+      <p>
+        In other words, Look West explains <em>why</em> the BC PNP now favours care workers and certified tradespeople, and why it cares where they work. Building a transmission line or running a hospital in Terrace requires people who will actually live in Terrace.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The Track Record: How Regional the BC PNP Already Is</h2>
+
+      <p>
+        The 35% goal is not new. The BC PNP Statistical Report 2025 lists it as a performance measure, with a 2020 baseline of just 21% of Skills Immigration (SI) nominees outside Metro Vancouver. In 2025 the program reached <strong>38%</strong>, which the report calls "a modest decrease from 2024" caused by an unusually large number of International Post-Graduate nominees, who tend to live in Metro Vancouver. On the Entrepreneur Immigration side, the target is at least 60% outside Metro Vancouver; in 2025 every EI nominee was outside it, though the report says that was a statistical anomaly and expects Metro Vancouver entrepreneur nominations to increase in 2026.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">2025 Skills Immigration nominees by development region</h3>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Development region</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Health stream</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Skilled Worker</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">All SI nominees</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Share</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Mainland/Southwest</td><td class="px-4 py-3">870</td><td class="px-4 py-3">823</td><td class="px-4 py-3">4,018</td><td class="px-4 py-3">64.9%</td></tr>
+            <tr><td class="px-4 py-3">Vancouver Island/Coast</td><td class="px-4 py-3">281</td><td class="px-4 py-3">291</td><td class="px-4 py-3">964</td><td class="px-4 py-3">15.6%</td></tr>
+            <tr><td class="px-4 py-3">Southeast: Thompson/Okanagan and Kootenay</td><td class="px-4 py-3">254</td><td class="px-4 py-3">201</td><td class="px-4 py-3">756</td><td class="px-4 py-3">12.2%</td></tr>
+            <tr><td class="px-4 py-3">North: Cariboo, Nechako, North Coast, Northeast</td><td class="px-4 py-3">273</td><td class="px-4 py-3">75</td><td class="px-4 py-3">457</td><td class="px-4 py-3">7.4%</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-bold">Total</td><td class="px-4 py-3 font-bold">1,678</td><td class="px-4 py-3 font-bold">1,390</td><td class="px-4 py-3 font-bold">6,195</td><td class="px-4 py-3 font-bold">100%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Two details are easy to miss. First, "Mainland/Southwest" is not the same as Metro Vancouver: it also includes the Fraser Valley, Squamish-Lillooet and the Sunshine Coast. The report says Metro Vancouver alone took about 62% of SI nominees (3,836 people). Second, look at the Health stream column: in the North, health authority nominees outnumbered Skilled Worker nominees by more than three to one. Regional immigration in B.C. is already heavily a healthcare story.
+      </p>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+        <p class="font-semibold text-blue-900 mb-2">Why 2026&ndash;2027 may look more regional (analysis)</p>
+        <p class="text-blue-800">The report blames the 2025 dip on International Post-Graduate nominees clustered in Metro Vancouver. B.C. has since said no new student streams will launch, and the 2026 draws focus on Care, Build and High Economic Impact. If those patterns hold, we would expect the regional share to stay at or above 35% without any rule change &mdash; but the BC PNP has not published 2026 regional figures yet.</p>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">How the Regional Goal Is Delivered: Area Points</h2>
+
+      <p>
+        There is no separate "regional draw" for Skills Immigration. The 35% outcome is produced mainly through the <strong>area of employment</strong> factor in the registration score, which is worth up to 25 of the 200 points. From section 8.5 of the Skills Immigration Program Guide:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Area</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Where</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Points</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Area 1</td><td class="px-4 py-3">Metro Vancouver Regional District (Vancouver, Burnaby, Surrey, Richmond, Coquitlam, etc.)</td><td class="px-4 py-3">0</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Area 2</td><td class="px-4 py-3">Within the municipal boundaries of Squamish, Abbotsford, Agassiz, Mission and Chilliwack</td><td class="px-4 py-3">5</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Area 3</td><td class="px-4 py-3">Everywhere else in B.C. (for example Victoria, Nanaimo, Kelowna, Kamloops, Prince George)</td><td class="px-4 py-3">15</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Bonus</td><td class="px-4 py-3">Regional experience OR regional alumni (only if your job is in Area 2 or 3)</td><td class="px-4 py-3">+10</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Regional experience:</strong> at least one year of full-time (or equivalent) paid work in Area 2 or 3, within the 5 years before you register.</li>
+        <li><strong>Regional alumni:</strong> graduation within the past 3 years from a <em>public</em> B.C. post-secondary institution outside Metro Vancouver, attended while you lived outside Metro Vancouver, in a program of at least 8 months of full-time coursework. Private institutions, ESL and distance programs do not count.</li>
+        <li><strong>You only get one of the two bonuses</strong>, even if you qualify for both.</li>
+        <li><strong>Main work location rules:</strong> points follow where you regularly and physically report to work; for home-based work, your residential address. The BC PNP can refuse the points if you cannot reasonably perform the job from the stated location.</li>
+      </ul>
+
+      <p>
+        The regional tilt also shows up in employer rules. Under section 6.8 of the guide, an employer in Metro Vancouver needs at least five full-time employees working in B.C.; outside Metro Vancouver, the minimum is three. Small rural clinics, contractors and care providers can therefore support candidates that a same-sized Vancouver business could not.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Worked Example: Same Worker, Three Locations</h2>
+
+      <p>
+        Take an early childhood educator with a one-year ECE certificate, a B.C. diploma, CLB 6, 2 years of directly related experience including 13 months full-time with her current employer, and a $26.00 hourly wage. Her non-area points are the same everywhere: 28 for experience, 18 for education (diploma 5 + B.C. education 8 + designation 5), 15 for language and 11 for wage &mdash; 72 in total. Assume her past year of work was in the same city as the job offer.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Job location</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Area points</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Total</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">vs. Oct 8, 2026 Childcare cutoff (99)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Burnaby (Area 1)</td><td class="px-4 py-3">0</td><td class="px-4 py-3">72</td><td class="px-4 py-3 text-red-700">27 short</td></tr>
+            <tr><td class="px-4 py-3">Chilliwack (Area 2)</td><td class="px-4 py-3">5 + 10 regional experience = 15</td><td class="px-4 py-3">87</td><td class="px-4 py-3 text-orange-700">12 short</td></tr>
+            <tr><td class="px-4 py-3">Nanaimo (Area 3)</td><td class="px-4 py-3">15 + 10 regional experience = 25</td><td class="px-4 py-3">97</td><td class="px-4 py-3 text-yellow-700">2 short</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The 25-point swing between Burnaby and Nanaimo is larger than the gap between CLB 5 and CLB 9. In targeted Care and Build draws, where October 2026 cutoffs ran from 76 (Health) to 99 (Childcare), regional points are often the difference between waiting and being invited. You can test your own combinations in our <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP calculator</a>.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Regional Job Markets: What the Data Says</h2>
+
+      <p>
+        WorkBC's 2025 Labour Market Outlook projects job openings from 2025 to 2035 for each of B.C.'s seven development regions. "Expansion" openings are new jobs; "replacement" openings come mostly from retirements.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Region</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Employment 2025</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Annual growth</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Openings 2025&ndash;2035</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Key project WorkBC flags</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Vancouver Island/Coast</td><td class="px-4 py-3">471,500</td><td class="px-4 py-3">1.3%</td><td class="px-4 py-3">188,600</td><td class="px-4 py-3">Brewster Wind Project, Campbell River</td></tr>
+            <tr><td class="px-4 py-3">Thompson-Okanagan</td><td class="px-4 py-3">308,500</td><td class="px-4 py-3">0.9%</td><td class="px-4 py-3">110,500</td><td class="px-4 py-3">Highland Valley Mine Life Extension</td></tr>
+            <tr><td class="px-4 py-3">Kootenay</td><td class="px-4 py-3">85,700</td><td class="px-4 py-3">0.5%</td><td class="px-4 py-3">26,800</td><td class="px-4 py-3">Fording River Extension (Castle)</td></tr>
+            <tr><td class="px-4 py-3">Cariboo</td><td class="px-4 py-3">82,600</td><td class="px-4 py-3">0.3%</td><td class="px-4 py-3">21,700</td><td class="px-4 py-3">Cariboo Gold Project</td></tr>
+            <tr><td class="px-4 py-3">North Coast and Nechako</td><td class="px-4 py-3">46,200</td><td class="px-4 py-3">0.5%</td><td class="px-4 py-3">13,700</td><td class="px-4 py-3">Red Chris Mine expansion; Baptiste Nickel</td></tr>
+            <tr><td class="px-4 py-3">Northeast</td><td class="px-4 py-3">36,800</td><td class="px-4 py-3">0.5%</td><td class="px-4 py-3">10,700</td><td class="px-4 py-3">Aspen Point natural gas pipeline program</td></tr>
+            <tr><td class="px-4 py-3">Mainland/Southwest (for comparison)</td><td class="px-4 py-3">1,906,100</td><td class="px-4 py-3">1.3%</td><td class="px-4 py-3">680,000</td><td class="px-4 py-3">Roberts Bank Terminal 2</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Vancouver Island/Coast</h3>
+      <p>
+        The largest regional job market, growing as fast as the Lower Mainland. WorkBC's top industries by openings include hospitals (14,200), ambulatory health care (11,500) and nursing and residential care (9,200). It also sent the most regional SI nominees in 2025 (964). For Care candidates &mdash; nurses, health care assistants, ECEs, vet technologists &mdash; the Island combines Area 3 points with real demand. Expect more competition for jobs in Greater Victoria than in smaller centres such as Campbell River or Port Alberni.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Thompson-Okanagan and Kootenay</h3>
+      <p>
+        In the Thompson-Okanagan, about 74% of openings are replacement demand. Hospitals (7,700 openings) and specialty trade contractors (6,900) are both in the top five, which lines up with the Care and Build objectives. The Kootenay is smaller and older &mdash; WorkBC expects 28% of its population to be 65 or older by 2035 &mdash; with mining and hospitals among the leading industries. Mine projects there and in the Thompson region need heavy-duty equipment mechanics, millwrights, electricians and welders, all of which are on the Build list (with SkilledTradesBC certification or a registered apprenticeship).
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The North</h3>
+      <p>
+        The Cariboo, North Coast and Nechako, and Northeast together have fewer than 166,000 workers, and WorkBC projects population decline in all three. That is exactly why area points are designed to help there. In the Cariboo, hospitals lead job openings; in the North Coast and Nechako, ports and freight, forestry and rail appear in the top five; in the Northeast, mining and oil and gas extraction feature. These are also the regions most tied to Look West projects such as the North Coast Transmission Line and northwest critical minerals.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Other Regional Levers Worth Knowing</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Temporary Rural/Remote Health Support Initiative</h3>
+      <p>
+        In 2026 the BC PNP opened a one-time initiative for up to 250 health authority employees working as security guards (NOC 64410), light duty cleaners (65310) or janitors and heavy-duty cleaners (65312) in rural or remote locations. It excluded work locations in the Metro Vancouver, Central Okanagan and Capital regional districts (except Galiano, Mayne, Pender, Salt Spring and Saturna islands) and required nine consecutive months of full-time work with the same health authority. WelcomeBC shows invitations on July 23 (60 invitations, minimum 50 points) and September 17, 2026 (33 invitations, minimum 60). Registration closed October 7, 2026. It shows B.C. is willing to build regional-only measures for specific shortages.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Entrepreneur Immigration: Regional stream</h3>
+      <p>
+        The EI Regional stream is limited to smaller communities not within 30 km of a city of 75,000 or more, and requires a referral from a participating community. It is small &mdash; 11 registrations in 2025 &mdash; and 2026 draws invited fewer than 5 to 5 people at minimum scores between 105 and 129.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The federal In-Canada Workers Initiative</h3>
+      <p>
+        IRCC announced on May 4, 2026 that it will move up to 33,000 work permit holders to permanent residence in 2026 and 2027 &mdash; at least 20,000 in 2026 &mdash; by prioritizing applications already in its inventory. It covers people who applied through programs including the PNP and have lived in "smaller communities" for 2 years or more; applicants do not need to take any action. IRCC's release does not define "smaller communities," but a BC PNP nominee who has spent two years in a regional community may benefit from faster federal processing. Rural and francophone pilots are covered in our <a href="/articles/rcip-fcip-rural-francophone-immigration-pilots-2026" class="text-blue-600 hover:text-blue-800 underline">RCIP and FCIP guide</a>.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The 2027 Outlook (Analysis)</h2>
+
+      <p>
+        As of October 14, 2026, B.C. has no 2027 nomination allocation and has published no 2027 priorities. If the April 2026 framework carries into 2027, this is what we expect:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>The 35% floor stays.</strong> It is written into the program's performance measures and Look West's emphasis on major projects outside the Lower Mainland gives no reason to drop it.</li>
+        <li><strong>Regional points keep doing the work.</strong> Unless the BC PNP introduces region-specific draws (it has not since the restructuring), the 25 area points remain the main mechanism. In draws where cutoffs sit in the 70s to 90s, they carry a lot of weight.</li>
+        <li><strong>Care and Build favour the regions naturally.</strong> Health authorities, child care centres and project trades are spread across the province, and the 2025 data already shows health nominees driving regional numbers.</li>
+        <li><strong>Federal plans matter.</strong> The 2027&ndash;2029 Immigration Levels Plan, expected in early November 2026, will shape how many nominations B.C. receives in total. A bigger allocation does not change the regional share, but it changes how many regional nominations there are.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Who a Regional Move Suits &mdash; and Who It Does Not</h2>
+
+      <div class="grid sm:grid-cols-2 gap-4 my-8">
+        <div class="bg-green-50 border border-green-200 p-6 rounded-2xl">
+          <p class="font-semibold text-green-900 mb-2">Strong case</p>
+          <ul class="list-disc pl-5 text-green-800 space-y-2 text-base">
+            <li>Care and Build candidates whose scores are 10 to 25 points below recent cutoffs</li>
+            <li>Graduates of public colleges and universities outside Metro Vancouver (regional alumni)</li>
+            <li>Workers whose employer has a site in the Interior, North or on the Island</li>
+            <li>Families who value lower housing costs and are ready to stay long-term</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 border border-red-200 p-6 rounded-2xl">
+          <p class="font-semibold text-red-900 mb-2">Think twice</p>
+          <ul class="list-disc pl-5 text-red-800 space-y-2 text-base">
+            <li>Anyone planning to leave the regional job soon after nomination (keeping full-time work with your supporting employer is a condition of nomination until you become a permanent resident)</li>
+            <li>Candidates relying on a remote job with no real regional base</li>
+            <li>People whose spouse cannot find work in a small market</li>
+            <li>Occupations with very few regional employers</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Common Mistakes</h2>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Assuming the Fraser Valley is all Area 3.</strong> Abbotsford, Mission, Chilliwack and Agassiz are Area 2 (5 points); Langley and Maple Ridge are inside Metro Vancouver (0 points).</li>
+        <li><strong>Claiming regional alumni points for a private college.</strong> Only public institutions count, and only if you lived outside Metro Vancouver while studying.</li>
+        <li><strong>Counting student work for regional experience.</strong> Work on a study permit is not accepted for criteria or points, except qualifying paid co-op terms after you graduate.</li>
+        <li><strong>Declaring a work location you do not report to.</strong> Area points are verified at application. A finding of misrepresentation can lead to refusal, and the BC PNP may refuse further applications from you or your employer for up to two years.</li>
+        <li><strong>Forgetting the employer-size rule.</strong> A Metro Vancouver employer with four employees cannot support you; the same employer in Kamloops could.</li>
+      </ol>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6 not-prose">
+        {faqs.map((f) => (
+          <div class="bg-white border border-slate-200 rounded-2xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{f.q}</h3>
+            <p class="text-gray-700">{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.welcomebc.ca/Immigrate-to-B-C/News" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: BC PNP news (April 23, 2026 priorities; Rural/Remote Health initiative updates)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-statistical-report-2025-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Statistical Report and Year in Review 2025</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Skills Immigration Program Guide (effective June 10, 2026)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: Invitations to apply</a></li>
+        <li><a href="https://www2.gov.bc.ca/gov/content/employment-business/look-west-strategy/introduction" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Government of B.C.: Look West Strategy &ndash; Introduction</a></li>
+        <li><a href="https://www2.gov.bc.ca/gov/content/employment-business/look-west-strategy/strengthening-our-workforce" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Government of B.C.: Look West &ndash; Strengthening our workforce</a></li>
+        <li><a href="https://www.workbc.ca/research-labour-market/bc-labour-market-outlook" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WorkBC: B.C. Labour Market Outlook, 2025 Edition</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/04/filling-labour-gaps-in-smaller-communities-by-accelerating-permanent-residence-for-33000-workers.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Accelerating permanent residence for 33,000 workers in smaller communities</a></li>
+      </ul>
+
+      <p class="text-sm text-gray-500 mt-6">
+        Information current as of October 14, 2026. Program rules change often; confirm on WelcomeBC or IRCC before applying.
+      </p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-regional-priorities" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-teal-600 font-bold mb-2">Regional</div>
+          <div class="font-bold text-gray-900">BC PNP Regional Priorities: City Profiles</div>
+        </a>
+        <a href="/articles/bc-pnp-2027-outlook-predictions" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-amber-600 font-bold mb-2">Outlook</div>
+          <div class="font-bold text-gray-900">BC PNP 2027 Outlook and Predictions</div>
+        </a>
+        <a href="/articles/bc-pnp-build-skilledtradesbc-certification-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-orange-600 font-bold mb-2">Build Priority</div>
+          <div class="font-bold text-gray-900">Build Trades and SkilledTradesBC Certification</div>
+        </a>
+        <a href="/articles/maximize-bc-pnp-score-tips" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">Strategy</div>
+          <div class="font-bold text-gray-900">How to Maximize Your BC PNP Score</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

@@ -1,0 +1,336 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Express Entry 2027 Category Changes: What IRCC's Consultation Signals and How BC PNP Fits";
+const description = "What IRCC's Aug–Sep 2026 consultation could mean for Express Entry categories in 2027, with verified 2026 draw data and how BC PNP's EEBC option fits in.";
+const canonical = "https://bcpnpcalculator.ca/articles/express-entry-2027-category-changes";
+
+const faqs = [
+  {
+    q: "Have the Express Entry categories for 2027 been announced?",
+    a: "No. As of October 14, 2026, IRCC has not announced its 2027 categories. It consulted the public and partners from August 4 to September 1, 2026, and said it will review that feedback, labour market data and past category results with provinces and territories before deciding. The 2026 categories were announced on February 18, 2026, so an early-2027 announcement would fit past timing, but IRCC has not given a date."
+  },
+  {
+    q: "Which Express Entry categories exist in 2026?",
+    a: "Ten: French-language proficiency, healthcare and social services, STEM, trades, education, transport, physicians with Canadian work experience, senior managers with Canadian work experience, researchers with Canadian work experience, and skilled military recruits. The occupation-based categories require at least 12 months of full-time work experience (or the part-time equivalent) in a single eligible occupation within the past three years."
+  },
+  {
+    q: "Will the STEM or education categories disappear in 2027?",
+    a: "Nobody knows yet. IRCC's consultation asked which of nine 2026 categories should continue and whether labour-shortage categories should focus on a narrower list of occupations. IRCC's rounds data shows no STEM or education rounds in 2026 up to October 13, but that alone does not mean the categories will be dropped."
+  },
+  {
+    q: "Is the French-language category likely to continue?",
+    a: "IRCC's consultation page says it is considering keeping Francophone immigration outside Quebec as a category-based selection focus in 2027, and the federal target for French-speaking admissions outside Quebec rises from 9% in 2026 to 9.5% in 2027. That is a strong signal, but it is not a final decision."
+  },
+  {
+    q: "How does the BC PNP's Express Entry BC option relate to the federal categories?",
+    a: "They are separate. A BC PNP nomination through the Express Entry BC (EEBC) option adds 600 CRS points to your federal profile, and IRCC then invites nominees in Provincial Nominee Program rounds. Federal categories matter for people who are not nominated: if your occupation is in a category, you may be invited at a lower CRS score than in general rounds."
+  },
+  {
+    q: "What should I do now if I am planning for 2027?",
+    a: "Keep an active Express Entry profile with accurate NOC codes and work history, take a valid language test (and a French test if you can reach NCLC 7), and, if you live or work in B.C., register with the BC PNP using the EEBC option where you qualify. Do not plan around a category that has not been confirmed for 2027."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+
+<ArticleLayout slug="express-entry-2027-category-changes" datePublished="2026-10-14" dateModified="2026-10-14" articleSection="Analysis" keywords="Express Entry 2027 categories, category-based selection 2027, IRCC consultation 2026, Express Entry French category, EEBC, BC PNP Express Entry" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        2027 Analysis
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Express Entry 2027 Category Changes: What IRCC's Consultation Signals and How BC PNP Fits
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        IRCC has finished consulting on which Express Entry categories should carry into 2027, but it has not announced a decision. Here is what the 2026 draw data shows, what IRCC actually asked about, and how to plan if you are aiming for B.C.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-10-14">October 14, 2026</time>
+        <span>&bull;</span>
+        <span>12 min read</span>
+      </div>
+    </header>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">10</div>
+        <div class="text-sm text-slate-600 font-medium">Express Entry categories in 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-green-600 mb-2">50,500</div>
+        <div class="text-sm text-slate-600 font-medium">French-category invitations, Jan 1 to Oct 13, 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-red-600 mb-2">0</div>
+        <div class="text-sm text-slate-600 font-medium">STEM or education rounds so far in 2026</div>
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        Every year, Immigration, Refugees and Citizenship Canada (IRCC) decides which "categories" it will use to invite Express Entry candidates who have a particular skill, such as strong French or work experience in a shortage occupation. Those categories can matter more than your raw Comprehensive Ranking System (CRS) score: in 2026, candidates in some categories were invited with scores well over 100 points lower than in Canadian Experience Class rounds. IRCC ran its consultation on the 2027 categories from <strong>August 4 to September 1, 2026</strong>. The final list has not been published. This article separates what is confirmed from what is our analysis.
+      </p>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+        <p class="font-semibold text-amber-900 mb-2">Status as of October 14, 2026</p>
+        <p class="text-amber-800">No 2027 Express Entry categories have been announced. Everything below about 2027 is labelled as expectation or analysis. The 2026 categories and draw figures come from IRCC's own pages and rounds data.</p>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The 10 Express Entry categories in 2026</h2>
+
+      <p>
+        IRCC announced the 2026 categories on <strong>February 18, 2026</strong>. Five were renewed from 2025 (French-language proficiency, health care and social services, education, STEM and trades) and five were new: physicians, researchers and senior managers with Canadian work experience, transport occupations, and skilled military recruits. IRCC also raised the minimum work experience for all renewed categories from six months to one year, and said the added categories "do not increase the number of invitations" within the levels plan.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Category</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Key requirement</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Rounds in 2026*</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Invitations</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Lowest CRS range</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">French-language proficiency</td><td class="px-4 py-3">NCLC 7 in all four abilities</td><td class="px-4 py-3">10</td><td class="px-4 py-3">50,500</td><td class="px-4 py-3">382–420</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Healthcare and social services</td><td class="px-4 py-3">12 months in one of 37 NOCs</td><td class="px-4 py-3">3</td><td class="px-4 py-3">11,500</td><td class="px-4 py-3">467–475</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Trade occupations</td><td class="px-4 py-3">12 months in one of 25 NOCs</td><td class="px-4 py-3">2</td><td class="px-4 py-3">6,500</td><td class="px-4 py-3">476–477</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Senior managers (Canadian experience)</td><td class="px-4 py-3">12 months in Canada, 4 NOCs</td><td class="px-4 py-3">3</td><td class="px-4 py-3">1,000</td><td class="px-4 py-3">389–429</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Physicians (Canadian experience)</td><td class="px-4 py-3">12 months in Canada, 3 NOCs</td><td class="px-4 py-3">3</td><td class="px-4 py-3">891</td><td class="px-4 py-3">169–223</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Transport</td><td class="px-4 py-3">12 months in one of 4 NOCs</td><td class="px-4 py-3">1</td><td class="px-4 py-3">300</td><td class="px-4 py-3">470</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Skilled military recruits</td><td class="px-4 py-3">Canadian Armed Forces job offer</td><td class="px-4 py-3">1</td><td class="px-4 py-3">4</td><td class="px-4 py-3">368</td></tr>
+            <tr><td class="px-4 py-3 font-medium">STEM</td><td class="px-4 py-3">12 months in one of 11 NOCs</td><td class="px-4 py-3">0</td><td class="px-4 py-3">0</td><td class="px-4 py-3">n/a</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Education</td><td class="px-4 py-3">12 months in one of 5 NOCs</td><td class="px-4 py-3">0</td><td class="px-4 py-3">0</td><td class="px-4 py-3">n/a</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Researchers (Canadian experience)</td><td class="px-4 py-3">12 months in Canada, 2 NOCs</td><td class="px-4 py-3">0</td><td class="px-4 py-3">0</td><td class="px-4 py-3">n/a</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-sm text-slate-600">
+        *Our tally of IRCC's published rounds data for January 7 to October 13, 2026 (59 rounds in total). For comparison, the same period had 17 Canadian Experience Class rounds (55,250 invitations, lowest scores 507–523) and 19 Provincial Nominee Program rounds (9,448 invitations, lowest scores 697–805). Occupation counts come from IRCC's category-based selection page.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">What the 2026 numbers actually tell you</h3>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>French has been the workhorse category.</strong> Its 50,500 invitations are about 37% of all Express Entry invitations issued in 2026 so far, and its cutoffs (382–420) are roughly 100 points below CEC rounds. IRCC's April 2026 briefing material for the House of Commons immigration committee states that over 81,000 candidates were invited through the French category from 2023 to February 28, 2026.</li>
+        <li><strong>Occupation categories were used sparingly.</strong> Healthcare had three large rounds; trades had two. Their cutoffs (467–477) sit between French and CEC rounds, so being in a shortage occupation helped, but not dramatically.</li>
+        <li><strong>Some categories existed on paper only.</strong> STEM, education and researchers had no rounds through October 13. If you were counting on the education category as an early childhood educator or teacher, it has not produced invitations this year.</li>
+        <li><strong>Canadian experience was rewarded.</strong> The new physician category had the lowest cutoffs of any round type (169–223) but requires 12 months of work in Canada.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">What IRCC asked in the 2026 consultation</h2>
+
+      <p>
+        IRCC's consultation page and the published survey questionnaire are the best evidence of where it is heading. They describe three priorities that IRCC is considering for 2027:
+      </p>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Long-term labour shortages</strong> in sectors such as health care, trades (including construction), education, STEM and transport. IRCC says it is considering "narrowing the number or eligibility of categories aimed at addressing labour shortages," and is weighing Express Entry's role against other tools such as upskilling the domestic workforce.</li>
+        <li><strong>Attracting and retaining top talent.</strong> IRCC is considering expanding its approach to highly skilled workers, citing its International Talent Attraction Strategy, the Canada Global Impact+ Research Talent Initiative and the National AI Strategy.</li>
+        <li><strong>Francophone immigration outside Quebec</strong>, which IRCC is considering keeping as a focus in 2027.</li>
+      </ol>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Survey questions worth reading closely</h3>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Which 2026 categories should continue?</strong> Respondents could tick nine: French, healthcare and social services, STEM, trades, education, transport, physicians, senior managers and researchers. The military recruits category was not on the list.</li>
+        <li><strong>Should shortage categories target fewer occupations?</strong> If yes, the survey offered criteria including focusing on TEER 0, 1 or 2 occupations, the "most persistent and severe shortages," and "occupations that are less prioritized by other permanent economic immigration pathways (e.g., Provincial Nominee Program)."</li>
+        <li><strong>New talent categories.</strong> The survey floated four ideas: candidates in Global Talent Stream occupations (for example technology and AI), researchers, candidates in strategic occupations under IRCC's International Talent Strategy, and holders of a United States H-1B visa.</li>
+        <li><strong>Inside or outside Canada?</strong> For each talent idea, respondents were asked whether to focus on workers already in Canada, abroad, or both.</li>
+        <li><strong>Interaction with reforms.</strong> The survey says that under the Express Entry reforms being considered, most selected candidates are expected to have better language skills, more education and at least one year of Canadian work in a high-wage occupation, and asks whether category selection should then be used more, less or the same.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The separate Express Entry reform consultation</h3>
+
+      <p>
+        Do not confuse the category consultation with IRCC's broader reform consultation, which ran from <strong>April 23 to May 24, 2026</strong> and drew more than 17,000 submissions. That paper explored merging the three federal programs into a single Federal High Skilled program (high school education, CLB/NCLC 6 in all four abilities, and one year of TEER 0–3 work experience), adding points for Canadian experience or job offers in high-wage occupations, and "removing or changing" points for French proficiency, studies in Canada, siblings in Canada and the spousal grid. These are proposals only. IRCC says feedback will inform future changes to the regulations and Express Entry Ministerial Instructions, and its category consultation page notes that most reform ideas are for future implementation.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">What may change for 2027: our analysis</h2>
+
+      <p>
+        The following is our reading of IRCC's published materials. It is not an announcement, and IRCC may decide differently.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Possible change</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Our view</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Why</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="bg-green-50"><td class="px-4 py-3 font-medium">French category continues</td><td class="px-4 py-3">Likely</td><td class="px-4 py-3">Named as a 2027 focus; francophone target rises to 9.5% in 2027 and 10.5% in 2028</td></tr>
+            <tr class="bg-green-50"><td class="px-4 py-3 font-medium">Healthcare stays in some form</td><td class="px-4 py-3">Likely</td><td class="px-4 py-3">Listed first among shortage sectors; regular large rounds in 2026</td></tr>
+            <tr class="bg-yellow-50"><td class="px-4 py-3 font-medium">Shorter occupation lists</td><td class="px-4 py-3">Possible</td><td class="px-4 py-3">IRCC explicitly floated narrowing; TEER 0–2 focus offered as a criterion</td></tr>
+            <tr class="bg-yellow-50"><td class="px-4 py-3 font-medium">New talent-focused categories</td><td class="px-4 py-3">Possible</td><td class="px-4 py-3">Four concrete ideas in the survey, including H-1B holders</td></tr>
+            <tr class="bg-orange-50"><td class="px-4 py-3 font-medium">STEM and education dropped</td><td class="px-4 py-3">Uncertain</td><td class="px-4 py-3">No rounds in 2026, but both were offered as continuing options</td></tr>
+            <tr class="bg-orange-50"><td class="px-4 py-3 font-medium">Work experience back to six months</td><td class="px-4 py-3">Unlikely</td><td class="px-4 py-3">Raised to 12 months for 2026; reforms point toward more experience, not less</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Two signals deserve attention from B.C. candidates. First, a narrower list that drops TEER 3 jobs would affect occupations such as nurse aides and orderlies (NOC 33102), which are in the 2026 healthcare category. Second, the survey openly asked whether categories should de-prioritize occupations that provincial programs already cover. If IRCC goes that way, people in occupations that B.C. targets heavily could find federal category rounds less useful, and the BC PNP more important.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">When to expect an announcement</h3>
+
+      <p>
+        The 2026 categories were announced on February 18, 2026. IRCC kept running French rounds before that announcement (the first was February 6, 2026), along with CEC and PNP rounds from January 7. If past patterns hold, we expect the 2027 list in the first quarter of 2027, with CEC, PNP and possibly French rounds continuing in the meantime. Separately, the federal 2027–2029 Immigration Levels Plan is expected in early November 2026. The current plan's notional 2027 target for Federal High Skilled admissions (mostly Express Entry) is 111,000, up from 109,000 in 2026, and IRCC says notional figures will be confirmed or adjusted. See our <a href="/articles/canada-immigration-levels-plan-2027-2029-what-to-expect" class="text-blue-600 hover:text-blue-800 underline">2027–2029 levels plan preview</a>.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">How BC PNP's Express Entry BC option fits</h2>
+
+      <p>
+        Federal categories and the BC PNP are two separate doors. The BC PNP's Skilled Worker and Health Authority streams each have an <strong>Express Entry BC (EEBC) option</strong>. If you are in the federal pool, meet the criteria for the Federal Skilled Worker Program, Federal Skilled Trades Program or Canadian Experience Class, and have a B.C. job offer in a TEER 0–3 occupation, you can register with the BC PNP using EEBC. A nomination adds <strong>600 CRS points</strong>, which is why PNP rounds, which invite only nominated candidates, had cutoffs of 697–805 in 2026.
+      </p>
+
+      <p>
+        The BC PNP runs its own targeted draws under its <a href="/articles/bc-pnp-2027-outlook-predictions" class="text-blue-600 hover:text-blue-800 underline">Care, Build and Innovate objectives</a>, and many of those occupations overlap the federal categories:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">BC PNP priority</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Matching 2026 federal category</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Gaps</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Care: 31 health NOCs</td><td class="px-4 py-3">Healthcare and social services</td><td class="px-4 py-3">30010, 31204, 32112 and 32200 are on B.C.'s list but not the federal one</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Care: ECEs (42202)</td><td class="px-4 py-3">Education</td><td class="px-4 py-3">No federal education rounds in 2026</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Care: French-speaking teachers (41220, 41221)</td><td class="px-4 py-3">Education; French (if NCLC 7)</td><td class="px-4 py-3">Teachers with NCLC 7 can use the active French category</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Care: vets and vet techs (31103, 32104)</td><td class="px-4 py-3">Healthcare and social services</td><td class="px-4 py-3">None in 2026</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Build: 9 certified trades</td><td class="px-4 py-3">Trade occupations</td><td class="px-4 py-3">72301 (steamfitters, pipefitters) is not on the federal trades list</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Innovate: High Economic Impact</td><td class="px-4 py-3">No direct equivalent</td><td class="px-4 py-3">Possible overlap if IRCC adds talent categories</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The practical point: if you are in a B.C. Care or Build occupation, you can pursue both doors at the same time. Keep your federal profile in the pool, register with the BC PNP using EEBC, and take whichever invitation comes first. One rule to know: if IRCC invites you before the BC PNP finishes assessing your EEBC application, the BC PNP cannot nominate you unless you decline the federal invitation, because your profile is no longer visible to the province. If you will not qualify for a federal program, you can still register with the BC PNP without EEBC; you would then apply to IRCC outside Express Entry, without its faster processing. Our <a href="/articles/bc-pnp-express-entry-vs-skills-immigration" class="text-blue-600 hover:text-blue-800 underline">EEBC vs Skills Immigration comparison</a> covers that choice in detail.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">A worked example: one candidate, three routes</h2>
+
+      <p>
+        Take a registered nurse working in Kamloops on a work permit, with 14 months of Canadian experience, a bachelor's degree, CLB 8 English and a CRS score of 455.
+      </p>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>CEC rounds:</strong> 2026 cutoffs ran 507–523. At 455, she was below every CEC round this year.</li>
+        <li><strong>Healthcare category:</strong> cutoffs ran 467–475. Still short, but a modest CRS gain (for example from a higher language score) could put her in range, if the category continues in 2027.</li>
+        <li><strong>BC PNP EEBC:</strong> registered nurses (31301) are on B.C.'s Care health list, and B.C.'s targeted health draws in 2026 had minimum scores of 76 to 108 on the provincial 200-point scale. A nomination would add 600 CRS points. If she works directly for a health authority, she could also apply to the Health Authority stream without registering at all.</li>
+      </ul>
+
+      <p>
+        For this candidate, the provincial route is the most dependable because it does not depend on what IRCC decides about 2027 categories. You can estimate your provincial score with our <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP calculator</a>.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Who this matters to most</h2>
+
+      <div class="grid sm:grid-cols-2 gap-4 my-8 not-prose">
+        <div class="bg-green-50 border border-green-200 p-6 rounded-2xl">
+          <p class="font-bold text-green-900 mb-2">Pay close attention if you are</p>
+          <ul class="list-disc pl-5 text-green-800 space-y-2 text-base">
+            <li>A French speaker at or near NCLC 7</li>
+            <li>A healthcare worker or tradesperson with a CRS score in the mid-400s</li>
+            <li>A STEM, education or research worker hoping a dormant category will be used</li>
+            <li>An H-1B holder or AI specialist watching for new talent categories</li>
+          </ul>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl">
+          <p class="font-bold text-slate-900 mb-2">Less affected if you</p>
+          <ul class="list-disc pl-5 text-slate-700 space-y-2 text-base">
+            <li>Already hold a provincial nomination</li>
+            <li>Have a CRS score above recent CEC cutoffs</li>
+            <li>Are applying through a paper-based BC PNP stream without Express Entry</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Common mistakes to avoid</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Choosing the wrong NOC.</strong> Category eligibility follows the NOC of your actual duties. A healthcare worker profiled under an administrative code will not be selected in a healthcare round. See our <a href="/articles/bc-pnp-noc-codes-teer-categories-guide-2026" class="text-blue-600 hover:text-blue-800 underline">NOC and TEER guide</a>.</li>
+        <li><strong>Counting six months of experience.</strong> The 2026 rule is 12 months in a single eligible occupation within three years. Part-time work counts only as the equivalent amount.</li>
+        <li><strong>Letting a language test expire.</strong> Category rounds can be announced with little notice; an expired test can make your profile ineligible on the day.</li>
+        <li><strong>Assuming 2026 rules carry over.</strong> Until IRCC publishes the 2027 list, treat every category as provisional.</li>
+        <li><strong>Accepting a federal invitation mid-EEBC by accident.</strong> Decide in advance which invitation you will accept if both arrive.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6 not-prose">
+        {faqs.map((f) => (
+          <div class="bg-white border border-slate-200 rounded-2xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{f.q}</h3>
+            <p class="text-gray-700">{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/consultations/2026-consultations-express-entry-selection.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: 2026 consultations on economic priorities for category-based selection in Express Entry</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/pdf/english/corporate/transparency/consultations/survey-ee-2026-en.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Online survey on Express Entry categories and priorities (questionnaire PDF)</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations/category-based-selection.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Express Entry category-based selection (eligible occupations)</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/02/attracting-the-worlds-best-talent-to-fill-canadas-labour-gaps-and-build-our-economy.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC backgrounder: 2026 Express Entry categories (February 18, 2026)</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Express Entry rounds of invitations data</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/consultations/2026-consultation-express-entry-reforms.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Consultation on Express Entry reforms (April 23 to May 24, 2026)</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/corporate-initiatives/levels/supplementary-immigration-levels-2026-2028.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Supplementary Information for the 2026–2028 Immigration Levels Plan</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/committees/cimm-apr-22-2026/francophone-immigration.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: CIMM briefing on Francophone immigration (April 22, 2026)</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Comprehensive Ranking System criteria</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: Skills Immigration Program Guide (includes Express Entry BC) (edition effective June 10, 2026)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/the-bc-provincial-nominee-program" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: The BC PNP (Care, Build, Innovate and selection of workers)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: BC PNP invitations to apply</a></li>
+      </ul>
+      <p class="text-sm text-slate-600 mt-4">Information current as of October 14, 2026. Program rules change often; confirm on WelcomeBC or IRCC before applying.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Guide</div>
+          <div class="font-bold text-gray-900">Express Entry BC (EEBC) Guide</div>
+        </a>
+        <a href="/articles/canada-immigration-levels-plan-2027-2029-what-to-expect" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">Analysis</div>
+          <div class="font-bold text-gray-900">2027–2029 Levels Plan: What to Expect</div>
+        </a>
+        <a href="/articles/canada-pr-planning-guide-french-advantage-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Strategy</div>
+          <div class="font-bold text-gray-900">The French Advantage in Canadian PR</div>
+        </a>
+        <a href="/articles/tech-workers-bc-pnp-2027-after-tech-draws-ended" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">2027 Outlook</div>
+          <div class="font-bold text-gray-900">Tech Workers and BC PNP in 2027</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

@@ -1,0 +1,338 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "BC PNP for French-Speaking Teachers in 2027: Certification, Language Tests and Work Permits";
+const description = "French-speaking K-12 teachers are a BC PNP priority. Learn the certification steps, the CLB 5 French rule, Francophone Mobility permits and the 2027 outlook.";
+const canonical = "https://bcpnpcalculator.ca/articles/bc-pnp-french-speaking-teachers-2027";
+
+const faqs = [
+  {
+    q: "Who qualifies for the BC PNP's targeted Education invitations?",
+    a: "WelcomeBC's selection list says French-speaking secondary teachers (NOC 41220) and elementary and kindergarten teachers (NOC 41221) must be employed in B.C.'s public K-12 system and have CLB 5 or higher in French to receive a targeted invitation. They must also meet the normal Skilled Worker stream requirements."
+  },
+  {
+    q: "Which French test does the BC PNP accept?",
+    a: "The BC PNP accepts only TEF Canada and TCF Canada for French. Diplomas such as the DELF or DALF can help you meet B.C.'s teacher certification language standard, but they are not accepted as BC PNP language test results."
+  },
+  {
+    q: "How do I get certified to teach in B.C. if I trained abroad?",
+    a: "You apply online for a Certificate of Qualification (the fee is $245), have official transcripts sent directly to the Ministry of Education and Child Care, and provide a Statement of Professional Standing from every jurisdiction where you have been certified. If your teacher education was outside Canada, you must complete a familiarization course approved by the BC Teachers' Council, and you may be asked for a Pathways to Teach Canada credential assessment."
+  },
+  {
+    q: "Can a temporary teaching contract qualify for the BC PNP?",
+    a: "Yes, in some cases. The program guide's Appendix A lets teachers in NOC 41220 and 41221 use a limited-term job offer if it is from a public K-12 school in B.C., lasts at least one year, and has at least 120 days remaining when you apply. Most other occupations need an indeterminate job offer."
+  },
+  {
+    q: "What is the Francophone Mobility work permit?",
+    a: "It is an LMIA-exempt work permit for French speakers with a job offer outside Quebec. For applications made on or after June 15, 2023, you must show intermediate French speaking and listening skills, equivalent to NCLC 5 or higher. The employer submits the offer under exemption code C16 and pays a $230 employer compliance fee."
+  },
+  {
+    q: "How competitive are BC PNP Education draws?",
+    a: "Not very, so far. The only Education draw shown on WelcomeBC in 2026 was on August 6, 2026, with a minimum score of 68 and fewer than five invitations. The challenge for teachers is meeting certification and job requirements, not reaching a high score."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+
+<ArticleLayout slug="bc-pnp-french-speaking-teachers-2027" datePublished="2026-10-14" dateModified="2026-10-14" articleSection="Occupation Guide" keywords="BC PNP French teachers, French-speaking teachers BC immigration, NOC 41221, NOC 41220, Francophone Mobility work permit, BC teacher certification, BC PNP education draw 2027" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        Occupation Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        BC PNP for French-Speaking Teachers in 2027: Certification, Language Tests and Work Permits
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        B.C. now gives French-speaking public school teachers their own targeted invitations, backed by extra federal spaces for francophone immigrants. The score bar is low. Certification and the right job are what decide your case.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-10-14">October 14, 2026</time>
+        <span>&bull;</span>
+        <span>12 min read</span>
+      </div>
+    </header>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">CLB 5</div>
+        <div class="text-sm text-slate-600 font-medium">Minimum French level for a targeted invitation</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-green-600 mb-2">68</div>
+        <div class="text-sm text-slate-600 font-medium">Minimum score, Aug 6, 2026 Education draw</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-red-600 mb-2">5,000</div>
+        <div class="text-sm text-slate-600 font-medium">Federal francophone spaces for provinces in 2026, outside regular allocations</div>
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        On April 23, 2026, the BC PNP said it would "leverage additional federal allocations" for francophone recruitment by prioritizing French-speaking teachers in the province's public K-12 school system. It is one of the narrowest priority groups in the program, with only two occupations, and it has produced very few invitations so far. That is less a sign of low demand than of a small pool: few candidates have all the pieces in place. This guide walks through each piece in the order you will need them.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The BC PNP rule, exactly as published</h2>
+
+      <p>
+        WelcomeBC's selection of workers list includes two Education occupations under the Care objective:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>41220</strong> Secondary school teachers (French-speaking only)</li>
+        <li><strong>41221</strong> Elementary/kindergarten teachers (French-speaking only)</li>
+      </ul>
+
+      <p>
+        "To receive a targeted invitation to apply, French-speaking teachers (NOC 41220 or 41221) must be employed in B.C.'s public K-12 system and have a CLB 5 or higher in French." The published criteria do not say which subject you must teach, but they do require public-system employment: an independent (private) school job does not meet the targeted rule.
+      </p>
+
+      <p>On top of that, you must meet the Skilled Worker stream's general requirements:</p>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Two years of full-time skilled work experience</strong> (TEER 0–3) in the last ten years, in Canada or abroad. Teaching experience abroad counts.</li>
+        <li><strong>A qualifying job offer.</strong> Teachers have a special advantage here, covered below.</li>
+        <li><strong>Qualification for the job</strong>, which for a public school teacher means B.C. certification.</li>
+        <li><strong>Legal status</strong> in Canada if you are already here, and family income above the program's minimum.</li>
+      </ul>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+        <p class="font-semibold text-amber-900 mb-2">The language test trap</p>
+        <p class="text-amber-800">For the BC PNP, French results must come from <strong>TEF Canada</strong> or <strong>TCF Canada</strong>. A DELF or DALF diploma can satisfy B.C.'s teacher certification standard, but it is not an accepted BC PNP test. Because BC PNP language levels are based on your lowest skill, aim for NCLC 5 or higher in all four abilities.</p>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Step one: B.C. teacher certification</h2>
+
+      <p>
+        You cannot teach in a B.C. public school without a Certificate of Qualification. The requirements are set by the BC Teachers' Council, and you apply through the province's teacher certification portal using a Basic BCeID. The application fee is <strong>$245</strong> and is non-refundable.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Professional Certificate requirements</h3>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Requirement</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Details</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Degree</td><td class="px-4 py-3">Four years (120 credits) of post-secondary study and a degree or equivalent</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Academic studies</td><td class="px-4 py-3">30 credits; includes 6 credits of English or French literature and composition. Secondary: 24 credits in one teaching subject. Elementary: Canadian studies, math and science credits</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Teacher education (outside B.C.)</td><td class="px-4 py-3">Accredited program with at least 18 credits of professional education, a 10-week K-12 practicum, and authorization to teach where it was completed</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Professional education</td><td class="px-4 py-3">At least 24 credits, including assessment, Indigenous education within Canada, anti-racism and inclusive education</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Familiarization course</td><td class="px-4 py-3">Required if your teacher education was outside Canada; must be approved by the BC Teachers' Council</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Language</td><td class="px-4 py-3">Proficiency in English or French. French options include DALF C1, DELF B1, the ECLPE, or a fluency letter from School District No. 93 (the Francophone Education Authority)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        If you meet the teacher education requirement but are missing some academic or professional credits, a <strong>Conditional Certificate</strong> valid for up to 60 months lets you teach while you complete them, including the familiarization course for internationally educated teachers.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Documents to prepare</h3>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Official transcripts for all post-secondary study, sent directly by each institution to the Ministry of Education and Child Care (not from you, and not by fax)</li>
+        <li>A Statement of Professional Standing from every jurisdiction where you have held a teaching certificate, even an expired one</li>
+        <li>A signed consent to a criminal record check</li>
+        <li>A Pathways to Teach Canada credential assessment, if the ministry asks for one</li>
+      </ul>
+
+      <p>
+        If you plan to teach in a public school, the province suggests applying to the Teacher Qualification Service (TQS) at the same time and sharing your certificate with it.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Step two: a public school job offer</h2>
+
+      <p>
+        Most BC PNP job offers must be indeterminate. Teachers are an exception. Appendix A of the Skills Immigration Program Guide lets NOC 41220 and 41221 applicants use a <strong>limited-term job offer</strong> if:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>the offer is from a public K-12 school in B.C.;</li>
+        <li>it is for at least one year (365 days); and</li>
+        <li>at least 120 calendar days remain on it when you apply.</li>
+      </ul>
+
+      <p>
+        This matters because new teachers are often hired on temporary contracts. The BC PNP also uses a fixed formula for teacher wages: annual salary ÷ 52 ÷ 30, regardless of the weeks and hours you actually work. For example, a salary of $80,000 works out to $51.28 an hour, worth 36 of the 55 wage points. Check your actual salary against your district's collective agreement grid.
+      </p>
+
+      <p>
+        Where to look: School District No. 93 (the Francophone Education Authority) runs B.C.'s francophone public schools, and other districts offer French immersion programs. A job outside Metro Vancouver adds up to 25 regional points.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Step three: a work permit if you are abroad</h2>
+
+      <p>
+        The <strong>Francophone Mobility</strong> program lets employers outside Quebec hire French speakers without a Labour Market Impact Assessment. For applications made on or after June 15, 2023:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>you must show intermediate French speaking and listening skills, equivalent to NCLC 5 or higher (reading and writing are not assessed for this permit);</li>
+        <li>the job can be in any TEER category, except primary agriculture jobs in TEER 4 and 5;</li>
+        <li>you must live and work in a province or territory other than Quebec; and</li>
+        <li>the employer submits the offer through IRCC's Employer Portal under exemption code C16 and pays a $230 employer compliance fee, then gives you the offer of employment number.</li>
+      </ul>
+
+      <p>
+        Note the language mismatch: Francophone Mobility checks only speaking and listening, while the BC PNP scores your lowest of four skills. Take TEF Canada or TCF Canada covering all four abilities so one test serves both purposes.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Step four: register and get invited</h2>
+
+      <p>
+        Register in the Skilled Worker stream (choose the Express Entry BC version if you qualify for a federal program). WelcomeBC's invitations page shows one Care: Education draw in 2026, on <strong>August 6, 2026</strong>, with a minimum score of 68 and fewer than five invitations. A small pool means you do not need a high score, but it also means B.C. may not run Education draws in every round, so keep your registration current and watch the draws page.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Worked example</h3>
+
+      <p>
+        A teacher from Belgium with six years of experience, a master's degree, NCLC 9 French and CLB 5 English, newly hired on a one-year contract in a Prince George school on a Francophone Mobility permit and earning $80,000:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Directly related experience (5+ years)</td><td class="px-4 py-3 text-right">20</td></tr>
+            <tr><td class="px-4 py-3">Currently working full-time for the supporting employer</td><td class="px-4 py-3 text-right">10</td></tr>
+            <tr><td class="px-4 py-3">Master's degree (outside Canada)</td><td class="px-4 py-3 text-right">22</td></tr>
+            <tr><td class="px-4 py-3">Language: CLB 9+ (scored on French)</td><td class="px-4 py-3 text-right">30</td></tr>
+            <tr><td class="px-4 py-3">Both English and French at CLB 4+ in all skills</td><td class="px-4 py-3 text-right">10</td></tr>
+            <tr><td class="px-4 py-3">Wage ($80,000 ÷ 52 ÷ 30 = $51.28)</td><td class="px-4 py-3 text-right">36</td></tr>
+            <tr><td class="px-4 py-3">Area 3</td><td class="px-4 py-3 text-right">15</td></tr>
+            <tr class="bg-green-50 font-bold"><td class="px-4 py-3">Total</td><td class="px-4 py-3 text-right">143</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        That is roughly double the August cutoff, even without a year of Canadian experience. Try your own numbers in our <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP calculator</a>. After an invitation you have 30 days to apply and pay the $1,750 application fee; WelcomeBC says about 80% of applications are decided within three months.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Where the federal francophone spaces come in</h2>
+
+      <p>
+        In January 2026, IRCC said it would "reserve 5,000 federal selection spaces to allow provinces and territories to designate French-speaking immigrants," in addition to the annual PNP allocations. B.C.'s April announcement ties its teacher priority to these extra allocations, which means nominating a French-speaking teacher may not use up one of B.C.'s regular 6,254 nominations for 2026. We could not find a published figure for how many of these spaces B.C. has received.
+      </p>
+
+      <p>
+        Federally, the French-speaking admissions target outside Quebec rises from 9% in 2026 to 9.5% in 2027 and 10.5% in 2028. IRCC's April 2026 briefing for the House of Commons immigration committee also mentions a planned "corridor to recruit French and French-immersion teachers" under the Action Plan for Official Languages 2023–2028, without details yet.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Other routes worth knowing</h3>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Express Entry French category:</strong> requires NCLC 7 in all four abilities. It had 10 rounds and 50,500 invitations in 2026 up to October 13, with cutoffs of 382 to 420. Teachers are also in the federal education category, but IRCC held no education rounds in 2026. See <a href="/articles/express-entry-2027-category-changes" class="text-blue-600 hover:text-blue-800 underline">Express Entry 2027 category changes</a>.</li>
+        <li><strong>Francophone Community Immigration Pilot:</strong> Kelowna is one of six participating communities. See our <a href="/articles/rcip-fcip-rural-francophone-immigration-pilots-2026" class="text-blue-600 hover:text-blue-800 underline">RCIP and FCIP guide</a>.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">What to expect in 2027 (analysis)</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>The priority is likely to stay.</strong> Rising federal francophone targets and B.C.'s use of extra federal spaces both point that way, but B.C. has not announced 2027 priorities.</li>
+        <li><strong>Whether the 5,000 reserved spaces continue in 2027 is unknown.</strong> Watch the 2027–2029 levels plan, expected in early November 2026, and IRCC's allocation notices.</li>
+        <li><strong>Draws will likely stay small.</strong> With only two occupations and strict criteria, we expect low cutoffs and few invitations per round. Your timing will be driven by certification and hiring.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Who this suits</h2>
+
+      <div class="grid sm:grid-cols-2 gap-4 my-8 not-prose">
+        <div class="bg-green-50 border border-green-200 p-6 rounded-2xl">
+          <p class="font-bold text-green-900 mb-2">Good fit</p>
+          <ul class="list-disc pl-5 text-green-800 space-y-2 text-base">
+            <li>Certified teachers trained in France, Belgium, Switzerland or other francophone school systems</li>
+            <li>French immersion teachers already in a B.C. district</li>
+            <li>Teachers willing to work outside Metro Vancouver</li>
+          </ul>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl">
+          <p class="font-bold text-slate-900 mb-2">Not covered by this priority</p>
+          <ul class="list-disc pl-5 text-slate-700 space-y-2 text-base">
+            <li>Teachers at independent or offshore schools</li>
+            <li>Teacher assistants, tutors and private language instructors</li>
+            <li>Early childhood educators (see our <a href="/articles/bc-pnp-early-childhood-educators-2027" class="underline">ECE guide</a>)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Common mistakes</h2>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Submitting a DELF instead of TEF Canada or TCF Canada</strong> to the BC PNP.</li>
+        <li><strong>Registering with fewer than 120 days left</strong> on a limited-term contract by the time you apply.</li>
+        <li><strong>Overlooking the Statement of Professional Standing</strong> from a jurisdiction where you once held an expired certificate.</li>
+        <li><strong>Calculating your hourly wage the normal way.</strong> The BC PNP uses annual ÷ 52 ÷ 30 for teachers.</li>
+        <li><strong>Assuming any French ability counts.</strong> Have your NCLC level confirmed by an accepted test before you register.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6 not-prose">
+        {faqs.map((f) => (
+          <div class="bg-white border border-slate-200 rounded-2xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{f.q}</h3>
+            <p class="text-gray-700">{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/the-bc-provincial-nominee-program" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: The BC PNP (Care objective and selection of workers)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: BC PNP news (April 23, 2026 announcement)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: BC PNP invitations to apply</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: Skills Immigration Program Guide (including Appendix A) (edition effective June 10, 2026)</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC: Skills Immigration (fees and processing times)</a></li>
+        <li><a href="https://www2.gov.bc.ca/gov/content/education-training/k-12/teach/become-a-teacher/types/coq-requirements" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Province of B.C.: Requirements to apply for a Certificate of Qualification</a></li>
+        <li><a href="https://www2.gov.bc.ca/gov/content/education-training/k-12/teach/become-a-teacher/apply/certificate-qualifications" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Province of B.C.: Apply for a teaching Certificate of Qualification</a></li>
+        <li><a href="https://www2.gov.bc.ca/gov/content/education-training/k-12/teach/your-application/submit-documents/documents-details" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Province of B.C.: Required documents for teacher certification</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/special-instructions/francophone-mobility/eligibility.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Francophone Mobility work permit eligibility</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/hire-temporary-foreign/french-speaking-bilingual-workers-outside-quebec/hire.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: How to hire a French-speaking or bilingual foreign worker outside Quebec</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/01/canada-exceeded-its-francophone-immigration-target-for-2025.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Canada exceeded its Francophone immigration target for 2025 (January 19, 2026)</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/committees/cimm-apr-22-2026/francophone-immigration.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: CIMM briefing on Francophone immigration (April 22, 2026)</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/rural-franco-pilots.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Rural and Francophone Community Immigration pilots</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Express Entry rounds of invitations data</a></li>
+      </ul>
+      <p class="text-sm text-slate-600 mt-4">Information current as of October 14, 2026. Program rules change often; confirm on WelcomeBC or IRCC before applying.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/tef-vs-tcf-comparison-guide-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Language</div>
+          <div class="font-bold text-gray-900">TEF vs TCF: Which French Test?</div>
+        </a>
+        <a href="/articles/canada-pr-planning-guide-french-advantage-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">Strategy</div>
+          <div class="font-bold text-gray-900">The French Advantage in Canadian PR</div>
+        </a>
+        <a href="/articles/bc-pnp-care-healthcare-occupations-list-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Care</div>
+          <div class="font-bold text-gray-900">BC PNP Care Occupations List 2027</div>
+        </a>
+        <a href="/articles/bc-pnp-job-offer-requirements-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Job Offers</div>
+          <div class="font-bold text-gray-900">BC PNP Job Offer Requirements</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
