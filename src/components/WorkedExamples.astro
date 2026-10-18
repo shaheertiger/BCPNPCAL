@@ -16,6 +16,7 @@ import type { CalculatorState } from "../types";
 interface Persona {
   name: string;
   summary: string;
+  priority?: string;
   state: CalculatorState;
 }
 
@@ -76,20 +77,21 @@ const personas: Persona[] = [
     },
   },
   {
-    name: "Priya — Registered Nurse, Northern Health",
+    name: "Priya — Licensed Practical Nurse, Northern Health",
+    priority: "Care: Health",
     summary:
-      "Bachelor's of Nursing, eligible professional designation (RN), CELPIP CLB 9, 3 years' experience abroad, currently working in BC. Offer at $42/hr in a Northern Health community (Area 3).",
+      "Practical nursing diploma, licensed with BCCNM (an eligible professional designation), CELPIP CLB 9, 3 years' experience abroad, currently working in BC. Offer at $36/hr in a Northern Health community (Area 3).",
     state: {
       ...base,
       experience: "3",
       hasCanadianExp: false,
       hasCurrentBCJob: true,
-      education: "bachelor",
+      education: "trades_cert",
       hasProfessionalDesignation: true,
-      selectedProfession: "Registered Nurse",
+      selectedProfession: "Licensed Practical Nurse (BCCNM)",
       hasEnglishTest: true,
       englishClb: 9,
-      hourlyWage: 42,
+      hourlyWage: 36,
       area: "area3",
       hasWorkedOutsideArea1: true,
     },
@@ -110,10 +112,13 @@ const personas: Persona[] = [
   },
 ];
 
-// Recent recorded BC PNP General (Skilled Worker / EEBC) minimum scores, used
-// purely as an honest reference band. Source: BC PNP published draw results.
-const generalCutoffLow = 138; // Dec 10, 2025
-const generalCutoffHigh = 150; // May 8, 2025
+// 2026 High Economic Impact (Innovate) points-track cut-offs, the contest for
+// candidates outside the Care/Build priority lists. Source: WelcomeBC.
+const generalCutoffLow = 131; // Sep 24, 2026
+const generalCutoffHigh = 138; // Feb 4 and Apr 22, 2026
+// 2026 Care: Health cut-off range (May 6 to Oct 8, 2026).
+const healthCutoffLow = 76;
+const healthCutoffHigh = 108;
 
 // Human-readable labels for the breakdown rows, in display order.
 const rows: { key: keyof ReturnType<typeof calculateTotalPoints>["breakdown"]; label: string }[] = [
@@ -124,7 +129,7 @@ const rows: { key: keyof ReturnType<typeof calculateTotalPoints>["breakdown"]; l
   { key: "languageTotal", label: "Language / CLB (capped 40)" },
   { key: "wage", label: "Hourly wage of job offer" },
   { key: "area", label: "Area of employment" },
-  { key: "workedOutsideArea1", label: "Worked 1+ year outside Area 1" },
+  { key: "regionalBonus", label: "Regional experience or alumni bonus" },
 ];
 
 const computed = personas.map((p) => ({
@@ -144,21 +149,29 @@ const computed = personas.map((p) => ({
       that powers our <a href="/bc-pnp-calculator" class="text-red-600 font-semibold underline">BC PNP points
       calculator</a>, so every line item is internally consistent — not a
       hand-typed estimate. Each total is then compared honestly against the
-      recorded <strong>General (Skilled Worker / EEBC)</strong> minimum scores
-      from recent draws, which ran between {generalCutoffLow} and {generalCutoffHigh}
-      points across 2025.
+      2026 <strong>High Economic Impact points cut-offs</strong> ({generalCutoffLow}–{generalCutoffHigh}),
+      the contest for occupations not on the Care or Build priority lists, or
+      with the Care: Health cut-offs ({healthCutoffLow}–{healthCutoffHigh}) where the profile is a
+      priority health occupation. A high wage can also qualify through the
+      separate wage track (as low as $52/hr and $105,000/yr in September 2026).
     </p>
   </div>
 
   {
     computed.map((p) => {
       const total = p.result.total;
-      const clearsLow = total >= generalCutoffLow;
-      const verdict = clearsLow
-        ? `Clears the recent General cut-off band (${generalCutoffLow}–${generalCutoffHigh}).`
-        : total >= generalCutoffLow - 25
-          ? `Below the recent General band (${generalCutoffLow}–${generalCutoffHigh}), but competitive for lower-cut-off priority/targeted draws.`
-          : `Well below the recent General band — would need targeted-stream eligibility or score improvements.`;
+      const clearsLow = total >= (p.priority ? healthCutoffLow : generalCutoffLow);
+      const verdict = p.priority
+        ? total >= healthCutoffHigh
+          ? `Clears every 2026 ${p.priority} cut-off (${healthCutoffLow}–${healthCutoffHigh}).`
+          : total >= healthCutoffLow
+            ? `Within the 2026 ${p.priority} cut-off range (${healthCutoffLow}–${healthCutoffHigh}); would have been invited in the later 2026 rounds.`
+            : `Below the 2026 ${p.priority} cut-offs (${healthCutoffLow}–${healthCutoffHigh}).`
+        : total >= generalCutoffHigh
+          ? `Clears every 2026 High Economic Impact points cut-off (${generalCutoffLow}–${generalCutoffHigh}).`
+          : total >= generalCutoffLow
+            ? `Within the 2026 High Economic Impact points range (${generalCutoffLow}–${generalCutoffHigh}); would have been invited in the later rounds.`
+            : `Below the 2026 High Economic Impact points cut-offs (${generalCutoffLow}–${generalCutoffHigh}). Without a Care or Build priority occupation, would need a higher score or a wage that meets the wage track.`;
       return (
         <div class="border border-slate-200 rounded-2xl overflow-hidden">
           <div class="bg-slate-50 px-5 py-4 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">

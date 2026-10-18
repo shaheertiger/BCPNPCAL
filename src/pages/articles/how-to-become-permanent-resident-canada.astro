@@ -1,0 +1,480 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "How to Become a Permanent Resident in Canada (2026): Every Way to Get Canadian PR";
+const description = "How to become a permanent resident in Canada in 2026: Express Entry, PNPs, Quebec, AIP, family sponsorship, what is paused, plus the steps, costs and timelines.";
+const canonical = "https://bcpnpcalculator.ca/articles/how-to-become-permanent-resident-canada";
+
+const faqs = [
+  {
+    q: "How do I become a PR in Canada?",
+    a: "You qualify under one permanent residence program, apply to IRCC, pass medical, criminal and security checks, and then land in Canada with your Confirmation of Permanent Residence. Most people qualify through Express Entry, a Provincial Nominee Program, Quebec's own selection, the Atlantic Immigration Program, a rural or francophone community pilot, or sponsorship by a Canadian spouse or partner."
+  },
+  {
+    q: "How can I get Canadian PR without a job offer?",
+    a: "Express Entry is the main option. The Federal Skilled Worker Program and Canadian Experience Class do not require a job offer, and IRCC also invites candidates by category, such as French-language proficiency. Some provincial Express Entry streams also select people without an offer. Most provincial worker streams, including the BC PNP, the Atlantic Immigration Program and the community pilots, do require one."
+  },
+  {
+    q: "How can I apply for Canada permanent residence? Is there one application form?",
+    a: "No. Each program has its own process. For Express Entry you create an online profile and can only apply after IRCC invites you. Provincial nominees apply either through Express Entry or, for base streams, through IRCC's Permanent Residence Portal. Quebec applicants need a Quebec Selection Certificate first, and family sponsorship starts with the sponsor's application."
+  },
+  {
+    q: "How do I get PR from inside Canada as a temporary worker?",
+    a: "The usual routes are the Canadian Experience Class (one year of skilled work in Canada within three years) and a Provincial Nominee Program stream for workers already employed in that province. The Atlantic Immigration Program and the rural and francophone pilots are also open to people already in Canada. If you are married to or living with a Canadian citizen or permanent resident, in-Canada spousal sponsorship is another route."
+  },
+  {
+    q: "How long does it take to get permanent residence in Canada?",
+    a: "IRCC's Express Entry service standard is to process most complete applications within six months of submission. Base provincial nominee and family applications usually take longer. Preparing language tests, credential assessments and documents, and waiting for an invitation or nomination, often adds several months to a year or more before you can apply."
+  },
+  {
+    q: "How much does it cost to apply for Canadian permanent residency?",
+    a: "For economic programs, IRCC charges $1,590 per adult (a $990 processing fee plus the $600 right of permanent residence fee) and $270 per dependent child, plus biometrics of $85 per person or $170 per family. Provinces may add their own fee, such as the BC PNP's $1,750 Skills Immigration application fee. Language tests, medicals, police certificates and translations cost extra."
+  },
+  {
+    q: "Can I get Canada permanent residency through my spouse?",
+    a: "Yes, if your spouse, common-law or conjugal partner is a Canadian citizen or permanent resident who is eligible to sponsor you. You can apply from outside Canada, or from inside Canada if you live together here. In-Canada applicants may be able to get an open work permit while they wait."
+  },
+  {
+    q: "Is Canada still accepting PR applications from caregivers, parents or start-up founders?",
+    a: "Not new ones, as of October 2026. IRCC lists the Home Care Worker Immigration Pilots as closed, the Parents and Grandparents Program is not accepting new interest to sponsor forms or inviting sponsors until further notice, and the Start-up Visa and Self-employed Persons programs are paused. IRCC continues to process applications it already received."
+  },
+  {
+    q: "What is the difference between Canadian permanent residence and citizenship?",
+    a: "A permanent resident can live, work and study anywhere in Canada and receives most social benefits, but cannot vote or run for office, cannot hold some jobs that need a high-level security clearance, and must spend at least 730 days in Canada in every five-year period to keep the status. Citizenship has no residency obligation and gives you a Canadian passport."
+  },
+  {
+    q: "Does a provincial nomination guarantee permanent residence?",
+    a: "No. A nomination is the province's selection decision; IRCC still decides your PR application and can refuse it for medical, criminal, security or misrepresentation reasons. An Express Entry nomination adds 600 CRS points, which in 2026 has been enough for an invitation in Provincial Nominee Program rounds."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+
+<ArticleLayout slug="how-to-become-permanent-resident-canada" datePublished="2026-10-18" dateModified="2026-10-18" articleSection="Guide" keywords="how to become a permanent resident in Canada, how do I become a PR in Canada, how to get Canadian PR, Canada permanent residency 2026, how to apply for Canada permanent residence, how to get PR from inside Canada, Express Entry, Provincial Nominee Program, Canadian PR requirements" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        PR Pillar Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        How to Become a Permanent Resident in Canada (2026): Every Way to Get Canadian PR
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Every federal and provincial route to Canadian permanent residence, checked against official sources in October 2026, including the programs that are paused and the Express Entry points changes coming on November 3.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-10-18">October 18, 2026</time>
+        <span>&bull;</span>
+        <span>16 min read</span>
+      </div>
+    </header>
+
+    <div class="bg-indigo-50 border-2 border-indigo-200 p-6 rounded-2xl mb-10">
+      <p class="font-bold text-indigo-900 mb-2">Quick answer</p>
+      <p class="text-indigo-900">
+        To become a permanent resident in Canada, you must qualify under one immigration program, apply to Immigration, Refugees and Citizenship Canada (IRCC), pass medical, criminal and security checks, and then land in Canada. Most skilled workers get PR through <strong>Express Entry</strong> or a <strong>Provincial Nominee Program</strong>; others qualify through Quebec's own selection, the Atlantic Immigration Program, a rural or francophone community pilot, or sponsorship by a Canadian spouse or partner. As of October 2026, the caregiver, parent and grandparent, and start-up visa routes are not accepting new applications.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">380,000</div>
+        <div class="text-sm text-slate-600 font-medium">Federal PR admissions target for 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-green-600 mb-2">91,500</div>
+        <div class="text-sm text-slate-600 font-medium">Provincial nominee admissions target, 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-red-600 mb-2">730 days</div>
+        <div class="text-sm text-slate-600 font-medium">Time in Canada needed every 5 years to keep PR</div>
+      </div>
+    </div>
+
+    <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-10">
+      <p class="font-bold text-slate-900 mb-3">Table of contents</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#what-is-pr" class="hover:underline">What PR gives you, and what it doesn't</a></li>
+        <li><a href="#routes" class="hover:underline">Every route to Canadian PR at a glance</a></li>
+        <li><a href="#express-entry" class="hover:underline">Express Entry</a></li>
+        <li><a href="#pnp" class="hover:underline">Provincial Nominee Programs</a></li>
+        <li><a href="#quebec" class="hover:underline">Quebec's own system</a></li>
+        <li><a href="#regional" class="hover:underline">Atlantic, rural and francophone pathways</a></li>
+        <li><a href="#family" class="hover:underline">Family sponsorship</a></li>
+        <li><a href="#paused" class="hover:underline">Caregivers, entrepreneurs and humanitarian routes</a></li>
+        <li><a href="#which-route" class="hover:underline">Which route fits you?</a></li>
+        <li><a href="#steps" class="hover:underline">How to apply, step by step</a></li>
+        <li><a href="#inside-canada" class="hover:underline">How to get PR from inside Canada</a></li>
+        <li><a href="#costs" class="hover:underline">Costs and timelines</a></li>
+        <li><a href="#bc" class="hover:underline">How British Columbia fits in</a></li>
+        <li><a href="#mistakes" class="hover:underline">Common mistakes</a></li>
+        <li><a href="#faq" class="hover:underline">FAQ</a></li>
+      </ol>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        If you are asking "how do I become a PR in Canada?", the honest answer is that there is no single application. Canada has more than a dozen permanent residence programs, each with its own eligibility rules, and several were closed or paused in 2025 and 2026. This guide explains how to become a permanent resident in Canada through every route that is open as of October 2026, which profile suits which route, and the steps from your first language test to your PR card. It is general information, not legal advice.
+      </p>
+
+      <h2 id="what-is-pr" class="text-3xl font-bold mt-12 mb-6">What Canadian Permanent Residence Gives You (and What It Doesn't)</h2>
+
+      <p>
+        A permanent resident (PR) is someone who has been given permanent resident status but is not a Canadian citizen. According to IRCC, permanent residents can:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>live, work or study anywhere in Canada, for any employer;</li>
+        <li>receive most social benefits citizens receive, including health care coverage (provincial rules vary);</li>
+        <li>apply for Canadian citizenship once they meet the requirements;</li>
+        <li>be protected under Canadian law and the Canadian Charter of Rights and Freedoms.</li>
+      </ul>
+      <p>
+        Permanent residents <strong>cannot</strong> vote or run for political office, and cannot hold some jobs that need a high-level security clearance. They pay taxes and must respect all laws, like everyone else.
+      </p>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+        <p class="font-semibold text-amber-900 mb-2">The residency obligation</p>
+        <p class="text-amber-800">To keep PR status, you must be physically present in Canada for at least <strong>730 days in any five-year period</strong>. The days do not need to be continuous, and some time abroad can count, for example time spent accompanying a Canadian citizen spouse. An expired PR card does not end your status, but failing the residency obligation can lead to losing it after an official decision. Citizenship is different: it has no residency obligation once granted.</p>
+      </div>
+
+      <h2 id="routes" class="text-3xl font-bold mt-12 mb-6">Every Route to Canadian PR at a Glance</h2>
+
+      <p>The table below shows each main pathway and its status as of October 18, 2026. 2026 targets come from the federal 2026–2028 Immigration Levels Plan.</p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Route</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Who it is for</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Job offer needed?</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Status, Oct 2026</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Express Entry (FSW, CEC, FST)</td><td class="px-4 py-3">Skilled workers inside or outside Canada</td><td class="px-4 py-3">No (FST needs an offer or a Canadian trade certificate)</td><td class="px-4 py-3">Open; 109,000 Federal High Skilled target</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Provincial Nominee Programs</td><td class="px-4 py-3">People a province selects for its labour market</td><td class="px-4 py-3">Usually yes</td><td class="px-4 py-3">Open; 91,500 target</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Quebec selection (PSTQ, PEQ)</td><td class="px-4 py-3">People settling in Quebec</td><td class="px-4 py-3">Not always</td><td class="px-4 py-3">Open; Quebec sets its own levels</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Atlantic Immigration Program</td><td class="px-4 py-3">Workers and graduates in NB, NS, PEI, NL</td><td class="px-4 py-3">Yes, from a designated employer</td><td class="px-4 py-3">Open; 4,000 target</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Rural and Francophone Community pilots</td><td class="px-4 py-3">Workers in 18 designated communities</td><td class="px-4 py-3">Yes, from a designated employer</td><td class="px-4 py-3">Open</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Spouse, partner and child sponsorship</td><td class="px-4 py-3">Family of citizens and PRs</td><td class="px-4 py-3">No</td><td class="px-4 py-3">Open; 69,000 target</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Parents and grandparents</td><td class="px-4 py-3">Parents and grandparents of citizens and PRs</td><td class="px-4 py-3">No</td><td class="px-4 py-3">No new intake; existing files processed</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Caregiver pilots</td><td class="px-4 py-3">Home care workers</td><td class="px-4 py-3">Yes</td><td class="px-4 py-3">Closed to new applications</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Start-up Visa, Self-employed</td><td class="px-4 py-3">Founders and self-employed people</td><td class="px-4 py-3">No</td><td class="px-4 py-3">Paused</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Refugee and humanitarian</td><td class="px-4 py-3">People needing protection, or with exceptional circumstances</td><td class="px-4 py-3">No</td><td class="px-4 py-3">Open, case by case</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="express-entry" class="text-3xl font-bold mt-12 mb-6">Express Entry: The Main Federal Route</h2>
+
+      <p>
+        Express Entry is not a program in itself but an online system that manages three federal programs. You submit a profile, IRCC ranks you with the Comprehensive Ranking System (CRS), and it invites the top-ranked candidates in regular rounds. Only invited candidates can apply.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Program</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Work experience</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Language</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Other</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Canadian Experience Class (CEC)</td><td class="px-4 py-3">1 year in Canada within the last 3 years, TEER 0–3</td><td class="px-4 py-3">CLB 7 for TEER 0–1; CLB 5 for TEER 2–3</td><td class="px-4 py-3">No education or proof of funds requirement</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Federal Skilled Worker (FSW)</td><td class="px-4 py-3">1 year continuous within the last 10 years, TEER 0–3, in or outside Canada</td><td class="px-4 py-3">CLB 7</td><td class="px-4 py-3">Secondary education; 67/100 on the selection grid; proof of funds</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Federal Skilled Trades (FST)</td><td class="px-4 py-3">2 years within the last 5 years in an eligible trade</td><td class="px-4 py-3">CLB 5 speaking and listening, CLB 4 reading and writing</td><td class="px-4 py-3">A one-year job offer or a Canadian certificate of qualification</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">CRS scores and category-based draws</h3>
+      <p>
+        The CRS awards up to 1,200 points for age, education, language, Canadian work experience, a spouse's profile, and additional factors such as a provincial nomination (600 points), strong French (25 or 50 points), Canadian post-secondary study (15 or 30) or a sibling in Canada (15). IRCC runs general rounds, program-specific rounds (CEC, PNP) and category-based rounds for candidates with French or experience in targeted occupations. By our tally of IRCC's rounds data from January 1 to October 16, 2026, the lowest scores invited ranged from 507 to 523 in CEC rounds, 382 to 435 in French-language rounds, 467 to 477 in healthcare and trades rounds, and 697 to 805 in PNP rounds. For the 10 categories used in 2026, see our <a href="/articles/express-entry-2027-category-changes" class="text-blue-600 hover:text-blue-800 underline">Express Entry category guide</a>.
+      </p>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+        <p class="font-semibold text-blue-900 mb-2">Change coming on November 3, 2026</p>
+        <p class="text-blue-800">IRCC announced on October 16, 2026 that the CRS will award new points for Canadian work experience and job offers in <strong>high-wage occupations</strong>: occupations whose typical (median) wage is at least 1.3 times the median wage of the overall Canadian workforce. IRCC says this is based on the occupation's typical earnings, not your own salary. Higher tiers apply at 1.5 and 2 times the median. One year of Canadian experience at those levels can earn 20, 40 or 70 extra points on top of existing experience points, and a qualifying job offer can earn 50, 70 or 100 points. You get whichever of the two gives more, not both. A labour market impact assessment (LMIA) will no longer be needed for a qualifying job offer. IRCC says profiles will be recalculated, which could take up to two weeks, and invitation rounds will pause during that time. If you have a job offer, check that your profile details are complete before November 3.</p>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Proof of funds</h3>
+      <p>
+        FSW and FST candidates must show settlement funds unless they are authorized to work in Canada and have a valid job offer. CEC candidates are exempt. IRCC's current table (marked "Updated July 7, 2025" and still in effect on the page as of October 16, 2026):
+      </p>
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Family members</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Funds needed (CAD)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Family members</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Funds needed (CAD)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">1</td><td class="px-4 py-3">$15,263</td><td class="px-4 py-3">5</td><td class="px-4 py-3">$32,168</td></tr>
+            <tr><td class="px-4 py-3">2</td><td class="px-4 py-3">$19,001</td><td class="px-4 py-3">6</td><td class="px-4 py-3">$36,280</td></tr>
+            <tr><td class="px-4 py-3">3</td><td class="px-4 py-3">$23,360</td><td class="px-4 py-3">7</td><td class="px-4 py-3">$40,392</td></tr>
+            <tr><td class="px-4 py-3">4</td><td class="px-4 py-3">$28,362</td><td class="px-4 py-3">Each extra person</td><td class="px-4 py-3">$4,112</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-gray-500">IRCC usually revises these amounts once a year. Check the table again on the day you submit your profile and your application.</p>
+
+      <h2 id="pnp" class="text-3xl font-bold mt-12 mb-6">Provincial Nominee Programs: Getting Canadian PR Through a Province</h2>
+
+      <p>
+        Every province and territory except Quebec and Nunavut runs a Provincial Nominee Program (PNP). The province selects you, issues a nomination, and you then apply to IRCC for PR. PNPs are the largest economic category in the 2026 plan, with 91,500 admissions targeted. Each province receives a yearly nomination allocation; in 2026 Ontario had the largest (14,119), and British Columbia's rose to 6,254 in August. Our <a href="/articles/best-provinces-pnp-2027" class="text-blue-600 hover:text-blue-800 underline">province-by-province comparison</a> covers each one.
+      </p>
+      <p>Provincial streams come in two types:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Enhanced (Express Entry-linked) streams.</strong> You must also qualify for FSW, CEC or FST and have an Express Entry profile. A nomination adds 600 CRS points, which has been enough for an invitation in every 2026 PNP round. You then apply through Express Entry, which IRCC aims to process in about six months.</li>
+        <li><strong>Base streams.</strong> These are for people who meet the province's criteria but not a federal Express Entry program, for example because of language scores or occupation level. After nomination you apply through IRCC's Permanent Residence Portal, which usually takes longer.</li>
+      </ul>
+      <p>
+        Most provincial worker streams need a job offer or work history in the province, and you must genuinely intend to live there. For the basics, read <a href="/articles/what-is-pnp-provincial-nominee-program" class="text-blue-600 hover:text-blue-800 underline">What Is the Provincial Nominee Program?</a>
+      </p>
+
+      <h2 id="quebec" class="text-3xl font-bold mt-12 mb-6">Quebec's Own Immigration System</h2>
+
+      <p>
+        Quebec chooses its own economic immigrants under a federal–provincial agreement, so it has no PNP. You first apply to Quebec for a <strong>Quebec Selection Certificate (CSQ)</strong>, then apply to IRCC for PR, which handles medical, criminal and security checks. Quebec's economic levels are set in Quebec's own plan, not in the federal one.
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>PSTQ (Programme de sélection des travailleurs qualifiés).</strong> The main skilled worker program. You submit an expression of interest in Quebec's Arrima portal and wait for an invitation; Quebec has been issuing invitations across its four streams through 2026.</li>
+        <li><strong>PEQ (Programme de l'expérience québécoise).</strong> Abolished in November 2025, then reopened temporarily from July 2, 2026 to July 2, 2028. The first intake runs until October 31, 2026 and is limited to people who met the requirements on November 19, 2025 (a qualifying Quebec diploma, or at least two years of skilled work in Quebec).</li>
+      </ul>
+      <p>Quebec's programs rely heavily on French. If Quebec is not your goal, Express Entry's French category and francophone pilots outside Quebec reward French too.</p>
+
+      <h2 id="regional" class="text-3xl font-bold mt-12 mb-6">Atlantic, Rural and Francophone Pathways</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Atlantic Immigration Program (AIP)</h3>
+      <p>
+        The AIP is an employer-driven route for skilled workers and recent graduates of Atlantic Canadian institutions who want to live in New Brunswick, Nova Scotia, Prince Edward Island or Newfoundland and Labrador. The steps are: get a job offer from an employer the province has designated, have the province endorse the offer, then apply to IRCC. You can apply from abroad or as a temporary resident in Canada. The 2026 target is 4,000 admissions, so space is limited and provinces set their own priorities for endorsements.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Rural Community Immigration Pilot (RCIP) and Francophone Community Immigration Pilot (FCIP)</h3>
+      <p>
+        Both pilots work the same way: you get a job offer from an employer designated by a participating community, the community recommends you, and you apply to IRCC. You can get a work permit while you wait. FCIP requires French. IRCC lists 18 communities:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>RCIP:</strong> Pictou County (NS); North Bay, Sudbury, Timmins, Sault Ste. Marie and Thunder Bay (ON); Steinbach, Altona/Rhineland and Brandon (MB); Moose Jaw (SK); Claresholm (AB); West Kootenay, North Okanagan Shuswap and Peace Liard (BC).</li>
+        <li><strong>FCIP:</strong> Acadian Peninsula (NB); Sudbury, Timmins and Superior East Region (ON); St. Pierre Jolys (MB); Kelowna (BC).</li>
+      </ul>
+      <p>Each community publishes its own priority occupations and intake periods. Check the community's website before you look for work there.</p>
+
+      <h2 id="family" class="text-3xl font-bold mt-12 mb-6">Family Sponsorship</h2>
+
+      <p>
+        A Canadian citizen or permanent resident aged 18 or older can sponsor certain relatives, as long as they meet IRCC's sponsor requirements and sign an undertaking to support the person.
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Spouse, common-law or conjugal partner.</strong> Open, with 69,000 admissions targeted for spouses, partners and children in 2026. Partners who already live together in Canada can apply in the "spouse or common-law partner in Canada" class; they must live with the sponsor and generally hold valid temporary status. In-Canada applicants can usually apply for an open work permit while they wait.</li>
+        <li><strong>Dependent children.</strong> Children can be sponsored directly or included in a parent's application if they meet IRCC's definition of a dependent child.</li>
+        <li><strong>Parents and grandparents.</strong> Since a July 15, 2026 notice, IRCC is not accepting new interest to sponsor forms or inviting sponsors to apply "until further notice", and continues to process existing applications (15,000 admissions targeted in 2026). The super visa allows long visits but is not permanent residence.</li>
+      </ul>
+      <p>For bringing family with you on your own application, and every sponsorship option in detail, see <a href="/articles/how-to-immigrate-to-canada-with-family" class="text-blue-600 hover:text-blue-800 underline">How to Immigrate to Canada With Your Family</a>.</p>
+
+      <h2 id="paused" class="text-3xl font-bold mt-12 mb-6">Caregivers, Entrepreneurs and Humanitarian Routes: What Is Open in 2026</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Caregivers.</strong> IRCC lists the Home Care Worker Immigration Pilots as closed. On December 19, 2025 it paused intake until further notice and said the pilots would not reopen in March 2026. The older Home Child Care Provider and Home Support Worker pilots closed on June 17, 2024. Caregivers already working in Canada may still qualify through Express Entry or a PNP if they meet those programs' requirements.</li>
+        <li><strong>Start-up Visa.</strong> Paused. IRCC stopped accepting commitment certificates after December 31, 2025, and only people with a valid 2025 certificate could apply, by June 30, 2026. The optional start-up work permit closed to new applicants on December 19, 2025. Federal announcements in late 2025 said a more targeted entrepreneur pilot would follow, but as of October 2026 IRCC has published no rules or opening date.</li>
+        <li><strong>Self-employed Persons Program.</strong> Listed as paused by IRCC. Provincial entrepreneur streams, including <a href="/articles/bc-pnp-entrepreneur-immigration" class="text-blue-600 hover:text-blue-800 underline">B.C.'s Entrepreneur Immigration</a>, remain the main business route, each with its own net worth, investment and intake rules.</li>
+        <li><strong>Refugees and humanitarian cases.</strong> People who need protection can claim asylum or be resettled, and protected persons can then apply for PR. Humanitarian and compassionate applications are decided case by case for people with exceptional circumstances. These are not substitutes for economic programs; get advice from a lawyer or regulated consultant.</li>
+      </ul>
+
+      <h2 id="which-route" class="text-3xl font-bold mt-12 mb-6">Which Route Fits You?</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Your situation</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Best routes to check first</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Watch out for</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Outside Canada, no job offer</td><td class="px-4 py-3">Express Entry FSW; French category if you reach NCLC 7; provincial Express Entry streams that do not need an offer</td><td class="px-4 py-3">Proof of funds; general CRS cutoffs have been well above 500</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Temporary worker in Canada</td><td class="px-4 py-3">CEC; your province's worker stream; AIP or RCIP/FCIP if your employer is designated</td><td class="px-4 py-3">Work permit expiry; only skilled (TEER 0–3) work counts for CEC</td></tr>
+            <tr><td class="px-4 py-3 font-medium">International graduate</td><td class="px-4 py-3">CEC after a year of skilled work; provincial streams that award points for local study</td><td class="px-4 py-3">B.C. and Ontario no longer run graduate-only streams; work during studies generally doesn't count for CEC</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Tradesperson</td><td class="px-4 py-3">FST; Express Entry trades rounds; provincial trades priorities such as B.C.'s Build draws</td><td class="px-4 py-3">Provinces often require a Canadian trade certificate</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Healthcare worker</td><td class="px-4 py-3">Express Entry healthcare rounds; provincial health streams (B.C. Care draws, Health Authority stream)</td><td class="px-4 py-3">Licensing or registration usually comes first</td></tr>
+            <tr><td class="px-4 py-3 font-medium">French speaker</td><td class="px-4 py-3">Express Entry French rounds; FCIP; Quebec's PSTQ</td><td class="px-4 py-3">You need a TEF Canada or TCF Canada result under two years old</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Spouse or partner of a Canadian</td><td class="px-4 py-3">Spousal sponsorship (inside or outside Canada)</td><td class="px-4 py-3">Prove the relationship is genuine; sponsor must be eligible</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Entrepreneur</td><td class="px-4 py-3">Provincial entrepreneur streams</td><td class="px-4 py-3">Federal Start-up Visa and Self-employed programs are paused</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        French can change your options a lot; see our <a href="/articles/canada-pr-planning-guide-french-advantage-2026" class="text-blue-600 hover:text-blue-800 underline">guide to the French advantage</a>. Graduates in B.C. should read <a href="/articles/international-graduates-bc-pr-options-2027" class="text-blue-600 hover:text-blue-800 underline">PR options for international graduates</a>.
+      </p>
+
+      <h2 id="steps" class="text-3xl font-bold mt-12 mb-6">How to Apply for Canadian Permanent Residency, Step by Step</h2>
+
+      <p>The details differ by program, but most economic applications follow this order:</p>
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Check eligibility.</strong> Find your NOC code and TEER category, then compare yourself with the programs above. Use IRCC's "Come to Canada" tool for federal programs and the province's own site for PNPs.</li>
+        <li><strong>Take an approved language test.</strong> CELPIP-General, IELTS General Training or PTE Core for English; TEF Canada or TCF Canada for French. Results are valid for two years.</li>
+        <li><strong>Get an Educational Credential Assessment (ECA)</strong> if you studied outside Canada. FSW requires one, and you need one to earn CRS points for foreign education.</li>
+        <li><strong>Collect documents early:</strong> reference letters showing duties, hours and pay; passports; civil documents; proof of funds if needed; and a job offer or licence if your route requires one.</li>
+        <li><strong>Enter the selection system.</strong> Create an Express Entry profile (valid 12 months), register with a province, submit a Quebec Arrima expression of interest, or get a community recommendation or AIP endorsement.</li>
+        <li><strong>Get invited or nominated.</strong> In Express Entry, you have 60 days after an invitation to submit a complete application. Provinces set their own deadlines; the BC PNP gives 30 days.</li>
+        <li><strong>Submit your PR application and pay fees.</strong> Express Entry applications go through your IRCC account; most other economic and family applications go through the Permanent Residence Portal.</li>
+        <li><strong>Give biometrics</strong> (fingerprints and photo) when IRCC asks, unless you are exempt.</li>
+        <li><strong>Complete a medical exam</strong> with an IRCC panel physician and provide <strong>police certificates</strong> from the countries IRCC requires, following the instructions you receive.</li>
+        <li><strong>Receive your Confirmation of Permanent Residence (COPR)</strong> and land: at a port of entry if you are abroad, or through IRCC's online process if you are already in Canada. Your PR card is mailed afterwards; IRCC listed 33 days for a new PR card in its October 14, 2026 update.</li>
+      </ol>
+      <p>Disclose everything accurately. Misrepresentation can lead to refusal and a five-year ban.</p>
+
+      <h2 id="inside-canada" class="text-3xl font-bold mt-12 mb-6">How to Get PR From Inside Canada</h2>
+
+      <p>
+        Many people asking how to get PR from Canada are already here on a work or study permit. The main in-Canada routes are:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Canadian Experience Class.</strong> One year of skilled Canadian work within three years, with no education or funds requirement. The November 3, 2026 changes will give extra points for Canadian experience in high-wage jobs.</li>
+        <li><strong>Provincial worker streams.</strong> Most provinces now favour people already working for an employer in the province. In B.C., that means Skills Immigration.</li>
+        <li><strong>In-Canada spousal sponsorship</strong>, if your partner is a citizen or PR.</li>
+        <li><strong>AIP, RCIP and FCIP</strong>, which accept applicants already in Canada.</li>
+      </ul>
+      <p>
+        IRCC also runs a one-time In-Canada Workers Initiative to speed up permanent residence for up to 33,000 workers in 2026 and 2027. It is not a new program you apply to: it prioritizes eligible applications already submitted through programs such as PNPs, the AIP and the community pilots. Keep your temporary status valid throughout. If your permit is ending after you apply, ask whether you qualify for a bridging open work permit.
+      </p>
+
+      <h2 id="costs" class="text-3xl font-bold mt-12 mb-6">Costs and Timelines</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">IRCC fee (CAD)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Economic class adult (principal or spouse), incl. $600 right of PR fee</td><td class="px-4 py-3">$1,590</td></tr>
+            <tr><td class="px-4 py-3">Dependent child</td><td class="px-4 py-3">$270</td></tr>
+            <tr><td class="px-4 py-3">Family sponsorship: sponsored spouse or parent, incl. sponsorship fee and right of PR fee</td><td class="px-4 py-3">$1,260</td></tr>
+            <tr><td class="px-4 py-3">Biometrics</td><td class="px-4 py-3">$85 per person; $170 family maximum</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Provincial fees, language tests, ECAs, medicals, police certificates and translations come on top. A single Express Entry applicant pays $1,675 in government fees; a single BC PNP nominee pays about $3,425 including the $1,750 BC PNP fee. Full worked budgets are in our <a href="/articles/canada-pr-application-fees-2027" class="text-blue-600 hover:text-blue-800 underline">Canada PR application fees guide</a>.
+      </p>
+      <p>
+        On timing, IRCC's Express Entry service standard is to process most complete applications within six months. Base PNP and family applications usually take longer, and preparation plus the wait for an invitation or nomination often adds months. Stage-by-stage estimates are in <a href="/articles/how-long-to-get-pr-in-canada" class="text-blue-600 hover:text-blue-800 underline">How Long Does It Take to Get PR in Canada?</a>, and IRCC's online processing-times tool has current figures.
+      </p>
+
+      <h2 id="bc" class="text-3xl font-bold mt-12 mb-6">How British Columbia Fits In</h2>
+
+      <p>
+        If you want to get permanent residence in Canada and live in B.C., the BC PNP's Skills Immigration category is the main provincial door. As of October 2026:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>A job offer from an eligible B.C. employer is required.</strong> The two streams are Skilled Worker (TEER 0–3, at least two years of skilled experience) and Health Authority. B.C. has no student or entry-level streams.</li>
+        <li><strong>Both streams have an Express Entry BC (EEBC) option.</strong> If you also qualify for FSW, CEC or FST, a nomination adds 600 CRS points. Otherwise you apply as a base nominee. See our <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="text-blue-600 hover:text-blue-800 underline">EEBC guide</a>.</li>
+        <li><strong>Selection uses a 200-point registration score</strong> and targeted draws under three priorities: Care (36 health, childcare, education and veterinary occupations), Build (certified workers in 9 trades) and Innovate (High Economic Impact, by wage or score). Care health cutoffs fell from 108 in May to 76 in September and October 2026. Read our <a href="/articles/bc-pnp-care-healthcare-occupations-list-2027" class="text-blue-600 hover:text-blue-800 underline">Care occupations list</a> for details.</li>
+        <li><strong>The 2026 allocation is 6,254 nominations</strong>, and B.C. expects at least 35% to go to people working outside Metro Vancouver.</li>
+        <li><strong>B.C. communities in the federal pilots:</strong> West Kootenay, North Okanagan Shuswap and Peace Liard (RCIP) and Kelowna (FCIP).</li>
+      </ul>
+      <p>
+        To see where you stand, estimate your registration score with the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a> and compare it with recent results on our <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a>.
+      </p>
+
+      <h2 id="mistakes" class="text-3xl font-bold mt-12 mb-6">Common Mistakes When Applying for PR</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Picking the wrong NOC code.</strong> Your NOC must match your actual duties, not your job title. A wrong code can make you ineligible for a category or stream.</li>
+        <li><strong>Letting a language test or Express Entry profile expire.</strong> Tests are valid for two years and profiles for 12 months.</li>
+        <li><strong>Counting the wrong experience.</strong> Self-employment, most work while studying full-time, and unpaid work do not count for CEC.</li>
+        <li><strong>Relying on paused programs.</strong> Do not pay anyone to "register" you for a parents and grandparents, caregiver or start-up visa intake that is not open.</li>
+        <li><strong>Paying for a job offer.</strong> Charging workers for job offers is a red flag; read our <a href="/articles/bc-pnp-job-offer-scams-fraud-2027" class="text-blue-600 hover:text-blue-800 underline">guide to job offer scams</a>.</li>
+        <li><strong>Losing temporary status while you wait.</strong> Apply for extensions or a bridging permit before your permit expires.</li>
+        <li><strong>Leaving out family members.</strong> Undeclared family members generally cannot be sponsored later as your dependants.</li>
+      </ul>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/pr-card/understand-pr-status.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Understand permanent resident status, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/corporate-initiatives/levels/supplementary-immigration-levels-2026-2028.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Supplementary Information for the 2026–2028 Immigration Levels Plan, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/who-can-apply.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry: Who can apply, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Comprehensive Ranking System criteria, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canada refocusing Express Entry on top talent (news release, October 16, 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/changes-to-express-entry-for-high-wage-occupations.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Changes to Express Entry for high-wage occupations (October 16, 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry rounds of invitations, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/proof-funds.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry proof of funds, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/quebec-skilled-workers.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Quebec-selected skilled workers, IRCC</a></li>
+        <li><a href="https://www.quebec.ca/immigration/permanente/travailleurs-qualifies/programme-experience-quebecoise" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Programme de l'expérience québécoise (PEQ), Gouvernement du Québec</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/atlantic-immigration.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Atlantic Immigration Program, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/rural-franco-pilots.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Rural and Francophone Community Immigration Pilots, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship/sponsor-parents-grandparents.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Sponsor your parents and grandparents, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship/spouse-partner-children/spouse-common-law-partner-canada-open-work-permit.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Sponsor your spouse or partner: open work permit in Canada, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/responsibly-manage-parent-grandparent-program.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canada takes steps to responsibly manage the Parents and Grandparents Program, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/caregivers.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Caregiver programs, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/pausing-home-care-worker-immigration-pilots-application-intake.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Pausing Home Care Worker Immigration pilots application intake, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/start-visa.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Start-up Visa Program, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/self-employed.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Self-employed Persons Program, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/account.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC online accounts and Permanent Residence Portal, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Check processing times, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/fee-list.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Fee list, IRCC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">About the BC Provincial Nominee Program, WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Invitations to Apply, WelcomeBC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of October 18, 2026. Program rules change often; confirm on IRCC or WelcomeBC before applying.</p>
+      <p class="text-sm text-gray-500 mt-2">This article is general information, not legal advice. For advice on your situation, consult a Regulated Canadian Immigration Consultant or a lawyer.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/how-long-to-get-pr-in-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Timelines</div>
+          <div class="font-bold text-gray-900">How Long Does It Take to Get PR in Canada?</div>
+        </a>
+        <a href="/articles/canada-pr-application-fees-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">Budget</div>
+          <div class="font-bold text-gray-900">Canada PR Application Fees: Every IRCC and BC PNP Fee</div>
+        </a>
+        <a href="/articles/what-is-pnp-provincial-nominee-program" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Basics</div>
+          <div class="font-bold text-gray-900">What Is the Provincial Nominee Program?</div>
+        </a>
+        <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Guide</div>
+          <div class="font-bold text-gray-900">Express Entry BC (EEBC) Guide</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

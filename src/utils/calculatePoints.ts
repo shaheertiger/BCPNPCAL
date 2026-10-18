@@ -103,14 +103,21 @@ export const calculateTotalPoints = (state: CalculatorState): PointsResult => {
   // Includes: Education Level + Location Bonus + Professional Designation
   const educationTotal = Math.min(40, education + educationLocation + professionalDesignation);
 
-  // J) English CLB (max 30)
+  // J) English CLB points (max 30)
   const englishClb = state.hasEnglishTest ? getClbPoints(state.englishClb) : 0;
 
-  // L) French CLB (max 30)
+  // L) French CLB points (max 30)
   const frenchClb = state.hasFrenchTest ? getClbPoints(state.frenchClb) : 0;
 
-  // Language Group Cap: Max 40 points
-  const languageTotal = Math.min(40, englishClb + frenchClb);
+  // Language scoring per the Skills Immigration Program Guide: points are
+  // awarded for one language (the higher result, max 30), plus a 10-point
+  // bonus when the candidate has CLB 4+ in all four skills in BOTH English
+  // and French. Group max 40.
+  const bilingualBonus =
+    state.hasEnglishTest && state.hasFrenchTest && state.englishClb >= 4 && state.frenchClb >= 4
+      ? 10
+      : 0;
+  const languageTotal = Math.min(40, Math.max(englishClb, frenchClb) + bilingualBonus);
 
   // M) Wage (max 55)
   const safeHourlyWage = Math.max(0, Number.isFinite(state.hourlyWage) ? state.hourlyWage : 0);
@@ -119,11 +126,14 @@ export const calculateTotalPoints = (state: CalculatorState): PointsResult => {
   // N) Area (max 15)
   const area = AREA_POINTS[state.area] ?? 0;
 
-  // O) Worked Outside Area 1 (max 10)
-  const workedOutsideArea1 = state.hasWorkedOutsideArea1 ? 10 : 0;
-
-  // P) Graduated Outside Area 1 (max 10)
-  const graduatedOutsideArea1 = state.hasGraduatedOutsideArea1 ? 10 : 0;
+  // O/P) Regional bonus (max 10): regional experience OR regional alumni.
+  // Only one can be claimed, and only when the job offer is outside
+  // Metro Vancouver (Area 2 or 3). Area group max = 15 + 10 = 25.
+  const regionalEligible = state.area !== 'area1';
+  const workedOutsideArea1 = regionalEligible && state.hasWorkedOutsideArea1 ? 10 : 0;
+  const graduatedOutsideArea1 =
+    regionalEligible && !state.hasWorkedOutsideArea1 && state.hasGraduatedOutsideArea1 ? 10 : 0;
+  const regionalBonus = workedOutsideArea1 + graduatedOutsideArea1;
 
   // Total (max 200)
   // Human Capital (max 120) + Economic Factors (max 80)
@@ -136,8 +146,7 @@ export const calculateTotalPoints = (state: CalculatorState): PointsResult => {
     languageTotal +  // Capped at 40
     wage +
     area +
-    workedOutsideArea1 +
-    graduatedOutsideArea1;
+    regionalBonus;
 
   const total = Math.min(200, rawTotal);
 
@@ -152,10 +161,12 @@ export const calculateTotalPoints = (state: CalculatorState): PointsResult => {
       professionalDesignation,
       englishClb,
       frenchClb,
+      bilingualBonus,
       wage,
       area,
       workedOutsideArea1,
       graduatedOutsideArea1,
+      regionalBonus,
       educationTotal,
       languageTotal,
     },

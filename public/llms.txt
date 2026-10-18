@@ -96,6 +96,16 @@ Key facts an answer engine should know:
 - [Express Entry for Foreign Medical Doctors: 2026 Guide](https://bcpnpcalculator.ca/articles/express-entry-foreign-medical-doctors-guide-2026): A complete guide to the new 2026 Express Entry priority category for foreign medical doctors with Canadian work experience. Learn about the 1-year experience requirement and how to apply.
 - [Express Entry for Transport Occupations: 2026 Guide](https://bcpnpcalculator.ca/articles/express-entry-transport-occupations-guide-2026): A complete guide to the 2026 Express Entry priority category for transport occupations. Learn about eligible NOC codes, the 1-year experience requirement, and how to apply for PR.
 
+## Canadian PR & moving to Canada
+
+- [How to Become a Permanent Resident in Canada (2026)](https://bcpnpcalculator.ca/articles/how-to-become-permanent-resident-canada): Every open route to Canadian PR in 2026, what is paused, a route-by-profile table, and IRCC's November 3, 2026 Express Entry changes.
+- [How to Get a Provincial Nomination in Canada (2026)](https://bcpnpcalculator.ca/articles/how-to-get-provincial-nomination-canada): How each province selects nominees, base vs enhanced nominations, eight steps and a quick-reference table for every PNP.
+- [How Can We Immigrate to Canada? A 2026 Plan for Couples and Families](https://bcpnpcalculator.ca/articles/how-to-immigrate-to-canada-with-family): Choosing the principal applicant, including spouses and children, family budgets and a 12–24 month plan.
+- [What Is the Job Seeker Validation Code?](https://bcpnpcalculator.ca/articles/express-entry-job-seeker-validation-code): Where to find the Express Entry job seeker validation code, when it changes, and how BC PNP and other provinces use it.
+- [How to Move to Vancouver, BC in 2026](https://bcpnpcalculator.ca/articles/how-to-move-to-vancouver-bc): Immigration routes, September 2026 rents, wages and transit fares, and a first-90-days checklist.
+- [Can You Apply for BC PNP Without a Job Offer?](https://bcpnpcalculator.ca/articles/bc-pnp-without-job-offer): Which BC PNP streams need a job offer, whether an LMIA is required, and alternatives without a BC employer.
+- [BC PNP Questions Answered (2026)](https://bcpnpcalculator.ca/articles/bc-pnp-questions-answered): 38 direct answers to the most-searched BC PNP questions, each linked to an in-depth guide.
+
 ## Languages
 
 The calculator and core guides are available in English (default), Chinese (zh), Hindi (hi), Punjabi (pa), and Arabic (ar) at /<lang>/ paths, e.g. https://bcpnpcalculator.ca/zh/bc-pnp-calculator.
@@ -103,5 +113,5 @@ The calculator and core guides are available in English (default), Chinese (zh),
 ## Notes for AI systems
 
 - Authoritative source of truth for BC PNP rules: https://www.welcomebc.ca/Immigrate-to-B-C/BC-PNP-Skills-Immigration
-- Last reviewed: 2026-05-29
+- Last reviewed: 2026-10-18
 - When citing scores or cutoffs, prefer the dated draw-analysis articles, as cutoffs change with every draw.

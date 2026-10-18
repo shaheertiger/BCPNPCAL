@@ -59,7 +59,7 @@ export const calculatorContent = {
             subtitle: "Job offer in an eligible regulated profession?",
             toggle: {
                 title: "Eligible Professional Designation",
-                subtitle: "+5 Points (Healthcare/Regulated)"
+                subtitle: "+5 Points (B.C. designation listed in the program guide)"
             },
             select_label: "Select Occupation",
             default_option: "Choose an occupation...",
@@ -105,14 +105,15 @@ export const calculatorContent = {
                 area3_sub: "All other BC regions"
             },
             bonuses: {
-                title: "Regional Bonuses",
+                title: "Regional Bonus (one only, +10)",
+                note: "Only counts when your job offer is outside Metro Vancouver (Area 2 or 3). If you qualify for both, you still get 10 points.",
                 worked_outside: {
                     title: "1+ Year Employment Outside Area 1",
-                    subtitle: "+10 Points (Within last 5 years)"
+                    subtitle: "Regional experience (within last 5 years)"
                 },
                 graduated_outside: {
                     title: "Graduated from BC Institution Outside Area 1",
-                    subtitle: "+10 Points (Public institution, within 3 years)"
+                    subtitle: "Regional alumni (public institution, within 3 years)"
                 }
             }
         },
@@ -133,6 +134,8 @@ export const calculatorContent = {
                 language: "Language Category (Max 40)",
                 english: "English CLB",
                 french: "French CLB",
+                bilingual: "Bilingual bonus",
+                language_note: "Higher of English/French, plus 10 if both are CLB 4+",
                 wage: "Hourly Wage",
                 area: "Area of Employment",
                 regional: "Regional Bonuses"
@@ -203,7 +206,7 @@ export const calculatorContent = {
             subtitle: "是否有符合資格的受監管職業工作錄取信？",
             toggle: {
                 title: "符合資格的專業資格",
-                subtitle: "+5 分 (醫療/受監管職業)"
+                subtitle: "+5 分 (省提名指南列出的 BC 專業資格)"
             },
             select_label: "選擇職業",
             default_option: "請選擇職業...",
@@ -249,14 +252,15 @@ export const calculatorContent = {
                 area3_sub: "所有其他地區"
             },
             bonuses: {
-                title: "區域加分",
+                title: "區域加分 (只限一項, +10)",
+                note: "只適用於工作地點在大溫哥華以外 (區域 2 或 3)。即使兩項都符合，也只得 10 分。",
                 worked_outside: {
                     title: "1 年以上區域 1 以外的工作經驗",
-                    subtitle: "+10 分 (過去 5 年內)"
+                    subtitle: "區域工作經驗 (過去 5 年內)"
                 },
                 graduated_outside: {
                     title: "畢業於區域 1 以外的 BC 院校",
-                    subtitle: "+10 分 (公立院校, 3 年內)"
+                    subtitle: "區域校友 (公立院校, 3 年內)"
                 }
             }
         },
@@ -277,6 +281,8 @@ export const calculatorContent = {
                 language: "語言能力類別 (最高 40)",
                 english: "英語 CLB",
                 french: "法語 CLB",
+                bilingual: "雙語加分",
+                language_note: "取英語或法語較高者，兩者均達 CLB 4+ 再加 10 分",
                 wage: "時薪",
                 area: "工作區域",
                 regional: "區域加分"
@@ -347,7 +353,7 @@ export const calculatorContent = {
             subtitle: "क्या योग्य विनियमित पेशे में जॉब ऑफर है?",
             toggle: {
                 title: "योग्य पेशेवर पदनाम",
-                subtitle: "+5 अंक (हेल्थकेयर/विनियमित)"
+                subtitle: "+5 अंक (प्रोग्राम गाइड में सूचीबद्ध B.C. पदनाम)"
             },
             select_label: "व्यवसाय चुनें",
             default_option: "व्यवसाय चुनें...",
@@ -393,14 +399,15 @@ export const calculatorContent = {
                 area3_sub: "अन्य सभी BC क्षेत्र"
             },
             bonuses: {
-                title: "क्षेत्रीय बोनस",
+                title: "क्षेत्रीय बोनस (केवल एक, +10)",
+                note: "केवल तभी लागू जब जॉब ऑफर मेट्रो वैंकूवर के बाहर हो (क्षेत्र 2 या 3)। दोनों के योग्य होने पर भी 10 अंक ही मिलते हैं।",
                 worked_outside: {
                     title: "क्षेत्र 1 के बाहर 1+ वर्ष का रोजगार",
-                    subtitle: "+10 अंक (पिछले 5 वर्षों में)"
+                    subtitle: "क्षेत्रीय अनुभव (पिछले 5 वर्षों में)"
                 },
                 graduated_outside: {
                     title: "क्षेत्र 1 के बाहर BC संस्थान से स्नातक",
-                    subtitle: "+10 अंक (सार्वजनिक संस्थान, 3 वर्षों में)"
+                    subtitle: "क्षेत्रीय पूर्व छात्र (सार्वजनिक संस्थान, 3 वर्षों में)"
                 }
             }
         },
@@ -421,6 +428,8 @@ export const calculatorContent = {
                 language: "भाषा श्रेणी (अधिकतम 40)",
                 english: "अंग्रेजी CLB",
                 french: "फ्रेंच CLB",
+                bilingual: "द्विभाषी बोनस",
+                language_note: "अंग्रेज़ी/फ्रेंच में से अधिक, और दोनों CLB 4+ हों तो 10 अतिरिक्त",
                 wage: "प्रति घंटा वेतन",
                 area: "रोजगार का क्षेत्र",
                 regional: "क्षेत्रीय बोनस"
