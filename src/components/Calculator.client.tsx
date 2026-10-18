@@ -25,14 +25,17 @@ const INITIAL_STATE: CalculatorState = {
   hasGraduatedOutsideArea1: false,
 };
 
-// Professional Designations List (Kept as constant strings for now as they are specific titles)
+// Eligible B.C. professional designations (Skills Immigration Program Guide,
+// section 8.2). Only designations tied to the job offer earn the 5 points.
 const PROFESSIONAL_DESIGNATIONS = [
-  'Audiologist', 'Chiropractor', 'Dental Hygienist', 'Dentist', 'Dietitian',
-  'Medical Laboratory Technologist', 'Medical Radiation Technologist', 'Midwife',
-  'Nurse Practitioner', 'Occupational Therapist', 'Optometrist', 'Pharmacist',
-  'Physical Therapist / Physiotherapist', 'Physician', 'Podiatrist', 'Psychologist',
-  'Registered Nurse', 'Registered Psychiatric Nurse', 'Respiratory Therapist',
-  'Speech-Language Pathologist', 'Veterinarian',
+  'Health Care Assistant (BC Care Aide & Community Health Worker Registry)',
+  'Licensed Practical Nurse (BCCNM)',
+  'Early Childhood Educator (One Year or Five Year certificate)',
+  'Dental Hygienist (BC College of Oral Health Professionals)',
+  'Dental Technician (BC College of Oral Health Professionals)',
+  'Traditional Chinese Medicine Practitioner / Acupuncturist (licensed in B.C.)',
+  'Veterinary Technician (BC Veterinary Technologists Association)',
+  'Trades worker with a valid SkilledTradesBC certificate',
 ];
 
 // Reusable Components
@@ -489,7 +492,8 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
 
             {/* Regional Bonuses */}
             <div className="mt-6 pt-4 border-t border-slate-100">
-              <h3 className="text-sm font-bold text-slate-700 mb-3">{t.location_step.bonuses.title}</h3>
+              <h3 className="text-sm font-bold text-slate-700 mb-1">{t.location_step.bonuses.title}</h3>
+              <p className="text-xs text-slate-500 mb-3">{t.location_step.bonuses.note}</p>
 
               {/* O) Worked Outside Area 1 */}
               <Toggle
@@ -565,6 +569,8 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
                   <div className="text-[10px] text-slate-500 space-y-1 pl-2 border-l-2 border-slate-200">
                     <div className="flex justify-between"><span>{t.result.categories.english}</span><span>{results.breakdown.englishClb}</span></div>
                     <div className="flex justify-between"><span>{t.result.categories.french}</span><span>{results.breakdown.frenchClb}</span></div>
+                    <div className="flex justify-between"><span>{t.result.categories.bilingual}</span><span>{results.breakdown.bilingualBonus}</span></div>
+                    <div className="text-[9px] text-slate-400 pt-1">{t.result.categories.language_note}</div>
                   </div>
                 </div>
               </div>
@@ -585,7 +591,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
                   <div className="flex justify-between items-center py-2">
                     <span className="text-sm font-medium text-slate-600">{t.result.categories.regional}</span>
                     <span className="font-black text-slate-900 bg-slate-100 px-2 py-0.5 rounded-lg text-xs">
-                      {results.breakdown.workedOutsideArea1 + results.breakdown.graduatedOutsideArea1} / 20
+                      {results.breakdown.regionalBonus} / 10
                     </span>
                   </div>
                 </div>

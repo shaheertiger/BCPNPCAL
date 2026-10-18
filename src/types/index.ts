@@ -78,7 +78,7 @@ export interface CalculatorState {
   // N) Area of employment within BC (max 15)
   area: AreaZone;
 
-  // O) 1 year paid employment outside Area 1 within 5 years prior to registration (max 10)
+  // O) 1 year paid employment outside Area 1 within 5 years prior to registration (10; only one of O/P counts, and only if area is not area1)
   hasWorkedOutsideArea1: boolean;
 
   // P) Graduated from a public BC post-secondary institution outside Area 1 within 3 years (max 10)
@@ -96,13 +96,15 @@ export interface PointsResult {
     professionalDesignation: number; // H (max 5)
     englishClb: number;           // J (max 30)
     frenchClb: number;            // L (max 30)
+    bilingualBonus: number;       // +10 if CLB 4+ in both English and French
     wage: number;                 // M (max 55)
     area: number;                 // N (max 15)
     workedOutsideArea1: number;   // O (max 10)
     graduatedOutsideArea1: number; // P (max 10)
+    regionalBonus: number;        // O or P, max 10, only outside Area 1
 
     // Group Totals (Capped)
     educationTotal: number;       // Capped at 40
-    languageTotal: number;        // Capped at 40
+    languageTotal: number;        // Higher of English/French + bilingual bonus, capped at 40
   };
 }
