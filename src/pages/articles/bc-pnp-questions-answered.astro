@@ -1,0 +1,462 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "BC PNP Questions Answered (2026): 38 Quick Answers From an RCIC";
+const description = "Direct, current answers to 38 of the most-searched BC PNP questions: eligibility, job offers, points, draws, fees, processing times, applying and special cases.";
+const canonical = "https://bcpnpcalculator.ca/articles/bc-pnp-questions-answered";
+
+const linkClass = "text-blue-600 hover:text-blue-800 underline";
+
+const groups = [
+  {
+    id: "basics",
+    title: "BC PNP Basics",
+    intro: "Start here if you are new to the program. These answers explain what the BC PNP is, how big it is and how competitive it has become in 2026.",
+    items: [
+      {
+        q: "What is the BC PNP?",
+        a: "The BC Provincial Nominee Program (BC PNP) is British Columbia's economic immigration program. The province selects workers and entrepreneurs it needs and nominates them to Immigration, Refugees and Citizenship Canada (IRCC) for permanent residence. A nomination is not permanent residence itself: you still apply to IRCC, which makes the final decision after medical, security and criminality checks. The BC PNP has two parts: Skills Immigration, for workers with a B.C. job offer, and Entrepreneur Immigration, for people who start or buy a business. Whether you search for BC PNP, PNP BC or the BC PNP program in Canada, it is the same program, run by the B.C. government through WelcomeBC. For 2026, IRCC gave B.C. 6,254 nominations.",
+        links: [{ href: "/articles/what-is-pnp-provincial-nominee-program", label: "What is the Provincial Nominee Program?" }],
+      },
+      {
+        q: "How does the BC PNP work?",
+        a: "For most workers it is a four-step process. First, you get a qualifying job offer from an eligible B.C. employer. Second, you submit a free registration online, which scores you out of 200 points on your job offer, wage, work location, experience, education and language. Third, B.C. holds draws and invites the top scorers in targeted groups; once invited, you have 30 calendar days to submit a complete application with a $1,750 fee. Fourth, if the BC PNP approves it, you are nominated and apply to IRCC for permanent residence. Health Authority stream candidates skip the registration and draw and apply directly.",
+        links: [{ href: "/articles/how-to-apply-bc-pnp", label: "How to apply for the BC PNP, step by step" }],
+      },
+      {
+        q: "What is BC PNP Express Entry (Express Entry BC)?",
+        a: "Express Entry BC (EEBC) is an option inside the Skilled Worker and Health Authority streams, not a separate set of rules. If you also qualify for a federal Express Entry program (Federal Skilled Worker, Canadian Experience Class or Federal Skilled Trades) and have an active Express Entry profile, you link it to your BC PNP file. A nomination then adds 600 points to your Comprehensive Ranking System (CRS) score; in 2026, IRCC's provincial nominee rounds had lowest scores between 697 and 805. Your permanent residence application is then processed through Express Entry, which has a six-month service standard. Note that IRCC announced on October 16, 2026 a CRS overhaul taking effect November 3, 2026; the announcement does not mention the nomination points.",
+        links: [{ href: "/articles/bc-pnp-express-entry-bc-eebc-guide-2026", label: "Express Entry BC guide" }],
+      },
+      {
+        q: "How many people get BC PNP each year?",
+        a: "The number is capped by an annual allocation from IRCC. For 2026, B.C. was first given 5,254 nominations in December 2025, and IRCC added 1,000 more on August 18, 2026, for a total of 6,254. B.C. says it intends to use the full allocation by December 31, 2026. For comparison, the BC PNP nominated 6,214 people in 2025 after two mid-year top-ups, 8,000 in 2024 and 8,200 in 2023. Invitations are not the same as nominations: from February 4 to October 8, 2026, B.C. issued at least 6,297 Skills Immigration invitations, but some invited people never apply and some applications are refused.",
+        links: [{ href: "/articles/bc-pnp-statistical-report-2025-analysis", label: "BC PNP Statistical Report 2025, explained" }],
+      },
+      {
+        q: "Is it easy to get BC PNP?",
+        a: "No. It is achievable for the right profile, but it is competitive and narrower than it was a few years ago. You need a job offer from an eligible B.C. employer, and 12 occupations, including administrative assistants, bookkeepers and retail and food service supervisors, cannot be nominated at all for applications submitted after June 13, 2026. On October 6, 2026 there were 7,695 registrations in the pool, and about 71% scored below 110. Your occupation now matters as much as your score: health workers were invited at 76 points in September and October 2026, while candidates outside the Care and Build lists needed 131 points or a wage of at least $52 an hour and $105,000 a year.",
+        links: [{ href: "/articles/bc-pnp-2026-draws-recap-2027-forecast", label: "Every 2026 draw, with trends" }],
+      },
+      {
+        q: "When will the BC PNP reopen?",
+        a: "The BC PNP never fully closed, but several doors have shut. In 2025, with an initial allocation of 4,000, B.C. held only three Skills Immigration rounds and focused intake on health care and high-economic-impact workers. The International Graduate stream closed in November 2024 and the International Post-Graduate stream in January 2025. Planned bachelor's, master's and doctorate streams were suspended in April 2025, and on April 23, 2026 B.C. said it will not launch new student streams. The same update closed the Entry Level and Semi-Skilled stream and confirmed tech draws had ended. As of October 2026, the Skilled Worker and Health Authority streams (with the Express Entry BC option) and Entrepreneur Immigration are open.",
+        links: [{ href: "/articles/bc-pnp-2027-outlook-predictions", label: "BC PNP 2027 outlook" }],
+      },
+    ],
+  },
+  {
+    id: "eligibility",
+    title: "Eligibility and Job Offers",
+    intro: "In 2026, eligibility starts with the job offer and the employer. These answers summarize the Skills Immigration Program Guide in force since mid-2026.",
+    items: [
+      {
+        q: "Who is eligible for the BC PNP?",
+        a: "In 2026, mainly people with a qualifying B.C. job offer. Skills Immigration has two streams. The Skilled Worker stream is for people with a full-time, indeterminate job offer in a skilled occupation (NOC TEER 0, 1, 2 or 3) and at least two years of skilled work experience. The Health Authority stream is for people employed or offered a job by a B.C. public health authority, mostly in health occupations. You can be inside or outside Canada, but you must intend to live and work in B.C. Entrepreneur Immigration is a separate route for business owners. Being eligible does not guarantee an invitation, because Skilled Worker registrants still compete in draws.",
+        links: [{ href: "/articles/bc-pnp-skilled-worker-stream", label: "Skilled Worker stream guide" }],
+      },
+      {
+        q: "What are the requirements for the BC PNP?",
+        a: "For the Skilled Worker stream, the core requirements are: a full-time, indeterminate job offer in NOC TEER 0 to 3 from an eligible B.C. employer; a wage in line with B.C. rates for that occupation; at least two years of full-time (or equivalent) skilled work experience in the last ten years; being qualified for the job, including any licence or registration it needs; meeting the minimum family income requirement; and valid language test results. Your employer must have operated in B.C. for at least a year and have at least five full-time employees in Metro Vancouver, or three elsewhere. Your occupation must not be on the ineligible list.",
+        links: [{ href: "/articles/bc-pnp-job-offer-requirements-2026", label: "BC PNP job offer requirements" }],
+      },
+      {
+        q: "How do I qualify for the BC PNP?",
+        a: "Qualifying has two layers: meeting the stream rules and scoring high enough to be invited. First confirm your job, employer and NOC meet the requirements and are not excluded. Then work out which contest you would enter. If your occupation is on the Care list (36 occupations in health, childcare, education and veterinary care) or the Build list (9 construction trades), get the credential the draw requires, such as an ECE One Year or Five Year certificate, Care Aide Registry registration, or a SkilledTradesBC certificate or registered apprenticeship. If it is not, you need a high score or a high wage. The biggest levers are better language results, a job outside Metro Vancouver and genuine pay increases.",
+        links: [{ href: "/articles/maximize-bc-pnp-score-tips", label: "How to maximize your BC PNP score" }],
+      },
+      {
+        q: "Does the BC PNP require a job offer?",
+        a: "Yes, for Skills Immigration. Both current streams, Skilled Worker and Health Authority, require a job offer from an eligible B.C. employer. The International Post-Graduate stream, which did not, closed in January 2025, and B.C. said in April 2026 that it will not launch new student streams. The only BC PNP route without an employer is Entrepreneur Immigration, where you invest in and actively run your own B.C. business. If you do not have a job offer, federal Express Entry or another province may be more realistic.",
+        links: [{ href: "/articles/bc-pnp-without-job-offer", label: "BC PNP without a job offer: your options" }],
+      },
+      {
+        q: "Does the BC PNP need an LMIA?",
+        a: "No. The BC PNP does not require your employer to get a Labour Market Impact Assessment (LMIA) to support your nomination; it requires a qualifying job offer and an eligible employer. An LMIA can still matter for your work permit: if you are outside Canada or your permit is tied to another job, your employer may need one, or an exemption, before you can start. After nomination, the BC PNP can issue a work permit support letter for an LMIA-exempt work permit. Separately, from November 3, 2026, federal Express Entry will no longer require an LMIA for a qualifying job offer to earn its new job-offer points or to meet the Federal Skilled Worker and Federal Skilled Trades job-offer requirement.",
+        links: [{ href: "/articles/bc-pnp-lmia-guide-2026", label: "BC PNP and LMIA guide" }],
+      },
+      {
+        q: "Which occupations are not eligible for the BC PNP?",
+        a: "For applications submitted after June 13, 2026, section 3.11 of the program guide makes 12 occupations ineligible in every Skills Immigration stream: executive assistants (12100), human resources and recruitment officers (12101), accounting technicians and bookkeepers (12200), administrative officers (13100), administrative assistants (13110), legal administrative assistants (13111), medical administrative assistants (13112), retail sales supervisors (62010), food service supervisors (62020), real estate agents and salespersons (63101), religious leaders (41302) and religious workers (42204). TEER 4 and 5 jobs are also out, because the Skilled Worker stream accepts only TEER 0 to 3 and the Entry Level and Semi-Skilled stream is closed.",
+        links: [{ href: "/articles/bc-pnp-ineligible-occupations-employers-2027", label: "Ineligible occupations and employers" }],
+      },
+      {
+        q: "What documents are required for the BC PNP from the employer?",
+        a: "Employer documents are uploaded with your application after you are invited, and the 30-day deadline makes it wise to prepare them early. Expect a signed BC PNP employer declaration form; a signed job offer letter showing the job title, duties, wage, hours, full-time indeterminate terms and work location; proof the business is established and in good standing in B.C. and meets the employee minimum; and, where required, evidence of recruitment. You also need reference letters from current and past employers that prove your experience, with duties, dates, hours and pay. The BC PNP may contact your employer to verify the offer, so make sure someone there will respond.",
+        links: [
+          { href: "/articles/bc-pnp-documents-checklist", label: "BC PNP documents checklist" },
+          { href: "/articles/bc-pnp-employer-guide", label: "BC PNP employer guide" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "points",
+    title: "BC PNP Points and Draws",
+    intro: "Skills Immigration registrations are ranked out of 200 points. The table below shows how the maximum breaks down under the current program guide; the answers that follow explain the parts people ask about most.",
+    items: [
+      {
+        q: "How many points are required for the BC PNP?",
+        a: "There is no fixed pass mark. Each draw sets its own minimum, depending on how many people B.C. wants to invite from a group and how many registrants that group has. On October 8, 2026 the minimums were 76 for Care: Health, 99 for Care: Childcare, 94 for Build: Construction Trades and 86 for Veterinary Care. The most recent Innovate (High Economic Impact) round, on September 24, 2026, needed 131 points, or a wage of at least $52 an hour and $105,000 a year in a TEER 0 to 3 job. Each category opened higher earlier in 2026, from 100 (Veterinary, May) to 138 (Innovate, February and April).",
+        links: [
+          { href: "/bc-pnp-draws", label: "Latest BC PNP draws" },
+          { href: "/articles/bc-pnp-2026-draws-recap-2027-forecast", label: "2026 draws recap" },
+        ],
+      },
+      {
+        q: "How do I calculate my BC PNP points?",
+        a: "Add up the five factors in the table above. Experience: up to 20 for directly related experience, 10 for at least a year of it in Canada and 10 if you already work full-time for the employer in the job. Education: up to 27 for your highest level, 8 if completed in B.C. or 6 elsewhere in Canada, and 5 for an eligible professional designation. Language: up to 30 for your test result, plus 10 if you have English and French at CLB 4 or higher. Wage: up to 55, rising with each dollar of hourly pay. Area: up to 25 for working outside Metro Vancouver. Our calculator does the arithmetic for you.",
+        links: [
+          { href: "/bc-pnp-calculator", label: "BC PNP points calculator" },
+          { href: "/articles/bc-pnp-points-calculator-guide", label: "How BC PNP points work" },
+        ],
+      },
+      {
+        q: "What is regional experience in the BC PNP?",
+        a: "It is a 10-point bonus within the area of employment factor, and it only applies if your job offer is outside Metro Vancouver. Under section 8.5 of the program guide, Area 1 (Metro Vancouver) earns 0 points, Area 2 (Squamish, Abbotsford, Agassiz, Mission and Chilliwack) earns 5, and Area 3 (the rest of B.C.) earns 15. If your job is in Area 2 or 3, you get 10 more for regional experience, meaning at least one year of full-time paid work in Area 2 or 3 within the five years before you register, or for being a recent graduate of a public institution outside Metro Vancouver. You can claim only one, so the area maximum is 25.",
+        links: [{ href: "/articles/bc-pnp-look-west-regional-nominations-2027", label: "Regional points and the 35% goal" }],
+      },
+      {
+        q: "What is an eligible professional designation in the BC PNP?",
+        a: "It is a 5-point bonus in the education factor for holding a B.C. professional designation linked to your job offer. Section 8.2 of the program guide lists which ones count. They include health care assistants on the BC Care Aide and Community Health Worker Registry, practical nurses licensed with BCCNM, early childhood educators with a One Year or Five Year certificate (not Assistant), dental hygienists and dental technicians registered with the BC College of Oral Health Professionals, licensed traditional Chinese medicine practitioners and acupuncturists, veterinary technicians registered with the BC Veterinary Technologists Association, and trades workers with a valid SkilledTradesBC certificate or registered apprenticeship. Not every regulated profession is listed; veterinarians, for example, are not.",
+        links: [{ href: "/articles/bc-pnp-care-healthcare-occupations-list-2027", label: "Care occupations and designations" }],
+      },
+      {
+        q: "When is the next BC PNP draw?",
+        a: "B.C. does not publish draw dates in advance, so nobody can give you the exact date. What we can describe is the 2026 pattern. Since May there have been roughly two draw days a month: Care and Build rounds early in the month (May 6, June 2, July 9, August 6, September 10 and October 8) and an Innovate High Economic Impact round in the middle or second half of the month (May 14, June 18, July 16, August 20 and September 24). As of October 18, 2026, no October Innovate round had been published. If the pattern holds, one could follow later in October, but that is our inference, not an announcement.",
+        links: [{ href: "/bc-pnp-draws", label: "BC PNP draw results" }],
+      },
+      {
+        q: "How often are BC PNP draws held?",
+        a: "In 2026, about twice a month once the new priorities were in place. There were no Skills Immigration draws in January or March. Three High Economic Impact rounds ran in February and April, then from May onward B.C. alternated targeted Care and Build draws with Innovate rounds. Entrepreneur Immigration has its own, smaller draws. None of this is guaranteed: B.C. held only three Skills Immigration rounds in all of 2025, and the program guide lets the BC PNP change draw frequency at any time. Both 2025 and 2026 started slowly while B.C. waited for its federal allocation, so a quiet start to 2027 would not be surprising.",
+        links: [{ href: "/articles/bc-pnp-2026-draws-recap-2027-forecast", label: "2026 draws recap and 2027 forecast" }],
+      },
+      {
+        q: "How many pending applications does the BC PNP have?",
+        a: "The BC PNP does not publish a live count of pending applications. Two official figures come close. The invitations page posts a periodic snapshot of registrations waiting in the pool by score: 7,695 on October 6, 2026, of which only 203 scored 130 or more. The annual BC PNP Statistical Report gives year-level inventory figures; the 2025 report, published August 26, 2026, said the program began 2025 with about 5,200 applications in inventory, more than that year's initial allocation. Numbers you see elsewhere for current pending applications are estimates, not BC PNP data.",
+        links: [{ href: "/articles/bc-pnp-statistical-report-2025-analysis", label: "What the 2025 statistical report shows" }],
+      },
+    ],
+  },
+  {
+    id: "costs",
+    title: "Costs and Timelines",
+    intro: "Fees are set separately by the BC PNP and IRCC, and so are processing times. All amounts are in Canadian dollars.",
+    items: [
+      {
+        q: "How much does the BC PNP cost?",
+        a: "Registering for Skills Immigration is free, and the application fee is $1,750 for applications submitted on or after January 22, 2026 (it was $1,475). A request for review after a refusal costs $500. Entrepreneur Immigration charges $300 to register and $3,500 to apply. IRCC fees are separate: $990 processing plus a $600 right of permanent residence fee ($1,590) for you and for a spouse or partner, $270 per dependent child, and $85 for biometrics ($170 family maximum). A single nominee's government fees therefore total $3,425, before medical exams, police certificates, language tests, credential assessments and any professional fees.",
+        links: [
+          { href: "/articles/bc-pnp-cost-guide-2026", label: "BC PNP cost guide 2026" },
+          { href: "/articles/canada-pr-application-fees-2027", label: "Canada PR fees" },
+        ],
+      },
+      {
+        q: "How long does the BC PNP take to process, and how long until nomination?",
+        a: "After you submit a complete application, WelcomeBC's published estimate has been about three months for roughly 80% of Skills Immigration applications, with a warning that times change with application volume. That clock starts at submission. Before it, you may wait weeks or many months in the registration pool, depending on your score and occupation, and a registration not invited within 12 months is removed. Add up to 30 days to prepare and submit your application. Requests for more documents, slow employer verification and job duties that do not match the NOC are the usual causes of delay. There is no paid fast-track option.",
+        links: [{ href: "/articles/bc-pnp-processing-times", label: "BC PNP processing times" }],
+      },
+      {
+        q: "How long does BC PNP Express Entry take?",
+        a: "With the Express Entry BC option, the provincial part works the same way: registration, invitation, 30 days to apply and the BC PNP's processing time. The difference comes after nomination. You accept the nomination in your IRCC Express Entry profile, your CRS score rises by 600 points, and you are normally invited in a following provincial nominee round. You then have 60 days to submit your permanent residence application online, and IRCC's service standard for Express Entry is six months for 80% of complete applications. One short-term caution: IRCC says invitation rounds may pause for up to two weeks while it rescores profiles under the CRS changes taking effect November 3, 2026.",
+        links: [{ href: "/articles/bc-pnp-express-entry-bc-eebc-guide-2026", label: "Express Entry BC guide" }],
+      },
+    ],
+  },
+  {
+    id: "applying",
+    title: "Applying and Tracking Your BC PNP File",
+    intro: "Everything in the BC PNP happens in its own online portal, separate from your IRCC account. These answers cover setting up, applying and checking where your file stands.",
+    items: [
+      {
+        q: "How do I apply for the BC PNP?",
+        a: "For the Skilled Worker stream: 1) confirm your job offer, employer and occupation qualify; 2) get valid language test results and gather proof of your experience and education; 3) create a BCPNP Online account and submit a free registration, selecting the Express Entry BC option if you have an Express Entry profile; 4) wait for a draw; 5) if invited, submit a complete application with the $1,750 fee within 30 calendar days; 6) after nomination, apply to IRCC. Health Authority candidates apply directly without registering. Pay BC PNP fees only through BCPNP Online; WelcomeBC warns that requests to pay any other way, such as by wire transfer or gift cards, should be reported.",
+        links: [{ href: "/articles/how-to-apply-bc-pnp", label: "Step-by-step application guide" }],
+      },
+      {
+        q: "How do I apply for BC PNP Express Entry?",
+        a: "First create an Express Entry profile with IRCC and confirm you qualify for one of its three programs. Note your Express Entry profile number and job seeker validation code. Then, in BCPNP Online, register under the Skilled Worker stream (or apply under the Health Authority stream), select the Express Entry BC option and enter those details. Keep your Express Entry profile active and consistent with your BC PNP file; if it expires, you cannot use the option. If you are nominated, accept the nomination in your IRCC account and wait for an invitation. From November 3, 2026, IRCC also awards new CRS points for some job offers, so keep your job offer details current in your profile.",
+        links: [{ href: "/articles/bc-pnp-express-entry-bc-eebc-guide-2026", label: "Express Entry BC guide" }],
+      },
+      {
+        q: "How do I create a BC PNP profile?",
+        a: "There is no separate profile: you create a BCPNP Online account, then a Skills Immigration registration inside it. You will enter your job offer (employer, NOC, wage, hours and work location), work experience, education, language test results and, if applicable, your Express Entry details, and the system calculates your score. Claim only what you can prove. If you are invited on a factor you cannot document, your application can be refused. Update your registration if your wage, language results or experience improve, because draws use the information in the pool on the draw date, and note when your registration will expire after 12 months.",
+        links: [{ href: "/articles/how-to-use-bc-pnp-calculator-2026", label: "Estimate your score before you register" }],
+      },
+      {
+        q: "How do I check my BC PNP application status?",
+        a: "Log in to your BCPNP Online account. Your dashboard shows whether your registration is active, whether you have been invited and the status of any application you have submitted. The BC PNP also sends invitations, document requests and decisions through the portal and by email, so check both regularly, including your spam folder, and answer requests before their deadline. Once you are nominated and apply for permanent residence, the federal stage is tracked separately, in your IRCC secure account or with IRCC's application status tracker.",
+        links: [{ href: "/articles/bc-pnp-processing-times", label: "Processing stages and timelines" }],
+      },
+      {
+        q: "What happens after I receive a BC PNP invitation?",
+        a: "You have 30 calendar days to submit a complete application, and that period cannot be extended. You upload documents such as your passport, language results, education credentials, reference letters for your work experience and your employer's declaration and job offer, and you pay the $1,750 fee. Everything must support what you claimed in your registration. Under the program guide, if you were invited on a factor you did not actually meet, such as the credential a targeted draw required, your application will be refused. If you miss the deadline, the invitation lapses and you would need to register again.",
+        links: [{ href: "/articles/bc-pnp-after-ita-next-steps-guide-2026", label: "Next steps after an invitation" }],
+      },
+    ],
+  },
+  {
+    id: "after-nomination",
+    title: "After Nomination",
+    intro: "A nomination is the end of the provincial stage and the start of the federal one.",
+    items: [
+      {
+        q: "How long does it take to get PR after BC PNP nomination?",
+        a: "It depends on how you apply to IRCC. Express Entry BC nominees use Express Entry, where IRCC's service standard is six months for 80% of complete applications, plus a short wait for an invitation. Base nominees, without Express Entry, apply through IRCC's non-Express Entry provincial nominee process, which IRCC's processing-time tool has shown at more than a year during 2026. Add time if IRCC asks for new medical exams, police certificates or biometrics. Always check IRCC's tool when you apply: it reflects the current backlog, not a guarantee.",
+        links: [{ href: "/articles/how-long-to-get-pr-in-canada", label: "How long to get PR in Canada" }],
+      },
+      {
+        q: "What happens after I get a BC PNP nomination?",
+        a: "You receive a nomination letter, and your next step is the federal application. Express Entry BC nominees accept the nomination in their IRCC profile and wait for an invitation; base nominees apply to IRCC directly as provincial nominees. While IRCC processes your file, you must keep meeting the conditions of your nomination, which generally means staying in the job and intending to live in B.C. If your work permit is running out, the BC PNP may issue a work permit support letter. A nomination does not guarantee permanent residence: IRCC still assesses admissibility, and a nomination can be withdrawn if your circumstances change or information was misrepresented.",
+        links: [
+          { href: "/articles/bc-pnp-after-nomination", label: "After nomination: next steps" },
+          { href: "/articles/bc-pnp-work-permit-guide", label: "Work permits while you wait" },
+        ],
+      },
+      {
+        q: "What if my BC PNP application is refused?",
+        a: "You receive a letter explaining the reasons. If you believe the BC PNP made an error in assessing what you submitted, you can request a review for a $500 non-refundable fee within the deadline in your letter. A review looks at the original decision; it is not a chance to add new evidence. If the refusal reflects a genuine gap, such as an expired language test or a job offer that did not meet the rules, it is usually better to fix the problem and register again. Misrepresentation findings are serious and can bar both you and your employer for up to two years.",
+        links: [{ href: "/articles/bc-pnp-refusal-appeal-reconsideration-guide-2026", label: "Refusals and requests for review" }],
+      },
+    ],
+  },
+  {
+    id: "special-cases",
+    title: "Special Cases: Tech, Graduates, Health, Entrepreneurs and Families",
+    intro: "Some of the most-searched BC PNP questions are about streams that have changed or closed. Here is where each stands in October 2026.",
+    items: [
+      {
+        q: "What is the BC PNP Tech Pilot (BC PNP Tech)?",
+        a: "It was B.C.'s fast track for technology workers. The Tech Pilot launched in May 2017 with weekly draws for registrants holding job offers in eligible tech occupations (initially 29). In 2021 B.C. made it permanent and renamed it BC PNP Tech. The BC PNP credits its tech measures with 13,868 nominations from 2017 to 2025. It is now over: on April 23, 2026 the BC PNP confirmed that the final priority technology draw took place on December 3, 2024. Tech occupations remain eligible, and 35 of them can still use a limited-term job offer of at least a year with 120 days remaining, but tech candidates now compete in Innovate High Economic Impact rounds.",
+        links: [{ href: "/articles/tech-workers-bc-pnp-2027-after-tech-draws-ended", label: "Tech workers after the end of tech draws" }],
+      },
+      {
+        q: "How do I apply to BC PNP Tech, and how do I get a job offer for it?",
+        a: "You cannot apply to BC PNP Tech in 2026, because there is no tech draw. A tech worker applies like anyone else, under the Skilled Worker stream and usually with the Express Entry BC option, and aims for an Innovate round; on September 24, 2026 the thresholds were $52 an hour and $105,000 a year, or 131 points. To find a job offer, apply directly to B.C. employers that have operated in B.C. for at least a year and meet the employee minimums. Placement and staffing agencies cannot support a BC PNP application, and you should never pay anyone for a job offer. Tech workers already in Canada should also weigh the Canadian Experience Class.",
+        links: [
+          { href: "/articles/tech-workers-bc-pnp-2027-after-tech-draws-ended", label: "Tech workers' PR options" },
+          { href: "/articles/bc-pnp-job-offer-scams-fraud-2027", label: "Job offer scams to avoid" },
+        ],
+      },
+      {
+        q: "How do I apply for the BC PNP International Graduate stream?",
+        a: "You can't. The International Graduate stream closed in November 2024 and the International Post-Graduate stream in January 2025. Planned bachelor's, master's and doctorate streams were suspended in April 2025, and on April 23, 2026 the BC PNP said it will not launch new student streams. Graduates now use the Skilled Worker stream, which needs a TEER 0 to 3 job offer and two years of skilled experience; work on a study permit generally does not count, although some paid co-op can. A B.C. credential still earns 8 extra points, and a public institution outside Metro Vancouver can add 10 regional points. Many graduates find the Canadian Experience Class faster.",
+        links: [{ href: "/articles/international-graduates-bc-pr-options-2027", label: "International graduates: PR options" }],
+      },
+      {
+        q: "Can health care workers apply through the Health Authority stream?",
+        a: "Yes. The Health Authority stream is for people employed or offered a job by one of B.C.'s public health authorities, mainly in health occupations (any NOC starting with 3) plus a few social and community service roles; physicians, nurse practitioners and midwives supported by a health authority have their own rules. Unlike the Skilled Worker stream, you apply directly, without registering or waiting for a draw. Health workers with private employers can register under the Skilled Worker stream and compete in Care: Health draws, which had a minimum of 76 points in September and October 2026. In 2025, 1,678 people were nominated through the Health Authority stream.",
+        links: [{ href: "/articles/bc-pnp-health-authority-stream", label: "Health Authority stream guide" }],
+      },
+      {
+        q: "Can I get BC PNP as an entrepreneur?",
+        a: "Yes, through Entrepreneur Immigration, which does not need a job offer. You register and are scored; if invited, you apply, sign a performance agreement and come to B.C. on a work permit to establish and actively manage the business. Nomination for permanent residence follows once you meet the agreement. There is a Base stream and a Regional stream for smaller communities, which requires a referral from a participating community. Draws are small: on September 22, 2026, the Base round invited 10 people at a minimum score of 119. Fees are $300 to register and $3,500 to apply. Check net worth and investment minimums in the current Entrepreneur Immigration guide.",
+        links: [{ href: "/articles/bc-pnp-entrepreneur-immigration", label: "Entrepreneur Immigration guide" }],
+      },
+      {
+        q: "Can my spouse and children come with me through the BC PNP?",
+        a: "Yes. The BC PNP nominates you as the principal applicant, and your spouse or common-law partner and dependent children can be included in your permanent residence application to IRCC and become permanent residents with you. Under IRCC's rules, a dependent child is generally under 22 and not a spouse or partner, or older and dependent because of a physical or mental condition. Each family member adds IRCC fees: $1,590 for a spouse or partner and $270 per child. Declare every family member accurately in both your BC PNP and IRCC applications, including anyone who will not move with you.",
+        links: [{ href: "/articles/bc-pnp-spouse-family-guide-2026", label: "Spouse and family guide" }],
+      },
+      {
+        q: "What is PNP-BC (medical)?",
+        a: "It has nothing to do with the BC PNP. In U.S. nursing, PNP means pediatric nurse practitioner, and the -BC (board certified) suffix belongs to credentials from the American Nurses Credentialing Center, such as its PPCNP-BC, whose initial certification ANCC retired after 2019. New pediatric nurse practitioners now certify through the Pediatric Nursing Certification Board as CPNP-PC or CPNP-AC.",
+        links: [{ href: "/articles/bc-pnp-nurses-health-care-assistants-2027", label: "Nurses and the BC PNP" }],
+      },
+    ],
+  },
+];
+
+const allItems = groups.flatMap((g) => g.items);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": allItems.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a,
+    },
+  })),
+};
+---
+
+<ArticleLayout slug="bc-pnp-questions-answered" datePublished="2026-10-18" dateModified="2026-10-18" articleSection="Guide" keywords="BC PNP questions, what is BC PNP, how does BC PNP work, BC PNP requirements, BC PNP points required, next BC PNP draw, how long does BC PNP take, BC PNP cost, how to apply for BC PNP, BC PNP Express Entry, BC PNP tech pilot, BC PNP international graduate" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        FAQ Hub
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        BC PNP Questions Answered (2026): 38 Quick Answers From an RCIC
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Short, direct answers to the questions people search most about British Columbia's Provincial Nominee Program, each checked against the October 2026 rules and linked to our full guide on the topic.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-10-18">October 18, 2026</time>
+        <span>&bull;</span>
+        <span>20 min read</span>
+      </div>
+    </header>
+
+    <div class="bg-emerald-50 border-l-4 border-emerald-500 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-emerald-900 mb-2">Quick answer</p>
+      <p class="text-emerald-800">
+        The BC PNP is British Columbia's program for nominating workers and entrepreneurs for Canadian permanent residence. In 2026 it has 6,254 nominations and, for workers, requires a job offer from an eligible B.C. employer. Registrations are scored out of 200, and draw minimums in September and October 2026 ranged from 76 (health occupations) to 131 (High Economic Impact). The application fee is $1,750, and IRCC fees and processing come after nomination.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">6,254</div>
+        <div class="text-sm text-slate-600 font-medium">BC PNP nominations for 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-green-600 mb-2">7,695</div>
+        <div class="text-sm text-slate-600 font-medium">Registrations in the pool, Oct 6, 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-red-600 mb-2">76–131</div>
+        <div class="text-sm text-slate-600 font-medium">Draw minimums, Sep–Oct 2026</div>
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        Most BC PNP questions have short answers that are easy to get wrong, because the program changed more in 2025 and 2026 than in the previous decade. Tech draws ended, student streams closed, a list of ineligible occupations arrived, and draws now target Care, Build and Innovate priorities. This hub answers 38 of the most common questions in 60 to 150 words each, grouped by theme. Each answer ends with a link to our in-depth article if you need more. To see where your own profile stands, use the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP calculator</a>.
+      </p>
+
+      <p class="text-base text-gray-500">
+        This is general information, not legal advice. Your situation may turn on details that a short answer cannot cover.
+      </p>
+
+      <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 my-8" aria-label="Table of contents">
+        <p class="font-bold text-slate-900 mb-3">Jump to a section</p>
+        <ol class="list-decimal pl-6 space-y-1 text-base">
+          <li><a href="#at-a-glance" class={linkClass}>BC PNP at a glance (October 2026)</a></li>
+          {groups.map((g) => (
+            <li><a href={`#${g.id}`} class={linkClass}>{g.title}</a> <span class="text-slate-500">({g.items.length} questions)</span></li>
+          ))}
+          <li><a href="#sources" class={linkClass}>Sources</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="at-a-glance" class="text-3xl font-bold mt-12 mb-6 scroll-mt-24">BC PNP at a Glance (October 2026)</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Topic</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Status as of October 18, 2026</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">2026 allocation</td><td class="px-4 py-3">6,254 (5,254 announced December 2025, plus 1,000 on August 18, 2026)</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Open streams</td><td class="px-4 py-3">Skilled Worker and Health Authority (each with the Express Entry BC option); Entrepreneur Immigration Base and Regional</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Closed or ended</td><td class="px-4 py-3">International Graduate (Nov 2024), International Post-Graduate (Jan 2025), Entry Level and Semi-Skilled (Apr 2026), priority tech draws (last held Dec 3, 2024)</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Draw types</td><td class="px-4 py-3">Care (health, childcare, education, veterinary), Build (construction trades), Innovate (High Economic Impact by wage or score)</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Latest draws</td><td class="px-4 py-3">Oct 8: Health 76, Childcare 99, Construction 94, Veterinary 86. Sep 24 Innovate: 131 points, or $52/hr and $105,000/yr</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Job offer</td><td class="px-4 py-3">Required for Skills Immigration; 12 occupations ineligible for applications after June 13, 2026</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Fees</td><td class="px-4 py-3">Registration free; application $1,750; IRCC $1,590 per adult (including the $600 RPRF)</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Key deadlines</td><td class="px-4 py-3">30 calendar days to apply after an invitation; registrations expire after 12 months</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      {groups.map((g) => (
+        <section>
+          <h2 id={g.id} class="text-3xl font-bold mt-12 mb-6 scroll-mt-24">{g.title}</h2>
+          <p>{g.intro}</p>
+
+          {g.id === "points" && (
+            <div class="overflow-x-auto my-8">
+              <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+                <thead class="bg-slate-100">
+                  <tr>
+                    <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Factor</th>
+                    <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Maximum</th>
+                    <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">What earns the points</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr><td class="px-4 py-3 font-medium">Work experience</td><td class="px-4 py-3">40</td><td class="px-4 py-3">Directly related experience (up to 20), 1+ year of it in Canada (10), currently working full-time for the employer (10)</td></tr>
+                  <tr><td class="px-4 py-3 font-medium">Education</td><td class="px-4 py-3">40</td><td class="px-4 py-3">Highest level (up to 27), completed in B.C. (8) or elsewhere in Canada (6), eligible professional designation (5)</td></tr>
+                  <tr><td class="px-4 py-3 font-medium">Language</td><td class="px-4 py-3">40</td><td class="px-4 py-3">CLB 4 (5 points) to CLB 9+ (30 points), plus 10 for English and French at CLB 4+</td></tr>
+                  <tr><td class="px-4 py-3 font-medium">Hourly wage</td><td class="px-4 py-3">55</td><td class="px-4 py-3">Rises with each $1 of base hourly pay; $70+ earns the maximum</td></tr>
+                  <tr><td class="px-4 py-3 font-medium">Area of employment</td><td class="px-4 py-3">25</td><td class="px-4 py-3">Area 2 (5) or Area 3 (15), plus 10 for regional experience or regional alumni</td></tr>
+                  <tr class="bg-slate-50"><td class="px-4 py-3 font-bold">Total</td><td class="px-4 py-3 font-bold">200</td><td class="px-4 py-3">Draws rank you within the group you qualify for</td></tr>
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {g.items.map((f) => (
+            <div class="mt-8">
+              <h3 class="text-2xl font-semibold mt-8 mb-3">{f.q}</h3>
+              <p>{f.a}</p>
+              <p class="text-base mt-2">
+                <span class="font-semibold text-slate-700">In depth: </span>
+                {f.links.map((l, i) => (
+                  <>{i > 0 ? " · " : ""}<a href={l.href} class={linkClass}>{l.label}</a></>
+                ))}
+              </p>
+            </div>
+          ))}
+        </section>
+      ))}
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-10">
+        <p class="font-semibold text-blue-900 mb-2">Key takeaway</p>
+        <p class="text-blue-800">In 2026 the two questions that decide most BC PNP cases are whether your job offer and employer qualify, and which draw group your occupation and credentials put you in. Settle those before worrying about a few points either way.</p>
+      </div>
+
+      <h2 id="sources" class="text-3xl font-bold mt-12 mb-6 scroll-mt-24">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP news (April 23 and August 18, 2026 updates), WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP invitations to apply and registration pool, WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Skills Immigration Program Guide (PDF), WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Skills Immigration overview and processing times, WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/entrepreneur-immigration" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Entrepreneur Immigration, WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-statistical-report-2025-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Statistical Report and Year in Review 2025 (PDF), WelcomeBC</a></li>
+        <li><a href="https://ircc.canada.ca/english/information/fees/fees.asp" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC fee list</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Check processing times</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Express Entry rounds of invitations</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC news release, October 16, 2026: Express Entry changes from November 3, 2026</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC: Provincial Nominee Program</a></li>
+        <li><a href="https://www.nursingworld.org/our-certifications/pediatric-primary-care-nurse-practitioner/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">ANCC: Pediatric Primary Care Nurse Practitioner certification</a></li>
+        <li><a href="https://www.pncb.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Pediatric Nursing Certification Board (PNCB)</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of October 18, 2026. Program rules change often; confirm on IRCC or WelcomeBC before applying.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-2026-draws-recap-2027-forecast" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Draws</div>
+          <div class="font-bold text-gray-900">BC PNP 2026 Draws Recap and 2027 Forecast</div>
+        </a>
+        <a href="/articles/how-to-apply-bc-pnp" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">How-To</div>
+          <div class="font-bold text-gray-900">How to Apply for the BC PNP</div>
+        </a>
+        <a href="/articles/bc-pnp-points-calculator-guide" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Points</div>
+          <div class="font-bold text-gray-900">BC PNP Points Guide</div>
+        </a>
+        <a href="/articles/bc-pnp-2027-outlook-predictions" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Outlook</div>
+          <div class="font-bold text-gray-900">BC PNP 2027 Outlook and Predictions</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
