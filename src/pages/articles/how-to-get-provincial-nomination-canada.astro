@@ -1,0 +1,389 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "How to Get a Provincial Nomination in Canada (2026): Step-by-Step for Every Province";
+const description = "How to get a provincial nomination in Canada in 2026: the 4 ways provinces select, base vs enhanced, 8 steps, and a verified table for every PNP province.";
+const canonical = "https://bcpnpcalculator.ca/articles/how-to-get-provincial-nomination-canada";
+
+const faqs = [
+  {
+    q: "How do I get a provincial nomination in Canada?",
+    a: "Pick a province whose streams match your job, location and status, confirm you meet one stream's requirements, get your language test, credential assessment and (usually) a job offer ready, then register an expression of interest or profile. If the province invites you, submit a full application and fee. If approved, you receive a nomination certificate and then apply to IRCC for permanent residence before it expires."
+  },
+  {
+    q: "Can I get a provincial nomination without a job offer?",
+    a: "It is possible but uncommon in 2026. British Columbia, Ontario, Newfoundland and Labrador, Yukon and the Northwest Territories' Employer-Driven Stream need a job offer. Manitoba's Skilled Worker Overseas pathway and Saskatchewan's Occupation In-Demand and Express Entry sub-categories do not require one, but Manitoba's recent draws only invited people directly recruited by the province, and Saskatchewan's EOI page said no draws were scheduled as of October 2026."
+  },
+  {
+    q: "What is the difference between a base and an enhanced nomination?",
+    a: "An enhanced nomination is issued through an Express Entry-linked stream. You accept it in your Express Entry profile, receive 600 extra CRS points and apply for permanent residence online after an invitation. A base nomination is issued outside Express Entry, and you send a separate non-Express Entry permanent residence application to IRCC, which usually takes longer. The province tells you which route applies."
+  },
+  {
+    q: "Does a provincial nomination guarantee permanent residence?",
+    a: "No. The province only nominates you. IRCC still decides your permanent residence application and checks admissibility, including medical exams, police certificates and security screening. For enhanced nominees, IRCC says the 600 points are usually enough for an invitation in the next round, but an invitation is still not an approval."
+  },
+  {
+    q: "Can I apply to more than one province at the same time?",
+    a: "You can register interest in more than one province if you genuinely meet each one's rules and intend to live where you are nominated. IRCC says you can receive more than one notification of interest in Express Entry but can only hold one nomination at a time. Some provinces, such as BC, also limit you to one active registration or application in their own program."
+  },
+  {
+    q: "How long is a provincial nomination valid?",
+    a: "It depends on the province, and the expiry date is printed on your nomination document. Nova Scotia tells nominees to apply to IRCC within 12 months of receiving the nominee certificate, while BC tells nominees to apply before the expiry date on their Confirmation of Nomination. If you were nominated through Express Entry, you have 30 calendar days to accept or reject the nomination in your profile."
+  },
+  {
+    q: "How do I get nominated by British Columbia?",
+    a: "Get a full-time, indeterminate job offer from an eligible B.C. employer in an eligible occupation, then register in the Skills Immigration Registration System (or apply directly if a B.C. health authority supports you). BC scores registrations out of 200 and invites people through targeted Care, Build and Innovate draws. After an invitation you have 30 calendar days to apply and pay the $1,750 fee."
+  },
+  {
+    q: "Can Quebec or Nunavut nominate me?",
+    a: "No. IRCC states that Quebec and Nunavut do not have provincial nominee programs. Quebec selects its own economic immigrants under its agreement with Canada and issues a Quebec Selection Certificate to people it chooses, who then apply to IRCC. Nunavut has no nominee program."
+  },
+  {
+    q: "Do I have to pay someone to get a provincial nomination?",
+    a: "No. Registering with the BC PNP is free, using a representative is optional, and provinces say representatives do not get faster or better outcomes. The only legitimate provincial charges are the official fees paid through the province's own portal. Never pay for a job offer: in B.C. it is illegal to buy a job or for anyone to ask you for money in exchange for one."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+
+const ext = { target: "_blank", rel: "noopener noreferrer", class: "text-blue-600 underline" };
+---
+
+<ArticleLayout slug="how-to-get-provincial-nomination-canada" datePublished="2026-10-18" dateModified="2026-10-18" articleSection="Guide" keywords="how to get a provincial nomination in Canada, how to get provincial nomination canada, how to get nominated by a province in canada, how to get canadian provincial nomination, base vs enhanced nomination, PNP expression of interest, provincial nominee program step by step 2026" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        Step-by-Step Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        How to Get a Provincial Nomination in Canada (2026): Step-by-Step for Every Province
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        The practical route from "I want a PNP" to a nomination certificate: how each province actually picks people, what to prepare, and what changed in 2026.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-10-18">October 18, 2026</time>
+        <span>&bull;</span>
+        <span>14 min read</span>
+      </div>
+    </header>
+
+    <div class="bg-emerald-50 border-2 border-emerald-200 p-6 rounded-2xl mb-10">
+      <p class="font-bold text-emerald-900 mb-2">Quick answer</p>
+      <p class="text-emerald-900">
+        To get a provincial nomination in Canada, choose a province whose streams fit your occupation, location and status; meet one stream's requirements (usually a job offer in that province, a valid language test and a credential assessment); and register an expression of interest or profile. If the province invites you, submit a full application and fee. Once nominated, you apply to IRCC for permanent residence before the nomination expires.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">11</div>
+        <div class="text-sm text-slate-600 font-medium">Provinces and territories with a nominee program</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-green-600 mb-2">600</div>
+        <div class="text-sm text-slate-600 font-medium">CRS points added by an enhanced nomination</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-red-600 mb-2">91,500</div>
+        <div class="text-sm text-slate-600 font-medium">National PNP admissions target, 2026</div>
+      </div>
+    </div>
+
+    <nav class="bg-white p-6 rounded-2xl border border-slate-200 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">On this page</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#four-ways" class="hover:underline">The 4 ways provinces select people</a></li>
+        <li><a href="#base-enhanced" class="hover:underline">Base vs enhanced nominations</a></li>
+        <li><a href="#steps" class="hover:underline">How to get nominated by a province: 8 steps</a></li>
+        <li><a href="#table" class="hover:underline">Province-by-province quick reference</a></li>
+        <li><a href="#chances" class="hover:underline">How to raise your chances</a></li>
+        <li><a href="#bc" class="hover:underline">Worked example: getting nominated by British Columbia</a></li>
+        <li><a href="#after" class="hover:underline">After you are nominated</a></li>
+        <li><a href="#mistakes" class="hover:underline">Mistakes and fraud warnings</a></li>
+        <li><a href="#faq" class="hover:underline">FAQ</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        If you are searching for how to get a provincial nomination in Canada, you probably already know what the Provincial Nominee Program is. (If not, start with our <a href="/articles/what-is-pnp-provincial-nominee-program" class="text-blue-600 hover:text-blue-800 underline">PNP explainer</a>, and for which province suits you, see <a href="/articles/best-provinces-pnp-2027" class="text-blue-600 hover:text-blue-800 underline">best provinces for PNP in 2027</a>.) This guide is about the doing: how provinces really choose people in 2026, the order of steps, the deadlines that catch applicants out, and a checked quick-reference table for every province and territory that nominates. It is general information, not legal advice.
+      </p>
+
+      <h2 id="four-ways" class="text-3xl font-bold mt-12 mb-6">The 4 Ways Provinces Actually Select People</h2>
+
+      <p>
+        Almost no province lets you simply "apply" any more. Nearly all of them now use a two-step model: you show interest, and the province decides whom to invite. In practice, every stream falls into one or more of these four selection methods.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">1. Points-based expression of interest (EOI) pools</h3>
+      <p>
+        You fill in a profile, the province scores it, and it periodically invites the best-ranked people who match its current priorities. Examples: BC's Skills Immigration Registration System (scored out of 200), Manitoba's EOI with Letters of Advice to Apply, Saskatchewan's International Skilled Worker EOI, Alberta's Worker Expression of Interest, Ontario's new Ontario Workforce Priority EOI, and the EOI pools in Nova Scotia, New Brunswick, Prince Edward Island and Newfoundland and Labrador. A high score is not always enough. Alberta says its EOI score "is not the only factor" it uses, and Nova Scotia says selections are based on priorities and are not first-come, first-served.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">2. Express Entry-linked selections</h3>
+      <p>
+        If you have an Express Entry profile, IRCC says there are two ways to be nominated: apply to a province's Express Entry stream yourself, or mark your interest in provinces in your profile so they can find you. A province that likes your profile may send a <strong>notification of interest</strong> to your IRCC account. IRCC is clear that this "is not a nomination and does not guarantee you'll be nominated"; you still have to apply to the province. Nova Scotia, for example, directs people who received a Notice of Interest to its Critical Vacancies page. Most provinces' Express Entry streams also require you to go through their own EOI first.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">3. Employer and job-offer-driven streams</h3>
+      <p>
+        Here the job offer is the gate. In Yukon, an employer submits the EOI during set intake windows. In the Northwest Territories, the employer registers first and the candidate then completes an EOI survey. Saskatchewan employers must have the position approved through an Employer Position Assessment before a worker can apply. BC, Ontario and Newfoundland and Labrador require a qualifying job offer for every worker stream.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">4. In-province graduates and workers</h3>
+      <p>
+        Provinces increasingly favour people already there. Manitoba's October 8, 2026 draw invited only candidates declaring current employment in Manitoba in health or education roles, plus those directly recruited by the province. Alberta's Opportunity Stream requires that you are working in Alberta on a valid work permit. Saskatchewan reserves 750 priority-sector spaces for Saskatchewan post-secondary graduates, and Newfoundland and Labrador's published criteria prioritize graduates with ties to the province. BC no longer has graduate streams, but Canadian education still earns registration points.
+      </p>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+        <p class="font-semibold text-blue-900 mb-2">What this means for you</p>
+        <p class="text-blue-800">Before choosing a province, ask which of these four doors you can realistically walk through. If you have no job offer, no connection to the province and no Express Entry profile, most 2026 streams are closed to you, whatever your points.</p>
+      </div>
+
+      <h2 id="base-enhanced" class="text-3xl font-bold mt-12 mb-6">Base vs Enhanced Nominations: What Each Means for PR</h2>
+
+      <p>
+        Every nomination ends with a federal application to IRCC, and there are two routes. The province or territory tells you which one applies to you.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">&nbsp;</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Enhanced (Express Entry)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Base (non-Express Entry)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Who it is for</td><td class="px-4 py-3">You qualify for a provincial stream and a federal Express Entry program (Federal Skilled Worker, Canadian Experience Class or Federal Skilled Trades)</td><td class="px-4 py-3">You qualify for the provincial stream but not for an Express Entry program, for example many TEER 4 and 5 workers</td></tr>
+            <tr><td class="px-4 py-3 font-medium">What happens after nomination</td><td class="px-4 py-3">Accept the nomination in your Express Entry profile within 30 calendar days; 600 CRS points are added; wait for an invitation in a PNP draw; apply online</td><td class="px-4 py-3">Submit a non-Express Entry permanent residence application to IRCC with your nomination certificate</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Speed</td><td class="px-4 py-3">Usually faster; IRCC aims to process most complete Express Entry applications within six months</td><td class="px-4 py-3">Usually slower; check IRCC's current processing times tool</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Main risk</td><td class="px-4 py-3">Your Express Entry profile must stay valid and eligible, including language test dates</td><td class="px-4 py-3">You must apply before the nomination expires and keep meeting its conditions</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+        <p class="font-semibold text-blue-900 mb-2">Express Entry changes from November 3, 2026</p>
+        <p class="text-blue-800">On October 16, 2026, IRCC announced Express Entry changes taking effect November 3, 2026. Candidates with Canadian work experience or a qualifying job offer in a high-wage occupation (one whose median wage is at least 1.3 times the Canadian median) will receive additional CRS points, and a qualifying job offer under the Federal Skilled Worker and Federal Skilled Trades programs will no longer need an LMIA. Profiles in the pool are rescored automatically and draws may pause for up to two weeks during the switch. The announcement does not mention any change to the 600 points for a provincial nomination.</p>
+      </div>
+
+      <p>
+        IRCC's federal fee is the same either way: $1,590 for a principal applicant (a $990 processing fee plus the $600 right of permanent residence fee), the same for a spouse, and $270 per dependent child, as listed on its fee page in October 2026. See our <a href="/articles/canada-pr-application-fees-2027" class="text-blue-600 hover:text-blue-800 underline">PR fees guide</a> for a full budget.
+      </p>
+
+      <h2 id="steps" class="text-3xl font-bold mt-12 mb-6">How to Get Nominated by a Province in Canada: 8 Steps</h2>
+
+      <ol class="list-decimal pl-6 space-y-4">
+        <li><strong>Choose the province by your profile, not its allocation.</strong> Start from where you work or have a real job offer, your occupation's NOC code and TEER level, and whether you are already in Canada. A smaller program that targets your occupation beats a large one that does not. Our <a href="/articles/best-provinces-pnp-2027" class="text-blue-600 hover:text-blue-800 underline">province comparison</a> matches common profiles to programs.</li>
+        <li><strong>Check one stream's eligibility line by line.</strong> Read the stream page on the official provincial site, not a summary. Look for the job offer rules, minimum work experience, language level, education, work permit type (Alberta's Opportunity Stream, for example, does not accept maintained or restoration status) and any excluded occupations or sectors.</li>
+        <li><strong>Get your language test.</strong> Book IELTS General Training, CELPIP-General or PTE Core for English, or TEF Canada or TCF Canada for French, after checking which tests your province's stream accepts. Results are generally accepted for two years, so time the test so it is still valid when you apply to IRCC. See our <a href="/articles/bc-pnp-language-requirements" class="text-blue-600 hover:text-blue-800 underline">language guide</a>.</li>
+        <li><strong>Get an Educational Credential Assessment (ECA) for foreign education.</strong> Express Entry needs one for foreign credentials, and many provincial scoring grids only count education you can prove. Our <a href="/articles/bc-pnp-eca-guide" class="text-blue-600 hover:text-blue-800 underline">ECA guide</a> explains which organization to use.</li>
+        <li><strong>Secure and check the job offer.</strong> For most streams it must be full-time, from an employer that meets provincial rules, and in an eligible occupation, with a wage in line with the local rate. Confirm the employer is real before you register (see the fraud section below).</li>
+        <li><strong>Register your EOI or profile, and keep it accurate.</strong> Some provinces charge for this (Alberta has charged $135 per Worker EOI since April 7, 2026); BC registration is free. Profiles expire: BC removes a registration after 12 months without an invitation, Alberta Worker EOIs are valid for one year, and Nova Scotia introduced a 12-month EOI validity period on May 1, 2026. If you hold an Express Entry profile, select the provinces you are interested in.</li>
+        <li><strong>Respond to the invitation fast.</strong> Deadlines are short and usually cannot be extended: 30 calendar days in BC, 7 calendar days for Nova Scotia to update documents and pay, and 15 days for Alberta invitations. Have your documents ready before you are invited. Then submit the provincial application and pay the fee through the official portal only.</li>
+        <li><strong>Receive your nomination and apply to IRCC on time.</strong> If approved, you receive a nomination certificate (and, in some provinces, a work permit support letter). Accept it in Express Entry within 30 days, or file your base application before the expiry date shown on the certificate.</li>
+      </ol>
+
+      <h2 id="table" class="text-3xl font-bold mt-12 mb-6">Province-by-Province Quick Reference (October 2026)</h2>
+
+      <p>
+        We checked each entry against the program's official pages on October 18, 2026 and only list what we could confirm. "Job offer" refers to most worker streams; entrepreneur streams are excluded.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-3 py-3 text-left font-bold text-slate-700">Province / territory</th>
+              <th class="px-3 py-3 text-left font-bold text-slate-700">Main selection method</th>
+              <th class="px-3 py-3 text-left font-bold text-slate-700">Job offer needed?</th>
+              <th class="px-3 py-3 text-left font-bold text-slate-700">Notable 2026 change</th>
+              <th class="px-3 py-3 text-left font-bold text-slate-700">Official site</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-3 py-3 font-medium">British Columbia</td><td class="px-3 py-3">Points registration (out of 200) with targeted Care, Build and Innovate draws; Health Authority stream applies directly</td><td class="px-3 py-3">Yes</td><td class="px-3 py-3">Draws reorganized around Care, Build and Innovate (April 23); allocation raised to 6,254 (August 18)</td><td class="px-3 py-3"><a href="https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration" {...ext}>WelcomeBC</a></td></tr>
+            <tr><td class="px-3 py-3 font-medium">Alberta</td><td class="px-3 py-3">Worker EOI pool; stream and sector draws</td><td class="px-3 py-3">Mostly</td><td class="px-3 py-3">$135 Worker EOI fee (April 7); EOIs can be edited (May 26)</td><td class="px-3 py-3"><a href="https://www.alberta.ca/aaip-updates" {...ext}>alberta.ca</a></td></tr>
+            <tr><td class="px-3 py-3 font-medium">Saskatchewan</td><td class="px-3 py-3">Employer-supported categories (Employer Position Assessment); International Skilled Worker EOI pool</td><td class="px-3 py-3">Mostly</td><td class="px-3 py-3">At least 50% of nominations for priority sectors; hospitality, trucking and retail capped at 25% with intake windows; EOI page shows no scheduled draws</td><td class="px-3 py-3"><a href="https://www.saskatchewan.ca/residents/moving-to-saskatchewan/live-in-saskatchewan/by-immigrating/saskatchewan-immigrant-nominee-program" {...ext}>saskatchewan.ca</a></td></tr>
+            <tr><td class="px-3 py-3 font-medium">Manitoba</td><td class="px-3 py-3">EOI pool; Letters of Advice to Apply in draws</td><td class="px-3 py-3">Mostly</td><td class="px-3 py-3">Allocation raised to 8,000 (August); draws target people already working in Manitoba and direct recruits</td><td class="px-3 py-3"><a href="https://immigratemanitoba.com/" {...ext}>immigratemanitoba.com</a></td></tr>
+            <tr><td class="px-3 py-3 font-medium">Ontario</td><td class="px-3 py-3">Ontario Workforce Priority (OWP) EOI</td><td class="px-3 py-3">Yes (except self-employed physicians)</td><td class="px-3 py-3">Eight streams replaced by OWP (June 25); EOIs opened August 4; new REDI round for six regions (October)</td><td class="px-3 py-3"><a href="https://www.ontario.ca/page/2026-ontario-immigrant-nominee-program-updates" {...ext}>ontario.ca</a></td></tr>
+            <tr><td class="px-3 py-3 font-medium">Nova Scotia</td><td class="px-3 py-3">EOI pool selected by priorities; Express Entry notices of interest</td><td class="px-3 py-3">Mostly</td><td class="px-3 py-3">12-month EOI validity (May 1); application fees from September 1</td><td class="px-3 py-3"><a href="https://liveinnovascotia.com/nova-scotia-nominee-program" {...ext}>liveinnovascotia.com</a></td></tr>
+            <tr><td class="px-3 py-3 font-medium">New Brunswick</td><td class="px-3 py-3">EOI-based invitations</td><td class="px-3 py-3">Mostly</td><td class="px-3 py-3">Accommodation and food services excluded (February 3); Skilled Worker NB Experience invitations limited to health care, education and construction (May 4)</td><td class="px-3 py-3"><a href="https://www.gnb.ca/en/topic/family-home-community/immigration/important-notices.html" {...ext}>gnb.ca</a></td></tr>
+            <tr><td class="px-3 py-3 font-medium">Prince Edward Island</td><td class="px-3 py-3">EOI pool with scheduled draws (Labour Impact and Express Entry)</td><td class="px-3 py-3">Mostly</td><td class="px-3 py-3">2026 draws focused on priority sectors such as healthcare, trades and manufacturing</td><td class="px-3 py-3"><a href="https://www.princeedwardisland.ca/en/topic/office-of-immigration" {...ext}>princeedwardisland.ca</a></td></tr>
+            <tr><td class="px-3 py-3 font-medium">Newfoundland and Labrador</td><td class="px-3 py-3">EOI with published prioritization criteria; invitations in batches</td><td class="px-3 py-3">Yes</td><td class="px-3 py-3">Regular batches through 2026 (131 invitations on October 9)</td><td class="px-3 py-3"><a href="https://www.gov.nl.ca/immigration/invitations-to-apply-updates/" {...ext}>gov.nl.ca</a></td></tr>
+            <tr><td class="px-3 py-3 font-medium">Yukon</td><td class="px-3 py-3">Employer submits EOI during intake windows</td><td class="px-3 py-3">Yes</td><td class="px-3 py-3">Two employer intake windows in 2026 (January and July)</td><td class="px-3 py-3"><a href="https://yukon.ca/yukon-nominee-program" {...ext}>yukon.ca</a></td></tr>
+            <tr><td class="px-3 py-3 font-medium">Northwest Territories</td><td class="px-3 py-3">Employer-Driven Stream EOI ranking (employer registers, candidate completes survey)</td><td class="px-3 py-3">Yes</td><td class="px-3 py-3">Four EOI draws (March to September); next draw in early 2027</td><td class="px-3 py-3"><a href="https://www.immigratenwt.ca/expression-interest" {...ext}>immigratenwt.ca</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+        <p class="font-semibold text-amber-900 mb-2">Why Quebec (and Nunavut) are missing</p>
+        <p class="text-amber-800">IRCC states that Quebec and Nunavut do not have nominee programs. Quebec chooses its own economic immigrants under its agreement with the federal government: skilled workers declare interest through Quebec's Arrima portal, and those it selects receive a Quebec Selection Certificate (CSQ) before applying to IRCC. A CSQ is not a provincial nomination and does not give Express Entry points. Nunavut has no economic selection program of its own.</p>
+      </div>
+
+      <p>
+        For details on each province's 2026 allocation and direction, see our <a href="/articles/best-provinces-pnp-2027" class="text-blue-600 hover:text-blue-800 underline">best provinces comparison</a> and our <a href="/articles/canada-pnp-news-2026-all-provinces" class="text-blue-600 hover:text-blue-800 underline">all-provinces news roundup</a>.
+      </p>
+
+      <h2 id="chances" class="text-3xl font-bold mt-12 mb-6">How to Get a Canadian Provincial Nomination Faster: Raising Your Chances</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>A genuine job offer in the province.</strong> It is the single biggest factor. Without one, you are limited to a handful of streams that rarely draw in 2026.</li>
+        <li><strong>Work in the province first.</strong> Manitoba's draws, Alberta's Opportunity Stream (12 months of Alberta experience in your occupation, or 6 months for some post-graduation work permit holders) and the Northwest Territories' EOI grid (points for employment and time employed in the territory) all reward local work.</li>
+        <li><strong>Look outside the biggest cities.</strong> BC gives up to 25 area points for jobs outside Metro Vancouver and aims for at least 35% of nominations there. Newfoundland and Labrador prioritizes rural and regional jobs, Ontario's new REDI round covers six northern and eastern regions, and the Northwest Territories awards points for working in a small community. See our <a href="/articles/bc-pnp-look-west-regional-nominations-2027" class="text-blue-600 hover:text-blue-800 underline">BC regional guide</a>.</li>
+        <li><strong>French.</strong> Manitoba runs francophone strategic recruitment, Newfoundland and Labrador lists francophone immigration as a priority, Alberta has federal francophone spaces outside its allocation, and BC awards extra language points for English and French. Our <a href="/articles/canada-pr-planning-guide-french-advantage-2026" class="text-blue-600 hover:text-blue-800 underline">French advantage guide</a> explains the federal side.</li>
+        <li><strong>An in-demand occupation with the right credential.</strong> Health, education and construction are the common thread: BC's Care and Build draws, Manitoba's health and education draws, New Brunswick's Skilled Worker restriction to those sectors, and Newfoundland and Labrador's top priority for health roles. Licensing or certification (nursing registration, ECE certificate, trade certificate) is usually what qualifies you for the targeted draw.</li>
+        <li><strong>Higher language scores.</strong> Often the cheapest gain. In BC's grid, language points rise from 5 at CLB 4 to 30 at CLB 9 or higher. Ontario's OWP stream raised its language benchmarks in 2026.</li>
+      </ul>
+
+      <h2 id="bc" class="text-3xl font-bold mt-12 mb-6">Worked Example: How to Get Nominated by British Columbia</h2>
+
+      <p>
+        BC shows how a modern PNP works in practice. As of October 2026, every BC Skills Immigration worker stream requires a full-time job offer from an eligible B.C. employer, normally with no end date.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Step 1: Pick your stream</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Skilled Worker</strong>: a job offer in a NOC TEER 0 to 3 occupation and at least two years of skilled experience.</li>
+        <li><strong>Health Authority</strong>: for people employed or offered work by a B.C. public health authority; it does not need a registration or invitation. See our <a href="/articles/bc-pnp-health-authority-stream" class="text-blue-600 hover:text-blue-800 underline">Health Authority stream guide</a>.</li>
+        <li><strong>Express Entry BC option</strong>: available in both streams if you also qualify for Express Entry, which leads to an enhanced nomination. Details in our <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="text-blue-600 hover:text-blue-800 underline">EEBC guide</a>.</li>
+      </ul>
+      <p>
+        Closed doors: the Entry Level and Semi-Skilled stream is closed, BC said on April 23, 2026 that it will not launch new student streams, and the program guide lists occupations and employers that cannot support any application (see our <a href="/articles/bc-pnp-ineligible-occupations-employers-2027" class="text-blue-600 hover:text-blue-800 underline">ineligible occupations guide</a>).
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Step 2: Check your score and which draw you fit</h3>
+      <p>
+        BC scores registrations out of 200: up to 120 for human capital (experience, education, language) and up to 80 for economic factors (wage and area). Since April 2026, your occupation decides which contest you are in:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">BC draw type</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Who it targets</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">2026 range (published draws to October 8)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Care</td><td class="px-4 py-3">36 occupations in health, education, childcare and veterinary care</td><td class="px-4 py-3">Care: Health minimums fell from 108 (May 6) to 76 (September 10 and October 8)</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Build</td><td class="px-4 py-3">Certified workers (or registered apprentices) in 9 construction trades</td><td class="px-4 py-3">108 (May 6) down to 88 (August 6), then 94 in September and October</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Innovate (High Economic Impact)</td><td class="px-4 py-3">Any eligible occupation, by wage or by score</td><td class="px-4 py-3">Wage track fell from $70/hr and $145,000/yr to $52/hr and $105,000/yr; points track 138 to 131</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Run your real job offer wage and location through the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a> and compare the result with those cutoffs. For each objective, see our guides to <a href="/articles/bc-pnp-care-healthcare-occupations-list-2027" class="text-blue-600 hover:text-blue-800 underline">Care occupations</a>, <a href="/articles/bc-pnp-build-skilledtradesbc-certification-2027" class="text-blue-600 hover:text-blue-800 underline">Build certification</a> and <a href="/articles/bc-pnp-innovate-high-economic-impact-draws-2027" class="text-blue-600 hover:text-blue-800 underline">Innovate draws</a>.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Step 3: Register, get invited, apply</h3>
+      <p>
+        Registration in BCPNP Online is free and stays in the pool for 12 months. On October 6, 2026 the Skills Immigration pool held 7,695 registrations, only 203 of them at 130 points or more. If you are invited, you have 30 calendar days, with no extensions, to submit a complete application and pay the $1,750 application fee (in force since January 22, 2026). WelcomeBC lists a processing time of about three months. Our <a href="/articles/how-to-apply-bc-pnp" class="text-blue-600 hover:text-blue-800 underline">how to apply for BC PNP</a> walkthrough and <a href="/articles/bc-pnp-documents-checklist" class="text-blue-600 hover:text-blue-800 underline">documents checklist</a> cover the application screens and uploads. Note that the fee shown in older versions of some guides ($1,475) was replaced by $1,750 in January 2026.
+      </p>
+      <p>
+        BC plans to use its full 2026 allocation of 6,254 nominations by December 31, 2026. Its 2027 allocation has not been announced; our <a href="/articles/bc-pnp-2027-outlook-predictions" class="text-blue-600 hover:text-blue-800 underline">2027 outlook</a> explains what to expect.
+      </p>
+
+      <h2 id="after" class="text-3xl font-bold mt-12 mb-6">What Happens After You Are Nominated</h2>
+
+      <p>
+        A nomination is the provincial half of the process. Next you apply to IRCC through the enhanced or base route described above, complete medical exams, police certificates and biometrics, and keep meeting the conditions of your nomination (usually, staying with the job that supported it) until you become a permanent resident. Watch two deadlines: the nomination's expiry date, and your work permit. BC, for example, tells nominees who need a new work permit to apply within three months of the nomination date using the province's support letter. Our <a href="/articles/bc-pnp-after-nomination" class="text-blue-600 hover:text-blue-800 underline">after nomination guide</a> walks through each step for BC nominees, and most of it applies to other provinces too.
+      </p>
+
+      <h2 id="mistakes" class="text-3xl font-bold mt-12 mb-6">Mistakes and Fraud Warnings</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Common mistakes</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Claiming what you cannot prove.</strong> BC's guide says that if you are invited on a factor you did not actually meet, your application will be refused. The same logic applies everywhere: score only what your documents support at the time you register.</li>
+        <li><strong>Letting a profile or test expire.</strong> EOIs in BC, Alberta and Nova Scotia expire after about a year, and language tests generally after two years. Note the dates.</li>
+        <li><strong>Missing a short window.</strong> Seven days in Nova Scotia, 15 in Alberta and 30 in BC are not long if your employer still has to sign forms.</li>
+        <li><strong>Assuming last year's rules apply.</strong> Ontario replaced all eight streams in June 2026; New Brunswick, Saskatchewan and BC excluded whole sectors or occupations. Check the official page the week you apply.</li>
+        <li><strong>Losing status.</strong> Several streams require a valid work permit, and Alberta's Opportunity Stream does not accept maintained status. Plan renewals well before expiry.</li>
+        <li><strong>Treating the nomination as portable.</strong> Every PNP requires a genuine intention to live in the nominating province.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Fraud warnings</h3>
+      <p>
+        Because most streams require a job offer, a job offer is what scammers sell. Warning signs include any fee for a job, an LMIA or "employer support"; a guaranteed nomination; pressure to pay immediately; and requests to pay by personal transfer. In B.C., buying a job is illegal, and BC can refuse or cancel a nomination and bar the applicant and employer for up to two years. IRCC can refuse an application for misrepresentation and impose a five-year ban, even if someone else gave you the false document. Check representatives on the College of Immigration and Citizenship Consultants register. Read our full <a href="/articles/bc-pnp-job-offer-scams-fraud-2027" class="text-blue-600 hover:text-blue-800 underline">job offer scams and fraud guide</a> for verification steps and where to report.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees/works.html" {...ext}>How the Provincial Nominee Program works, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees/express-entry/get-confirm-nomination.html" {...ext}>Get or confirm a nomination (Express Entry), IRCC</a></li>
+        <li><a href="https://ircc.canada.ca/english/information/fees/fees.asp" {...ext}>Fee list, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/corporate-initiatives/levels/supplementary-immigration-levels-2026-2028.html" {...ext}>Supplementary Information for the 2026–2028 Immigration Levels Plan, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" {...ext}>Canada refocusing Express Entry on top talent (October 16, 2026), IRCC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration" {...ext}>Skills Immigration, WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply" {...ext}>BC PNP Invitations to Apply, WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/for-nominees" {...ext}>For nominees, WelcomeBC</a></li>
+        <li><a href="https://www.alberta.ca/aaip-updates" {...ext}>AAIP updates, Government of Alberta</a></li>
+        <li><a href="https://www.alberta.ca/aaip-processing-information" {...ext}>AAIP processing information, Government of Alberta</a></li>
+        <li><a href="https://www.alberta.ca/aaip-alberta-opportunity-stream-eligibility" {...ext}>Alberta Opportunity Stream eligibility, Government of Alberta</a></li>
+        <li><a href="https://www.saskatchewan.ca/residents/moving-to-saskatchewan/live-in-saskatchewan/by-immigrating/saskatchewan-immigrant-nominee-program/immigration-faqs" {...ext}>SINP Immigration FAQs, Government of Saskatchewan</a></li>
+        <li><a href="https://www.saskatchewan.ca/residents/moving-to-saskatchewan/live-in-saskatchewan/by-immigrating/saskatchewan-immigrant-nominee-program/browse-sinp-programs/applicants-international-skilled-workers/international-skilled-worker-eoi-system" {...ext}>SINP International Skilled Worker EOI System, Government of Saskatchewan</a></li>
+        <li><a href="https://immigratemanitoba.com/2026/10/expression-of-interest-draw-281/" {...ext}>MPNP Expression of Interest Draw #281, Manitoba Immigration</a></li>
+        <li><a href="https://www.ontario.ca/page/2026-ontario-immigrant-nominee-program-updates" {...ext}>2026 OINP updates, Government of Ontario</a></li>
+        <li><a href="https://liveinnovascotia.com/nova-scotia-nominee-program" {...ext}>Nova Scotia Nominee Program, Province of Nova Scotia</a></li>
+        <li><a href="https://www.gnb.ca/en/topic/family-home-community/immigration/important-notices.html" {...ext}>Immigration important notices, Government of New Brunswick</a></li>
+        <li><a href="https://www.princeedwardisland.ca/en/topic/office-of-immigration" {...ext}>Office of Immigration, Government of Prince Edward Island</a></li>
+        <li><a href="https://www.gov.nl.ca/immigration/expression-of-interest-model-prioritization-criteria/" {...ext}>EOI prioritization criteria, Government of Newfoundland and Labrador</a></li>
+        <li><a href="https://www.gov.nl.ca/immigration/invitations-to-apply-updates/" {...ext}>Invitations to Apply updates, Government of Newfoundland and Labrador</a></li>
+        <li><a href="https://yukon.ca/yukon-nominee-program" {...ext}>Yukon Nominee Program, Government of Yukon</a></li>
+        <li><a href="https://www.immigratenwt.ca/expression-interest" {...ext}>Employer-Driven Stream Expression of Interest, Northwest Territories Nominee Program</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of October 18, 2026. Program rules change often; confirm on IRCC or WelcomeBC before applying.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/best-provinces-pnp-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Comparison</div>
+          <div class="font-bold text-gray-900">Best Provinces for PNP in 2027</div>
+        </a>
+        <a href="/articles/what-is-pnp-provincial-nominee-program" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Basics</div>
+          <div class="font-bold text-gray-900">What Is the Provincial Nominee Program?</div>
+        </a>
+        <a href="/articles/how-to-apply-bc-pnp" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">BC Process</div>
+          <div class="font-bold text-gray-900">How to Apply for BC PNP</div>
+        </a>
+        <a href="/articles/bc-pnp-after-nomination" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Next Steps</div>
+          <div class="font-bold text-gray-900">After Your BC PNP Nomination</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

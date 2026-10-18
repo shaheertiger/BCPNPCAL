@@ -1,0 +1,439 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "How to Move to Vancouver, BC in 2026: Immigration Routes, Costs and Your First 90 Days";
+const description = "How to move to Vancouver, BC in 2026: immigration routes that work, September 2026 rents, wages and transit fares, BC PNP regional points and a 90-day checklist.";
+const canonical = "https://bcpnpcalculator.ca/articles/how-to-move-to-vancouver-bc";
+
+const faqs = [
+  {
+    q: "Is it hard to move to Vancouver from another country?",
+    a: "The move itself is straightforward once you have the right immigration status. Getting that status is the hard part. You need permanent residence, a work permit or a study permit, because visitor status does not let you work. Housing costs are also among the highest in Canada: in September 2026 an unfurnished one-bedroom in the City of Vancouver averaged $2,328 a month on liv.rent, and the Vancouver area's unemployment rate used for federal low-wage LMIA rules is 7.0% for October 2026 to January 2027.",
+  },
+  {
+    q: "Can I move to Vancouver without a job offer?",
+    a: "Yes, if you already have permanent residence, for example through a federal Express Entry draw, or an open work permit such as an International Experience Canada working holiday permit or an eligible spousal open work permit. The BC PNP Skills Immigration streams require a job offer from an eligible B.C. employer, and most employer-specific work permits require a Labour Market Impact Assessment.",
+  },
+  {
+    q: "How much money do I need to move to Vancouver in 2026?",
+    a: "If you immigrate through the Federal Skilled Worker or Federal Skilled Trades Program without a valid job offer and work authorization, IRCC requires proof of funds of $15,263 for one person or $28,362 for a family of four (amounts effective July 7, 2025, and still listed by IRCC in October 2026). In practice, plan for at least three months of living costs plus a security deposit of up to half a month's rent. Our sample budgets put a single person in Metro Vancouver at roughly $3,100 to $3,750 a month.",
+  },
+  {
+    q: "What is the cost of living in Vancouver in 2026?",
+    a: "Rent is the biggest cost. liv.rent's September 2026 report put average unfurnished rents in the City of Vancouver at $2,328 for a one-bedroom and $3,092 for a two-bedroom, with Surrey at $1,736 and $2,112. A one-zone adult Compass monthly pass is $117.20 after the July 1, 2026 fare increase, and B.C.'s general minimum wage has been $18.25 an hour since June 1, 2026.",
+  },
+  {
+    q: "Does BC PNP give extra points for jobs outside Vancouver?",
+    a: "Yes. The Skills Immigration registration score gives 0 area points for a job in Metro Vancouver, 5 points for Squamish, Abbotsford, Agassiz, Mission and Chilliwack, and 15 points for the rest of B.C., plus a possible 10-point regional experience or regional alumni bonus for jobs outside Metro Vancouver. B.C. also expects at least 35% of nominations to go to people working outside Metro Vancouver.",
+  },
+  {
+    q: "When does MSP health coverage start for newcomers to B.C.?",
+    a: "New residents wait for the rest of the month in which they establish residence plus two months. The B.C. government says coverage for people new to Canada may start three months after arriving in B.C., and advises buying private health insurance for the waiting period. Work and study permit holders generally need a permit valid for six months or more to qualify.",
+  },
+  {
+    q: "Can I drive in B.C. with my foreign driver's licence?",
+    a: "Yes, for a limited time. ICBC says that after moving to B.C. you have 90 days to switch your valid licence to a B.C. licence. Licences from some countries can be exchanged without testing; with others you must also pass a knowledge test and a road test. You need proof of at least two years of driving experience to avoid B.C.'s Graduated Licensing Program.",
+  },
+  {
+    q: "Is the process different if I move to Vancouver from India, the UK or the US?",
+    a: "The main routes are the same for everyone: Express Entry, the BC PNP, work permits and study permits. What changes is access to some programs. For example, the United Kingdom is on IRCC's list of International Experience Canada working holiday countries and India is not, and U.S. citizens may qualify for work permits under trade agreements such as CUSMA. Whether your licence can be exchanged at ICBC also depends on where it was issued.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="how-to-move-to-vancouver-bc" datePublished="2026-10-18" dateModified="2026-10-18" articleSection="Guide" keywords="how to move to Vancouver BC, how to move to Vancouver Canada, moving to Vancouver from another country, cost of living in Vancouver 2026, is it hard to move to Vancouver, move to Vancouver from India, move to Vancouver from UK, move to Vancouver from US, Vancouver rent 2026" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        Relocation Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        How to Move to Vancouver, BC in 2026: Immigration Routes, Costs and Your First 90 Days
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Status first, then a job and a budget, then the paperwork of your first three months. Everything here was checked against official and published 2026 sources.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-10-18">October 18, 2026</time>
+        <span>&bull;</span>
+        <span>14 min read</span>
+      </div>
+    </header>
+
+    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-indigo-900 mb-2">Quick answer</p>
+      <p class="text-indigo-900">
+        To move to Vancouver from another country you first need Canadian immigration status that lets you live and work there: permanent residence (through Express Entry or the BC Provincial Nominee Program), a work permit or a study permit. A visitor cannot take a job. Then budget for some of Canada's highest rents (about $2,300 a month for a one-bedroom in the City of Vancouver in September 2026), and in your first 90 days get a SIN, apply for MSP health coverage, buy private insurance for the waiting period and switch to a B.C. driver's licence.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">$2,328</div>
+        <div class="text-sm text-slate-600 font-medium">Average unfurnished 1-bed, City of Vancouver (liv.rent, Sept 2026)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-green-600 mb-2">$18.25</div>
+        <div class="text-sm text-slate-600 font-medium">B.C. general minimum wage since June 1, 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-red-600 mb-2">0 pts</div>
+        <div class="text-sm text-slate-600 font-medium">BC PNP area points for a Metro Vancouver job (up to 25 elsewhere)</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#status" class="hover:underline">Step 1: Get the right immigration status</a></li>
+        <li><a href="#regional" class="hover:underline">Why Vancouver is not the easiest place to get a BC PNP nomination</a></li>
+        <li><a href="#cost" class="hover:underline">Cost of living in Vancouver in 2026</a></li>
+        <li><a href="#jobs" class="hover:underline">Finding work in Vancouver</a></li>
+        <li><a href="#where" class="hover:underline">Where to live in Metro Vancouver</a></li>
+        <li><a href="#first-90-days" class="hover:underline">Your first 90 days: checklist</a></li>
+        <li><a href="#hard" class="hover:underline">Is it hard to move to Vancouver?</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        Learning how to move to Vancouver, BC is really two projects. The first is legal: you need a permit or permanent residence that allows you to live and work in Canada, and the route you choose decides how quickly you can arrive and whether you need a job offer first. The second is practical: Vancouver is expensive, so you need a realistic budget, a job search plan and a list of the government registrations to complete when you land. This guide covers both, in the order you will face them, with figures checked as of October 2026. It is general information, not legal advice for your situation.
+      </p>
+
+      <h2 id="status" class="text-3xl font-bold mt-12 mb-6">Step 1: Get the Right Immigration Status to Move to Vancouver</h2>
+
+      <p>
+        Canada does not have a "moving visa." Visitor status (with a visa or an eTA) lets you look around, attend interviews or find an apartment, but it does not let you work, and it is not a way to settle. To live in Vancouver you need one of three things.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Option A: Permanent residence</h3>
+      <p>
+        Permanent residence (PR) lets you live and work anywhere in Canada with no employer tie. The two routes most people use for B.C. are:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Express Entry.</strong> The federal system for the Federal Skilled Worker Program, Federal Skilled Trades Program and Canadian Experience Class. You enter a pool and are ranked by Comprehensive Ranking System (CRS) score. In 2026, Canadian Experience Class draws had cutoffs between 507 and 523, while category draws for French speakers were lower. Federal Skilled Worker and Skilled Trades candidates without a valid job offer and Canadian work authorization must show proof of funds: IRCC lists $15,263 for one person and $28,362 for a family of four, amounts in effect since July 7, 2025. From November 3, 2026, IRCC will also give additional CRS points for eligible Canadian work experience or a qualifying job offer in a high-wage occupation (one whose median wage is at least 1.3 times the national median), and such offers will no longer need an LMIA; IRCC has not published the point values in its October 16 announcement. Canada's 2026–2028 Immigration Levels Plan targets 380,000 new permanent residents a year. Our guide on <a href="/articles/how-to-become-permanent-resident-canada" class="text-blue-600 hover:text-blue-800 underline">how to become a permanent resident of Canada</a> walks through every federal route.</li>
+        <li><strong>BC Provincial Nominee Program (BC PNP).</strong> B.C. nominates workers its economy needs, and a nomination counts heavily toward PR. B.C.'s 2026 allocation is 6,254 nominations after an increase on August 18, 2026. Since April 23, 2026, invitations go mainly to three priorities: <strong>Care</strong> (health, childcare, education and veterinary occupations), <strong>Build</strong> (certified trades) and <strong>Innovate</strong> (High Economic Impact candidates selected by wage or score). Skills Immigration requires a job offer from an eligible B.C. employer, and the student and graduate streams are closed. See <a href="/articles/how-to-apply-bc-pnp" class="text-blue-600 hover:text-blue-800 underline">how to apply for the BC PNP</a> and check your score with the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a>.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Option B: A work permit</h3>
+      <p>
+        Most newcomers to Vancouver arrive on a temporary work permit and apply for PR later. The main types:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Employer-specific permit with an LMIA.</strong> A B.C. employer gets a positive Labour Market Impact Assessment from Employment and Social Development Canada, then you apply for a permit tied to that job. Be aware that Service Canada may refuse to process <em>low-wage</em> LMIA applications in census metropolitan areas with unemployment of 6% or higher. For applications submitted from October 9, 2026 to January 7, 2027, the Vancouver rate in that table is 7.0%, so low-wage LMIA jobs in Metro Vancouver are largely off the table for now, with some sector exemptions. Our <a href="/articles/bc-pnp-lmia-guide-2026" class="text-blue-600 hover:text-blue-800 underline">LMIA guide</a> explains the process.</li>
+        <li><strong>LMIA-exempt permits.</strong> Intra-company transfers, trade-agreement professionals (such as CUSMA professionals for U.S. and Mexican citizens) and Francophone Mobility for French speakers are examples.</li>
+        <li><strong>International Experience Canada (IEC).</strong> Young people from countries with a youth mobility agreement can get an open working holiday permit. IRCC's list includes the United Kingdom, Ireland, France, Germany, Australia, Japan, the Republic of Korea and others, but not India. Invitations are drawn from pools each season and some countries are much more competitive than others.</li>
+        <li><strong>Spousal open work permit.</strong> Since January 21, 2025, spouses of foreign workers generally qualify only if the worker is in a TEER 0 or 1 occupation and holds a permit valid for at least 16 months after the spouse applies, with limited exceptions. Spouses of students qualify mainly for master's programs of 16 months or more, doctoral programs and certain professional programs. See our <a href="/articles/bc-pnp-spouse-family-guide-2026" class="text-blue-600 hover:text-blue-800 underline">spouse and family guide</a> and <a href="/articles/how-to-immigrate-to-canada-with-family" class="text-blue-600 hover:text-blue-800 underline">how to immigrate to Canada with your family</a>.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Option C: A study permit</h3>
+      <p>
+        Studying in Vancouver is still possible, but it is no longer a reliable path to staying. IRCC capped 2026 at 408,000 study permits, including 155,000 for newly arriving students, and most applicants need a provincial attestation letter (master's and doctoral students at public institutions have been exempt since January 1, 2026). B.C. has also said it will not launch new BC PNP student streams. Read <a href="/articles/international-graduates-bc-pr-options-2027" class="text-blue-600 hover:text-blue-800 underline">PR options for international graduates in B.C.</a> before you pay tuition expecting a PR route.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Route</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Job offer needed?</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Best for</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Main catch</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Express Entry (PR)</td><td class="px-4 py-3">No</td><td class="px-4 py-3">High CRS scores, French speakers, Canadian experience</td><td class="px-4 py-3">Competitive cutoffs; proof of funds for FSW/FST</td></tr>
+            <tr><td class="px-4 py-3 font-medium">BC PNP Skills Immigration (PR)</td><td class="px-4 py-3">Yes, from an eligible B.C. employer</td><td class="px-4 py-3">Care and Build occupations, high earners</td><td class="px-4 py-3">No area points for Metro Vancouver jobs</td></tr>
+            <tr><td class="px-4 py-3 font-medium">LMIA work permit</td><td class="px-4 py-3">Yes</td><td class="px-4 py-3">Skilled workers with a committed employer</td><td class="px-4 py-3">Low-wage LMIAs restricted in Vancouver while unemployment is 6% or higher</td></tr>
+            <tr><td class="px-4 py-3 font-medium">IEC working holiday</td><td class="px-4 py-3">No</td><td class="px-4 py-3">Young citizens of participating countries</td><td class="px-4 py-3">Temporary; invitation odds vary by country</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Spousal open work permit</td><td class="px-4 py-3">No (for the spouse)</td><td class="px-4 py-3">Partners of TEER 0–1 workers or some graduate students</td><td class="px-4 py-3">Narrowed in January 2025</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Study permit</td><td class="px-4 py-3">No</td><td class="px-4 py-3">People who genuinely want the credential</td><td class="px-4 py-3">National cap; no B.C. graduate PNP stream</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="regional" class="text-3xl font-bold mt-12 mb-6">Why Vancouver Is Not the Easiest Place to Get a BC PNP Nomination</h2>
+
+      <p>
+        Many people searching for how to move to Vancouver, Canada assume the BC PNP favours the city. It does the opposite. The Skills Immigration registration score includes up to 25 points for the area where you work, and a Metro Vancouver job earns none of them:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Area</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Where</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Points</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Area 1</td><td class="px-4 py-3">Metro Vancouver Regional District (Vancouver, Burnaby, Surrey, Richmond, Coquitlam and others)</td><td class="px-4 py-3">0</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Area 2</td><td class="px-4 py-3">Squamish, Abbotsford, Agassiz, Mission, Chilliwack</td><td class="px-4 py-3">5</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Area 3</td><td class="px-4 py-3">The rest of B.C. (for example Victoria, Nanaimo, Kelowna, Kamloops, Prince George)</td><td class="px-4 py-3">15</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Bonus</td><td class="px-4 py-3">Regional work experience or regional alumni, only for jobs in Area 2 or 3</td><td class="px-4 py-3">+10</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        B.C. also expects at least 35% of nominations to go to people working outside Metro Vancouver, part of its Look West economic strategy. In targeted Care and Build draws, where 2026 cutoffs ranged from the 70s to the 90s, 15 to 25 regional points can decide whether you are invited. Employer rules lean the same way: a Metro Vancouver employer needs at least five full-time employees in B.C. to support you, compared with three elsewhere. Our articles on <a href="/articles/bc-pnp-look-west-regional-nominations-2027" class="text-blue-600 hover:text-blue-800 underline">Look West and the 35% regional goal</a> and <a href="/articles/bc-pnp-regional-priorities" class="text-blue-600 hover:text-blue-800 underline">regional city profiles</a> go deeper.
+      </p>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+        <p class="font-semibold text-blue-900 mb-2">Key Takeaway</p>
+        <p class="text-blue-800">If PR through the BC PNP is your goal, a job in Victoria, Nanaimo or Kamloops can be worth up to 25 more points than the same job in Vancouver. Only claim the points if you genuinely report to work there: area points are checked, and misrepresentation can lead to refusal and a ban of up to two years from the program.</p>
+      </div>
+
+      <h2 id="cost" class="text-3xl font-bold mt-12 mb-6">Cost of Living in Vancouver in 2026</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Rent in Vancouver and nearby cities</h3>
+      <p>
+        The table below uses liv.rent's <strong>September 2026</strong> Metro Vancouver Rent Report, which averages unfurnished asking rents from listings. For comparison, the Rentals.ca and Urbanation National Rent Report for September 2026 (released October 7) put the average asking rent across all unit types at $2,741 in Vancouver, $2,572 in Richmond, $2,548 in Burnaby, $2,497 in Coquitlam and $2,983 in North Vancouver; reporting on the same release gave Vancouver one- and two-bedroom averages of $2,373 and $3,271. Different sites use different listings and methods, so treat any single figure as a guide, not a price.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">City</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">1-bedroom (unfurnished)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">2-bedroom (unfurnished)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Vancouver</td><td class="px-4 py-3">$2,328</td><td class="px-4 py-3">$3,092</td></tr>
+            <tr><td class="px-4 py-3 font-medium">North Vancouver</td><td class="px-4 py-3">$2,446</td><td class="px-4 py-3">$3,389</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Burnaby</td><td class="px-4 py-3">$2,101</td><td class="px-4 py-3">$2,636</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Richmond</td><td class="px-4 py-3">$1,996</td><td class="px-4 py-3">$2,806</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Coquitlam</td><td class="px-4 py-3">$1,982</td><td class="px-4 py-3">$2,382</td></tr>
+            <tr><td class="px-4 py-3 font-medium">New Westminster</td><td class="px-4 py-3">$1,894</td><td class="px-4 py-3">$2,465</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Langley</td><td class="px-4 py-3">$1,817</td><td class="px-4 py-3">$2,227</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Surrey</td><td class="px-4 py-3">$1,736</td><td class="px-4 py-3">$2,112</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        CMHC's 2025 Rental Market Report, based on its October 2025 survey, shows the market has softened: the purpose-built vacancy rate in the Vancouver area rose to 3.7%, the highest in over 30 years. Its average two-bedroom purpose-built rent of $2,363 includes long-term tenants paying older rents; the average for units that changed tenants was $2,696, which is closer to what a newcomer will pay. Once you are in, B.C. caps annual rent increases for existing tenants; the allowable increase for 2027 is 2.2%. A landlord can ask for a security deposit of up to half a month's rent.
+      </p>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+        <p class="font-semibold text-amber-900 mb-2">Avoid rental scams</p>
+        <p class="text-amber-800">Never send a deposit for a unit you or someone you trust has not seen, and be wary of "landlords" who are abroad and want money wired. Rental fraud targets people arranging housing from overseas. Many newcomers book a short-term furnished rental for the first month and sign a lease after viewing in person.</p>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Wages and transit</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Minimum wage:</strong> $18.25 an hour since June 1, 2026 (it rises each June 1 with B.C.'s inflation rate). Full-time at 40 hours a week, that is about $3,163 a month before tax, which shows how hard a Vancouver one-bedroom is on one minimum-wage income.</li>
+        <li><strong>Living wage:</strong> Living Wage BC calculated $27.85 an hour for Metro Vancouver in its November 2025 report: the hourly pay each of two full-time working parents needs to support a family of four.</li>
+        <li><strong>TransLink fares (from July 1, 2026):</strong> adult Compass stored value $2.85 for one zone, $4.20 for two and $5.40 for three; monthly passes $117.20, $156.70 and $211.65; a DayPass is $12.55. Buses are always a one-zone fare. Trips starting at YVR airport stations add a $6.50 AddFare. Children 12 and under ride free.</li>
+        <li><strong>Health premiums:</strong> B.C. does not charge MSP premiums, but there is a waiting period before coverage starts (see the checklist below).</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Sample monthly budgets (estimates)</h3>
+      <p>
+        Rent and transit figures come from the sources above. Everything else is <strong>our planning estimate</strong>, not official data, and your costs will differ. Taxes and debt payments are not included.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Monthly item</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Single (1-bed, Burnaby or Vancouver)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Couple (1- or 2-bed, Burnaby or Coquitlam)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Family of 4 (2- or 3-bed, Surrey)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Rent (liv.rent, Sept 2026)</td><td class="px-4 py-3">$2,100–$2,330</td><td class="px-4 py-3">$2,100–$2,640</td><td class="px-4 py-3">$2,110–$2,950</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Hydro and internet (estimate)</td><td class="px-4 py-3">$100–$160</td><td class="px-4 py-3">$110–$180</td><td class="px-4 py-3">$140–$220</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Mobile phones (estimate)</td><td class="px-4 py-3">$40–$70</td><td class="px-4 py-3">$80–$140</td><td class="px-4 py-3">$80–$140</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Groceries (estimate)</td><td class="px-4 py-3">$450–$600</td><td class="px-4 py-3">$750–$1,000</td><td class="px-4 py-3">$1,200–$1,600</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Transportation</td><td class="px-4 py-3">$117–$157 (one pass)</td><td class="px-4 py-3">$234–$313 (two passes)</td><td class="px-4 py-3">$300–$900 (one pass plus a car, estimate)</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Tenant insurance (estimate)</td><td class="px-4 py-3">$20–$35</td><td class="px-4 py-3">$20–$35</td><td class="px-4 py-3">$25–$40</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Clothing, household, personal (estimate)</td><td class="px-4 py-3">$250–$400</td><td class="px-4 py-3">$400–$700</td><td class="px-4 py-3">$600–$1,000</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-bold">Approximate total</td><td class="px-4 py-3 font-bold">$3,100–$3,750</td><td class="px-4 py-3 font-bold">$3,700–$5,000</td><td class="px-4 py-3 font-bold">$4,450–$6,850, before child care</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Child care varies widely. Licensed spaces in B.C.'s $10 a Day ChildCareBC centres are the cheapest option but are limited, and waitlists are common, so contact centres as soon as you know your neighbourhood. Add a one-time setup budget for furniture, a security deposit and the first month's rent, and keep private health insurance in the budget until MSP starts.
+      </p>
+
+      <h2 id="jobs" class="text-3xl font-bold mt-12 mb-6">Finding Work in Vancouver</h2>
+
+      <p>
+        WorkBC's labour market outlook for the Mainland/Southwest region (which includes Metro Vancouver) projects 679,990 job openings from 2025 to 2035. The largest industries by employment are health care and social assistance, professional, scientific and technical services, retail trade, construction and educational services. The occupations with the most projected openings start with registered nurses (17,500), retail and wholesale trade managers, retail salespersons, senior managers and nurse aides, with software engineers, early childhood educators and software developers also in the top ten. The region's unemployment rate was 6.8% in August 2026, according to WorkBC, so expect competition, especially for office and entry-level roles.
+      </p>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Use the WorkBC Job Board.</strong> It is the province's free job board, and listings can be filtered by location and by whether the employer will consider applicants from outside Canada. Combine it with LinkedIn, employer career pages and, for health jobs, the health authorities' own sites (Vancouver Coastal Health, Fraser Health and Provincial Health Services Authority serve the Lower Mainland).</li>
+        <li><strong>Match your job search to your immigration plan.</strong> If you need BC PNP, a job in a Care or Build occupation, or one paying enough for the High Economic Impact wage lane, gives you a realistic draw to compete in. Some occupations are ineligible in every BC PNP stream; check our <a href="/articles/bc-pnp-job-offer-requirements-2026" class="text-blue-600 hover:text-blue-800 underline">job offer requirements guide</a> before accepting.</li>
+        <li><strong>Start credential recognition early.</strong> If you work in a regulated profession, such as nursing, medicine, engineering, teaching, social work or early childhood education, you need the B.C. regulator's licence or certificate to practise. Under B.C.'s International Credentials Recognition Act, 18 regulators covering 29 certifications can no longer demand Canadian work experience, subject to exemptions, as of July 1, 2025. Health professions have their own colleges and processes. Many regulators let you start from abroad.</li>
+        <li><strong>Be alert to job offer fraud.</strong> Nobody can legally sell you a job offer or an LMIA. Read our guide to <a href="/articles/bc-pnp-job-offer-scams-fraud-2027" class="text-blue-600 hover:text-blue-800 underline">BC PNP job offer scams</a>.</li>
+      </ul>
+
+      <h2 id="where" class="text-3xl font-bold mt-12 mb-6">Where to Live in Metro Vancouver: Honest Trade-offs</h2>
+
+      <p>
+        Metro Vancouver is 21 municipalities plus an electoral area and a treaty First Nation, linked by SkyTrain and buses. Living in one city and working in another is normal. A quick, honest overview:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>City of Vancouver.</strong> Shortest commutes if you work downtown or near the Broadway corridor and the best transit, but the highest rents. Neighbourhood averages ranged widely in liv.rent's September report, from about $1,745 for a one-bedroom in Sunset-Victoria-Fraserview to about $2,626 in West Point Grey/UBC.</li>
+        <li><strong>Burnaby.</strong> Central, with SkyTrain on the Expo and Millennium lines and large towers around Metrotown and Brentwood. Cheaper than Vancouver for a one-bedroom but still costly for families.</li>
+        <li><strong>Richmond.</strong> Next to the airport, on the Canada Line, with a large Chinese-Canadian community. One-bedroom averages were below Vancouver's in September 2026; two-bedrooms were not much cheaper.</li>
+        <li><strong>Surrey.</strong> The region's lowest averages in the September table and more family-sized housing, with large South Asian communities. Outside the Expo Line corridor, many households need a car, and commutes into Vancouver can be long.</li>
+        <li><strong>Coquitlam, Port Coquitlam and Port Moody (Tri-Cities).</strong> Family-friendly, on the Millennium Line and West Coast Express commuter train, with rents between Burnaby and Surrey.</li>
+        <li><strong>New Westminster.</strong> Small, walkable and central, with several SkyTrain stations and older rental stock at lower prices.</li>
+        <li><strong>North Shore (North and West Vancouver).</strong> Mountains and ocean, the highest averages in the table, and bridge or SeaBus commutes.</li>
+        <li><strong>Langley and beyond.</strong> More space for the money, but you will probably rely on a car. Note that Abbotsford, Mission and Chilliwack are outside Metro Vancouver and earn BC PNP Area 2 points, while Langley and Maple Ridge are inside it and earn none.</li>
+      </ul>
+
+      <h2 id="first-90-days" class="text-3xl font-bold mt-12 mb-6">Your First 90 Days in Vancouver: Checklist</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">When</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Task</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Where / notes</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Before you fly</td><td class="px-4 py-3">Buy private health insurance; register for free pre-arrival services if you are an approved PR</td><td class="px-4 py-3">Covers the MSP waiting period; IRCC pre-arrival portal</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Week 1</td><td class="px-4 py-3">Apply for a Social Insurance Number (SIN)</td><td class="px-4 py-3">Service Canada, online or in person; free; needed to work</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Week 1</td><td class="px-4 py-3">Open a bank account; get a Canadian phone number</td><td class="px-4 py-3">Bring passport and immigration document</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Weeks 1–2</td><td class="px-4 py-3">Apply for MSP (B.C. health coverage)</td><td class="px-4 py-3">BC Application for Health and Drug Coverage, online, on paper or at Service BC</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Weeks 1–4</td><td class="px-4 py-3">Enrol children in school; join child care waitlists</td><td class="px-4 py-3">Your school district's welcome or registration centre</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Weeks 2–8</td><td class="px-4 py-3">Get your BC Services Card and B.C. driver's licence</td><td class="px-4 py-3">ICBC driver licensing office; licence switch due within 90 days</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Month 1–3</td><td class="px-4 py-3">Visit a settlement agency; start credential recognition</td><td class="px-4 py-3">Free services; see below</td></tr>
+            <tr><td class="px-4 py-3 font-medium">First tax season</td><td class="px-4 py-3">File a tax return and apply for benefits such as the Canada Child Benefit</td><td class="px-4 py-3">Canada Revenue Agency</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">SIN and banking</h3>
+      <p>
+        You need a Social Insurance Number to work and to receive government benefits. Apply through Service Canada online or at a Service Canada office with your passport and your work permit, study permit or confirmation of permanent residence. If you are a temporary resident, your SIN expires when your permit does. Major banks have newcomer accounts, and you can usually open one with your passport and immigration document even before you have a job. A secured credit card is a common way to start a Canadian credit history.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">MSP health coverage and the waiting period</h3>
+      <p>
+        B.C.'s Medical Services Plan (MSP) covers medically necessary doctor and hospital care. New residents wait for the rest of the month in which they establish residence plus two months, so someone who arrives on March 10 would expect coverage from June 1. The B.C. government says people new to Canada "should get private health care insurance while you wait." Permanent residents qualify if they make their home in B.C.; work and study permit holders qualify if their permit is valid for six months or more (working holiday permits included). Apply as soon as you arrive so your enrolment is processed before the waiting period ends.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">BC Services Card and driver's licence</h3>
+      <p>
+        Adults generally complete MSP enrolment by visiting an ICBC driver licensing office to have a photo taken for the BC Services Card, which can be combined with your driver's licence. ICBC says that after moving to B.C. you have 90 days to switch your valid licence. Licences from some countries can be exchanged without testing; for others you apply and also pass a knowledge test and a road test. To avoid B.C.'s Graduated Licensing Program you need proof of at least two years of driving experience, so bring a driving record or letter from your home licensing authority. Check ICBC's list of licence exchange jurisdictions before you arrive.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">School enrolment</h3>
+      <p>
+        Children of citizens and permanent residents attend public school free. Under the provincial criteria summarized by the Vancouver School Board, children of temporary residents are also generally eligible if a parent is authorized to work for a year or more and works at least 20 hours a week, or holds a qualifying study permit. Register through your school district's welcome or registration centre; bring passports, immigration documents and proof of address.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Free settlement services</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Before you arrive (approved PRs only):</strong> IRCC funds free online pre-arrival services for people outside Canada whose permanent residence has been approved, including Planning for Canada, Next Stop Canada, Settlement Online Pre-Arrival (SOPA) and Connexions Francophones. They are not available to people coming on temporary permits.</li>
+        <li><strong>After you arrive (PRs):</strong> IRCC-funded agencies in Metro Vancouver include ISSofBC (Immigrant Services Society of BC), MOSAIC, S.U.C.C.E.S.S. and DIVERSEcity in Surrey. They help with job search, language classes, housing and paperwork. Since April 1, 2026, economic class immigrants can use federally funded settlement services for six years from the date they became permanent residents, falling to five years from April 1, 2027, so use them early.</li>
+        <li><strong>Temporary workers, students and provincial nominees:</strong> B.C.'s own BC Newcomer Services Program serves work permit holders, some international students, provincial nominees waiting for a PR decision and naturalized citizens. Search for a provider on WelcomeBC.</li>
+      </ul>
+
+      <h2 id="hard" class="text-3xl font-bold mt-12 mb-6">Is It Hard to Move to Vancouver?</h2>
+
+      <p>
+        Honestly, it is harder than it was a few years ago. Federal policy aims to bring temporary residents below 5% of Canada's population by the end of 2027, study and spousal permits have been narrowed, low-wage LMIAs are restricted in the Vancouver area, and the BC PNP rewards jobs outside the city. Rents have eased since 2023 but remain among Canada's highest. On the other hand, Vancouver has a large job market, established immigrant communities and free settlement help, and people in Care and Build occupations or with strong Express Entry profiles still have clear routes. Common mistakes to avoid:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Arriving as a visitor and hoping to find a job.</strong> Most work permits must be applied for properly, and visitor status cannot be used to work.</li>
+        <li><strong>Choosing a job that cannot lead to PR.</strong> Check BC PNP eligibility and your realistic CRS score before you accept a role or move your family.</li>
+        <li><strong>Skipping private insurance.</strong> A hospital visit during the MSP wait can be very expensive.</li>
+        <li><strong>Missing the 90-day licence switch.</strong> ICBC gives new residents 90 days to switch to a B.C. licence, and the testing route can take longer to book than you expect.</li>
+        <li><strong>Ignoring the regions.</strong> If your field has employers in Victoria, Nanaimo or the Interior, compare those offers seriously.</li>
+      </ul>
+      <p>
+        Want a head start? Estimate your BC PNP registration score with the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a>, read <a href="/articles/how-long-to-get-pr-in-canada" class="text-blue-600 hover:text-blue-800 underline">how long it takes to get PR in Canada</a>, and if you already have a permit, see our <a href="/articles/bc-pnp-work-permit-guide" class="text-blue-600 hover:text-blue-800 underline">work permit guide</a> and the <a href="/articles/canada-temporary-resident-cap-2027-bc-work-permit-holders" class="text-blue-600 hover:text-blue-800 underline">2027 temporary resident cap explainer</a>.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/proof-funds.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry proof of funds, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canada refocusing Express Entry on top talent (October 16, 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/iec/eligibility.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">International Experience Canada eligibility, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/special-instructions/spouses-dependent-children/eligibility.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Open work permits for family members of foreign workers: who can apply, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/employment-social-development/services/foreign-workers/refusal.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Refusal to process a Labour Market Impact Assessment application (CMA unemployment rates), ESDC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/pre-arrival-services/eligibility.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Pre-arrival services: who can get services, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/program-terms-conditions/settlement.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Settlement Program terms and conditions, IRCC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP news, WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/start-your-life-in-b-c/settlement-services" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Settlement services and BC Newcomer Services Program, WelcomeBC</a></li>
+        <li><a href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/how-to-enrol" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">How to enrol in MSP, Government of B.C.</a></li>
+        <li><a href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">MSP eligibility, Government of B.C.</a></li>
+        <li><a href="https://www2.gov.bc.ca/gov/content/employment-business/employment-standards-advice/employment-standards/wages/minimum-wage" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Minimum wage, Government of B.C.</a></li>
+        <li><a href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/regulatory-authorities/oicr/about/icra-overview" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">International Credentials Recognition Act overview, Government of B.C.</a></li>
+        <li><a href="https://news.gov.bc.ca/releases/2026HMA0089-001049" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Minister's statement on September 2026 rental report (2027 rent increase limit), BC Gov News</a></li>
+        <li><a href="https://icbc.com/driver-licensing/moving-bc/moving-from-another-country" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Moving from outside Canada (driver's licence), ICBC</a></li>
+        <li><a href="https://www.translink.ca/transit-fares/pricing-and-fare-zones" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Pricing and fare zones, TransLink</a></li>
+        <li><a href="https://www.workbc.ca/region-profile/mainlandsouthwest" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Mainland/Southwest region profile, WorkBC</a></li>
+        <li><a href="https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/market-reports/rental-market-reports-major-centres" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Rental Market Report 2025, CMHC</a></li>
+        <li><a href="https://liv.rent/blog/rent-reports/september-2026-metro-vancouver-rent-report/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">September 2026 Metro Vancouver Rent Report, liv.rent</a></li>
+        <li><a href="https://press.rentals.ca/473717-canadian-rents-have-fallen-for-two-straight-years" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">September 2026 National Rent Report, Rentals.ca and Urbanation</a></li>
+        <li><a href="https://www.vsb.bc.ca/nwc/eligibility-for-a-publicly-funded-education" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Eligibility for a publicly funded education, Vancouver School Board</a></li>
+        <li><a href="https://www.livingwagebc.ca/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Living Wage BC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of October 18, 2026. Program rules change often; confirm on IRCC or WelcomeBC before applying.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/how-to-become-permanent-resident-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Permanent Residence</div>
+          <div class="font-bold text-gray-900">How to Become a Permanent Resident of Canada</div>
+        </a>
+        <a href="/articles/bc-pnp-look-west-regional-nominations-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">Regional</div>
+          <div class="font-bold text-gray-900">Look West and the BC PNP's 35% Regional Goal</div>
+        </a>
+        <a href="/articles/how-to-apply-bc-pnp" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">How-To</div>
+          <div class="font-bold text-gray-900">How to Apply for the BC PNP</div>
+        </a>
+        <a href="/articles/international-graduates-bc-pr-options-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Students</div>
+          <div class="font-bold text-gray-900">International Graduates in BC: PR Options for 2027</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
