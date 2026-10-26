@@ -96,3 +96,5 @@ Sitemap: https://bcpnpcalculator.ca/sitemap-index.xml
 
 # Curated machine-readable index for LLMs:
 # https://bcpnpcalculator.ca/llms.txt
+# Full guide for AI assistants, with every URL on the site:
+# https://bcpnpcalculator.ca/llms-full.txt
