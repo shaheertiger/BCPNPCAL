@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/generate-llms-full.mjs",
+    "llms:full": "node scripts/generate-llms-full.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "generate:favicons": "node generate-favicons.mjs",
