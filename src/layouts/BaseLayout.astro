@@ -395,6 +395,11 @@ const canonical = rawCanonical
         t.parentNode.insertBefore(e, t);
       })();
     </script>
+
+    <!-- Mediavine ads script. Mediavine recommends it sit just before </head>
+         so it executes early (earlier execution = more competitive bids).
+         is:inline keeps Astro from bundling/rewriting it. -->
+    <script is:inline type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/0e85b1b7-1270-4d28-93ed-ab2d450907fc.js"></script>
   </head>
   <body>
     <AnnouncementBar lang={lang} />
