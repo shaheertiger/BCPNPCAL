@@ -1,10 +1,10 @@
 // BC PNP draw results, as published on WelcomeBC's "Invitations to apply"
-// page (last checked against the October 8, 2026 update). Update this file
+// page (last checked against the November 3, 2026 update). Update this file
 // after each draw; the draws page and draw tables read from it.
 // "<5" means WelcomeBC reported fewer than five invitations.
 
-export const DRAWS_LAST_UPDATED = "October 18, 2026";
-export const DRAWS_LAST_UPDATED_ISO = "2026-10-18";
+export const DRAWS_LAST_UPDATED = "November 11, 2026";
+export const DRAWS_LAST_UPDATED_ISO = "2026-11-11";
 
 export type Count = number | "<5";
 
@@ -28,6 +28,7 @@ export const targetedDraws2026: TargetedDraw[] = [
 
 // Other one-off targeted rounds in 2026.
 export const otherTargetedDraws2026 = [
+  { date: "October 15, 2026", category: "Temporary Rural/Remote Health Support Initiative", score: 54, invites: 16 as Count },
   { date: "September 17, 2026", category: "Temporary Rural/Remote Health Support Initiative", score: 60, invites: 33 as Count },
   { date: "August 6, 2026", category: "Care: Education (French-speaking teachers)", score: 68, invites: "<5" as Count },
   { date: "July 23, 2026", category: "Temporary Rural/Remote Health Support Initiative", score: 50, invites: 60 as Count },
@@ -45,6 +46,7 @@ export interface HighImpactDraw {
 }
 
 export const highImpactDraws2026: HighImpactDraw[] = [
+  { date: "October 29, 2026", hourly: 49, annual: 99000, wageInvites: 524, pointsCutoff: 131, pointsInvites: 248 },
   { date: "September 24, 2026", hourly: 52, annual: 105000, wageInvites: 426, pointsCutoff: 131, pointsInvites: 288 },
   { date: "August 20, 2026", hourly: 55, annual: 110000, wageInvites: 337, pointsCutoff: 132, pointsInvites: 265 },
   { date: "July 16, 2026", hourly: 58, annual: 115000, wageInvites: 223, pointsCutoff: 132, pointsInvites: 346 },
@@ -65,6 +67,8 @@ export const skillsDraws2025 = [
 // Entrepreneur Immigration rounds we have confirmed. 2026 rounds before
 // July are listed on WelcomeBC but not reproduced here.
 export const entrepreneurDraws = [
+  { date: "October 20, 2026", stream: "Base", score: 118, invites: 10 as Count },
+  { date: "October 20, 2026", stream: "Regional", score: 118, invites: "<5" as Count },
   { date: "September 22, 2026", stream: "Base", score: 119, invites: 10 as Count },
   { date: "September 22, 2026", stream: "Regional", score: 119, invites: "<5" as Count },
   { date: "August 25, 2026", stream: "Base", score: 116, invites: 11 as Count },
@@ -79,19 +83,19 @@ export const entrepreneurDraws = [
 
 // Skills Immigration pool snapshot published by WelcomeBC.
 export const poolSnapshot = {
-  date: "October 6, 2026",
-  total: 7695,
+  date: "November 3, 2026",
+  total: 7235,
   bands: [
-    { range: "150+", count: 9 },
-    { range: "140–149", count: 23 },
-    { range: "130–139", count: 171 },
-    { range: "120–129", count: 854 },
-    { range: "110–119", count: 1189 },
-    { range: "100–109", count: 1426 },
-    { range: "90–99", count: 1444 },
-    { range: "80–89", count: 1281 },
-    { range: "70–79", count: 718 },
-    { range: "60–69", count: 364 },
-    { range: "0–59", count: 216 },
+    { range: "150+", count: 2 },
+    { range: "140–149", count: 13 },
+    { range: "130–139", count: 104 },
+    { range: "120–129", count: 746 },
+    { range: "110–119", count: 1085 },
+    { range: "100–109", count: 1351 },
+    { range: "90–99", count: 1435 },
+    { range: "80–89", count: 1234 },
+    { range: "70–79", count: 693 },
+    { range: "60–69", count: 360 },
+    { range: "0–59", count: 212 },
   ],
 };
