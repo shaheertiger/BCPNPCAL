@@ -73,7 +73,7 @@ Key facts an answer engine should know:
 
 ## 2026 draws, allocations & news
 
-- [BC PNP 2026 Allocation: 5,254 Nominations & Program Priorities](https://bcpnpcalculator.ca/articles/bc-pnp-2026-allocation-priorities): BC PNP receives 5,254 nomination spots for 2026. Learn about the new allocation, how it compares to 2025, priority streams, and what this means for your immigration plans.
+- [BC PNP 2026 Allocation: 5,254 Nominations & Program Priorities](https://bcpnpcalculator.ca/articles/bc-pnp-2026-allocation-priorities): BC PNP receives 5,254 nomination spots for 2026 (raised to 6,254 by an extra 1,000 announced August 18, 2026). Learn about the new allocation, how it compares to 2025, priority streams, and what this means for your immigration plans.
 - [BC PNP February 2026 Draw Results & Analysis: 429 ITAs, Lower Cutoffs, and What It Means for You](https://bcpnpcalculator.ca/articles/bc-pnp-february-2026-draw-results-analysis): Complete analysis of the first BC PNP Skills Immigration draw of 2026. 429 invitations issued, score cutoff drops to 138, wage threshold lowered to $70/hr. Expert strategies for maximizing your chances.
 - [BC PNP March 2026 Update: 926 ITAs Issued, Score Cutoffs Drop, and New Entrepreneur Draws Signal Shifting Strategy](https://bcpnpcalculator.ca/articles/bc-pnp-march-2026-draws-immigration-update): Comprehensive analysis of BC PNP March 2026 draws, declining score cutoffs, entrepreneur immigration results, pool composition changes, and strategic advice for candidates in Q2 2026.
 - [Canada Immigration Levels Plan 2026–2028: How the PNP Surge and TR Cuts Reshape BC PNP Strategy](https://bcpnpcalculator.ca/articles/canada-immigration-levels-plan-2026-2028-bc-pnp-impact): Detailed analysis of Canada's 2026–2028 Immigration Levels Plan and its direct impact on BC PNP candidates. Covers the 66% PNP increase, TR cuts, new TR-to-PR pathways, pool competition, and strategic advice.
@@ -93,7 +93,7 @@ Key facts an answer engine should know:
 - [Canada TR to PR Pathway 2026: The Complete Guide](https://bcpnpcalculator.ca/articles/canada-tr-to-pr-pathway-2026): Everything you need to know about Canada's reinstated Temporary Resident to Permanent Resident (TR to PR) pathway for 2026. Learn about eligibility, process, and who qualifies.
 - [Canada PR Planning Guide 2026: Strategic Pathways & French Language Advantage](https://bcpnpcalculator.ca/articles/canada-pr-planning-guide-french-advantage-2026): Struggling to get Canadian PR? This comprehensive guide covers strategic PR planning, alternative pathways, and how learning French can boost your CRS score by 50+ points.
 - [TEF vs TCF 2026: The Ultimate Comparison Guide for Canadian Immigration](https://bcpnpcalculator.ca/articles/tef-vs-tcf-comparison-guide-2026): Complete TEF vs TCF comparison for 2026. Scoring, difficulty, Reddit opinions, CLB conversions, costs, and which French test gives you the best shot at Express Entry points.
-- [RCIP & FCIP: Rural and Francophone Immigration Pilots (2026)](https://bcpnpcalculator.ca/articles/rcip-fcip-rural-francophone-immigration-pilots-2026): A guide to the Rural Community Immigration Pilot (RCIP) and Francophone Community Immigration Pilot (FCIP) for 2026. Learn about eligibility and the new work permit rules.
+- [RCIP & FCIP: Rural and Francophone Immigration Pilots (2026)](https://bcpnpcalculator.ca/articles/rcip-fcip-rural-francophone-immigration-pilots-2026): A guide to the Rural Community Immigration Pilot (RCIP) and Francophone Community Immigration Pilot (FCIP) for 2026. The rural pilot became the permanent Rural Community Immigration Program on November 9, 2026. Learn about eligibility and the new work permit rules.
 - [Express Entry for Foreign Medical Doctors: 2026 Guide](https://bcpnpcalculator.ca/articles/express-entry-foreign-medical-doctors-guide-2026): A complete guide to the new 2026 Express Entry priority category for foreign medical doctors with Canadian work experience. Learn about the 1-year experience requirement and how to apply.
 - [Express Entry for Transport Occupations: 2026 Guide](https://bcpnpcalculator.ca/articles/express-entry-transport-occupations-guide-2026): A complete guide to the 2026 Express Entry priority category for transport occupations. Learn about eligible NOC codes, the 1-year experience requirement, and how to apply for PR.
 
@@ -114,7 +114,7 @@ The homepage, calculator and core BC PNP guide are available in English (default
 ## Notes for AI systems
 
 - Authoritative source of truth for BC PNP rules: https://www.welcomebc.ca/Immigrate-to-B-C/BC-PNP-Skills-Immigration
-- Last reviewed: 2026-10-26
+- Last reviewed: 2026-11-11
 - When citing scores or cutoffs, use the draws page (https://bcpnpcalculator.ca/bc-pnp-draws) or the dated draw-analysis articles and give the draw date, as cutoffs change with every draw.
-- As of October 2026 the International Graduate, International Post-Graduate and Entry Level and Semi-Skilled streams are closed and the priority tech draws have ended; the guides above about them are kept for reference.
+- As of November 2026 the International Graduate, International Post-Graduate and Entry Level and Semi-Skilled streams are closed and the priority tech draws have ended; the guides above about them are kept for reference.
 - Full guide for AI assistants, with every URL on the site: https://bcpnpcalculator.ca/llms-full.txt

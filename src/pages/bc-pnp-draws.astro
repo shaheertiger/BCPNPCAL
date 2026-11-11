@@ -23,15 +23,15 @@ const cnt = (c: number | "<5") => (c === "<5" ? "<5" : fmt(c));
 const faqs = [
   {
     q: "When is the next BC PNP draw?",
-    a: "The BC PNP does not publish draw dates in advance. Since May 2026 it has held about two draw days a month: a Care and Build draw early in the month (May 6, June 2, July 9, August 6, September 10 and October 8) and an Innovate (High Economic Impact) draw later in the month (May 14 to September 24). If that pattern holds, the next High Economic Impact round would come in late October and the next Care and Build round in early November 2026. The program has said it plans to use its full 2026 allocation of 6,254 nominations by December 31. In both 2025 and 2026 there were no draws in January, so early 2027 may be quiet.",
+    a: "The BC PNP does not publish draw dates in advance. Since May 2026 it has held about two draw days a month: a Care and Build draw early in the month (May 6, June 2, July 9, August 6, September 10 and October 8) and an Innovate (High Economic Impact) draw later in the month (May 14 to October 29). The last Care and Build draw was October 8; none had been published as of November 11, 2026, so the next Care and Build round looks due soon, and the pattern points to another High Economic Impact round in late November. The program has said it plans to use its full 2026 allocation of 6,254 nominations by December 31. In both 2025 and 2026 there were no draws in January, so early 2027 may be quiet.",
   },
   {
     q: "How often are BC PNP draws held?",
-    a: "In 2026 there were 16 Skills Immigration draw dates between February 4 and October 8, roughly two a month from May onward. Entrepreneur Immigration rounds are separate and have been about monthly. There is no fixed schedule, and the program can change draw frequency at any time.",
+    a: "In 2026 there were 18 Skills Immigration draw dates between February 4 and October 29, roughly two a month from May onward, plus occasional one-off rounds such as the Rural/Remote Health Support Initiative draws. Entrepreneur Immigration rounds are separate and have been about monthly. There is no fixed schedule, and the program can change draw frequency at any time.",
   },
   {
     q: "What is the minimum score for BC PNP?",
-    a: "There is no fixed pass mark. Each draw sets its own cut-off. In the October 8, 2026 draw the minimums were 76 for Health, 94 for Construction trades, 99 for Childcare and 86 for Veterinary. The September 24 High Economic Impact draw needed 131 points, or a wage of at least $52 an hour and $105,000 a year in a TEER 0–3 job. Which contest you are in depends on your occupation and credentials.",
+    a: "There is no fixed pass mark. Each draw sets its own cut-off. In the October 8, 2026 draw the minimums were 76 for Health, 94 for Construction trades, 99 for Childcare and 86 for Veterinary. The October 29 High Economic Impact draw needed 131 points, or a wage of at least $49 an hour and $99,000 a year in a TEER 0–3 job. Which contest you are in depends on your occupation and credentials.",
   },
   {
     q: "Is a score of 98 good for BC PNP?",
@@ -125,11 +125,11 @@ const td = "px-4 py-3 text-sm text-slate-700 whitespace-nowrap";
       <!-- Quick stats -->
       <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center">
-          <div class="text-3xl font-black text-red-600">6,297+</div>
-          <div class="text-xs text-slate-600 mt-1">Skills Immigration invitations, Feb 4 – Oct 8, 2026</div>
+          <div class="text-3xl font-black text-red-600">7,085+</div>
+          <div class="text-xs text-slate-600 mt-1">Skills Immigration invitations, Feb 4 – Oct 29, 2026</div>
         </div>
         <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center">
-          <div class="text-3xl font-black text-slate-900">16</div>
+          <div class="text-3xl font-black text-slate-900">18</div>
           <div class="text-xs text-slate-600 mt-1">Skills Immigration draw dates in 2026</div>
         </div>
         <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center">
@@ -167,7 +167,7 @@ const td = "px-4 py-3 text-sm text-slate-700 whitespace-nowrap";
           </div>
         </div>
         <p class="text-slate-600 text-sm">
-          Since the April 23, 2026 restructuring, the BC PNP selects workers under three priorities: <strong>Care</strong> (health, childcare, education and veterinary occupations), <strong>Build</strong> (construction trades) and <strong>Innovate</strong> (high economic impact candidates in any TEER 0–3 occupation). Your occupation and credentials decide which draw you compete in; your score decides your rank within it. Check where you stand with the <a href="/bc-pnp-calculator" class="text-red-600 underline font-semibold">BC PNP points calculator</a>.
+          Other recent rounds: a Temporary Rural/Remote Health Support Initiative draw on October 15, 2026 (16 invitations, minimum score 54) and an Entrepreneur Immigration round on October 20, 2026 (Base and Regional, minimum score 118). The October 29 Innovate round, with 772 invitations, was the largest BC PNP round of 2026. Since the April 23, 2026 restructuring, the BC PNP selects workers under three priorities: <strong>Care</strong> (health, childcare, education and veterinary occupations), <strong>Build</strong> (construction trades) and <strong>Innovate</strong> (high economic impact candidates in any TEER 0–3 occupation). Your occupation and credentials decide which draw you compete in; your score decides your rank within it. Check where you stand with the <a href="/bc-pnp-calculator" class="text-red-600 underline font-semibold">BC PNP points calculator</a>.
         </p>
       </section>
 
@@ -179,12 +179,12 @@ const td = "px-4 py-3 text-sm text-slate-700 whitespace-nowrap";
         </p>
         <ul class="space-y-2 text-indigo-100 mb-6 list-disc pl-6">
           <li><strong class="text-white">Care and Build draws early in the month:</strong> May 6, June 2, July 9, August 6, September 10 and October 8.</li>
-          <li><strong class="text-white">High Economic Impact draws later in the month:</strong> May 14, June 18, July 16, August 20 and September 24.</li>
+          <li><strong class="text-white">High Economic Impact draws later in the month:</strong> May 14, June 18, July 16, August 20, September 24 and October 29.</li>
         </ul>
         <div class="bg-indigo-800/60 border border-indigo-700 rounded-xl p-5">
           <p class="text-xs font-bold uppercase tracking-widest text-indigo-300 mb-2">Our reading of the pattern (not an official date)</p>
           <p class="text-white">
-            A High Economic Impact round would be due in late October 2026, and the next Care and Build round in early November. The BC PNP has said it plans to use all 6,254 of its 2026 nominations by December 31. There were no draws in January 2025 or January 2026, so expect a quiet start to 2027 until the new allocation is confirmed.
+            No Care and Build round had been published as of November 11, 2026, so one looks due soon, and the next High Economic Impact round would fall in late November. The BC PNP has said it plans to use all 6,254 of its 2026 nominations by December 31. There were no draws in January 2025 or January 2026, so expect a quiet start to 2027 until the new allocation is confirmed.
           </p>
         </div>
       </section>
@@ -248,7 +248,7 @@ const td = "px-4 py-3 text-sm text-slate-700 whitespace-nowrap";
       <!-- Pool -->
       <section class="space-y-4">
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Who is in the pool</h2>
-        <p class="text-slate-600">WelcomeBC's snapshot from {poolSnapshot.date} shows {fmt(poolSnapshot.total)} Skills Immigration registrations. Only 203 scored 130 or more, which is why the High Economic Impact points cut-off moves slowly, while about 71% scored under 110.</p>
+        <p class="text-slate-600">WelcomeBC's snapshot from {poolSnapshot.date} shows {fmt(poolSnapshot.total)} Skills Immigration registrations. Only 119 scored 130 or more, which is why the High Economic Impact points cut-off moves slowly, while about 73% scored under 110. The pool is down 460 from 7,695 on October 6, 2026.</p>
         <div class="overflow-x-auto rounded-2xl border border-slate-100 shadow-sm bg-white">
           <table class="min-w-full divide-y divide-slate-100">
             <thead class="bg-slate-50"><tr><th class={th}>Score range</th><th class={th}>Registrations</th></tr></thead>
@@ -326,7 +326,7 @@ const td = "px-4 py-3 text-sm text-slate-700 whitespace-nowrap";
       <section class="text-center space-y-4">
         <a href="/bc-pnp-calculator" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest shadow-lg shadow-red-200">Calculate your BC PNP score →</a>
         <p class="text-xs text-slate-500 max-w-2xl mx-auto">
-          Source: <a href="https://www.welcomebc.ca/immigrate-to-b-c/invitations-to-apply" target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC, Invitations to apply</a>. Results last checked {DRAWS_LAST_UPDATED}; the latest Skills Immigration draw listed is October 8, 2026. General information only, not legal advice.
+          Source: <a href="https://www.welcomebc.ca/immigrate-to-b-c/invitations-to-apply" target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC, Invitations to apply</a>. Results last checked {DRAWS_LAST_UPDATED}; the latest Skills Immigration draw listed is October 29, 2026 (Innovate), and the latest Care and Build draw is October 8, 2026. General information only, not legal advice.
         </p>
       </section>
     </div>
