@@ -1,0 +1,284 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Express Entry Draws Paused in November 2026: This Week's Immigration Roundup for B.C. Applicants";
+const description = "No Express Entry rounds since October 28 as IRCC recalculates CRS scores. What the pause, the latest BC PNP data and this week's federal changes mean for you.";
+const canonical = "https://bcpnpcalculator.ca/articles/express-entry-draws-paused-november-2026-immigration-roundup";
+
+const faqs = [
+  {
+    q: "Why are there no Express Entry draws in November 2026?",
+    a: "On November 3, 2026, IRCC started scoring Canadian work experience and qualifying job offers under a new Labour Market Integration factor. It is recalculating the score of every profile already in the pool and said on its Express Entry changes page that this could take up to two weeks, during which invitation rounds are paused. As of November 12, 2026, the last round on IRCC's rounds page is round 453 on October 28, 2026.",
+  },
+  {
+    q: "When will Express Entry draws resume?",
+    a: "IRCC has not published a date. It says rounds will start again when the recalculation is complete. Two weeks from November 3 would be November 17, 2026, but that is only the outer edge of IRCC's own estimate, not a scheduled draw date.",
+  },
+  {
+    q: "Do I need to do anything to my Express Entry profile during the pause?",
+    a: "Existing profiles are recalculated automatically. Check that your Canadian work experience and any job offer details are accurate and complete. IRCC's changes page says that until the online system is updated, candidates who have a positive LMIA must still report it in their profile using the details IRCC provides, even though an LMIA no longer adds points.",
+  },
+  {
+    q: "Has the BC PNP held a draw in November 2026?",
+    a: "Not as of November 12, 2026. WelcomeBC's Invitations to Apply page, last updated November 3, 2026, lists October 29, 2026 as the most recent Skills Immigration draw: 524 Innovate invitations by wage (at least $49 an hour and $99,000 a year) and 248 by points, with a minimum score of 131.",
+  },
+  {
+    q: "Which B.C. communities are in the permanent Rural Community Immigration Program?",
+    a: "IRCC's November 9, 2026 backgrounder lists three B.C. communities among the 14 participants: West Kootenay, North Okanagan Shuswap and Peace Liard. IRCC says the permanent program will continue with the current 14 communities and that more communities are planned later.",
+  },
+  {
+    q: "Can a B.C. employer still get a low-wage LMIA in Vancouver?",
+    a: "Generally not for applications submitted between October 9, 2026 and January 7, 2027. ESDC does not process low-wage LMIAs in census metropolitan areas with unemployment of 6% or more, which currently includes Vancouver (7.0%), Kelowna (8.6%), Abbotsford-Mission (7.6%) and Nanaimo (6.6%). Health care, construction, food processing and, since November 6, 2026, early childhood educator jobs are exempt.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="express-entry-draws-paused-november-2026-immigration-roundup" datePublished="2026-11-12" dateModified="2026-11-12" articleSection="News" keywords="Express Entry draws November 2026, Express Entry pause, CRS recalculation November 2026, next Express Entry draw, BC PNP draw November 2026, Canada immigration news this week, Rural Community Immigration Program permanent, TFW program changes November 2026" title={title} description={description} canonical={canonical} ogImage="/images/articles/express-entry-draws-paused-november-2026-immigration-roundup.png">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-red-100 text-red-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-red-200 shadow-sm">
+        Immigration News
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Express Entry Draws Paused in November 2026: This Week's Immigration Roundup for B.C. Applicants
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        No federal rounds for two weeks, no new BC PNP draw since October 29, and two federal announcements that matter to workers in B.C. Here is what has actually happened and what it means for your file.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-12">November 12, 2026</time>
+        <span>&bull;</span>
+        <span>7 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/express-entry-draws-paused-november-2026-immigration-roundup.png" width="1200" height="630" alt="Bar chart of Express Entry invitations in October 2026 rounds followed by an empty shaded band marking the November 3 to 12 pause with no rounds."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-red-50 border-l-4 border-red-600 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-red-900 mb-2">Quick answer</p>
+      <p class="text-red-900">
+        IRCC has held no Express Entry rounds since October 28, 2026. It paused invitations on November 3 while it recalculates every profile under the new Labour Market Integration factor, a process it said could take up to two weeks, and it has not announced a restart date. The BC PNP's latest draw is still October 29. This week Ottawa also made the rural immigration pilot permanent (November 9) and changed low-wage LMIA rules (November 6).
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-red-600 mb-2">0</div>
+        <div class="text-sm text-slate-600 font-medium">Express Entry rounds since October 28, 2026 (as of November 12)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-slate-800 mb-2">5,942</div>
+        <div class="text-sm text-slate-600 font-medium">Invitations in the last three rounds, October 26 to 28</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-slate-800 mb-2">7,235</div>
+        <div class="text-sm text-slate-600 font-medium">BC PNP Skills Immigration registrations on November 3, 2026</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this roundup</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#express-entry" class="hover:underline">Express Entry: why there have been no rounds</a></li>
+        <li><a href="#recalculation" class="hover:underline">What the recalculation changes in your score</a></li>
+        <li><a href="#bc-pnp" class="hover:underline">BC PNP: still waiting for the next draw</a></li>
+        <li><a href="#rural" class="hover:underline">November 9: rural immigration becomes permanent</a></li>
+        <li><a href="#tfwp" class="hover:underline">November 6: low-wage LMIA changes</a></li>
+        <li><a href="#what-to-do" class="hover:underline">What to do this week</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        This has been a quiet week for invitations and a busy one for policy. Candidates who usually watch for a mid-month Canadian Experience Class round or a BC PNP Care and Build draw have had nothing new to react to, while the federal government finalized changes that affect who ranks highest once rounds return. This roundup sticks to what the official sources show as of November 12, 2026. It is general information, not legal advice.
+      </p>
+
+      <h2 id="express-entry" class="text-3xl font-bold mt-12 mb-6">Express Entry: Why There Have Been No Rounds Since October 28</h2>
+
+      <p>
+        IRCC announced on <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">October 16, 2026</a> that from November 3 it would award new Comprehensive Ranking System (CRS) points for eligible Canadian work experience or a qualifying job offer in a high-wage occupation. Profiles already in the pool would be recalculated automatically, and the release said the process "may take up to two weeks," with invitation rounds paused in the meantime. IRCC's <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry changes page</a> repeats that rounds will "start again when it's complete" and gives no date.
+      </p>
+      <p>
+        Before the pause, IRCC cleared a run of rounds in late October. The last six, from IRCC's official rounds data:
+      </p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-2 text-left">Round</th>
+              <th class="px-4 py-2 text-left">Date</th>
+              <th class="px-4 py-2 text-left">Type</th>
+              <th class="px-4 py-2 text-right">Invitations</th>
+              <th class="px-4 py-2 text-right">CRS cutoff</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t"><td class="px-4 py-2">453</td><td class="px-4 py-2">Oct 28, 2026</td><td class="px-4 py-2">Transport occupations</td><td class="px-4 py-2 text-right">150</td><td class="px-4 py-2 text-right">477</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">452</td><td class="px-4 py-2">Oct 27, 2026</td><td class="px-4 py-2">French-language proficiency</td><td class="px-4 py-2 text-right">5,000</td><td class="px-4 py-2 text-right">407</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">451</td><td class="px-4 py-2">Oct 26, 2026</td><td class="px-4 py-2">Provincial Nominee Program</td><td class="px-4 py-2 text-right">792</td><td class="px-4 py-2 text-right">761</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">450</td><td class="px-4 py-2">Oct 16, 2026</td><td class="px-4 py-2">French-language proficiency</td><td class="px-4 py-2 text-right">5,000</td><td class="px-4 py-2 text-right">435</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">449</td><td class="px-4 py-2">Oct 15, 2026</td><td class="px-4 py-2">Canadian Experience Class</td><td class="px-4 py-2 text-right">2,500</td><td class="px-4 py-2 text-right">519</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">448</td><td class="px-4 py-2">Oct 13, 2026</td><td class="px-4 py-2">Provincial Nominee Program</td><td class="px-4 py-2 text-right">752</td><td class="px-4 py-2 text-right">772</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        That is 5,942 invitations in the three days before the pause, and 14,194 across the six October rounds shown. The pool snapshot attached to round 453 counted 228,724 profiles as of October 25, 2026. As of November 12, no round 454 appears on the rounds page. Two weeks from November 3 would be November 17, but treat that as the end of IRCC's estimate, not a promised draw date.
+      </p>
+
+      <h2 id="recalculation" class="text-3xl font-bold mt-12 mb-6">What the Recalculation Changes in Your Score</h2>
+
+      <p>
+        The pause exists because scores are moving, so the first rounds after it may not look like October's. According to IRCC's changes page:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>One new factor, not two.</strong> Canadian work experience and qualifying job offers now sit under a Labour Market Integration factor worth up to 150 points. You get points from one or the other, not both.</li>
+        <li><strong>Canadian experience.</strong> The maximum is 150 points without a spouse or partner (80 for length of work plus 70 for high-wage work) and 140 with one (70 plus 70).</li>
+        <li><strong>Job offers.</strong> A qualifying offer in an eligible high-wage occupation can earn up to 100 points. An occupation qualifies if its national median wage is at least 1.3 times the average median wage, based on the NOC code rather than your own salary.</li>
+        <li><strong>No LMIA needed.</strong> Since November 3, a job offer does not need a Labour Market Impact Assessment to count for eligibility or points, and having one adds nothing. Officers still check that the offer is genuine at the PR stage.</li>
+      </ul>
+      <p>
+        For B.C. workers, the practical effect is that candidates with Canadian experience in high-wage occupations may move up, while profiles that relied on LMIA-backed offers in lower-wage jobs may move down. Nobody outside IRCC knows the new score distribution yet, so be cautious with any cutoff "prediction" you see this week. Our guide on <a href="/articles/how-to-become-permanent-resident-canada" class="text-blue-600 hover:text-blue-800 underline">how to become a permanent resident in Canada</a> explains the November 3 changes in more depth.
+      </p>
+      <p>
+        Provincial nominees are the group least affected. A nomination adds 600 points, which is why the October PNP rounds cut off at 761 and 772. If you hold a BC PNP Express Entry nomination, your profile should simply wait for the next PNP round; see our <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="text-blue-600 hover:text-blue-800 underline">Express Entry BC guide</a>.
+      </p>
+
+      <h2 id="bc-pnp" class="text-3xl font-bold mt-12 mb-6">BC PNP: Still Waiting for the Next Draw</h2>
+
+      <p>
+        WelcomeBC's <a href="https://www.welcomebc.ca/Immigrate-to-B-C/Invitations-To-Apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Invitations to Apply page</a> was last updated November 3, 2026, and shows no November draw. The most recent Skills Immigration rounds were the October 8 Care and Build draw, a small Temporary Rural/Remote Health Support Initiative draw on October 15 (16 invitations, minimum score 54) and the October 29 Innovate draw. The Innovate wage threshold has dropped in each of the last three rounds:
+      </p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-2 text-left">Innovate draw</th>
+              <th class="px-4 py-2 text-left">Wage threshold</th>
+              <th class="px-4 py-2 text-right">Wage invitations</th>
+              <th class="px-4 py-2 text-right">Points cutoff</th>
+              <th class="px-4 py-2 text-right">Points invitations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t"><td class="px-4 py-2">Oct 29, 2026</td><td class="px-4 py-2">$49/hour, $99,000/year</td><td class="px-4 py-2 text-right">524</td><td class="px-4 py-2 text-right">131</td><td class="px-4 py-2 text-right">248</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">Sep 24, 2026</td><td class="px-4 py-2">$52/hour, $105,000/year</td><td class="px-4 py-2 text-right">426</td><td class="px-4 py-2 text-right">131</td><td class="px-4 py-2 text-right">288</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">Aug 20, 2026</td><td class="px-4 py-2">$55/hour, $110,000/year</td><td class="px-4 py-2 text-right">337</td><td class="px-4 py-2 text-right">132</td><td class="px-4 py-2 text-right">265</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        On October 8, the Care and Build cutoffs were 99 for childcare (86 invitations), 76 for health (82), 86 for veterinary care (fewer than 5) and 94 for construction trades (115). The November 3 pool snapshot counted 7,235 registrations, with only 119 at 130 points or more, so a points-based Innovate cutoff in the low 130s now draws from a small group.
+      </p>
+      <p>
+        The bigger signal is the calendar. B.C.'s 2026 allocation is 6,254 nominations after the federal government added 1,000 on August 18, 2026, and WelcomeBC said the program "plans to use its full allocation by December 31, 2026." That suggests more invitations before year-end, but WelcomeBC does not publish a draw schedule, so no date is confirmed. Track results on our <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a>, check your registration score with the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a>, and see our analysis of <a href="/articles/bc-pnp-innovate-high-economic-impact-draws-2027" class="text-blue-600 hover:text-blue-800 underline">Innovate High Economic Impact draws</a>.
+      </p>
+
+      <h2 id="rural" class="text-3xl font-bold mt-12 mb-6">November 9: Rural Immigration Becomes Permanent</h2>
+
+      <p>
+        In a <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/11/canada-creates-a-permanent-immigration-pathway-to-help-rural-communities-attract-and-retain-talent0.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">November 9, 2026 news release</a>, IRCC announced that the Rural Community Immigration Pilot, running since 2025, will become a permanent, employer- and community-led Rural Community Immigration Program. It will continue with the current 14 communities, with more to be added later under criteria still to be announced, and the 2027–2029 Immigration Levels Plan targets 5,500 admissions for it.
+      </p>
+      <p>
+        For B.C. readers, the <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/11/overview-of-the-rural-community-immigration-program.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC backgrounder</a> lists three participating B.C. communities: <strong>West Kootenay</strong>, <strong>North Okanagan Shuswap</strong> and <strong>Peace Liard</strong>. If you work for a designated employer in one of them, the rural program is a federal PR option that runs alongside the BC PNP, and a regional job also earns extra BC PNP area points. Our <a href="/articles/rcip-fcip-rural-francophone-immigration-pilots-2026" class="text-blue-600 hover:text-blue-800 underline">RCIP and FCIP guide</a> covers eligibility and community recommendations.
+      </p>
+      <p>
+        Separately, IRCC's levels plan includes a time-limited measure to move people already in Canada to PR in 2027 and 2028. We cover those numbers in our <a href="/articles/canada-immigration-levels-plan-2027-2029-what-to-expect" class="text-blue-600 hover:text-blue-800 underline">2027–2029 levels plan article</a>.
+      </p>
+
+      <h2 id="tfwp" class="text-3xl font-bold mt-12 mb-6">November 6: Low-Wage LMIA Changes</h2>
+
+      <p>
+        Employment and Social Development Canada (ESDC) announced <a href="https://www.canada.ca/en/employment-social-development/news/2026/11/government-of-canada-announces-targeted-reforms-to-the-temporary-foreign-worker-program-to-respond-to-labour-market-needs.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">targeted reforms to the Temporary Foreign Worker Program on November 6, 2026</a>:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Longer low-wage LMIAs.</strong> Low-wage stream applications submitted on or after November 6, 2026 can cover up to two years of employment, up from one.</li>
+        <li><strong>Early childhood educators exempt.</strong> ECE jobs join health care, construction and food processing as exceptions to the rule that ESDC will not process low-wage LMIAs in census metropolitan areas with unemployment of 6% or more.</li>
+        <li><strong>Optional changes from March 1, 2027.</strong> If a province or territory opts in, employers in communities it identifies could fill up to 15% of their workforce through the low-wage stream, up from 10%. Priority sectors keep their 20% limit.</li>
+      </ul>
+      <p>
+        ESDC's <a href="https://www.canada.ca/en/employment-social-development/services/foreign-workers/refusal.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">refusal-to-process list</a> for applications submitted from October 9, 2026 to January 7, 2027 includes four B.C. areas: Kelowna (8.6%), Abbotsford-Mission (7.6%), Vancouver (7.0%) and Nanaimo (6.6%). Victoria (5.8%), Chilliwack (5.6%) and Kamloops (3.6%) are below the line. Because most BC PNP Skills Immigration candidates first need a valid work permit, this matters for people planning their route. Our <a href="/articles/bc-pnp-lmia-guide-2026" class="text-blue-600 hover:text-blue-800 underline">BC PNP LMIA guide</a> explains how the two systems connect.
+      </p>
+
+      <h2 id="what-to-do" class="text-3xl font-bold mt-12 mb-6">What to Do This Week</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Express Entry candidates:</strong> log in and confirm that your Canadian work history, NOC codes and any job offer are accurate. Do not create a duplicate profile to "refresh" your score. Recalculation is automatic.</li>
+        <li><strong>Profile expiry:</strong> if your profile expires during the pause, IRCC's usual rules apply. Check your expiry date and be ready to create a new profile if needed.</li>
+        <li><strong>BC PNP registrants:</strong> keep your registration current. A pay rise, a new language test or a move to a job outside Metro Vancouver can change your score before the next draw.</li>
+        <li><strong>Work permit holders:</strong> if your employer plans a low-wage LMIA, ask whether your job is in a refusal-to-process area or an exempt occupation before you rely on it.</li>
+        <li><strong>Everyone:</strong> rely on IRCC's rounds page and WelcomeBC's invitations page for results. Draw dates circulating on social media are not official until they appear there.</li>
+      </ul>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canada refocusing Express Entry on top talent that drives economic growth (October 16, 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Changes to Express Entry, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry rounds of invitations, IRCC</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry rounds data (JSON), IRCC</a></li>
+        <li><a href="https://www.welcomebc.ca/Immigrate-to-B-C/Invitations-To-Apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Invitations to Apply, WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP news (2026 allocation, August 18, 2026), WelcomeBC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/11/canada-creates-a-permanent-immigration-pathway-to-help-rural-communities-attract-and-retain-talent0.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canada creates a permanent immigration pathway to help rural communities attract and retain talent (November 9, 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/11/overview-of-the-rural-community-immigration-program.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Overview of the Rural Community Immigration Program (backgrounder, November 9, 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/employment-social-development/news/2026/11/government-of-canada-announces-targeted-reforms-to-the-temporary-foreign-worker-program-to-respond-to-labour-market-needs.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Targeted reforms to the Temporary Foreign Worker Program (November 6, 2026), ESDC</a></li>
+        <li><a href="https://www.canada.ca/en/employment-social-development/services/foreign-workers/refusal.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Refusal to process low-wage LMIA applications (CMA unemployment rates), ESDC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 12, 2026. Draw results, cutoffs and pool figures change often; confirm on IRCC or WelcomeBC before acting.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/how-to-become-permanent-resident-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Permanent Residence</div>
+          <div class="font-bold text-gray-900">How to Become a Permanent Resident in Canada</div>
+        </a>
+        <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-red-600 font-bold mb-2">BC PNP</div>
+          <div class="font-bold text-gray-900">BC PNP Express Entry BC Guide</div>
+        </a>
+        <a href="/articles/bc-pnp-innovate-high-economic-impact-draws-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Draws</div>
+          <div class="font-bold text-gray-900">Innovate High Economic Impact Draws</div>
+        </a>
+        <a href="/articles/canada-immigration-levels-plan-2027-2029-what-to-expect" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Federal</div>
+          <div class="font-bold text-gray-900">Immigration Levels Plan 2027–2029</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
