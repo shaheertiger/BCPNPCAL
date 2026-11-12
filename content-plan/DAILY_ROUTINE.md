@@ -20,6 +20,7 @@ couldn't verify.
 |---|---|
 | `pnp-keywords-2026-11-11.csv` | Semrush keyword export (PNP terms): Keyword, Intent, Relevance, Volume, Keyword Difficulty, CPC, SERP Features. Read-only. |
 | `immigration-keywords-ca-2026-11-12.csv` | Semrush keyword export (general Canadian immigration terms, Canada database), same columns. Read-only. |
+| `express-entry-keywords-ca-2026-11-12.csv` | Semrush keyword export (Express Entry and related terms, Canada database), same columns. Read-only. Noisy: apply the off-topic rules strictly. |
 | `published-log.csv` | One row per article published by this routine: `date,type,slug,primary_keyword,covered_keywords`. `type` is `keyword` or `news`. `covered_keywords` is a `|`-separated list. Append to it every run. |
 | `DAILY_ROUTINE.md` | This file. |
 | `images/_template.html` | Starting point for each article's hero image design. |
@@ -45,6 +46,10 @@ couldn't verify.
    news story (e.g. "ircc held two express entry draws issuing thousands of invitations"); fold those into a news or
    tracker cluster instead of writing them up as their own article. Prefer topics that matter to people heading for
    B.C. or Canadian PR; the site's focus is BC PNP and the routes around it.
+   Drop as well: non-immigration Canadian government services (CRA, EI reporting, Service Canada benefits, provincial
+   maintenance enforcement such as "fmep" or "mep login", Quebec's clicSÉQUR), other countries' travel authorizations and
+   consulates (e.g. "esta", "eta uk", "us consulate toronto", "oci"), and keywords in non-Latin scripts. Login and portal
+   keywords for IRCC itself (e.g. "cic login", "ircc portal") follow the navigational rule in step 4.
 3. Rank what's left by `Volume` (highest first). Use lower `Keyword Difficulty` as the tiebreaker.
 4. Walk down the list. For each candidate:
    - Group it with near-duplicate variants (plural/singular, word order, "pnp" vs
