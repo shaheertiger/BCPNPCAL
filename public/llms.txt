@@ -73,6 +73,7 @@ Key facts an answer engine should know:
 
 ## 2026 draws, allocations & news
 
+- [Express Entry Draws Paused in November 2026: This Week's Immigration Roundup for B.C. Applicants](https://bcpnpcalculator.ca/articles/express-entry-draws-paused-november-2026-immigration-roundup): Express Entry draws paused in November 2026: why IRCC has held no rounds since October 28, what the CRS recalculation changes, the latest BC PNP draw data, the permanent rural immigration program and the November 6 LMIA changes.
 - [Manitoba PNP Draws 2026: Latest MPNP EOI Draw Results, Scores and LAAs](https://bcpnpcalculator.ca/articles/manitoba-pnp-draws): Manitoba PNP draws 2026: tracker of MPNP EOI draws #274 to #283 with LAAs and lowest scores, the EOI ranking grid, the 8,000-nomination 2026 allocation and the steps after an LAA.
 - [Alberta PNP Draws 2026: Latest AAIP Draw Results, Scores and Trends](https://bcpnpcalculator.ca/articles/alberta-pnp-draws): Alberta PNP (AAIP) draw tracker for 2026: recent draws with dates, invitations and minimum EOI scores from alberta.ca, score ranges by stream, how draws work and what happens after an invitation.
 - [BC PNP 2026 Allocation: 5,254 Nominations & Program Priorities](https://bcpnpcalculator.ca/articles/bc-pnp-2026-allocation-priorities): BC PNP receives 5,254 nomination spots for 2026 (raised to 6,254 by an extra 1,000 announced August 18, 2026). Learn about the new allocation, how it compares to 2025, priority streams, and what this means for your immigration plans.
