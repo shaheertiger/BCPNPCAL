@@ -3,7 +3,7 @@
 A scheduled Claude Code session runs this routine once a day. Each run publishes
 **5 new articles**:
 
-- **4 keyword articles**, each targeting a cluster from `pnp-keywords-2026-11-11.csv`
+- **4 keyword articles**, each targeting a cluster from the keyword exports in this folder (`*keywords*.csv`)
 - **1 news article** on the latest Canadian immigration news
 
 The run then merges everything to `main` in a single pull request. Vercel deploys `main`.
@@ -18,7 +18,8 @@ couldn't verify.
 
 | File | Purpose |
 |---|---|
-| `pnp-keywords-2026-11-11.csv` | Semrush keyword export: Keyword, Intent, Relevance, Volume, Keyword Difficulty, CPC, SERP Features. Read-only. |
+| `pnp-keywords-2026-11-11.csv` | Semrush keyword export (PNP terms): Keyword, Intent, Relevance, Volume, Keyword Difficulty, CPC, SERP Features. Read-only. |
+| `immigration-keywords-ca-2026-11-12.csv` | Semrush keyword export (general Canadian immigration terms, Canada database), same columns. Read-only. |
 | `published-log.csv` | One row per article published by this routine: `date,type,slug,primary_keyword,covered_keywords`. `type` is `keyword` or `news`. `covered_keywords` is a `|`-separated list. Append to it every run. |
 | `DAILY_ROUTINE.md` | This file. |
 | `images/_template.html` | Starting point for each article's hero image design. |
@@ -34,10 +35,16 @@ couldn't verify.
 
 ## 2. Pick 4 keyword clusters
 
-1. Load the CSV. Drop every keyword that already appears in `primary_keyword` or
+1. Load every `*keywords*.csv` export in this folder and merge them into one list (if the same keyword appears in more than one file, keep the row with the highest `Volume`). Drop every keyword that already appears in `primary_keyword` or
    `covered_keywords` in `published-log.csv`.
 2. Drop off-topic keywords: electronics terms such as "pnp transistor", "npn", "capteur",
    "sensor" and "circuit", unrelated meanings of "PNP", and non-English keywords unless the site has a page in that language.
+   Also drop keywords that aren't about Canadian immigration (US or other countries' immigration such as "ice usa",
+   "ice homeland" and US deportation news), bare brand or government-name queries with no answerable question
+   (e.g. "cic", "goverment"), phone-number and customer-service lookups, and keywords that are the headline of an old
+   news story (e.g. "ircc held two express entry draws issuing thousands of invitations"); fold those into a news or
+   tracker cluster instead of writing them up as their own article. Prefer topics that matter to people heading for
+   B.C. or Canadian PR; the site's focus is BC PNP and the routes around it.
 3. Rank what's left by `Volume` (highest first). Use lower `Keyword Difficulty` as the tiebreaker.
 4. Walk down the list. For each candidate:
    - Group it with near-duplicate variants (plural/singular, word order, "pnp" vs
