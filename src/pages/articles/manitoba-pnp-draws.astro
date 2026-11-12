@@ -1,0 +1,319 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Manitoba PNP Draws 2026: Latest MPNP EOI Draw Results, Scores and LAAs";
+const description = "Manitoba PNP draws in 2026: recent MPNP EOI draws with LAAs and lowest scores, how the 1,000-point EOI ranking works, and what to do after you get an LAA.";
+const canonical = "https://bcpnpcalculator.ca/articles/manitoba-pnp-draws";
+
+const faqs = [
+  {
+    q: "When was the last Manitoba PNP draw?",
+    a: "As of November 12, 2026, the most recent MPNP Expression of Interest draw was Draw #283 on November 5, 2026. It issued 526 Letters of Advice to Apply: 448 in an occupation-specific Skilled Worker in Manitoba selection for people working in Manitoba in broad occupational categories 8 and 9 (natural resources, agriculture and production; manufacturing and utilities), and 78 to Skilled Worker Stream candidates invited under a strategic recruitment initiative. No minimum score was published for either selection.",
+  },
+  {
+    q: "What was the lowest score in recent Manitoba PNP draws?",
+    a: "It depends on the selection. In Draw #282 on October 22, 2026, the lowest-ranked candidate invited scored 846 in the overall top-scoring Skilled Worker in Manitoba selection and 816 in the completed post-secondary study in Manitoba selection. Occupation-targeted selections have gone much lower: 632 for manufacturing and utilities workers on July 30, 2026, and 731 for major group 72 trades and transportation workers on August 27, 2026. Many selections, such as health care, teachers and strategic recruitment, publish no score at all.",
+  },
+  {
+    q: "How often does Manitoba hold PNP draws?",
+    a: "The MPNP does not publish a draw schedule. In practice, every EOI draw from Draw #274 on July 2, 2026 to Draw #283 on November 5, 2026 was held two weeks apart. That pattern can change at any time, so treat it as a description of the past rather than a forecast.",
+  },
+  {
+    q: "What is the maximum MPNP EOI score?",
+    a: "The MPNP EOI ranking grid adds up to 1,000 points: language up to 125, age up to 75, work experience up to 175, education up to 125 and adaptability up to 500. Risk factors can then subtract up to 200 points for work or study in another Canadian province. Ongoing employment in Manitoba for six months or more with a long-term job offer from the same employer, or an Invitation to Apply under a strategic initiative, is worth 500 adaptability points on its own.",
+  },
+  {
+    q: "Do I need an Express Entry profile for a Manitoba PNP draw?",
+    a: "Not for the 2026 draws covered here. Each draw notice reports how many Letters of Advice to Apply went to candidates who declared a valid Express Entry profile number and job seeker validation code (49 of 526 in Draw #283), but the selections themselves were open to eligible candidates with or without one. Declaring a valid Express Entry profile matters because it allows Manitoba to issue an enhanced nomination, which adds 600 Comprehensive Ranking System points to your federal profile.",
+  },
+  {
+    q: "How long do I have to apply after a Manitoba LAA?",
+    a: "The MPNP gives you 60 days from the date of your Letter of Advice to Apply to submit a full application in MPNP Online. The application fee is $500, non-refundable, and must be paid by Visa or Mastercard credit card (not Visa Debit). The MPNP says applications must be submitted using the Microsoft Edge browser.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="manitoba-pnp-draws" datePublished="2026-11-12" dateModified="2026-11-12" articleSection="Analysis" keywords="manitoba pnp draw, manitoba pnp draws, manitoba pnp latest draw, manitoba pnp last draw, pnp draw manitoba, manitoba pnp news, manitoba pnp eoi" title={title} description={description} canonical={canonical} ogImage="/images/articles/manitoba-pnp-draws.png">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-amber-100 text-amber-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-amber-200 shadow-sm">
+        Draw Tracker
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Manitoba PNP Draws 2026: Latest MPNP EOI Draw Results, Scores and LAAs
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Every Manitoba Expression of Interest draw from July to November 2026, copied from the official draw notices, plus how the 1,000-point ranking grid decides who gets a Letter of Advice to Apply.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-12">November 12, 2026</time>
+        <span>&bull;</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/manitoba-pnp-draws.png" width="1200" height="630" alt="Horizontal bar chart of the lowest ranking scores invited in Manitoba PNP score-based selections from July to October 2026, ranging from 632 to 846."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-amber-50 border-l-4 border-amber-500 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-amber-900 mb-2">Quick answer</p>
+      <p class="text-amber-900">
+        The latest Manitoba PNP draw, as of November 12, 2026, is EOI Draw #283 on November 5, 2026: 526 Letters of Advice to Apply (LAAs), of which 448 went to people working in Manitoba in manufacturing, utilities, natural resources and agriculture occupations, and 78 to candidates invited through strategic recruitment initiatives. No minimum score was published. The most recent score cutoffs came in Draw #282 on October 22, 2026: 846 for the overall top-scoring Skilled Worker in Manitoba selection and 816 for Manitoba post-secondary graduates.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">526</div>
+        <div class="text-sm text-slate-600 font-medium">LAAs in Draw #283, November 5, 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">846</div>
+        <div class="text-sm text-slate-600 font-medium">Latest overall top-scoring cutoff (Draw #282, October 22)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">8,000</div>
+        <div class="text-sm text-slate-600 font-medium">Manitoba's total 2026 nomination allocation</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this tracker</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#latest" class="hover:underline">The latest Manitoba PNP draw</a></li>
+        <li><a href="#table" class="hover:underline">Recent MPNP EOI draws: full table</a></li>
+        <li><a href="#cutoffs" class="hover:underline">Score cutoffs by selection</a></li>
+        <li><a href="#selections" class="hover:underline">How to read a Manitoba draw notice</a></li>
+        <li><a href="#ranking" class="hover:underline">How the 1,000-point EOI ranking works</a></li>
+        <li><a href="#allocation" class="hover:underline">2026 allocation and what the numbers show</a></li>
+        <li><a href="#improve" class="hover:underline">How to improve your ranking</a></li>
+        <li><a href="#after-laa" class="hover:underline">What happens after an LAA</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        Manitoba runs its Provincial Nominee Program (MPNP) through an Expression of Interest pool. Candidates for the Skilled Worker Stream and the International Education Stream create a profile, get ranking points, and wait for a draw. Each draw notice on immigratemanitoba.com lists the selections made, how many Letters of Advice to Apply were issued in each, and sometimes the score of the lowest-ranked person invited. This page collects those notices for the second half of 2026 in one place. All figures below were taken from the official draw archive and checked on November 12, 2026. It is general information, not immigration advice.
+      </p>
+
+      <h2 id="latest" class="text-3xl font-bold mt-12 mb-6">The Latest Manitoba PNP Draw: EOI Draw #283 (November 5, 2026)</h2>
+
+      <p>
+        Draw #283 was an occupation-focused round with no score-based selection. It had two parts:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Skilled Worker in Manitoba, occupation-specific: 448 LAAs.</strong> Profiles declaring current employment in Manitoba in broad occupational category 8 (natural resources, agriculture and related production) or 9 (manufacturing and utilities) were considered.</li>
+        <li><strong>Skilled Worker Stream, strategic recruitment initiatives: 78 LAAs.</strong> These went to Skilled Worker in Manitoba or Skilled Worker Overseas candidates who were directly invited by the MPNP: 20 through Employer Services, 11 through Ethnocultural Communities, 12 through the Francophone Community initiative, 30 through Regional Communities and 5 under the temporary public policy for work permit support letter holders.</li>
+      </ul>
+      <p>
+        Of the 526 LAAs, 49 went to candidates who declared a valid Express Entry profile number and job seeker validation code. The notice also warns that people who claimed to be fully licensed in a regulated occupation but are not may have their full application refused, and suggests they consider declining the LAA.
+      </p>
+
+      <h2 id="table" class="text-3xl font-bold mt-12 mb-6">Recent Manitoba PNP Draws: Results Table (July to November 2026)</h2>
+
+      <p>
+        The table lists every Skilled Worker EOI draw from #274 to #283, with the total LAAs, the number going to candidates with a valid Express Entry profile, and the main selections. Only figures published in the official notices are included; a dash means the notice gave no minimum score.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm border border-slate-200 rounded-xl">
+          <thead class="bg-amber-50">
+            <tr>
+              <th class="p-3 text-left">Draw</th>
+              <th class="p-3 text-left">Date</th>
+              <th class="p-3 text-left">Total LAAs</th>
+              <th class="p-3 text-left">With Express Entry</th>
+              <th class="p-3 text-left">Selections (LAAs, lowest score)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">#283</td><td class="p-3">Nov 5, 2026</td><td class="p-3">526</td><td class="p-3">49</td><td class="p-3">BOC 8 and 9 workers in Manitoba (448, &ndash;); strategic recruitment (78, &ndash;)</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">#282</td><td class="p-3">Oct 22, 2026</td><td class="p-3">1,304</td><td class="p-3">353</td><td class="p-3">Completed post-secondary study in Manitoba (734, 816); overall top scoring (513, 846); strategic recruitment (57, &ndash;)</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">#281</td><td class="p-3">Oct 8, 2026</td><td class="p-3">340</td><td class="p-3">103</td><td class="p-3">Health occupations (46, &ndash;); teachers, ECEs and teacher assistants (211, &ndash;); strategic recruitment (83, &ndash;)</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">#280</td><td class="p-3">Sep 24, 2026</td><td class="p-3">474</td><td class="p-3">148</td><td class="p-3">Family physicians (1, &ndash;); BOC 2 natural and applied sciences, top scoring (417, 760); Francophone (16, &ndash;); strategic recruitment (40, &ndash;)</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">#279</td><td class="p-3">Sep 10, 2026</td><td class="p-3">793</td><td class="p-3">272</td><td class="p-3">Health occupations (233, &ndash;); Francophone (11, &ndash;); completed post-secondary study in Manitoba (508, 825); strategic recruitment (41, &ndash;)</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">#278</td><td class="p-3">Aug 27, 2026</td><td class="p-3">741</td><td class="p-3">150</td><td class="p-3">Family physicians and bus drivers (62, &ndash;); major group 72 trades and transportation, top scoring (600, 731); Francophone (21, &ndash;); strategic recruitment (58, &ndash;)</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">#277</td><td class="p-3">Aug 13, 2026</td><td class="p-3">53</td><td class="p-3">6</td><td class="p-3">Strategic recruitment only (53, &ndash;)</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">#276</td><td class="p-3">Jul 30, 2026</td><td class="p-3">766</td><td class="p-3">94</td><td class="p-3">Aerospace, aviation, physician and facility manager unit groups (74, &ndash;); BOC 9 manufacturing and utilities, top scoring (605, 632); Francophone (17, &ndash;); strategic recruitment (70, &ndash;)</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">#275</td><td class="p-3">Jul 16, 2026</td><td class="p-3">2,146</td><td class="p-3">825</td><td class="p-3">IES Graduate Internship Pathway (78, &ndash;); medical specialists and family physicians (24, &ndash;); Francophone (84, &ndash;); completed post-secondary study in Manitoba (1,874, 825); strategic recruitment (86, &ndash;)</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">#274</td><td class="p-3">Jul 2, 2026</td><td class="p-3">77</td><td class="p-3">15</td><td class="p-3">Strategic recruitment only (77, &ndash;)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-gray-500">
+        Source: MPNP Expression of Interest draw archive, checked November 12, 2026. BOC = broad occupational category under NOC 2021. For Draw #276, the archive page splits two figures across lines; the selection totals (74 + 605 + 17 + 70 = 766) match the published draw total.
+      </p>
+
+      <h2 id="cutoffs" class="text-3xl font-bold mt-12 mb-6">Manitoba PNP Score Cutoffs by Selection</h2>
+
+      <p>
+        A single "Manitoba PNP cutoff" doesn't exist. Each selection draws from a different slice of the pool, so the minimum score only means something next to the group it applies to. Here are the score-based selections from the table above:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm border border-slate-200 rounded-xl">
+          <thead class="bg-amber-50">
+            <tr>
+              <th class="p-3 text-left">Date</th>
+              <th class="p-3 text-left">Selection (Skilled Worker in Manitoba)</th>
+              <th class="p-3 text-left">LAAs</th>
+              <th class="p-3 text-left">Lowest score invited</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="p-3">Oct 22, 2026</td><td class="p-3">Overall top scoring</td><td class="p-3">513</td><td class="p-3 font-semibold">846</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">Oct 22, 2026</td><td class="p-3">Completed post-secondary study in Manitoba</td><td class="p-3">734</td><td class="p-3 font-semibold">816</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">Sep 24, 2026</td><td class="p-3">BOC 2 natural and applied sciences</td><td class="p-3">417</td><td class="p-3 font-semibold">760</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">Sep 10, 2026</td><td class="p-3">Completed post-secondary study in Manitoba</td><td class="p-3">508</td><td class="p-3 font-semibold">825</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">Aug 27, 2026</td><td class="p-3">Major group 72 trades and transportation</td><td class="p-3">600</td><td class="p-3 font-semibold">731</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">Jul 30, 2026</td><td class="p-3">BOC 9 manufacturing and utilities</td><td class="p-3">605</td><td class="p-3 font-semibold">632</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">Jul 16, 2026</td><td class="p-3">Completed post-secondary study in Manitoba</td><td class="p-3">1,874</td><td class="p-3 font-semibold">825</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Two patterns stand out. First, the graduate selection has sat in a narrow band (825, 825, then 816) even when the number of LAAs changed a lot. Second, occupation-targeted selections reach much lower scores, because only people working in the named occupations compete. A manufacturing worker with 632 points was invited on July 30, while someone outside the target groups needed 846 in the October overall round. That is why your occupation and where you work can matter as much as your total.
+      </p>
+
+      <h2 id="selections" class="text-3xl font-bold mt-12 mb-6">How to Read a Manitoba PNP Draw Notice</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Skilled Worker in Manitoba selections</h3>
+      <p>
+        The Skilled Worker in Manitoba pathway is for people with ongoing employment in the province. Its draws come in several forms. <strong>Occupation-specific selections</strong> consider everyone working in Manitoba in named NOC 2021 unit groups or broad categories, often with no published score, because Manitoba wants all of them (for example health occupations on September 10 and October 8, and teachers and early childhood educators on October 8). <strong>Top-scoring occupational selections</strong> rank only workers in one category and publish a cutoff. The <strong>completed post-secondary study in Manitoba</strong> selection targets candidates who, or whose spouse, finished post-secondary education in the province, and the notices remind them to decline the LAA if they can't prove it with a diploma and transcript. The <strong>overall top-scoring</strong> selection, which appeared on October 22, is open to all eligible pathway profiles. Five draws between July and September also included a <strong>Francophone selection</strong> for profiles declaring French as their language of communication with a valid French test.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Strategic recruitment initiatives</h3>
+      <p>
+        Every draw since July has a Skilled Worker Stream selection for candidates who received an Invitation to Apply (ITA) directly from the MPNP. The notices break these down by initiative: Employer Services, Ethnocultural Communities, Francophone Community, Regional Communities and the Temporary Public Policy to Facilitate Work Permits for Prospective Provincial Nominee Program Candidates. Skilled Worker Overseas candidates appear only through this route in the 2026 notices: the MPNP states that Skilled Worker Stream EOIs were considered only if the person was directly invited under a strategic recruitment initiative or that temporary public policy. If you claim an ITA, you must enter a valid invitation number or you won't be selected.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">International Education Stream</h3>
+      <p>
+        The only International Education Stream selection between July and November 2026 was 78 LAAs for the Graduate Internship Pathway on July 16. The MPNP has told Career Employment Pathway candidates with at least six months of Manitoba work experience to move to the Skilled Worker in Manitoba pathway, where Manitoba graduates are now selected through the post-secondary study selection.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The Express Entry line</h3>
+      <p>
+        Every notice ends with a count of LAAs issued to candidates who declared a valid Express Entry profile number and job seeker validation code. In the draws above, that was a share of the total, not a separate requirement. It matters because Manitoba can nominate those candidates through Express Entry (an "enhanced" nomination), which adds 600 points to their federal Comprehensive Ranking System score. Our guide to the <a href="/articles/express-entry-job-seeker-validation-code" class="text-blue-600 hover:text-blue-800 underline">Express Entry job seeker validation code</a> explains where to find it.
+      </p>
+
+      <h2 id="ranking" class="text-3xl font-bold mt-12 mb-6">How the MPNP EOI Ranking Works (1,000 Points)</h2>
+
+      <p>
+        The MPNP ranks Skilled Worker and International Education Stream profiles on six factors. The first five add up to a maximum of 1,000 points, and the sixth can only subtract.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm border border-slate-200 rounded-xl">
+          <thead class="bg-amber-50">
+            <tr><th class="p-3 text-left">Factor</th><th class="p-3 text-left">Maximum</th><th class="p-3 text-left">Key values</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Language</td><td class="p-3">125</td><td class="p-3">First official language: 25 per band at CLB 8+, 22 at CLB 7, 20 at CLB 6, 17 at CLB 5, 12 at CLB 4; second official language at CLB 5+: 25</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Age</td><td class="p-3">75</td><td class="p-3">75 for ages 21 to 45; 40 at 20 or 46; 0 at 50 or older</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Work experience</td><td class="p-3">175</td><td class="p-3">40 to 75 for one to four or more years in the last five; 100 for being fully recognized by a Manitoba licensing body</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Education</td><td class="p-3">125</td><td class="p-3">125 for a master's or doctorate; 110 for a program of three years or more; 70 for a one-year program or trade certificate</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Adaptability</td><td class="p-3">500</td><td class="p-3">500 for Manitoba Demand (six months or more of ongoing employment in Manitoba with a long-term offer from the same employer, or a strategic initiative ITA); 200 for a close relative in Manitoba; 100 for Manitoba work or a two-year Manitoba program; plus 50 for settling outside Winnipeg</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Risk</td><td class="p-3">&minus;200</td><td class="p-3">&minus;100 each for work experience or studies in another province</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The 500-point Manitoba Demand factor explains most of the cutoffs. A worker with that connection, CLB 8 in all four abilities (100), age 21 to 45 (75), four years of experience (75) and a three-year degree (110) reaches 860 before any regional bonus. Without Manitoba Demand, the same person could get at most 200 points from a Manitoba connection (such as a close relative), plus 50 for settling outside Winnipeg. Unlike the BC PNP, which scores registrations out of 200 (see our <a href="/articles/bc-pnp-vs-manitoba-mpnp-2026" class="text-blue-600 hover:text-blue-800 underline">BC PNP vs Manitoba MPNP comparison</a>), Manitoba does not award points for wage.
+      </p>
+
+      <h2 id="allocation" class="text-3xl font-bold mt-12 mb-6">Manitoba's 2026 Allocation and What the Numbers Show</h2>
+
+      <p>
+        The MPNP's 2026 monthly data page says Manitoba was allocated 8,000 nominations for 2026: 6,239 in January and 1,761 more in August. Through October, the program had issued 5,841 nominations, including 1,990 enhanced (Express Entry) nominations. Skilled Worker LAAs totalled 8,530 from January to October, with the pace rising sharply after spring: 102 in January, 2,989 in July and 1,647 in October. Applications received also climbed, from 292 Skilled Worker applications in January to more than 1,100 a month from August to October.
+      </p>
+      <p>
+        More LAAs than nominations is normal: not everyone who receives an LAA applies, and some applications are refused (599 Skilled Worker refusals through October). The MPNP says the number of LAAs in each draw depends on annual processing targets and capacity. With roughly 2,160 nominations left under the 8,000 allocation at the end of October, the remaining 2026 draws will be shaped by how many submitted applications are still waiting for a decision. The program publishes no forecast, and neither do we.
+      </p>
+
+      <h2 id="improve" class="text-3xl font-bold mt-12 mb-6">How to Improve Your Manitoba EOI Ranking</h2>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Retake your language test.</strong> Moving from CLB 7 to CLB 8 in each ability adds 12 points, and a valid second-official-language test at CLB 5 or higher adds 25. French also opens the Francophone selection.</li>
+        <li><strong>Build Manitoba Demand.</strong> Six months of ongoing employment in Manitoba with a long-term offer from the same employer is the 500-point connection that most Skilled Worker in Manitoba selections rely on.</li>
+        <li><strong>Get licensed if your job is regulated.</strong> Full recognition by a Manitoba licensing body is worth 100 points, but only claim it if you have completed every step.</li>
+        <li><strong>Declare every Manitoba connection.</strong> Include completed Manitoba post-secondary education for you or your spouse, which is the basis of the graduate selection.</li>
+        <li><strong>Consider the regions.</strong> A destination outside Winnipeg adds 50 regional development points when combined with another Manitoba connection other than Manitoba Demand, and you must show a real link to that community.</li>
+        <li><strong>Keep the profile valid.</strong> An EOI lasts one year, and draws skip profiles with an expired language test or an invalid ITA number.</li>
+      </ul>
+
+      <h2 id="after-laa" class="text-3xl font-bold mt-12 mb-6">What Happens After a Manitoba LAA</h2>
+      <p>
+        An LAA is an invitation to apply, not a nomination. You have 60 days from the LAA date to submit a full application in MPNP Online and pay the $500 non-refundable fee by Visa or Mastercard credit card; the MPNP says the application must be submitted in Microsoft Edge. You must prove every claim in your EOI with documents, and the MPNP assesses your connection to Manitoba from what you upload. If you are nominated, you then apply to IRCC for permanent residence. With a valid Express Entry profile you may receive an enhanced nomination; otherwise you apply through the paper-based, non-Express Entry process. The MPNP also warns that LAA emails can land in spam folders.
+      </p>
+      <p>
+        Comparing provinces? Track B.C.'s rounds on our <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a> and estimate your B.C. score with the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a>. For the wider picture, see <a href="/articles/canada-pnp-news-2026-all-provinces" class="text-blue-600 hover:text-blue-800 underline">PNP news for all provinces in 2026</a> and <a href="/articles/how-to-get-provincial-nomination-canada" class="text-blue-600 hover:text-blue-800 underline">how to get a provincial nomination</a>.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://immigratemanitoba.com/draws/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Expression of Interest draw archive (Draws #274 to #283), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/2026/11/expression-of-interest-draw-283/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Expression of Interest Draw #283 (November 5, 2026), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/2026/10/expression-of-interest-draw-282/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Expression of Interest Draw #282 (October 22, 2026), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/apply/eoi/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Expression of Interest and EOI ranking points, Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/apply/laa/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Letter of Advice to Apply, Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/resources/data/monthly-data-2026/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">MPNP Monthly Data 2026 (allocation, nominations, LAAs), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/news/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">MPNP news (Career Employment Pathway changes), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/skilled-worker/swo/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Skilled Worker Overseas Pathway, Manitoba Immigration</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Comprehensive Ranking System criteria (600 points for a provincial nomination), IRCC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Draw results, allocation and monthly data current as of November 12, 2026. The MPNP's monthly figures are preliminary and may be revised. Check immigratemanitoba.com for draws held after this date.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-vs-manitoba-mpnp-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-amber-600 font-bold mb-2">Comparison</div>
+          <div class="font-bold text-gray-900">BC PNP vs Manitoba MPNP 2026</div>
+        </a>
+        <a href="/articles/canada-pnp-news-2026-all-provinces" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">News</div>
+          <div class="font-bold text-gray-900">Canada PNP News 2026: All Provinces</div>
+        </a>
+        <a href="/articles/how-to-get-provincial-nomination-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">How-To</div>
+          <div class="font-bold text-gray-900">How to Get a Provincial Nomination in Canada</div>
+        </a>
+        <a href="/articles/express-entry-job-seeker-validation-code" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Express Entry</div>
+          <div class="font-bold text-gray-900">Express Entry Job Seeker Validation Code</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

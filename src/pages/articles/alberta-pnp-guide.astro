@@ -1,0 +1,366 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Alberta PNP Guide 2026: AAIP Streams, Requirements, EOI, Fees and Processing Times";
+const description = "Alberta PNP (AAIP) guide for late 2026: worker and entrepreneur streams, EOI points, $135 and $1,500 fees, processing dates and the 6,603 nomination allocation.";
+const canonical = "https://bcpnpcalculator.ca/articles/alberta-pnp-guide";
+
+const faqs = [
+  {
+    q: "What is the Alberta PNP?",
+    a: "The Alberta PNP is the Alberta Advantage Immigration Program (AAIP), Alberta's provincial nominee program. It nominates workers and entrepreneurs for permanent residence. A nomination does not give you PR by itself: you then apply to Immigration, Refugees and Citizenship Canada (IRCC), which makes the final decision. As of November 12, 2026, the AAIP has four worker streams and four entrepreneur streams.",
+  },
+  {
+    q: "What are the Alberta PNP requirements?",
+    a: "They depend on the stream. To enter the worker pool you need at least CLB 4 (or NCLC 4) in all four language skills to submit a Worker Expression of Interest. The Alberta Opportunity Stream then requires a valid eligible work permit, a full-time Alberta job offer in your current occupation, CLB 5 for TEER 0-3 jobs or CLB 4 for TEER 4-5 jobs, high school education equivalent to Canadian standards, and 12 months of full-time work in that occupation in Alberta within the last 18 months (or 24 months within 30 months in Canada or abroad). The Alberta Express Entry Stream requires an active Express Entry profile and a CRS score of at least 300.",
+  },
+  {
+    q: "Can I apply for the Alberta PNP without a job offer?",
+    a: "The Alberta Opportunity, Rural Renewal and Tourism and Hospitality streams all require an Alberta job offer, and the Rural Renewal Stream also needs a community endorsement. The Alberta Express Entry Stream can invite candidates without an Alberta job offer in some draws, for example priority sector draws based on experience in construction, agriculture or aviation, but the dedicated health care, tech and law enforcement pathways all require a job offer. In practice most nominations go to people already working in Alberta.",
+  },
+  {
+    q: "How long does the Alberta PNP take to process?",
+    a: "Alberta does not publish a single processing time. Its processing page, last updated November 4, 2026, lists the application date it is currently assessing for each stream: for example, Alberta Opportunity Stream applications received on or before August 2, 2026, Rural Renewal Stream applications received on or before October 9, 2026, and Tourism and Hospitality Stream applications received on or before November 2, 2026. After nomination, IRCC's own permanent residence processing time applies on top.",
+  },
+  {
+    q: "How much does the Alberta PNP cost?",
+    a: "Under the AAIP fee schedule effective April 7, 2026, a Worker Expression of Interest costs $135 and a worker stream application costs $1,500. Entrepreneur streams charge $200 for an Entrepreneur Expression of Interest (Graduate, Foreign Graduate and Rural Entrepreneur streams) and $3,500 for the application. A request for reconsideration costs $250. Federal PR fees, language tests, credential assessments and medical exams are extra.",
+  },
+  {
+    q: "How many nominations does Alberta have in 2026?",
+    a: "Alberta's 2026 allocation is 6,603 nominations, after IRCC added 200 spaces on August 10, 2026. As of the November 4, 2026 processing update, 6,108 had been issued and 495 spaces remained. Nominations for practice-ready physicians and Francophones under a federal initiative do not count toward the 6,603; Alberta reported 50 physician and 12 Francophone nominations through those extra spaces.",
+  },
+  {
+    q: "Is the Alberta PNP easier than the BC PNP?",
+    a: "Neither is easy, and they reward different profiles. Alberta's 2026 allocation (6,603) is slightly larger than B.C.'s (6,254), and Alberta's Alberta Opportunity Stream accepts most TEER 0-5 occupations for people already working in the province. B.C. now invites mainly through targeted Care, Build and Innovate rounds. The better choice depends on where your job offer is and what your occupation is. Our BC PNP vs Alberta AAIP comparison goes through it in detail.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="alberta-pnp-guide" datePublished="2026-11-12" dateModified="2026-11-12" articleSection="Guide" keywords="alberta pnp, pnp alberta, ab pnp, alberta canada pnp, pnp in alberta, alberta pnp requirements, pnp alberta requirements, alberta pnp eligibility, pnp alberta processing time, alberta pnp updates" ogImage="/images/articles/alberta-pnp-guide.png" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-sky-100 text-sky-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-sky-200 shadow-sm">
+        Alberta PNP Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Alberta PNP Guide 2026: AAIP Streams, Requirements, EOI, Fees and Processing Times
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        How the Alberta Advantage Immigration Program works in late 2026: which stream fits you, how the Worker Expression of Interest pool picks candidates, what it costs and how far behind processing is.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-12">November 12, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/alberta-pnp-guide.png" width="1200" height="630" alt="Bar chart of Alberta's 6,603 AAIP nominations for 2026 split by stream, led by 3,562 for the Alberta Opportunity Stream and 1,057 for the Rural Renewal Stream."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-sky-50 border-l-4 border-sky-500 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-sky-900 mb-2">Quick answer</p>
+      <p class="text-sky-900">
+        The Alberta PNP is the Alberta Advantage Immigration Program (AAIP). Workers enter by submitting a $135 Worker Expression of Interest, are scored out of 100 points, and are invited in draws targeted at streams and sectors; invited candidates pay $1,500 to apply. Most nominations go to people already working in Alberta with a job offer, mainly through the Alberta Opportunity Stream. Alberta has 6,603 nominations for 2026, and only 495 were left as of November 4, 2026.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-sky-600 mb-2">6,603</div>
+        <div class="text-sm text-slate-600 font-medium">AAIP nomination allocation for 2026 (495 left on Nov 4)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-slate-800 mb-2">$135 + $1,500</div>
+        <div class="text-sm text-slate-600 font-medium">Worker EOI fee plus worker stream application fee</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-sky-600 mb-2">32,211</div>
+        <div class="text-sm text-slate-600 font-medium">Worker EOIs in the selection pool (Nov 4, 2026)</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#what" class="hover:underline">What the Alberta PNP is</a></li>
+        <li><a href="#streams" class="hover:underline">AAIP streams and pathways in 2026</a></li>
+        <li><a href="#requirements" class="hover:underline">Alberta PNP requirements by stream</a></li>
+        <li><a href="#eoi" class="hover:underline">The Worker EOI system and draws</a></li>
+        <li><a href="#fees" class="hover:underline">Fees</a></li>
+        <li><a href="#processing" class="hover:underline">Processing times and the 2026 allocation</a></li>
+        <li><a href="#updates" class="hover:underline">Alberta PNP updates in 2025 and 2026</a></li>
+        <li><a href="#bc" class="hover:underline">Alberta PNP vs BC PNP</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        If you are searching for the "Alberta PNP" or "AB PNP," the program you want is officially called the Alberta Advantage Immigration Program. It was formerly called the Alberta Immigrant Nominee Program (AINP), and since September 30, 2024 it has run its worker streams through an Expression of Interest pool instead of first-come intake. This guide explains the current streams, who qualifies, how selection works and what to expect on timing. Every figure below was checked on alberta.ca as of November 12, 2026. It is general information, not legal advice.
+      </p>
+
+      <h2 id="what" class="text-3xl font-bold mt-12 mb-6">What the Alberta PNP Is</h2>
+
+      <p>
+        Alberta describes the AAIP as an economic immigration program that nominates people for permanent residence in Alberta. Nominees must have skills to fill job shortages or plan to buy or start a business in the province, and they must be able to support their families. The program is run jointly by the governments of Alberta and Canada, but the roles are split: Alberta decides who gets a nomination, and IRCC processes the permanent residence application and makes the final decision. Your spouse or common-law partner and dependent children can be included on the PR application.
+      </p>
+      <p>
+        There are two routes to PR after a nomination. If you are nominated through the Alberta Express Entry Stream (including the Express Entry option of the Dedicated Health Care Pathway), you receive 600 extra Comprehensive Ranking System points in the federal pool and apply through Express Entry. Every other stream leads to a non-Express Entry (base) PNP application to IRCC, which usually takes longer.
+      </p>
+
+      <h2 id="streams" class="text-3xl font-bold mt-12 mb-6">AAIP Streams and Pathways in 2026</h2>
+
+      <p>
+        As of November 12, 2026, alberta.ca lists eight active streams: four for workers and four for entrepreneurs. The Alberta Express Entry Stream contains several pathways.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full text-base border border-slate-200">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="text-left p-3 border-b">Stream or pathway</th>
+              <th class="text-left p-3 border-b">Who it is for</th>
+              <th class="text-right p-3 border-b">2026 allocation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="p-3 border-b font-semibold">Alberta Opportunity Stream</td><td class="p-3 border-b">Temporary workers living and working in Alberta with an Alberta job offer</td><td class="p-3 border-b text-right">3,562</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Rural Renewal Stream</td><td class="p-3 border-b">Workers with a job offer and endorsement from a designated rural community</td><td class="p-3 border-b text-right">1,057</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Tourism and Hospitality Stream</td><td class="p-3 border-b">Workers with an LMIA-based permit at an approved tourism or hospitality employer</td><td class="p-3 border-b text-right">156</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Dedicated Health Care Pathways</td><td class="p-3 border-b">Licensed health professionals with an Alberta health sector job offer (Express Entry and non-Express Entry options)</td><td class="p-3 border-b text-right">518</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Alberta Express Entry: Accelerated Tech Pathway</td><td class="p-3 border-b">Tech occupations with an Alberta tech-industry employer, including jobs supporting data centres</td><td class="p-3 border-b text-right">619</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Alberta Express Entry: Law Enforcement Pathway</td><td class="p-3 border-b">International police recruits identified by Alberta Association of Chiefs of Police members</td><td class="p-3 border-b text-right">12</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Alberta Express Entry: priority sector draws</td><td class="p-3 border-b">Express Entry candidates in construction, manufacturing, agriculture, aviation and related trades</td><td class="p-3 border-b text-right">619</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Entrepreneur streams</td><td class="p-3 border-b">Rural Entrepreneur, Graduate Entrepreneur, Foreign Graduate Entrepreneur and Farm streams combined</td><td class="p-3 border-b text-right">60</td></tr>
+            <tr class="bg-slate-50"><td class="p-3 font-bold">Total</td><td class="p-3"></td><td class="p-3 text-right font-bold">6,603</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-gray-500">Source: AAIP processing information page, last updated November 4, 2026. Alberta can move allocation between streams at any time.</p>
+
+      <p>
+        Two things stand out. First, more than half of all spaces go to the Alberta Opportunity Stream, which is for people who are already in Alberta on a work permit. Second, the entrepreneur streams are tiny in nomination terms (60 spaces), even though 211 business applications were in process at the November 4 update. For 2026, Alberta says it is prioritizing health care, technology, construction, manufacturing, aviation, agriculture and Rural Renewal designated communities, though it notes that list is not exhaustive.
+      </p>
+
+      <h2 id="requirements" class="text-3xl font-bold mt-12 mb-6">Alberta PNP Requirements by Stream</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Alberta Opportunity Stream</h3>
+      <p>This is the main AAIP stream. When you apply and when Alberta assesses your file, you must meet all of the following:</p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Work permit:</strong> a valid work permit of an eligible type, such as an LMIA-based permit, certain LMIA-exempt permits (trade agreements, intra-company transfers, International Experience Canada, Mobilit&eacute; Francophone), or a PGWP held by a graduate of an Alberta publicly funded post-secondary institution. Maintained status or restoration status does not count, and people living or working in another province are not eligible.</li>
+        <li><strong>Occupation:</strong> most TEER 0 to 5 occupations qualify, but Alberta publishes a list of ineligible ones, including real estate agents, home child care providers, home support workers, taxi drivers and several labourer occupations.</li>
+        <li><strong>Language:</strong> CLB or NCLC 5 in each skill for TEER 0-3 jobs, or 4 for TEER 4-5 jobs. Nurse aides, orderlies and patient service associates (NOC 33102) need CLB 7. Tests must be under two years old; CELPIP, IELTS General, PTE Core, TEF Canada and TCF Canada are accepted.</li>
+        <li><strong>Education:</strong> at least high school equivalent to Canadian standards, shown with an Educational Credential Assessment if your education is foreign.</li>
+        <li><strong>Work experience:</strong> 12 months of full-time work in your current occupation in Alberta within the last 18 months, or 24 months within the last 30 months in Canada or abroad. PGWP holders need 6 months in Alberta within 18 months.</li>
+        <li><strong>Job offer:</strong> a full-time job offer or contract from an Alberta employer in your current occupation. Part-time, casual, seasonal, self-employed, agency and remote work outside Alberta do not qualify.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Alberta Express Entry Stream</h3>
+      <p>
+        All pathways share minimum requirements: an active federal Express Entry profile, eligibility for the Canadian Experience Class, Federal Skilled Worker or Federal Skilled Trades Program, a CRS score of at least 300, and a primary occupation that matches a pathway or a provincial priority. Then each pathway adds its own rules. The <strong>Accelerated Tech Pathway</strong> needs full-time work or a job offer in an eligible tech occupation with an employer in an eligible tech industry, and starts with a separate web form. The <strong>Law Enforcement Pathway</strong> covers NOC 40040, 41310 and 42100 recruits put forward by police services. <strong>Priority sector draws</strong> target construction, agriculture and aviation occupations and can include candidates without an Alberta job offer. Alberta adds that you are less likely to be invited if your Express Entry profile expires in five months or less.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Dedicated Health Care Pathway</h3>
+      <p>
+        You need a verifiable Alberta health sector job offer and proof from the regulator that you meet the minimum requirements to practise in Alberta. Eligible professions are physicians, registered nurses, licensed practical nurses, nurse practitioners, physician assistants, occupational therapists, physiotherapists, clinical social workers and psychologists. If you can build an Express Entry profile with a CRS of 300 or more, you must use the Express Entry option; the non-Express Entry option is only for those who cannot.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Rural Renewal Stream</h3>
+      <p>
+        You need a full-time job offer in a designated rural community and an Endorsement of Candidate letter from that community's economic development organization. Since January 1, 2026, endorsement letters are valid for one year, each community has an endorsement limit, and people already in Canada must hold a valid work permit. Temporary workers living in Alberta can qualify in TEER 0-5 jobs; those living elsewhere in Canada only in TEER 0-3 jobs. Applicants need 12 months of full-time experience within the last 18 months, in a TEER category Alberta matches to the job offer.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Tourism and Hospitality Stream</h3>
+      <p>
+        You must hold an LMIA-based work permit (or a 2024 wildfire special-measures permit) and have worked full-time for at least six consecutive months, or 780 hours, with your current employer in an eligible occupation. The employer must belong to an approved sector association such as the Alberta Hotel and Lodging Association or the Tourism Industry Association of Alberta.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Entrepreneur streams</h3>
+      <p>
+        The Rural Entrepreneur Stream is for buying or starting a business in a rural community; the Graduate Entrepreneur Stream is for international graduates of approved Alberta institutions; the Foreign Graduate Entrepreneur Stream is for graduates of foreign institutions launching an innovative start-up with a designated agency; and the Farm Stream is for experienced farmers. On August 12, 2026, Alberta added guidance on how it assesses the existing economic establishment requirement, without changing eligibility. Check each stream page for investment and net worth rules before you submit anything.
+      </p>
+
+      <h2 id="eoi" class="text-3xl font-bold mt-12 mb-6">How the Worker EOI System and Draws Work</h2>
+
+      <p>
+        You cannot apply directly to the Alberta Opportunity, Express Entry, Rural Renewal or Tourism and Hospitality streams. You first submit a Worker Expression of Interest (WEOI) in the AAIP portal, which is scored out of 100 points. You need at least CLB 4 or NCLC 4 in all four skills just to submit one, and you can hold only one WEOI at a time.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full text-base border border-slate-200">
+          <thead class="bg-slate-100">
+            <tr><th class="text-left p-3 border-b">Factor group</th><th class="text-left p-3 border-b">What scores</th><th class="text-right p-3 border-b">Max points</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="p-3 border-b">Education</td><td class="p-3 border-b">Highest level (up to 12) plus where it was completed in Canada (10 for Alberta, 6 elsewhere in Canada)</td><td class="p-3 border-b text-right">22</td></tr>
+            <tr><td class="p-3 border-b">Language</td><td class="p-3 border-b">CLB 6+ in English earns 10; bilingual bonus of 3</td><td class="p-3 border-b text-right">13</td></tr>
+            <tr><td class="p-3 border-b">Work experience</td><td class="p-3 border-b">Total experience (11 for 12+ months) plus Canadian experience (10 for 6+ months in Alberta)</td><td class="p-3 border-b text-right">21</td></tr>
+            <tr><td class="p-3 border-b">Age</td><td class="p-3 border-b">5 points for ages 21-34</td><td class="p-3 border-b text-right">5</td></tr>
+            <tr><td class="p-3 border-b">Family in Alberta</td><td class="p-3 border-b">Parent, child or sibling who is a citizen or PR</td><td class="p-3 border-b text-right">8</td></tr>
+            <tr><td class="p-3 border-b">Alberta job offer</td><td class="p-3 border-b">Permanent full-time offer (10), plus 6 for a Rural Renewal endorsement, tourism association employer or police employer</td><td class="p-3 border-b text-right">16</td></tr>
+            <tr><td class="p-3 border-b">Job location</td><td class="p-3 border-b">5 points outside the Calgary and Edmonton metro areas</td><td class="p-3 border-b text-right">5</td></tr>
+            <tr><td class="p-3 border-b">Regulated occupation</td><td class="p-3 border-b">Job offer in a regulated occupation plus Alberta licence or trade certificate</td><td class="p-3 border-b text-right">10</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Points are only part of the story. Alberta says it invites candidates based on a combination of score, labour market needs, application volumes and available nominations, and that draws can target occupations or sectors regardless of score. It also does not disclose recent draw parameters beyond the stream, minimum score and number of invitations. You may be invited to a different stream from the one you named, and since May 26, 2026 you can decline an invitation and return to the pool within the 15-day invitation window. WEOIs are valid for one year, and editing one does not extend it.
+      </p>
+      <p>
+        To give a sense of recent scores, Alberta's draw table shows a Rural Renewal Stream draw on November 2, 2026 with a minimum score of 51 (173 invitations), an Alberta Opportunity Stream draw on October 30 at 59 (132 invitations) and an Express Entry priority sector draw on October 20 at 60 (386 invitations). Those minimums move with each draw. Our <a href="/articles/alberta-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">Alberta PNP draws tracker</a> covers the full 2026 history.
+      </p>
+      <p>
+        The pool is crowded. On November 4, 2026, 32,211 WEOIs were eligible for selection, including 20,603 naming the Alberta Opportunity Stream, against 495 nominations left for the year.
+      </p>
+
+      <h2 id="fees" class="text-3xl font-bold mt-12 mb-6">Alberta PNP Fees in 2026</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full text-base border border-slate-200">
+          <thead class="bg-slate-100">
+            <tr><th class="text-left p-3 border-b">Service</th><th class="text-right p-3 border-b">Fee (CAD)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="p-3 border-b">Worker Expression of Interest (since April 7, 2026)</td><td class="p-3 border-b text-right">$135</td></tr>
+            <tr><td class="p-3 border-b">Worker stream application (Opportunity, Express Entry, Rural Renewal, Tourism and Hospitality)</td><td class="p-3 border-b text-right">$1,500</td></tr>
+            <tr><td class="p-3 border-b">Entrepreneur Expression of Interest (Graduate, Foreign Graduate, Rural Entrepreneur)</td><td class="p-3 border-b text-right">$200</td></tr>
+            <tr><td class="p-3 border-b">Entrepreneur and Farm stream application</td><td class="p-3 border-b text-right">$3,500</td></tr>
+            <tr><td class="p-3 border-b">Request for reconsideration</td><td class="p-3 border-b text-right">$250</td></tr>
+            <tr><td class="p-3 border-b">Nomination extension, or 204(c) / 205(a) work permit support letter</td><td class="p-3 border-b text-right">$150 each</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        These are provincial fees only, from the AAIP fee schedule effective April 7, 2026. Budget separately for IRCC's PR fees, language tests, an Educational Credential Assessment, police certificates and medical exams. Alberta also warns that employers and recruiters may not charge you for a job offer.
+      </p>
+
+      <h2 id="processing" class="text-3xl font-bold mt-12 mb-6">Alberta PNP Processing Times and the 2026 Allocation</h2>
+
+      <p>
+        Alberta does not publish processing times in months. Instead, its processing page shows which application dates each stream is currently assessing. As of the November 4, 2026 update:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full text-base border border-slate-200">
+          <thead class="bg-slate-100">
+            <tr><th class="text-left p-3 border-b">Stream or pathway</th><th class="text-left p-3 border-b">Assessing applications received on or before</th><th class="text-right p-3 border-b">Issued / allocated</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="p-3 border-b">Alberta Opportunity Stream</td><td class="p-3 border-b">August 2, 2026</td><td class="p-3 border-b text-right">3,386 / 3,562</td></tr>
+            <tr><td class="p-3 border-b">Rural Renewal Stream</td><td class="p-3 border-b">October 9, 2026</td><td class="p-3 border-b text-right">866 / 1,057</td></tr>
+            <tr><td class="p-3 border-b">Tourism and Hospitality Stream</td><td class="p-3 border-b">November 2, 2026</td><td class="p-3 border-b text-right">146 / 156</td></tr>
+            <tr><td class="p-3 border-b">Dedicated Health Care Pathways</td><td class="p-3 border-b">September 25, 2026</td><td class="p-3 border-b text-right">365 / 518</td></tr>
+            <tr><td class="p-3 border-b">Accelerated Tech Pathway</td><td class="p-3 border-b">July 8, 2026</td><td class="p-3 border-b text-right">596 / 619</td></tr>
+            <tr><td class="p-3 border-b">Express Entry priority sectors</td><td class="p-3 border-b">July 24, 2026</td><td class="p-3 border-b text-right">703 / 619</td></tr>
+            <tr><td class="p-3 border-b">Entrepreneur streams</td><td class="p-3 border-b">Evaluated upon receipt</td><td class="p-3 border-b text-right">39 / 60</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Read the dates as a backlog marker: an Alberta Opportunity Stream application submitted today is behind files from August. The priority sector draws are already over their allocation, which Alberta says a small federal Express Entry administrative overage allows. With 495 spaces left for the year and 756 applications waiting to be processed, some applicants should expect their files to carry into 2027. After nomination, IRCC's processing time for your PR application is separate; check IRCC's processing time tool for the current figure.
+      </p>
+      <p>
+        On allocation: IRCC gave Alberta an extra 200 nominations on August 10, 2026, bringing the 2026 total to 6,603. A federal initiative also lets provinces nominate practice-ready physicians and Francophones outside their allocation; Alberta reports 50 physician and 12 Francophone nominations through it so far in 2026. As of November 12, 2026, Alberta had not posted a 2027 allocation.
+      </p>
+
+      <h2 id="updates" class="text-3xl font-bold mt-12 mb-6">Alberta PNP Updates in 2025 and 2026</h2>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>August 12, 2026:</strong> more guidance on the economic establishment requirement for entrepreneur streams (no eligibility change).</li>
+        <li><strong>August 10, 2026:</strong> 200 extra nominations; 2026 allocation now 6,603.</li>
+        <li><strong>June 17, 2026:</strong> Eligibility Explorer tool launched to match you with likely streams before you build a WEOI.</li>
+        <li><strong>May 26, 2026:</strong> WEOIs can be edited; invitations can be rejected to return to the pool.</li>
+        <li><strong>April 7, 2026:</strong> new $135 Worker EOI fee (the WEOI had been free since launch).</li>
+        <li><strong>February 25, 2026:</strong> WEOIs with an Alberta job offer must include wage and hours of work; older WEOIs without them may be left out of draws that use those factors.</li>
+        <li><strong>January 1, 2026:</strong> Rural Renewal Stream changes: community endorsement limits, one-year endorsement validity, a TEER-based endorsement model and a valid work permit requirement for applicants in Canada.</li>
+        <li><strong>2025:</strong> worker application fee rose to $1,500 (April 1), PTE Core accepted (April 1), and the family connection and occupation in demand Express Entry selections ended (March 17).</li>
+      </ul>
+
+      <h2 id="bc" class="text-3xl font-bold mt-12 mb-6">Alberta PNP vs BC PNP at a Glance</h2>
+      <p>
+        If you could work in either province, compare the programs side by side. B.C.'s 2026 allocation is 6,254 after a 1,000-nomination top-up on August 18, 2026, against Alberta's 6,603. B.C.'s Skills Immigration application fee is $1,750 with no registration fee, while Alberta charges $135 for the WEOI plus $1,500 to apply. B.C. now invites mainly through targeted Care, Build and Innovate rounds, while Alberta's largest stream is open to most occupations for people already working there. Both give a 600-point CRS boost through their Express Entry streams. Our full <a href="/articles/bc-pnp-vs-alberta-aaip-2026" class="text-blue-600 hover:text-blue-800 underline">BC PNP vs Alberta AAIP comparison</a> covers cost of living and job markets too. If you have a B.C. job offer, estimate your registration score with the <a href="/bc-pnp-calculator" class="text-sky-700 underline font-semibold">BC PNP Calculator</a> and check recent cutoffs on our <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a>.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Practical tips before you submit a WEOI</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>Run the Eligibility Explorer first, and only claim points you can document: Alberta checks claimed points at invitation and again at assessment.</li>
+        <li>Keep your work permit valid. The Alberta Opportunity Stream does not accept maintained status at application or assessment.</li>
+        <li>If you are an Express Entry candidate, keep your federal profile current so it does not expire within five months.</li>
+        <li>Make sure your employer meets Alberta's job offer and employer requirements; an application declined on those grounds is not refunded.</li>
+      </ul>
+      <p>
+        For background on provincial programs in general, see <a href="/articles/what-is-pnp-provincial-nominee-program" class="text-blue-600 hover:text-blue-800 underline">what the PNP is</a> and our ranking of the <a href="/articles/best-provinces-pnp-2027" class="text-blue-600 hover:text-blue-800 underline">best provinces for PNP in 2027</a>.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.alberta.ca/alberta-advantage-immigration-program" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Alberta Advantage Immigration Program, Government of Alberta</a></li>
+        <li><a href="https://www.alberta.ca/aaip-application-streams" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">AAIP application streams, Government of Alberta</a></li>
+        <li><a href="https://www.alberta.ca/aaip-processing-information" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">AAIP processing information (allocations, EOI pool, draws; updated November 4, 2026)</a></li>
+        <li><a href="https://www.alberta.ca/aaip-updates" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">AAIP updates, Government of Alberta</a></li>
+        <li><a href="https://www.alberta.ca/system/files/jeti-aaip-fee-schedule.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">AAIP fee schedule effective April 7, 2026 (PDF)</a></li>
+        <li><a href="https://www.alberta.ca/system/files/im-worker-stream-expression-of-interest-points-grid.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Worker Expression of Interest points grid (PDF)</a></li>
+        <li><a href="https://www.alberta.ca/aaip-answers-for-common-questions" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">AAIP answers for common questions</a></li>
+        <li><a href="https://www.alberta.ca/aaip-alberta-opportunity-stream-eligibility" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Alberta Opportunity Stream eligibility</a></li>
+        <li><a href="https://www.alberta.ca/aaip-alberta-express-entry-stream-eligibility" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Alberta Express Entry Stream eligibility</a></li>
+        <li><a href="https://www.alberta.ca/dedicated-health-care-pathway" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Dedicated Health Care Pathway</a></li>
+        <li><a href="https://www.alberta.ca/aaip-rural-renewal-stream-eligibility" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Rural Renewal Stream eligibility</a></li>
+        <li><a href="https://www.alberta.ca/tourism-and-hospitality-stream-eligibility" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Tourism and Hospitality Stream eligibility</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP news (2026 allocation and fee), WelcomeBC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 12, 2026, based on Alberta's processing page updated November 4, 2026. Allocations, draws and processing dates change often; confirm on alberta.ca before applying.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/alberta-pnp-draws" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-sky-600 font-bold mb-2">Draws</div>
+          <div class="font-bold text-gray-900">Alberta PNP Draws in 2026</div>
+        </a>
+        <a href="/articles/bc-pnp-vs-alberta-aaip-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Comparison</div>
+          <div class="font-bold text-gray-900">BC PNP vs Alberta AAIP 2026</div>
+        </a>
+        <a href="/articles/how-to-get-provincial-nomination-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">How-To</div>
+          <div class="font-bold text-gray-900">How to Get a Provincial Nomination in Canada</div>
+        </a>
+        <a href="/articles/best-provinces-pnp-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Provinces</div>
+          <div class="font-bold text-gray-900">Best Provinces for PNP in 2027</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
