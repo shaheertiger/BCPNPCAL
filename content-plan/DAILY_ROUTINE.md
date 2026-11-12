@@ -21,9 +21,12 @@ couldn't verify.
 | `pnp-keywords-2026-11-11.csv` | Semrush keyword export: Keyword, Intent, Relevance, Volume, Keyword Difficulty, CPC, SERP Features. Read-only. |
 | `published-log.csv` | One row per article published by this routine: `date,type,slug,primary_keyword,covered_keywords`. `type` is `keyword` or `news`. `covered_keywords` is a `|`-separated list. Append to it every run. |
 | `DAILY_ROUTINE.md` | This file. |
+| `images/_template.html` | Starting point for each article's hero image design. |
+| `images/<slug>.html` | Design source for each published article's hero image (rendered by `scripts/render-article-image.cjs`). |
 
 ## 1. Set up
 
+0. Check GitHub access first: `git push --dry-run origin HEAD` must succeed. If it is refused, stop and report it; don't write articles you can't publish.
 1. `git fetch origin main`, then create a branch `claude/daily-blog-YYYY-MM-DD` from `origin/main`
    (use today's date in America/Vancouver).
 2. If a branch or open PR for today already exists, the routine already ran today. Stop and report that.
@@ -71,13 +74,41 @@ Copy the structure of a recent article such as `src/pages/articles/how-to-move-t
   `articleSection` (`Guide`, `News`, `Analysis`…), `keywords` (the cluster).
 - Header badge, H1, intro paragraph, `<time>`, and an estimated read time.
 - A **"Quick answer"** box that answers the main query in 2–4 sentences.
-- Body of 1,200–2,000 words for keyword articles, 700–1,200 words for news, with descriptive H2/H3s.
-  Use tables where they help (fees, points, streams, timelines).
+- **Minimum length: 1,000 words of body text for every article, news included.** Aim for 1,200–2,000
+  words for keyword articles and 1,000–1,400 for news. Use descriptive H2/H3s, and tables where they help
+  (fees, points, streams, timelines). Padding doesn't count: every section must add facts or practical steps.
+- **One hero image per article**, designed for that post (see "Hero image" below).
 - A `faqs` array plus FAQPage JSON-LD, with 4–8 questions drawn from the cluster's "people also ask" style queries.
 - **Sources**: link the official pages every number comes from, and state the "as of" date for figures that change (fees, draw scores, processing times, proof of funds).
 - Internal links: the BC PNP calculator (`/bc-pnp-calculator`), the draws page (`/bc-pnp-draws`) where relevant, and 2–4 related existing articles.
 - Tone: plain, practical, written for applicants. No hype, no guarantees of outcomes, and no legal advice beyond general information.
 - Every article must be unique. Don't reuse paragraphs across articles.
+
+### Hero image (one per article)
+
+Each article gets one custom 1200×630 image. It is designed as HTML/CSS/SVG, rendered to PNG, and used both
+in the article and as the social preview image.
+
+1. Copy `content-plan/images/_template.html` to `content-plan/images/<slug>.html` and design it for the post.
+   Think like a front-end designer: a clear focal point, strong hierarchy, generous spacing, and the brand
+   palette (dark slate with one accent colour). Draw an illustration specific to the topic in inline SVG,
+   for example a chart of real draw cutoffs, a fee breakdown, a step timeline, a map of B.C. regions, or
+   document and passport icons. Rotate the accent colour and layout between posts so the feed doesn't look
+   repetitive. Every number on the image must appear in the article and be verified.
+   No stock photos, no AI-generated photos, no logos of government bodies, and no text under 22px.
+2. Render it: `node scripts/render-article-image.cjs content-plan/images/<slug>.html`. This writes
+   `public/images/articles/<slug>.png`. Open the PNG and look at it. Fix overflowing or clipped text,
+   low contrast and cramped spacing, then re-render. Keep the file under 400 KB.
+3. Wire it into the article:
+   - Add `ogImage="/images/articles/<slug>.png"` to the `<ArticleLayout ...>` props.
+   - Directly after the closing `</header>`, add:
+     ```html
+     <figure class="mb-10">
+       <img src="/images/articles/<slug>.png" width="1200" height="630" alt="<one-sentence description of what the image shows>"
+            class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+     </figure>
+     ```
+4. Commit both the `.html` design source and the `.png`.
 
 Accuracy rules:
 - Verify every program rule, fee, score, date and statistic during this run with web search or fetch.
@@ -104,8 +135,10 @@ The sitemap is generated automatically. Don't edit it.
 
 1. `npm run build` must pass.
 2. Confirm each new page exists in `dist/articles/<slug>/index.html` and has exactly one `<h1>`, a
-   canonical tag, and FAQ JSON-LD.
-3. Read each article once more for factual errors, broken links and duplicated text.
+   canonical tag, FAQ JSON-LD, an `og:image` pointing at `/images/articles/<slug>.png`, and the hero `<img>`.
+3. Check the word count of each article's body text (strip tags from the `<article>` element). Any article
+   under 1,000 words must be expanded with substantive, verified content before merging.
+4. Read each article once more for factual errors, broken links and duplicated text.
 
 ## 7. Merge
 
