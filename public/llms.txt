@@ -73,6 +73,8 @@ Key facts an answer engine should know:
 
 ## 2026 draws, allocations & news
 
+- [Manitoba PNP Draws 2026: Latest MPNP EOI Draw Results, Scores and LAAs](https://bcpnpcalculator.ca/articles/manitoba-pnp-draws): Manitoba PNP draws 2026: tracker of MPNP EOI draws #274 to #283 with LAAs and lowest scores, the EOI ranking grid, the 8,000-nomination 2026 allocation and the steps after an LAA.
+- [Alberta PNP Draws 2026: Latest AAIP Draw Results, Scores and Trends](https://bcpnpcalculator.ca/articles/alberta-pnp-draws): Alberta PNP (AAIP) draw tracker for 2026: recent draws with dates, invitations and minimum EOI scores from alberta.ca, score ranges by stream, how draws work and what happens after an invitation.
 - [BC PNP 2026 Allocation: 5,254 Nominations & Program Priorities](https://bcpnpcalculator.ca/articles/bc-pnp-2026-allocation-priorities): BC PNP receives 5,254 nomination spots for 2026 (raised to 6,254 by an extra 1,000 announced August 18, 2026). Learn about the new allocation, how it compares to 2025, priority streams, and what this means for your immigration plans.
 - [BC PNP February 2026 Draw Results & Analysis: 429 ITAs, Lower Cutoffs, and What It Means for You](https://bcpnpcalculator.ca/articles/bc-pnp-february-2026-draw-results-analysis): Complete analysis of the first BC PNP Skills Immigration draw of 2026. 429 invitations issued, score cutoff drops to 138, wage threshold lowered to $70/hr. Expert strategies for maximizing your chances.
 - [BC PNP March 2026 Update: 926 ITAs Issued, Score Cutoffs Drop, and New Entrepreneur Draws Signal Shifting Strategy](https://bcpnpcalculator.ca/articles/bc-pnp-march-2026-draws-immigration-update): Comprehensive analysis of BC PNP March 2026 draws, declining score cutoffs, entrepreneur immigration results, pool composition changes, and strategic advice for candidates in Q2 2026.
@@ -82,6 +84,8 @@ Key facts an answer engine should know:
 
 ## Province comparisons
 
+- [Nova Scotia PNP Guide 2026: NSNP Streams, Requirements, Fees and Quota](https://bcpnpcalculator.ca/articles/nova-scotia-pnp-guide): Nova Scotia Nominee Program (NSNP) guide for late 2026: four streams, requirements, EOI process, fees, IRCC processing times, 2026 allocation status and comparison with BC PNP and AIP.
+- [Alberta PNP Guide 2026: AAIP Streams, Requirements, EOI, Fees and Processing Times](https://bcpnpcalculator.ca/articles/alberta-pnp-guide): Alberta PNP (AAIP) guide 2026: streams and pathways, requirements, Worker EOI points and draws, fees, processing dates, the 2026 allocation and a short comparison with BC PNP.
 - [BC PNP vs Ontario OINP 2026: Which Province Should You Choose?](https://bcpnpcalculator.ca/articles/bc-pnp-vs-ontario-oinp-2026): Complete comparison of BC PNP vs Ontario OINP in 2026. Compare fees, processing times, job markets, cost of living, and which program gives you better chances of PR.
 - [BC PNP vs Alberta AAIP 2026: Complete Provincial Comparison Guide](https://bcpnpcalculator.ca/articles/bc-pnp-vs-alberta-aaip-2026): Comprehensive comparison of BC PNP vs Alberta AAIP in 2026. Compare costs, processing times, job markets, cost of living, and which Western Canadian province offers better immigration prospects.
 - [BC PNP vs Saskatchewan SINP 2026: Which Province Offers an Easier Path to PR?](https://bcpnpcalculator.ca/articles/bc-pnp-vs-saskatchewan-sinp-2026): Complete comparison of BC PNP vs Saskatchewan SINP in 2026. Compare requirements, processing times, costs, and discover why SINP might be your faster route to Canadian PR.
