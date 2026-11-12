@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --ink: #f8fafc; --muted: #cbd5e1;
+    --accent: #0284c7; --accent-hi: #38bdf8; --accent-soft: rgba(2, 132, 199, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background:
+      radial-gradient(circle at 12% 85%, var(--accent-soft), transparent 45%),
+      linear-gradient(135deg, var(--bg) 0%, #0c1a30 100%);
+    color: var(--ink);
+    display: grid; grid-template-columns: 470px 1fr; gap: 36px;
+    padding: 56px 64px; position: relative;
+  }
+  body::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .copy, .visual { position: relative; z-index: 1; }
+  .copy { display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow {
+    display: inline-flex; align-self: flex-start; background: var(--accent); color: #fff;
+    font-weight: 800; font-size: 22px; letter-spacing: .06em; text-transform: uppercase;
+    padding: 10px 18px; border-radius: 999px;
+  }
+  h1 { font-size: 54px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 26px; }
+  .stat { margin-top: 26px; }
+  .stat b { display: block; font-size: 68px; font-weight: 800; color: var(--accent-hi); line-height: 1; }
+  .stat span { display: block; font-size: 24px; color: var(--muted); font-weight: 500; margin-top: 10px; line-height: 1.3; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+  .visual {
+    background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 28px;
+    padding: 30px 32px 26px;
+  }
+  .visual h2 { font-size: 24px; font-weight: 700; color: var(--muted); margin-bottom: 14px; }
+  .art { width: 100%; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div>
+      <div class="eyebrow">Alberta PNP · 2026</div>
+      <h1>Alberta PNP guide: streams, EOI and fees</h1>
+      <div class="stat"><b>6,603</b><span>nominations for Alberta in 2026</span></div>
+    </div>
+    <div class="brand"><i></i>bcpnpcalculator.ca</div>
+  </div>
+
+  <div class="visual">
+    <h2>2026 allocation by stream</h2>
+    <svg class="art" viewBox="0 0 560 430" role="img" aria-label="Bar chart of AAIP 2026 nomination allocation by stream">
+      <g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif" font-size="22" font-weight="700">
+        <!-- scale: 3562 -> 330px ; bars start x=0 -->
+        <g fill="#f8fafc">
+          <text x="0" y="22">Alberta Opportunity</text>
+          <text x="0" y="82">Rural Renewal</text>
+          <text x="0" y="142">EE: Accelerated Tech</text>
+          <text x="0" y="202">EE: Priority sectors</text>
+          <text x="0" y="262">Health Care Pathways</text>
+          <text x="0" y="322">Tourism and Hospitality</text>
+          <text x="0" y="382">Entrepreneur streams</text>
+        </g>
+        <rect x="0" y="32"  width="420" height="16" rx="8" fill="var(--accent-hi)"/>
+        <rect x="0" y="92"  width="125" height="16" rx="8" fill="var(--accent)"/>
+        <rect x="0" y="152" width="73"  height="16" rx="8" fill="var(--accent)"/>
+        <rect x="0" y="212" width="73"  height="16" rx="8" fill="var(--accent)"/>
+        <rect x="0" y="272" width="61"  height="16" rx="8" fill="var(--accent)"/>
+        <rect x="0" y="332" width="18"  height="16" rx="8" fill="#64748b"/>
+        <rect x="0" y="392" width="8"   height="16" rx="4" fill="#64748b"/>
+        <g fill="#cbd5e1" text-anchor="end">
+          <text x="556" y="48">3,562</text>
+          <text x="556" y="108">1,057</text>
+          <text x="556" y="168">619</text>
+          <text x="556" y="228">619</text>
+          <text x="556" y="288">518</text>
+          <text x="556" y="348">156</text>
+          <text x="556" y="408">60</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>

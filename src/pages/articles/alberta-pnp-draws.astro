@@ -1,0 +1,342 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Alberta PNP Draws 2026: Latest AAIP Draw Results, Scores and Trends";
+const description = "Alberta PNP draws in 2026: latest AAIP draw dates, invitations and minimum EOI scores by stream from alberta.ca, how draws work and how to raise your score.";
+const canonical = "https://bcpnpcalculator.ca/articles/alberta-pnp-draws";
+
+const faqs = [
+  {
+    q: "When was the latest Alberta PNP draw?",
+    a: "As of the AAIP processing information page last updated November 4, 2026, the most recent draw was on November 2, 2026: a Rural Renewal Stream draw that invited 173 candidates with a minimum score of 51. The draw before that, on October 30, 2026, invited 132 Alberta Opportunity Stream candidates with a minimum score of 59.",
+  },
+  {
+    q: "When will the next Alberta PNP draw be?",
+    a: "Nobody outside the program knows. Alberta says AAIP draws are not regularly scheduled and are held as needed to address sector needs and provincial priorities. In 2026 the program held 95 draws between January 26 and November 2, often several a week, but it does not announce draws in advance. Check the alberta.ca processing information page, which lists each draw after it happens.",
+  },
+  {
+    q: "What is a good EOI score for Alberta PNP?",
+    a: "It depends on the stream you are drawn in. In 2026 the minimum score of invited candidates ranged from 45 (Dedicated Health Care Pathway, non-Express Entry) to 73 (Tourism and Hospitality Stream). Alberta Opportunity Stream draws ranged from 50 to 65, and most Alberta Express Entry Accelerated Tech draws from 55 to 63. The maximum Worker EOI score is 100, and score is not the only selection factor.",
+  },
+  {
+    q: "Why are Alberta PNP draw scores different for each stream?",
+    a: "Each draw selects from one stream, pathway or sector, so candidates compete only with others who match that draw's parameters. Pool sizes and allocations differ sharply: as of November 4, 2026 the Alberta Opportunity Stream had 20,603 EOIs in the pool, while the Tourism and Hospitality Stream had 2,846 EOIs competing for a 2026 allocation of 156 nominations. AAIP also uses occupation, employer industry and other EOI details that do not earn points, and it does not disclose draw parameters.",
+  },
+  {
+    q: "How long is an Alberta Worker EOI valid and how much does it cost?",
+    a: "Since April 7, 2026, submitting a Worker Expression of Interest costs $135, paid online within 24 hours of submission. A WEOI created on or after that date is valid for one year from the date the fee was paid. If you are not selected within 12 months it is cancelled, and you must submit a new WEOI and pay the fee again to stay in the pool.",
+  },
+  {
+    q: "What happens after I get an AAIP invitation?",
+    a: "You have 15 days to open the invitation link and create a draft application, or the WEOI returns to the pool. Once you create the application you have 30 days to complete and submit it, then 24 hours to pay the $1,500 worker stream application fee. While the application is in progress you are removed from the WEOI pool. If AAIP approves it you are nominated and can apply to IRCC for permanent residence.",
+  },
+  {
+    q: "Can Alberta invite me to a different stream than the one I chose?",
+    a: "Yes. Alberta's instructions say that you indicate a preferred stream in your Worker EOI, but there is no guarantee you will be invited to that stream or at all, and AAIP may invite you to apply to a different stream or pathway. Review the eligibility rules of the stream named in your invitation before accepting it.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="alberta-pnp-draws" datePublished="2026-11-12" dateModified="2026-11-12" articleSection="Analysis" keywords="alberta pnp draw, alberta pnp draws, alberta pnp latest draw, pnp draw alberta, alberta pnp draw 2026, when will be the next draw for alberta pnp" title={title} description={description} canonical={canonical} ogImage="/images/articles/alberta-pnp-draws.png">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        Draw Analysis
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Alberta PNP Draws 2026: Latest AAIP Draw Results, Scores and Trends
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Every recent Alberta Advantage Immigration Program draw, taken from the official alberta.ca processing page, plus what the numbers say about each stream and how to give your Worker EOI a better chance.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-12">November 12, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/alberta-pnp-draws.png" width="1200" height="630" alt="Bar chart of the latest minimum EOI score in each Alberta AAIP stream in 2026, from 73 for Tourism and Hospitality down to 49 for Law Enforcement."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-indigo-900 mb-2">Quick answer</p>
+      <p class="text-indigo-900">
+        The latest Alberta PNP draw listed by alberta.ca (page updated November 4, 2026) was on <strong>November 2, 2026</strong>: a Rural Renewal Stream draw with <strong>173 invitations</strong> and a minimum score of <strong>51</strong>. Alberta held 95 Worker EOI draws in 2026 up to that date, with minimum scores from 45 to 73 depending on the stream. AAIP does not publish a draw schedule, so the next draw date cannot be predicted, and only 495 of Alberta's 6,603 nominations for 2026 were left.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">95</div>
+        <div class="text-sm text-slate-600 font-medium">Worker EOI draws in 2026 (January 26 to November 2)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">32,211</div>
+        <div class="text-sm text-slate-600 font-medium">EOIs in the selection pool as of November 4, 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">495</div>
+        <div class="text-sm text-slate-600 font-medium">2026 nomination spaces remaining out of 6,603</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this article</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#latest" class="hover:underline">Latest Alberta PNP draws (September to November 2026)</a></li>
+        <li><a href="#by-stream" class="hover:underline">2026 draws by stream: score ranges and totals</a></li>
+        <li><a href="#how" class="hover:underline">How AAIP draws work</a></li>
+        <li><a href="#trends" class="hover:underline">What the 2026 numbers show</a></li>
+        <li><a href="#next" class="hover:underline">When will the next Alberta PNP draw be?</a></li>
+        <li><a href="#improve" class="hover:underline">How to improve your Worker EOI score</a></li>
+        <li><a href="#after" class="hover:underline">What happens after an invitation</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        If you have a Worker Expression of Interest in Alberta's pool, the draw table on alberta.ca is the only reliable record of who is being invited. Alberta does not run a single ranked draw like federal Express Entry. It runs many small draws, each for one stream, pathway or sector, and the minimum score in one tells you little about another. This page pulls the 2026 results from the official AAIP processing information page, last updated <strong>November 4, 2026</strong>, groups them by stream and explains what they mean for your EOI. It is general information, not immigration advice.
+      </p>
+
+      <h2 id="latest" class="text-3xl font-bold mt-12 mb-6">Latest Alberta PNP Draws (September to November 2026)</h2>
+
+      <p>
+        These are the 23 most recent draws Alberta has published, copied from Table 10 of the AAIP processing information page. "Minimum score" is the lowest Worker EOI score among invited candidates. Where Alberta reports "less than 10" invitations, we show the same.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Draw date</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Stream or pathway</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Minimum score</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Invitations</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Nov 2, 2026</td><td class="px-4 py-3">Rural Renewal Stream</td><td class="px-4 py-3">51</td><td class="px-4 py-3">173</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Oct 30, 2026</td><td class="px-4 py-3">Alberta Opportunity Stream</td><td class="px-4 py-3">59</td><td class="px-4 py-3">132</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Oct 29, 2026</td><td class="px-4 py-3">Dedicated Health Care Pathway, non-Express Entry</td><td class="px-4 py-3">50</td><td class="px-4 py-3">64</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Oct 27, 2026</td><td class="px-4 py-3">Dedicated Health Care Pathway, Express Entry</td><td class="px-4 py-3">60</td><td class="px-4 py-3">19</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Oct 23, 2026</td><td class="px-4 py-3">Rural Renewal Stream</td><td class="px-4 py-3">51</td><td class="px-4 py-3">37</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Oct 20, 2026</td><td class="px-4 py-3">Alberta Express Entry, Priority Sectors (General)</td><td class="px-4 py-3">60</td><td class="px-4 py-3">386</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Oct 16, 2026</td><td class="px-4 py-3">Alberta Express Entry, Law Enforcement Pathway</td><td class="px-4 py-3">49</td><td class="px-4 py-3">Less than 10</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Oct 14, 2026</td><td class="px-4 py-3">Tourism and Hospitality Stream</td><td class="px-4 py-3">73</td><td class="px-4 py-3">25</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Oct 13, 2026</td><td class="px-4 py-3">Dedicated Health Care Pathway, Express Entry</td><td class="px-4 py-3">57</td><td class="px-4 py-3">53</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Oct 9, 2026</td><td class="px-4 py-3">Alberta Express Entry, Priority Sectors (Health care)</td><td class="px-4 py-3">60</td><td class="px-4 py-3">97</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Oct 7, 2026</td><td class="px-4 py-3">Alberta Express Entry, Priority Sectors (Aviation)</td><td class="px-4 py-3">56</td><td class="px-4 py-3">22</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Oct 2, 2026</td><td class="px-4 py-3">Alberta Opportunity Stream</td><td class="px-4 py-3">54</td><td class="px-4 py-3">123</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sep 29, 2026</td><td class="px-4 py-3">Alberta Express Entry, Priority Sectors (General)</td><td class="px-4 py-3">64</td><td class="px-4 py-3">200</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sep 24, 2026</td><td class="px-4 py-3">Rural Renewal Stream</td><td class="px-4 py-3">51</td><td class="px-4 py-3">131</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sep 23, 2026</td><td class="px-4 py-3">Alberta Opportunity Stream</td><td class="px-4 py-3">58</td><td class="px-4 py-3">113</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sep 22, 2026</td><td class="px-4 py-3">Alberta Express Entry, Accelerated Tech Pathway</td><td class="px-4 py-3">59</td><td class="px-4 py-3">100</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sep 21, 2026</td><td class="px-4 py-3">Alberta Express Entry, Law Enforcement Pathway</td><td class="px-4 py-3">49</td><td class="px-4 py-3">Less than 10</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sep 18, 2026</td><td class="px-4 py-3">Alberta Express Entry, Priority Sectors (Health Care)</td><td class="px-4 py-3">62</td><td class="px-4 py-3">100</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sep 15, 2026</td><td class="px-4 py-3">Alberta Express Entry, Priority Sectors (Agriculture)</td><td class="px-4 py-3">60</td><td class="px-4 py-3">18</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sep 10, 2026</td><td class="px-4 py-3">Alberta Express Entry, Priority Sectors (Manufacturing)</td><td class="px-4 py-3">60</td><td class="px-4 py-3">48</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sep 9, 2026</td><td class="px-4 py-3">Dedicated Health Care Pathway, Express Entry</td><td class="px-4 py-3">60</td><td class="px-4 py-3">51</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sep 3, 2026</td><td class="px-4 py-3">Alberta Express Entry, Accelerated Tech Pathway</td><td class="px-4 py-3">60</td><td class="px-4 py-3">96</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sep 1, 2026</td><td class="px-4 py-3">Alberta Opportunity Stream</td><td class="px-4 py-3">56</td><td class="px-4 py-3">575</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-gray-500">Source: AAIP processing information, Government of Alberta, last updated November 4, 2026. No draws after November 2 were listed when we checked on November 12, 2026.</p>
+
+      <h2 id="by-stream" class="text-3xl font-bold mt-12 mb-6">2026 Alberta PNP Draws by Stream: Score Ranges and Totals</h2>
+
+      <p>
+        Looking at all 95 draws from January 26 to November 2, 2026 makes the differences between streams clearer than any single result. Invitation totals below leave out draws Alberta reported only as "less than 10", so they slightly understate the true numbers.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Stream or pathway</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Draws</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Minimum score range</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Invitations</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">EOIs in pool (Nov 4)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Alberta Opportunity Stream (incl. Feb 20 priority sectors draw)</td><td class="px-4 py-3">14</td><td class="px-4 py-3">50&ndash;65</td><td class="px-4 py-3">8,551</td><td class="px-4 py-3">20,603</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Alberta Express Entry, Priority Sectors</td><td class="px-4 py-3">28</td><td class="px-4 py-3">46&ndash;66</td><td class="px-4 py-3">1,893+</td><td class="px-4 py-3">4,581</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Alberta Express Entry, Accelerated Tech</td><td class="px-4 py-3">11</td><td class="px-4 py-3">55&ndash;63</td><td class="px-4 py-3">1,466</td><td class="px-4 py-3">1,883</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Rural Renewal Stream</td><td class="px-4 py-3">13</td><td class="px-4 py-3">50&ndash;55</td><td class="px-4 py-3">1,384</td><td class="px-4 py-3">1,283</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Dedicated Health Care, Express Entry</td><td class="px-4 py-3">10</td><td class="px-4 py-3">55&ndash;64</td><td class="px-4 py-3">553</td><td class="px-4 py-3" rowspan="2">976 (both pathways)</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Dedicated Health Care, non-Express Entry</td><td class="px-4 py-3">9</td><td class="px-4 py-3">45&ndash;63</td><td class="px-4 py-3">478</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Tourism and Hospitality Stream</td><td class="px-4 py-3">4</td><td class="px-4 py-3">71&ndash;73</td><td class="px-4 py-3">252</td><td class="px-4 py-3">2,846</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Alberta Express Entry, Law Enforcement</td><td class="px-4 py-3">6</td><td class="px-4 py-3">46&ndash;58</td><td class="px-4 py-3">Less than 10 each</td><td class="px-4 py-3">39</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        In total, the numbered draws invited 14,577 candidates, plus seven draws of fewer than 10 each. Invitations do not equal nominations: some invited candidates do not apply, and some applications are refused. Alberta's 2026 nomination allocation is 6,603, and the processing page showed 6,108 nominations issued and 756 applications still to be processed as of November 4, 2026.
+      </p>
+
+      <h2 id="how" class="text-3xl font-bold mt-12 mb-6">How AAIP Draws Work</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The Worker EOI and its score</h3>
+      <p>
+        To be considered for any AAIP worker stream you must submit a Worker Expression of Interest (WEOI) in the AAIP portal. You self-declare your details, and the system scores you on a points grid with a <strong>maximum of 100 points</strong>: up to 69 for human capital (education, language, work experience, age and family in Alberta) and up to 31 for economic factors tied to your Alberta job offer. There is no minimum score to submit. Since April 7, 2026 the WEOI costs $135, and it stays in the pool for one year from the date the fee was paid. Your score is visible under "Check Existing WEOI" in the portal.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Separate draws for each stream, pathway and sector</h3>
+      <p>
+        Alberta selects from the pool through targeted draws. In 2026 these covered the Alberta Opportunity Stream, the Rural Renewal Stream, the Tourism and Hospitality Stream, the Dedicated Health Care Pathways (with and without Express Entry), and the Alberta Express Entry Stream, which itself has the Accelerated Tech Pathway, the Law Enforcement Pathway and priority sector draws for health care, construction, manufacturing, agriculture, aviation and skilled trades. Alberta says its 2026 priorities are health care, technology, construction, manufacturing, aviation, agriculture and Rural Renewal communities, though not exclusively.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Why the minimum score differs by pathway</h3>
+      <p>
+        Because each draw only considers candidates who fit it, you compete with a different group in each one. Three things push the cut-off up or down:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Supply and demand.</strong> The Tourism and Hospitality Stream had 2,846 EOIs in the pool for a 2026 allocation of only 156 nominations, so its draws had the highest minimum scores of the year (71 to 73). The Law Enforcement pool had 39 EOIs, and its draws went as low as 46.</li>
+        <li><strong>Factors that earn no points.</strong> The WEOI also collects your immigration status, your Express Entry profile, the NOC code of your job offer, your employer's NAICS industry code, and your wage and hours. None of these add points, but AAIP uses them to target sector draws. A health care or aviation draw can therefore invite someone with a lower score than a general draw.</li>
+        <li><strong>Score is not the only factor.</strong> Alberta states that it considers a variety of factors in Worker EOIs and, to protect program integrity, does not disclose recent draw parameters. Matching a past minimum score is not a guarantee of an invitation.</li>
+      </ul>
+      <p>
+        Alberta can also invite you to a stream other than the one you picked in your WEOI. If you are weighing Alberta against B.C., our <a href="/articles/bc-pnp-vs-alberta-aaip-2026" class="text-blue-600 hover:text-blue-800 underline">BC PNP vs Alberta AAIP comparison</a> sets the two systems side by side, and the <a href="/articles/alberta-pnp-guide" class="text-blue-600 hover:text-blue-800 underline">Alberta PNP guide</a> explains each stream's eligibility rules.
+      </p>
+
+      <h2 id="trends" class="text-3xl font-bold mt-12 mb-6">What the 2026 Alberta PNP Draw Numbers Show</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Alberta Opportunity Stream draws have shrunk</h3>
+      <p>
+        From February to August, Alberta Opportunity Stream draws were large: 915 invitations on February 2, 832 on March 5 and May 6, 993 on May 27, 833 on July 15 and 743 on August 14. After 575 on September 1, the next three draws invited only 113, 123 and 132 candidates. The processing page shows why the stream has little room left: of its 3,562 nominations for 2026, 3,386 had been issued by November 4, leaving 176. Minimum scores in these smaller draws (54 to 59) sat in the middle of the year's 50 to 65 range.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Express Entry priority sectors keep going past their allocation</h3>
+      <p>
+        Priority sector draws under the Alberta Express Entry Stream have already issued 703 nominations against a 2026 allocation of 619. Alberta notes that Express Entry allocations may be exceeded under a small administrative overage from the federal government. The two largest recent draws were "General" priority sector rounds: 200 invitations at 64 on September 29 and 386 at 60 on October 20. The Accelerated Tech Pathway had 23 spaces left out of 619.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Rural Renewal and health care stay accessible</h3>
+      <p>
+        Rural Renewal Stream draws were the most stable all year, with minimum scores between 50 and 55; every one since August 11 was at 51. The non-Express Entry Dedicated Health Care Pathway produced the lowest score of 2026, 45, on January 27 and June 9. Physicians and Francophones nominated under extra federal spaces don't count toward Alberta's allocation; 50 physicians and 12 Francophones had been nominated this way by November 4.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Invitations peaked in spring</h3>
+      <p>
+        Counting numbered invitations by month, May was the busiest (2,590), followed by February (2,285) and June (1,823). October had 958. With only 495 nominations left for the year, a slower pace is consistent with a program running out of 2026 spaces, but Alberta has not said how many draws remain.
+      </p>
+
+      <h2 id="next" class="text-3xl font-bold mt-12 mb-6">When Will the Next Alberta PNP Draw Be?</h2>
+      <p>
+        Alberta does not publish a schedule. Its own words: "AAIP draws are not regularly scheduled. They are done as needed to address sector needs and provincial priorities." We won't guess a date. What the record does show is that, from late January to early November 2026, Alberta never went more than 14 days without a draw, and draws for different streams often came only days apart. The longest gaps were July 21 to August 4 (14 days), August 19 to September 1 (13 days) and March 27 to April 8 (12 days). The best approach is practical: keep your WEOI accurate and current, check the processing information page and your email, and have your documents ready so you can act within the 15-day invitation window. Alberta had not published 2027 allocation figures on its processing page as of November 12, 2026.
+      </p>
+
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+        <p class="font-semibold text-blue-900 mb-2">Key Takeaway</p>
+        <p class="text-blue-800">Compare your score only with draws in the stream or sector that fits your job offer. A 58 is below every 2026 Tourism and Hospitality cut-off but above every Rural Renewal cut-off. For the B.C. equivalent, see our <a href="/bc-pnp-draws" class="underline font-semibold">BC PNP draw tracker</a>.</p>
+      </div>
+
+      <h2 id="improve" class="text-3xl font-bold mt-12 mb-6">How to Improve Your Alberta Worker EOI Score</h2>
+      <p>
+        The points grid (version dated September 28, 2026) rewards a handful of things you can sometimes change. Claim only what you can prove: AAIP checks your WEOI against your application, and inaccurate information can lead to refusal.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Factor</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Maximum points</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">How to gain points</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Language</td><td class="px-4 py-3">10 + 3 bilingual</td><td class="px-4 py-3">CLB 6 or higher in English earns 10 (NCLC 6 in French earns 8), scored on your lowest skill. CLB/NCLC 4 in both languages adds 3.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Education</td><td class="px-4 py-3">12 + 10</td><td class="px-4 py-3">Doctorate 12, master's 10, bachelor's or trades certificate 7. Completing it in Alberta adds 10, elsewhere in Canada 6.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Work experience</td><td class="px-4 py-3">11 + 10</td><td class="px-4 py-3">12+ months total earns 11. Six months or more in Alberta adds 10, or 6 in another province.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Age</td><td class="px-4 py-3">5</td><td class="px-4 py-3">21 to 34 earns 5; 35 to 49 earns 4.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Family in Alberta</td><td class="px-4 py-3">8</td><td class="px-4 py-3">A parent, child or sibling in Alberta who is a citizen or PR over 18.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Alberta job offer</td><td class="px-4 py-3">10 + 6</td><td class="px-4 py-3">Permanent full-time offer earns 10. A Rural Renewal endorsement, an eligible tourism and hospitality employer, or a police employer in the AACP adds 6.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Job location</td><td class="px-4 py-3">5</td><td class="px-4 py-3">Any job outside the Calgary and Edmonton census metropolitan areas.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Regulated occupation</td><td class="px-4 py-3">10</td><td class="px-4 py-3">An Alberta licence or certification for your regulated job, such as an Alberta Qualification Certificate or an AIT-recognized trade certificate.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The quickest gains are usually language and licensing. Retaking a test to move your weakest skill from CLB 5 to CLB 6 adds 2 points, and from CLB 4 to CLB 6 adds 5. Getting Alberta certification in a regulated trade or profession is worth 10. A job in a smaller Alberta community adds 5 location points, and with a Rural Renewal endorsement another 6, which helps explain why Rural Renewal draws work for candidates with modest human capital scores. To update a submitted WEOI, use "Edit" in the portal. While you are editing, your WEOI is not eligible for selection, and if you don't save within an hour it reverts unchanged. Editing does not extend its one-year validity.
+      </p>
+
+      <h2 id="after" class="text-3xl font-bold mt-12 mb-6">What Happens After an Alberta PNP Invitation</h2>
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Check eligibility first.</strong> Your portal status changes to "Selected." Read the rules of the stream you were invited to and the Worker Stream Document Checklist. If you don't qualify, decline: refused applications lose both fees.</li>
+        <li><strong>Create the application within 15 days.</strong> Click the link and save the first page to create a draft. If you do nothing, the WEOI returns to the pool.</li>
+        <li><strong>Submit within 30 days and pay $1,500.</strong> The worker stream application fee must be paid within 24 hours of submission or the application is cancelled. You leave the WEOI pool while it is in progress.</li>
+        <li><strong>Wait for assessment.</strong> Alberta lists processing by cut-off date rather than weeks. On November 4, 2026 it was assessing Alberta Opportunity Stream applications received on or before August 2, 2026, Rural Renewal applications up to October 9, Dedicated Health Care applications up to September 25 and Accelerated Tech applications up to July 8.</li>
+        <li><strong>Apply for permanent residence.</strong> If nominated, you apply to IRCC through Express Entry or a paper-based application, depending on your stream.</li>
+      </ol>
+
+      <p>
+        Comparing provinces? Estimate where you would stand in British Columbia with the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a>, then check recent B.C. cut-offs on the <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a>.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.alberta.ca/aaip-processing-information" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">AAIP processing information (draws, allocations, EOI pool), Government of Alberta, updated November 4, 2026</a></li>
+        <li><a href="https://www.alberta.ca/how-to-apply-to-aaip-worker-streams" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">How to apply to AAIP worker streams, Government of Alberta</a></li>
+        <li><a href="https://www.alberta.ca/system/files/im-worker-stream-expression-of-interest-points-grid.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Worker Expression of Interest points grid (PDF, September 28, 2026), Government of Alberta</a></li>
+        <li><a href="https://www.alberta.ca/aaip-updates" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">AAIP updates by date, Government of Alberta</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Draw, allocation and pool figures as of the AAIP processing information page update of November 4, 2026, checked November 12, 2026. AAIP rules change often; confirm on alberta.ca before applying.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/alberta-pnp-guide" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Alberta</div>
+          <div class="font-bold text-gray-900">Alberta PNP Guide: AAIP Streams and Eligibility</div>
+        </a>
+        <a href="/articles/bc-pnp-vs-alberta-aaip-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">Comparison</div>
+          <div class="font-bold text-gray-900">BC PNP vs Alberta AAIP 2026</div>
+        </a>
+        <a href="/bc-pnp-draws" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Draws</div>
+          <div class="font-bold text-gray-900">BC PNP Draw Results and Cut-offs</div>
+        </a>
+        <a href="/bc-pnp-calculator" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Tool</div>
+          <div class="font-bold text-gray-900">BC PNP Points Calculator</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

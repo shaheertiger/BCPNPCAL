@@ -1,0 +1,368 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Nova Scotia PNP Guide 2026: NSNP Streams, Requirements, Fees and Quota";
+const description = "Nova Scotia PNP guide for late 2026: the four NSNP streams, requirements, EOI selection, the new $1,000 fee, processing times, 2026 quota and BC PNP vs AIP.";
+const canonical = "https://bcpnpcalculator.ca/articles/nova-scotia-pnp-guide";
+
+const faqs = [
+  {
+    q: "What are the Nova Scotia PNP streams in 2026?",
+    a: "As of November 12, 2026, the Nova Scotia Nominee Program lists four streams: Skilled Worker, Nova Scotia Graduate, Nova Scotia: Express Entry and Entrepreneur. Several older pathways now sit inside them as categories, for example Physicians and Occupations in Demand under Skilled Worker, and International Graduate Entrepreneur under Entrepreneur. The province closed its portal from February 13 to 18, 2026 to modernize forms and consolidate streams.",
+  },
+  {
+    q: "Can I apply directly to the Nova Scotia PNP?",
+    a: "No. Every NSNP stream starts with an online Expression of Interest (EOI) in the eNSNP portal. Your EOI goes into a pool and the province selects candidates based on its priorities and the nomination spaces it has. Selection is not first come, first served. An EOI is valid for 12 months, a rule in force since May 1, 2026.",
+  },
+  {
+    q: "How much does the Nova Scotia PNP cost?",
+    a: "Submitting an EOI is free. Since September 1, 2026, candidates selected from the pool pay a non-refundable provincial fee of $1,000 per principal applicant for the worker streams (Skilled Worker, Nova Scotia Graduate and Nova Scotia: Express Entry) or $2,000 for the Entrepreneur stream. If nominated, you also pay IRCC's permanent residence fees: $1,590 for a principal applicant including the right of permanent residence fee.",
+  },
+  {
+    q: "What is the Nova Scotia PNP quota for 2026?",
+    a: "Nova Scotia had not published an official 2026 nomination allocation on its immigration site as of November 12, 2026. For context, the federal government cut the province's combined NSNP and Atlantic Immigration Program allocation from 6,300 in 2024 to 3,150 in 2025, then added 559 spaces later in 2025 for a total of 3,709. Press estimates for 2026 vary and are not official.",
+  },
+  {
+    q: "Do I need a job offer for the Nova Scotia PNP?",
+    a: "For most applicants, yes. The Skilled Worker and Nova Scotia Graduate streams require a full-time, permanent job offer from a Nova Scotia employer. The Nova Scotia: Express Entry stream instead requires at least one year of skilled work experience in Nova Scotia and an active Express Entry profile. The Entrepreneur stream requires you to start or buy and run a business in the province.",
+  },
+  {
+    q: "How long does the Nova Scotia PNP take?",
+    a: "Nova Scotia does not publish a fixed provincial processing time. After nomination, IRCC's own processing is the longer step: in IRCC data dated September 3, 2026, as reported by CIC News, base (paper) PNP applications took about 13 months and Express Entry-linked PNP applications about 7 months. Check IRCC's processing times tool for the current figure.",
+  },
+  {
+    q: "Is the Nova Scotia PNP easier than the BC PNP?",
+    a: "Neither is easy, and they reward different profiles. Nova Scotia's language minimum can be as low as CLB 4 for TEER 4 and 5 jobs and it accepts some intermediate-skilled workers, but in 2026 it is prioritizing healthcare, skilled trades and people already working in the province. The BC PNP Skills Immigration streams require a TEER 0 to 3 job offer and rank candidates on a points score. Compare your profile with our BC PNP calculator before choosing.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="nova-scotia-pnp-guide" datePublished="2026-11-12" dateModified="2026-11-12" articleSection="Guide" keywords="nova scotia pnp, pnp nova scotia, ns pnp, pnp in nova scotia, novascotia pnp, canada nova scotia pnp, nova scotia pnp application, nova scotia pnp requirements, nova scotia pnp quota 2026" ogImage="/images/articles/nova-scotia-pnp-guide.png" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-emerald-100 text-emerald-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-emerald-200 shadow-sm">
+        Provincial Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Nova Scotia PNP Guide 2026: NSNP Streams, Requirements, Fees and Quota
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Nova Scotia rebuilt its nominee program over the past year: four streams, a mandatory Expression of Interest pool, new priority rules and, since September, an application fee. Here is how it works now.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-12">November 12, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/nova-scotia-pnp-guide.png" width="1200" height="630" alt="Diagram of the four Nova Scotia Nominee Program streams feeding from one Expression of Interest pool toward nomination, with 5,400 candidates selected from January to September 2026."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-emerald-900 mb-2">Quick answer</p>
+      <p class="text-emerald-900">
+        The Nova Scotia PNP (officially the Nova Scotia Nominee Program, or NSNP) has four streams as of November 12, 2026: Skilled Worker, Nova Scotia Graduate, Nova Scotia: Express Entry and Entrepreneur. You cannot apply directly: you submit a free Expression of Interest, and if the province selects you, you pay a $1,000 fee ($2,000 for Entrepreneur) and upload your documents within the deadline. In 2026 selections favour healthcare, skilled trades and temporary residents already working in Nova Scotia. The official 2026 nomination quota has not been published.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-600 mb-2">4</div>
+        <div class="text-sm text-slate-600 font-medium">NSNP streams after the February 2026 consolidation</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-600 mb-2">5,400</div>
+        <div class="text-sm text-slate-600 font-medium">EOI candidates selected, January to September 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-600 mb-2">$1,000</div>
+        <div class="text-sm text-slate-600 font-medium">Worker stream fee, charged after selection since Sept 1, 2026</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#what" class="hover:underline">What the Nova Scotia PNP is</a></li>
+        <li><a href="#streams" class="hover:underline">The four NSNP streams and their requirements</a></li>
+        <li><a href="#priorities" class="hover:underline">Who Nova Scotia is selecting in 2026</a></li>
+        <li><a href="#apply" class="hover:underline">How to apply: the EOI process step by step</a></li>
+        <li><a href="#fees" class="hover:underline">Fees and processing times</a></li>
+        <li><a href="#quota" class="hover:underline">The 2026 quota and federal allocation cuts</a></li>
+        <li><a href="#compare" class="hover:underline">Nova Scotia PNP vs BC PNP vs Atlantic Immigration Program</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        If you have searched for "Nova Scotia PNP" recently, you have probably found pages listing streams that no longer exist. Nova Scotia formalized an Expression of Interest model on November 28, 2025, closed its online portal from February 13 to 18, 2026 to consolidate streams, set new selection priorities on April 27, 2026, widened them on July 14, 2026, and started charging application fees on September 1, 2026. This guide reflects the program as Nova Scotia's immigration site (liveinnovascotia.com, where novascotiaimmigration.com now redirects) describes it on November 12, 2026. It is general information, not legal advice.
+      </p>
+
+      <h2 id="what" class="text-3xl font-bold mt-12 mb-6">What the Nova Scotia PNP Is</h2>
+
+      <p>
+        Like every Provincial Nominee Program, the NSNP lets Nova Scotia nominate a limited number of people each year for Canadian permanent residence. A nomination is not permanent residence itself. Once you receive a nominee certificate you must apply to Immigration, Refugees and Citizenship Canada (IRCC) within 12 months, and IRCC makes the final decision after medical, security and criminality checks.
+      </p>
+      <p>
+        Nova Scotia also takes part in the federal <strong>Atlantic Immigration Program (AIP)</strong>, which is a separate, employer-driven route. The NSNP and the AIP draw on the same provincial planning, and Nova Scotia's 2026 priority updates cover both, but the eligibility rules, fees and application steps are different. We compare them at the end of this guide.
+      </p>
+
+      <h2 id="streams" class="text-3xl font-bold mt-12 mb-6">The Four NSNP Streams and Their Requirements</h2>
+
+      <p>
+        The NSNP page lists exactly four streams. Older pathway names you may still see online, such as Occupations in Demand, the Physician streams or International Graduate Entrepreneur, now appear as categories inside these streams.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="p-3 text-left">Stream</th>
+              <th class="p-3 text-left">Who it is for</th>
+              <th class="p-3 text-left">Job offer?</th>
+              <th class="p-3 text-left">Language minimum</th>
+              <th class="p-3 text-left">Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200">
+              <td class="p-3 font-semibold">Skilled Worker</td>
+              <td class="p-3">Workers with a permanent offer from a Nova Scotia employer, TEER 0 to 5</td>
+              <td class="p-3">Yes, full-time and permanent</td>
+              <td class="p-3">CLB 5 (TEER 0-3), CLB 4 (TEER 4-5)</td>
+              <td class="p-3">21 to 55</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="p-3 font-semibold">Nova Scotia Graduate</td>
+              <td class="p-3">Recent Nova Scotia graduates in four health and childcare occupations</td>
+              <td class="p-3">Yes, matching the field of study</td>
+              <td class="p-3">CLB 5</td>
+              <td class="p-3">19 to 55</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="p-3 font-semibold">Nova Scotia: Express Entry</td>
+              <td class="p-3">Express Entry candidates with Nova Scotia work experience, plus physicians</td>
+              <td class="p-3">No (physicians need an approved opportunity)</td>
+              <td class="p-3">CLB 7 (TEER 0-1), CLB 5 (TEER 2-3)</td>
+              <td class="p-3">21 to 55</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="p-3 font-semibold">Entrepreneur</td>
+              <td class="p-3">Business owners and senior managers, and Nova Scotia graduates running a local business</td>
+              <td class="p-3">No (you run your own business)</td>
+              <td class="p-3">CLB 5 (CLB 7 for graduates)</td>
+              <td class="p-3">21 or older</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Skilled Worker</h3>
+      <p>
+        This is the broadest stream. You need a full-time, permanent job offer from a Nova Scotia employer, one year of related work experience (or six months with that employer for a TEER 4 or 5 job), a high school diploma plus any training or accreditation the job requires, and enough money to settle. Language tests are required even if English or French is your first language. Post-Graduation Work Permit holders working in TEER 5 jobs are not eligible.
+      </p>
+      <p>The stream has three named categories:</p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Construction:</strong> permanent offers in listed construction occupations such as carpenters (NOC 72310), electricians (72200) and construction trades helpers and labourers (75110). A construction training program can stand in for the high school diploma.</li>
+        <li><strong>Physicians:</strong> general practitioners, family physicians and specialists (NOC 31100, 31101 and 31102) with an approved opportunity from the Nova Scotia Health Authority or IWK Health Centre.</li>
+        <li><strong>Occupations in Demand:</strong> no occupations are listed as of November 12, 2026, so this category is effectively dormant.</li>
+      </ul>
+      <p>
+        Note that new submissions from the accommodation and food services sector (NAICS 72) have been paused since April 17, 2024.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Nova Scotia Graduate</h3>
+      <p>
+        This narrow stream is for people who completed an eligible program at a Nova Scotia designated learning institution within the last three years and hold a permanent job offer in one of four occupations: paramedical occupations (NOC 32102), pharmacy technicians (32124), nurse aides, orderlies and patient service associates (33102), and early childhood educators and assistants (42202). The program must have lasted at least 30 weeks (24 weeks for NOC 33102), at least half of it completed in Nova Scotia, and the job must match your field of study. You also need any certification a Nova Scotia regulator requires, CLB 5 and settlement funds.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Nova Scotia: Express Entry</h3>
+      <p>
+        This is Nova Scotia's "enhanced" stream, linked to the federal Express Entry system, so a nomination adds 600 points to your Comprehensive Ranking System score. Its main category asks for at least one year of Nova Scotia work experience in a TEER 0, 1, 2 or 3 occupation, a Canadian high school credential or equivalent, CLB 7 for TEER 0 and 1 jobs or CLB 5 for TEER 2 and 3, and an active Express Entry profile. If your experience was on a Post-Graduation Work Permit, you must have graduated from a Nova Scotia institution. A separate physicians category requires an approved Nova Scotia Health Authority or IWK opportunity, a two-year Return for Service Agreement and a Letter of Interest from the NSNP; physicians must submit their EOI within 30 days of that letter. Candidates who receive a Notice of Interest in their Express Entry account follow the province's separate Critical Vacancies instructions.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Entrepreneur</h3>
+      <p>
+        The standard category requires a net worth of at least $600,000 and a personal investment of at least $150,000, reduced to $400,000 and $100,000 if the business is outside the Halifax Regional Municipality. You need either three years owning and managing a business (with at least one-third ownership) or more than five years in senior management, plus CLB 5 and an intention to live in Nova Scotia and run the business day to day. You can start a new business or buy an existing one.
+      </p>
+      <p>
+        The International Graduate Entrepreneur category is for recent graduates of a Nova Scotia university or the Nova Scotia Community College who studied full time, in person, for at least two academic years, hold a valid Post-Graduation Work Permit, have run their own Nova Scotia business for at least a year with at least 33.33% ownership, and score CLB 7. Both categories require an EOI and an Invitation to Apply.
+      </p>
+
+      <h2 id="priorities" class="text-3xl font-bold mt-12 mb-6">Who Nova Scotia Is Selecting in 2026</h2>
+
+      <p>
+        Meeting a stream's requirements does not mean you will be selected. Nova Scotia says demand exceeds its federal allocation, so it ranks the pool by priorities. In April 2026 the province set three levels, as summarized by CIC News on April 28, 2026:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Level 1:</strong> healthcare and skilled trades occupations at TEER 0 to 4, open to both international applicants and temporary residents already in Nova Scotia.</li>
+        <li><strong>Level 2:</strong> temporary residents already in Nova Scotia working at TEER 0 to 4 in NOC major groups 2, 4, 8 and 9 (sciences, education and social services, natural resources and agriculture, manufacturing and utilities).</li>
+        <li><strong>Level 3 (limited):</strong> temporary residents in Nova Scotia in other TEER 0 to 2 occupations. TEER 5 jobs were not being considered.</li>
+      </ul>
+      <p>
+        On July 14, 2026, the province announced a <strong>one-time expansion</strong> for active EOIs submitted on or before June 30, 2026 by people with a work permit expiring in 2026 or earlier who meet at least one of these tests: a TEER 0 to 4 job in a key sector (professional and scientific, manufacturing, construction, health and social services, natural resources, agriculture or transportation); a Nova Scotia graduate working at TEER 0 to 5; living outside the Halifax Regional Municipality and working at TEER 0 to 5; a TEER 0 to 2 sales or service job paying at least $20 an hour; or any job paying at least $27 an hour. International recruitment stays focused on healthcare, skilled trades and critical community services.
+      </p>
+      <p>
+        Selections picked up after that change. Nova Scotia's EOI selection page, last updated October 23, 2026, reports these monthly totals:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr><th class="p-3 text-left">2026 month</th><th class="p-3 text-left">Candidates selected</th><th class="p-3 text-left">2026 month</th><th class="p-3 text-left">Candidates selected</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="p-3">January</td><td class="p-3">363</td><td class="p-3">June</td><td class="p-3">531</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">February</td><td class="p-3">357</td><td class="p-3">July</td><td class="p-3">671</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">March</td><td class="p-3">370</td><td class="p-3">August</td><td class="p-3">1,212</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">April</td><td class="p-3">161</td><td class="p-3">September</td><td class="p-3">946</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">May</td><td class="p-3">789</td><td class="p-3 font-semibold">Total</td><td class="p-3 font-semibold">5,400</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The province does not break these totals down by stream and does not publish score cutoffs, because there is no points grid. A selection is an invitation to be assessed, not a nomination.
+      </p>
+
+      <h2 id="apply" class="text-3xl font-bold mt-12 mb-6">How to Apply: The Nova Scotia PNP Application Step by Step</h2>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Pick one stream and check every requirement.</strong> Read the stream's application guide. An incomplete EOI is closed, not held.</li>
+        <li><strong>Gather documents before you submit.</strong> Typically language test results, education documents, proof of work experience, your job offer, and for worker streams the Employer Information Form (NSNP 200). If you use a representative, add the NSNP 50 form.</li>
+        <li><strong>Submit your EOI in the eNSNP portal.</strong> It is free and stays in the pool for 12 months.</li>
+        <li><strong>Wait for selection.</strong> Nova Scotia selects periodically based on labour needs, occupation and sector, likelihood of staying, intended region, your status in Canada, available spaces and pool volume.</li>
+        <li><strong>If selected, act within 7 calendar days.</strong> Worker-stream candidates must upload updated documents and pay the fee within 7 days; Entrepreneur candidates get 90 or 180 days after an Invitation to Apply, depending on the category. Missing the deadline closes your EOI.</li>
+        <li><strong>Assessment and nomination.</strong> If approved you receive a nominee certificate and, where applicable, a letter of support for a work permit.</li>
+        <li><strong>Apply to IRCC within 12 months.</strong> Use Express Entry if you were nominated through Nova Scotia: Express Entry, or a paper-based (base) application otherwise.</li>
+      </ol>
+
+      <h2 id="fees" class="text-3xl font-bold mt-12 mb-6">Nova Scotia PNP Fees and Processing Times</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr><th class="p-3 text-left">Cost</th><th class="p-3 text-left">Amount (CAD)</th><th class="p-3 text-left">When</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="p-3">Expression of Interest</td><td class="p-3">Free</td><td class="p-3">At submission</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">NSNP fee, worker streams</td><td class="p-3">$1,000 per principal applicant</td><td class="p-3">Within 7 days of selection</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">NSNP fee, Entrepreneur</td><td class="p-3">$2,000 per principal applicant</td><td class="p-3">Within 90 or 180 days of an invitation</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">IRCC PR fee, principal applicant</td><td class="p-3">$1,590 (incl. $600 right of PR fee)</td><td class="p-3">With the federal application</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">IRCC PR fee, spouse or partner</td><td class="p-3">$1,590</td><td class="p-3">With the federal application</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">IRCC PR fee, dependent child</td><td class="p-3">$270 each</td><td class="p-3">With the federal application</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The provincial fee applies to anyone selected on or after September 1, 2026, whenever they submitted their EOI. It must be paid online in one payment by credit card, there are no waivers, and it is non-refundable even if your application is refused. It does not speed up processing or improve your chances, and if your EOI closes and you are selected again later, you pay again. Add language tests, credential assessments, medical exams and biometrics to your budget.
+      </p>
+      <p>
+        <strong>Processing times:</strong> Nova Scotia does not publish a fixed provincial timeline and says integrity reviews, employer compliance checks and volume can cause delays. At the federal stage, IRCC data dated September 3, 2026 (reported by CIC News) showed about 7 months for Express Entry-linked PNP applications and about 13 months for base PNP applications, against service standards of 6 and 11 months. Check IRCC's processing times tool before you plan around these numbers.
+      </p>
+
+      <h2 id="quota" class="text-3xl font-bold mt-12 mb-6">The Nova Scotia PNP Quota for 2026</h2>
+
+      <p>
+        As of November 12, 2026, Nova Scotia's immigration site does not publish an official 2026 nomination allocation, and we could not confirm one from an official source. What is documented is the recent history. In January 2025 Ottawa halved provincial allocations, cutting Nova Scotia's combined NSNP and AIP allocation from 6,300 in 2024 to 3,150 in 2025 (1,785 for the NSNP and 1,365 for the AIP, as reported by CIC News). Later in 2025 the province's Department of Labour, Skills and Immigration confirmed to CTV News an extra 559 spaces, for a 2025 total of 3,709.
+      </p>
+      <p>
+        For 2026, the federal government raised allocations for the provinces that announced figures by roughly 31%; British Columbia, for example, was first allocated 5,254 nominations, and on August 18, 2026 <a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news" class="text-blue-600 underline" rel="noopener" target="_blank">WelcomeBC announced</a> 1,000 more, for a 2026 total of 6,254. Applying the same increase to Nova Scotia would give about 4,100 spaces, but that is a press estimate, not a provincial figure, and other outlets project higher numbers. The monthly selection totals above are the clearest public signal of how fast Nova Scotia is moving in 2026.
+      </p>
+
+      <h2 id="compare" class="text-3xl font-bold mt-12 mb-6">Nova Scotia PNP vs BC PNP vs Atlantic Immigration Program</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr><th class="p-3 text-left">Feature</th><th class="p-3 text-left">Nova Scotia PNP</th><th class="p-3 text-left">BC PNP Skills Immigration</th><th class="p-3 text-left">Atlantic Immigration Program</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">How you enter</td><td class="p-3">EOI pool, selection by priorities</td><td class="p-3">Registration with a points score, then invitation</td><td class="p-3">Job offer from a designated employer, then provincial endorsement</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Job offer</td><td class="p-3">Required in most streams</td><td class="p-3">Required, TEER 0 to 3 (plus health authority jobs)</td><td class="p-3">Required, full-time and non-seasonal</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Provincial fee</td><td class="p-3">$1,000 ($2,000 Entrepreneur)</td><td class="p-3">$1,750 application fee, free registration</td><td class="p-3">No provincial application fee</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Federal processing (Sept 2026)</td><td class="p-3">About 7 months (Express Entry) or 13 months (base)</td><td class="p-3">Same as Nova Scotia PNP</td><td class="p-3">About 26 months</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>Nova Scotia PNP vs BC PNP:</strong> B.C. ranks registrants on a points score that rewards wages, regional jobs, education and language, and its Skills Immigration streams require a TEER 0 to 3 offer. Nova Scotia has no public points grid but accepts some TEER 4 and 5 jobs through Skilled Worker, with language minimums as low as CLB 4, while giving top priority to healthcare and trades. If your job is in B.C., estimate your score with the <a href="/bc-pnp-calculator" class="text-emerald-700 underline font-semibold">BC PNP Calculator</a> and see recent cutoffs on the <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a>.
+      </p>
+      <p>
+        <strong>Nova Scotia PNP vs AIP:</strong> the AIP has no provincial application fee and is driven by designated employers, who must provide a settlement plan and show local hiring did not work. In Nova Scotia, AIP job offers for food service supervisors (NOC 62020) are currently paused by the federal government. Federal AIP processing has also been much slower than PNP processing in 2026. Our <a href="/articles/bc-pnp-vs-atlantic-immigration-2026" class="text-blue-600 hover:text-blue-800 underline">BC PNP vs Atlantic Immigration Program comparison</a> goes into more detail, and <a href="/articles/how-to-get-provincial-nomination-canada" class="text-blue-600 hover:text-blue-800 underline">how to get a provincial nomination in Canada</a> and <a href="/articles/best-provinces-pnp-2027" class="text-blue-600 hover:text-blue-800 underline">the best provinces for PNP in 2027</a> compare Nova Scotia with other provinces.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://liveinnovascotia.com/nova-scotia-nominee-program" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Nova Scotia Nominee Program, Province of Nova Scotia</a></li>
+        <li><a href="https://liveinnovascotia.com/skilled-worker" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Skilled Worker stream, Province of Nova Scotia</a></li>
+        <li><a href="https://liveinnovascotia.com/nova-scotia-graduate" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Nova Scotia Graduate stream, Province of Nova Scotia</a></li>
+        <li><a href="https://liveinnovascotia.com/express-entry" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Nova Scotia: Express Entry stream, Province of Nova Scotia</a></li>
+        <li><a href="https://liveinnovascotia.com/entrepreneur" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Entrepreneur stream, Province of Nova Scotia</a></li>
+        <li><a href="https://liveinnovascotia.com/eoi-selection" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">EOI selection totals (updated October 23, 2026), Province of Nova Scotia</a></li>
+        <li><a href="https://liveinnovascotia.com/node/72" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">NSNP and AIP 2026 selection priorities update (July 14, 2026), Province of Nova Scotia</a></li>
+        <li><a href="https://liveinnovascotia.com/node/73" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">NSNP application fees effective September 1, 2026, Province of Nova Scotia</a></li>
+        <li><a href="https://liveinnovascotia.com/atlantic-immigration-program" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Atlantic Immigration Program in Nova Scotia, Province of Nova Scotia</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/atlantic-immigration.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Atlantic Immigration Program, IRCC</a></li>
+        <li><a href="https://ircc.canada.ca/english/information/fees/fees.asp" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Fee list, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Check processing times, IRCC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Skills Immigration, WelcomeBC</a></li>
+        <li><a href="https://www.cicnews.com/2026/04/nova-scotia-nominee-program-to-prioritize-workers-in-healthcare-trades-and-select-other-sectors-0474689.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Nova Scotia nominee program to prioritize workers in healthcare, trades and select other sectors (April 28, 2026), CIC News</a></li>
+        <li><a href="https://www.cicnews.com/2026/03/canada-boosts-provincial-immigration-by-a-third-for-2026-0373593.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canada boosts provincial immigration by a third for 2026 (March 30, 2026), CIC News</a></li>
+        <li><a href="https://cicnews.com/2026/09/permanent-residence-and-citizenship-processing-times-rise-0980034.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Processing times rise for permanent residence and citizenship applicants (September 2026), CIC News</a></li>
+        <li><a href="https://www.ctvnews.ca/atlantic/nova-scotia/article/nova-scotia-to-see-immigration-increase-after-ottawa-slashed-numbers-earlier-this-year/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Nova Scotia to see immigration increase after Ottawa slashed numbers earlier this year, CTV News Atlantic</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 12, 2026. Nova Scotia changed its program several times in 2026; confirm every requirement on liveinnovascotia.com and IRCC before you submit.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-vs-atlantic-immigration-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Comparison</div>
+          <div class="font-bold text-gray-900">BC PNP vs Atlantic Immigration Program</div>
+        </a>
+        <a href="/articles/how-to-get-provincial-nomination-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">How-To</div>
+          <div class="font-bold text-gray-900">How to Get a Provincial Nomination in Canada</div>
+        </a>
+        <a href="/articles/best-provinces-pnp-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-amber-600 font-bold mb-2">Analysis</div>
+          <div class="font-bold text-gray-900">Best Provinces for PNP in 2027</div>
+        </a>
+        <a href="/bc-pnp-calculator" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-red-600 font-bold mb-2">Tool</div>
+          <div class="font-bold text-gray-900">BC PNP Points Calculator</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

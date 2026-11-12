@@ -1,0 +1,107 @@
+<!doctype html>
+<!--
+  Article hero image template: 1200x630, rendered to PNG by
+    node scripts/render-article-image.cjs content-plan/images/<slug>.html
+
+  Copy this file to content-plan/images/<slug>.html and design it for the post:
+  - Change the eyebrow, headline and key figure to match the article. Every number must
+    appear in the article and be verified.
+  - Replace the illustration (<svg class="art">) with one drawn for this post: a bar
+    chart of real cutoffs, a timeline, a fee breakdown, a map pin, a document stack, a
+    route diagram. Keep it simple, flat and readable at thumbnail size.
+  - Pick an accent: --accent can be red (#dc2626), indigo (#4f46e5), emerald (#059669),
+    amber (#d97706) or sky (#0284c7). Rotate accents and layouts so posts don't look identical.
+  - Headline: 4-10 words, at most 3 lines. No tiny text: the minimum font size is 22px.
+  - Text must contrast clearly with the background (light text on --bg).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a;        /* slate-900 */
+    --panel: #1e293b;     /* slate-800 */
+    --ink: #f8fafc;       /* slate-50 */
+    --muted: #cbd5e1;     /* slate-300 */
+    --accent: #dc2626;    /* red-600 (brand) */
+    --accent-soft: rgba(220, 38, 38, 0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background:
+      radial-gradient(circle at 85% 20%, var(--accent-soft), transparent 45%),
+      linear-gradient(135deg, var(--bg) 0%, #111c33 100%);
+    color: var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 560px;
+    gap: 36px;
+    padding: 64px 72px;
+    position: relative;
+  }
+  body::before { /* subtle grid texture */
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .copy, .visual { position: relative; z-index: 1; }
+  .copy { display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow {
+    display: inline-flex; align-self: flex-start; gap: 10px; align-items: center;
+    background: var(--accent); color: #fff; font-weight: 800; font-size: 22px;
+    letter-spacing: .06em; text-transform: uppercase; padding: 10px 18px; border-radius: 999px;
+  }
+  h1 { font-size: 54px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 28px; }
+  .stat { display: flex; align-items: baseline; gap: 16px; margin-top: 24px; }
+  .stat b { font-size: 64px; font-weight: 800; color: #fff; }
+  .stat span { font-size: 24px; color: var(--muted); font-weight: 500; max-width: 340px; line-height: 1.3; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+  .visual {
+    background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 28px;
+    display: flex; align-items: center; justify-content: center; padding: 28px;
+  }
+  .art { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div>
+      <div class="eyebrow">Express Entry &middot; News</div>
+      <h1>No rounds since October 28 as CRS scores are recalculated</h1>
+      <div class="stat"><b>5,942</b><span>invited Oct 26&ndash;28, before the Nov 3 pause</span></div>
+    </div>
+    <div class="brand"><i></i>bcpnpcalculator.ca</div>
+  </div>
+
+  <div class="visual">
+    <svg class="art" viewBox="0 0 500 470" role="img" aria-label="Express Entry invitations by round in October 2026 and the November pause">
+      <g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif" font-weight="700">
+        <!-- pause band -->
+        <rect x="372" y="30" width="118" height="340" rx="14" fill="rgba(220,38,38,0.16)" stroke="#dc2626" stroke-width="2" stroke-dasharray="8 7"/>
+        <text x="431" y="190" text-anchor="middle" font-size="26" fill="#fca5a5">PAUSE</text>
+        <text x="431" y="224" text-anchor="middle" font-size="22" fill="#fca5a5">0 rounds</text>
+        <line x1="10" y1="370" x2="490" y2="370" stroke="#475569" stroke-width="2"/>
+        <!-- bars: scale 300px = 5000 -->
+        <rect x="16"  y="325" width="42" height="45"  rx="7" fill="#64748b"/>
+        <rect x="74"  y="220" width="42" height="150" rx="7" fill="#64748b"/>
+        <rect x="132" y="70"  width="42" height="300" rx="7" fill="#64748b"/>
+        <rect x="200" y="322" width="42" height="48"  rx="7" fill="#dc2626"/>
+        <rect x="258" y="70"  width="42" height="300" rx="7" fill="#dc2626"/>
+        <rect x="316" y="361" width="42" height="9"   rx="4" fill="#dc2626"/>
+        <text x="153" y="56" text-anchor="middle" font-size="22" fill="#e2e8f0">5,000</text>
+        <text x="279" y="56" text-anchor="middle" font-size="22" fill="#e2e8f0">5,000</text>
+        <g font-size="22" fill="#cbd5e1" text-anchor="middle">
+          <text x="37" y="402">13</text><text x="95" y="402">15</text><text x="153" y="402">16</text>
+          <text x="221" y="402">26</text><text x="279" y="402">27</text><text x="337" y="402">28</text>
+        </g>
+        <text x="187" y="446" text-anchor="middle" font-size="24" fill="#f8fafc">October rounds</text>
+        <text x="431" y="402" text-anchor="middle" font-size="22" fill="#fca5a5">Nov 3&ndash;12</text>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>
