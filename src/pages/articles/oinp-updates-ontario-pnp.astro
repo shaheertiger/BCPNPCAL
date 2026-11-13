@@ -1,0 +1,373 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "OINP Updates 2026: Ontario PNP Streams, Draws, Requirements and Fees";
+const description = "OINP updates for late 2026: the new Ontario Workforce Priority stream, closed streams, every 2026 Ontario PNP draw with cutoffs, requirements, fees and quota.";
+const canonical = "https://bcpnpcalculator.ca/articles/oinp-updates-ontario-pnp";
+
+const faqs = [
+  {
+    q: "What is the latest OINP update?",
+    a: "As of November 13, 2026, the most recent entry on Ontario's official 2026 OINP updates page is dated November 9, 2026, when the OINP published the names of individuals, employers and representatives who received administrative monetary penalties or banning orders. The biggest change of the year came on June 25, 2026, when Ontario removed its eight previous streams and replaced them with a single Ontario Workforce Priority stream. Its expression of interest portal opened on August 4, 2026.",
+  },
+  {
+    q: "When was the latest Ontario PNP draw?",
+    a: "The latest invitation round listed on ontario.ca's 2026 updates page was held on April 30, 2026: 1,063 invitations in the Greater Toronto Area under the Employer Job Offer Foreign Worker (score 57 and above) and International Student (81 and above) streams. Those streams have since closed. As of November 13, 2026, no Ontario Workforce Priority invitation rounds were listed on the page.",
+  },
+  {
+    q: "Can I still apply to the OINP Masters Graduate, PhD Graduate or Human Capital Priorities streams?",
+    a: "No. Ontario's June 26, 2026 update says the Employer Job Offer streams (Foreign Worker, International Student and In-Demand Skills), Masters Graduate, PhD Graduate, Express Entry Human Capital Priorities, French-Speaking Skilled Worker and Skilled Trades streams were removed. The old expression of interest system is closed to new profiles, and no further invitations will be issued under those streams.",
+  },
+  {
+    q: "Do I need a job offer for the Ontario PNP now?",
+    a: "Almost always. The Ontario Workforce Priority stream is built around a full-time, permanent job offer from an eligible Ontario employer. The one exception is the self-employed physician pathway, for doctors with an OHIP billing number and a qualifying certificate of registration with the College of Physicians and Surgeons of Ontario.",
+  },
+  {
+    q: "How much does the OINP cost in 2026?",
+    a: "Registering an expression of interest is free. If you are invited, the Ontario Workforce Priority application fee is $1,500 when the job offer is outside the Greater Toronto Area and $2,000 when it is in the City of Toronto, Durham, Halton, Peel or York. The fee is non-refundable once the OINP finds your application complete. Federal permanent residence fees are paid separately to IRCC.",
+  },
+  {
+    q: "How many nominations does Ontario have in 2026?",
+    a: "Ontario's updates page says the federal government gave Ontario 14,119 nominations for 2026 (announced February 6, 2026). For comparison, British Columbia's 2026 allocation is 6,254 after an increase announced on August 18, 2026.",
+  },
+  {
+    q: "Is it easier to get PR through the OINP or the BC PNP?",
+    a: "Neither is easy, and both now depend heavily on an employer. Ontario has more than twice as many nominations, but it has just rebuilt its program and had not published any Workforce Priority draws as of November 13, 2026. B.C. invites mainly in health, childcare, education and veterinary occupations, certified trades and high economic impact candidates. The better choice is usually the province where you already work or have a genuine job offer.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="oinp-updates-ontario-pnp" datePublished="2026-11-13" dateModified="2026-11-13" articleSection="Guide" keywords="oinp updates, ontario pnp, pnp ontario, oinp draw 2025, ontario pnp draw, ontario pnp draws, ontario pnp latest draw, pnp draw ontario, pnp canada ontario, pnp ontario requirements" title={title} description={description} canonical={canonical} ogImage="/images/articles/oinp-updates-ontario-pnp.png">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        Ontario PNP Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        OINP Updates 2026: Ontario PNP Streams, Draws, Requirements and Fees
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Ontario rebuilt its provincial nominee program in 2026. Here is what closed, what replaced it, every draw published this year and what it means if you are weighing Ontario against British Columbia.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-13">November 13, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/oinp-updates-ontario-pnp.png" width="1200" height="630" alt="Timeline of 2026 OINP milestones from the first invitation round on February 2 to the Ontario Workforce Priority portal opening on August 4, next to Ontario's 14,119 nomination allocation."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-indigo-900 mb-2">Quick answer</p>
+      <p class="text-indigo-900">
+        On June 25, 2026 Ontario closed all eight of its previous OINP streams, including the Employer Job Offer, Masters Graduate, PhD Graduate and Express Entry streams, and replaced them with one Ontario Workforce Priority (OWP) stream that needs an Ontario job offer (self-employed physicians excepted). The OWP expression of interest portal opened on August 4, 2026. The last Ontario PNP draw listed on ontario.ca was on April 30, 2026, and as of November 13, 2026 no OWP invitation rounds had been published. Ontario's 2026 allocation is 14,119 nominations.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">14,119</div>
+        <div class="text-sm text-slate-600 font-medium">Ontario's 2026 provincial nomination allocation</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">1</div>
+        <div class="text-sm text-slate-600 font-medium">Open stream since June 25, 2026: Ontario Workforce Priority</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">$1,500&ndash;$2,000</div>
+        <div class="text-sm text-slate-600 font-medium">OWP application fee, depending on whether the job is in the GTA</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#timeline" class="hover:underline">2026 OINP updates, in order</a></li>
+        <li><a href="#owp" class="hover:underline">The Ontario Workforce Priority stream: requirements</a></li>
+        <li><a href="#scoring" class="hover:underline">How OINP invitations work now</a></li>
+        <li><a href="#draws" class="hover:underline">Every 2026 Ontario PNP draw</a></li>
+        <li><a href="#fees" class="hover:underline">Fees, deadlines and processing</a></li>
+        <li><a href="#bc" class="hover:underline">Ontario PNP vs BC PNP</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        If you searched for OINP updates expecting a list of fresh Ontario PNP draws, the picture in late 2026 is different from any recent year. Ontario ran large, frequent invitation rounds from February to April, then paused, closed every stream it had and launched a single new stream built around employer job offers. Many guides online still describe the old Masters Graduate, PhD Graduate and Human Capital Priorities streams as open. They are not. This guide sets out the changes in the order they happened, using ontario.ca's official "2026 Ontario Immigrant Nominee Program updates" page as checked on November 13, 2026. It is general information, not legal advice.
+      </p>
+
+      <h2 id="timeline" class="text-3xl font-bold mt-12 mb-6">2026 OINP Updates, in Order</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Date (2026)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">What changed</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">January 5</td><td class="px-4 py-3">Self-employed physicians with an OHIP billing number and a provisional certificate of registration could apply under the Foreign Worker stream (effective January 1).</td></tr>
+            <tr><td class="px-4 py-3 font-medium">February 2</td><td class="px-4 py-3">First invitation rounds of the year: 1,825 invitations across physicians, the REDI pilot and health care and early childhood education.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">February 6</td><td class="px-4 py-3">Ontario announced a 2026 federal allocation of 14,119 nominations.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">March 16</td><td class="px-4 py-3">Proposed regulatory changes, using powers in the Working for Workers Seven Act, 2025, to let the minister create or remove streams.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">April 30</td><td class="px-4 py-3">Last invitation round listed on the page (GTA, 1,063 invitations).</td></tr>
+            <tr><td class="px-4 py-3 font-medium">May 30</td><td class="px-4 py-3">Amendments to O. Reg. 421/17 took effect, preparing for the redesign.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">June 25</td><td class="px-4 py-3">Redesign Phase 1: the eight existing streams were removed, the old expression of interest system closed and the Ontario Workforce Priority stream was created.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">August 4</td><td class="px-4 py-3">The OWP expression of interest portal opened.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">October 5</td><td class="px-4 py-3">OWP scoring change: $80,000 or more in Canadian earnings in a single year in the past five years now earns 10 points (announced October 7).</td></tr>
+            <tr><td class="px-4 py-3 font-medium">October 14</td><td class="px-4 py-3">A new round of the Regional Economic Development through Immigration (REDI) pilot, running to the end of 2027 (announced October 16).</td></tr>
+            <tr><td class="px-4 py-3 font-medium">November 9</td><td class="px-4 py-3">The OINP published names of people, employers and representatives with penalties or banning orders under the Ontario Immigration Act, 2015.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Which OINP streams closed</h3>
+      <p>
+        Ontario's June 26 notice lists the removed streams: Employer Job Offer: Foreign Worker, Employer Job Offer: International Student, Employer Job Offer: In-Demand Skills, Masters Graduate, PhD Graduate, Express Entry Human Capital Priorities, Express Entry French-Speaking Skilled Worker and Express Entry Skilled Trades. No further invitations will be issued under them, and unused profiles and job offers in the old system were to be withdrawn. Applications already submitted are assessed against the rules in place when they were filed. The main OINP page now states that the Ontario Workforce Priority stream "has now launched, and all other streams are now closed."
+      </p>
+      <p>
+        Two other changes in the same package matter to employers: rural employers (in census divisions with a population under 150,000) face lower gross annual revenue requirements, and the time to respond to a notice of intent to issue a penalty or ban was cut from 60 to 30 days.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The REDI pilot's new round</h3>
+      <p>
+        REDI reserves nomination spaces for candidates whose jobs are in participating communities. The round announced in October covers Greater Sudbury, Kenora District, Nipissing District, Rainy River District, Renfrew County and Thunder Bay. There is no separate application: you still apply through the OINP and must meet its requirements. Earlier 2026 REDI rounds were for jobs in Lanark or Leeds and Grenville.
+      </p>
+
+      <h2 id="owp" class="text-3xl font-bold mt-12 mb-6">The Ontario Workforce Priority Stream: PNP Ontario Requirements</h2>
+
+      <p>
+        The OWP stream has two routes: a job offer route for workers in any NOC TEER category, and a self-employed physician route. Requirements differ by the TEER level of your job.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Requirement</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">TEER 0&ndash;3 jobs</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">TEER 4&ndash;5 jobs</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Job offer</td><td class="px-4 py-3" colspan="2">Full-time, permanent position in Ontario from an eligible employer, paid at the required wage for its location</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Work experience</td><td class="px-4 py-3">6 consecutive months, paid and full-time, in the job offer position in the last 12 months (3 months for recent Ontario graduates), or 2 years cumulative in the occupation in the last 5 years</td><td class="px-4 py-3">9 months cumulative, paid and full-time, in the job offer position in the last 2 years</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Language</td><td class="px-4 py-3">CLB 6 in all four skills (CLB 5 for listed skilled trades)</td><td class="px-4 py-3">CLB 4 in all four skills</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Education</td><td class="px-4 py-3">Post-secondary program of at least one full-time academic year (high school for listed skilled trades)</td><td class="px-4 py-3">Canadian high school diploma or equivalent</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Language tests must be taken within two years before you apply, and recent Ontario graduates with a qualifying credential may not need one. Foreign credentials need an Educational Credential Assessment less than five years old. If you are in Canada you must hold legal status, and you must intend to live and work in Ontario.
+      </p>
+      <p>
+        Employers must have been in business for at least three years, have premises in Ontario where you will work, have no outstanding employment standards or health and safety orders and meet revenue and staffing thresholds that vary by location. The job must be necessary to the business, and positions in the Ontario Public Service are not accepted.
+      </p>
+      <p>
+        After nomination you have six months to apply to IRCC for permanent residence. TEER 0&ndash;3 candidates who also have an Express Entry profile can take an enhanced nomination, which adds 600 points to the Comprehensive Ranking System score.
+      </p>
+
+      <h2 id="scoring" class="text-3xl font-bold mt-12 mb-6">How OINP Invitations Work Now</h2>
+
+      <p>
+        Ontario still uses an expression of interest (EOI) system. Your employer submits the job offer in the Employer Portal first, and you then have 30 calendar days to register your EOI. Profiles are scored and ranked, and the OINP invites the highest-ranked candidates. It may rank the whole pool or target a group, for example particular occupations or regions. An EOI lasts 12 months or until you are invited. Registering is free and does not guarantee an invitation.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">OWP scoring factor</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Maximum points</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Ontario work experience (6+ months in the job offer position)</td><td class="px-4 py-3">18</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Hourly wage ($40 or more)</td><td class="px-4 py-3">15</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Official language (CLB 9 or higher)</td><td class="px-4 py-3">15</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Regionalization (Northern Ontario job)</td><td class="px-4 py-3">15</td></tr>
+            <tr><td class="px-4 py-3 font-medium">NOC broad occupational category (category 3, health)</td><td class="px-4 py-3">10</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Canadian earnings ($80,000+ in one year, past 5 years)</td><td class="px-4 py-3">10</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Legal status (valid work permit)</td><td class="px-4 py-3">10</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Highest education (medicine and similar degrees)</td><td class="px-4 py-3">10</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Canadian credentials (more than one)</td><td class="px-4 py-3">10</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Second official language (CLB 6+ in both)</td><td class="px-4 py-3">10</td></tr>
+            <tr><td class="px-4 py-3 font-medium">NOC TEER (TEER 0 or 1)</td><td class="px-4 py-3">9</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Location matters a lot: a Northern Ontario job earns 15 regionalization points, Eastern, Central (outside the GTA) and Southwestern Ontario earn 10, the GTA outside Toronto earns 5 and the City of Toronto earns 0. Ontario has not published a minimum score. Treat any "OWP cutoff" you see online with caution until ontario.ca lists an actual round.
+      </p>
+
+      <h2 id="draws" class="text-3xl font-bold mt-12 mb-6">Every 2026 Ontario PNP Draw (Ontario PNP Latest Draw)</h2>
+
+      <p>
+        The rounds below are taken only from ontario.ca's 2026 updates page, as of November 13, 2026. All were held under streams that have since closed, so their cutoffs are history, not a guide to OWP scores. Where Ontario reported one combined total for several streams, the table does the same. FW is Foreign Worker, IS is International Student and IDS is In-Demand Skills.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-3 py-3 text-left font-bold text-slate-700">Date</th>
+              <th class="px-3 py-3 text-left font-bold text-slate-700">Round</th>
+              <th class="px-3 py-3 text-left font-bold text-slate-700">Invitations</th>
+              <th class="px-3 py-3 text-left font-bold text-slate-700">Score cutoffs</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-3 py-2 font-medium">Apr 30</td><td class="px-3 py-2">GTA (FW, IS)</td><td class="px-3 py-2">1,063</td><td class="px-3 py-2">FW 57, IS 81</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 23</td><td class="px-3 py-2">Southwestern Ontario (FW, IS, IDS)</td><td class="px-3 py-2">886</td><td class="px-3 py-2">FW 60, IS 84, IDS 34</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 23</td><td class="px-3 py-2">Eastern Ontario (FW, IS, IDS)</td><td class="px-3 py-2">539</td><td class="px-3 py-2">FW 63, IS 87, IDS 34</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 23</td><td class="px-3 py-2">Central Ontario outside GTA (FW, IS, IDS)</td><td class="px-3 py-2">428</td><td class="px-3 py-2">FW 60, IS 85, IDS 34</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 23</td><td class="px-3 py-2">Northern Ontario (FW, IS, IDS)</td><td class="px-3 py-2">303</td><td class="px-3 py-2">FW 60, IS 87, IDS 35</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 22</td><td class="px-3 py-2">Masters Graduate</td><td class="px-3 py-2">674</td><td class="px-3 py-2">61</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 22</td><td class="px-3 py-2">PhD Graduate</td><td class="px-3 py-2">244</td><td class="px-3 py-2">56</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 15</td><td class="px-3 py-2">IDS: agriculture and other priority occupations</td><td class="px-3 py-2">1,334</td><td class="px-3 py-2">35 (agriculture), 36 (other)</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 8</td><td class="px-3 py-2">Health care and early childhood education (FW, IS)</td><td class="px-3 py-2">1,635</td><td class="px-3 py-2">FW 20, IS 46</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 8</td><td class="px-3 py-2">Francophone candidates (FW, IS, IDS)</td><td class="px-3 py-2">146</td><td class="px-3 py-2">FW 35, IS 63, IDS 25</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 8</td><td class="px-3 py-2">REDI pilot (FW, IS, IDS)</td><td class="px-3 py-2">32</td><td class="px-3 py-2">FW 46, IS 57, IDS 33</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 8</td><td class="px-3 py-2">Physicians (FW)</td><td class="px-3 py-2">15</td><td class="px-3 py-2">43</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Apr 1</td><td class="px-3 py-2">Mining-related occupations (FW, IS, IDS)</td><td class="px-3 py-2">759</td><td class="px-3 py-2">FW 56, IS 85, IDS 34</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Mar 25</td><td class="px-3 py-2">GTA (FW, IS)</td><td class="px-3 py-2">431</td><td class="px-3 py-2">FW 61, IS 90</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Mar 25</td><td class="px-3 py-2">Southwestern Ontario (FW, IS)</td><td class="px-3 py-2">251</td><td class="px-3 py-2">FW 53, IS 81</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Mar 25</td><td class="px-3 py-2">Central Ontario outside GTA (FW, IS, IDS)</td><td class="px-3 py-2">199</td><td class="px-3 py-2">FW 55, IS 82, IDS 32</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Mar 25</td><td class="px-3 py-2">Eastern Ontario (FW, IS, IDS)</td><td class="px-3 py-2">174</td><td class="px-3 py-2">FW 57, IS 83, IDS 34</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Mar 25</td><td class="px-3 py-2">Northern Ontario (FW, IS)</td><td class="px-3 py-2">57</td><td class="px-3 py-2">FW 54, IS 80</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Mar 18</td><td class="px-3 py-2">Masters Graduate</td><td class="px-3 py-2">582</td><td class="px-3 py-2">30</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Mar 18</td><td class="px-3 py-2">PhD Graduate</td><td class="px-3 py-2">525</td><td class="px-3 py-2">49</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Mar 18</td><td class="px-3 py-2">Physicians (FW)</td><td class="px-3 py-2">97</td><td class="px-3 py-2">36</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Mar 18</td><td class="px-3 py-2">REDI pilot (FW, IS, IDS)</td><td class="px-3 py-2">39</td><td class="px-3 py-2">FW 47, IS 61, IDS 30</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Feb 18</td><td class="px-3 py-2">Skilled trades occupations (FW, IS)</td><td class="px-3 py-2">1,404</td><td class="px-3 py-2">FW 50, IS 80</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Feb 2</td><td class="px-3 py-2">Health care and early childhood education (FW, IS)</td><td class="px-3 py-2">1,649</td><td class="px-3 py-2">FW 36, IS 56</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Feb 2</td><td class="px-3 py-2">Physicians (FW)</td><td class="px-3 py-2">129</td><td class="px-3 py-2">33</td></tr>
+            <tr><td class="px-3 py-2 font-medium">Feb 2</td><td class="px-3 py-2">REDI pilot (FW, IS, IDS)</td><td class="px-3 py-2">47</td><td class="px-3 py-2">FW 44, IS 69, IDS 34</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        By our count, these rounds add up to 13,642 invitations between February 2 and April 30, 2026. Invitations are not nominations: some invited candidates do not apply, and some applications are refused. Three patterns stand out. Health care and early childhood education rounds had by far the lowest Foreign Worker cutoffs (20 in April). International Student cutoffs were consistently the highest, often in the 80s. And regional rounds outside the GTA were held often, which fits the new OWP scoring that rewards jobs outside Toronto.
+      </p>
+      <p>
+        People still search for "OINP draw 2025" to compare. Because every 2025 round was held under streams that no longer exist, those cutoffs tell you little about your chances in the OWP stream.
+      </p>
+
+      <h2 id="fees" class="text-3xl font-bold mt-12 mb-6">Fees, Deadlines and Processing</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>EOI registration:</strong> free.</li>
+        <li><strong>OWP application fee:</strong> $1,500 if the job (or a physician's practice) is outside the GTA; $2,000 in the City of Toronto, Durham, Halton, Peel or York. Payment is by Visa or Mastercard (credit or debit) only. The fee is refunded only if the application is incomplete or withdrawn before processing starts.</li>
+        <li><strong>After an invitation:</strong> your employer has 14 calendar days to submit its part, and you have 17 calendar days to submit your application and pay, after your employer has filed.</li>
+        <li><strong>After nomination:</strong> six months to apply to IRCC. For an Express Entry enhanced nomination you have 30 days to accept it and 60 days after accepting to submit to IRCC.</li>
+      </ul>
+      <p>
+        The OINP pages we checked on November 13, 2026 do not publish a processing time for OWP applications, and none had been processed under a published draw by that date. IRCC's permanent residence processing comes on top of the provincial stage and is shown on IRCC's processing-time tool.
+      </p>
+
+      <h2 id="bc" class="text-3xl font-bold mt-12 mb-6">Ontario PNP vs BC PNP in Late 2026</h2>
+
+      <p>
+        Ontario and British Columbia have moved in the same direction this year: fewer open doors and more weight on employers and priority occupations. B.C. closed its student and graduate streams, and since April 23, 2026 it invites mainly in three priorities: Care (health, childcare, education and veterinary occupations), Build (certified trades) and Innovate (high economic impact candidates). Its Skills Immigration streams need a job offer from an eligible B.C. employer, much like Ontario's OWP.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">&nbsp;</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Ontario (OINP)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">British Columbia (BC PNP)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">2026 allocation</td><td class="px-4 py-3">14,119</td><td class="px-4 py-3">6,254</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Main worker route</td><td class="px-4 py-3">Ontario Workforce Priority (job offer)</td><td class="px-4 py-3">Skills Immigration (job offer)</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Application fee</td><td class="px-4 py-3">$1,500 or $2,000 (GTA)</td><td class="px-4 py-3">$1,750 (since January 22, 2026)</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Regional points</td><td class="px-4 py-3">0 for Toronto, up to 15 for Northern Ontario</td><td class="px-4 py-3">0 for Metro Vancouver, more for other areas</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Graduate streams without a job offer</td><td class="px-4 py-3">Closed June 25, 2026</td><td class="px-4 py-3">Closed</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        If you already work in one province, that province is usually your strongest option, because both programs reward experience with the employer making the offer. For a fuller side-by-side, read <a href="/articles/bc-pnp-vs-ontario-oinp-2026" class="text-blue-600 hover:text-blue-800 underline">BC PNP vs Ontario OINP 2026</a>. To see how your profile would score in B.C., use the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a> and compare it with recent <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws</a>. For other provinces, see our <a href="/articles/canada-pnp-news-2026-all-provinces" class="text-blue-600 hover:text-blue-800 underline">2026 PNP news across all provinces</a> and <a href="/articles/best-provinces-pnp-2027" class="text-blue-600 hover:text-blue-800 underline">best provinces for a PNP in 2027</a>.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">What to do now if you are aiming for Ontario</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>Confirm your employer meets the OWP employer rules (three years in business, Ontario premises, revenue and staffing thresholds) before it submits the job offer.</li>
+        <li>Register your EOI within 30 days of the employer's submission, and keep your language test less than two years old.</li>
+        <li>If you earned $80,000 or more in one year in the last five, make sure a CRA Notice of Assessment backs it up. The 10 points apply automatically.</li>
+        <li>Watch the official updates page rather than social media for the first OWP round. Avoid anyone selling "guaranteed" Ontario job offers: the November 9 list of penalized employers and representatives shows the OINP is enforcing its rules.</li>
+      </ul>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.ontario.ca/page/2026-ontario-immigrant-nominee-program-updates" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">2026 Ontario Immigrant Nominee Program updates, Government of Ontario</a> (checked November 13, 2026)</li>
+        <li><a href="https://www.ontario.ca/page/ontario-workforce-priority-stream" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Ontario Workforce Priority stream, Government of Ontario</a></li>
+        <li><a href="https://www.ontario.ca/page/ontario-immigrant-nominee-program-oinp-application-process" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">OINP application process (fees and deadlines), Government of Ontario</a></li>
+        <li><a href="https://www.ontario.ca/page/ontario-immigrant-nominee-program-oinp" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Ontario Immigrant Nominee Program (OINP), Government of Ontario</a></li>
+        <li><a href="https://www.ontario.ca/page/ontario-immigrant-nominee-program-streams" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">OINP closed streams (archived), Government of Ontario</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP news (2026 allocation and fee), WelcomeBC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 13, 2026. Ontario is still rolling out its redesign; confirm details on ontario.ca before you register or apply.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-vs-ontario-oinp-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Comparison</div>
+          <div class="font-bold text-gray-900">BC PNP vs Ontario OINP 2026</div>
+        </a>
+        <a href="/articles/canada-pnp-news-2026-all-provinces" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">News</div>
+          <div class="font-bold text-gray-900">Canada PNP News 2026: All Provinces</div>
+        </a>
+        <a href="/articles/best-provinces-pnp-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Strategy</div>
+          <div class="font-bold text-gray-900">Best Provinces for a PNP in 2027</div>
+        </a>
+        <a href="/articles/alberta-pnp-guide" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Alberta</div>
+          <div class="font-bold text-gray-900">Alberta PNP Guide</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

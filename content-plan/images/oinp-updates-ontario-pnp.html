@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --ink: #f8fafc; --muted: #cbd5e1;
+    --accent: #4f46e5; --accent-lite: #a5b4fc; --accent-soft: rgba(79, 70, 229, 0.25);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background: radial-gradient(circle at 85% 20%, var(--accent-soft), transparent 45%),
+                linear-gradient(135deg, var(--bg) 0%, #111c33 100%);
+    color: var(--ink); display: grid; grid-template-columns: 1fr 480px; gap: 40px;
+    padding: 56px 64px; grid-template-rows: 518px; position: relative;
+  }
+  body::before { content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 40px 40px; }
+  .copy, .visual { position: relative; z-index: 1; }
+  .copy { display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow { display: inline-flex; align-self: flex-start; background: var(--accent); color: #fff;
+    font-weight: 800; font-size: 22px; letter-spacing: .06em; text-transform: uppercase;
+    padding: 10px 18px; border-radius: 999px; }
+  h1 { font-size: 52px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 22px; }
+  .stat { display: flex; align-items: center; gap: 18px; margin-top: 22px; }
+  .stat b { font-size: 62px; font-weight: 800; color: var(--accent-lite); }
+  .stat span { font-size: 24px; color: var(--muted); font-weight: 500; max-width: 300px; line-height: 1.3; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+  .visual { background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 28px; padding: 30px 30px; }
+  .art { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div>
+      <div class="eyebrow">Ontario PNP · 2026</div>
+      <h1>OINP updates: one new stream replaces eight</h1>
+      <div class="stat"><b>14,119</b><span>Ontario nominations allocated for 2026</span></div>
+    </div>
+    <div class="brand"><i></i>bcpnpcalculator.ca</div>
+  </div>
+  <div class="visual">
+    <svg class="art" viewBox="0 0 420 510" role="img" aria-label="2026 OINP timeline">
+      <g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif">
+        <line x1="40" y1="30" x2="40" y2="480" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+        <!-- items -->
+        <g>
+          <circle cx="40" cy="45" r="13" fill="#64748b"/>
+          <text x="74" y="40" font-size="27" font-weight="800" fill="#f8fafc">Feb 2</text>
+          <text x="74" y="70" font-size="25" font-weight="500" fill="#cbd5e1">First invitation round</text>
+        </g>
+        <g>
+          <circle cx="40" cy="160" r="13" fill="#64748b"/>
+          <text x="74" y="155" font-size="27" font-weight="800" fill="#f8fafc">Apr 30</text>
+          <text x="74" y="185" font-size="25" font-weight="500" fill="#cbd5e1">Last round: 1,063</text>
+        </g>
+        <g>
+          <circle cx="40" cy="275" r="15" fill="#0f172a" stroke="#f87171" stroke-width="5"/>
+          <line x1="33" y1="268" x2="47" y2="282" stroke="#f87171" stroke-width="4"/>
+          <line x1="47" y1="268" x2="33" y2="282" stroke="#f87171" stroke-width="4"/>
+          <text x="74" y="270" font-size="27" font-weight="800" fill="#f8fafc">Jun 25</text>
+          <text x="74" y="300" font-size="25" font-weight="500" fill="#cbd5e1">8 streams closed</text>
+        </g>
+        <g>
+          <circle cx="40" cy="390" r="17" fill="#4f46e5"/>
+          <circle cx="40" cy="390" r="27" fill="none" stroke="#4f46e5" stroke-opacity=".45" stroke-width="4"/>
+          <text x="74" y="385" font-size="27" font-weight="800" fill="#a5b4fc">Aug 4</text>
+          <text x="74" y="415" font-size="25" font-weight="500" fill="#e0e7ff">Workforce Priority</text>
+          <text x="74" y="443" font-size="25" font-weight="500" fill="#e0e7ff">EOI portal opens</text>
+        </g>
+        <g>
+          <rect x="22" y="470" width="36" height="22" rx="6" fill="#334155"/>
+          <text x="74" y="490" font-size="25" font-weight="700" fill="#cbd5e1">Nov 13: no OWP draws yet</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>

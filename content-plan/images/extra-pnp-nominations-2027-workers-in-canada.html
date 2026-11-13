@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- Hero image: extra PNP nominations for workers in Canada, March 31, 2027 deadline. Accent: red. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --ink: #f8fafc; --muted: #cbd5e1;
+    --accent: #dc2626; --accent-soft: rgba(220, 38, 38, 0.20);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background:
+      radial-gradient(circle at 80% 15%, var(--accent-soft), transparent 45%),
+      linear-gradient(135deg, var(--bg) 0%, #111c33 100%);
+    color: var(--ink);
+    padding: 56px 72px 48px;
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  body::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .top, .timeline, .brand { position: relative; z-index: 1; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; }
+  .eyebrow {
+    display: inline-flex; background: var(--accent); color: #fff; font-weight: 800; font-size: 22px;
+    letter-spacing: .06em; text-transform: uppercase; padding: 10px 18px; border-radius: 999px;
+  }
+  h1 { font-size: 54px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 22px; max-width: 700px; }
+  .big {
+    background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 24px;
+    padding: 22px 28px; text-align: center; min-width: 270px; margin-top: 6px;
+  }
+  .big b { display: block; font-size: 64px; font-weight: 800; color: #fff; line-height: 1; }
+  .big span { display: block; font-size: 24px; color: var(--muted); font-weight: 500; margin-top: 10px; line-height: 1.3; }
+  .timeline { margin-top: auto; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); margin-top: 14px; }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div>
+      <div class="eyebrow">News &middot; Provincial nominees</div>
+      <h1>Extra PNP space for workers already in Canada</h1>
+    </div>
+    <div class="big"><span style="margin:0 0 8px">Up to</span><b>100,000</b><span>workers and families</span></div>
+  </div>
+
+  <svg class="timeline" width="1056" height="200" viewBox="0 0 1056 200" role="img" aria-label="Timeline from November 12, 2026 to March 31, 2027">
+    <g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif" font-weight="700">
+      <!-- track -->
+      <line x1="40" y1="110" x2="1016" y2="110" stroke="#475569" stroke-width="6" stroke-linecap="round"/>
+      <!-- countdown segment -->
+      <line x1="90" y1="110" x2="700" y2="110" stroke="#dc2626" stroke-width="10" stroke-linecap="round"/>
+      <!-- bracket -->
+      <path d="M90 62 V50 H700 V62" fill="none" stroke="#fca5a5" stroke-width="3"/>
+      <rect x="305" y="28" width="180" height="44" rx="22" fill="#0f172a" stroke="#fca5a5" stroke-width="3"/>
+      <text x="395" y="59" text-anchor="middle" font-size="26" fill="#fecaca" font-weight="800">139 days</text>
+      <!-- milestone 1 -->
+      <circle cx="90" cy="110" r="16" fill="#0f172a" stroke="#f8fafc" stroke-width="5"/>
+      <text x="90" y="160" text-anchor="start" font-size="28" fill="#f8fafc" font-weight="800" dx="-20">Nov 12, 2026</text>
+      <text x="70" y="192" font-size="23" fill="#cbd5e1" font-weight="500">IRCC announcement</text>
+      <!-- milestone 2 -->
+      <circle cx="700" cy="110" r="22" fill="#dc2626" stroke="#fff" stroke-width="5"/>
+      <text x="700" y="160" text-anchor="middle" font-size="28" fill="#fff" font-weight="800">Mar 31, 2027</text>
+      <text x="700" y="192" text-anchor="middle" font-size="23" fill="#cbd5e1" font-weight="500">Allocations used by</text>
+      <!-- end -->
+      <circle cx="990" cy="110" r="12" fill="#64748b"/>
+      <text x="1016" y="160" text-anchor="end" font-size="28" fill="#f8fafc" font-weight="800">2027</text>
+      <text x="1016" y="192" text-anchor="end" font-size="23" fill="#cbd5e1" font-weight="500">Measure year</text>
+    </g>
+  </svg>
+  <div class="brand"><i></i>bcpnpcalculator.ca</div>
+</body>
+</html>
