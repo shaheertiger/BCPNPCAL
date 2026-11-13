@@ -1,0 +1,314 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Express Entry Draws 2026: Latest Rounds, CRS Cutoffs and Draw History";
+const description = "Express Entry draws 2026: latest IRCC rounds, CRS cutoffs by draw type, year-to-date totals, the November 3 CRS changes and pause, and what to do after an ITA.";
+const canonical = "https://bcpnpcalculator.ca/articles/express-entry-draws";
+
+const faqs = [
+  {
+    q: "When was the last Express Entry draw?",
+    a: "As of November 13, 2026, the last Express Entry draw was round 453 on October 28, 2026: a Transport occupations round that invited 150 candidates with a lowest CRS score of 477. The last Canadian Experience Class draw was round 449 on October 15, 2026 (2,500 invitations, cutoff 519), and the last Provincial Nominee Program draw was round 451 on October 26, 2026 (792 invitations, cutoff 761).",
+  },
+  {
+    q: "Why have there been no Express Entry draws in November 2026?",
+    a: "IRCC introduced a new Labour Market Integration factor in the Comprehensive Ranking System on November 3, 2026 and is recalculating the scores of all profiles already in the pool. It said the recalculation may take up to two weeks and that invitation rounds are paused until it is complete. As of November 13, 2026, IRCC's rounds data shows no round after October 28.",
+  },
+  {
+    q: "What was the latest CEC draw cutoff?",
+    a: "The latest Canadian Experience Class round, round 449 on October 15, 2026, had a cutoff of 519 with 2,500 invitations. In 2026 the 18 CEC rounds held so far had cutoffs between 507 and 523. Those scores were calculated under the old CRS grid, so they are not a reliable guide to cutoffs after the November 3 changes.",
+  },
+  {
+    q: "How many people did Express Entry invite in 2026?",
+    a: "From January 5 to October 28, 2026, IRCC held 65 rounds and issued 149,409 invitations to apply, based on our count of IRCC's official rounds data as of November 13, 2026. French-language proficiency rounds (60,500) and Canadian Experience Class rounds (57,750) made up most of that total.",
+  },
+  {
+    q: "What does the CRS cutoff mean?",
+    a: "The cutoff is the score of the lowest-ranked candidate who received an invitation in that round. Everyone eligible for the round with a higher score was invited. If several candidates had exactly the cutoff score, IRCC used the tie-breaking rule: those who submitted their profile before the published date and time were invited.",
+  },
+  {
+    q: "How long do I have to apply after an Express Entry invitation?",
+    a: "You have 60 days from the day after the invitation is issued to submit a complete application for permanent residence. You can also decline the invitation and stay in the pool. If you do neither, the invitation expires and IRCC removes your profile from the pool.",
+  },
+  {
+    q: "Will the next Express Entry draw be a CEC draw?",
+    a: "IRCC does not publish a draw schedule or announce round types in advance. Through 2026 it often held a Provincial Nominee Program round followed by a Canadian Experience Class or French-language round within a few days, but that is a past pattern, not a rule. Check IRCC's rounds page for official results.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="express-entry-draws" datePublished="2026-11-13" dateModified="2026-11-13" articleSection="Analysis" keywords="express entry draw, express entry draws, latest cec draw, last draw express entry, express entry draw 2026, latest express entry draw" ogImage="/images/articles/express-entry-draws.png" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-amber-100 text-amber-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-amber-200 shadow-sm">
+        Draw Tracker
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Express Entry Draws 2026: Latest Rounds, CRS Cutoffs and Draw History
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Every figure below comes from IRCC's official rounds data. Here is what the latest draws show, how each round type works, what 2026 looks like so far, and what changed on November 3.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-13">November 13, 2026</time>
+        <span>&bull;</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/express-entry-draws.png" width="1200" height="630" alt="A vertical CRS scale marking the latest October 2026 Express Entry cutoffs by round type, from 761 for provincial nominees down to 407 for French-language proficiency, beside a total of 149,409 invitations in 65 rounds."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-amber-50 border-l-4 border-amber-500 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-amber-900 mb-2">Quick answer</p>
+      <p class="text-amber-900">
+        The latest Express Entry draw, as of November 13, 2026, is round 453 on October 28, 2026: 150 invitations in a Transport occupations round with a CRS cutoff of 477. The latest CEC draw was October 15 (2,500 invitations, cutoff 519). No rounds have been held since, because IRCC paused invitations on November 3 to recalculate every score under its new CRS rules, and it has not announced a restart date.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">453</div>
+        <div class="text-sm text-slate-600 font-medium">Latest round number (October 28, 2026)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">149,409</div>
+        <div class="text-sm text-slate-600 font-medium">Invitations in 65 rounds in 2026, as of November 13</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">507&ndash;523</div>
+        <div class="text-sm text-slate-600 font-medium">Range of 2026 CEC cutoffs (18 rounds)</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this tracker</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#latest" class="hover:underline">Latest Express Entry draws</a></li>
+        <li><a href="#status" class="hover:underline">Draw status: the November 2026 pause</a></li>
+        <li><a href="#types" class="hover:underline">Express Entry round types in 2026</a></li>
+        <li><a href="#totals" class="hover:underline">2026 totals and trends by round type</a></li>
+        <li><a href="#cutoffs" class="hover:underline">How CRS cutoffs and tie-breaking work</a></li>
+        <li><a href="#november" class="hover:underline">The November 3, 2026 CRS changes</a></li>
+        <li><a href="#after-ita" class="hover:underline">What to do after an invitation</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        An Express Entry draw, which IRCC calls a "round of invitations," is the moment the department picks candidates from the pool and invites them to apply for permanent residence. Each round has a type, a number of invitations and a cutoff score. This page tracks those rounds for 2026 using only IRCC's published data, and explains how to read them. It is general information, not legal advice. For the week-by-week news around the current pause, see our <a href="/articles/express-entry-draws-paused-november-2026-immigration-roundup" class="text-blue-600 underline">November 2026 immigration roundup</a>.
+      </p>
+
+      <h2 id="latest" class="text-3xl font-bold mt-12 mb-6">Latest Express Entry Draws (as of November 13, 2026)</h2>
+
+      <p>
+        The table lists the ten most recent rounds in IRCC's rounds data file. The "tie-break" column is the profile submission date and time IRCC used for candidates who had exactly the cutoff score.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-3 py-3 text-left text-sm font-bold text-slate-700">Round</th>
+              <th class="px-3 py-3 text-left text-sm font-bold text-slate-700">Date</th>
+              <th class="px-3 py-3 text-left text-sm font-bold text-slate-700">Type</th>
+              <th class="px-3 py-3 text-left text-sm font-bold text-slate-700">Invitations</th>
+              <th class="px-3 py-3 text-left text-sm font-bold text-slate-700">CRS cutoff</th>
+              <th class="px-3 py-3 text-left text-sm font-bold text-slate-700">Tie-break (UTC)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-3 py-3 font-medium">453</td><td class="px-3 py-3">Oct 28, 2026</td><td class="px-3 py-3">Transport occupations</td><td class="px-3 py-3">150</td><td class="px-3 py-3">477</td><td class="px-3 py-3">Jun 4, 2026, 21:48:22</td></tr>
+            <tr><td class="px-3 py-3 font-medium">452</td><td class="px-3 py-3">Oct 27, 2026</td><td class="px-3 py-3">French-language proficiency</td><td class="px-3 py-3">5,000</td><td class="px-3 py-3">407</td><td class="px-3 py-3">Jul 13, 2026, 19:22:00</td></tr>
+            <tr><td class="px-3 py-3 font-medium">451</td><td class="px-3 py-3">Oct 26, 2026</td><td class="px-3 py-3">Provincial Nominee Program</td><td class="px-3 py-3">792</td><td class="px-3 py-3">761</td><td class="px-3 py-3">Apr 3, 2026, 18:00:26</td></tr>
+            <tr><td class="px-3 py-3 font-medium">450</td><td class="px-3 py-3">Oct 16, 2026</td><td class="px-3 py-3">French-language proficiency</td><td class="px-3 py-3">5,000</td><td class="px-3 py-3">435</td><td class="px-3 py-3">Oct 6, 2026, 21:31:22</td></tr>
+            <tr><td class="px-3 py-3 font-medium">449</td><td class="px-3 py-3">Oct 15, 2026</td><td class="px-3 py-3">Canadian Experience Class</td><td class="px-3 py-3">2,500</td><td class="px-3 py-3">519</td><td class="px-3 py-3">Sep 21, 2026, 19:00:47</td></tr>
+            <tr><td class="px-3 py-3 font-medium">448</td><td class="px-3 py-3">Oct 13, 2026</td><td class="px-3 py-3">Provincial Nominee Program</td><td class="px-3 py-3">752</td><td class="px-3 py-3">772</td><td class="px-3 py-3">Jul 15, 2026, 13:57:33</td></tr>
+            <tr><td class="px-3 py-3 font-medium">447</td><td class="px-3 py-3">Oct 1, 2026</td><td class="px-3 py-3">Trade occupations</td><td class="px-3 py-3">3,500</td><td class="px-3 py-3">476</td><td class="px-3 py-3">May 28, 2026, 16:55:23</td></tr>
+            <tr><td class="px-3 py-3 font-medium">446</td><td class="px-3 py-3">Sep 29, 2026</td><td class="px-3 py-3">Canadian Experience Class</td><td class="px-3 py-3">2,000</td><td class="px-3 py-3">518</td><td class="px-3 py-3">Feb 13, 2026, 20:48:08</td></tr>
+            <tr><td class="px-3 py-3 font-medium">445</td><td class="px-3 py-3">Sep 28, 2026</td><td class="px-3 py-3">Provincial Nominee Program</td><td class="px-3 py-3">733</td><td class="px-3 py-3">725</td><td class="px-3 py-3">Sep 17, 2026, 01:36:17</td></tr>
+            <tr><td class="px-3 py-3 font-medium">444</td><td class="px-3 py-3">Sep 16, 2026</td><td class="px-3 py-3">Senior managers with Canadian work experience</td><td class="px-3 py-3">250</td><td class="px-3 py-3">389</td><td class="px-3 py-3">Sep 1, 2026, 23:05:13</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        IRCC also publishes a snapshot of the pool with each round. The one attached to round 453 counted 228,724 profiles as of October 25, 2026. Earlier in the year the pool was larger: 239,645 profiles as of June 21, 2026, the snapshot used for round 420.
+      </p>
+
+      <h2 id="status" class="text-3xl font-bold mt-12 mb-6">Draw Status: The November 2026 Pause</h2>
+
+      <p>
+        If you are searching for the "last draw Express Entry" this month, the answer has not changed since October 28. IRCC announced on October 16, 2026 that new CRS rules would take effect on November 3, that profiles already in the pool would be rescored automatically, and that the recalculation "may take up to two weeks" with invitation rounds paused in the meantime. IRCC's Express Entry changes page says rounds will start again when the recalculation is complete. It gives no date.
+      </p>
+      <p>
+        As of November 13, 2026, no round 454 appears in IRCC's rounds data. The two-week estimate runs to about November 17, but that is the outer edge of an estimate, not a scheduled draw. We don't predict draw dates here. When rounds resume, the first cutoffs will reflect the new grid, so expect them to differ from the October numbers in either direction.
+      </p>
+
+      <h2 id="types" class="text-3xl font-bold mt-12 mb-6">Express Entry Round Types in 2026</h2>
+
+      <p>IRCC runs three kinds of rounds:</p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>General rounds</strong> are open to candidates in all Express Entry programs. There were none in 2026 up to October 28.</li>
+        <li><strong>Program-specific rounds</strong> target one program. In 2026 these were Canadian Experience Class (CEC) rounds and Provincial Nominee Program (PNP) rounds for candidates who hold a provincial or territorial nomination.</li>
+        <li><strong>Category-based rounds</strong> target candidates who meet a category the Minister has set to meet an economic goal.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The 2026 categories</h3>
+      <p>
+        IRCC's category-based selection page lists ten categories: French-language proficiency; healthcare and social services occupations; STEM occupations; trade occupations; education occupations; transport occupations; physicians with Canadian work experience; senior managers with Canadian work experience; researchers with Canadian work experience; and skilled military recruits. IRCC announced the 2026 set in February 2026, adding researchers, senior managers, transport and skilled military recruits alongside the renewed categories.
+      </p>
+      <p>
+        Most occupation categories require at least 12 months of full-time work experience (or the part-time equivalent) in one listed occupation within the past three years, gained in Canada or abroad. The physician, senior manager and researcher categories require that experience to be Canadian. The French category has no work experience rule but requires at least CLB 7 in all four French abilities. Check the occupation lists on IRCC's page before assuming you qualify; our guides to <a href="/articles/express-entry-transport-occupations-guide-2026" class="text-blue-600 underline">transport occupations</a> and <a href="/articles/express-entry-foreign-medical-doctors-guide-2026" class="text-blue-600 underline">foreign medical doctors</a> go deeper on two of them.
+      </p>
+
+      <h2 id="totals" class="text-3xl font-bold mt-12 mb-6">Express Entry Draw 2026: Totals and Trends by Round Type</h2>
+
+      <p>
+        We counted every 2026 round in IRCC's rounds data, from round 389 on January 5 to round 453 on October 28. That is 65 rounds and 149,409 invitations.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Round type</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Rounds</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Invitations</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">CRS cutoff range</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">French-language proficiency</td><td class="px-4 py-3">12</td><td class="px-4 py-3">60,500</td><td class="px-4 py-3">382&ndash;435</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Canadian Experience Class</td><td class="px-4 py-3">18</td><td class="px-4 py-3">57,750</td><td class="px-4 py-3">507&ndash;523</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Healthcare and social services</td><td class="px-4 py-3">3</td><td class="px-4 py-3">11,500</td><td class="px-4 py-3">467&ndash;475</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Provincial Nominee Program</td><td class="px-4 py-3">21</td><td class="px-4 py-3">10,814</td><td class="px-4 py-3">697&ndash;805</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Trade occupations</td><td class="px-4 py-3">2</td><td class="px-4 py-3">6,500</td><td class="px-4 py-3">476&ndash;477</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Senior managers (Canadian experience)</td><td class="px-4 py-3">3</td><td class="px-4 py-3">1,000</td><td class="px-4 py-3">389&ndash;429</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Physicians (Canadian experience)</td><td class="px-4 py-3">3</td><td class="px-4 py-3">891</td><td class="px-4 py-3">169&ndash;223</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Transport occupations</td><td class="px-4 py-3">2</td><td class="px-4 py-3">450</td><td class="px-4 py-3">470&ndash;477</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Skilled military recruits</td><td class="px-4 py-3">1</td><td class="px-4 py-3">4</td><td class="px-4 py-3">368</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-bold">Total</td><td class="px-4 py-3 font-bold">65</td><td class="px-4 py-3 font-bold">149,409</td><td class="px-4 py-3">&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>What the numbers show:</p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>French and CEC rounds dominated.</strong> Together they account for 118,250 invitations, about 79% of the 2026 total. French rounds had the lowest cutoffs of any large round type, mostly in the 380s to 430s.</li>
+        <li><strong>CEC cutoffs crept up.</strong> In the first quarter CEC cutoffs ran from 507 to 511. From June onward every CEC round cut off between 516 and 523, while round sizes shrank from 6,000 to 8,000 in January and February to 1,000 to 3,000 in most later rounds.</li>
+        <li><strong>PNP rounds were frequent but small.</strong> There were 21 PNP rounds, usually a few hundred invitations each. Cutoffs of 697 to 805 reflect the 600 points a nomination adds.</li>
+        <li><strong>Some categories had no rounds.</strong> As of November 13, 2026, there has been no STEM, education or researcher round in 2026, even though all three are current categories.</li>
+        <li><strong>Monthly volume varied.</strong> March was the busiest month (20,982 invitations) and May the quietest (8,214). October had 17,694 before the pause.</li>
+      </ul>
+
+      <h2 id="cutoffs" class="text-3xl font-bold mt-12 mb-6">How CRS Cutoffs and Tie-Breaking Work</h2>
+
+      <p>
+        The CRS cutoff is the score of the lowest-ranked candidate invited in a round. IRCC first decides the round type and how many invitations to issue, then invites eligible candidates from the top score down until it reaches that number. The cutoff is a result of the pool and the round size, not a pass mark set in advance. That is why cutoffs differ so much between round types: a French round only competes among French-proficient candidates, while a PNP round only includes nominees.
+      </p>
+      <p>
+        When several candidates share the cutoff score, IRCC applies the tie-breaking rule: candidates with that score who submitted their profile before the stated date and time are invited. In round 453, for example, candidates with 477 who entered the pool before June 4, 2026 at 21:48:22 UTC were invited.
+      </p>
+      <p>
+        To see where you might sit, compare your score with recent cutoffs for the round types you are eligible for, not just the overall latest draw. If you are a B.C. worker weighing a provincial route, our <a href="/articles/bc-pnp-vs-crs-calculator" class="text-blue-600 underline">BC PNP vs CRS calculator comparison</a> explains how the two scores differ, and the <a href="/bc-pnp-calculator" class="text-blue-600 underline">BC PNP Calculator</a> estimates your provincial registration score.
+      </p>
+
+      <h2 id="november" class="text-3xl font-bold mt-12 mb-6">The November 3, 2026 CRS Changes</h2>
+
+      <p>
+        IRCC's October 16, 2026 release, "Canada refocusing Express Entry on top talent that drives economic growth," and its CRS criteria page (updated November 3, 2026) set out the new rules. The main points for anyone reading draw results:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Labour Market Integration factor.</strong> A new factor worth up to 150 points scores either Canadian work experience or a qualifying job offer, not both. Canadian experience earns up to 150 points without a spouse or partner (80 for length of work, 70 for high-wage work) and up to 140 with one (70 plus 70).</li>
+        <li><strong>High-wage job offers.</strong> A qualifying offer earns 100 points if the occupation's median wage is at least twice the overall average median wage, 70 points at 1.5 to under 2 times, and 50 points at 1.3 to under 1.5 times. Offers below 1.3 times earn no points. The test uses the occupation's NOC code, not your own salary.</li>
+        <li><strong>No LMIA needed.</strong> A job offer no longer needs a Labour Market Impact Assessment to qualify, and an LMIA no longer adds points. IRCC says officers still check that offers are genuine.</li>
+        <li><strong>Additional points.</strong> A provincial or territorial nomination is still worth 600 points. The old arranged employment item no longer appears in the additional points table.</li>
+      </ul>
+      <p>
+        Because the grid changed, 2026 cutoffs before November 3 and cutoffs after it measure different things. Treat the tables above as history, not a target.
+      </p>
+
+      <h2 id="pnp" class="text-3xl font-bold mt-12 mb-6">Express Entry Draws and the BC PNP</h2>
+
+      <p>
+        For B.C. applicants, the PNP rounds matter most. If you get a nomination through the BC PNP's Express Entry BC option, you receive 600 extra CRS points and, with cutoffs in the 697 to 805 range so far in 2026, nominees have generally been invited in a following PNP round, though IRCC guarantees no timing and your profile must stay valid. Our <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="text-blue-600 underline">Express Entry BC guide</a> explains how to link the two systems. The BC PNP holds its own draws, separate from IRCC's; you can follow those on our <a href="/bc-pnp-draws" class="text-blue-600 underline">BC PNP draws tracker</a>.
+      </p>
+
+      <h2 id="after-ita" class="text-3xl font-bold mt-12 mb-6">What to Do After an Express Entry Invitation</h2>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Check the deadline.</strong> An invitation is valid for 60 days, starting the day after it is issued. Submit a complete application for permanent residence in that window.</li>
+        <li><strong>Recalculate your score.</strong> If your situation, or your spouse's or partner's, has changed since you entered the pool, recalculate. IRCC says that if your new score is below the cutoff of your round, you should decline the invitation.</li>
+        <li><strong>Gather documents early.</strong> Expect to need police certificates, an immigration medical exam, proof of funds if your program requires it, and evidence for every claim in your profile, such as reference letters for work experience.</li>
+        <li><strong>Decline if you can't apply.</strong> Declining returns your profile to the pool and doesn't affect whether you are invited again later. If you neither apply nor decline, the invitation expires and IRCC removes your profile.</li>
+        <li><strong>Don't create a second profile</strong> to "reset" your position; keep one accurate profile and update it when facts change.</li>
+      </ol>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry rounds data (JSON), IRCC</a> (all round figures and 2026 totals, as of November 13, 2026)</li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/rounds-invitations.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry rounds of invitations, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Ministerial Instructions: Express Entry rounds (round types), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/rounds-invitations/category-based-selection.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry category-based selection, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/02/canada-prioritizes-top-talent-in-2026-immigration-express-entry-categories.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canada prioritizes top talent in 2026 Express Entry categories (February 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canada refocusing Express Entry on top talent that drives economic growth (October 16, 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Changes to Express Entry, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Comprehensive Ranking System criteria, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-application-management-system/current.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Ministerial Instructions respecting the Express Entry system (60-day invitation period), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/waiting-pool.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">What to do while you wait in the pool, IRCC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 13, 2026. Round results, cutoffs and pool figures change often; confirm on IRCC's rounds page before acting.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/express-entry-draws-paused-november-2026-immigration-roundup" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-amber-600 font-bold mb-2">News</div>
+          <div class="font-bold text-gray-900">Express Entry Draws Paused in November 2026</div>
+        </a>
+        <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">BC PNP</div>
+          <div class="font-bold text-gray-900">BC PNP Express Entry BC Guide</div>
+        </a>
+        <a href="/articles/bc-pnp-vs-crs-calculator" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Scores</div>
+          <div class="font-bold text-gray-900">BC PNP vs CRS Calculator</div>
+        </a>
+        <a href="/articles/express-entry-2027-category-changes" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-sky-600 font-bold mb-2">Federal</div>
+          <div class="font-bold text-gray-900">Express Entry 2027 Category Changes</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
