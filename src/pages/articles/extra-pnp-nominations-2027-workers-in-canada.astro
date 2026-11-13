@@ -1,0 +1,251 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Extra PNP Nominations for Workers in Canada: Provinces Have Until March 31, 2027";
+const description = "On November 12, 2026, IRCC said provinces can use optional extra PNP space for up to 100,000 workers in Canada by March 31, 2027. What it means for BC PNP.";
+const canonical = "https://bcpnpcalculator.ca/articles/extra-pnp-nominations-2027-workers-in-canada";
+
+const faqs = [
+  {
+    q: "What did IRCC announce on November 12, 2026?",
+    a: "Immigration Minister Lena Metlege Diab gave details of a time-limited measure from Budget 2026. Provinces and territories can use optional additional Provincial Nominee Program allocations to move up to 100,000 workers already living in Canada, and their families, to permanent residence in 2027. IRCC says these allocations are intended to be used by March 31, 2027.",
+  },
+  {
+    q: "Does B.C. get extra BC PNP nominations under this measure?",
+    a: "Not confirmed. IRCC's release does not give any province's share, and as of November 13, 2026 neither IRCC nor WelcomeBC has said how much of the extra space B.C. will receive or use. Participation is optional and each province decides how much to take.",
+  },
+  {
+    q: "Do I need to apply for the time-limited measure?",
+    a: "No. IRCC says applicants do not need to do anything or contact IRCC for these additional spaces. The measure does not create a new program or reopen closed pathways. If you are a BC PNP candidate, the way in is still the normal BC PNP registration and invitation process.",
+  },
+  {
+    q: "Are work permit holders who have not applied for PR eligible?",
+    a: "IRCC's time-limited measure page says eligible workers must be waiting for a decision under a closed federal program or be eligible to apply through the Provincial Nominee Program. In practice, a work permit holder who has not applied anywhere would need to qualify for, and be nominated through, a provincial stream such as the BC PNP.",
+  },
+  {
+    q: "Is this the same as the 33,000-person In-Canada Workers Initiative?",
+    a: "No. IRCC says the 2027 measure is separate from the In-Canada Workers Initiative announced in Budget 2025, which moves 33,000 temporary workers in Canada to permanent residence with a focus on smaller communities.",
+  },
+  {
+    q: "Does the measure apply in Quebec?",
+    a: "No. IRCC's measure page describes the worker spaces as being for workers already in Canada outside Quebec, and their families.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="extra-pnp-nominations-2027-workers-in-canada" datePublished="2026-11-13" dateModified="2026-11-13" articleSection="News" keywords="extra PNP nominations 2027, 100,000 workers permanent residence, time-limited measure 2027, PNP allocations March 31 2027, TR to PR 2027, BC PNP 2027 allocation, IRCC November 12 2026 announcement, workers in Canada PR 2027" title={title} description={description} canonical={canonical} ogImage="/images/articles/extra-pnp-nominations-2027-workers-in-canada.png">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-red-100 text-red-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-red-200 shadow-sm">
+        Immigration News
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Extra PNP Nominations for Workers in Canada: Provinces Have Until March 31, 2027
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Ottawa has put a deadline on the extra provincial nominee space for workers already in Canada. Here is what IRCC confirmed on November 12, what it left open, and what it could mean for BC PNP candidates.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-13">November 13, 2026</time>
+        <span>&bull;</span>
+        <span>6 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/extra-pnp-nominations-2027-workers-in-canada.png" width="1200" height="630" alt="Timeline from the November 12, 2026 announcement to the March 31, 2027 deadline for provinces to use extra nominee space for up to 100,000 workers, with IRCC processing running to the end of 2027."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-red-50 border-l-4 border-red-600 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-red-900 mb-2">Quick answer</p>
+      <p class="text-red-900">
+        On November 12, 2026, IRCC said provinces and territories can use optional additional Provincial Nominee Program allocations to move up to 100,000 workers already in Canada, plus their families, to permanent residence, and that these allocations are intended to be used by March 31, 2027. No province's share has been published, and B.C. has not said how much it will use. Applicants do not need to apply separately.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-red-600 mb-2">100,000</div>
+        <div class="text-sm text-slate-600 font-medium">Workers and families who can move to PR through the extra space</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-slate-800 mb-2">Mar 31, 2027</div>
+        <div class="text-sm text-slate-600 font-medium">Date the extra allocations are intended to be used by</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-slate-800 mb-2">139 days</div>
+        <div class="text-sm text-slate-600 font-medium">From the November 12 announcement to that date</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this article</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#announcement" class="hover:underline">What IRCC announced on November 12</a></li>
+        <li><a href="#whats-new" class="hover:underline">What is new compared with the levels plan</a></li>
+        <li><a href="#who" class="hover:underline">Who the worker spaces are for</a></li>
+        <li><a href="#bc" class="hover:underline">What it could mean for BC PNP candidates</a></li>
+        <li><a href="#unknowns" class="hover:underline">What IRCC has not said yet</a></li>
+        <li><a href="#what-to-do" class="hover:underline">What to do now</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+      <p class="text-xl leading-relaxed">
+        With <a href="/articles/express-entry-draws-paused-november-2026-immigration-roundup" class="text-blue-600 hover:text-blue-800 underline">Express Entry rounds still paused</a> and no BC PNP draw since October 29, the most important development for workers in B.C. this week came from a press conference in Dieppe, New Brunswick. It put a date on extra nomination room for people already working here. This article sticks to what IRCC has published as of November 13, 2026. It is general information, not legal advice.
+      </p>
+
+      <h2 id="announcement" class="text-3xl font-bold mt-12 mb-6">What IRCC Announced on November 12, 2026</h2>
+
+      <p>
+        In a <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/11/minister-metlege-diab-highlights-how-canada-is-working-with-provinces-and-territories-to-support-worker-retention.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">news release dated November 12, 2026</a>, Immigration Minister Lena Metlege Diab set out how a time-limited measure from Budget 2026 will work with provinces and territories. The key points:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Optional extra PNP allocations.</strong> Provinces and territories can use additional Provincial Nominee Program allocations to move up to 100,000 workers and their families to permanent residence in 2027.</li>
+        <li><strong>Provinces choose how much to use.</strong> The space is optional. Each province or territory decides how much of it to take.</li>
+        <li><strong>A deadline.</strong> IRCC says the allocations "are intended to be used by March 31, 2027." That is 139 days after the announcement.</li>
+        <li><strong>Pending applications count.</strong> Provinces can also identify workers who have already applied for permanent residence and are awaiting a decision, including through the Atlantic Immigration Program and closed federal programs: the Start-up Visa Program, the Self-Employed Persons Program, the Agri-Food Pilot and the home care worker programs.</li>
+        <li><strong>No action needed.</strong> IRCC says applicants do not need to do anything or contact IRCC for these spaces, and that the measure does not create new programs or reopen closed pathways.</li>
+      </ul>
+
+      <h2 id="whats-new" class="text-3xl font-bold mt-12 mb-6">What Is New Compared With the Levels Plan</h2>
+
+      <p>
+        The broad outline was already public. The <a href="/articles/canada-immigration-levels-plan-2027-2029-what-to-expect" class="text-blue-600 hover:text-blue-800 underline">2027&ndash;2029 Immigration Levels Plan</a>, released November 5, 2026, kept permanent resident admissions at 380,000 for 2027 and set the PNP target at 95,000. IRCC's <a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/immigration-system/measures.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">time-limited measure page</a> described a one-year 2027 measure that adds processing space outside the levels plan targets: up to 100,000 spaces for workers and their families, and up to 100,000 for specific humanitarian groups. Budget 2026 said the worker part would transition 100,000 workers eligible for Express Entry or the PNP.
+      </p>
+      <p>
+        What the November 12 release adds is mainly about timing and control:
+      </p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-2 text-left">Question</th>
+              <th class="px-4 py-2 text-left">Before November 12</th>
+              <th class="px-4 py-2 text-left">After November 12</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t"><td class="px-4 py-2">When must provinces use the space?</td><td class="px-4 py-2">Not stated; measure runs in 2027</td><td class="px-4 py-2">Intended to be used by March 31, 2027</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">Must provinces take it?</td><td class="px-4 py-2">Not stated</td><td class="px-4 py-2">Optional; each province decides how much</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">Who picks the workers?</td><td class="px-4 py-2">"With provinces and territories"</td><td class="px-4 py-2">Provinces and territories identify them, including pending federal applicants</td></tr>
+            <tr class="border-t"><td class="px-4 py-2">Province-by-province shares</td><td class="px-4 py-2">Not published</td><td class="px-4 py-2">Still not published</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The release also lists the humanitarian side in "up to" figures: up to 32,000 people who applied under the Hong Kong permanent residence pathways, up to 18,800 under the Ukraine Family Reunification Pathway, up to 12,600 people already found eligible on humanitarian and compassionate grounds, and up to 45,000 spouses, common-law partners and dependent children of Canadian citizens and permanent residents living in Canada. The Hong Kong and Ukraine pieces were the subject of IRCC's November 10 release. IRCC also says the measure is separate from the In-Canada Workers Initiative from Budget 2025, which moves 33,000 temporary workers to permanent residence with a focus on smaller communities.
+      </p>
+
+      <h2 id="who" class="text-3xl font-bold mt-12 mb-6">Who the Worker Spaces Are For</h2>
+
+      <p>
+        IRCC's measure page says the worker spaces are for workers already in Canada outside Quebec, and their families, who are either:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>waiting for a decision under a closed program (Start-up Visa, Self-Employed Persons, Agri-Food Pilot or the home care worker programs), or</li>
+        <li>eligible to apply through the Provincial Nominee Program.</li>
+      </ul>
+      <p>
+        The second group is the one that matters most to readers of this site. It means the extra space flows through provincial nomination. A work permit holder in B.C. who has not applied for PR anywhere does not get a federal shortcut from this measure. They would still need to meet a BC PNP stream's requirements, register, receive an invitation and be nominated.
+      </p>
+
+      <h2 id="bc" class="text-3xl font-bold mt-12 mb-6">What It Could Mean for BC PNP Candidates</h2>
+
+      <p>
+        B.C. starts from a tight position. According to <a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">WelcomeBC</a>, the province's 2026 allocation is 6,254 nominations after an extra 1,000 in August, and it plans to use the full allocation by December 31, 2026. Its <a href="https://www.welcomebc.ca/Immigrate-to-B-C/Invitations-To-Apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">invitations page</a> shows the most recent Skills Immigration rounds were the October 8 Care and Build draws and the October 29 Innovate draws (524 by wage and 248 by points, minimum score 131). B.C.'s 2027 allocation has not been announced.
+      </p>
+      <p>
+        If B.C. decides to use part of the extra space, three things follow from IRCC's wording:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>The window is early 2027.</strong> Nominations would need to be issued by March 31, 2027. In both 2025 and 2026, BC PNP draws started slowly in the first months of the year, so extra room in that period could change the usual pattern. That is our reading, not a B.C. announcement.</li>
+        <li><strong>Candidates already in Canada benefit.</strong> The space is only for workers living in Canada. People in the BC PNP pool who already work in B.C. would be the natural fit.</li>
+        <li><strong>Your score still decides.</strong> Unless B.C. creates a special selection, invitations would still go by the published selection rules. Check where you stand with the <a href="/bc-pnp-calculator" class="text-blue-600 hover:text-blue-800 underline">BC PNP calculator</a> and compare against recent cutoffs on the <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a>.</li>
+      </ul>
+      <p>
+        If B.C. takes little or none of the space, nothing changes for BC PNP registrants beyond the regular 2027 allocation. Our <a href="/articles/bc-pnp-2027-outlook-predictions" class="text-blue-600 hover:text-blue-800 underline">BC PNP 2027 outlook</a> walks through what different allocation sizes would mean for draws.
+      </p>
+
+      <h2 id="unknowns" class="text-3xl font-bold mt-12 mb-6">What IRCC Has Not Said Yet</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li>How the up to 100,000 worker spaces are split between provinces and territories.</li>
+        <li>Which provinces have agreed to use the space. As of November 13, 2026, WelcomeBC has posted no news about it.</li>
+        <li>Whether provinces will run special draws or simply nominate more people from their current pools.</li>
+        <li>What happens to space a province has not used by March 31, 2027. The release says "intended to be used by," and does not describe any reallocation.</li>
+        <li>A firm processing deadline. IRCC describes the measure as running in 2027 but gives no completion date for every file.</li>
+      </ul>
+
+      <h2 id="what-to-do" class="text-3xl font-bold mt-12 mb-6">What to Do Now</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>BC PNP registrants:</strong> keep your registration current. A wage increase, a new language test result or a job outside Metro Vancouver can raise your score before early-2027 draws.</li>
+        <li><strong>Work permit holders not yet registered:</strong> check whether you meet a BC PNP stream now. A registration in the pool is what puts you in line for any extra nominations. Our <a href="/articles/canada-temporary-resident-cap-2027-bc-work-permit-holders" class="text-blue-600 hover:text-blue-800 underline">guide for work permit holders in 2027</a> covers status planning.</li>
+        <li><strong>Pending AIP, Start-up Visa, Self-Employed, Agri-Food or caregiver applicants:</strong> IRCC says you do not need to contact it. Keep your contact details and documents up to date in your account.</li>
+        <li><strong>Everyone:</strong> be wary of anyone selling access to "the 100,000 program." IRCC says there is no new program to apply to.</li>
+      </ul>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/11/minister-metlege-diab-highlights-how-canada-is-working-with-provinces-and-territories-to-support-worker-retention.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Minister Metlege Diab highlights how Canada is working with provinces and territories to support worker retention (November 12, 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/immigration-system/measures.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Time-limited measure for 2027, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/immigration-system/levels/supplementary-immigration-levels-2027-2029.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Supplementary Information for the 2027-2029 Immigration Levels Plan, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/11/canada-takes-action-to-efficiently-process-existing-permanent-residence-applications-for-ukrainians-and-hong-kongers.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canada takes action to efficiently process existing permanent residence applications for Ukrainians and Hong Kongers (November 10, 2026), IRCC</a></li>
+        <li><a href="https://budget.canada.ca/2026/report-rapport/chap3-en.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Budget 2026, Chapter 3, Government of Canada</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP news (2026 allocation, August 18, 2026), WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/Immigrate-to-B-C/Invitations-To-Apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Invitations to Apply, WelcomeBC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 13, 2026. Provincial shares and B.C.'s participation had not been announced; confirm on IRCC or WelcomeBC before acting.</p>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/canada-immigration-levels-plan-2027-2029-what-to-expect" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Federal</div>
+          <div class="font-bold text-gray-900">Immigration Levels Plan 2027&ndash;2029</div>
+        </a>
+        <a href="/articles/bc-pnp-2027-outlook-predictions" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-red-600 font-bold mb-2">BC PNP</div>
+          <div class="font-bold text-gray-900">BC PNP 2027 Outlook and Predictions</div>
+        </a>
+        <a href="/articles/canada-temporary-resident-cap-2027-bc-work-permit-holders" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Work Permits</div>
+          <div class="font-bold text-gray-900">Temporary Resident Cap 2027 for B.C. Work Permit Holders</div>
+        </a>
+        <a href="/articles/express-entry-draws-paused-november-2026-immigration-roundup" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">News</div>
+          <div class="font-bold text-gray-900">Express Entry Draws Paused in November 2026</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

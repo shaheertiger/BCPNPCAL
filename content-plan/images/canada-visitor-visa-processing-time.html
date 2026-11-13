@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --ink: #f8fafc; --muted: #cbd5e1;
+    --accent: #0284c7; --accent-2: #38bdf8; --accent-soft: rgba(2, 132, 199, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background: radial-gradient(circle at 80% 15%, var(--accent-soft), transparent 50%),
+                linear-gradient(135deg, var(--bg) 0%, #111c33 100%);
+    color: var(--ink); display: grid; grid-template-columns: 1fr 500px; gap: 36px;
+    padding: 60px 64px; position: relative;
+  }
+  body::before { content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 40px 40px; }
+  .copy, .visual { position: relative; z-index: 1; }
+  .copy { display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow { display: inline-flex; align-self: flex-start; background: var(--accent); color: #fff;
+    font-weight: 800; font-size: 22px; letter-spacing: .06em; text-transform: uppercase;
+    padding: 10px 18px; border-radius: 999px; }
+  h1 { font-size: 56px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 26px; }
+  .stat { display: flex; flex-direction: column; gap: 6px; margin-top: 26px; }
+  .stat b { font-size: 56px; font-weight: 800; color: var(--accent-2); white-space: nowrap; }
+  .stat span { font-size: 24px; color: var(--muted); font-weight: 500; line-height: 1.3; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+  .visual { position: relative; }
+  .art { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div>
+      <div class="eyebrow">Visiting Canada · Nov 2026</div>
+      <h1>Canada visitor visa processing times</h1>
+      <div class="stat"><b>$100 + $85</b><span>visa fee plus biometrics, per person</span></div>
+    </div>
+    <div class="brand"><i></i>bcpnpcalculator.ca</div>
+  </div>
+
+  <div class="visual">
+    <svg class="art" viewBox="0 0 500 510" role="img" aria-label="Passport with visa stamp and processing time cards">
+      <g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif">
+        <!-- passport -->
+        <g transform="rotate(-8 140 230)">
+          <rect x="20" y="40" width="230" height="320" rx="22" fill="#0c4a6e" stroke="#0369a1" stroke-width="3"/>
+          <rect x="34" y="54" width="202" height="292" rx="14" fill="none" stroke="#38bdf8" stroke-opacity=".35" stroke-width="2"/>
+          <circle cx="135" cy="160" r="52" fill="none" stroke="#7dd3fc" stroke-width="4"/>
+          <path d="M83 160 h104 M135 108 v104 M95 130 q40 18 80 0 M95 190 q40 -18 80 0" stroke="#7dd3fc" stroke-width="3" fill="none"/>
+          <text x="135" y="262" text-anchor="middle" font-size="28" font-weight="800" fill="#e0f2fe" letter-spacing="4">PASSPORT</text>
+        </g>
+        <!-- visa stamp -->
+        <g transform="rotate(10 150 330) translate(-80 10)">
+          <rect x="140" y="285" width="150" height="88" rx="12" fill="#0c4a6e" stroke="#38bdf8" stroke-width="5" stroke-dasharray="2 0"/>
+          <text x="215" y="342" text-anchor="middle" font-size="40" font-weight="800" fill="#38bdf8" letter-spacing="3">TRV</text>
+        </g>
+        <!-- time cards -->
+        <g>
+          <rect x="270" y="30" width="215" height="110" rx="18" fill="#1e293b" stroke="rgba(255,255,255,.12)" stroke-width="2"/>
+          <rect x="270" y="30" width="10" height="110" rx="5" fill="#0284c7"/>
+          <text x="298" y="74" font-size="24" font-weight="700" fill="#cbd5e1">India</text>
+          <text x="298" y="120" font-size="38" font-weight="800" fill="#f8fafc">32 days</text>
+
+          <rect x="270" y="160" width="215" height="110" rx="18" fill="#1e293b" stroke="rgba(255,255,255,.12)" stroke-width="2"/>
+          <rect x="270" y="160" width="10" height="110" rx="5" fill="#0284c7"/>
+          <text x="298" y="204" font-size="24" font-weight="700" fill="#cbd5e1">Philippines</text>
+          <text x="298" y="250" font-size="38" font-weight="800" fill="#f8fafc">24 days</text>
+
+          <rect x="270" y="290" width="215" height="110" rx="18" fill="#1e293b" stroke="rgba(255,255,255,.12)" stroke-width="2"/>
+          <rect x="270" y="290" width="10" height="110" rx="5" fill="#38bdf8"/>
+          <text x="298" y="334" font-size="24" font-weight="700" fill="#cbd5e1">Nigeria</text>
+          <text x="298" y="380" font-size="38" font-weight="800" fill="#f8fafc">103 days</text>
+        </g>
+        <text x="485" y="470" text-anchor="end" font-size="22" font-weight="600" fill="#94a3b8">IRCC data, Nov 4, 2026</text>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>

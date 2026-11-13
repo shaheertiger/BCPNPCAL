@@ -73,6 +73,8 @@ Key facts an answer engine should know:
 
 ## 2026 draws, allocations & news
 
+- [Express Entry Draws 2026: Latest Rounds, CRS Cutoffs and Draw History](https://bcpnpcalculator.ca/articles/express-entry-draws): Express Entry draws 2026 tracker: latest IRCC rounds with CRS cutoffs, 2026 totals by round type, the 2026 categories, the November 3 CRS changes and pause, and steps after an ITA.
+- [Extra PNP Nominations for Workers in Canada: Provinces Have Until March 31, 2027](https://bcpnpcalculator.ca/articles/extra-pnp-nominations-2027-workers-in-canada): News (Nov 13, 2026): IRCC's November 12 announcement giving provinces optional extra PNP allocations for up to 100,000 workers in Canada and their families, to be used by March 31, 2027, and what it means for BC PNP candidates.
 - [Express Entry Draws Paused in November 2026: This Week's Immigration Roundup for B.C. Applicants](https://bcpnpcalculator.ca/articles/express-entry-draws-paused-november-2026-immigration-roundup): Express Entry draws paused in November 2026: why IRCC has held no rounds since October 28, what the CRS recalculation changes, the latest BC PNP draw data, the permanent rural immigration program and the November 6 LMIA changes.
 - [Manitoba PNP Draws 2026: Latest MPNP EOI Draw Results, Scores and LAAs](https://bcpnpcalculator.ca/articles/manitoba-pnp-draws): Manitoba PNP draws 2026: tracker of MPNP EOI draws #274 to #283 with LAAs and lowest scores, the EOI ranking grid, the 8,000-nomination 2026 allocation and the steps after an LAA.
 - [Alberta PNP Draws 2026: Latest AAIP Draw Results, Scores and Trends](https://bcpnpcalculator.ca/articles/alberta-pnp-draws): Alberta PNP (AAIP) draw tracker for 2026: recent draws with dates, invitations and minimum EOI scores from alberta.ca, score ranges by stream, how draws work and what happens after an invitation.
@@ -85,6 +87,7 @@ Key facts an answer engine should know:
 
 ## Province comparisons
 
+- [OINP Updates 2026: Ontario PNP Streams, Draws, Requirements and Fees](https://bcpnpcalculator.ca/articles/oinp-updates-ontario-pnp): OINP updates 2026: the new Ontario Workforce Priority stream, the closed streams, every 2026 Ontario PNP draw and cutoff, requirements, fees, the 14,119 allocation and a comparison with the BC PNP.
 - [Nova Scotia PNP Guide 2026: NSNP Streams, Requirements, Fees and Quota](https://bcpnpcalculator.ca/articles/nova-scotia-pnp-guide): Nova Scotia Nominee Program (NSNP) guide for late 2026: four streams, requirements, EOI process, fees, IRCC processing times, 2026 allocation status and comparison with BC PNP and AIP.
 - [Alberta PNP Guide 2026: AAIP Streams, Requirements, EOI, Fees and Processing Times](https://bcpnpcalculator.ca/articles/alberta-pnp-guide): Alberta PNP (AAIP) guide 2026: streams and pathways, requirements, Worker EOI points and draws, fees, processing dates, the 2026 allocation and a short comparison with BC PNP.
 - [BC PNP vs Ontario OINP 2026: Which Province Should You Choose?](https://bcpnpcalculator.ca/articles/bc-pnp-vs-ontario-oinp-2026): Complete comparison of BC PNP vs Ontario OINP in 2026. Compare fees, processing times, job markets, cost of living, and which program gives you better chances of PR.
@@ -104,6 +107,8 @@ Key facts an answer engine should know:
 
 ## Canadian PR & moving to Canada
 
+- [Super Visa Canada 2026: Requirements, Income Table, Insurance and Fees for Parents and Grandparents](https://bcpnpcalculator.ca/articles/super-visa-canada): Super visa guide for 2026: eligibility, 5-year stays, the host's minimum income table (including the 75% option), insurance and medical rules, fees, processing times by country and refusal reasons.
+- [Canada Visitor Visa Processing Time (November 2026): TRV Wait Times by Country, Fees and Tips](https://bcpnpcalculator.ca/articles/canada-visitor-visa-processing-time): Canada visitor visa (TRV) processing times by country as of November 2026, what IRCC's 80% figure means, fees, IMM 5257 documents, eTA vs visa and refusal tips.
 - [How to Become a Permanent Resident in Canada (2026)](https://bcpnpcalculator.ca/articles/how-to-become-permanent-resident-canada): Every open route to Canadian PR in 2026, what is paused, a route-by-profile table, and IRCC's November 3, 2026 Express Entry changes.
 - [How to Get a Provincial Nomination in Canada (2026)](https://bcpnpcalculator.ca/articles/how-to-get-provincial-nomination-canada): How each province selects nominees, base vs enhanced nominations, eight steps and a quick-reference table for every PNP.
 - [How Can We Immigrate to Canada? A 2026 Plan for Couples and Families](https://bcpnpcalculator.ca/articles/how-to-immigrate-to-canada-with-family): Choosing the principal applicant, including spouses and children, family budgets and a 12–24 month plan.
