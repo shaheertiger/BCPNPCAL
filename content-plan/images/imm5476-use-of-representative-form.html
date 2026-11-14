@@ -1,0 +1,123 @@
+<!doctype html>
+<!--
+  Article hero image template: 1200x630, rendered to PNG by
+    node scripts/render-article-image.cjs content-plan/images/<slug>.html
+
+  Copy this file to content-plan/images/<slug>.html and design it for the post:
+  - Change the eyebrow, headline and key figure to match the article. Every number must
+    appear in the article and be verified.
+  - Replace the illustration (<svg class="art">) with one drawn for this post: a bar
+    chart of real cutoffs, a timeline, a fee breakdown, a map pin, a document stack, a
+    route diagram. Keep it simple, flat and readable at thumbnail size.
+  - Pick an accent: --accent can be red (#dc2626), indigo (#4f46e5), emerald (#059669),
+    amber (#d97706) or sky (#0284c7). Rotate accents and layouts so posts don't look identical.
+  - Headline: 4-10 words, at most 3 lines. No tiny text: the minimum font size is 22px.
+  - Text must contrast clearly with the background (light text on --bg).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a;        /* slate-900 */
+    --panel: #1e293b;     /* slate-800 */
+    --ink: #f8fafc;       /* slate-50 */
+    --muted: #cbd5e1;     /* slate-300 */
+    --accent: #0284c7;    /* sky-600 */
+    --accent-soft: rgba(2, 132, 199, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background:
+      radial-gradient(circle at 85% 20%, var(--accent-soft), transparent 45%),
+      linear-gradient(135deg, var(--bg) 0%, #111c33 100%);
+    color: var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    gap: 40px;
+    padding: 64px 72px;
+    position: relative;
+  }
+  body::before { /* subtle grid texture */
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .copy, .visual { position: relative; z-index: 1; }
+  .copy { display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow {
+    display: inline-flex; align-self: flex-start; gap: 10px; align-items: center;
+    background: var(--accent); color: #fff; font-weight: 800; font-size: 22px;
+    letter-spacing: .06em; text-transform: uppercase; padding: 10px 18px; border-radius: 999px;
+  }
+  h1 { font-size: 56px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 28px; }
+  .stat { display: flex; align-items: baseline; gap: 16px; margin-top: 24px; }
+  .stat b { font-size: 64px; font-weight: 800; color: #fff; }
+  .stat span { font-size: 24px; color: var(--muted); font-weight: 500; max-width: 340px; line-height: 1.3; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+  .visual {
+    background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 28px;
+    display: flex; align-items: center; justify-content: center; padding: 28px;
+  }
+  .art { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div>
+      <div class="eyebrow">IRCC form guide</div>
+      <h1>IMM 5476: Use of a Representative, step by step</h1>
+      <div class="stat"><b>A&ndash;E</b><span>five sections on the 11-2025 edition</span></div>
+    </div>
+    <div class="brand"><i></i>bcpnpcalculator.ca</div>
+  </div>
+
+  <div class="visual">
+    <svg class="art" viewBox="0 0 380 470" role="img" aria-label="A form with five section tabs labelled A to E">
+      <g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif" font-weight="800" font-size="24">
+        <!-- back sheet -->
+        <rect x="58" y="30" width="250" height="400" rx="16" fill="#334155" transform="rotate(-4 183 230)"/>
+        <!-- main sheet -->
+        <rect x="40" y="36" width="250" height="404" rx="16" fill="#f8fafc"/>
+        <!-- header bar -->
+        <rect x="40" y="36" width="250" height="56" rx="16" fill="#0284c7"/>
+        <rect x="40" y="72" width="250" height="20" fill="#0284c7"/>
+        <rect x="64" y="56" width="120" height="14" rx="7" fill="#e0f2fe"/>
+        <!-- field lines -->
+        <g fill="#cbd5e1">
+          <rect x="64" y="118" width="190" height="12" rx="6"/>
+          <rect x="64" y="142" width="150" height="12" rx="6"/>
+          <rect x="64" y="186" width="190" height="12" rx="6"/>
+          <rect x="64" y="210" width="120" height="12" rx="6"/>
+          <rect x="64" y="254" width="170" height="12" rx="6"/>
+          <rect x="64" y="298" width="190" height="12" rx="6"/>
+          <rect x="64" y="322" width="100" height="12" rx="6"/>
+        </g>
+        <!-- checkboxes -->
+        <rect x="64" y="236" width="12" height="12" rx="2" fill="none" stroke="#0284c7" stroke-width="3" transform="translate(0,-2)"/>
+        <!-- signature -->
+        <path d="M70 392 C 90 360, 104 410, 122 380 S 156 372, 170 392 S 200 380, 222 386" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+        <rect x="64" y="402" width="190" height="3" fill="#94a3b8"/>
+        <!-- tabs -->
+        <g>
+          <rect x="282" y="104" width="68" height="52" rx="12" fill="#0284c7"/>
+          <text x="322" y="139" fill="#fff" text-anchor="middle">A</text>
+          <rect x="282" y="168" width="68" height="52" rx="12" fill="#0369a1"/>
+          <text x="322" y="203" fill="#fff" text-anchor="middle">B</text>
+          <rect x="282" y="232" width="68" height="52" rx="12" fill="#475569"/>
+          <text x="322" y="267" fill="#fff" text-anchor="middle">C</text>
+          <rect x="282" y="296" width="68" height="52" rx="12" fill="#475569"/>
+          <text x="322" y="331" fill="#fff" text-anchor="middle">D</text>
+          <rect x="282" y="360" width="68" height="52" rx="12" fill="#0284c7"/>
+          <text x="322" y="395" fill="#fff" text-anchor="middle">E</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>
