@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a;        /* slate-900 */
+    --panel: #1e293b;     /* slate-800 */
+    --ink: #f8fafc;       /* slate-50 */
+    --muted: #cbd5e1;     /* slate-300 */
+    --accent: #d97706;    /* amber-600 */
+    --accent-soft: rgba(217, 119, 6, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background:
+      radial-gradient(circle at 85% 20%, var(--accent-soft), transparent 45%),
+      linear-gradient(135deg, var(--bg) 0%, #111c33 100%);
+    color: var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 40px;
+    padding: 64px 72px;
+    position: relative;
+  }
+  body::before { /* subtle grid texture */
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .copy, .visual { position: relative; z-index: 1; }
+  .copy { display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow {
+    display: inline-flex; align-self: flex-start; gap: 10px; align-items: center;
+    background: var(--accent); color: #fff; font-weight: 800; font-size: 22px;
+    letter-spacing: .06em; text-transform: uppercase; padding: 10px 18px; border-radius: 999px;
+  }
+  h1 { font-size: 60px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 28px; }
+  .stat { display: flex; align-items: baseline; gap: 16px; margin-top: 24px; }
+  .stat b { font-size: 64px; font-weight: 800; color: #fff; }
+  .stat span { font-size: 24px; color: var(--muted); font-weight: 500; max-width: 340px; line-height: 1.3; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+  .visual {
+    background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 28px;
+    display: flex; align-items: center; justify-content: center; padding: 28px;
+  }
+  .art { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div>
+      <div class="eyebrow">Citizenship · Guide</div>
+      <h1>Canadian citizenship certificate guide</h1>
+      <div class="stat"><b>$75</b><span>IRCC fee per person, form CIT&nbsp;0001</span></div>
+    </div>
+    <div class="brand"><i></i>bcpnpcalculator.ca</div>
+  </div>
+
+  <div class="visual">
+    <svg class="art" viewBox="0 0 400 480" role="img" aria-label="Illustration of a citizenship certificate with a seal and ribbon">
+      <g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif" font-weight="800">
+        <!-- back sheet (e-certificate) -->
+        <rect x="70" y="30" width="290" height="370" rx="18" fill="#334155" transform="rotate(6 215 215)"/>
+        <!-- main certificate -->
+        <rect x="40" y="50" width="300" height="380" rx="18" fill="#f8fafc"/>
+        <rect x="58" y="68" width="264" height="344" rx="10" fill="none" stroke="#d97706" stroke-width="4"/>
+        <rect x="70" y="80" width="240" height="320" rx="6" fill="none" stroke="#fcd34d" stroke-width="2"/>
+        <text x="190" y="128" text-anchor="middle" font-size="26" fill="#0f172a">CERTIFICATE</text>
+        <text x="190" y="160" text-anchor="middle" font-size="22" fill="#92400e">of citizenship</text>
+        <rect x="95" y="190" width="190" height="12" rx="6" fill="#cbd5e1"/>
+        <rect x="95" y="216" width="150" height="12" rx="6" fill="#cbd5e1"/>
+        <rect x="95" y="242" width="170" height="12" rx="6" fill="#cbd5e1"/>
+        <!-- photo box -->
+        <rect x="95" y="282" width="70" height="86" rx="6" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+        <circle cx="130" cy="312" r="14" fill="#94a3b8"/>
+        <path d="M108 360 q22 -30 44 0 z" fill="#94a3b8"/>
+        <!-- seal with ribbon -->
+        <path d="M232 350 l-14 66 l22 -12 l14 20 l8 -64 z" fill="#b45309"/>
+        <path d="M268 350 l14 66 l-22 -12 l-14 20 l-8 -64 z" fill="#92400e"/>
+        <circle cx="250" cy="330" r="40" fill="#d97706"/>
+        <circle cx="250" cy="330" r="30" fill="none" stroke="#fde68a" stroke-width="3"/>
+        <path d="M250 312 l5.5 11.5 l12.5 1.5 l-9.3 8.6 l2.5 12.4 l-11.2 -6.3 l-11.2 6.3 l2.5 -12.4 l-9.3 -8.6 l12.5 -1.5 z" fill="#fef3c7"/>
+      </g>
+      <!-- e-certificate badge -->
+      <g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif" font-weight="800">
+        <rect x="196" y="14" width="196" height="56" rx="28" fill="#0f172a" stroke="#d97706" stroke-width="3"/>
+        <text x="294" y="51" text-anchor="middle" font-size="24" fill="#fbbf24">PDF or paper</text>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>

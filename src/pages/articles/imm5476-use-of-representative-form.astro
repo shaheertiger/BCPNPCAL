@@ -1,0 +1,382 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "IMM 5476 Use of a Representative Form: How to Fill It In (2026 Guide)";
+const description = "How to fill in IRCC form IMM 5476 (11-2025 edition): paid vs unpaid representatives, sections A to E, signatures, family members, submitting and cancelling.";
+const canonical = "https://bcpnpcalculator.ca/articles/imm5476-use-of-representative-form";
+
+const faqs = [
+  {
+    q: "What is the IMM 5476 form used for?",
+    a: "IMM 5476, Use of a Representative, is the IRCC form you use to appoint a paid or unpaid representative to deal with Immigration, Refugees and Citizenship Canada and the Canada Border Services Agency on your behalf. The same form is used to update your representative's contact details, cancel a representative, cancel one and appoint a new one, or for a representative to withdraw from your file.",
+  },
+  {
+    q: "Where can I download the IMM 5476 form?",
+    a: "Download it free from the IMM 5476 page on canada.ca. As of November 14, 2026 the current edition is 11-2025 (the footer of each page reads IMM 5476 (11-2025) E). IRCC accepted earlier versions only until March 12, 2026, so do not reuse an old copy. Open the PDF in Adobe Reader rather than a browser so the fillable fields work.",
+  },
+  {
+    q: "Who can be a paid immigration representative in Canada?",
+    a: "Only authorized representatives can charge a fee or receive any other compensation: members in good standing of the College of Immigration and Citizenship Consultants (CICC), lawyers who belong to a Canadian provincial or territorial law society (and students-at-law under a supervising lawyer), notaries of the Chambre des notaires du Quebec, and, in Ontario only, paralegals licensed by the Law Society of Ontario. IRCC says it will not deal with unauthorized representatives who charge a fee.",
+  },
+  {
+    q: "Does each family member need their own IMM 5476?",
+    a: "Usually some of them do. Dependent children under 18 are covered by the principal applicant's signature. Dependent children aged 18 or older need their own form if the representative will conduct business for them, and for most applications a spouse or common-law partner needs a separate form even when included in the same application. In a sponsorship application, the sponsor's spouse or partner can sign in the box provided in Section E instead.",
+  },
+  {
+    q: "How do I submit IMM 5476 after my application has already been sent?",
+    a: "If you applied online and the application is already submitted, send the form through the IRCC web form. If you applied on paper and it is already submitted, use the web form or mail it to the IRCC office processing your application. If your application has not been submitted yet, simply upload the form with an online application, or include it in the paper package.",
+  },
+  {
+    q: "How do I cancel my immigration representative?",
+    a: "Complete a new IMM 5476 and tick the box for cancelling the appointment. Fill in Sections A, C and E, then send it to IRCC the same way you would submit the form. If you want a new representative at the same time, complete Sections A, B, C and E. IRCC will then send correspondence to the email address you give in Section A.",
+  },
+  {
+    q: "Is IMM 5476 used for the BC PNP?",
+    a: "No. The BC PNP is run by the Province of British Columbia and uses its own Use of a Representative Form - Applicant, uploaded in the My Representative section of the BCPNP Online portal. If you later apply to IRCC for permanent residence as a provincial nominee and want a representative on that federal application, you need an IMM 5476 as well.",
+  },
+  {
+    q: "Is IMM 5476 the same as IMM 5475?",
+    a: "No. IMM 5476 appoints a representative who can act for you. IMM 5475, Authority to Release Personal Information to a Designated Individual, only lets IRCC share information about your file with a person you name. That person cannot conduct business for you.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="imm5476-use-of-representative-form" datePublished="2026-11-14" dateModified="2026-11-14" articleSection="Guide" keywords="imm5476, imm 5476, imm 5476 form, use of representative form, imm5476 form download" title={title} description={description} canonical={canonical} ogImage="/images/articles/imm5476-use-of-representative-form.png">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-sky-100 text-sky-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-sky-200 shadow-sm">
+        IRCC Form Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        IMM 5476 Use of a Representative Form: How to Fill It In (2026 Guide)
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        What the form does, who is allowed to charge you for immigration help, how to complete each section, and how to submit, change or cancel a representative. Checked against the current IRCC form and guidance.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-14">November 14, 2026</time>
+        <span>&bull;</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/imm5476-use-of-representative-form.png" width="1200" height="630" alt="Illustration of the IMM 5476 form with five coloured section tabs labelled A to E and a signature line."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-sky-50 border-l-4 border-sky-600 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-sky-900 mb-2">Quick answer</p>
+      <p class="text-sky-900">
+        IMM 5476 is the free IRCC form that appoints someone to act for you on an immigration or citizenship application. As of November 14, 2026 the current edition is 11-2025. To appoint a representative you complete Sections A, B and E; to cancel one, Sections A, C and E. If the person is paid in any way, they must be a CICC licensed consultant, a lawyer or student-at-law of a Canadian law society, or a Quebec notary. Upload the form with an online application, or send it later through the IRCC web form.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-sky-600 mb-2">11-2025</div>
+        <div class="text-sm text-slate-600 font-medium">Current IMM 5476 edition (older versions accepted only until March 12, 2026)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-sky-600 mb-2">A&ndash;E</div>
+        <div class="text-sm text-slate-600 font-medium">Five sections; which ones you fill in depends on what you are doing</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-sky-600 mb-2">1</div>
+        <div class="text-sm text-slate-600 font-medium">Representative allowed per application at any one time</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#what" class="hover:underline">What IMM 5476 does</a></li>
+        <li><a href="#who" class="hover:underline">Paid vs unpaid representatives</a></li>
+        <li><a href="#download" class="hover:underline">Downloading the current edition</a></li>
+        <li><a href="#sections" class="hover:underline">How to fill in IMM 5476, section by section</a></li>
+        <li><a href="#family" class="hover:underline">Signatures and family members</a></li>
+        <li><a href="#submit" class="hover:underline">How to submit the form</a></li>
+        <li><a href="#cancel" class="hover:underline">Changing or cancelling a representative</a></li>
+        <li><a href="#bcpnp" class="hover:underline">BC PNP: a separate representative form</a></li>
+        <li><a href="#check" class="hover:underline">Checking a consultant and avoiding fraud</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        If someone is helping with your Canadian visa, permit, permanent residence or citizenship file and you want Immigration, Refugees and Citizenship Canada (IRCC) to deal with them directly, you need form IMM 5476, Use of a Representative. It is a four-page fillable PDF, but small mistakes, such as the wrong section, a missing signature or a consultant whose licence has lapsed, can delay your file or get it returned. This guide walks through the form as it stands in November 2026. It is general information, not legal advice.
+      </p>
+
+      <h2 id="what" class="text-3xl font-bold mt-12 mb-6">What the IMM 5476 Form Does</h2>
+
+      <p>
+        By signing IMM 5476 you authorize one person to be the primary point of contact on your application and to conduct business on your behalf with IRCC and the Canada Border Services Agency (CBSA). Your representative can complete or update your application, and IRCC sends correspondence to them instead of to you. You also authorize IRCC to release information from your file, and from the files of your dependent children under 18, to that person under the Privacy Act.
+      </p>
+      <p>
+        The form starts with a checklist. You tick one of five situations and that tells you which sections to complete:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left font-bold">What you are doing</th>
+              <th class="px-4 py-3 text-left font-bold">Sections to complete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Appointing a representative</td><td class="px-4 py-3">A, B and E</td></tr>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Updating your representative's contact information</td><td class="px-4 py-3">A, B and E</td></tr>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Cancelling a representative (you will represent yourself)</td><td class="px-4 py-3">A, C and E</td></tr>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Cancelling a representative and appointing a new one</td><td class="px-4 py-3">A, B, C and E</td></tr>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Representative withdrawing from the file</td><td class="px-4 py-3">A, D and E</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Two limits are worth knowing up front. You can have only one representative per application at a time, and appointing a new one automatically ends the previous person's authority. You also do not have to hire anyone: the form itself states that using a representative is your choice, that no one can guarantee approval, and that every IRCC form is free on canada.ca. IRCC adds that a representative will not draw special attention to your file or make approval more likely.
+      </p>
+
+      <h2 id="who" class="text-3xl font-bold mt-12 mb-6">Paid vs Unpaid Representatives: Who Can Act for You</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Unpaid representatives</h3>
+      <p>
+        An unpaid representative can be a friend or family member, a member of an organization, or a licensed professional who is helping for free. They can provide the same services as a paid representative, but they cannot take money or any other benefit. The 11-2025 form lists these unpaid options in question 7(i): friend or family member; CICC member; member of a Canadian provincial or territorial law society or student-at-law; member of the Chambre des notaires du Quebec; or "other".
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Paid (authorized) representatives</h3>
+      <p>
+        If you pay or compensate a representative in any way, they count as paid and must be authorized. The form also notes that a representative paid by someone else, for example your employer or a relative, is still a paid representative. According to IRCC, the authorized groups are:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Immigration or citizenship consultants</strong> who are members in good standing of the College of Immigration and Citizenship Consultants (CICC). Licensees are called Regulated Canadian Immigration Consultants (RCICs).</li>
+        <li><strong>Lawyers</strong> who are members of a Canadian provincial or territorial law society, including the Barreau du Quebec. The form also lets a student-at-law act, with their supervising lawyer named and signing.</li>
+        <li><strong>Notaries</strong> who are members of the Chambre des notaires du Quebec.</li>
+        <li><strong>Paralegals in Ontario only</strong> who are licensed by the Law Society of Ontario.</li>
+      </ul>
+      <p>
+        IRCC says it will not deal with representatives who charge a fee but are not authorized, whether they are in Canada or abroad, and that it may return or refuse an application that uses one. Your paid representative must also stay in good standing with their regulator while they act for you, or IRCC can return the application.
+      </p>
+
+      <h2 id="download" class="text-3xl font-bold mt-12 mb-6">IMM 5476 Form Download: Get the Current Edition</h2>
+
+      <p>
+        Download IMM 5476 only from the official form page on canada.ca (linked in the sources below). As of November 14, 2026 the current edition is <strong>11-2025</strong>, shown in the footer of each page as "IMM 5476 (11-2025) E". IRCC accepted older editions only until March 12, 2026, so an older copy saved on your computer or sent by a friend should be replaced. A French version (IMM 5476 F) is also available.
+      </p>
+      <p>
+        Save the PDF to your device and open it in Adobe Acrobat Reader. Filling it in inside a web browser often breaks the fields. Type your answers, then print the pages that need a handwritten signature, or sign electronically if you are submitting through a portal or secure account that accepts e-signatures.
+      </p>
+
+      <h2 id="sections" class="text-3xl font-bold mt-12 mb-6">How to Fill In IMM 5476, Section by Section</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Section A: Applicant information (questions 1 to 5)</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Q1, full name:</strong> family name and given names exactly as shown on your passport or travel document.</li>
+        <li><strong>Q2, date of birth:</strong> in YYYY-MM-DD format.</li>
+        <li><strong>Q3, email:</strong> your own email address, or a phone number or mailing address if you have no email. Do not put your representative's email here; if you cancel them later, IRCC will use the Section A email to reach you.</li>
+        <li><strong>Q4, application information:</strong> the type of application (for example "permanent residence, provincial nominee" or "work permit extension") and the application number if you have one.</li>
+        <li><strong>Q5, UCI:</strong> your Unique Client Identifier, if you know it. It appears on earlier IRCC letters, visas and permits.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Section B: Appointment of representative (questions 6 to 9)</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Q6:</strong> your representative's family and given names.</li>
+        <li><strong>Q7:</strong> tick either option (i), unpaid, with the category, or option (ii), paid, with the regulator. For a CICC member, law society member or Quebec notary, enter the membership ID number, and the province or territory for a law society. Ask your representative for these and check them yourself (see below).</li>
+        <li><strong>Q8, contact information:</strong> firm name if any, the supervising lawyer's name and membership ID if the representative is a student-at-law, mailing address, phone, fax if any, and email. Entering an email authorizes IRCC to send your personal information to that address.</li>
+        <li><strong>Q9, representative's declaration:</strong> the representative signs and dates it, confirming Section B is correct and that they accept the appointment. A supervising lawyer also signs when a student-at-law is acting.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Section C: Cancel the appointment (question 10)</h3>
+      <p>
+        Only used when you are removing a representative. Enter that person's full name and firm. By signing Section E you withdraw their authority to act for you and to receive information on your file.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Section D: Withdrawing role as a representative (question 11)</h3>
+      <p>
+        This section is for the representative, not you. They enter their name and firm and sign. If they could not get your agreement or signature after taking reasonable steps, they can attest to that and withdraw without your signature in Section E.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Section E: Your declaration (question 12)</h3>
+      <p>
+        You declare that your answers are true and that you understood the form. Sign and date it. A parent or legal guardian signs for a person under 18. In a sponsorship application, the sponsor's spouse or common-law partner signs in the second box. The form warns that giving false or misleading information is a serious offence, and IRCC reminds applicants that they remain responsible for everything in their application even if a representative prepared it.
+      </p>
+
+      <h2 id="family" class="text-3xl font-bold mt-12 mb-6">Signatures and When Each Family Member Needs a Form</h2>
+
+      <p>
+        IRCC's instructions accept different signature methods depending on how you submit:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Through a portal or secure account:</strong> a handwritten (wet) signature, an electronic signature, or a thumbprint.</li>
+        <li><strong>Outside a portal:</strong> a wet signature (scanned copies are accepted) or a thumbprint.</li>
+        <li><strong>Thumbprints</strong> are accepted only if the person is illiterate or physically unable to sign.</li>
+      </ul>
+      <p>
+        For families, the rules are:
+      </p>
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left font-bold">Person</th>
+              <th class="px-4 py-3 text-left font-bold">Own IMM 5476 needed?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Dependent child under 18</td><td class="px-4 py-3">No, covered by the principal applicant's signature</td></tr>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Dependent child 18 or older</td><td class="px-4 py-3">Yes, if the representative will act for them</td></tr>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Spouse or common-law partner (most applications)</td><td class="px-4 py-3">Yes, a separate form, even if included in the same application</td></tr>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Sponsor's spouse or partner in a sponsorship application</td><td class="px-4 py-3">No, they sign in the Section E box provided</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="submit" class="text-3xl font-bold mt-12 mb-6">How to Submit IMM 5476</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left font-bold">Your situation</th>
+              <th class="px-4 py-3 text-left font-bold">How to send the form</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Online application, not yet submitted</td><td class="px-4 py-3">Upload it with the application</td></tr>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Online application, already submitted</td><td class="px-4 py-3">Send it through the IRCC web form</td></tr>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Paper application, not yet submitted</td><td class="px-4 py-3">Include it in the package sent to the office in your application guide</td></tr>
+            <tr class="border-t border-slate-200"><td class="px-4 py-3">Paper application, already submitted</td><td class="px-4 py-3">IRCC web form, or mail it to the office processing your application</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Representative portals vs your own account</h3>
+      <p>
+        Authorized paid representatives have their own IRCC accounts, and IRCC tells them to use the correct one for each application type: the <strong>Authorized Paid Representatives (APR) Portal</strong> for visitor visas, study and work permits, Express Entry, International Experience Canada, eTAs and the Interim Federal Health Program; the <strong>Permanent Residence Portal for representatives</strong> for most non-Express Entry PR programs, including provincial nominees and family sponsorship; and the <strong>IRCC Portal for representatives</strong> for some other application types. Enrolling in the APR Portal requires membership in good standing with a law society, the Chambre des notaires or the CICC.
+      </p>
+      <p>
+        In practice, a paid representative usually prepares and submits the application from their own portal, with the signed IMM 5476 uploaded in it. IRCC describes these accounts for authorized paid representatives only, so an unpaid helper such as a relative will usually work with you through your own IRCC account and you submit the form yourself. Do not share your account sign-in details with anyone. Whichever route is used, make sure you get copies of everything submitted and of every IRCC letter.
+      </p>
+
+      <h2 id="cancel" class="text-3xl font-bold mt-12 mb-6">How to Change or Cancel a Representative</h2>
+
+      <p>
+        There is no separate cancellation form: you use IMM 5476 again.
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>To represent yourself:</strong> tick "cancelling the appointment of a representative" and complete Sections A, C and E.</li>
+        <li><strong>To switch representatives:</strong> tick the cancel-and-appoint box and complete Sections A, B, C and E, with the new representative signing question 9.</li>
+        <li><strong>If your representative's address, phone or email changes:</strong> submit an updated form with Sections A, B and E. IRCC expects you to report these changes.</li>
+        <li><strong>If the representative wants to step away:</strong> they complete Sections A, D and E.</li>
+      </ul>
+      <p>
+        Send the new form the same way as in the table above. Until IRCC records the change, letters may still go to the old representative, so keep in contact with them if you can.
+      </p>
+
+      <h2 id="bcpnp" class="text-3xl font-bold mt-12 mb-6">BC PNP Applicants: A Separate Representative Form</h2>
+
+      <p>
+        IMM 5476 covers dealings with IRCC and CBSA only. The BC Provincial Nominee Program is administered by the Province of British Columbia, and it uses its own <strong>Use of a Representative Form - Applicant</strong> from WelcomeBC (plus an employer version for Skills Immigration employers). According to the BC PNP Skills Immigration Application Guide effective June 25, 2026:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>You declare a representative in the <strong>My Representative</strong> section of your BCPNP Online profile, choose whether they are paid, select their membership, and upload the signed BC PNP form.</li>
+        <li>You can have only one representative at a time. Uploading a new form automatically cancels the previous one.</li>
+        <li>To remove a representative, use the remove option in that tab and then contact the BC PNP to confirm.</li>
+        <li>If you paid someone only to help fill in a form, without having them represent you, you report that in the "use of paid representative" questions instead.</li>
+        <li>The BC form warns that if an "unpaid" representative is found to have charged fees, the Province can revoke their eligibility and may decline or cancel your application.</li>
+      </ul>
+      <p>
+        Once you are nominated and apply to IRCC for permanent residence, you need an IMM 5476 for that federal application if you want a representative on it. Portal steps change from time to time, so check the current guide on WelcomeBC before uploading. If you are still deciding whether the BC PNP is realistic for you, estimate your registration score with our <a href="/bc-pnp-calculator" class="text-sky-700 underline font-semibold">BC PNP Calculator</a> and read <a href="/articles/how-to-apply-bc-pnp" class="text-blue-600 hover:text-blue-800 underline">how to apply for the BC PNP</a>.
+      </p>
+
+      <h2 id="check" class="text-3xl font-bold mt-12 mb-6">How to Check a Consultant Is Licensed and Avoid Fraud</h2>
+
+      <p>
+        Before anyone signs Section B as a paid representative, verify them yourself:
+      </p>
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Consultants:</strong> search the CICC public register at register.college-ic.ca. Only "Yes" under Entitled to Practise means they can legally give immigration advice. Statuses such as administrative or disciplinary suspension or revocation mean they cannot. The register also shows the licence class, for example L3 RCIC-IRB for consultants who can also appear before the Immigration and Refugee Board.</li>
+        <li><strong>Lawyers and paralegals:</strong> use the online directory of the relevant law society, such as the Law Society of British Columbia, the Barreau du Quebec or the Law Society of Ontario.</li>
+        <li><strong>Quebec notaries:</strong> check the Chambre des notaires du Quebec directory (in French).</li>
+        <li><strong>Match the details:</strong> the name and membership ID on IMM 5476 should match the register entry exactly. A "consultant" who refuses to give a membership number, or who asks to be listed as unpaid while charging you, is a red flag.</li>
+      </ol>
+      <p>
+        Other warning signs include guaranteed approvals or jobs, offers to sell a job offer or LMIA, requests to put false information on forms, and people who advertise "free" help and later demand fees. Read our guide to <a href="/articles/bc-pnp-job-offer-scams-fraud-2027" class="text-blue-600 hover:text-blue-800 underline">BC PNP job offer scams and fraud</a> for real examples and where to report them. And remember that a representative cannot speed up IRCC; if you want to know how long your file may take, see our guide to <a href="/articles/ircc-processing-times-canada" class="text-blue-600 hover:text-blue-800 underline">IRCC processing times</a> or <a href="/articles/how-long-to-get-pr-in-canada" class="text-blue-600 hover:text-blue-800 underline">how long it takes to get PR in Canada</a>.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Common IMM 5476 mistakes</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>Using an older edition instead of 11-2025.</li>
+        <li>Ticking "unpaid" for someone you are paying, or for someone paid by your employer.</li>
+        <li>Forgetting a separate form for a spouse or an adult dependent child.</li>
+        <li>Missing the representative's signature in question 9, or the supervising lawyer's signature for a student-at-law.</li>
+        <li>Putting the representative's email in Section A instead of your own.</li>
+        <li>Confusing IMM 5476 with IMM 5475, which only allows IRCC to release information to someone and does not let them act for you.</li>
+      </ul>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5476.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Use of a Representative Form (IMM 5476) and instructions, IRCC</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/pdf/english/kits/forms/imm5476/01-11-2025/imm5476e.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IMM 5476 (11-2025) E, fillable PDF, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/learn-about-representatives.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Learn about representatives, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/choose/authorized.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Find out if your representative is authorized, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/partners-service-providers/authorized-paid-representatives-portal.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Sign in to an account for representatives, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/partners-service-providers/authorized-paid-representatives-portal/enrolment-guide.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Enrolment guide: Authorized Paid Representatives Portal, IRCC</a></li>
+        <li><a href="https://college-ic.ca/protecting-the-public/find-an-immigration-consultant" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Find an immigration consultant (public register), College of Immigration and Citizenship Consultants</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/use-of-a-representative-form-applicant-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Use of a Representative Form - Applicant, WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-technical-guide-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Skills Immigration Application Guide (effective June 25, 2026), WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/bc-pnp-online-user-portal" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Online User Portal, WelcomeBC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 14, 2026. IRCC updates forms and portals without much notice; always download IMM 5476 from canada.ca and confirm the instructions before submitting.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-job-offer-scams-fraud-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-red-600 font-bold mb-2">Fraud</div>
+          <div class="font-bold text-gray-900">BC PNP Job Offer Scams and Fraud</div>
+        </a>
+        <a href="/articles/ircc-processing-times-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-sky-600 font-bold mb-2">IRCC</div>
+          <div class="font-bold text-gray-900">IRCC Processing Times in Canada</div>
+        </a>
+        <a href="/articles/how-to-apply-bc-pnp" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">How-To</div>
+          <div class="font-bold text-gray-900">How to Apply for the BC PNP</div>
+        </a>
+        <a href="/articles/how-to-become-permanent-resident-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Permanent Residence</div>
+          <div class="font-bold text-gray-900">How to Become a Permanent Resident of Canada</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

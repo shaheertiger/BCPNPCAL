@@ -1,0 +1,333 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "IRCC Processing Times (November 2026): Canada Immigration Wait Times for PR, Permits, Visas and Citizenship";
+const description = "IRCC processing times, November 2026: Express Entry, PNP, spousal, parents, citizenship, PR card, work and study permits, super visa and eTA, from IRCC data.";
+const canonical = "https://bcpnpcalculator.ca/articles/ircc-processing-times-canada";
+
+const faqs = [
+  {
+    q: "What are IRCC processing times right now?",
+    a: "As of November 14, 2026, IRCC's processing-time data shows about 6 months for Canadian Experience Class, about 7 months for Federal Skilled Worker and Express Entry-linked PNP applications, about 13 months for base (non-Express Entry) PNP applications, about 18 months for spousal sponsorship from outside Canada (outside Quebec) and about 12 months for a citizenship grant. The permanent residence and citizenship figures were last updated October 9, 2026. An eTA takes about 5 minutes and a PR card renewal 49 days (data updated November 12, 2026).",
+  },
+  {
+    q: "How does IRCC calculate processing times?",
+    a: "IRCC uses two methods. For most permanent residence and citizenship applications it publishes a forward-looking estimate of how long a new application would take if received today, based on how many applications are in the queue and how many staff are processing them. For many temporary residence applications it publishes a historical figure: how long it took to process 80% of applications, looking back 8 to 16 weeks for temporary residence (6 months for permanent residence). Neither is a maximum or a guarantee.",
+  },
+  {
+    q: "When does the processing time start?",
+    a: "IRCC says your processing time starts on the day it receives your complete application, either when you submit online or when a paper application arrives in its mailroom, and ends when an officer makes a decision. It includes the time it takes to give your biometrics. An incomplete application can be delayed or returned, which effectively restarts the clock.",
+  },
+  {
+    q: "How do I check my IRCC application status?",
+    a: "Link your application to an IRCC online account, or use the Application status tracker, which IRCC lists for Express Entry, spouse, partner or dependent child sponsorship, parents and grandparents, visitor visas, study permits and work permits. Citizenship grant applicants use the citizenship application status tracker. The Client Application Status tool covers other types such as citizenship certificates, and eTA applicants check the eTA status page.",
+  },
+  {
+    q: "What should I do if my application is past the processing time?",
+    a: "First re-check the current processing time for your application type, because estimates change. If your application is beyond it, use IRCC's web form and choose the option to ask about an application that is over the normal processing time. Submitting more than one web form will not speed things up. You can also request your own file, including officer notes, through a free Privacy Act request on the ATIP Online Request service.",
+  },
+  {
+    q: "Why is my processing time longer than what IRCC shows?",
+    a: "The posted time is an average-type estimate for a whole application category, not a deadline for your file. Missing documents, a request for more information, background or security checks, medical exams, a change in your situation or a large backlog in your category can all add time. IRCC also changes the estimates as inventories shift, so the figure you saw when you applied may be different from today's.",
+  },
+  {
+    q: "Can I pay to speed up an IRCC application?",
+    a: "No. IRCC's web form page says it cannot speed up processing unless you are already eligible for urgent processing, and its processing-time page says calling will not make your application go faster. The best way to avoid delays is to submit a complete application, give biometrics promptly and answer any request quickly.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="ircc-processing-times-canada" datePublished="2026-11-14" dateModified="2026-11-14" articleSection="Guide" keywords="processing time canada, check processing times, cic immigration canada processing time, ircc timelines, ircc processing times, canada immigration processing times" ogImage="/images/articles/ircc-processing-times-canada.png" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        Processing Times
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        IRCC Processing Times (November 2026): Canada Immigration Wait Times for PR, Permits, Visas and Citizenship
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        One table for the applications most people ask about, taken directly from IRCC's published processing-time data, plus what the numbers mean, how to track your file and what to do when it runs late.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-14">November 14, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/ircc-processing-times-canada.png" width="1200" height="630" alt="A departures-style board listing IRCC processing times: Canadian Experience Class about 6 months, Express Entry-linked PNP about 7 months, base PNP about 13 months, spousal sponsorship from outside Canada about 18 months, citizenship grant about 12 months and an eTA in about 5 minutes."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-indigo-900 mb-2">Quick answer</p>
+      <p class="text-indigo-900">
+        As of November 14, 2026, IRCC's data shows about 6 months for Canadian Experience Class, about 7 months for Federal Skilled Worker and Express Entry-linked PNP applications, about 13 months for paper-based PNP applications, 18 to 33 months for spousal sponsorship depending on the stream, and about 12 months for a citizenship grant (estimates last updated October 9, 2026). Temporary applications vary by country: a visitor visa from India was 34 days and an eTA about 5 minutes (updated November 12, 2026). These are estimates, not guarantees.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">~6 months</div>
+        <div class="text-sm text-slate-600 font-medium">Canadian Experience Class (Express Entry), IRCC estimate of October 9, 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">~13 months</div>
+        <div class="text-sm text-slate-600 font-medium">Base (non-Express Entry) provincial nominee PR application</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-600 mb-2">~12 months</div>
+        <div class="text-sm text-slate-600 font-medium">Citizenship grant, with about 322,700 people waiting</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#pr" class="hover:underline">Permanent residence processing times</a></li>
+        <li><a href="#citizenship" class="hover:underline">Citizenship and PR card processing times</a></li>
+        <li><a href="#temporary" class="hover:underline">Work permit, study permit, visitor visa, super visa and eTA</a></li>
+        <li><a href="#how-calculated" class="hover:underline">How IRCC calculates processing times</a></li>
+        <li><a href="#check-status" class="hover:underline">How to check your application status</a></li>
+        <li><a href="#past-time" class="hover:underline">What to do if your application is past the processing time</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        "How long will it take?" is the question behind almost every Canadian immigration search. IRCC answers it through its "Check processing times" tool on canada.ca, which reads from data files the department updates on a schedule. We downloaded those files on November 14, 2026 and pulled the figures for the main application types into one place. Every time below is quoted exactly as IRCC publishes it, with the date IRCC last updated it. Processing times move, sometimes sharply, so check the official tool before you make plans around a date. This is general information, not legal advice.
+      </p>
+
+      <h2 id="pr" class="text-3xl font-bold mt-12 mb-6">Permanent Residence Processing Times in Canada</h2>
+
+      <p>
+        For permanent residence (PR), IRCC publishes a forward-looking estimate for each program along with the number of people waiting in that queue. The figures below come from IRCC's forward-looking data, which was last updated on <strong>October 9, 2026</strong> and is refreshed monthly. If you check after IRCC's next monthly update, the numbers may differ.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Application</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">IRCC estimate</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">People waiting</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Express Entry: Canadian Experience Class</td><td class="px-4 py-3">About 6 months</td><td class="px-4 py-3">About 53,900</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Express Entry: Federal Skilled Worker</td><td class="px-4 py-3">About 7 months</td><td class="px-4 py-3">About 58,300</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Express Entry: Federal Skilled Trades</td><td class="px-4 py-3">Not enough data</td><td class="px-4 py-3">Not published</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Provincial Nominee Program, Express Entry-linked</td><td class="px-4 py-3">About 7 months</td><td class="px-4 py-3">About 13,100</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Provincial Nominee Program, base (paper/portal, non-Express Entry)</td><td class="px-4 py-3">About 13 months</td><td class="px-4 py-3">About 96,500</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Spouse or partner, living outside Canada (outside Quebec)</td><td class="px-4 py-3">About 18 months</td><td class="px-4 py-3">About 65,600</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Spouse or partner, living outside Canada (Quebec)</td><td class="px-4 py-3">About 33 months</td><td class="px-4 py-3">About 19,400</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Spouse or partner, living in Canada (outside Quebec)</td><td class="px-4 py-3">About 26 months</td><td class="px-4 py-3">About 55,600</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Spouse or partner, living in Canada (Quebec)</td><td class="px-4 py-3">About 32 months</td><td class="px-4 py-3">About 14,500</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Parents and grandparents (outside Quebec)</td><td class="px-4 py-3">About 28 months</td><td class="px-4 py-3">About 35,600</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Parents and grandparents (Quebec)</td><td class="px-4 py-3">About 63 months</td><td class="px-4 py-3">About 10,300</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-slate-500">Source: IRCC forward-looking processing-time data, last updated October 9, 2026 (Federal Skilled Trades from IRCC's non-country data, updated November 12, 2026). Retrieved November 14, 2026.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">What the PR figures mean in practice</h3>
+      <p>
+        The Express Entry and PNP times cover only IRCC's part: from the day it receives your complete PR application to its final decision. They do not include the time you spend in the Express Entry pool waiting for an invitation, or the months a province takes to nominate you. For a B.C. applicant, that means the full timeline is the BC PNP registration and invitation, the provincial assessment, and then IRCC's 7 or 13 months depending on whether you hold an Express Entry-linked or base nomination. Our guide to <a href="/articles/bc-pnp-processing-times" class="text-blue-600 hover:text-blue-800 underline">BC PNP processing times</a> covers the provincial stages, and <a href="/articles/how-long-to-get-pr-in-canada" class="text-blue-600 hover:text-blue-800 underline">how long it takes to get PR in Canada</a> puts the whole journey together. If you are still working out whether you would be invited, the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a> estimates your registration score, and the <a href="/articles/express-entry-draws" class="text-blue-600 hover:text-blue-800 underline">Express Entry draws tracker</a> shows recent federal rounds.
+      </p>
+      <p>
+        The gap between the two PNP queues is worth noting. An Express Entry-linked nomination is processed in about 7 months, while a base nomination sits in a queue of about 96,500 people with an estimate of about 13 months. That difference is one reason candidates who qualify for Express Entry usually prefer an enhanced nomination.
+      </p>
+      <p>
+        Spousal sponsorship shows the widest spread. For a sponsor living outside Quebec, a partner applying from abroad was estimated at about 18 months, but a partner already living in Canada at about 26 months. In Quebec both streams are around 32 to 33 months, because Quebec has its own sponsorship undertaking step on top of the federal process. Parents and grandparents follow the same pattern: about 28 months outside Quebec and about 63 months in Quebec.
+      </p>
+
+      <h2 id="citizenship" class="text-3xl font-bold mt-12 mb-6">Citizenship and PR Card Processing Times</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Application</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">IRCC figure</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Last updated</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Citizenship grant (becoming a citizen)</td><td class="px-4 py-3">About 12 months (about 322,700 people waiting)</td><td class="px-4 py-3">October 9, 2026</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Citizenship certificate (proof of citizenship)</td><td class="px-4 py-3">About 34 months (about 130,700 people waiting)</td><td class="px-4 py-3">October 9, 2026</td></tr>
+            <tr><td class="px-4 py-3 font-medium">PR card renewal or replacement (existing PR)</td><td class="px-4 py-3">49 days</td><td class="px-4 py-3">November 12, 2026</td></tr>
+            <tr><td class="px-4 py-3 font-medium">First PR card (new permanent resident)</td><td class="px-4 py-3">30 days</td><td class="px-4 py-3">November 12, 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The citizenship grant estimate runs from the day IRCC receives a complete application to a decision; the test, interview if needed and oath ceremony are part of the process. The certificate figure is the one that surprises people: proof of citizenship, often needed by people born abroad to a Canadian parent, had a far longer queue than the grant itself. We cover that application in detail in our guide to the <a href="/articles/canadian-citizenship-certificate" class="text-blue-600 hover:text-blue-800 underline">Canadian citizenship certificate</a>.
+      </p>
+      <p>
+        For PR cards, the 49-day figure applies to existing permanent residents renewing or replacing a card. If your card expires while you are outside Canada, you will usually need a permanent resident travel document to fly back, which is a separate application with its own country-based time.
+      </p>
+
+      <h2 id="temporary" class="text-3xl font-bold mt-12 mb-6">Work Permit, Study Permit, Visitor Visa, Super Visa and eTA Processing Times</h2>
+
+      <p>
+        Temporary residence applications made from outside Canada are processed in offices around the world, so IRCC publishes a different time for each country of residence. The table shows a sample of countries; all figures are from IRCC's country data last updated <strong>November 12, 2026</strong>.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Applying from</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Work permit (outside Canada)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Study permit</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Visitor visa</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Super visa</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">India</td><td class="px-4 py-3">10 weeks</td><td class="px-4 py-3">8 weeks</td><td class="px-4 py-3">34 days</td><td class="px-4 py-3">87 days</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Philippines</td><td class="px-4 py-3">10 weeks</td><td class="px-4 py-3">6 weeks</td><td class="px-4 py-3">24 days</td><td class="px-4 py-3">104 days</td></tr>
+            <tr><td class="px-4 py-3 font-medium">China</td><td class="px-4 py-3">5 weeks</td><td class="px-4 py-3">12 weeks</td><td class="px-4 py-3">48 days</td><td class="px-4 py-3">89 days</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Nigeria</td><td class="px-4 py-3">10 weeks</td><td class="px-4 py-3">11 weeks</td><td class="px-4 py-3">100 days</td><td class="px-4 py-3">28 days</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Pakistan</td><td class="px-4 py-3">10 weeks</td><td class="px-4 py-3">4 weeks</td><td class="px-4 py-3">57 days</td><td class="px-4 py-3">91 days</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Iran</td><td class="px-4 py-3">51 weeks</td><td class="px-4 py-3">44 weeks</td><td class="px-4 py-3">78 days</td><td class="px-4 py-3">159 days</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Mexico</td><td class="px-4 py-3">2 weeks</td><td class="px-4 py-3">2 weeks</td><td class="px-4 py-3">14 days</td><td class="px-4 py-3">78 days</td></tr>
+            <tr><td class="px-4 py-3 font-medium">United Kingdom</td><td class="px-4 py-3">5 weeks</td><td class="px-4 py-3">3 weeks</td><td class="px-4 py-3">22 days</td><td class="px-4 py-3">101 days</td></tr>
+            <tr><td class="px-4 py-3 font-medium">United States</td><td class="px-4 py-3">3 weeks</td><td class="px-4 py-3">4 weeks</td><td class="px-4 py-3">18 days</td><td class="px-4 py-3">78 days</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-slate-500">UK and U.S. citizens do not need a visitor visa; the visitor visa column applies to people who live in those countries and are citizens of a visa-required country.</p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Applications made from inside Canada</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Work permit extension (inside Canada):</strong> IRCC's weekly forward-looking estimate, updated November 7, 2026, was 10 weeks, with about 187,900 people waiting. The historical figure in IRCC's non-country data (updated November 12, 2026) was 120 days, so expect the official tool to show the forward-looking estimate and treat the gap as a sign of how much these numbers can differ.</li>
+        <li><strong>Study permit extension:</strong> 6 weeks forward-looking (about 25,200 people waiting, November 7, 2026); the historical figure was 52 days.</li>
+        <li><strong>Visitor record (extending your stay as a visitor):</strong> 304 days, updated November 12, 2026.</li>
+        <li><strong>Visitor visa applied for from inside Canada:</strong> 12 days.</li>
+        <li><strong>Post-graduation work permit:</strong> IRCC's published data does not list a separate PGWP figure, so we have not quoted one. Check the tool for the option that matches your application.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">eTA, IEC and visitor details</h3>
+      <p>
+        An electronic travel authorization (eTA), needed by visa-exempt travellers who fly to Canada, was listed at <strong>5 minutes</strong>, though some applications take longer if IRCC asks for more documents. International Experience Canada (working holiday) work permits were listed at 5 weeks. For a full country-by-country breakdown of visitor visas, fees and documents, read our <a href="/articles/canada-visitor-visa-processing-time" class="text-blue-600 hover:text-blue-800 underline">Canada visitor visa processing time</a> guide. Parents and grandparents planning longer stays should compare the visitor visa with the <a href="/articles/super-visa-canada" class="text-blue-600 hover:text-blue-800 underline">super visa</a>, which allows stays of up to five years per entry but needs medical insurance and an income test.
+      </p>
+
+      <h2 id="how-calculated" class="text-3xl font-bold mt-12 mb-6">How IRCC Calculates Processing Times</h2>
+
+      <p>
+        The tool uses two kinds of numbers, and knowing which one you are looking at helps you judge it.
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Forward-looking estimates.</strong> IRCC describes these as "how long we expect it will take us to process an application if we receive it today." For permanent residence, the page says the estimate is how long it may take to get a final decision and is based on how many applications are in IRCC's inventory and how many people are processing that type of application. For other forward-looking categories, such as permit extensions, IRCC also factors in how many applications it expects to receive. PR and citizenship estimates are updated monthly; the extension estimates are updated weekly.</li>
+        <li><strong>Historical times.</strong> For other applications, IRCC checks how long it took to process 80% of that type of application in the past. The lookback is 6 months for permanent residence applications and 8 to 16 weeks for temporary residence applications. So a historical figure tells you how long most recent files took, and about one in five took longer.</li>
+      </ul>
+      <p>
+        In both cases, IRCC says processing starts on the day it receives your <em>complete</em> application (the day you submit online, or the day a paper file reaches the mailroom) and ends when an officer makes a decision. The time includes giving your biometrics. It does not count time before you apply, such as waiting for an Express Entry invitation, a provincial nomination, an LMIA or a language test result. IRCC is clear that the times are "not a maximum or a guarantee."
+      </p>
+      <p>
+        The forward-looking tool also lets PR applicants who already applied enter their application month to see an estimate of how many people are ahead of them in the queue. That is often more useful than the headline number, because a large backlog of older files can mean a newer file waits even when the estimate looks short.
+      </p>
+
+      <h2 id="check-status" class="text-3xl font-bold mt-12 mb-6">How to Check Your IRCC Application Status</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Tool</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Use it for</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">IRCC secure account / online account</td><td class="px-4 py-3">Messages, document requests and decisions for applications submitted online; paper applications can be linked to an online account</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Application status tracker</td><td class="px-4 py-3">A more detailed timeline for Express Entry, spouse, partner or dependent child sponsorship, parents and grandparents, visitor visas, study permits and work permits (separate sign-up with your UCI and application number)</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Citizenship application status tracker</td><td class="px-4 py-3">Adult and minor citizenship grant applications</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Client Application Status tool</td><td class="px-4 py-3">Other types, including refugee applications, citizenship certificates and renunciation; updated daily</td></tr>
+            <tr><td class="px-4 py-3 font-medium">eTA status page</td><td class="px-4 py-3">Electronic travel authorizations</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        If you hired a representative, they can usually see the same account messages. Make sure IRCC has a valid Use of a Representative form on file; our guide to the <a href="/articles/imm5476-use-of-representative-form" class="text-blue-600 hover:text-blue-800 underline">IMM 5476 form</a> explains it.
+      </p>
+
+      <h2 id="past-time" class="text-3xl font-bold mt-12 mb-6">What to Do If Your Application Is Past the Processing Time</h2>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Re-check the current time.</strong> Look up your application type again in the official tool. If the estimate went up after you applied, your file may not be late at all.</li>
+        <li><strong>Check your accounts and email.</strong> Look for a request for documents, biometrics, a medical exam or updated police certificates that you may have missed. Unanswered requests are a common cause of a "stuck" file.</li>
+        <li><strong>Use the IRCC web form.</strong> IRCC's contact page includes an option to ask about your application if it is over the normal processing time. Send one form; IRCC says submitting another one will not speed things up, and that it cannot speed up processing unless you are already eligible for urgent processing.</li>
+        <li><strong>Request your file.</strong> You can ask for your own records, including officer notes (often called GCMS notes), through a Privacy Act request. IRCC says foreign nationals can make these requests regardless of where they are located and that there is no fee. A request made on someone else's behalf under the Access to Information Act costs $5 and needs the person's consent. Submit through the ATIP Online Request service.</li>
+        <li><strong>Get advice if the delay is serious.</strong> For long delays that affect your status or job, a licensed immigration consultant or lawyer can explain other options. Make sure anyone you pay is authorized to represent you.</li>
+      </ol>
+      <p>
+        Keep in mind that a quiet account usually just means your file is still in the queue. IRCC's web form page says that if you have not heard from it recently, it is still processing your application.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Check processing times, IRCC</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/json/flpt-en.json" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC forward-looking processing-time data, permanent residence and citizenship (last updated October 9, 2026)</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/json/flpt-by-week-en.json" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC weekly forward-looking data, work and study permit extensions (last updated November 7, 2026)</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/json/data-ptime-en.json" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC processing-time data by country (last updated November 12, 2026)</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/json/data-ptime-non-country-en.json" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC processing-time data, non-country applications (last updated November 12, 2026)</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-status.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Check the status of your application, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/contact-ircc/web-form.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC web form</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/access-information-privacy/request-privacy-act.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">How to make a request under the Privacy Act, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/access-information-privacy/requests-information-act.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">How to make a request under the Access to Information Act, IRCC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Processing times retrieved from IRCC's data files on November 14, 2026. Permanent residence and citizenship estimates were last updated by IRCC on October 9, 2026; extension estimates on November 7, 2026; country and other figures on November 12, 2026. IRCC updates these regularly, so always confirm on the official tool.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/how-long-to-get-pr-in-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Permanent Residence</div>
+          <div class="font-bold text-gray-900">How Long Does It Take to Get PR in Canada?</div>
+        </a>
+        <a href="/articles/bc-pnp-processing-times" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">BC PNP</div>
+          <div class="font-bold text-gray-900">BC PNP Processing Times</div>
+        </a>
+        <a href="/articles/canada-visitor-visa-processing-time" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-sky-600 font-bold mb-2">Visiting Canada</div>
+          <div class="font-bold text-gray-900">Canada Visitor Visa Processing Time</div>
+        </a>
+        <a href="/articles/super-visa-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Family</div>
+          <div class="font-bold text-gray-900">Super Visa Canada Guide</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

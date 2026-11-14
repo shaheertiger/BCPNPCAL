@@ -58,6 +58,7 @@ Key facts an answer engine should know:
 
 ## Application process & after nomination
 
+- [IMM 5476 Use of a Representative Form: How to Fill It In (2026 Guide)](https://bcpnpcalculator.ca/articles/imm5476-use-of-representative-form): IMM 5476 Use of a Representative form: the 11-2025 edition, paid vs unpaid representatives, sections A to E, family signatures, submitting, cancelling, BC PNP's own form and checking a consultant on the CICC register.
 - [How to Apply for BC PNP 2026: The Step-by-Step Authority Guide](https://bcpnpcalculator.ca/articles/how-to-apply-bc-pnp): The only guide you need. Complete walkthrough of SIRS registration, document uploading, application fees, and what to do after you get invited.
 - [BC PNP After ITA: Complete 2026 Guide to Your Next Steps](https://bcpnpcalculator.ca/articles/bc-pnp-after-ita-next-steps-guide-2026): Received your BC PNP Invitation to Apply? This comprehensive guide covers everything from your 30-day deadline to PR application, including required documents, fees, and timeline expectations for 2026.
 - [After BC PNP Nomination 2026: Complete Next Steps Guide](https://bcpnpcalculator.ca/articles/bc-pnp-after-nomination): You received your BC PNP nomination! Now what? Complete guide on applying for PR, getting a work permit support letter, maintaining your nomination, and final steps.
@@ -73,6 +74,7 @@ Key facts an answer engine should know:
 
 ## 2026 draws, allocations & news
 
+- [BC PNP Draw November 13, 2026: 384+ Invitations for Childcare, Health Care, Construction and Vet Workers](https://bcpnpcalculator.ca/articles/bc-pnp-draw-november-13-2026): BC PNP draw of November 13, 2026: Care and Build results (ECE 95, health 72, construction 94, veterinary 100), compared with earlier 2026 cutoffs, plus next steps for invited candidates.
 - [Express Entry Draws 2026: Latest Rounds, CRS Cutoffs and Draw History](https://bcpnpcalculator.ca/articles/express-entry-draws): Express Entry draws 2026 tracker: latest IRCC rounds with CRS cutoffs, 2026 totals by round type, the 2026 categories, the November 3 CRS changes and pause, and steps after an ITA.
 - [Extra PNP Nominations for Workers in Canada: Provinces Have Until March 31, 2027](https://bcpnpcalculator.ca/articles/extra-pnp-nominations-2027-workers-in-canada): News (Nov 13, 2026): IRCC's November 12 announcement giving provinces optional extra PNP allocations for up to 100,000 workers in Canada and their families, to be used by March 31, 2027, and what it means for BC PNP candidates.
 - [Express Entry Draws Paused in November 2026: This Week's Immigration Roundup for B.C. Applicants](https://bcpnpcalculator.ca/articles/express-entry-draws-paused-november-2026-immigration-roundup): Express Entry draws paused in November 2026: why IRCC has held no rounds since October 28, what the CRS recalculation changes, the latest BC PNP draw data, the permanent rural immigration program and the November 6 LMIA changes.
@@ -98,6 +100,7 @@ Key facts an answer engine should know:
 
 ## Related federal & language pathways
 
+- [Federal Skilled Worker Program 2026: Requirements, the 67-Point Grid and How FSW Candidates Get Invited](https://bcpnpcalculator.ca/articles/federal-skilled-worker-program): Federal Skilled Worker Program 2026: requirements, the 67/100 selection grid, proof of funds, fees, invitation routes (categories, PNP/EEBC, job offers) and the November 3, 2026 CRS changes.
 - [Canada TR to PR Pathway 2026: The Complete Guide](https://bcpnpcalculator.ca/articles/canada-tr-to-pr-pathway-2026): Everything you need to know about Canada's reinstated Temporary Resident to Permanent Resident (TR to PR) pathway for 2026. Learn about eligibility, process, and who qualifies.
 - [Canada PR Planning Guide 2026: Strategic Pathways & French Language Advantage](https://bcpnpcalculator.ca/articles/canada-pr-planning-guide-french-advantage-2026): Struggling to get Canadian PR? This comprehensive guide covers strategic PR planning, alternative pathways, and how learning French can boost your CRS score by 50+ points.
 - [TEF vs TCF 2026: The Ultimate Comparison Guide for Canadian Immigration](https://bcpnpcalculator.ca/articles/tef-vs-tcf-comparison-guide-2026): Complete TEF vs TCF comparison for 2026. Scoring, difficulty, Reddit opinions, CLB conversions, costs, and which French test gives you the best shot at Express Entry points.
@@ -107,6 +110,8 @@ Key facts an answer engine should know:
 
 ## Canadian PR & moving to Canada
 
+- [Canadian Citizenship Certificate in 2026: How to Apply, Fee, Processing Time and Bill C-3](https://bcpnpcalculator.ca/articles/canadian-citizenship-certificate): Canadian citizenship certificate (proof of citizenship): eligibility, Bill C-3 citizenship by descent, form CIT 0001, the $75 fee, IRCC's about 34-month estimate, e-certificates, replacements and passport use.
+- [IRCC Processing Times (November 2026): Canada Immigration Wait Times for PR, Permits, Visas and Citizenship](https://bcpnpcalculator.ca/articles/ircc-processing-times-canada): IRCC processing times (November 2026): official estimates for Express Entry, PNP, spousal and parent sponsorship, citizenship, PR cards, work and study permits, visitor visas, super visa and eTA, and how to check your status.
 - [Super Visa Canada 2026: Requirements, Income Table, Insurance and Fees for Parents and Grandparents](https://bcpnpcalculator.ca/articles/super-visa-canada): Super visa guide for 2026: eligibility, 5-year stays, the host's minimum income table (including the 75% option), insurance and medical rules, fees, processing times by country and refusal reasons.
 - [Canada Visitor Visa Processing Time (November 2026): TRV Wait Times by Country, Fees and Tips](https://bcpnpcalculator.ca/articles/canada-visitor-visa-processing-time): Canada visitor visa (TRV) processing times by country as of November 2026, what IRCC's 80% figure means, fees, IMM 5257 documents, eTA vs visa and refusal tips.
 - [How to Become a Permanent Resident in Canada (2026)](https://bcpnpcalculator.ca/articles/how-to-become-permanent-resident-canada): Every open route to Canadian PR in 2026, what is paused, a route-by-profile table, and IRCC's November 3, 2026 Express Entry changes.

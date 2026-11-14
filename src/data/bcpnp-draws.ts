@@ -3,8 +3,8 @@
 // after each draw; the draws page and draw tables read from it.
 // "<5" means WelcomeBC reported fewer than five invitations.
 
-export const DRAWS_LAST_UPDATED = "November 11, 2026";
-export const DRAWS_LAST_UPDATED_ISO = "2026-11-11";
+export const DRAWS_LAST_UPDATED = "November 14, 2026";
+export const DRAWS_LAST_UPDATED_ISO = "2026-11-14";
 
 export type Count = number | "<5";
 
@@ -18,6 +18,7 @@ export interface TargetedDraw {
 }
 
 export const targetedDraws2026: TargetedDraw[] = [
+  { date: "November 13, 2026", childcare: { score: 95, invites: 153 }, health: { score: 72, invites: 103 }, veterinary: { score: 100, invites: "<5" }, construction: { score: 94, invites: 128 } },
   { date: "October 8, 2026", childcare: { score: 99, invites: 86 }, health: { score: 76, invites: 82 }, veterinary: { score: 86, invites: "<5" }, construction: { score: 94, invites: 115 } },
   { date: "September 10, 2026", childcare: { score: 99, invites: 182 }, health: { score: 76, invites: 143 }, veterinary: { score: 90, invites: "<5" }, construction: { score: 94, invites: 104 } },
   { date: "August 6, 2026", childcare: { score: 102, invites: 183 }, health: { score: 84, invites: 124 }, veterinary: { score: 72, invites: 6 }, construction: { score: 88, invites: 187 } },

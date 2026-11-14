@@ -1,0 +1,349 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Federal Skilled Worker Program 2026: Requirements, the 67-Point Grid and How FSW Candidates Get Invited";
+const description = "Federal Skilled Worker Program in late 2026: minimum requirements, the FSW 67-point grid, proof of funds, fees, and what the November 3 CRS changes mean.";
+const canonical = "https://bcpnpcalculator.ca/articles/federal-skilled-worker-program";
+
+const faqs = [
+  {
+    q: "What are the Federal Skilled Worker Program requirements?",
+    a: "As of November 14, 2026, IRCC lists these minimums: at least one year of continuous, paid, skilled work (or 1,560 hours, counted at up to 30 hours a week) in one occupation in NOC TEER 0, 1, 2 or 3 within the last 10 years; CLB 7 in all four abilities in English or French; a Canadian credential or a completed foreign credential with an Educational Credential Assessment; proof of funds unless you are authorized to work in Canada and have a valid job offer; admissibility; and a plan to live outside Quebec. You must also score at least 67 out of 100 on the FSW selection grid.",
+  },
+  {
+    q: "How are the FSW 67 points calculated?",
+    a: "The FSW grid has six factors worth 100 points in total: language up to 28, education up to 25, skilled work experience up to 15, age up to 12, arranged employment in Canada up to 10, and adaptability up to 10. You need 67 or more to be eligible. For example, a 30-year-old with a master's degree, CLB 9 in every ability and three years of experience scores 24 + 23 + 11 + 12 = 70 before any adaptability points.",
+  },
+  {
+    q: "Is 67 points enough to get permanent residence through FSW?",
+    a: "No. The 67-point grid only decides whether you may enter the Express Entry pool as a federal skilled worker. Invitations are issued by Comprehensive Ranking System (CRS) score, which is a separate scale, revised on November 3, 2026. You still need a CRS score high enough for a round you are eligible for.",
+  },
+  {
+    q: "Can I apply for the Federal Skilled Worker Program without a job offer?",
+    a: "Yes. A job offer is not required for FSW. Without one you must show proof of funds, which as of November 14, 2026 is $15,263 for one person and $28,362 for a family of four (amounts IRCC updated on July 7, 2025). A qualifying job offer adds up to 10 FSW grid points and, since November 3, 2026, can add 50, 70 or 100 CRS points if it is in an eligible high-wage occupation.",
+  },
+  {
+    q: "Were there any Federal Skilled Worker draws in 2026?",
+    a: "IRCC held no FSW-only rounds and no general all-program rounds in 2026, according to its official rounds data as of November 14, 2026. FSW candidates could still be invited in category-based rounds they qualified for, such as French-language proficiency, healthcare and social services, trade or transport occupations, or in a Provincial Nominee Program round after getting a provincial nomination.",
+  },
+  {
+    q: "How much does it cost to apply for FSW?",
+    a: "IRCC's fee list, checked November 14, 2026, shows $1,590 for the principal applicant and $1,590 for a spouse or partner (each made up of a $990 processing fee and the $600 right of permanent residence fee), plus $270 per dependent child and $85 per person for biometrics. Language tests, an ECA, police certificates and the medical exam are paid separately to the providers.",
+  },
+  {
+    q: "What is the difference between FSW and the Canadian Experience Class?",
+    a: "FSW is for skilled workers whose experience can be gained anywhere in the world in the last 10 years, but it requires CLB 7, education with an ECA, a 67-point grid score and, usually, proof of funds. The Canadian Experience Class requires at least one year of skilled work in Canada in the last three years, has no education requirement, needs CLB 7 for TEER 0 or 1 jobs or CLB 5 for TEER 2 or 3 jobs, and does not require proof of funds.",
+  },
+  {
+    q: "How long does FSW processing take?",
+    a: "IRCC's service standard for FSW applications through Express Entry is 180 days for 80% of applications, measured from receipt of a complete application for permanent residence. That clock starts only after you are invited and submit. IRCC's processing time tool estimated about 7 months for FSW applications, with about 58,300 people waiting (data last updated October 9, 2026). Check the tool yourself before planning around a date.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="federal-skilled-worker-program" datePublished="2026-11-14" dateModified="2026-11-14" articleSection="Guide" keywords="federal skilled worker program, federal skilled worker, fsw canada, fswp, federal skilled worker program requirements, fsw 67 points" ogImage="/images/articles/federal-skilled-worker-program.png" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-emerald-100 text-emerald-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-emerald-200 shadow-sm">
+        Express Entry Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Federal Skilled Worker Program 2026: Requirements, the 67-Point Grid and How FSW Candidates Get Invited
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        The minimum rules, the six-factor points test, the money and fees, and an honest look at how federal skilled workers actually receive invitations after the November 3, 2026 CRS changes.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-14">November 14, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/federal-skilled-worker-program.png" width="1200" height="630" alt="A clipboard scorecard listing the six Federal Skilled Worker selection factors and their maximum points, totalling 100, beside a ring highlighting the 67-point pass mark."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-emerald-900 mb-2">Quick answer</p>
+      <p class="text-emerald-900">
+        The Federal Skilled Worker Program (FSWP) is one of the three programs you can qualify for through Express Entry. You need at least one year of continuous skilled work in NOC TEER 0 to 3 in the last 10 years, CLB 7 in English or French, education (with an ECA if it is foreign), usually proof of funds, and at least 67 out of 100 on the FSW selection grid. Meeting those rules only gets you into the pool: invitations go by CRS score, and in 2026 IRCC held no general all-program rounds, so most FSW candidates abroad need a category, a high-wage job offer or a provincial nomination to stand out.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-600 mb-2">67 / 100</div>
+        <div class="text-sm text-slate-600 font-medium">FSW selection grid pass mark</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-600 mb-2">$15,263</div>
+        <div class="text-sm text-slate-600 font-medium">Proof of funds for one person (as of November 14, 2026)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-600 mb-2">0</div>
+        <div class="text-sm text-slate-600 font-medium">General all-program Express Entry rounds in 2026</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#requirements" class="hover:underline">Federal Skilled Worker Program requirements</a></li>
+        <li><a href="#grid" class="hover:underline">The FSW 67-point selection grid</a></li>
+        <li><a href="#invitations" class="hover:underline">How FSW candidates get invited</a></li>
+        <li><a href="#crs-changes" class="hover:underline">The November 3, 2026 CRS changes and FSW candidates abroad</a></li>
+        <li><a href="#pnp" class="hover:underline">The provincial nominee route, including Express Entry BC</a></li>
+        <li><a href="#fees" class="hover:underline">Fees and processing time</a></li>
+        <li><a href="#cec" class="hover:underline">FSW vs the Canadian Experience Class</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        The Federal Skilled Worker Program is Canada's main permanent residence route for skilled workers who have built their careers outside the country. It is not a separate application system: you check that you are eligible as a federal skilled worker, create an Express Entry profile, and wait to be invited. That two-step structure is where most confusion comes from. Passing the FSW requirements, including the well-known 67-point test, makes you eligible. It does not rank you. This guide walks through both steps with figures checked against IRCC pages on November 14, 2026. It is general information, not legal advice.
+      </p>
+
+      <h2 id="requirements" class="text-3xl font-bold mt-12 mb-6">Federal Skilled Worker Program Requirements</h2>
+
+      <p>
+        IRCC's eligibility page for federal skilled workers, last modified November 3, 2026, sets out these minimum requirements. You must meet all of them before you can enter the pool under FSW.
+      </p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr><th class="px-4 py-3 text-left">Requirement</th><th class="px-4 py-3 text-left">What IRCC asks for</th></tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Skilled work experience</td><td class="px-4 py-3">At least 1 year of continuous paid work, or 1,560 hours in total, in one occupation (your primary occupation) in NOC TEER 0, 1, 2 or 3, within the last 10 years, in Canada or abroad. Hours over 30 a week don't count; volunteer work and unpaid internships don't count.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Language</td><td class="px-4 py-3">CLB 7 in all four abilities (reading, writing, listening, speaking) in English or French, on an approved test: CELPIP-General, IELTS General Training or PTE Core for English; TEF Canada or TCF Canada for French.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Education</td><td class="px-4 py-3">A Canadian secondary or post-secondary credential, or a completed foreign credential plus an Educational Credential Assessment (ECA) for immigration purposes.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Proof of funds</td><td class="px-4 py-3">Enough settlement money for you and your family, unless you are legally able to work in Canada and have a valid job offer.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Selection grid</td><td class="px-4 py-3">At least 67 out of 100 points on the six FSW selection factors.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Admissibility and destination</td><td class="px-4 py-3">You must be admissible to Canada and plan to live outside Quebec, which selects its own skilled workers.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Two details trip people up. First, your primary occupation does not have to be your most recent job, but the qualifying year must be in a single occupation and must match the NOC duties you claim. Second, paid work done while studying can count if it was continuous and meets the other rules. If your degree is from outside Canada, order the ECA early; our <a href="/articles/bc-pnp-eca-guide" class="text-blue-600 hover:text-blue-800 underline">ECA guide</a> explains the designated organizations and timelines.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Proof of funds as of November 14, 2026</h3>
+      <p>
+        The amounts below were updated by IRCC on July 7, 2025, and are still the figures on its proof-of-funds page, which was last modified October 16, 2026. IRCC normally updates the table once a year, so check it again before you submit.
+      </p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr><th class="px-4 py-3 text-left">Family members</th><th class="px-4 py-3 text-left">Funds required (CAD)</th></tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">1</td><td class="px-4 py-3">$15,263</td></tr>
+            <tr><td class="px-4 py-3">2</td><td class="px-4 py-3">$19,001</td></tr>
+            <tr><td class="px-4 py-3">3</td><td class="px-4 py-3">$23,360</td></tr>
+            <tr><td class="px-4 py-3">4</td><td class="px-4 py-3">$28,362</td></tr>
+            <tr><td class="px-4 py-3">5</td><td class="px-4 py-3">$32,168</td></tr>
+            <tr><td class="px-4 py-3">6</td><td class="px-4 py-3">$36,280</td></tr>
+            <tr><td class="px-4 py-3">7</td><td class="px-4 py-3">$40,392</td></tr>
+            <tr><td class="px-4 py-3">Each additional member</td><td class="px-4 py-3">$4,112</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Include your spouse or partner and dependent children in the family size even if they are not coming with you. If you are exempt because you are authorized to work in Canada and have a valid job offer, IRCC still asks you to upload a letter explaining the exemption.
+      </p>
+
+      <h2 id="grid" class="text-3xl font-bold mt-12 mb-6">The FSW 67-Point Selection Grid</h2>
+
+      <p>
+        The selection grid is the eligibility test that searches for "fsw 67 points" are about. IRCC's six selection factors page, last modified November 3, 2026, gives these maximums:
+      </p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr><th class="px-4 py-3 text-left">Factor</th><th class="px-4 py-3 text-left">Maximum</th><th class="px-4 py-3 text-left">How points are given</th></tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Language</td><td class="px-4 py-3">28</td><td class="px-4 py-3">First official language: 4 points per ability at CLB 7, 5 at CLB 8, 6 at CLB 9 or higher (up to 24). Second official language: 4 points for at least CLB 5 in all four abilities.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Education</td><td class="px-4 py-3">25</td><td class="px-4 py-3">Secondary 5; one-year post-secondary 15; two-year 19; three years or longer 21; two or more credentials (one of three years or longer) 22; master's or entry-to-practice professional degree 23; doctorate 25.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Skilled work experience</td><td class="px-4 py-3">15</td><td class="px-4 py-3">1 year 9; 2 to 3 years 11; 4 to 5 years 13; 6 years or more 15.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Age</td><td class="px-4 py-3">12</td><td class="px-4 py-3">18 to 35: 12, then one point less per year (36: 11 ... 46: 1); 47 or older: 0.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Arranged employment</td><td class="px-4 py-3">10</td><td class="px-4 py-3">A full-time, non-seasonal offer of at least one year from one Canadian employer in TEER 0 to 3. Since November 3, 2026, no LMIA is needed.</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Adaptability</td><td class="px-4 py-3">10</td><td class="px-4 py-3">Combined cap for you and your spouse or partner: your own year of skilled work in Canada (10), spouse's language at CLB 4 or higher, study in Canada by either of you, spouse's work in Canada, arranged employment, or an adult relative in Canada (5 each).</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Two worked examples</h3>
+      <p>
+        <strong>Passes:</strong> a 30-year-old engineer with a master's degree, CLB 9 in every English ability and three years of experience earns 24 (language) + 23 (education) + 11 (experience) + 12 (age) = 70. If her spouse has CLB 4 in English, adaptability adds 5, for 75.
+      </p>
+      <p>
+        <strong>Falls short:</strong> a 40-year-old accountant with a three-year bachelor's degree, CLB 7 in every ability and six years of experience earns 16 + 21 + 15 + 7 = 59. To reach 67 he would need eight more points: raising English to CLB 9 adds 8, a qualifying Canadian job offer adds 10 (plus up to 5 in adaptability, within the 10-point cap), and CLB 5 in French adds 4.
+      </p>
+      <p>
+        Language is usually the cheapest lever, because a retake can move several factors at once. Age points fall every year after 35, so if you are close to the line, timing matters.
+      </p>
+
+      <h2 id="invitations" class="text-3xl font-bold mt-12 mb-6">How FSW Candidates Get Invited</h2>
+
+      <p>
+        Once you are in the pool, the 67-point grid stops mattering. IRCC ranks every profile using the Comprehensive Ranking System (CRS) and invites candidates in rounds. Rounds come in three kinds: general rounds open to all three Express Entry programs, program-specific rounds (in 2026, Canadian Experience Class and Provincial Nominee Program rounds) and category-based rounds that target a skill or occupation group.
+      </p>
+      <p>
+        For federal skilled workers, the important fact is what did not happen. Based on IRCC's official rounds data as of November 14, 2026, there were <strong>no general all-program rounds in 2026</strong> and no rounds limited to FSW. The latest round in the data is round 453 on October 28, 2026, a transport occupations round that invited 150 candidates with a lowest score of 477. Category rounds like that one are open to FSW candidates who meet the category's experience rules, and so are French-language proficiency rounds, which have had the lowest cutoffs of any large round type this year. Our <a href="/articles/express-entry-draws" class="text-blue-600 hover:text-blue-800 underline">Express Entry draws tracker</a> counts 65 rounds and 149,409 invitations from January 5 to October 28, 2026, with CEC rounds cutting off between 507 and 523.
+      </p>
+      <p>
+        In practice, an FSW candidate abroad has four realistic ways to get an invitation in the current system:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Qualify for a category.</strong> Check whether you have at least 12 months of work in a listed occupation within the past three years, or CLB 7 in all four French abilities for the French category.</li>
+        <li><strong>Get a provincial nomination.</strong> A nomination adds 600 CRS points and moves you into Provincial Nominee Program rounds.</li>
+        <li><strong>Earn job offer points.</strong> Since November 3, 2026, a qualifying offer in a high-wage occupation can add 50 to 100 CRS points.</li>
+        <li><strong>Wait for a general round.</strong> IRCC can hold one at any time, but there is no schedule and none took place in 2026, so this is not a plan on its own.</li>
+      </ul>
+
+      <h2 id="crs-changes" class="text-3xl font-bold mt-12 mb-6">The November 3, 2026 CRS Changes and FSW Candidates Abroad</h2>
+
+      <p>
+        IRCC changed the CRS on November 3, 2026. Its Express Entry changes page and CRS criteria page describe a new <strong>Labour Market Integration factor</strong> worth up to 150 points without a spouse or partner, or 140 with one. You earn it through Canadian work experience or a qualifying job offer, never both:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Canadian work experience:</strong> up to 80 points for length of work (40 for one year, rising to 80 for five years or more, without a spouse) plus 70, 40 or 20 points for at least 12 months in a high-wage occupation, depending on how the occupation's median wage compares with the national benchmark (2, 1.5 or 1.3 times).</li>
+        <li><strong>Job offers:</strong> 100 points for an offer in an occupation at 2 times the benchmark, 70 at 1.5 times and 50 at 1.3 times. Offers in other occupations earn 0 CRS points. An LMIA is no longer required, and having one gives no extra points or priority.</li>
+      </ul>
+      <p>
+        For a federal skilled worker who has never worked in Canada, the effect is direct: without a high-wage job offer, the new factor adds nothing, while candidates with Canadian experience can earn up to 150. That widens the gap between candidates abroad and those already working in Canada. On the other hand, removing the LMIA requirement makes a genuine offer from a Canadian employer easier to use. Note that IRCC assesses FSW job offers for program eligibility separately from CRS points: an offer in any eligible TEER 0 to 3 job can still give you the 10 arranged employment points on the grid, even if it earns no CRS points.
+      </p>
+      <p>
+        IRCC said it would recalculate the scores of profiles already in the pool and pause rounds for up to two weeks while it did. As of November 14, 2026, no round after October 28 appears in IRCC's data. When rounds resume, cutoffs will be calculated on the new grid, so earlier cutoffs are history rather than targets.
+      </p>
+
+      <h2 id="pnp" class="text-3xl font-bold mt-12 mb-6">The Provincial Nominee Route, Including Express Entry BC</h2>
+
+      <p>
+        A provincial or territorial nomination is still worth 600 additional CRS points under the November 3 rules. In 2026, Provincial Nominee Program rounds had cutoffs from 697 to 805, which reflects those 600 points. Many provinces run Express Entry-linked streams; some select candidates directly from the federal pool, while others require a job offer or ties to the province.
+      </p>
+      <p>
+        In British Columbia, the BC PNP's Express Entry BC (EEBC) option sits inside the Skilled Worker and Health Authority streams. WelcomeBC says both streams require a full-time, indeterminate job offer from an eligible B.C. employer (or a B.C. health authority for the Health Authority stream), so EEBC is not a route for someone with no B.C. connection. If you do have an offer, you register with BC PNP, are scored on its own registration system, and, if nominated, receive the 600 points in your federal profile. Our <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="text-blue-600 hover:text-blue-800 underline">EEBC guide</a> covers the steps, and the <a href="/bc-pnp-calculator" class="text-emerald-700 underline font-semibold">BC PNP Calculator</a> estimates your provincial score. BC PNP and CRS scores measure different things; our <a href="/articles/bc-pnp-vs-crs-calculator" class="text-blue-600 hover:text-blue-800 underline">BC PNP vs CRS calculator comparison</a> explains when to use each. You can follow provincial invitation rounds on the <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a>.
+      </p>
+
+      <h2 id="fees" class="text-3xl font-bold mt-12 mb-6">Federal Skilled Worker Fees and Processing Time</h2>
+
+      <p>
+        IRCC's fee list (last modified November 10, 2026) shows these government fees for economic immigration, which includes FSW:
+      </p>
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr><th class="px-4 py-3 text-left">Item</th><th class="px-4 py-3 text-left">Fee (CAD, as of November 14, 2026)</th></tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3">Principal applicant (processing $990 + right of permanent residence $600)</td><td class="px-4 py-3">$1,590</td></tr>
+            <tr><td class="px-4 py-3">Spouse or common-law partner (same split)</td><td class="px-4 py-3">$1,590</td></tr>
+            <tr><td class="px-4 py-3">Each dependent child</td><td class="px-4 py-3">$270</td></tr>
+            <tr><td class="px-4 py-3">Biometrics, per person</td><td class="px-4 py-3">$85</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Creating an Express Entry profile is free; you pay only after an invitation, when you submit your application. Budget separately for language tests, the ECA, police certificates, translations and the immigration medical exam, whose prices are set by the providers. The right of permanent residence fee is refundable if you withdraw or are refused.
+      </p>
+      <p>
+        On timing, IRCC's published service standard for FSW applications through Express Entry is 180 days for 80% of complete applications, a standard last reviewed in February 2019. That covers only the stage after you submit. IRCC's processing time tool currently estimates about 7 months for FSW applications, with about 58,300 people waiting (figures last updated October 9, 2026; IRCC refreshes them monthly), so check it again before you plan around a date. Our guide to <a href="/articles/how-long-to-get-pr-in-canada" class="text-blue-600 hover:text-blue-800 underline">how long it takes to get PR in Canada</a> puts the whole journey in context.
+      </p>
+
+      <h2 id="cec" class="text-3xl font-bold mt-12 mb-6">FSW vs the Canadian Experience Class</h2>
+
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr><th class="px-4 py-3 text-left"></th><th class="px-4 py-3 text-left">Federal Skilled Worker</th><th class="px-4 py-3 text-left">Canadian Experience Class</th></tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Work experience</td><td class="px-4 py-3">1 year in TEER 0 to 3, last 10 years, anywhere</td><td class="px-4 py-3">1 year in TEER 0 to 3 in Canada, last 3 years</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Language</td><td class="px-4 py-3">CLB 7</td><td class="px-4 py-3">CLB 7 (TEER 0 or 1) or CLB 5 (TEER 2 or 3)</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Education</td><td class="px-4 py-3">Required (ECA for foreign credentials)</td><td class="px-4 py-3">Not required</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Points test</td><td class="px-4 py-3">67 / 100 grid</td><td class="px-4 py-3">None</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Proof of funds</td><td class="px-4 py-3">Yes, unless authorized to work with a valid offer</td><td class="px-4 py-3">No</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Own rounds in 2026</td><td class="px-4 py-3">None</td><td class="px-4 py-3">18 rounds, 57,750 invitations</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Many people in Canada qualify for both. In that case IRCC considers you for every program you are eligible for. If you are abroad, FSW is likely your only federal option unless you have skilled trade experience, so concentrate on what you can control: language scores, a full ECA, accurate NOC duties, and checking category and provincial options regularly.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/who-can-apply/federal-skilled-workers.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Federal Skilled Worker Program: who can apply, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/become-candidate/eligibility/federal-skilled-workers/six-selection-factors-federal-skilled-workers.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Federal Skilled Worker Program: six selection factors, IRCC</a></li>
+        <li><a href="https://laws-lois.justice.gc.ca/eng/regulations/SOR-2002-227/section-78.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Immigration and Refugee Protection Regulations, section 78 (education points)</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/proof-funds.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry proof of funds, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/language-test.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry language test requirements, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Changes to Express Entry, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Comprehensive Ranking System criteria, IRCC</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry rounds data (JSON), IRCC (round types and latest round, as of November 14, 2026)</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/who-can-apply/canadian-experience-class.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canadian Experience Class: who can apply, IRCC</a></li>
+        <li><a href="https://ircc.canada.ca/english/information/fees/fees.asp" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC fee list</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/service-declaration/service-standards.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRCC service standards</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Check processing times, IRCC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Skills Immigration (including Express Entry BC), WelcomeBC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 14, 2026. Proof-of-funds amounts, fees, CRS rules and round results change; confirm on IRCC's website before you apply.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/express-entry-draws" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Draw Tracker</div>
+          <div class="font-bold text-gray-900">Express Entry Draws 2026: Latest Rounds and CRS Cutoffs</div>
+        </a>
+        <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">BC PNP</div>
+          <div class="font-bold text-gray-900">Express Entry BC (EEBC) Guide</div>
+        </a>
+        <a href="/articles/bc-pnp-eca-guide" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-amber-600 font-bold mb-2">Documents</div>
+          <div class="font-bold text-gray-900">Education Credential Assessment (ECA) Guide</div>
+        </a>
+        <a href="/articles/bc-pnp-vs-crs-calculator" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-sky-600 font-bold mb-2">Scores</div>
+          <div class="font-bold text-gray-900">BC PNP vs CRS Calculator: Which One to Use</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

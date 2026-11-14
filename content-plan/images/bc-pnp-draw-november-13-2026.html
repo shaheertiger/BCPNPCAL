@@ -1,0 +1,109 @@
+<!doctype html>
+<!--
+  Article hero image template: 1200x630, rendered to PNG by
+    node scripts/render-article-image.cjs content-plan/images/<slug>.html
+
+  Copy this file to content-plan/images/<slug>.html and design it for the post:
+  - Change the eyebrow, headline and key figure to match the article. Every number must
+    appear in the article and be verified.
+  - Replace the illustration (<svg class="art">) with one drawn for this post: a bar
+    chart of real cutoffs, a timeline, a fee breakdown, a map pin, a document stack, a
+    route diagram. Keep it simple, flat and readable at thumbnail size.
+  - Pick an accent: --accent can be red (#dc2626), indigo (#4f46e5), emerald (#059669),
+    amber (#d97706) or sky (#0284c7). Rotate accents and layouts so posts don't look identical.
+  - Headline: 4-10 words, at most 3 lines. No tiny text: the minimum font size is 22px.
+  - Text must contrast clearly with the background (light text on --bg).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a;        /* slate-900 */
+    --panel: #1e293b;     /* slate-800 */
+    --ink: #f8fafc;       /* slate-50 */
+    --muted: #cbd5e1;     /* slate-300 */
+    --accent: #dc2626;    /* red-600 (brand) */
+    --accent-soft: rgba(220, 38, 38, 0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background:
+      radial-gradient(circle at 85% 20%, var(--accent-soft), transparent 45%),
+      linear-gradient(135deg, var(--bg) 0%, #111c33 100%);
+    color: var(--ink);
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 560px;
+    gap: 36px;
+    padding: 56px 60px;
+    position: relative;
+  }
+  body::before { /* subtle grid texture */
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .copy, .visual { position: relative; z-index: 1; }
+  .copy { display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow {
+    display: inline-flex; align-self: flex-start; gap: 10px; align-items: center;
+    background: var(--accent); color: #fff; font-weight: 800; font-size: 22px;
+    letter-spacing: .06em; text-transform: uppercase; padding: 10px 18px; border-radius: 999px;
+  }
+  h1 { font-size: 54px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 28px; }
+  .stat { display: flex; align-items: baseline; gap: 16px; margin-top: 24px; }
+  .stat b { font-size: 64px; font-weight: 800; color: #fff; }
+  .stat span { font-size: 24px; color: var(--muted); font-weight: 500; max-width: 340px; line-height: 1.3; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+  .visual {
+    background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 28px;
+    display: flex; align-items: center; justify-content: center; padding: 28px;
+  }
+  .art { width: 100%; height: 100%; }
+
+  .grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); grid-template-rows: 1fr 1fr; gap: 20px; }
+  .card { background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 24px; padding: 22px 24px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card.hl { border-color: rgba(220,38,38,.6); box-shadow: 0 0 0 1px rgba(220,38,38,.35) inset; }
+  .card .top { display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 700; color: var(--muted); }
+  .card .top svg { width: 40px; height: 40px; flex: none; }
+  .card .row { display: flex; align-items: center; gap: 14px; }
+  .card .now { font-size: 68px; font-weight: 800; line-height: 1; color: #fff; }
+  .card .chg { display: flex; flex-direction: column; gap: 4px; font-size: 22px; font-weight: 700; white-space: nowrap; }
+  .down { color: #fca5a5; } .up { color: #fde68a; } .flat { color: var(--muted); }
+  .card .was { font-size: 22px; color: var(--muted); font-weight: 500; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div>
+      <div class="eyebrow">BC PNP &middot; Nov 13, 2026</div>
+      <h1>Care and Build draw: new minimum scores</h1>
+      <div class="stat"><b>384+</b><span>invitations in four targeted categories</span></div>
+    </div>
+    <div class="brand"><i></i>bcpnpcalculator.ca</div>
+  </div>
+  <div class="grid">
+    <div class="card hl">
+      <div class="top"><svg viewBox="0 0 40 40"><circle cx="14" cy="11" r="6" fill="#dc2626"/><circle cx="28" cy="17" r="4.5" fill="#f87171"/><path d="M4 36c0-8 4.5-13 10-13s10 5 10 13z" fill="#dc2626"/><path d="M21 36c0-6 3-10 7-10s8 4 8 10z" fill="#f87171"/></svg>Childcare</div>
+      <div class="row"><div class="now">95</div><div class="chg down"><span>&#9660; 4 pts</span><span class="was">was 99</span></div></div>
+    </div>
+    <div class="card hl">
+      <div class="top"><svg viewBox="0 0 40 40"><rect x="4" y="4" width="32" height="32" rx="8" fill="#dc2626"/><path d="M17 10h6v7h7v6h-7v7h-6v-7h-7v-6h7z" fill="#fff"/></svg>Health care</div>
+      <div class="row"><div class="now">72</div><div class="chg down"><span>&#9660; 4 pts</span><span class="was">was 76</span></div></div>
+    </div>
+    <div class="card">
+      <div class="top"><svg viewBox="0 0 40 40"><path d="M6 26a14 14 0 0 1 28 0z" fill="#f87171"/><rect x="3" y="26" width="34" height="5" rx="2.5" fill="#dc2626"/><rect x="18" y="9" width="4" height="10" rx="2" fill="#fff"/></svg>Construction</div>
+      <div class="row"><div class="now">94</div><div class="chg flat"><span>&#9654; steady</span><span class="was">was 94</span></div></div>
+    </div>
+    <div class="card">
+      <div class="top"><svg viewBox="0 0 40 40"><ellipse cx="20" cy="27" rx="9" ry="8" fill="#dc2626"/><ellipse cx="9" cy="16" rx="4" ry="5" fill="#f87171"/><ellipse cx="16" cy="9" rx="4" ry="5" fill="#f87171"/><ellipse cx="24" cy="9" rx="4" ry="5" fill="#f87171"/><ellipse cx="31" cy="16" rx="4" ry="5" fill="#f87171"/></svg>Veterinary</div>
+      <div class="row"><div class="now">100</div><div class="chg up"><span>&#9650; 14 pts</span><span class="was">was 86</span></div></div>
+    </div>
+  </div>
+</body>
+</html>
