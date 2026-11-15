@@ -1,0 +1,346 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Bridging Open Work Permit (BOWP) 2026: Eligibility, Fees, Processing Time and the PNP Rule";
+const description = "Bridging open work permit (BOWP) guide for late 2026: who qualifies, the AOR requirement, the $255 fee, processing time, PNP nominee rules and family permits.";
+const canonical = "https://bcpnpcalculator.ca/articles/bridging-open-work-permit-bowp";
+
+const faqs = [
+  {
+    q: "Who is eligible for a bridging open work permit?",
+    a: "You must be in Canada, hold valid temporary resident status and a valid work permit (or be on maintained status after applying to extend it, or be eligible to restore your status within 90 days of your permit expiring), and have applied for permanent residence through an eligible program. IRCC's list covers Express Entry (Federal Skilled Worker, Canadian Experience Class and Federal Skilled Trades), the Provincial Nominee Program if the nomination has no employment restrictions, the Quebec skilled worker class, Quebec investors, the Agri-Food Pilot, the Home Child Care Provider and Home Support Worker pilots, and the older caregiver classes.",
+  },
+  {
+    q: "Is there still a 4-month rule for the BOWP?",
+    a: "IRCC's current BOWP eligibility page and its officer instructions do not set a window before your permit expires. They require a valid permit, maintained status or eligibility to restore status at the time you apply. You still have to wait until your PR application has reached the required stage, which for Express Entry is the completeness check and the acknowledgement of receipt letter.",
+  },
+  {
+    q: "How much does a bridging open work permit cost?",
+    a: "As of November 15, 2026, IRCC's fee list shows $155 for the work permit processing fee and $100 for the open work permit holder fee, so $255 in total. If you need to restore your status as a worker, the restoration fee of $246.25 is added. IRCC's instructions say that if your Express Entry PR application turns out to be incomplete, the $100 open work permit holder fee is refunded but the $155 processing fee is not.",
+  },
+  {
+    q: "How long does a BOWP take to process?",
+    a: "IRCC does not publish a separate figure for BOWPs; they are processed as work permit applications made from inside Canada. As of November 12, 2026, IRCC's posted processing time for a work permit extension inside Canada was 120 days. Its forward-looking estimate for a new extension application, last updated November 7, 2026, was 10 weeks, with about 187,900 people waiting. You can keep working under maintained status while you wait if you applied before your permit expired.",
+  },
+  {
+    q: "Can BC PNP nominees get a bridging open work permit?",
+    a: "Only if the nomination letter shows no employment restrictions. IRCC's instructions say a BOWP is not issued when the province has restricted employment; that applicant is instead considered for an employer-specific permit. The BC PNP offers nominees a Work Permit Support Letter for that purpose, and WelcomeBC says the work permit application must reach IRCC within three months of the nomination date.",
+  },
+  {
+    q: "Can my spouse work while I am on a BOWP?",
+    a: "Possibly. IRCC's family open work permit rules include a category for family members of a temporary worker whose permit was issued because they applied for economic class PR. The principal worker's permit must be valid for at least 6 months after IRCC receives the family member's application. Spouses or common-law partners and dependent children can qualify if they meet the general work permit requirements.",
+  },
+  {
+    q: "What happens to my BOWP if my PR application is refused?",
+    a: "IRCC's BOWP pages do not explain this, so treat any blanket answer as unconfirmed. A BOWP exists only because of a pending PR application, so a refusal usually means you need another basis to stay and work, such as an employer-specific permit or a new PR application. Get advice from a lawyer or licensed consultant (RCIC) as soon as you receive a refusal.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="bridging-open-work-permit-bowp" datePublished="2026-11-15" dateModified="2026-11-15" articleSection="Guide" keywords="bowp, bridging open work permit, bowp canada, bowp eligibility, bowp processing time, bowp pnp" title={title} description={description} canonical={canonical} ogImage="/images/articles/bridging-open-work-permit-bowp.png">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-sky-100 text-sky-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-sky-200 shadow-sm">
+        Work Permit Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Bridging Open Work Permit (BOWP) in 2026: Eligibility, Fees, Processing Time and the PNP Rule
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        How to keep working in Canada between the end of your current permit and a decision on your permanent residence application, checked against IRCC's pages in November 2026.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-15">November 15, 2026</time>
+        <span>&bull;</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/bridging-open-work-permit-bowp.png" width="1200" height="630" alt="Illustration of a bridge labelled BOWP spanning from the point where a current work permit expires to a permanent residence decision, with the $255 fee shown above."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-sky-50 border-l-4 border-sky-600 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-sky-900 mb-2">Quick answer</p>
+      <p class="text-sky-900">
+        A bridging open work permit (BOWP) lets a worker who is already in Canada keep working, for any employer, while IRCC decides their permanent residence application. You need valid status with a work permit (or maintained status, or eligibility to restore status), and a PR application that has reached the required stage: for Express Entry, a passed completeness check and an acknowledgement of receipt letter. Provincial nominees qualify only if their nomination has no employment restrictions. The fee is $255 ($155 + $100) as of November 15, 2026.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-sky-600 mb-2">$255</div>
+        <div class="text-sm text-slate-600 font-medium">$155 work permit fee + $100 open work permit holder fee</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-sky-600 mb-2">120 days</div>
+        <div class="text-sm text-slate-600 font-medium">Posted inside-Canada work permit extension time (IRCC, Nov 12, 2026)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-sky-600 mb-2">24 months</div>
+        <div class="text-sm text-slate-600 font-medium">Standard BOWP validity in IRCC's officer instructions</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#what" class="hover:underline">What a BOWP is for</a></li>
+        <li><a href="#eligibility" class="hover:underline">BOWP eligibility in late 2026</a></li>
+        <li><a href="#stage" class="hover:underline">When your PR application is far enough along</a></li>
+        <li><a href="#pnp" class="hover:underline">BOWP for PNP nominees, including the BC PNP</a></li>
+        <li><a href="#apply" class="hover:underline">How to apply online</a></li>
+        <li><a href="#fees" class="hover:underline">Fees and processing time</a></li>
+        <li><a href="#family" class="hover:underline">Spouses and children</a></li>
+        <li><a href="#risks" class="hover:underline">Maintained status, refusals and other risks</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        Permanent residence applications take months, and work permits do not always last that long. The bridging open work permit exists to close that gap. It is not a separate program you apply to from scratch: it is an open work permit that IRCC issues because you have already applied for PR, and it ends the uncertainty of watching your current permit's expiry date approach while your PR file sits in the queue.
+      </p>
+
+      <h2 id="what" class="text-3xl font-bold mt-12 mb-6">What the Bridging Open Work Permit Is For</h2>
+
+      <p>
+        IRCC describes the BOWP as a permit that lets you keep working while you wait for the results of your permanent residence application. Three features matter in practice:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>It is open.</strong> You can work for almost any employer in Canada, so you are no longer tied to the job on your old permit. (Provincial nominees are the main exception, covered below.)</li>
+        <li><strong>It is issued only inside Canada.</strong> IRCC's instructions say you must already be in Canada after being authorized to enter as a temporary resident, and that BOWP applications cannot be made at a port of entry.</li>
+        <li><strong>It is normally issued for 24 months.</strong> That is the standard validity in IRCC's officer instructions. Quebec skilled worker and Quebec investor applicants get 24 months or their passport validity, whichever is shorter, and extensions for them are generally 12 months at the officer's discretion.</li>
+      </ul>
+
+      <h2 id="eligibility" class="text-3xl font-bold mt-12 mb-6">BOWP Eligibility in Late 2026</h2>
+
+      <p>
+        IRCC's eligibility page (last updated March 30, 2026) lists three conditions. You must:
+      </p>
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Be in Canada.</strong></li>
+        <li><strong>Have one of these:</strong> valid temporary resident status and a valid work permit; maintained status and authorization to work because you applied to renew your work permit before it expired; or a work permit that expired in the last 90 days, plus eligibility to restore your status as a worker.</li>
+        <li><strong>Have applied to an eligible permanent residence program</strong> (table below).</li>
+      </ol>
+
+      <p>
+        <strong>About the "4-month rule":</strong> many older guides say you can only apply when your permit has four months or less left. IRCC's current BOWP eligibility page and the officer instructions we checked on November 15, 2026 do not set any such window. What they do require is valid status (or maintained or restorable status) on the day you apply, and a PR application at the right stage. Don't wait until the last week: if your permit expires before you can apply, your options shrink to restoration.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full text-left border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="p-3 border-b border-slate-200">PR program</th>
+              <th class="p-3 border-b border-slate-200">Stage you must reach before applying</th>
+              <th class="p-3 border-b border-slate-200">Document IRCC asks for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="p-3 border-b border-slate-200">Express Entry: Federal Skilled Worker, Canadian Experience Class, Federal Skilled Trades</td><td class="p-3 border-b border-slate-200">Electronic PR application passed the completeness check</td><td class="p-3 border-b border-slate-200">Acknowledgement of receipt (AOR) letter</td></tr>
+            <tr><td class="p-3 border-b border-slate-200">Provincial Nominee Program, Express Entry stream</td><td class="p-3 border-b border-slate-200">Completeness check passed; nomination has no employment restrictions</td><td class="p-3 border-b border-slate-200">AOR letter and nomination letter</td></tr>
+            <tr><td class="p-3 border-b border-slate-200">Provincial Nominee Program, base (paper or non-Express Entry) stream</td><td class="p-3 border-b border-slate-200">Positive eligibility assessment; nomination has no employment restrictions</td><td class="p-3 border-b border-slate-200">Nomination letter and AOR letter for the PR application</td></tr>
+            <tr><td class="p-3 border-b border-slate-200">Quebec skilled worker class</td><td class="p-3 border-b border-slate-200">Completeness check passed; CSQ valid when the PR application was submitted</td><td class="p-3 border-b border-slate-200">CSQ and the letter with your PR application number (starting with "E")</td></tr>
+            <tr><td class="p-3 border-b border-slate-200">Quebec investors</td><td class="p-3 border-b border-slate-200">Completeness check passed; CSQ valid at submission</td><td class="p-3 border-b border-slate-200">CSQ and the letter with your application number</td></tr>
+            <tr><td class="p-3 border-b border-slate-200">Agri-Food Pilot</td><td class="p-3 border-b border-slate-200">Positive eligibility assessment</td><td class="p-3 border-b border-slate-200">Approval in principle letter</td></tr>
+            <tr><td class="p-3 border-b border-slate-200">Home Child Care Provider and Home Support Worker pilots (2019 to 2024)</td><td class="p-3 border-b border-slate-200">Positive eligibility decision (approval in principle)</td><td class="p-3 border-b border-slate-200">Approval in principle letter</td></tr>
+            <tr><td class="p-3">Caring for children / caring for people with high medical needs classes</td><td class="p-3">Positive eligibility assessment (applications made before June 18, 2019)</td><td class="p-3">Approval in principle letter</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Programs that are <em>not</em> on IRCC's BOWP list include the Atlantic Immigration Program and the rural and francophone community pilots. Workers in those programs may still be able to get a work permit linked to their PR application through other measures, so check the program's own instructions rather than assuming a BOWP is available.
+      </p>
+
+      <p>
+        IRCC's instructions also exclude some people from a BOWP: people who are exempt from needing a work permit (other than those on maintained status), inadmissible people, and spouses and dependants listed on someone else's PR application. Family members are dealt with through a separate open work permit category.
+      </p>
+
+      <h2 id="stage" class="text-3xl font-bold mt-12 mb-6">When Your PR Application Is Far Enough Along</h2>
+
+      <p>
+        The most common reason a BOWP application is premature is that the PR application has not yet passed the completeness check. For Express Entry candidates, the order of events is:
+      </p>
+      <ol class="list-decimal pl-6 space-y-3">
+        <li>You receive an invitation to apply and submit your electronic PR application.</li>
+        <li>IRCC checks that the application is complete, the R10 completeness check in IRCC's terminology.</li>
+        <li>If it passes, IRCC issues an acknowledgement of receipt (AOR) letter in your account.</li>
+        <li>Only then can you apply for the BOWP, uploading the AOR letter.</li>
+      </ol>
+      <p>
+        If your work permit is about to expire and you are not yet eligible, IRCC's advice is not to let it lapse. Extend your current permit instead, which may mean your employer needs a new LMIA or job offer. If you are coming from the Canadian Experience Class route, our guide to the <a href="/articles/canadian-experience-class" class="text-sky-700 underline">Canadian Experience Class</a> explains the rest of that process, and <a href="/articles/how-long-to-get-pr-in-canada" class="text-sky-700 underline">how long it takes to get PR in Canada</a> covers what happens after the AOR.
+      </p>
+
+      <h2 id="pnp" class="text-3xl font-bold mt-12 mb-6">BOWP for PNP Nominees, Including the BC PNP</h2>
+
+      <p>
+        Provincial nominees face one extra test. IRCC's officer instructions say a BOWP is issued only if the nomination letter shows that employment is <strong>unrestricted</strong> and the applicant chose "open work permit." If the province restricted the nominee's employment, no BOWP is issued; the officer considers the applicant for an employer-specific permit under the provincial nominee exemption (code T13) instead. The instructions add that a province can name an employer or occupation in the letter and still state that there are no restrictions, in which case the nominee remains eligible.
+      </p>
+      <p>
+        For a PNP-based BOWP, the permit is also tied to the nominating province: officers enter that province as the destination.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">What this means for BC PNP nominees</h3>
+      <p>
+        Most BC PNP Skills Immigration nominees were nominated on the strength of a specific job offer. Read your nomination letter carefully: what decides BOWP eligibility is whether the letter states employment restrictions, not whether an employer is named. If your nomination is restricted, the B.C. route is an employer-specific permit supported by a BC PNP <strong>Work Permit Support Letter</strong>. WelcomeBC says you must apply to IRCC for that work permit within three months of your nomination date, and that you must submit your PR application before the expiry date on your confirmation of nomination.
+      </p>
+      <p>
+        If you entered through an Express Entry BC stream and later have an Express Entry PR application with an AOR, check how your nomination is worded before choosing between a BOWP and a support-letter permit. Our <a href="/articles/bc-pnp-work-permit-guide" class="text-sky-700 underline">BC PNP work permit guide</a> covers the support letter, PGWP expiry and the other permits B.C. candidates use while they wait. Not nominated yet? Estimate your registration score with the <a href="/bc-pnp-calculator" class="text-sky-700 underline font-semibold">BC PNP Calculator</a> and compare it with recent <a href="/bc-pnp-draws" class="text-sky-700 underline">BC PNP draw results</a>.
+      </p>
+
+      <h2 id="apply" class="text-3xl font-bold mt-12 mb-6">How to Apply for a BOWP Online</h2>
+
+      <p>
+        IRCC says to apply online in most cases; paper applications are allowed only if you have trouble applying online. The steps on IRCC's application page (last updated October 16, 2026) are:
+      </p>
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Gather your documents.</strong> The document checklist IRCC generates, plus the program-specific letter from the table above (AOR, nomination letter, CSQ or approval in principle letter).</li>
+        <li><strong>Start an application to extend or change the conditions of your work permit</strong> in your IRCC account.</li>
+        <li><strong>Choose "Open work permit"</strong> as the type of permit.</li>
+        <li><strong>Upload your AOR letter</strong> in the "Client information" field (Express Entry applicants).</li>
+        <li><strong>Pay both fees</strong>, the work permit processing fee and the open work permit holder fee, and submit.</li>
+      </ol>
+      <p>
+        One rule catches people out: IRCC says you must be in Canada with valid temporary resident status when it makes the decision on your BOWP, or the application may be refused. If your permit expires and you leave Canada while the application is pending, you cannot work until the new application is approved.
+      </p>
+
+      <h2 id="fees" class="text-3xl font-bold mt-12 mb-6">BOWP Fees and Processing Time</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full text-left border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="p-3 border-b border-slate-200">Fee (per person, as of November 15, 2026)</th>
+              <th class="p-3 border-b border-slate-200">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="p-3 border-b border-slate-200">Work permit processing fee (including extensions)</td><td class="p-3 border-b border-slate-200">$155</td></tr>
+            <tr><td class="p-3 border-b border-slate-200">Open work permit holder fee</td><td class="p-3 border-b border-slate-200">$100</td></tr>
+            <tr><td class="p-3 border-b border-slate-200"><strong>Typical BOWP total</strong></td><td class="p-3 border-b border-slate-200"><strong>$255</strong></td></tr>
+            <tr><td class="p-3">Restoration fee, only if your permit expired and you are restoring status</td><td class="p-3">$246.25 extra</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        If an Express Entry PR application is later found incomplete, IRCC's instructions say the $100 open work permit holder fee is refunded but the $155 processing fee is kept.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Processing time</h3>
+      <p>
+        IRCC does not publish a BOWP-specific processing time. A BOWP is a work permit application made from inside Canada, so the relevant figures are the ones for work permit extensions:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>120 days</strong>: the posted processing time for a work permit extension inside Canada, based on recent applications, as of November 12, 2026.</li>
+        <li><strong>10 weeks</strong>: IRCC's forward-looking estimate for a new work permit extension application, last updated November 7, 2026, when it counted about 187,900 people waiting.</li>
+      </ul>
+      <p>
+        The two figures measure different things, one looking back at finished files and one projecting the queue forward, so plan around the longer one. Our guide to <a href="/articles/ircc-processing-times-canada" class="text-sky-700 underline">IRCC processing times</a> explains how to read the tool for your own application.
+      </p>
+
+      <h2 id="family" class="text-3xl font-bold mt-12 mb-6">Spouses and Children of BOWP Holders</h2>
+
+      <p>
+        IRCC's officer instructions say spouses, common-law partners and dependent children may receive an open work permit (under exemption code C49) when the principal applicant got a BOWP. On IRCC's family open work permit page, this falls under the category for temporary workers who applied for economic class PR. As of the page's June 12, 2026 update, the principal worker must:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>hold a valid work permit, or have been approved for one;</li>
+        <li>have a permit valid for at least 6 months after IRCC receives the family member's application;</li>
+        <li>live and work in Canada, or plan to; and</li>
+        <li>hold that permit because they applied for an eligible economic class PR program, such as Express Entry, the PNP, the Atlantic Immigration Program or the Agri-Food Pilot.</li>
+      </ul>
+      <p>
+        Eligible family members are the spouse or common-law partner, dependent children of the worker or of the spouse, and dependent children of those dependent children. Each must meet the general work permit requirements and the minimum working age for the job and province. Because this category depends on the PR application, it is broader than the TEER-based spousal permit rules that have applied to other workers since January 21, 2025.
+      </p>
+
+      <h2 id="risks" class="text-3xl font-bold mt-12 mb-6">Maintained Status, Refusals and Other Risks</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Maintained status while you wait</h3>
+      <p>
+        If you apply for the BOWP before your current permit expires, you are on maintained status once the expiry date passes: you may stay and keep working under the conditions of your old permit until IRCC decides. If your permit already expired, you cannot work until the BOWP is approved, even if you apply for restoration within the 90-day window.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">If the BOWP is refused</h3>
+      <p>
+        If the BOWP is refused while you are on maintained status, you lose the right to keep working under your old permit. IRCC's eligibility rules allow restoration only within 90 days of a permit expiring, at the restoration fee plus the work permit fees, so act quickly. Common causes of refusal are applying before the completeness check, a PNP nomination with employment restrictions, and leaving Canada while the application is pending.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">If your PR application is refused</h3>
+      <p>
+        IRCC's BOWP pages do not say what happens to an existing BOWP when the PR application behind it is refused, so we have not stated a rule here. Since the permit's purpose is to bridge to a PR decision, plan for a refusal before it happens: know whether your employer could support an employer-specific permit, whether you could re-enter the Express Entry pool, or whether another provincial stream fits. If you receive a refusal, speak to a lawyer or a licensed consultant promptly.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">A short checklist before you apply</h3>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>Your status is valid today, and you will stay in Canada until the decision.</li>
+        <li>You have the AOR (Express Entry) or the eligibility or approval letter for your program.</li>
+        <li>PNP nominees: the nomination letter has no employment restrictions.</li>
+        <li>You selected "Open work permit" and paid both fees.</li>
+        <li>Family members' open work permit applications are planned around your permit's validity.</li>
+      </ul>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/need-permit/bowp.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Bridging open work permit: who can apply, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/pr-work-permits/bridging.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">How to apply for a bridging open work permit, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/temporary-residents/foreign-workers/provincial-nominees-permanent-resident-applicants/bridging-open-work-permits.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Bridging open work permits: program delivery instructions, IRCC</a></li>
+        <li><a href="https://ircc.canada.ca/english/information/fees/fees.asp" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Fee list, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Check processing times, IRCC</a> (data files data-ptime-non-country-en.json, updated November 12, 2026, and flpt-by-week-en.json, updated November 7, 2026)</li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/special-instructions/spouses-dependent-children/eligibility.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Open work permits for family members of foreign workers, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/restore.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Restore your status as a worker, IRCC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/nominees" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">For nominees (Work Permit Support Letter), WelcomeBC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 15, 2026. Fees and processing times change; confirm on IRCC and WelcomeBC before applying. This article is general information, not legal advice.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-work-permit-guide" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-sky-600 font-bold mb-2">Work Permits</div>
+          <div class="font-bold text-gray-900">BC PNP Work Permit Guide</div>
+        </a>
+        <a href="/articles/canadian-experience-class" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Express Entry</div>
+          <div class="font-bold text-gray-900">Canadian Experience Class</div>
+        </a>
+        <a href="/articles/ircc-processing-times-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Processing Times</div>
+          <div class="font-bold text-gray-900">IRCC Processing Times in Canada</div>
+        </a>
+        <a href="/articles/how-long-to-get-pr-in-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Permanent Residence</div>
+          <div class="font-bold text-gray-900">How Long Does It Take to Get PR in Canada?</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
