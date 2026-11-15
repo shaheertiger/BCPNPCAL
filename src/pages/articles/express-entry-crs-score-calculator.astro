@@ -1,0 +1,424 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Express Entry CRS Score Calculator: How to Work Out Your Points Under the November 2026 Rules";
+const description = "Calculate your Express Entry CRS score under the November 3, 2026 rules: every point table, the new Labour Market Integration factor and 3 worked examples.";
+const canonical = "https://bcpnpcalculator.ca/articles/express-entry-crs-score-calculator";
+
+const faqs = [
+  {
+    q: "How do I calculate my Express Entry CRS score?",
+    a: "Add four parts: core/human capital points (age, education, official languages and the Labour Market Integration factor), spouse or common-law partner points if your partner is coming with you, skill transferability points (up to 100), and additional points such as a provincial nomination (600), French skills, Canadian study or a sibling in Canada. The point values in this guide come from IRCC's CRS criteria page as updated on November 3, 2026. IRCC's own CRS calculator on canada.ca gives the official estimate.",
+  },
+  {
+    q: "What changed in the CRS on November 3, 2026?",
+    a: "IRCC changed how points are awarded for Canadian work experience and job offers and removed the Labour Market Impact Assessment requirement for Express Entry job offers. Canadian work experience now sits in a new Labour Market Integration factor that gives work-length points plus up to 70 points for at least 12 months in high-wage occupations, or up to 100 points for a job offer in a high-wage occupation, but not both. IRCC said recalculating existing profiles could take up to two weeks, with invitation rounds paused in the meantime.",
+  },
+  {
+    q: "Is the IRCC CRS calculator the same as the BC PNP calculator?",
+    a: "No. IRCC's calculator estimates your federal Comprehensive Ranking System score for Express Entry. The calculator on this site estimates your BC PNP Skills Immigration Registration System (SIRS) score, a separate provincial points system with different factors and a different scale. Many people need both, because a BC PNP nomination through an Express Entry-linked stream adds 600 CRS points.",
+  },
+  {
+    q: "How many CRS points is a job offer worth now?",
+    a: "Under the rules in force since November 3, 2026, a job offer earns CRS points only if it is in a high-wage occupation: 100 points at twice the median wage, 70 at 1.5 times and 50 at 1.3 times. A job that is not in a high-wage occupation earns 0 points. You get either these job offer points or your Canadian work experience points, not both.",
+  },
+  {
+    q: "Does my spouse lower my CRS score?",
+    a: "Applying with a spouse or partner lowers the maximums for your own core factors (for example 100 instead of 110 for age), but your partner can add up to 40 points for their education, language and Canadian work experience. If your partner is not coming to Canada, or is a Canadian citizen or permanent resident, you are scored as if you had no spouse.",
+  },
+  {
+    q: "What is a good CRS score?",
+    a: "There is no fixed passing mark. A good score is one at or above the cutoff of the draws you are eligible for. As of November 15, 2026, the latest rounds were held before the new rules took effect, for example a Provincial Nominee Program round on October 26, 2026 with a cutoff of 761 and a Transport occupations round on October 28 with a cutoff of 477, so future cutoffs may look different.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="express-entry-crs-score-calculator" datePublished="2026-11-15" dateModified="2026-11-15" articleSection="Guide" keywords="express entry score calculator, crs point calculator, ee calculator, crs calculator ircc, ircc score calculator, ircc crs calculator, crs score calculator" ogImage="/images/articles/express-entry-crs-score-calculator.png" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-amber-100 text-amber-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-amber-200 shadow-sm">
+        Express Entry Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Express Entry CRS Score Calculator: How to Work Out Your Points Under the November 2026 Rules
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        A step-by-step way to add up your Comprehensive Ranking System score with the point tables IRCC published on November 3, 2026, plus three worked examples you can check line by line.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-15">November 15, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/express-entry-crs-score-calculator.png" width="1200" height="630" alt="Illustration of a calculator next to a CRS score receipt that adds core points of 422, transferability points of 50 and additional points of 15 for a total of 487."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-amber-50 border-l-4 border-amber-500 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-amber-900 mb-2">Quick answer</p>
+      <p class="text-amber-900">
+        Your CRS score is the sum of four parts: core/human capital points (age, education, languages and, since November 3, 2026, a Labour Market Integration factor for Canadian work experience or a high-wage job offer), spouse points if your partner comes with you (up to 40), skill transferability points (up to 100) and additional points (a provincial nomination alone is worth 600). Use the tables below to estimate it, then confirm with IRCC's official CRS calculator on canada.ca before you rely on the number.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">570 / 530</div>
+        <div class="text-sm text-slate-600 font-medium">Core/human capital maximum, single / with a partner</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">100</div>
+        <div class="text-sm text-slate-600 font-medium">Points for a job offer at twice the median wage (new since Nov 3, 2026)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">600</div>
+        <div class="text-sm text-slate-600 font-medium">Additional points for a provincial or territorial nomination</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#changes" class="hover:underline">What changed on November 3, 2026</a></li>
+        <li><a href="#core" class="hover:underline">Step 1: Core/human capital points</a></li>
+        <li><a href="#lmi" class="hover:underline">Step 2: The Labour Market Integration factor</a></li>
+        <li><a href="#spouse" class="hover:underline">Step 3: Spouse or partner points</a></li>
+        <li><a href="#transferability" class="hover:underline">Step 4: Skill transferability</a></li>
+        <li><a href="#additional" class="hover:underline">Step 5: Additional points</a></li>
+        <li><a href="#examples" class="hover:underline">Three worked examples</a></li>
+        <li><a href="#cutoffs" class="hover:underline">Comparing your score with draw cutoffs</a></li>
+        <li><a href="#raise" class="hover:underline">Ways to raise your score</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        People search for an "Express Entry score calculator" or "IRCC CRS calculator" because the Comprehensive Ranking System decides who gets an invitation to apply for permanent residence. IRCC's own tool is the official way to estimate your score, but it shows you a number, not the reasoning. This guide walks through the same tables by hand, so you can see where your points come from and which changes would move them. Every point value below comes from IRCC's CRS criteria page, last modified November 3, 2026. This is general information, not legal advice.
+      </p>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 my-8 not-prose">
+        <p class="font-bold text-slate-900 mb-2">Looking for the BC PNP score instead?</p>
+        <p class="text-slate-700">
+          The <a href="/bc-pnp-calculator" class="text-amber-700 underline font-semibold">BC PNP Calculator</a> on this site estimates your BC PNP Skills Immigration Registration System (SIRS) score. That is a different, provincial points system, not the federal CRS. Our guide to the <a href="/articles/bc-pnp-vs-crs-calculator" class="text-amber-700 underline">BC PNP SIRS vs CRS calculators</a> explains how the two differ.
+        </p>
+      </div>
+
+      <h2 id="changes" class="text-3xl font-bold mt-12 mb-6">What Changed in the CRS on November 3, 2026</h2>
+      <p>
+        IRCC's criteria page says that as of November 3, 2026 it changed how points are awarded for Canadian work experience and valid job offers, and removed Labour Market Impact Assessment (LMIA) requirements for all Express Entry job offers. Canadian work experience is no longer a stand-alone core factor. It now sits inside a new <strong>Labour Market Integration factor</strong> together with points for high-wage work and high-wage job offers. IRCC also said the system is recalculating points in existing profiles, which could take up to two weeks, and that invitation rounds are paused during that time. If you used a CRS calculator before November 3, recalculate.
+      </p>
+      <p>
+        The page lists maximums for each part but does not state an overall maximum CRS score, so this guide doesn't either.
+      </p>
+
+      <h2 id="core" class="text-3xl font-bold mt-12 mb-6">Step 1: Core/Human Capital Points</h2>
+      <p>
+        Core points cover age, education, official languages and the Labour Market Integration factor. The maximum is 570 if you apply without a spouse or partner and 530 with one. You are scored as single if your partner is not coming with you to Canada, or is a Canadian citizen or permanent resident.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Age</h3>
+      <div class="overflow-x-auto not-prose my-6">
+        <table class="w-full text-sm border border-slate-200 rounded-xl">
+          <thead class="bg-amber-50 text-left"><tr><th class="p-3">Age</th><th class="p-3">With partner</th><th class="p-3">Single</th></tr></thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="p-3">18</td><td class="p-3">90</td><td class="p-3">99</td></tr>
+            <tr><td class="p-3">19</td><td class="p-3">95</td><td class="p-3">105</td></tr>
+            <tr><td class="p-3">20 to 29</td><td class="p-3">100</td><td class="p-3">110</td></tr>
+            <tr><td class="p-3">30</td><td class="p-3">95</td><td class="p-3">105</td></tr>
+            <tr><td class="p-3">31 / 32 / 33</td><td class="p-3">90 / 85 / 80</td><td class="p-3">99 / 94 / 88</td></tr>
+            <tr><td class="p-3">34 / 35 / 36</td><td class="p-3">75 / 70 / 65</td><td class="p-3">83 / 77 / 72</td></tr>
+            <tr><td class="p-3">37 / 38 / 39</td><td class="p-3">60 / 55 / 50</td><td class="p-3">66 / 61 / 55</td></tr>
+            <tr><td class="p-3">40 / 41 / 42</td><td class="p-3">45 / 35 / 25</td><td class="p-3">50 / 39 / 28</td></tr>
+            <tr><td class="p-3">43 / 44</td><td class="p-3">15 / 5</td><td class="p-3">17 / 6</td></tr>
+            <tr><td class="p-3">17 or younger, 45 or older</td><td class="p-3">0</td><td class="p-3">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Level of education</h3>
+      <div class="overflow-x-auto not-prose my-6">
+        <table class="w-full text-sm border border-slate-200 rounded-xl">
+          <thead class="bg-amber-50 text-left"><tr><th class="p-3">Highest credential</th><th class="p-3">With partner</th><th class="p-3">Single</th></tr></thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="p-3">Less than secondary school</td><td class="p-3">0</td><td class="p-3">0</td></tr>
+            <tr><td class="p-3">Secondary diploma</td><td class="p-3">28</td><td class="p-3">30</td></tr>
+            <tr><td class="p-3">One-year degree, diploma or certificate</td><td class="p-3">84</td><td class="p-3">90</td></tr>
+            <tr><td class="p-3">Two-year program</td><td class="p-3">91</td><td class="p-3">98</td></tr>
+            <tr><td class="p-3">Bachelor's or a program of three years or more</td><td class="p-3">112</td><td class="p-3">120</td></tr>
+            <tr><td class="p-3">Two or more credentials (one of three years or more)</td><td class="p-3">119</td><td class="p-3">128</td></tr>
+            <tr><td class="p-3">Master's or professional degree</td><td class="p-3">126</td><td class="p-3">135</td></tr>
+            <tr><td class="p-3">Doctoral degree (PhD)</td><td class="p-3">140</td><td class="p-3">150</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Foreign credentials need an Educational Credential Assessment to count.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Official languages</h3>
+      <p>
+        Your first official language is scored separately for each of the four abilities (reading, writing, listening, speaking), so multiply the per-ability figure by four if your results are even. Your second official language adds a few points per ability.
+      </p>
+      <div class="overflow-x-auto not-prose my-6">
+        <table class="w-full text-sm border border-slate-200 rounded-xl">
+          <thead class="bg-amber-50 text-left"><tr><th class="p-3">CLB level, per ability</th><th class="p-3">First language, with partner</th><th class="p-3">First language, single</th><th class="p-3">Second language (either)</th></tr></thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="p-3">Below CLB 4</td><td class="p-3">0</td><td class="p-3">0</td><td class="p-3">0</td></tr>
+            <tr><td class="p-3">CLB 4</td><td class="p-3">6</td><td class="p-3">6</td><td class="p-3">0</td></tr>
+            <tr><td class="p-3">CLB 5</td><td class="p-3">6</td><td class="p-3">6</td><td class="p-3">1</td></tr>
+            <tr><td class="p-3">CLB 6</td><td class="p-3">8</td><td class="p-3">9</td><td class="p-3">1</td></tr>
+            <tr><td class="p-3">CLB 7</td><td class="p-3">16</td><td class="p-3">17</td><td class="p-3">3</td></tr>
+            <tr><td class="p-3">CLB 8</td><td class="p-3">22</td><td class="p-3">23</td><td class="p-3">3</td></tr>
+            <tr><td class="p-3">CLB 9</td><td class="p-3">29</td><td class="p-3">31</td><td class="p-3">6</td></tr>
+            <tr><td class="p-3">CLB 10 or more</td><td class="p-3">32</td><td class="p-3">34</td><td class="p-3">6</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The second-language section is capped at 22 points with a partner and 24 single.
+      </p>
+
+      <h2 id="lmi" class="text-3xl font-bold mt-12 mb-6">Step 2: The Labour Market Integration Factor</h2>
+      <p>
+        This is the new part of every CRS calculation. IRCC gives points for <strong>either</strong> Canadian work experience (work-length points plus high-wage occupation points) <strong>or</strong> a high-wage job offer, but not both. Work out both routes and keep the higher one. The factor is worth up to 150 points single (80 for length plus 70 for high-wage work) and 140 with a partner (70 plus 70). IRCC defines Canadian work experience as working for a Canadian employer in Canada; remote work counts if you were physically in Canada.
+      </p>
+      <div class="overflow-x-auto not-prose my-6">
+        <table class="w-full text-sm border border-slate-200 rounded-xl">
+          <thead class="bg-amber-50 text-left"><tr><th class="p-3">Route A: Canadian work experience</th><th class="p-3">With partner</th><th class="p-3">Single</th></tr></thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="p-3">Less than 1 year</td><td class="p-3">0</td><td class="p-3">0</td></tr>
+            <tr><td class="p-3">1 year</td><td class="p-3">35</td><td class="p-3">40</td></tr>
+            <tr><td class="p-3">2 years</td><td class="p-3">46</td><td class="p-3">53</td></tr>
+            <tr><td class="p-3">3 years</td><td class="p-3">56</td><td class="p-3">64</td></tr>
+            <tr><td class="p-3">4 years</td><td class="p-3">63</td><td class="p-3">72</td></tr>
+            <tr><td class="p-3">5 years or more</td><td class="p-3">70</td><td class="p-3">80</td></tr>
+            <tr class="bg-slate-50"><td class="p-3" colspan="3"><strong>Plus high-wage occupation points (same for both):</strong></td></tr>
+            <tr><td class="p-3">12+ months in occupations at 2x the median wage</td><td class="p-3" colspan="2">70</td></tr>
+            <tr><td class="p-3">Otherwise, 12+ months combined at 1.5x the median wage</td><td class="p-3" colspan="2">40</td></tr>
+            <tr><td class="p-3">Otherwise, 12+ months combined at 1.3x the median wage</td><td class="p-3" colspan="2">20</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="overflow-x-auto not-prose my-6">
+        <table class="w-full text-sm border border-slate-200 rounded-xl">
+          <thead class="bg-amber-50 text-left"><tr><th class="p-3">Route B: High-wage job offer</th><th class="p-3">Points (with partner or single)</th></tr></thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="p-3">Job in a high-wage occupation at 2x the median wage</td><td class="p-3">100</td></tr>
+            <tr><td class="p-3">At 1.5x the median wage</td><td class="p-3">70</td></tr>
+            <tr><td class="p-3">At 1.3x the median wage</td><td class="p-3">50</td></tr>
+            <tr><td class="p-3">Job not in a high-wage occupation</td><td class="p-3">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Two practical points. First, a job offer outside a high-wage occupation earns no CRS points, although IRCC says such an offer can still be used to meet program eligibility. Second, the criteria page does not explain how "median wage" is measured, so check which occupations count on IRCC's Express Entry pages or with IRCC's calculator rather than guessing from your own salary.
+      </p>
+
+      <h2 id="spouse" class="text-3xl font-bold mt-12 mb-6">Step 3: Spouse or Common-Law Partner Points</h2>
+      <p>
+        If your partner is coming with you, they can add up to 40 points.
+      </p>
+      <div class="overflow-x-auto not-prose my-6">
+        <table class="w-full text-sm border border-slate-200 rounded-xl">
+          <thead class="bg-amber-50 text-left"><tr><th class="p-3">Partner factor</th><th class="p-3">Points</th><th class="p-3">Maximum</th></tr></thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="p-3">Education: secondary 2, one-year 6, two-year 7, bachelor's 8, two or more credentials 9, master's/professional/PhD 10</td><td class="p-3">0 to 10</td><td class="p-3">10</td></tr>
+            <tr><td class="p-3">First official language, per ability: CLB 5-6 = 1, CLB 7-8 = 3, CLB 9+ = 5</td><td class="p-3">0 to 5 each</td><td class="p-3">20</td></tr>
+            <tr><td class="p-3">Canadian work experience: 1 year 5, 2 years 7, 3 years 8, 4 years 9, 5+ years 10</td><td class="p-3">0 to 10</td><td class="p-3">10</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="transferability" class="text-3xl font-bold mt-12 mb-6">Step 4: Skill Transferability (Maximum 100)</h2>
+      <p>
+        Skill transferability rewards combinations. There are three groups, each capped at 50, and the whole section is capped at 100.
+      </p>
+      <div class="overflow-x-auto not-prose my-6">
+        <table class="w-full text-sm border border-slate-200 rounded-xl">
+          <thead class="bg-amber-50 text-left"><tr><th class="p-3">Combination</th><th class="p-3">Lower column</th><th class="p-3">Higher column</th></tr></thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="p-3"><strong>Education + language</strong>: one post-secondary credential of 1+ years / two or more credentials (one 3+ years), master's, professional or PhD</td><td class="p-3">CLB 7+ all, one under 9: 13 / 25</td><td class="p-3">CLB 9+ all four: 25 / 50</td></tr>
+            <tr><td class="p-3"><strong>Education + Canadian work experience</strong>: same credential rows</td><td class="p-3">1 year: 13 / 25</td><td class="p-3">2+ years: 25 / 50</td></tr>
+            <tr><td class="p-3"><strong>Foreign work experience + language</strong>: 1-2 years / 3+ years</td><td class="p-3">CLB 7+ all, one under 9: 13 / 25</td><td class="p-3">CLB 9+ all four: 25 / 50</td></tr>
+            <tr><td class="p-3"><strong>Foreign work experience + Canadian work experience</strong>: 1-2 years / 3+ years</td><td class="p-3">1 year Canadian: 13 / 25</td><td class="p-3">2+ years Canadian: 25 / 50</td></tr>
+            <tr><td class="p-3"><strong>Certificate of qualification</strong> (trades) + language</td><td class="p-3">CLB 5+ all, one under 7: 25</td><td class="p-3">CLB 7+ all four: 50</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        In practice, the two education combinations add together but cannot exceed 50, and the same goes for the two foreign-experience combinations. Secondary school or less, and no foreign experience, score 0 in these tables.
+      </p>
+
+      <h2 id="additional" class="text-3xl font-bold mt-12 mb-6">Step 5: Additional Points</h2>
+      <div class="overflow-x-auto not-prose my-6">
+        <table class="w-full text-sm border border-slate-200 rounded-xl">
+          <thead class="bg-amber-50 text-left"><tr><th class="p-3">Factor</th><th class="p-3">Points</th></tr></thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="p-3">Brother or sister living in Canada (18+, citizen or permanent resident)</td><td class="p-3">15</td></tr>
+            <tr><td class="p-3">NCLC 7+ in all four French skills and CLB 4 or lower in English (or no English test)</td><td class="p-3">25</td></tr>
+            <tr><td class="p-3">NCLC 7+ in all four French skills and CLB 5+ in all four English skills</td><td class="p-3">50</td></tr>
+            <tr><td class="p-3">Canadian post-secondary credential of one or two years</td><td class="p-3">15</td></tr>
+            <tr><td class="p-3">Canadian post-secondary credential of three years or longer</td><td class="p-3">30</td></tr>
+            <tr><td class="p-3">Provincial or territorial nomination</td><td class="p-3">600</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The current criteria page awards these points by program length only: 15 for a Canadian post-secondary credential of one or two years and 30 for a credential of three years or longer. A one- or two-year master's degree therefore falls in the 15-point tier as the page is written today. If your situation is unusual, confirm with IRCC's own calculator.
+      </p>
+
+      <h2 id="examples" class="text-3xl font-bold mt-12 mb-6">Three Worked Examples</h2>
+      <p>
+        These profiles are illustrations, not predictions. Each line uses the tables above.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Example 1: Single, 29, Canadian master's, CLB 9, Canadian Experience Class</h3>
+      <p>
+        Priya is 29, single, has a two-year Canadian master's degree, CLB 9 in all four English abilities and two years of Canadian work experience in an occupation that is not high-wage. She qualifies under the <a href="/articles/canadian-experience-class" class="text-blue-600 hover:text-blue-800 underline">Canadian Experience Class</a> and has no job offer.
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Age 29: 110</li>
+        <li>Master's degree: 135</li>
+        <li>First language, CLB 9 x 4 abilities: 31 x 4 = 124</li>
+        <li>Labour Market Integration, 2 years, no high-wage points: 53</li>
+        <li><strong>Core subtotal: 110 + 135 + 124 + 53 = 422</strong></li>
+        <li>Skill transferability: education + language (master's, CLB 9+) = 50; education + Canadian experience (2 years) = 50; group capped at 50. No foreign experience. <strong>Subtotal: 50</strong></li>
+        <li>Additional: Canadian post-secondary credential of two years = 15</li>
+        <li><strong>Total: 422 + 50 + 15 = 487</strong></li>
+      </ul>
+      <p>
+        If her two years had included at least 12 months in occupations at 1.5 times the median wage, she would add 40 high-wage points, for 527.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Example 2: A couple applying from abroad</h3>
+      <p>
+        Daniel is 34 with a bachelor's degree (assessed by an ECA), CLB 8 in all four abilities and four years of foreign work experience. His wife Ana, who is coming with him, has a bachelor's, CLB 7 in all four abilities and no Canadian experience. Neither has worked in Canada. They would typically apply through the <a href="/articles/federal-skilled-worker-program" class="text-blue-600 hover:text-blue-800 underline">Federal Skilled Worker Program</a>.
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Age 34, with partner: 75</li>
+        <li>Bachelor's, with partner: 112</li>
+        <li>First language, CLB 8 x 4: 22 x 4 = 88</li>
+        <li>Labour Market Integration: 0</li>
+        <li><strong>Core subtotal: 75 + 112 + 88 = 275</strong></li>
+        <li>Spouse: education 8 + language 3 x 4 = 12 + Canadian experience 0. <strong>Subtotal: 20</strong></li>
+        <li>Skill transferability: education + language (one credential, CLB 7-8) = 13; foreign experience 3+ years + language (CLB 7-8) = 25. <strong>Subtotal: 38</strong></li>
+        <li>Additional: 0</li>
+        <li><strong>Total: 275 + 20 + 38 = 333</strong></li>
+      </ul>
+      <p>
+        A job offer in a high-wage occupation at 1.5 times the median wage would add 70 points through Route B, for 403. Raising Daniel's test results to CLB 9 in every ability would add 7 points per ability (28 in core) and lift both transferability scores into the higher column.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Example 3: A provincial nominee</h3>
+      <p>
+        Wei is 38, single, has a two-year diploma (with an ECA), CLB 7 in all four abilities, one year of Canadian work experience in an occupation that is not high-wage and three years of foreign work experience. He receives a nomination through a provincial stream aligned with Express Entry.
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Age 38: 61</li>
+        <li>Two-year program: 98</li>
+        <li>First language, CLB 7 x 4: 17 x 4 = 68</li>
+        <li>Labour Market Integration, 1 year: 40</li>
+        <li><strong>Core subtotal: 61 + 98 + 68 + 40 = 267</strong></li>
+        <li>Skill transferability: education + language 13, education + Canadian experience 13 (education group 26); foreign experience + language 25, foreign + Canadian experience 25 (foreign group 50, at the cap). <strong>Subtotal: 76</strong></li>
+        <li>Additional: provincial nomination = 600</li>
+        <li><strong>Total: 267 + 76 + 600 = 943</strong> (343 without the nomination)</li>
+      </ul>
+      <p>
+        This is why provincial programs matter so much. In B.C., the Express Entry-linked route is covered in our <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="text-blue-600 hover:text-blue-800 underline">EEBC guide</a>, and you can estimate your provincial registration score with the <a href="/bc-pnp-calculator" class="text-amber-700 underline font-semibold">BC PNP Calculator</a> and follow results on the <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a>.
+      </p>
+
+      <h2 id="cutoffs" class="text-3xl font-bold mt-12 mb-6">How to Compare Your Score With Recent Cutoffs</h2>
+      <p>
+        A CRS score only means something next to the cutoffs for the draws you can enter. As of November 15, 2026, IRCC's rounds data shows the last three rounds as:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>October 26, 2026: Provincial Nominee Program, 792 invitations, cutoff 761</li>
+        <li>October 27, 2026: French-language proficiency, 5,000 invitations, cutoff 407</li>
+        <li>October 28, 2026: Transport occupations, 150 invitations, cutoff 477</li>
+      </ul>
+      <p>
+        All three were held under the old rules. Because IRCC moved points around on November 3, scores and cutoffs from before that date are not directly comparable with new ones. Compare yourself with the draw types you qualify for (program-based, category-based or provincial) once rounds resume, and watch the trend over several draws rather than one. Our <a href="/articles/express-entry-draws" class="text-blue-600 hover:text-blue-800 underline">Express Entry draws tracker</a> lists recent rounds by type.
+      </p>
+
+      <h2 id="raise" class="text-3xl font-bold mt-12 mb-6">Ways to Raise Your CRS Score</h2>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Retake your language test.</strong> Moving from CLB 8 to CLB 9 adds 8 points per ability when single (23 to 31) and unlocks the higher skill transferability column.</li>
+        <li><strong>Add French.</strong> NCLC 7 in all four French skills with CLB 5+ in English is worth 50 additional points, plus second-language core points.</li>
+        <li><strong>Keep working in Canada.</strong> Each extra year raises Labour Market Integration points (40, 53, 64, 72, 80 when single), and 12+ months in high-wage occupations can add 20, 40 or 70.</li>
+        <li><strong>Compare your job offer route.</strong> A high-wage job offer can earn up to 100, but only replaces your work experience points if it is higher.</li>
+        <li><strong>Get every credential assessed.</strong> A second credential or a master's moves you up the education table.</li>
+        <li><strong>Count your partner correctly.</strong> A partner's language test and education can add up to 40; if they are not coming, you are scored as single.</li>
+        <li><strong>Declare a sibling.</strong> A brother or sister in Canada who is 18+ and a citizen or permanent resident adds 15.</li>
+        <li><strong>Seek a provincial nomination.</strong> It adds 600 points.</li>
+      </ul>
+      <p>
+        Update your <a href="/articles/express-entry-profile" class="text-blue-600 hover:text-blue-800 underline">Express Entry profile</a> whenever something changes, such as a new test result, another year of work or a job offer. IRCC's criteria page specifically asks candidates with a valid job offer that is missing from their profile to update it.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Use IRCC's Official CRS Calculator</h2>
+      <p>
+        IRCC hosts its CRS calculator on the canada.ca "Check your score" page (linked in the sources below), which was updated for the November 3 changes. Use it to confirm your manual total. Your actual score is the one shown in your Express Entry profile, based on the documents you can prove, so a calculator estimate is only as good as the information you enter.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Comprehensive Ranking System (CRS) criteria, IRCC (modified November 3, 2026)</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Check your score: CRS calculator, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry rounds of invitations, IRCC</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry rounds data file, IRCC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Point values as published by IRCC on November 3, 2026; draw data as of November 15, 2026. Program rules change; confirm on canada.ca before you rely on any score.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/express-entry-draws" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-amber-600 font-bold mb-2">Draws</div>
+          <div class="font-bold text-gray-900">Express Entry Draws: Latest Rounds and CRS Cutoffs</div>
+        </a>
+        <a href="/articles/canadian-experience-class" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Programs</div>
+          <div class="font-bold text-gray-900">Canadian Experience Class</div>
+        </a>
+        <a href="/articles/express-entry-profile" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">How-To</div>
+          <div class="font-bold text-gray-900">How to Create Your Express Entry Profile</div>
+        </a>
+        <a href="/articles/bc-pnp-vs-crs-calculator" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-red-600 font-bold mb-2">Calculators</div>
+          <div class="font-bold text-gray-900">BC PNP SIRS vs CRS Calculator</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

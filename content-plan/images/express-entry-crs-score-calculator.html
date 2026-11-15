@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --ink: #f8fafc; --muted: #cbd5e1;
+    --accent: #d97706; --accent-soft: rgba(217, 119, 6, 0.20);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background: radial-gradient(circle at 12% 85%, var(--accent-soft), transparent 45%),
+                linear-gradient(135deg, var(--bg) 0%, #111c33 100%);
+    color: var(--ink);
+    display: grid; grid-template-columns: 1fr 520px; gap: 40px;
+    padding: 60px 64px 56px 72px; position: relative;
+  }
+  body::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,.07) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+  }
+  .copy, .visual { position: relative; z-index: 1; }
+  .copy { display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow {
+    display: inline-flex; align-self: flex-start; background: var(--accent); color: #fff;
+    font-weight: 800; font-size: 22px; letter-spacing: .06em; text-transform: uppercase;
+    padding: 10px 18px; border-radius: 999px;
+  }
+  h1 { font-size: 56px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 28px; }
+  h1 em { font-style: normal; color: #fbbf24; }
+  .sub { font-size: 26px; color: var(--muted); margin-top: 22px; line-height: 1.35; font-weight: 500; max-width: 520px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+  .visual { display: flex; align-items: center; justify-content: center; }
+  svg { width: 520px; height: 514px; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div>
+      <div class="eyebrow">Express Entry · CRS</div>
+      <h1>Work out your <em>CRS score</em> under the new rules</h1>
+      <div class="sub">Point tables in force since November 3, 2026, step by step</div>
+    </div>
+    <div class="brand"><i></i>bcpnpcalculator.ca</div>
+  </div>
+
+  <div class="visual">
+    <svg viewBox="0 0 520 514" role="img" aria-label="Calculator and score receipt">
+      <g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif">
+        <!-- calculator body (behind) -->
+        <rect x="4" y="80" width="186" height="350" rx="26" fill="#334155" stroke="#475569" stroke-width="2"/>
+        <rect x="20" y="100" width="154" height="70" rx="12" fill="#0b1220"/>
+        <text x="160" y="149" text-anchor="end" font-size="40" font-weight="800" fill="#fbbf24">487</text>
+        <g fill="#475569">
+          <rect x="20" y="188" width="44" height="46" rx="10"/><rect x="75" y="188" width="44" height="46" rx="10"/><rect x="130" y="188" width="44" height="46" rx="10" fill="#d97706"/>
+          <rect x="20" y="246" width="44" height="46" rx="10"/><rect x="75" y="246" width="44" height="46" rx="10"/><rect x="130" y="246" width="44" height="46" rx="10" fill="#d97706"/>
+          <rect x="20" y="304" width="44" height="46" rx="10"/><rect x="75" y="304" width="44" height="46" rx="10"/><rect x="130" y="304" width="44" height="46" rx="10" fill="#d97706"/>
+          <rect x="20" y="362" width="99" height="46" rx="10"/><rect x="130" y="362" width="44" height="46" rx="10" fill="#fbbf24"/>
+        </g>
+        <g font-size="26" font-weight="800" fill="#f8fafc" text-anchor="middle">
+          <text x="152" y="220">+</text><text x="152" y="278">&#8722;</text><text x="152" y="336">&#215;</text><text x="152" y="394" fill="#0f172a">=</text>
+        </g>
+        <!-- receipt (front) -->
+        <path d="M200 30 H504 V470 l-19 14 -19 -14 -19 14 -19 -14 -19 14 -19 -14 -19 14 -19 -14 -19 14 -19 -14 -19 14 -19 -14 -19 14 -19 -14 -19 14 -19 -14 Z"
+              fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+        <text x="352" y="82" text-anchor="middle" font-size="26" font-weight="800" fill="#0f172a">CRS BREAKDOWN</text>
+        <line x1="224" y1="102" x2="480" y2="102" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
+        <g font-size="26" font-weight="700" fill="#334155">
+          <text x="226" y="150">Core</text><text x="478" y="150" text-anchor="end" fill="#0f172a">422</text>
+          <text x="226" y="200">Transfer</text><text x="478" y="200" text-anchor="end" fill="#0f172a">50</text>
+          <text x="226" y="250">Additional</text><text x="478" y="250" text-anchor="end" fill="#0f172a">15</text>
+        </g>
+        <line x1="224" y1="278" x2="480" y2="278" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
+        <rect x="222" y="296" width="260" height="70" rx="14" fill="#d97706"/>
+        <text x="240" y="342" font-size="28" font-weight="800" fill="#fff">TOTAL</text>
+        <text x="466" y="344" text-anchor="end" font-size="36" font-weight="800" fill="#fff">487</text>
+        <text x="352" y="418" text-anchor="middle" font-size="22" font-weight="700" fill="#64748b">Example 1, age 29</text>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>

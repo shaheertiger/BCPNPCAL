@@ -1,0 +1,122 @@
+<!doctype html>
+<!--
+  Article hero image template: 1200x630, rendered to PNG by
+    node scripts/render-article-image.cjs content-plan/images/<slug>.html
+
+  Copy this file to content-plan/images/<slug>.html and design it for the post:
+  - Change the eyebrow, headline and key figure to match the article. Every number must
+    appear in the article and be verified.
+  - Replace the illustration (<svg class="art">) with one drawn for this post: a bar
+    chart of real cutoffs, a timeline, a fee breakdown, a map pin, a document stack, a
+    route diagram. Keep it simple, flat and readable at thumbnail size.
+  - Pick an accent: --accent can be red (#dc2626), indigo (#4f46e5), emerald (#059669),
+    amber (#d97706) or sky (#0284c7). Rotate accents and layouts so posts don't look identical.
+  - Headline: 4-10 words, at most 3 lines. No tiny text: the minimum font size is 22px.
+  - Text must contrast clearly with the background (light text on --bg).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a;        /* slate-900 */
+    --panel: #1e293b;     /* slate-800 */
+    --ink: #f8fafc;       /* slate-50 */
+    --muted: #cbd5e1;     /* slate-300 */
+    --accent: #4f46e5;    /* indigo-600 */
+    --accent-soft: rgba(99, 102, 241, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background:
+      radial-gradient(circle at 85% 20%, var(--accent-soft), transparent 45%),
+      linear-gradient(135deg, var(--bg) 0%, #111c33 100%);
+    color: var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 470px;
+    gap: 40px;
+    padding: 64px 72px;
+    position: relative;
+  }
+  body::before { /* subtle grid texture */
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .copy, .visual { position: relative; z-index: 1; }
+  .copy { display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow {
+    display: inline-flex; align-self: flex-start; gap: 10px; align-items: center;
+    background: var(--accent); color: #fff; font-weight: 800; font-size: 22px;
+    letter-spacing: .06em; text-transform: uppercase; padding: 10px 18px; border-radius: 999px;
+  }
+  h1 { font-size: 58px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 28px; }
+  .stat { display: flex; align-items: baseline; gap: 16px; margin-top: 24px; }
+  .stat b { font-size: 64px; font-weight: 800; color: #fff; }
+  .stat span { font-size: 24px; color: var(--muted); font-weight: 500; max-width: 300px; line-height: 1.3; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+  .visual {
+    background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 28px;
+    display: flex; align-items: center; justify-content: center; padding: 28px;
+  }
+  .art { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div>
+      <div class="eyebrow">Express Entry · Guide</div>
+      <h1>Create and manage your Express Entry profile</h1>
+      <div class="stat"><b>12 mo</b><span>before an uninvited profile expires</span></div>
+    </div>
+    <div class="brand"><i></i>bcpnpcalculator.ca</div>
+  </div>
+
+  <div class="visual">
+    <svg class="art" viewBox="0 0 410 500" role="img" aria-label="Profile form with four completed sections and a submit button">
+      <g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif">
+        <rect x="10" y="6" width="390" height="488" rx="22" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+        <rect x="10" y="6" width="390" height="70" rx="22" fill="#4f46e5"/>
+        <rect x="10" y="50" width="390" height="26" fill="#4f46e5"/>
+        <circle cx="52" cy="41" r="16" fill="#eef2ff"/>
+        <circle cx="52" cy="35" r="6" fill="#4f46e5"/>
+        <path d="M41 50 q11 -12 22 0" fill="#4f46e5"/>
+        <text x="82" y="50" font-size="26" font-weight="800" fill="#ffffff">Your profile</text>
+
+        <g font-size="24" font-weight="700" fill="#e2e8f0">
+          <g transform="translate(34,104)">
+            <circle cx="18" cy="18" r="18" fill="#4f46e5"/><path d="M10 18 l6 6 l11 -12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <text x="50" y="27">Personal details</text>
+          </g>
+          <g transform="translate(34,170)">
+            <circle cx="18" cy="18" r="18" fill="#4f46e5"/><path d="M10 18 l6 6 l11 -12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <text x="50" y="27">Language tests</text>
+          </g>
+          <g transform="translate(34,236)">
+            <circle cx="18" cy="18" r="18" fill="#4f46e5"/><path d="M10 18 l6 6 l11 -12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <text x="50" y="27">Education + ECA</text>
+          </g>
+          <g transform="translate(34,302)">
+            <circle cx="18" cy="18" r="17" fill="none" stroke="#818cf8" stroke-width="3"/>
+            <text x="50" y="27" fill="#c7d2fe">Work history + NOC</text>
+          </g>
+        </g>
+        <line x1="52" y1="140" x2="52" y2="170" stroke="#4f46e5" stroke-width="3"/>
+        <line x1="52" y1="206" x2="52" y2="236" stroke="#4f46e5" stroke-width="3"/>
+        <line x1="52" y1="272" x2="52" y2="302" stroke="#475569" stroke-width="3" stroke-dasharray="5 5"/>
+
+        <rect x="34" y="372" width="342" height="12" rx="6" fill="#334155"/>
+        <rect x="34" y="372" width="256" height="12" rx="6" fill="#818cf8"/>
+
+        <rect x="34" y="410" width="342" height="60" rx="14" fill="#4f46e5"/>
+        <text x="205" y="449" font-size="26" font-weight="800" fill="#ffffff" text-anchor="middle">Submit profile</text>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>

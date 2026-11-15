@@ -1,0 +1,316 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Express Entry Profile 2026: How to Create, Update and Keep It Valid";
+const description = "How to create an Express Entry profile in 2026: documents, IRCC account steps, profile number, 12-month validity, Nov 3 updates and the 60-day ITA deadline.";
+const canonical = "https://bcpnpcalculator.ca/articles/express-entry-profile";
+
+const faqs = [
+  {
+    q: "How do I create an Express Entry profile?",
+    a: "Prepare your documents first, then sign in to your IRCC secure account (or create one), enter your personal reference code if you used the Come to Canada tool, and fill in the profile sections: personal details, language test results, education, work history and funds. IRCC gives you 60 days to finish and submit a profile you have started; after that you have to start again. Once you submit, IRCC checks which federal program you may qualify for and, if you are eligible, places you in the pool with a CRS score.",
+  },
+  {
+    q: "Is there a fee to create an Express Entry profile?",
+    a: "No. IRCC's fee list has no charge for submitting a profile. Government fees are paid only if you are invited and apply for permanent residence: as of November 15, 2026 the fee list shows $1,590 for a principal applicant (a $990 processing fee plus the $600 right of permanent residence fee) and $270 per dependent child. You will still pay outside providers for a language test and, for foreign education, an educational credential assessment.",
+  },
+  {
+    q: "How long is an Express Entry profile valid?",
+    a: "Twelve months from the day you submit it. IRCC says a profile expires 12 months after submission if you are not invited to apply, is removed from the system, and you get a message in your account. You can then submit a new profile if you still qualify. Don't create a second profile while the first is still active: withdraw the old one first or wait for it to expire.",
+  },
+  {
+    q: "How do I update my Express Entry profile?",
+    a: "Sign in, go to View the applications you submitted, choose Check full application status, open your Express Entry profile, and click Update form on the section you want to change. Save and exit, then click Continue and follow the steps to submit the updated profile. You can only update a profile that was found eligible for the pool. If you only see View form buttons, the profile was not eligible and you need to submit a new one.",
+  },
+  {
+    q: "Where do I find my Express Entry profile number?",
+    a: "In the PDF letter IRCC posts to your secure account after your profile is accepted into the pool. The profile number is at the top of the letter, and the Job Seeker Validation Code appears in the same letter under the Job Bank heading. Both are tied to that profile, so a new profile comes with new numbers.",
+  },
+  {
+    q: "Do I need to update my profile because of the November 3, 2026 changes?",
+    a: "IRCC recalculates existing profiles automatically, but if you have a job offer you should check how it is entered. Since November 3, 2026, a job offer no longer needs an LMIA to count, yet IRCC says its online form has not caught up. Until it does, IRCC tells candidates to answer Yes to the positive LMIA question under Work history and enter LMIA number 00000, issuance date 2026-01-01 and expiry date 2029-01-01. Job offer points now go only to offers in high-wage occupations.",
+  },
+  {
+    q: "How long do I have to apply after an invitation?",
+    a: "Sixty days. IRCC says the invitation to apply is valid for 60 days only, and you must submit a complete permanent residence application, with your processing fees at minimum, before it expires. Your language test results and ECA must still be valid on the day you submit, so check their dates before the invitation arrives.",
+  },
+  {
+    q: "Why does the BC PNP ask for my Express Entry profile number and Job Seeker Validation Code?",
+    a: "Only if you register under an Express Entry BC (EEBC) option, available in the Skilled Worker and Health Authority streams. B.C.'s Skills Immigration Program Guide says you get these numbers when you meet the criteria for a federal Express Entry program, and that you must also indicate interest in settling in B.C. The BC PNP can only nominate you if your profile is still valid and visible to it, so an expired profile, or an ITA accepted before nomination, can block an EEBC nomination.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="express-entry-profile" datePublished="2026-11-15" dateModified="2026-11-15" articleSection="Guide" keywords="express entry profile, create express entry profile, express entry profile validity, update express entry profile, express entry profile number, express entry registration" title={title} description={description} canonical={canonical} ogImage="/images/articles/express-entry-profile.png">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        Express Entry Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Express Entry Profile 2026: How to Create, Update and Keep It Valid
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        What to gather before you start, how the profile form works, where your profile number lives, and the deadlines that catch people out, checked against IRCC and WelcomeBC pages in November 2026.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-15">November 15, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/express-entry-profile.png" width="1200" height="630" alt="Illustration of an Express Entry profile form with personal details, language tests and education sections checked off, work history in progress and a Submit profile button."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-indigo-900 mb-2">Quick answer</p>
+      <p class="text-indigo-900">
+        You create an Express Entry profile free of charge in your IRCC secure account. Have your passport, language test results (less than 2 years old), an ECA for education from outside Canada (less than 5 years old) and your job history with NOC codes ready, because a started profile must be submitted within 60 days. Once accepted into the pool, the profile is valid for 12 months; if you are invited, you then have 60 days to apply for permanent residence.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">$0</div>
+        <div class="text-sm text-slate-600 font-medium">IRCC fee to submit a profile (fees start at the PR application)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">12 months</div>
+        <div class="text-sm text-slate-600 font-medium">Profile validity if you are not invited to apply</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">60 days</div>
+        <div class="text-sm text-slate-600 font-medium">To finish a started profile, and again to apply after an ITA</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#before" class="hover:underline">What you need before you create a profile</a></li>
+        <li><a href="#create" class="hover:underline">How to create an Express Entry profile, step by step</a></li>
+        <li><a href="#number" class="hover:underline">Profile number and Job Seeker Validation Code</a></li>
+        <li><a href="#validity" class="hover:underline">Profile validity: the 12-month clock</a></li>
+        <li><a href="#update" class="hover:underline">How to update your profile (and the November 3 note)</a></li>
+        <li><a href="#mistakes" class="hover:underline">Common mistakes</a></li>
+        <li><a href="#ita" class="hover:underline">After an invitation to apply</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        An Express Entry profile is not an application for permanent residence. It is an online expression of interest that tells IRCC who you are, what you can prove and which federal program you might fit: the Federal Skilled Worker Program, the Federal Skilled Trades Program or the Canadian Experience Class. IRCC scores eligible profiles with the Comprehensive Ranking System (CRS), ranks them in a pool and invites the top candidates in each round. Getting the profile right matters because every later step, from your CRS score to a BC PNP nomination to the permanent residence application itself, is built on what you enter. This is general information, not legal advice.
+      </p>
+
+      <h2 id="before" class="text-3xl font-bold mt-12 mb-6">What You Need Before You Create an Express Entry Profile</h2>
+
+      <p>
+        IRCC's "Get your documents ready" page lists what you may need information from when you fill in the profile. You don't upload most documents at this stage, but you type in details from them, and those details must match what you submit later if you are invited. Gather these first:
+      </p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="text-left p-3 border-b">Document</th>
+              <th class="text-left p-3 border-b">Rule to check (IRCC, as of November 15, 2026)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="p-3 border-b font-semibold">Passport or travel document</td><td class="p-3 border-b">IRCC suggests renewing it if it expires within 6 months of the day you apply.</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Language test results</td><td class="p-3 border-b">Must be less than 2 years old when you complete the profile and when you submit your PR application. Accepted tests: CELPIP-General, IELTS General Training, PTE Core, TEF Canada and TCF Canada.</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Educational credential assessment (ECA)</td><td class="p-3 border-b">Needed for education completed outside Canada if you apply as a Federal Skilled Worker or want points for it. Must be less than 5 years old when you complete the profile and when you apply.</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Work history</td><td class="p-3 border-b">Dates, hours, duties and the NOC code for each job, backed by reference letters later.</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Written job offer (if any)</td><td class="p-3 border-b">From an employer in Canada. Since November 3, 2026, no LMIA is needed for it to count.</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Proof of funds</td><td class="p-3 border-b">Required for FSW and FST candidates without a valid job offer and work authorization.</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Trade certificate / provincial nomination</td><td class="p-3 border-b">Only if they apply to you.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The ECA must come from a designated organization. IRCC lists World Education Services, the International Credential Assessment Service of Canada, Comparative Education Service (University of Toronto), IQAS and the International Credential Evaluation Service at BCIT, plus professional bodies for doctors and pharmacists. ECAs can take weeks, so order one before you need it; our <a href="/articles/bc-pnp-eca-guide" class="text-blue-600 hover:text-blue-800 underline">ECA guide</a> covers the process.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Find the right NOC code for each job</h3>
+      <p>
+        Every job you list needs a National Occupational Classification (NOC) code. Choose it by comparing your actual duties with the NOC lead statement and main duties, not by job title. The NOC's TEER category decides whether experience counts for eligibility, and after November 3, 2026 the code also decides whether a job is a "high-wage occupation" for the new labour market points: IRCC says that test is based on the national median wage for the NOC code, not your own salary. A wrong code can make you look eligible when you are not, which tends to surface at the permanent residence stage.
+      </p>
+
+      <h2 id="create" class="text-3xl font-bold mt-12 mb-6">How to Create an Express Entry Profile, Step by Step</h2>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Check your eligibility and score.</strong> IRCC's Come to Canada tool asks screening questions and, if you look eligible, gives you a personal reference code that pre-fills part of the profile. Estimate your CRS score as well; see our <a href="/articles/express-entry-crs-score-calculator" class="text-blue-600 hover:text-blue-800 underline">Express Entry CRS score calculator guide</a>.</li>
+        <li><strong>Sign in to your IRCC secure account.</strong> Sign in with a GCKey username and password or an Interac Sign-In Partner (your Canadian bank login), or create a new account. Keep the login details safe: you will need the same account for updates, your invitation and your PR application.</li>
+        <li><strong>Start the Express Entry profile</strong> and enter your reference code if you have one.</li>
+        <li><strong>Complete each section.</strong> You can save and exit at any time; your answers stay in your account. IRCC says you won't be asked about dependent children at the profile stage.</li>
+        <li><strong>Submit within 60 days.</strong> IRCC gives you 60 days to complete and submit a profile, or you have to start again.</li>
+        <li><strong>Read the result.</strong> IRCC works out which program or programs you qualify for. If you are eligible, you enter the pool with a CRS score. If not, you can't edit that profile and must submit a new one once your situation changes.</li>
+      </ol>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">What the profile asks for</h3>
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="text-left p-3 border-b">Section</th>
+              <th class="text-left p-3 border-b">What to have in front of you</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="p-3 border-b font-semibold">Personal details and family</td><td class="p-3 border-b">Passport details, marital status, whether a spouse or partner will come with you (this changes how CRS points are split).</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Language</td><td class="p-3 border-b">Test type, test date, registration or certificate number and band scores, exactly as on your result.</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Education</td><td class="p-3 border-b">Highest credential, ECA reference number and the Canadian equivalency stated on the report.</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Work history</td><td class="p-3 border-b">Each job's dates, hours per week, NOC code, country, and job offer details if you have one.</td></tr>
+            <tr><td class="p-3 border-b font-semibold">Funds and preferences</td><td class="p-3 border-b">Settlement funds available, and the provinces or territories you are interested in.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        If you want to be considered by British Columbia, select B.C. as a province of interest. B.C.'s program guide says EEBC applicants "must also indicate that you are interested in settling in B.C."
+      </p>
+
+      <h2 id="number" class="text-3xl font-bold mt-12 mb-6">Your Express Entry Profile Number and Job Seeker Validation Code</h2>
+      <p>
+        When an eligible profile enters the pool, IRCC posts a letter to your secure account. It contains your Express Entry profile number and a Job Seeker Validation Code. IRCC still describes the code as what you need to create a Job Match account on Job Bank, which is optional, but provinces now use the pair to confirm you hold a real, active profile. Our guide to the <a href="/articles/express-entry-job-seeker-validation-code" class="text-blue-600 hover:text-blue-800 underline">job seeker validation code</a> shows exactly where to find both.
+      </p>
+      <p>
+        For B.C., the numbers matter only if you register under an Express Entry BC option, which exists in the Skilled Worker and Health Authority streams and only for jobs in NOC TEER 0, 1, 2 or 3. The Skills Immigration Program Guide (effective June 10, 2026) says the BC PNP "can only proceed to nominate you if your Express Entry profile remains valid and visible." If your profile expires, or IRCC invites you before B.C. finishes its assessment, the profile is no longer visible to the BC PNP; to keep the nomination route open you would have to decline the IRCC invitation. See our <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="text-blue-600 hover:text-blue-800 underline">EEBC guide</a> and check your B.C. registration score with the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a>.
+      </p>
+
+      <h2 id="validity" class="text-3xl font-bold mt-12 mb-6">Express Entry Profile Validity: The 12-Month Clock</h2>
+      <p>
+        IRCC says a profile expires 12 months after you submit it if you are not invited to apply. It is then removed from the system and you receive a message in your account. Nothing carries over: if you still qualify, you submit a new profile, which gets a new profile number, a new Job Seeker Validation Code and a new submission date.
+      </p>
+      <p>
+        Two practical points. First, don't submit a second profile while the first is active; IRCC says to wait for it to expire or withdraw it first (sign in, open View the applications you submitted, click Withdraw profile, then Continue). Second, watch your documents' own clocks. A profile can be valid while your language test is about to pass its 2-year mark, and an invitation you can't use because your test has expired is wasted. If you are in a provincial process, tell the province your new numbers after you resubmit.
+      </p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="text-left p-3 border-b">Deadline</th>
+              <th class="text-left p-3 border-b">Length</th>
+              <th class="text-left p-3 border-b">What happens if you miss it</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="p-3 border-b">Finish a started profile</td><td class="p-3 border-b">60 days</td><td class="p-3 border-b">You start the profile again</td></tr>
+            <tr><td class="p-3 border-b">Profile in the pool</td><td class="p-3 border-b">12 months</td><td class="p-3 border-b">Profile expires and is removed</td></tr>
+            <tr><td class="p-3 border-b">Language test results</td><td class="p-3 border-b">Less than 2 years old</td><td class="p-3 border-b">A PR application with expired results is refused</td></tr>
+            <tr><td class="p-3 border-b">ECA report</td><td class="p-3 border-b">Less than 5 years old</td><td class="p-3 border-b">A PR application with an expired ECA is refused</td></tr>
+            <tr><td class="p-3 border-b">Apply after an ITA</td><td class="p-3 border-b">60 days</td><td class="p-3 border-b">The invitation expires</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="update" class="text-3xl font-bold mt-12 mb-6">How to Update Your Express Entry Profile</h2>
+      <p>
+        Update your profile whenever something that affects your score or eligibility changes: new language test results, a completed degree or new ECA, another year of work experience, a job offer, marriage or a new common-law partner, or a provincial nomination outside the Express Entry portal. IRCC's help centre (updated November 3, 2026) gives the steps:
+      </p>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>Sign in and go to "View the applications you submitted."</li>
+        <li>Click "Check full application status," then open your Express Entry profile.</li>
+        <li>Click "Update form" for the section you need to change, make the change, and click "Save and exit."</li>
+        <li>Click "Continue" and follow the instructions to submit the updated profile.</li>
+      </ol>
+      <p>
+        Only profiles found eligible for the pool can be updated. If you see "View form" rather than "Update form," the profile wasn't eligible and you need a new one. Updates can lower your score as well as raise it, for example when a spouse is added or a work permit runs out; report the change anyway.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The November 3, 2026 changes: what to check</h3>
+      <p>
+        On November 3, 2026, IRCC replaced the old job offer and Canadian experience points with a Labour Market Integration factor worth up to 150 points (140 with a spouse or partner). You receive points for Canadian work experience or for a job offer, whichever is higher, not both. A qualifying job offer in a high-wage occupation earns 50, 70 or 100 points depending on the occupation's median wage, and an offer no longer needs an LMIA. IRCC said recalculating existing profiles could take up to two weeks, with rounds paused meanwhile. As of November 15, 2026, IRCC's rounds data still shows round 453 on October 28 as the latest.
+      </p>
+      <p>
+        Recalculation is automatic, but IRCC's changes page warns that the online form "will not yet reflect" the new rule. Until it does, candidates with a job offer must still answer "Yes" to "Was a positive LMIA issued for the job offer in Canada?" under Work history and enter LMIA number 00000, issuance date 2026-01-01 and expiry date 2029-01-01. Check that your job offer and NOC code are entered correctly, and don't create a duplicate profile to force a recalculation.
+      </p>
+
+      <h2 id="mistakes" class="text-3xl font-bold mt-12 mb-6">Common Express Entry Profile Mistakes</h2>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Claiming what you can't prove.</strong> Your profile is self-declared, but after an invitation every claim must be backed by documents. Untrue or incomplete information can be treated as misrepresentation, which under section 40 of the Immigration and Refugee Protection Act can make a person inadmissible for five years.</li>
+        <li><strong>Choosing the NOC by job title.</strong> Match duties, not titles. The code drives eligibility and, now, high-wage points.</li>
+        <li><strong>Letting tests expire.</strong> Retake a language test early if your results are close to 2 years old.</li>
+        <li><strong>Counting the wrong experience.</strong> Part-time hours, self-employment and study-period work have specific rules for each program; read the <a href="/articles/canadian-experience-class" class="text-blue-600 hover:text-blue-800 underline">Canadian Experience Class</a> and <a href="/articles/federal-skilled-worker-program" class="text-blue-600 hover:text-blue-800 underline">Federal Skilled Worker</a> guides before you enter dates.</li>
+        <li><strong>Forgetting family changes.</strong> A marriage, a partner who will no longer come with you or a new child must be reflected.</li>
+        <li><strong>Ignoring provincial timing.</strong> If you are in an EEBC process, an expired profile or an accepted federal ITA can stop B.C. from nominating you.</li>
+      </ul>
+
+      <h2 id="ita" class="text-3xl font-bold mt-12 mb-6">What Happens After an Invitation to Apply</h2>
+      <p>
+        IRCC says an invitation is "valid for 60 days only." In that window you submit the electronic application for permanent residence with scanned documents (reference letters, police certificates, medical exam, proof of funds where required) and pay at least the processing fees. As of November 15, 2026, IRCC's fee list shows $1,590 for a principal applicant and the same for an accompanying spouse or partner, each made up of a $990 processing fee and the $600 right of permanent residence fee, plus $270 per dependent child and a biometrics fee of $85 per person ($170 maximum for a family applying together). Creating the profile itself costs nothing.
+      </p>
+      <p>
+        If your circumstances changed after you were invited and your recalculated score falls below that round's cutoff, IRCC tells you to decline the invitation and update your profile. For what follows the application, see <a href="/articles/how-long-to-get-pr-in-canada" class="text-blue-600 hover:text-blue-800 underline">how long it takes to get PR in Canada</a> and our <a href="/articles/express-entry-draws" class="text-blue-600 hover:text-blue-800 underline">Express Entry draws tracker</a>.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/create-profile.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry: Create your profile, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry: Get your documents ready, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/language-requirements.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Language test results for Express Entry, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/education-assessed.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Educational credential assessment for Express Entry, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/apply-permanent-residence.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry: Apply for permanent residence (invitation, profile expiry, withdrawal), IRCC</a></li>
+        <li><a href="https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=1005&amp;top=29" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">How do I update my Express Entry profile? IRCC Help Centre</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Changes to Express Entry (November 3, 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/rounds-invitations.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry rounds of invitations, IRCC</a></li>
+        <li><a href="https://ircc.canada.ca/english/information/fees/fees.asp" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Fee list, IRCC</a></li>
+        <li><a href="https://laws-lois.justice.gc.ca/eng/acts/i-2.5/section-40.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Immigration and Refugee Protection Act, section 40 (misrepresentation), Justice Laws</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Skills Immigration Program Guide (effective June 10, 2026), WelcomeBC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 15, 2026. Express Entry rules, fees and forms change often; confirm on IRCC or WelcomeBC before you submit anything.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/express-entry-job-seeker-validation-code" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Express Entry</div>
+          <div class="font-bold text-gray-900">What Is the Job Seeker Validation Code?</div>
+        </a>
+        <a href="/articles/express-entry-crs-score-calculator" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-green-600 font-bold mb-2">CRS</div>
+          <div class="font-bold text-gray-900">Express Entry CRS Score Calculator Guide</div>
+        </a>
+        <a href="/articles/canadian-experience-class" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Federal Programs</div>
+          <div class="font-bold text-gray-900">Canadian Experience Class</div>
+        </a>
+        <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">BC PNP</div>
+          <div class="font-bold text-gray-900">Express Entry BC (EEBC) Guide</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
