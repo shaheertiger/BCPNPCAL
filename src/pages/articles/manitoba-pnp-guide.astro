@@ -1,0 +1,384 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Manitoba PNP Guide 2026: MPNP Streams, Requirements, Fees and Processing Times";
+const description = "Manitoba PNP guide for 2026: MPNP streams and pathways, eligibility rules, the $500 fee, settlement funds, nominations issued so far and IRCC processing times.";
+const canonical = "https://bcpnpcalculator.ca/articles/manitoba-pnp-guide";
+
+const faqs = [
+  {
+    q: "What are the requirements for the Manitoba PNP?",
+    a: "Every MPNP applicant needs an established connection to Manitoba, enough language ability and settlement funds, and a genuine plan to live in the province. The exact rules depend on the pathway. Skilled Worker in Manitoba applicants need a valid work permit and a full-time, long-term job offer from the Manitoba employer they have already worked for full-time for at least six months. Skilled Worker Overseas applicants need a Manitoba connection (a close relative or friend, past Manitoba work or study, or an Invitation to Apply from the MPNP) and at least 60 points on the pathway's 100-point grid. International Education and Business Investor pathways have their own criteria.",
+  },
+  {
+    q: "Can I apply for the Manitoba PNP without a job offer?",
+    a: "Some pathways do not require one. The Skilled Worker Overseas Pathway is based on a Manitoba connection rather than a job, and the Graduate Internship Pathway says applicants do not need a job offer at the time of application. In practice, however, every 2026 EOI draw notice says Skilled Worker Stream candidates were considered only if the MPNP had directly invited them under a strategic recruitment initiative or a temporary public policy, so an overseas candidate with only a family connection has had little chance of selection this year.",
+  },
+  {
+    q: "How much does the Manitoba PNP cost?",
+    a: "The MPNP charges a non-refundable $500 application fee for Skilled Worker and International Education applications, paid by Visa or Mastercard credit card when you submit. The Entrepreneur Pathway and the International Student Entrepreneur Pilot charge $2,500. On top of that you pay IRCC's federal permanent residence fees, language tests, document translation and, if needed, an educational credential assessment.",
+  },
+  {
+    q: "How long does the Manitoba PNP take?",
+    a: "It happens in stages. Your EOI can sit in the pool for up to a year before a Letter of Advice to Apply, and you then have 60 days to submit. The MPNP does not publish a standard processing time for Skilled Worker applications. After nomination, IRCC's estimates (last updated October 9, 2026) were about 7 months for an Express Entry-linked PNP application and about 13 months for a paper-based PNP application.",
+  },
+  {
+    q: "How many nominations does Manitoba have in 2026?",
+    a: "Manitoba was allocated 8,000 nominations for 2026: 6,239 in January and 1,761 more in August. The MPNP's monthly data shows 5,841 nominations issued from January to October 2026, of which 1,990 were enhanced (Express Entry) nominations. The figures are preliminary and may be revised.",
+  },
+  {
+    q: "How much money do I need for the Manitoba PNP?",
+    a: "The MPNP asks for at least $10,000 plus $2,000 for each accompanying family member, in funds you own and do not borrow. Candidates who give an Express Entry profile must instead meet IRCC's amount, which starts at $15,263 for one person in the table IRCC updated on July 7, 2025. People applying on the basis of ongoing employment in Manitoba must still document funds, but the MPNP says it will consider their income and they may not need the full minimum.",
+  },
+  {
+    q: "Is the Manitoba PNP easier than the BC PNP?",
+    a: "Neither is easy, but they reward different things. Manitoba's main route favours people who have already worked six months or more for a Manitoba employer, and it has no wage points. The BC PNP Skills Immigration streams rank registrations with points that include wage and regional location, and B.C. targets particular occupation groups in its invitations. Your best option depends on where you work now, your occupation and whether you have ties to either province.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="manitoba-pnp-guide" datePublished="2026-11-16" dateModified="2026-11-16" articleSection="Guide" keywords="manitoba pnp, manitoba pnp program canada, pnp manitoba, mb pnp, canada pnp manitoba, pnp for manitoba, manitoba pnp requirements, manitoba pnp canada" ogImage="/images/articles/manitoba-pnp-guide.png" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-indigo-200 shadow-sm">
+        Province Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Manitoba PNP Guide 2026: MPNP Streams, Requirements, Fees and Processing Times
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Three streams, seven pathways and one rule that runs through all of them: you need a real connection to Manitoba. Here is how the program works in late 2026, checked against immigratemanitoba.com and IRCC.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-16">November 16, 2026</time>
+        <span>&bull;</span>
+        <span>12 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/manitoba-pnp-guide.png" width="1200" height="630" alt="Diagram of the Manitoba Provincial Nominee Program's three streams, Skilled Worker, International Education and Business Investor, branching into their seven pathways, beside the 8,000 nominations allocated for 2026."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-indigo-900 mb-2">Quick answer</p>
+      <p class="text-indigo-900">
+        The Manitoba Provincial Nominee Program (MPNP) nominates people for Canadian permanent residence through three streams: Skilled Worker (Skilled Worker in Manitoba and Skilled Worker Overseas), International Education (three pathways for Manitoba graduates) and Business Investor (Entrepreneur and Farm Investor). Most skilled workers enter an Expression of Interest pool and must be invited before they can apply. The main 2026 route is the Skilled Worker in Manitoba Pathway, for people who have worked full-time for a Manitoba employer for six months or more and hold a long-term job offer from that employer. Manitoba has 8,000 nominations for 2026 and had issued 5,841 by the end of October.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">8,000</div>
+        <div class="text-sm text-slate-600 font-medium">Manitoba's 2026 nomination allocation (6,239 + 1,761)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">5,841</div>
+        <div class="text-sm text-slate-600 font-medium">Nominations issued January to October 2026</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-indigo-600 mb-2">$500</div>
+        <div class="text-sm text-slate-600 font-medium">Non-refundable MPNP fee for skilled worker and graduate applications</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#streams" class="hover:underline">MPNP streams and pathways at a glance</a></li>
+        <li><a href="#skilled-worker" class="hover:underline">Skilled Worker Stream requirements</a></li>
+        <li><a href="#strategic" class="hover:underline">Strategic recruitment initiatives</a></li>
+        <li><a href="#ies" class="hover:underline">International Education Stream</a></li>
+        <li><a href="#bis" class="hover:underline">Business Investor Stream</a></li>
+        <li><a href="#process" class="hover:underline">How applying works: EOI, LAA, nomination, PR</a></li>
+        <li><a href="#numbers" class="hover:underline">2026 allocation and nominations</a></li>
+        <li><a href="#costs" class="hover:underline">Fees and settlement funds</a></li>
+        <li><a href="#processing" class="hover:underline">Processing times</a></li>
+        <li><a href="#changes" class="hover:underline">What changed in 2025 and 2026</a></li>
+        <li><a href="#vs-bc" class="hover:underline">Manitoba PNP vs BC PNP</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        The Manitoba PNP is one of Canada's oldest provincial nominee programs, and it works differently from most. Instead of asking only whether you have the right skills, it asks whether you are tied to Manitoba: through a job there, through family or friends, through past study or work in the province, or through a direct invitation from the program. If you have no connection, you are not eligible, whatever your points. This guide walks through each pathway, the 2026 numbers, the costs and the timelines, with every figure checked on November 16, 2026. It is general information, not legal advice. For draw-by-draw results and the full ranking grid, see our separate <a href="/articles/manitoba-pnp-draws" class="text-indigo-600 underline font-semibold">Manitoba PNP draws tracker</a>.
+      </p>
+
+      <h2 id="streams" class="text-3xl font-bold mt-12 mb-6">MPNP Streams and Pathways at a Glance</h2>
+
+      <p>
+        Immigrate Manitoba describes three streams, each with its own pathways. The Skilled Worker and International Education streams share one Expression of Interest (EOI) ranking system; the Business Investor Stream has a separate EOI process.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Stream</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Pathway</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Who it is for</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium" rowspan="2">Skilled Worker</td><td class="px-4 py-3">Skilled Worker in Manitoba (SWM)</td><td class="px-4 py-3">Temporary workers already employed full-time in Manitoba with a long-term job offer</td></tr>
+            <tr><td class="px-4 py-3">Skilled Worker Overseas (SWO)</td><td class="px-4 py-3">Workers outside Manitoba with family or friend support, past Manitoba experience, or an MPNP invitation</td></tr>
+            <tr><td class="px-4 py-3 font-medium" rowspan="3">International Education</td><td class="px-4 py-3">Career Employment Pathway (CEP)</td><td class="px-4 py-3">Recent Manitoba graduates with an in-demand job offer</td></tr>
+            <tr><td class="px-4 py-3">Graduate Internship Pathway (GIP)</td><td class="px-4 py-3">Manitoba master's and doctoral graduates who completed a Mitacs internship</td></tr>
+            <tr><td class="px-4 py-3">International Student Entrepreneur Pilot (ISEP)</td><td class="px-4 py-3">Manitoba graduates aged 21 to 35 running their own Manitoba business</td></tr>
+            <tr><td class="px-4 py-3 font-medium" rowspan="2">Business Investor</td><td class="px-4 py-3">Entrepreneur Pathway (EP)</td><td class="px-4 py-3">Experienced owners or senior managers who will open or buy a Manitoba business</td></tr>
+            <tr><td class="px-4 py-3">Farm Investor Pathway (FIP)</td><td class="px-4 py-3">Experienced farmers who will establish and run a farm in rural Manitoba</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Some rules apply across the whole program. The MPNP will not accept applications from refugee claimants or people in a federal appeal or removal process, live-in caregivers currently in Canada, temporary foreign workers living and working in another province, spouses of Canadian citizens or permanent residents, people refused by the MPNP in the last six months who cannot address the reason, and anyone with an active application in another provincial or federal immigration program. An Express Entry profile does not count as an application. You can only have one MPNP application at a time, and your spouse cannot hold a second one.
+      </p>
+
+      <h2 id="skilled-worker" class="text-3xl font-bold mt-12 mb-6">Skilled Worker Stream Requirements</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Skilled Worker in Manitoba (SWM)</h3>
+      <p>
+        This is the pathway most 2026 Letters of Advice to Apply have gone to. Your connection to Manitoba is "ongoing Manitoba employment," which the MPNP defines as holding a valid work permit and having a full-time, long-term job offer from a Manitoba company after at least six months of continuous full-time work for that same company. If you graduated from a post-secondary program in another province or territory, the required period is one year or more with that employer.
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>What does not count:</strong> self-employment, unauthorized work, work done while you were studying full-time (such as co-op permit work), independent contractor arrangements and work-permit-exempt work. Business owners and owner-operators are not eligible under SWM.</li>
+        <li><strong>The employer:</strong> must be incorporated or registered in Canada, operate an established place of business in Manitoba and show it can offer full-time, long-term employment.</li>
+        <li><strong>Your qualifications:</strong> you must hold every qualification the job needs, including any licence or certification, and enough official language ability to do the job and settle. The MPNP's language page says applicants currently working in Manitoba in TEER 0 to 3 jobs do not have to submit a test, while TEER 4 and 5 workers need at least CLB 4 and must submit results.</li>
+        <li><strong>Stronger ties to Manitoba:</strong> your connection through work must be stronger than any tie to another province, and you must submit a Settlement Plan.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Skilled Worker Overseas (SWO)</h3>
+      <p>
+        SWO is for people outside the province. You need one of three connections and a score of at least 60 out of 100 on the pathway's own grid (language up to 25, age up to 10, work experience up to 15, education up to 25 and adaptability up to 25).
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Manitoba Support:</strong> a close relative (sibling, parent, grandparent, aunt or uncle, niece or nephew, first cousin) or a friend or distant relative who is a citizen or permanent resident and has lived in Manitoba for at least a year. Children cannot support their parents, and spouses cannot support each other.</li>
+        <li><strong>Manitoba Experience:</strong> at least six consecutive months of full-time work for a Manitoba employer on a work permit, or a completed post-secondary program at a Manitoba institution (language courses do not count).</li>
+        <li><strong>Manitoba Invitation:</strong> an Invitation to Apply issued by the MPNP after an interview during a recruitment mission or approved exploratory visit. You cannot request one by yourself; the MPNP issues them at its discretion.</li>
+      </ul>
+      <p>
+        One caution for 2026. Every recent EOI draw notice, including Draw #283 on November 5, 2026, says Skilled Worker Stream profiles were "only considered if they were directly invited by the MPNP under a strategic recruitment initiative" or through the temporary public policy for work permit support letter holders. In other words, SWO applicants relying on family support or past experience have not been drawn this year. That could change, but plan around it.
+      </p>
+
+      <h2 id="strategic" class="text-3xl font-bold mt-12 mb-6">Strategic Recruitment Initiatives</h2>
+      <p>
+        An Invitation to Apply under a strategic recruitment initiative is worth 500 points in the EOI, the same as six months of ongoing Manitoba employment. The draw notices group these invitations under Employer Services, Ethnocultural Communities, Francophone Community, Regional Communities and the temporary public policy. The two you can most directly act on are:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Employer Services.</strong> Manitoba employers (not workers) apply. The Employer Direct Initiative, reopened under that name on September 2, 2025, helps businesses that have exhausted local recruitment. The Temporary Resident Retention Pilot helps employers keep temporary residents already working for them; since February 4, 2026, hospitality and food services is no longer an eligible sector and some skilled trades have been added. Employer Services aims to process complete pilot applications within 60 days but warns that volume is making it longer.</li>
+        <li><strong>Regional immigration initiatives.</strong> Community-run programs outside Winnipeg. The MPNP lists six as active: Morden's Community Driven Immigration Initiative, the Winkler-Stanley Economic Development Corporation Pilot Immigration Initiative, Immigrate Parkland, the Southwestern Manitoba Immigration Initiative, the West Central Manitoba Immigration Initiative and the Northwest Manitoba Immigration Initiative. Each sets its own rules, so contact the community directly.</li>
+      </ul>
+      <p>
+        If you claim an invitation in your EOI, enter the exact invitation number. The draw notices say profiles without a valid number are passed over.
+      </p>
+
+      <h2 id="ies" class="text-3xl font-bold mt-12 mb-6">International Education Stream</h2>
+      <p>
+        This stream is only for graduates of designated Manitoba post-secondary institutions. People who studied in another province are pointed to the SWM Pathway instead.
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Career Employment Pathway:</strong> graduated in the past three years from a full-time program of at least one year in Manitoba, CLB/NCLC 7, a full-time job offer of at least one year in an occupation on Manitoba's In-Demand Occupations List, and working full-time in Manitoba when the application is assessed. Important: on June 11, 2026 the MPNP told CEP candidates with at least six months of Manitoba work experience to move to the SWM Pathway, where Manitoba graduates are now selected through targeted draws. The pathway page still lists its criteria, but plan as an SWM candidate if you can.</li>
+        <li><strong>Graduate Internship Pathway:</strong> a master's or doctorate completed in Manitoba in the past three years, a Mitacs Elevate or Accelerate internship with a Manitoba enterprise, CLB/NCLC 7, and residence in Manitoba. No job offer is required at the time of application. The MPNP's June 2026 notice confirmed GIP remains in place.</li>
+        <li><strong>International Student Entrepreneur Pilot:</strong> age 21 to 35, a full-time Manitoba program of at least two years, CLB/NCLC 7, a valid open work permit, continuous residence in Manitoba since graduating, at least 51% ownership of a business you have run as a senior manager in Manitoba for at least six months before nomination, and liquid funds equal to 12 months of low income cut-off. The fee is $2,500.</li>
+      </ul>
+
+      <h2 id="bis" class="text-3xl font-bold mt-12 mb-6">Business Investor Stream</h2>
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Requirement</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Entrepreneur Pathway</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Farm Investor Pathway</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Experience</td><td class="px-4 py-3">3 years full-time in the past 5 as an active owner or senior manager</td><td class="px-4 py-3">3 years of farm ownership and operation</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Net worth</td><td class="px-4 py-3">$500,000, verified by an approved third party</td><td class="px-4 py-3">$500,000</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Minimum investment</td><td class="px-4 py-3">$250,000 in the Winnipeg Metropolitan Region; $150,000 elsewhere</td><td class="px-4 py-3">$300,000 in a farm business in rural Manitoba</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Language</td><td class="px-4 py-3">CLB/NCLC 5</td><td class="px-4 py-3">Interview held in English or French</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Other</td><td class="px-4 py-3">Create or keep at least one job for a citizen or PR; $2,500 fee</td><td class="px-4 py-3">Research visit required; $75,000 deposit if approved</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Entrepreneur Pathway applicants are approved first, sign a Business Performance Agreement, come on a work permit and are nominated only after meeting its terms. Business volumes are small: the monthly data shows 35 Business Investor LAAs and six business nominations from January to October 2026.
+      </p>
+
+      <h2 id="process" class="text-3xl font-bold mt-12 mb-6">How Applying Works: EOI, LAA, Nomination, PR</h2>
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Check eligibility and gather tests.</strong> Book an approved language test (IELTS General, CELPIP General, PTE Core, TEF Canada or TCF Canada); results must be no more than two years old when you submit your application.</li>
+        <li><strong>Submit an EOI in MPNP Online.</strong> It is a free profile, not an application. It stays valid for one year and you can only have one at a time. Points come from language, age, work experience, education, adaptability and risk factors; our <a href="/articles/manitoba-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">draws tracker</a> breaks down the 1,000-point grid.</li>
+        <li><strong>Wait for a draw.</strong> The MPNP selects candidates for a Letter of Advice to Apply (LAA) in draws targeted at occupations, Manitoba graduates, French speakers or invited candidates. It publishes no schedule.</li>
+        <li><strong>Apply within 60 days of the LAA.</strong> Upload documents proving every EOI claim and pay the $500 fee. The MPNP says you must use Microsoft Edge to pay and submit, and it will not extend the deadline.</li>
+        <li><strong>Get nominated, then apply to IRCC.</strong> With a valid Express Entry profile and job seeker validation code, you may receive an enhanced nomination worth 600 Comprehensive Ranking System points (see our <a href="/articles/express-entry-crs-score-calculator" class="text-blue-600 hover:text-blue-800 underline">CRS calculator</a>). Otherwise you file a paper-based (base) PR application with IRCC.</li>
+      </ol>
+
+      <h2 id="numbers" class="text-3xl font-bold mt-12 mb-6">Manitoba PNP 2026 Allocation and Nominations</h2>
+      <p>
+        IRCC gave Manitoba 8,000 nominations for 2026: 6,239 in January and another 1,761 in August. The MPNP's monthly data page shows how fast they are being used. The pace picked up sharply after the August top-up.
+      </p>
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Month (2026)</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Total nominations</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Of which enhanced</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Refusals</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Applications received</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">January</td><td class="px-4 py-3">483</td><td class="px-4 py-3">154</td><td class="px-4 py-3">95</td><td class="px-4 py-3">293</td></tr>
+            <tr><td class="px-4 py-3 font-medium">February</td><td class="px-4 py-3">425</td><td class="px-4 py-3">146</td><td class="px-4 py-3">38</td><td class="px-4 py-3">239</td></tr>
+            <tr><td class="px-4 py-3 font-medium">March</td><td class="px-4 py-3">390</td><td class="px-4 py-3">128</td><td class="px-4 py-3">36</td><td class="px-4 py-3">105</td></tr>
+            <tr><td class="px-4 py-3 font-medium">April</td><td class="px-4 py-3">446</td><td class="px-4 py-3">143</td><td class="px-4 py-3">95</td><td class="px-4 py-3">109</td></tr>
+            <tr><td class="px-4 py-3 font-medium">May</td><td class="px-4 py-3">408</td><td class="px-4 py-3">128</td><td class="px-4 py-3">55</td><td class="px-4 py-3">557</td></tr>
+            <tr><td class="px-4 py-3 font-medium">June</td><td class="px-4 py-3">506</td><td class="px-4 py-3">186</td><td class="px-4 py-3">53</td><td class="px-4 py-3">590</td></tr>
+            <tr><td class="px-4 py-3 font-medium">July</td><td class="px-4 py-3">433</td><td class="px-4 py-3">141</td><td class="px-4 py-3">66</td><td class="px-4 py-3">743</td></tr>
+            <tr><td class="px-4 py-3 font-medium">August</td><td class="px-4 py-3">686</td><td class="px-4 py-3">248</td><td class="px-4 py-3">47</td><td class="px-4 py-3">1,135</td></tr>
+            <tr><td class="px-4 py-3 font-medium">September</td><td class="px-4 py-3">814</td><td class="px-4 py-3">307</td><td class="px-4 py-3">44</td><td class="px-4 py-3">1,237</td></tr>
+            <tr><td class="px-4 py-3 font-medium">October</td><td class="px-4 py-3">1,252</td><td class="px-4 py-3">409</td><td class="px-4 py-3">71</td><td class="px-4 py-3">1,115</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-bold">Total</td><td class="px-4 py-3 font-bold">5,841</td><td class="px-4 py-3 font-bold">1,990</td><td class="px-4 py-3 font-bold">600</td><td class="px-4 py-3 font-bold">6,123</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-gray-500">Source: MPNP Monthly Data 2026, checked November 16, 2026. Totals include Skilled Worker and Business Investor files. Manitoba says the figures are preliminary.</p>
+      <p>
+        What this means for you: about 2,160 nominations were left under the 2026 allocation at the end of October, and 2,402 applications were in assessment or waiting for assessment at the start of October. Roughly a third of 2026 nominations have been enhanced, so having a valid Express Entry profile is useful but not required. There were 600 refusals through October, and the draw notices repeatedly tell candidates to consider declining an LAA if they cannot document what they claimed in their EOI, such as Manitoba study or a professional licence.
+      </p>
+
+      <h2 id="costs" class="text-3xl font-bold mt-12 mb-6">Manitoba PNP Fees and Settlement Funds</h2>
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Fees</h3>
+      <p>
+        The Skilled Worker and graduate pathways cost $500, paid when you submit your application, by Visa or Mastercard credit card only. The MPNP says Visa Debit is not accepted: the money is taken but the application is not submitted, and the charge is reversed within 10 business days. The fee is non-refundable, including if you are refused. Business pathways charge $2,500 (Entrepreneur Pathway and ISEP). Submitting an EOI is free. Budget separately for IRCC's permanent residence fees, language tests, an educational credential assessment if your education is from outside Canada, translations and a medical exam.
+      </p>
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Settlement funds</h3>
+      <p>
+        The MPNP's settlement funds policy asks every applicant for at least <strong>$10,000 plus $2,000 for each accompanying family member</strong>, in money you own and can access. Borrowed money does not count. You prove it with letters from your bank on letterhead (account numbers, opening dates, current and six-month average balances, and debts) plus three months of statements.
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Express Entry candidates:</strong> if you provide an Express Entry profile and validation code, you must meet IRCC's amount instead. IRCC's table, updated July 7, 2025 and still current in November 2026, starts at $15,263 for one person and $28,362 for a family of four.</li>
+        <li><strong>SWM applicants:</strong> must still document funds, but the MPNP says it considers your current income, so you may not need the full minimum.</li>
+        <li><strong>Graduate pathways:</strong> CEP and GIP require liquid funds equal to six months of low income cut-off, or full-time, long-term work in Manitoba.</li>
+      </ul>
+
+      <h2 id="processing" class="text-3xl font-bold mt-12 mb-6">Manitoba PNP Processing Times</h2>
+      <p>
+        Think of the timeline in three parts. First, the EOI pool: there is no fixed wait, and some profiles are never drawn before they expire after a year. Second, the provincial assessment: the MPNP does not publish a standard processing time for Skilled Worker applications, and its own data shows a queue of 2,402 applications in or awaiting assessment at the start of October 2026. Third, the federal stage, where IRCC decides on permanent residence:
+      </p>
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">IRCC application type</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Estimated processing time</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">People waiting</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">PNP through Express Entry (enhanced)</td><td class="px-4 py-3">About 7 months</td><td class="px-4 py-3">About 13,100</td></tr>
+            <tr><td class="px-4 py-3 font-medium">PNP outside Express Entry (base, paper)</td><td class="px-4 py-3">About 13 months</td><td class="px-4 py-3">About 96,500</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-gray-500">Source: IRCC processing-time data, last updated October 9, 2026, checked November 16, 2026. These are estimates for all provinces' nominees, not a guarantee for your file.</p>
+      <p>
+        The six-month gap between enhanced and base processing is a good reason to create an Express Entry profile if you qualify for one. For more detail, see <a href="/articles/how-long-to-get-pr-in-canada" class="text-blue-600 hover:text-blue-800 underline">how long it takes to get PR in Canada</a> and our <a href="/articles/ircc-processing-times-canada" class="text-blue-600 hover:text-blue-800 underline">IRCC processing times guide</a>.
+      </p>
+
+      <h2 id="changes" class="text-3xl font-bold mt-12 mb-6">What Changed in the MPNP in 2025 and 2026</h2>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>September 2, 2025:</strong> Employer Services reopened intake as the Employer Direct Initiative and launched the Temporary Resident Retention Pilot.</li>
+        <li><strong>February 4, 2026:</strong> the retention pilot dropped hospitality and food services and added several skilled trades.</li>
+        <li><strong>March 2, 2026:</strong> the MPNP stopped answering email inquiries; questions now go through webforms, and it will not extend LAA deadlines or edit EOIs for you.</li>
+        <li><strong>April 14, 2026:</strong> Manitoba opted in to two federal Temporary Foreign Worker Program measures for employers outside the Winnipeg CMA (a 15% low-wage cap instead of 10%, and keeping current proportions above the cap), in effect until March 31, 2027.</li>
+        <li><strong>May 1, 2026:</strong> the MPNP said it would hold targeted draws to invite holders of support letters under the 2025 temporary public policy who got work permits.</li>
+        <li><strong>June 11, 2026:</strong> Career Employment Pathway candidates with six months of Manitoba work were told to move to the SWM Pathway, where graduates get priority selections.</li>
+        <li><strong>July 6, 2026:</strong> IRCC signed the Manitoba Workforce Transition Bridge Temporary Public Policy (announced by the MPNP on August 5). It lets Manitoba issue up to 2,700 new support letters, only to people who already got one in 2024 or 2025, and extends their nomination deadline from December 31, 2026 to December 31, 2027. It is not open to new candidates.</li>
+      </ul>
+
+      <h2 id="vs-bc" class="text-3xl font-bold mt-12 mb-6">Manitoba PNP vs BC PNP</h2>
+      <p>
+        Both programs mostly select people already working in the province, but the details differ. Manitoba's SWM Pathway rewards six months with your current Manitoba employer and gives no points for wage, so a modestly paid job in manufacturing, trades or health care can lead to an LAA. The BC PNP Skills Immigration streams score registrations with points that include your hourly wage and where in B.C. the job is, then invite by score or by occupation group. Manitoba also uniquely lets family and friends serve as your connection through SWO, although that route has been almost closed in 2026 draws. Our full <a href="/articles/bc-pnp-vs-manitoba-mpnp-2026" class="text-blue-600 hover:text-blue-800 underline">BC PNP vs Manitoba MPNP comparison</a> goes further, and you can test your B.C. side with the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a> and check recent <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws</a>.
+      </p>
+      <p>
+        Do not apply to both at once and hope one sticks: the MPNP will not accept you if you have an active application in another provincial program, and work or study in another province costs 100 points each in Manitoba's EOI. If you are still choosing a province, read <a href="/articles/how-to-get-provincial-nomination-canada" class="text-blue-600 hover:text-blue-800 underline">how to get a provincial nomination in Canada</a> and compare it with the <a href="/articles/alberta-pnp-guide" class="text-blue-600 hover:text-blue-800 underline">Alberta PNP guide</a>.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://immigratemanitoba.com/mpnp/streams/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">MPNP streams, Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/skilled-worker/swm/eligibility/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Skilled Worker in Manitoba eligibility, Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/skilled-worker/swo/eligibility/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Skilled Worker Overseas eligibility and points, Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/ies/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">International Education Stream (CEP, GIP and ISEP eligibility pages), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/bis/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Business Investor Stream (Entrepreneur and Farm Investor pathways), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/apply/eoi/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Expression of Interest, Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/apply/laa/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Letter of Advice to Apply ($500 fee, 60 days), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/policies/settlement-funds/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Settlement funds policy, Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/policies/language-proficiency/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Language proficiency policy, Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/resources/data/monthly-data-2026/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">MPNP Monthly Data 2026, Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/2026/11/expression-of-interest-draw-283/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Expression of Interest Draw #283 (November 5, 2026), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/mpnp/regional-immigration-initiatives/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Regional immigration initiatives, Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/employer-services/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Employer Services (Employer Direct Initiative and Temporary Resident Retention Pilot), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/2026/06/important-update-for-manitoba-provincial-nominee-program-international-education-stream-ies-career-employment-pathway-cep-candidates/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Important update for Career Employment Pathway candidates (June 11, 2026), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/2026/08/manitoba-workforce-transition-bridge-temporary-public-policy/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Manitoba Workforce Transition Bridge Temporary Public Policy (August 5, 2026), Manitoba Immigration</a></li>
+        <li><a href="https://immigratemanitoba.com/news/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">MPNP news (contact changes, TFWP measures, retention pilot changes), Manitoba Immigration</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Check processing times, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/proof-funds.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry proof of funds, IRCC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 16, 2026. Monthly MPNP data covers January to October 2026; IRCC processing estimates were last updated October 9, 2026. Program rules change often; confirm on immigratemanitoba.com before applying.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/manitoba-pnp-draws" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Draw Tracker</div>
+          <div class="font-bold text-gray-900">Manitoba PNP Draws 2026: Results, Scores and LAAs</div>
+        </a>
+        <a href="/articles/bc-pnp-vs-manitoba-mpnp-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-rose-600 font-bold mb-2">Comparison</div>
+          <div class="font-bold text-gray-900">BC PNP vs Manitoba MPNP 2026</div>
+        </a>
+        <a href="/articles/how-to-get-provincial-nomination-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">How-To</div>
+          <div class="font-bold text-gray-900">How to Get a Provincial Nomination in Canada</div>
+        </a>
+        <a href="/articles/express-entry-job-seeker-validation-code" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Express Entry</div>
+          <div class="font-bold text-gray-900">Express Entry Job Seeker Validation Code</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

@@ -1,0 +1,383 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "New Brunswick PNP Guide 2026: NBPNP Streams, Requirements, Fees and Draws";
+const description = "New Brunswick PNP guide for late 2026: the four NBPNP streams, requirements, EOI and invitations, the $250 fee, 2026 draws, processing times and NBPNP vs AIP.";
+const canonical = "https://bcpnpcalculator.ca/articles/new-brunswick-pnp-guide";
+
+const faqs = [
+  {
+    q: "What are the New Brunswick PNP streams in 2026?",
+    a: "As of November 16, 2026, Immigration New Brunswick lists four NBPNP streams: the New Brunswick Skilled Worker stream, the New Brunswick Express Entry stream, the New Brunswick Strategic Initiative (for French speakers) and the New Brunswick Business Immigration stream. It also lists two pilots: the Critical Worker Pilot, which only works through six participating employers, and the Private Career College Graduate Pilot, which now only serves students already registered in specific programs.",
+  },
+  {
+    q: "How do I apply to the New Brunswick PNP?",
+    a: "You create a profile on the INB portal and submit a free Expression of Interest (EOI) for one stream. Your answers decide which pathways of that stream you qualify for. The EOI sits in the candidate pool for 365 days. Immigration New Brunswick invites selected candidates based on labour market needs, available allocation and provincial priorities, and EOIs are not handled first come, first served. If invited, you submit a complete application within the deadline in your invitation letter.",
+  },
+  {
+    q: "How much does the NBPNP cost?",
+    a: "The Expression of Interest is free. Before you submit a complete nomination application you pay a non-refundable fee of $250 for the Skilled Worker, Express Entry and Strategic Initiative streams, or $2,000 for the Business Immigration stream. If you are nominated, IRCC's permanent residence fees are $1,590 for the principal applicant (including the $600 right of permanent residence fee), $1,590 for a spouse or partner and $270 per dependent child.",
+  },
+  {
+    q: "When was the last New Brunswick PNP draw?",
+    a: "On New Brunswick's official invitation rounds page, checked November 16, 2026, the latest NBPNP rounds were in September 2026: 197 Skilled Worker invitations (September 15 to 18), 102 Express Entry invitations (September 17) and 251 Strategic Initiative invitations (September 11). The latest round listed for the Atlantic Immigration Program selected 203 applications on October 2, 9 and 29, 2026.",
+  },
+  {
+    q: "Which jobs are excluded from the New Brunswick PNP in 2026?",
+    a: "Since February 3, 2026, Immigration New Brunswick does not consider Skilled Worker or Express Entry EOIs from candidates working in the accommodation and food services sector (NAICS 72). It also excludes several occupations in any sector, including retail salespersons (NOC 64100), cashiers (NOC 65100), retail sales supervisors (NOC 62010) and shippers and receivers (NOC 14400). Since May 4, 2026, new invitations under the New Brunswick Experience pathway are limited to health care, education and construction.",
+  },
+  {
+    q: "What is New Brunswick's PNP allocation for 2026?",
+    a: "New Brunswick had not published an official 2026 nomination allocation as of November 16, 2026. Its last official figures are for 2025: an initial 2,750 spaces (1,500 NBPNP and 1,250 AIP). CTV News reported in June 2025 that the province had negotiated 1,500 more, for 4,250. In May 2026 the province limited one pathway because of limited remaining allocation, which suggests spaces are tight.",
+  },
+  {
+    q: "How long does the New Brunswick PNP take?",
+    a: "Immigration New Brunswick does not publish processing times and says assessment can take several months. After nomination, IRCC's processing time tool (last updated October 9, 2026) showed about 7 months for Express Entry-linked PNP applications and about 13 months for non-Express Entry (base) PNP applications. Atlantic Immigration Program applications showed about 26 months.",
+  },
+  {
+    q: "Is the New Brunswick PNP easier than the BC PNP?",
+    a: "They suit different people. New Brunswick's Skilled Worker stream accepts CLB 4 language and focuses on people already working or studying in the province, but 2026 invitations are concentrated in a few sectors. The BC PNP Skills Immigration streams require a TEER 0 to 3 job offer in most cases and rank registrants on a points score. Use our BC PNP calculator to see how your profile scores in B.C.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="new-brunswick-pnp-guide" datePublished="2026-11-16" dateModified="2026-11-16" articleSection="Guide" keywords="new brunswick pnp, new brunswick canada pnp, pnp nb canada, nb pnp, pnp nb, pnp new brunswick, nb pnp draw" ogImage="/images/articles/new-brunswick-pnp-guide.png" title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-amber-100 text-amber-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-amber-200 shadow-sm">
+        Provincial Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        New Brunswick PNP Guide 2026: NBPNP Streams, Requirements, Fees and Draws
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        New Brunswick's nominee program runs on one Expression of Interest pool feeding four streams. In 2026 the province narrowed who it invites, cut out food service and retail jobs, and kept its draws small. Here is how the NBPNP works now.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-16">November 16, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/new-brunswick-pnp-guide.png" width="1200" height="630" alt="Route diagram showing one Expression of Interest branching into the four New Brunswick PNP streams, Skilled Worker, Express Entry, Strategic Initiative and Business, which meet at nomination, next to the $250 application fee."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-amber-50 border-l-4 border-amber-600 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-amber-900 mb-2">Quick answer</p>
+      <p class="text-amber-900">
+        The New Brunswick PNP (NBPNP) has four streams as of November 16, 2026: Skilled Worker, Express Entry, Strategic Initiative (French speakers) and Business Immigration. You submit a free Expression of Interest, and Immigration New Brunswick invites candidates based on labour needs and remaining allocation. If invited, you pay $250 ($2,000 for Business) and apply. In 2026 food service and retail jobs are excluded and the New Brunswick Experience pathway only invites health care, education and construction workers. No official 2026 allocation has been published.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">4</div>
+        <div class="text-sm text-slate-600 font-medium">NBPNP streams, plus two limited pilots</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">$250</div>
+        <div class="text-sm text-slate-600 font-medium">Application fee after an invitation ($2,000 for Business)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-amber-600 mb-2">365 days</div>
+        <div class="text-sm text-slate-600 font-medium">How long an Expression of Interest stays in the pool</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#what" class="hover:underline">What the New Brunswick PNP is</a></li>
+        <li><a href="#streams" class="hover:underline">The four NBPNP streams and their requirements</a></li>
+        <li><a href="#restrictions" class="hover:underline">2026 restrictions: who is not being invited</a></li>
+        <li><a href="#apply" class="hover:underline">How the EOI and invitation process works</a></li>
+        <li><a href="#draws" class="hover:underline">Recent NB PNP draws</a></li>
+        <li><a href="#fees" class="hover:underline">Fees and processing times</a></li>
+        <li><a href="#allocation" class="hover:underline">The 2026 allocation</a></li>
+        <li><a href="#compare" class="hover:underline">NBPNP vs Atlantic Immigration Program vs BC PNP</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        Many pages about the "NB PNP" still describe pathways and sector rules that changed in 2026. New Brunswick has also moved its immigration content from welcomenb.ca to gnb.ca, which now redirects there. This guide is based on Immigration New Brunswick's stream pages, notices and invitation rounds as published on gnb.ca on November 16, 2026. It is general information, not legal advice.
+      </p>
+
+      <h2 id="what" class="text-3xl font-bold mt-12 mb-6">What the New Brunswick PNP Is</h2>
+
+      <p>
+        The New Brunswick Provincial Nominee Program lets the province nominate foreign nationals who want to live and work, or run a business, in New Brunswick. Immigration New Brunswick selects and nominates people based on their skills, education and work experience compared with the province's economic needs. A nomination is not permanent residence: Immigration, Refugees and Citizenship Canada (IRCC) makes the final decision, after medical, security and criminality checks.
+      </p>
+      <p>
+        New Brunswick runs a second, separate program: the federal-provincial <strong>Atlantic Immigration Program (AIP)</strong>. It has its own candidate pool and its own rules. You can sit in both pools, but you can only move forward with one application at a time (more on that below).
+      </p>
+
+      <h2 id="streams" class="text-3xl font-bold mt-12 mb-6">The Four NBPNP Streams and Their Requirements</h2>
+
+      <p>
+        Each stream has several pathways. You only choose a stream when you submit your Expression of Interest; your questionnaire answers decide which pathways you are eligible for.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="p-3 text-left">Stream</th>
+              <th class="p-3 text-left">Who it is for</th>
+              <th class="p-3 text-left">Language minimum</th>
+              <th class="p-3 text-left">Age</th>
+              <th class="p-3 text-left">Points grid</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200">
+              <td class="p-3 font-semibold">Skilled Worker</td>
+              <td class="p-3">Workers employed by, or with a full-time non-seasonal offer from, an eligible NB employer</td>
+              <td class="p-3">CLB 4</td>
+              <td class="p-3">19 or older</td>
+              <td class="p-3">Not listed on stream page</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="p-3 font-semibold">Express Entry</td>
+              <td class="p-3">Skilled workers with a valid federal Express Entry profile</td>
+              <td class="p-3">CLB 7</td>
+              <td class="p-3">19 to 55</td>
+              <td class="p-3">67 of 100</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="p-3 font-semibold">Strategic Initiative</td>
+              <td class="p-3">French-speaking workers and graduates</td>
+              <td class="p-3">NCLC 5 in French</td>
+              <td class="p-3">19 or older</td>
+              <td class="p-3">65 of 100</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="p-3 font-semibold">Business Immigration</td>
+              <td class="p-3">Entrepreneurs who will start or buy and run a business</td>
+              <td class="p-3">CLB 4</td>
+              <td class="p-3">19 to 59</td>
+              <td class="p-3">65 of 100</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">New Brunswick Skilled Worker stream</h3>
+      <p>
+        All applicants need CLB 4 in all four language skills, support from an eligible employer that has been actively operating in New Brunswick for the past 24 months, and must meet the job's NOC requirements. Then you must fit one of three pathways:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>New Brunswick Experience:</strong> working full time in a non-seasonal job for the supporting employer, at least six months of full-time experience with that employer, six months living in New Brunswick, and at least a high school diploma.</li>
+        <li><strong>New Brunswick Graduates:</strong> a PGWP-eligible program completed at a designated learning institution in New Brunswick, a full-time non-seasonal job (or accepted offer) with the supporting employer, and six months living in the province.</li>
+        <li><strong>New Brunswick Priority Occupations:</strong> an accepted offer that came directly from a recruitment mission led by the Government of New Brunswick, in one of the priority NOC codes listed in the guide, plus one year of related paid experience and a high school diploma.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">New Brunswick Express Entry stream</h3>
+      <p>
+        You need a valid Express Entry profile, CLB 7 in all four skills, at least a high school diploma (or foreign equivalent), one year of continuous work in a single TEER 0, 1, 2 or 3 occupation within the past 10 years, and 67 of 100 points on the provincial grid. There are two pathways:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Employment in New Brunswick:</strong> working full time in a non-seasonal TEER 0 to 3 job for an eligible employer, after living and working full time in New Brunswick for the past 12 months while authorized to work.</li>
+        <li><strong>New Brunswick Interest:</strong> you received a letter of interest from the province through your Express Entry profile and meet the federal proof of funds requirement.</li>
+      </ul>
+      <p>
+        A nomination through this stream adds 600 points to your Comprehensive Ranking System score, which in practice leads to an invitation in a later federal draw. Our <a href="/articles/express-entry-crs-score-calculator" class="text-blue-600 hover:text-blue-800 underline">CRS score guide</a> explains how the federal score is built.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">New Brunswick Strategic Initiative</h3>
+      <p>
+        This stream is for French speakers. You need NCLC 5 in all four French skills, a high school diploma, one year of qualifying work in the past five years (not needed if you graduated from a New Brunswick post-secondary institution), proof of funds (not needed if you live in New Brunswick or hold a valid NB job offer) and 65 of 100 points. Its three pathways are:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Francophone Workers in New Brunswick:</strong> a permanent, full-time, year-round job (or accepted offer) with an employer operating in the province for at least 12 months, and six months living in New Brunswick unless the offer came from a provincial recruitment mission.</li>
+        <li><strong>New Brunswick Francophone Priorities:</strong> either a graduate of an in-person program of at least one year at Universit&eacute; de Moncton or CCNB who lives in the province, or someone who received a letter of interest from Immigration New Brunswick.</li>
+        <li><strong>Francophones Working Remotely in New Brunswick:</strong> 12 months living in New Brunswick while working remotely for a Canadian employer located outside Quebec.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">New Brunswick Business Immigration stream</h3>
+      <p>
+        This stream replaced the old Entrepreneurial stream. You need a personal net worth of at least $500,000 ($300,000 if investing in agriculture), two years of qualifying ownership or senior management experience in the last five years, and a business plan with at least $150,000 in eligible investment that creates at least one full-time job. If approved, you get a work permit, report your arrival within one month, open the business within nine months, and can ask for nomination after six months of operating under your Business Performance Agreement. Net worth must be verified by an approved accounting firm.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The two pilots</h3>
+      <p>
+        The <strong>Critical Worker Pilot</strong> is employer-driven and not open to direct applications: candidates need an offer from one of six participating employers (Cooke Aquaculture, J.D. Irving, Groupe Savoie, Groupe Westco, Imperial Manufacturing Group and McCain Foods). The <strong>Private Career College Graduate Pilot</strong>, launched in September 2022, has been extended in a limited capacity to the end of 2027, only for international students already registered in specific programs.
+      </p>
+
+      <h2 id="restrictions" class="text-3xl font-bold mt-12 mb-6">2026 Restrictions: Who Is Not Being Invited</h2>
+
+      <p>
+        Meeting the stream rules is not enough in 2026. Immigration New Brunswick's notices list three active limits:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Accommodation and food services (since February 3, 2026):</strong> no Skilled Worker or Express Entry EOIs are considered for candidates working in this sector (NAICS 72), including cooks, chefs, food service supervisors, servers, bartenders and hotel front desk clerks. Someone in one of these occupations can still submit an EOI if their employer is not in NAICS 72.</li>
+        <li><strong>Excluded occupations in any sector (since February 3, 2026):</strong> including shippers and receivers (NOC 14400), retail and wholesale trade managers (60020), retail sales supervisors (62010), retail salespersons (64100), cashiers (65100) and store shelf stockers (65102), among others listed on the notice.</li>
+        <li><strong>New Brunswick Experience limited to three sectors (since May 4, 2026):</strong> new invitations under this Skilled Worker pathway go only to health care, education and construction occupations, "due to limited remaining allocation".</li>
+      </ul>
+      <p>
+        The province also says it cannot guarantee an application will be decided before a work permit expires. If your permit is running out, look at federal options such as a <a href="/articles/bridging-open-work-permit-bowp" class="text-blue-600 hover:text-blue-800 underline">bridging open work permit</a> once you are eligible, rather than relying on nomination timing.
+      </p>
+
+      <h2 id="apply" class="text-3xl font-bold mt-12 mb-6">How the NBPNP EOI and Invitation Process Works</h2>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Check eligibility.</strong> Read the guide for your stream, the important information page and the current notices. Get an educational credential assessment if you have no Canadian credential (under five years old) and a language test (under two years old): IELTS General, CELPIP, PTE Core, TEF Canada or TCF Canada.</li>
+        <li><strong>Create an INB portal profile.</strong> Use your own email and enter your names exactly as on your passport; you cannot edit name or birth date later.</li>
+        <li><strong>Submit an Expression of Interest.</strong> It is free and stays valid for 365 days. To change it, withdraw and resubmit; that does not send you to the back of a queue, because EOIs are not processed first come, first served.</li>
+        <li><strong>Wait for an invitation.</strong> The Skilled Worker, Express Entry and Strategic Initiative streams use scheduled draws. Invitations depend on labour market needs, available allocation and provincial priorities.</li>
+        <li><strong>Apply within the deadline in your invitation letter.</strong> Pay the fee, upload the forms (for example NB-004 Employment Information and NB-005 Consent and Declaration) and supporting documents. Incomplete files can be closed.</li>
+        <li><strong>Assessment and decision.</strong> The province says this may take several months. You may get a document request, an officer's call or a procedural fairness letter. A nomination certificate is only issued through the INB portal.</li>
+        <li><strong>Apply to IRCC.</strong> Your certificate says whether you apply through Express Entry or the paper-based (non-Express Entry) process. Apply before the certificate expires.</li>
+      </ol>
+      <p>
+        <strong>One application at a time:</strong> to be in both the NBPNP and AIP pools you need two INB profiles with different email addresses. If you get an NBPNP invitation you must withdraw other submissions, and if you receive both an invitation and an AIP selection you must choose one. More than one active application can lead to all of them being refused. Applicants currently enrolled in post-secondary studies in Canada, or with an immigration application in process in any province, should not apply.
+      </p>
+
+      <h2 id="draws" class="text-3xl font-bold mt-12 mb-6">Recent NB PNP Draws</h2>
+
+      <p>
+        Immigration New Brunswick publishes its rounds on gnb.ca. The latest rounds listed there on November 16, 2026:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr><th class="p-3 text-left">Draw date (2026)</th><th class="p-3 text-left">Stream</th><th class="p-3 text-left">Pathways</th><th class="p-3 text-left">Invitations</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="p-3">September 15 to 18</td><td class="p-3">Skilled Worker</td><td class="p-3">NB Graduates, NB Experience</td><td class="p-3">197</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">September 17</td><td class="p-3">Express Entry</td><td class="p-3">Employment in New Brunswick</td><td class="p-3">102</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">September 11</td><td class="p-3">Strategic Initiative</td><td class="p-3">Francophone Workers, NB Francophone Priorities</td><td class="p-3">251</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">October 2, 9 and 29</td><td class="p-3">Atlantic Immigration Program</td><td class="p-3">Applications selected for processing</td><td class="p-3">203</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Earlier in 2026 the pattern was similar: rounds roughly every month or two, a few hundred invitations at a time, and targeting by occupational category. For example, a July 16 to 18 round under the New Brunswick Experience and Priorities pathways issued 58 invitations to construction trades and health care workers only, while the Strategic Initiative issued 254 invitations on July 16. New Brunswick does not publish a points cutoff for these rounds; it lists the EOI cut-off date and the occupational categories selected. No NBPNP round after September 2026 was listed when we checked.
+      </p>
+
+      <h2 id="fees" class="text-3xl font-bold mt-12 mb-6">NBPNP Fees and Processing Times</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr><th class="p-3 text-left">Cost</th><th class="p-3 text-left">Amount (CAD)</th><th class="p-3 text-left">When</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="p-3">Expression of Interest</td><td class="p-3">Free</td><td class="p-3">At submission</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">Application fee: Skilled Worker, Express Entry, Strategic Initiative</td><td class="p-3">$250, non-refundable</td><td class="p-3">Before submitting a complete application</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">Application fee: Business Immigration</td><td class="p-3">$2,000, non-refundable</td><td class="p-3">Before submitting a complete application</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">IRCC PR fee, principal applicant</td><td class="p-3">$1,590 (incl. $600 right of PR fee)</td><td class="p-3">With the federal application</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">IRCC PR fee, spouse or partner</td><td class="p-3">$1,590</td><td class="p-3">With the federal application</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3">IRCC PR fee, dependent child</td><td class="p-3">$270 each</td><td class="p-3">With the federal application</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Budget separately for language tests, a credential assessment, translations, medical exams, biometrics and, for Business applicants, net worth verification. Using a representative is optional and gives no priority. If an employer is supporting a closed work permit for you, the employer pays the compliance fee and cannot take it from you.
+      </p>
+      <p>
+        <strong>Processing times:</strong> Immigration New Brunswick does not publish provincial processing times. For the federal stage, IRCC's processing time data, last updated October 9, 2026, showed about <strong>7 months</strong> for Express Entry-linked PNP applications and about <strong>13 months</strong> for base PNP applications. These figures change monthly; see our <a href="/articles/ircc-processing-times-canada" class="text-blue-600 hover:text-blue-800 underline">IRCC processing times guide</a> and <a href="/articles/how-long-to-get-pr-in-canada" class="text-blue-600 hover:text-blue-800 underline">how long it takes to get PR</a>.
+      </p>
+
+      <h2 id="allocation" class="text-3xl font-bold mt-12 mb-6">The New Brunswick PNP Allocation for 2026</h2>
+
+      <p>
+        As of November 16, 2026, we could not find an official 2026 nomination allocation for New Brunswick on gnb.ca. The last official figures cover 2025. In February 2025 the province said federal changes cut its allocation to 2,750 from 5,500 in 2024, split into 1,500 NBPNP nominations and 1,250 AIP endorsements. In June 2025, CTV News reported that the province had negotiated 1,500 more, bringing the 2025 total to 4,250. Estimates for 2026 circulating online are not provincial figures. The clearest official signal is the May 4, 2026 notice that limited a Skilled Worker pathway because of "limited remaining allocation".
+      </p>
+
+      <h2 id="compare" class="text-3xl font-bold mt-12 mb-6">NBPNP vs Atlantic Immigration Program vs BC PNP</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-base">
+          <thead class="bg-slate-100">
+            <tr><th class="p-3 text-left">Feature</th><th class="p-3 text-left">New Brunswick PNP</th><th class="p-3 text-left">AIP in New Brunswick</th><th class="p-3 text-left">BC PNP Skills Immigration</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">How you enter</td><td class="p-3">EOI pool, invitation by draw</td><td class="p-3">Endorsement application in a separate pool, selected for processing</td><td class="p-3">Registration with a points score, then invitation</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Job offer</td><td class="p-3">Required in most pathways</td><td class="p-3">Required, from a designated NB employer</td><td class="p-3">Required, TEER 0 to 3 for Skilled Worker</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Provincial fee</td><td class="p-3">$250 ($2,000 Business)</td><td class="p-3">No candidate fee listed</td><td class="p-3">$1,750; registration free</td></tr>
+            <tr class="border-t border-slate-200"><td class="p-3 font-semibold">Federal processing (IRCC, Oct 9, 2026 data)</td><td class="p-3">About 7 months (Express Entry) or 13 months (base)</td><td class="p-3">About 26 months</td><td class="p-3">Same as NBPNP</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>NBPNP vs AIP:</strong> the AIP is employer-driven. Employers must be designated by Immigration New Brunswick, and new employer designation applications stay paused for the rest of 2026. Since October 14, 2026, candidate endorsements are accepted for all occupations except NOC 14400, 60030, 62020 and 94142, TEER 5 jobs are ineligible, and offers to people outside Canada are limited to provincial recruitment in health care, education and construction. Priority goes to time employed in New Brunswick and attachment to the province. Federal AIP processing has been much slower than PNP processing. Our <a href="/articles/bc-pnp-vs-atlantic-immigration-2026" class="text-blue-600 hover:text-blue-800 underline">BC PNP vs Atlantic Immigration Program comparison</a> covers the AIP in more depth, and the <a href="/articles/nova-scotia-pnp-guide" class="text-blue-600 hover:text-blue-800 underline">Nova Scotia PNP guide</a> shows how a neighbouring Atlantic province runs its program.
+      </p>
+      <p>
+        <strong>NBPNP vs BC PNP:</strong> New Brunswick mostly rewards people already rooted in the province: six months working or living there, a local degree, or French. Its language minimum can be as low as CLB 4, but 2026 invitations are concentrated in a few sectors. B.C. ranks registrants on a score that weighs wage, job location, education, language and experience, and requires a TEER 0 to 3 offer for its Skilled Worker stream. If your job is in B.C., check your score with the <a href="/bc-pnp-calculator" class="text-amber-700 underline font-semibold">BC PNP Calculator</a> and compare it with recent cutoffs on the <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a>. For a wider view, see <a href="/articles/how-to-get-provincial-nomination-canada" class="text-blue-600 hover:text-blue-800 underline">how to get a provincial nomination in Canada</a>.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.gnb.ca/en/topic/family-home-community/immigration/provincial-nominee-program.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">New Brunswick Provincial Nominee Program, Government of New Brunswick</a></li>
+        <li><a href="https://www.gnb.ca/en/topic/family-home-community/immigration/provincial-nominee-program/skilled-worker-stream.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">New Brunswick Skilled Worker stream, Government of New Brunswick</a></li>
+        <li><a href="https://www.gnb.ca/en/topic/family-home-community/immigration/provincial-nominee-program/express-entry-stream.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">New Brunswick Express Entry stream, Government of New Brunswick</a></li>
+        <li><a href="https://www.gnb.ca/en/topic/family-home-community/immigration/provincial-nominee-program/strategic-initiative.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">New Brunswick Strategic Initiative, Government of New Brunswick</a></li>
+        <li><a href="https://www.gnb.ca/en/topic/family-home-community/immigration/provincial-nominee-program/business-immigration-stream.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">New Brunswick Business Immigration stream, Government of New Brunswick</a></li>
+        <li><a href="https://www.gnb.ca/content/gnb/en/corporate/promo/immigration/immigrating-to-nb/nb-immigration-program-streams/nb-critical-workers-pilot.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">New Brunswick Critical Worker Pilot, Government of New Brunswick</a></li>
+        <li><a href="https://www.gnb.ca/en/topic/family-home-community/immigration/important-notices.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Important notices (checked November 16, 2026), Government of New Brunswick</a></li>
+        <li><a href="https://www.gnb.ca/en/topic/family-home-community/immigration/important-information.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Important information for every candidate, Government of New Brunswick</a></li>
+        <li><a href="https://www.gnb.ca/en/topic/family-home-community/immigration/invitation-selection-rounds.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Invitation and selection rounds (checked November 16, 2026), Government of New Brunswick</a></li>
+        <li><a href="https://www.gnb.ca/en/topic/family-home-community/immigration/atlantic-immigration-program.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Atlantic Immigration Program in New Brunswick, Government of New Brunswick</a></li>
+        <li><a href="https://www.gnb.ca/en/news/n-b.2025.02.federal-program-changes-reduce-provincial-immigration-allocation.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Federal program changes reduce provincial immigration allocation (February 2025), Government of New Brunswick</a></li>
+        <li><a href="https://www.ctvnews.ca/atlantic/new-brunswick/article/new-brunswick-negotiates-immigration-allocation-increase/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">New Brunswick negotiates immigration allocation increase (June 2025), CTV News Atlantic</a></li>
+        <li><a href="https://ircc.canada.ca/english/information/fees/fees.asp" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Fee list, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Check processing times (data last updated October 9, 2026), IRCC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP Skills Immigration, WelcomeBC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 16, 2026. New Brunswick changes its sector restrictions and draw targets often; confirm every requirement on gnb.ca and with IRCC before you apply.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-vs-atlantic-immigration-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Comparison</div>
+          <div class="font-bold text-gray-900">BC PNP vs Atlantic Immigration Program</div>
+        </a>
+        <a href="/articles/nova-scotia-pnp-guide" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-amber-600 font-bold mb-2">Provincial Guide</div>
+          <div class="font-bold text-gray-900">Nova Scotia PNP Guide 2026</div>
+        </a>
+        <a href="/articles/how-to-get-provincial-nomination-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">How-To</div>
+          <div class="font-bold text-gray-900">How to Get a Provincial Nomination in Canada</div>
+        </a>
+        <a href="/bc-pnp-calculator" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-red-600 font-bold mb-2">Tool</div>
+          <div class="font-bold text-gray-900">BC PNP Points Calculator</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

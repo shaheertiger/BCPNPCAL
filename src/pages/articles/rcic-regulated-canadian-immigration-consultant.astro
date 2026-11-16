@@ -1,0 +1,322 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "RCIC: What a Regulated Canadian Immigration Consultant Is and How to Verify One (2026)";
+const description = "What an RCIC is, how to check a licence on the CICC public register, RCIC vs lawyer, what a service agreement must include, red flags and how to complain.";
+const canonical = "https://bcpnpcalculator.ca/articles/rcic-regulated-canadian-immigration-consultant";
+
+const faqs = [
+  {
+    q: "What does RCIC mean?",
+    a: "RCIC stands for Regulated Canadian Immigration Consultant. It is the title used by immigration consultants licensed by the College of Immigration and Citizenship Consultants (CICC), the federal regulator created under the College of Immigration and Citizenship Consultants Act. An RCIC can charge a fee to advise you on, or represent you in, Canadian immigration and citizenship matters.",
+  },
+  {
+    q: "How do I verify an RCIC licence?",
+    a: "Search the consultant's name or College ID on the CICC public register at register.college-ic.ca. Check that the status is Active (or Active - Practice Restricted, with the restriction listed) and that the Entitled to Practise column says Yes. Then contact the consultant using the phone number or email shown on the register, not only the details on their website or social media.",
+  },
+  {
+    q: "Is an RCIC or an immigration lawyer better?",
+    a: "Neither is automatically better. Both are authorized by IRCC to charge for immigration advice and representation. Lawyers can also handle Federal Court judicial reviews and broader legal problems such as criminal or family law issues that affect your immigration case. For routine applications, many people use either, or no representative at all. Compare experience with your specific program, the written fee estimate and the person's licence status.",
+  },
+  {
+    q: "Can an RCIC represent me at the Immigration and Refugee Board?",
+    a: "Only if they hold the right licence. The IRB says that since July 1, 2023, CICC members need a specific type of licence to represent clients before the Board, even if they are not charging a fee. On the CICC register this is the Class L3 RCIC-IRB licence. Class L1 and L2 RCICs cannot appear before the IRB unless they are also paralegals licensed by the Law Society of Ontario.",
+  },
+  {
+    q: "Do I need an RCIC to apply for the BC PNP or Express Entry?",
+    a: "No. IRCC says you don't need to hire a representative and that using one will not draw special attention to your application. WelcomeBC says hiring a representative is not required to apply to the BC PNP and does not guarantee approval. All forms and instructions are free on canada.ca and welcomebc.ca.",
+  },
+  {
+    q: "How much does an RCIC charge?",
+    a: "There is no official fee schedule. Fees vary by consultant, program and complexity, so ask for a written estimate. The Code of Professional Conduct requires the service agreement to state either the hourly rate and anticipated hours or an agreed fixed fee, plus expected disbursements, taxes, payment terms and the refund policy. Government fees, such as IRCC processing fees, are separate.",
+  },
+  {
+    q: "How do I complain about an immigration consultant?",
+    a: "For a licensed RCIC, file a complaint through the CICC College Portal; the College does not accept complaints by email, paper or phone. For someone who is not licensed, submit an unauthorized practitioner report through the same portal, and WelcomeBC also suggests reporting unlicensed representatives to local police. If a BC PNP application is involved, email PNP.fraud.tips@gov.bc.ca as well.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="rcic-regulated-canadian-immigration-consultant" datePublished="2026-11-16" dateModified="2026-11-16" articleSection="Guide" keywords="rcic, regulated canadian immigration consultant, rcic meaning, how to verify rcic, rcic vs lawyer, rcic license check" title={title} description={description} canonical={canonical} ogImage="/images/articles/rcic-regulated-canadian-immigration-consultant.png">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-sky-100 text-sky-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-sky-200 shadow-sm">
+        Representatives Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        RCIC: What a Regulated Canadian Immigration Consultant Is and How to Verify One
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Who regulates immigration consultants in Canada, the licence classes, a step-by-step licence check, what a service agreement must contain, and when you don't need anyone at all.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-16">November 16, 2026</time>
+        <span>&bull;</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/rcic-regulated-canadian-immigration-consultant.png" width="1200" height="630" alt="Illustration of an immigration consultant licence card marked Active with a shield and checkmark, above a register row reading Entitled to practise: Yes."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-sky-50 border-l-4 border-sky-600 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-sky-900 mb-2">Quick answer</p>
+      <p class="text-sky-900">
+        An RCIC (Regulated Canadian Immigration Consultant) is an immigration consultant licensed by the College of Immigration and Citizenship Consultants (CICC), the federal regulator set up under the College of Immigration and Citizenship Consultants Act. Before you pay anyone, search their name on the CICC public register at register.college-ic.ca and confirm "Active" status and "Yes" under Entitled to Practise. Only CICC licensees, members of a Canadian law society and Quebec notaries can charge for immigration advice, and you never need a representative to apply.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-sky-600 mb-2">Nov 23, 2021</div>
+        <div class="text-sm text-slate-600 font-medium">Date the CICC replaced the former regulator, ICCRC</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-sky-600 mb-2">L3</div>
+        <div class="text-sm text-slate-600 font-medium">RCIC-IRB licence class needed to appear before the IRB</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-sky-600 mb-2">$7,000</div>
+        <div class="text-sm text-slate-600 font-medium">Maximum CICC Compensation Fund payout per successful claim</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#meaning" class="hover:underline">RCIC meaning and who regulates consultants</a></li>
+        <li><a href="#classes" class="hover:underline">CICC licence classes</a></li>
+        <li><a href="#verify" class="hover:underline">How to verify an RCIC licence</a></li>
+        <li><a href="#scope" class="hover:underline">What RCICs can and can't do</a></li>
+        <li><a href="#vs-lawyer" class="hover:underline">RCIC vs lawyer vs unpaid help</a></li>
+        <li><a href="#agreement" class="hover:underline">What a service agreement must include</a></li>
+        <li><a href="#fees" class="hover:underline">RCIC fees</a></li>
+        <li><a href="#red-flags" class="hover:underline">Red flags and fraud</a></li>
+        <li><a href="#complain" class="hover:underline">How to complain</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        If you are planning a BC PNP registration, an Express Entry profile or a work permit, you will see many ads from immigration consultants. Some are licensed professionals. Others are "ghost consultants" who have no licence and answer to no one. Knowing what an RCIC is, and how to check one in two minutes, protects your money and your application. This guide is general information as of November 16, 2026, not legal advice, and it does not recommend any firm.
+      </p>
+
+      <h2 id="meaning" class="text-3xl font-bold mt-12 mb-6">RCIC Meaning and Who Regulates Immigration Consultants</h2>
+
+      <p>
+        <strong>RCIC</strong> stands for <strong>Regulated Canadian Immigration Consultant</strong>. It is the title held by consultants licensed by the <strong>College of Immigration and Citizenship Consultants (CICC)</strong>.
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Legal basis.</strong> The College is governed by the federal <em>College of Immigration and Citizenship Consultants Act</em> (S.C. 2019, c. 29, s. 292), which received Royal Assent on June 21, 2019 and came into force on December 9, 2020. The Act says the College's purpose is "to regulate immigration and citizenship consultants in the public interest and protect the public."</li>
+        <li><strong>Start date.</strong> IRCC says the former regulator, the Immigration Consultants of Canada Regulatory Council (ICCRC), was continued as the College on November 23, 2021. Older ads that mention "ICCRC membership" are out of date.</li>
+        <li><strong>Code of conduct.</strong> Licensees must follow the <em>Code of Professional Conduct for College of Immigration and Citizenship Consultants Licensees</em> (SOR/2022-128), a federal regulation that sets rules on service agreements, fees, client money, conflicts of interest and advertising.</li>
+        <li><strong>Protected titles.</strong> Under section 77 of the Act, a person who is not a licensee must not use the title "immigration consultant" or a variation that suggests they are licensed, and must not represent or advise anyone for payment on an immigration or citizenship application unless they are otherwise authorized (for example, a lawyer).</li>
+      </ul>
+      <p>
+        The College also licenses <strong>Regulated International Student Immigration Advisors (RISIAs)</strong>, who may only advise international students and their dependants. If you are applying for permanent residence or the BC PNP, an RISIA is not the right licence.
+      </p>
+
+      <h2 id="classes" class="text-3xl font-bold mt-12 mb-6">CICC Licence Classes: RCIC vs RCIC-IRB</h2>
+
+      <p>
+        The public register shows each licensee's class in the "Type" information. According to the College's "Find an Immigration Consultant" page:
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left font-bold">Class</th>
+              <th class="px-4 py-3 text-left font-bold">Title</th>
+              <th class="px-4 py-3 text-left font-bold">What it means</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-semibold">L1</td><td class="px-4 py-3">RCIC</td><td class="px-4 py-3">New licensee who has not yet completed the first-year New-Licensee Mentoring Program. Same scope as L2.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">L2</td><td class="px-4 py-3">RCIC</td><td class="px-4 py-3">Full scope of practice (licensed before July 1, 2022 or completed mentoring). No IRB appearances unless also an Ontario-licensed paralegal.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">L3</td><td class="px-4 py-3">RCIC-IRB</td><td class="px-4 py-3">Everything an L2 can do, plus representing clients before the Immigration and Refugee Board.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">L4 / L5</td><td class="px-4 py-3">RISIA</td><td class="px-4 py-3">Student immigration advisors: advice to international students and their dependants only.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="verify" class="text-3xl font-bold mt-12 mb-6">How to Verify an RCIC Licence (RCIC Licence Check)</h2>
+
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Get their full name and College ID.</strong> A real RCIC will give you both without hesitation. The ID should also appear on the service agreement.</li>
+        <li><strong>Search the public register</strong> at <a href="https://register.college-ic.ca/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">register.college-ic.ca</a>. The Act requires the College to keep this register searchable and up to date.</li>
+        <li><strong>Read the status.</strong> Only licensees whose status is <em>Active</em> or <em>Active - Practice Restricted</em> are marked "Yes" under Entitled to Practise. Anyone on leave of absence, resigned, suspended or revoked is marked "No" and cannot provide services. If a restriction is listed, make sure it does not cover the service you need.</li>
+        <li><strong>Check the class.</strong> If your matter could go to the IRB (a refugee claim, a sponsorship appeal, an admissibility hearing), you need an L3 RCIC-IRB or a lawyer.</li>
+        <li><strong>Contact them through the register details.</strong> The College tells the public not to pay until you have verified the licence, communicated using the contact details on the register, and signed a service agreement. This defeats a common scam where someone borrows a real RCIC's name and number.</li>
+      </ol>
+      <p>
+        For a lawyer, check the online directory of their law society, such as the Law Society of British Columbia. If the person is in none of these registers, they cannot legally charge you for immigration advice.
+      </p>
+
+      <h2 id="scope" class="text-3xl font-bold mt-12 mb-6">What RCICs Can and Can't Do</h2>
+
+      <p>
+        An Active RCIC can advise you and represent you, for a fee, on IRCC applications such as Express Entry, work and study permits, family sponsorship and citizenship, and on provincial nominee programs. To act on your BC PNP file, the RCIC must be named on the BC PNP <em>Use of a Representative Form - Applicant</em>, which you upload in BCPNP Online under "My Representative". The form asks for the representative's CICC or law society membership ID. For federal applications, the equivalent is <a href="/articles/imm5476-use-of-representative-form" class="text-blue-600 hover:text-blue-800 underline">IMM 5476, the Use of a Representative form</a>.
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>IRB hearings:</strong> only L3 RCIC-IRB licensees (or lawyers, Quebec notaries and Ontario-licensed paralegals).</li>
+        <li><strong>Federal Court:</strong> judicial review of a refused application is a court proceeding. Under rule 119 of the <a href="https://laws-lois.justice.gc.ca/eng/regulations/SOR-98-106/section-119.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Federal Courts Rules</a>, an individual may act in person or be represented by a solicitor (a lawyer), so a consultant cannot represent you there.</li>
+        <li><strong>No guarantees:</strong> the Code bars licensees from guaranteeing the success of an application and from implying a relationship with the federal or a provincial government.</li>
+        <li><strong>Job offers:</strong> the Code treats providing both immigration services and employment recruitment to a foreign national as a conflict of interest. It is allowed only with your written consent, and the licensee must not charge you, directly or indirectly, for the recruitment part and must disclose any fee an employer pays them. WelcomeBC adds that in B.C. it is illegal for anyone to ask you for money in exchange for a job.</li>
+      </ul>
+
+      <h2 id="vs-lawyer" class="text-3xl font-bold mt-12 mb-6">RCIC vs Immigration Lawyer vs Unpaid Help</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left font-bold">Option</th>
+              <th class="px-4 py-3 text-left font-bold">Can charge?</th>
+              <th class="px-4 py-3 text-left font-bold">Regulated by</th>
+              <th class="px-4 py-3 text-left font-bold">Good to know</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-semibold">RCIC</td><td class="px-4 py-3">Yes</td><td class="px-4 py-3">CICC</td><td class="px-4 py-3">IRB work only with the L3 class; no Federal Court.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Lawyer</td><td class="px-4 py-3">Yes</td><td class="px-4 py-3">Provincial or territorial law society</td><td class="px-4 py-3">Can also handle Federal Court and related legal issues.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Quebec notary / Ontario paralegal</td><td class="px-4 py-3">Yes</td><td class="px-4 py-3">Chambre des notaires du Quebec / Law Society of Ontario</td><td class="px-4 py-3">Listed by IRCC as authorized representatives.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Friend, family, NGO or religious group</td><td class="px-4 py-3">No</td><td class="px-4 py-3">Not regulated</td><td class="px-4 py-3">Must be disclosed. If an unpaid BC PNP representative is found to have charged fees, B.C. revokes their eligibility and may cancel your application.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        IRCC says unpaid representatives "may give the same services as paid representatives, but they do it for free," and that if you compensate someone "in any way" they count as paid and must be authorized. Settlement agencies funded by IRCC or B.C. also offer free general help, although they will not usually prepare your application for you.
+      </p>
+
+      <h2 id="agreement" class="text-3xl font-bold mt-12 mb-6">What an RCIC Service Agreement Must Include</h2>
+
+      <p>
+        Section 24 of the Code requires a <strong>written service agreement</strong> before any consulting services are provided (a separate written consultation agreement covers a first paid consultation). The RCIC must give you a draft first, keep a signed copy and give you one, and any change must be agreed in writing by both of you. The agreement must include, among other things:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>the licensee's name, registration number, address, phone and email;</li>
+        <li>a summary of any preliminary advice and your instructions;</li>
+        <li>an itemized list of services tailored to you, with estimated time frames;</li>
+        <li>the names of people likely to assist the RCIC;</li>
+        <li>an estimate of fees (hourly rate and anticipated hours, or a fixed fee), expected disbursements and taxes;</li>
+        <li>payment terms, any advance payment and the refund policy;</li>
+        <li>how confidentiality is protected, and a promise to return original documents;</li>
+        <li>the RCIC's complaint procedure, the College's role and its complaints process;</li>
+        <li>what happens to your file if the RCIC can no longer act; and</li>
+        <li>a statement that you were given a copy of the Code.</li>
+      </ul>
+      <p>
+        Under section 32, money you pay in advance must be held in trust in a client account at a College-approved financial institution, and you must get a receipt. An agreement that is missing the registration number, the itemized services or the refund policy is a warning sign.
+      </p>
+
+      <h2 id="fees" class="text-3xl font-bold mt-12 mb-6">How Much Does an RCIC Charge?</h2>
+
+      <p>
+        Neither the CICC nor IRCC publishes standard consultant fees, and we have not found an official source for typical amounts, so we don't quote numbers here. Fees vary with the program, the complexity of your file and the consultant. Ask two or three licensees for written estimates in the format the Code requires and compare the itemized services, not just the total. Remember that consultant fees are separate from government fees, such as BC PNP application fees and IRCC processing fees, which are set by the governments and listed on their official sites. The College's complaints process deals with conduct, not fee disputes, so agree on fees in writing before you start.
+      </p>
+
+      <h2 id="red-flags" class="text-3xl font-bold mt-12 mb-6">Red Flags and Immigration Consultant Fraud</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li>No College ID, or a name that is not on the register, however professional the website or reviews look.</li>
+        <li>A "guaranteed" visa, job or nomination. WelcomeBC says no one can guarantee you a job, a provincial nomination or a way to immigrate.</li>
+        <li>Requests to keep the representative secret from the BC PNP or IRCC, or to leave them off the representative form.</li>
+        <li>Using an email address you cannot access, blocking you from your BCPNP Online profile, or holding onto your documents.</li>
+        <li>Charging you for a job offer or LMIA, or bundling recruitment fees into immigration fees.</li>
+        <li>A travel agent, labour recruiter or student agent offering to file your application. The College says these people are usually not authorized unless they are also a lawyer, Quebec notary or College licensee.</li>
+        <li>"Free" help that later turns into a fee, which IRCC lists as a common fraud pattern.</li>
+      </ul>
+      <p>
+        Our guide to <a href="/articles/bc-pnp-job-offer-scams-fraud-2027" class="text-blue-600 hover:text-blue-800 underline">BC PNP job offer scams and fraud</a> covers fake employers and LMIA schemes in more detail.
+      </p>
+
+      <h2 id="complain" class="text-3xl font-bold mt-12 mb-6">How to Complain About an Immigration Consultant</h2>
+
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Licensed RCIC:</strong> create an account on the College Portal and submit the complaint under "My Complaints". The College does not accept complaints by email, on paper or by phone. Attach the service agreement, receipts, invoices, messages and application correspondence. Complaints are screened, then reviewed by a Complaints Committee panel that includes at least one licensee and one member of the public.</li>
+        <li><strong>Unlicensed person:</strong> submit an Unauthorized Practitioner report through the same portal. WelcomeBC also directs complaints about unlicensed representatives to local police.</li>
+        <li><strong>Lawyer or notary:</strong> complain to their law society or the Chambre des notaires.</li>
+        <li><strong>BC PNP file involved:</strong> also email <strong>PNP.fraud.tips@gov.bc.ca</strong> with names, addresses and file numbers.</li>
+      </ul>
+      <p>
+        <strong>Money back?</strong> The College's power to order refunds is limited, and it encourages complainants to use civil courts in parallel. Since July 15, 2026, new College regulations allow claims to a Compensation Fund for proven financial loss caused by a licensee's dishonest act (such as theft, fraud or misrepresentation) that happened on or after November 23, 2021, where the final discipline decision was made on or after July 15, 2026. The maximum payout is $7,000 per successful claim, and you must have filed a complaint through the College.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">You Never Need a Representative to Apply</h2>
+
+      <p>
+        IRCC states plainly: "You don't need to hire a representative!" and adds that using one "will not draw special attention to your application." WelcomeBC says the same for the BC PNP. Many applicants handle their own files using the official guides. Start by checking where you stand with the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a>, read <a href="/articles/how-to-apply-bc-pnp" class="text-blue-600 hover:text-blue-800 underline">how to apply for the BC PNP</a>, and follow recent invitation rounds on the <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a>. If your case involves a past refusal, inadmissibility or an appeal, paying a verified RCIC or lawyer can be worth it; just check the register first.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://laws-lois.justice.gc.ca/eng/acts/C-33.6/FullText.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">College of Immigration and Citizenship Consultants Act (S.C. 2019, c. 29, s. 292), Justice Laws</a></li>
+        <li><a href="https://laws-lois.justice.gc.ca/eng/regulations/SOR-2022-128/FullText.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Code of Professional Conduct for CICC Licensees (SOR/2022-128), Justice Laws</a></li>
+        <li><a href="https://college-ic.ca/protecting-the-public/find-an-immigration-consultant" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Find an Immigration Consultant (licence classes and statuses), CICC</a></li>
+        <li><a href="https://register.college-ic.ca/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Public Register, CICC</a></li>
+        <li><a href="https://college-ic.ca/protecting-the-public/unauthorized-practice" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Unauthorized Practitioners, CICC</a></li>
+        <li><a href="https://college-ic.ca/protecting-the-public/complaints-process" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Complaints Process, CICC</a></li>
+        <li><a href="https://college-ic.ca/protecting-the-public/complaints-process/make-a-complaint" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Make a Complaint, CICC</a></li>
+        <li><a href="https://college-ic.ca/protecting-the-public/compensation-fund" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Compensation Fund, CICC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/learn-about-representatives.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Learn about representatives, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigration-citizenship-representative/choose/authorized.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Find out if your representative is authorized, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/updates/2022-cicc.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Program delivery update: New regulator, the CICC, IRCC</a></li>
+        <li><a href="https://www.irb-cisr.gc.ca/en/making-immigration-appeal/Pages/representation-hearing.aspx" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Representation at the Immigration Appeal Division, IRB</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/fraud-awareness" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Fraud awareness (representatives and reporting), WelcomeBC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/use-of-a-representative-form-applicant-pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Use of a Representative Form - Applicant (PDF), BC PNP</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 16, 2026. This is general information, not legal advice, and bcpnpcalculator.ca does not endorse any consultant or firm. Confirm details with the CICC, IRCC or WelcomeBC.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/imm5476-use-of-representative-form" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-sky-600 font-bold mb-2">Forms</div>
+          <div class="font-bold text-gray-900">IMM 5476: Use of a Representative Form</div>
+        </a>
+        <a href="/articles/bc-pnp-job-offer-scams-fraud-2027" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-red-600 font-bold mb-2">Fraud</div>
+          <div class="font-bold text-gray-900">BC PNP Job Offer Scams and Fraud</div>
+        </a>
+        <a href="/articles/how-to-apply-bc-pnp" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">How-To</div>
+          <div class="font-bold text-gray-900">How to Apply for the BC PNP</div>
+        </a>
+        <a href="/articles/express-entry-profile" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Express Entry</div>
+          <div class="font-bold text-gray-900">How to Create an Express Entry Profile</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>

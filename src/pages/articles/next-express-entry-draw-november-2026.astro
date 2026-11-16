@@ -1,0 +1,217 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "Next Express Entry Draw: IRCC's Two-Week Recalculation Estimate Runs Out on November 17";
+const description = "No Express Entry round since October 28. IRCC said its CRS rescoring from November 3 could take up to two weeks. What B.C. candidates should watch now.";
+const canonical = "https://bcpnpcalculator.ca/articles/next-express-entry-draw-november-2026";
+
+const faqs = [
+  {
+    q: "When is the next Express Entry draw?",
+    a: "IRCC has not announced a date. It said the CRS recalculation that began November 3, 2026 may take up to two weeks and that rounds will restart when it is complete. Two weeks ends November 17, but that is an estimate, not a scheduled draw.",
+  },
+  {
+    q: "Why has there been no Express Entry draw in November 2026?",
+    a: "On November 3, 2026 IRCC added a Labour Market Integration factor to the CRS, worth up to 150 points. Every profile in the pool has to be rescored, and invitation rounds are paused until that is done.",
+  },
+  {
+    q: "What happens to BC PNP nominees in the Express Entry pool during the pause?",
+    a: "A provincial nomination still adds 600 CRS points, so nominees stay at the top of the pool. They wait for the next Provincial Nominee Program round. IRCC held 21 PNP rounds in 2026 before the pause, with cutoffs between 697 and 805.",
+  },
+  {
+    q: "Do I need to update my Express Entry profile because of the new CRS?",
+    a: "IRCC rescores existing profiles automatically. If you have a qualifying job offer in an eligible high-wage occupation, enter it as IRCC's changes page explains: answer yes to the LMIA question and use LMIA number 00000, issued 2026-01-01, expiring 2029-01-01.",
+  },
+  {
+    q: "Will CRS cutoffs go up or down after the pause?",
+    a: "Nobody outside IRCC knows yet. The last published score distribution is dated October 25, 2026, before the new rules. Treat any cutoff prediction as a guess until IRCC publishes the first round.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="next-express-entry-draw-november-2026" datePublished="2026-11-16" dateModified="2026-11-16" articleSection="News" keywords="next express entry draw, express entry draw november 2026, express entry pause, crs recalculation, when is the next express entry draw, express entry draw date, pnp express entry draw, express entry restart" title={title} description={description} canonical={canonical} ogImage="/images/articles/next-express-entry-draw-november-2026.png">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-red-100 text-red-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-red-200 shadow-sm">
+        Immigration News
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        Next Express Entry Draw: IRCC's Two-Week Recalculation Estimate Runs Out on November 17
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Nineteen days without a round, a skipped provincial nominee draw and a new points system nobody has seen in action yet. Here is what the official data shows and what to watch this week.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-16">November 16, 2026</time>
+        <span>&bull;</span>
+        <span>6 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/next-express-entry-draw-november-2026.png" width="1200" height="630" alt="A November 2026 calendar marking November 3, when the new CRS took effect and rounds paused, and November 17, when IRCC's two-week estimate ends, beside a note that 19 days have passed since round 453 on October 28."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-red-50 border-l-4 border-red-600 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-red-900 mb-2">Quick answer</p>
+      <p class="text-red-900">
+        IRCC has not set a date for the next Express Entry draw. In its <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" target="_blank" rel="noopener noreferrer" class="underline">October 16, 2026 announcement</a> it said rescoring every profile under the new CRS from November 3 may take up to two weeks, with rounds paused until it is done. That estimate runs out on November 17. As of the morning of November 16, the last round is still number 453 on October 28.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-red-600 mb-2">19 days</div>
+        <div class="text-sm text-slate-600 font-medium">Since the last Express Entry round (October 28 to November 16, 2026)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-slate-800 mb-2">25 days</div>
+        <div class="text-sm text-slate-600 font-medium">Longest gap between rounds earlier in 2026 (May 28 to June 22)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-slate-800 mb-2">149,409</div>
+        <div class="text-sm text-slate-600 font-medium">Invitations in 65 rounds in 2026 before the pause</div>
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        The reason for November's silence is known: on November 3, 2026, IRCC switched on a new version of the Comprehensive Ranking System (CRS) and is rescoring every profile before it invites anyone. The restart date is not known. This update covers what IRCC committed to, what its own draw history suggests to watch for, and what B.C. candidates can do now. It is general information, not legal advice.
+      </p>
+
+      <h2 id="status" class="text-3xl font-bold mt-12 mb-6">What IRCC Said, and When</h2>
+      <p>
+        IRCC announced the changes on <strong>October 16, 2026</strong>. The news release said existing profiles would be recalculated automatically and that "the recalculation process may take up to two weeks, during which invitation rounds will be paused." IRCC's <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">Express Entry changes page</a> uses similar wording: the recalculation "could take up to two weeks," and rounds "will start again when it's complete."
+      </p>
+      <p>
+        Counting from November 3, two weeks takes you to <strong>Tuesday, November 17</strong>. Read that date carefully. IRCC gave an upper estimate for a technical job, not a draw date, and neither page has been updated with a restart notice as of November 16. A round could come the day the recalculation finishes, a few days later, or after a longer delay if the work takes more time.
+      </p>
+
+      <h2 id="data" class="text-3xl font-bold mt-12 mb-6">What the Official Draw Data Shows</h2>
+      <p>
+        We checked IRCC's official rounds data on the morning of November 16, 2026. The latest entries are unchanged since late October:
+      </p>
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-base">
+          <thead>
+            <tr><th class="text-left">Round</th><th class="text-left">Date</th><th class="text-left">Type</th><th class="text-left">Invitations</th><th class="text-left">CRS cutoff</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>453</td><td>Oct 28, 2026</td><td>Transport occupations</td><td>150</td><td>477</td></tr>
+            <tr><td>452</td><td>Oct 27, 2026</td><td>French-language proficiency</td><td>5,000</td><td>407</td></tr>
+            <tr><td>451</td><td>Oct 26, 2026</td><td>Provincial Nominee Program</td><td>792</td><td>761</td></tr>
+            <tr><td>450</td><td>Oct 16, 2026</td><td>French-language proficiency</td><td>5,000</td><td>435</td></tr>
+            <tr><td>449</td><td>Oct 15, 2026</td><td>Canadian Experience Class</td><td>2,500</td><td>519</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Across 2026, IRCC held 65 rounds and issued 149,409 invitations before the pause. French-language rounds (60,500 invitations in 12 rounds) and Canadian Experience Class rounds (57,750 in 18 rounds) made up most of that, followed by healthcare and social services (11,500 in 3 rounds) and the Provincial Nominee Program (10,814 in 21 rounds).
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The missed provincial nominee round</h3>
+      <p>
+        Provincial Nominee Program rounds have been the most regular part of the calendar. IRCC held one roughly every two weeks in 2026, 17 of the 21 on a Monday, with the Canadian Experience Class round usually following a day or so later. On that rhythm, a PNP round would have been due around November 9, and today, November 16, is another Monday. The data does not show either. If a round is published later today, the pattern held; if not, watch the following days.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">What happened after the last long gap</h3>
+      <p>
+        The closest comparison this year is the 25-day gap between May 28 and June 22, 2026. When rounds returned on June 22, the PNP round invited 955 candidates, the largest PNP round of the year, at a cutoff of 730. That is a fact about June, not a forecast for November. The pool has also been rescored since then, so cutoffs in any category could move in either direction.
+      </p>
+
+      <h2 id="crs" class="text-3xl font-bold mt-12 mb-6">Why the First Rounds Matter</h2>
+      <p>
+        The first rounds under the new CRS will be the first public test of the Labour Market Integration factor. According to IRCC's changes page:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>The factor is worth up to <strong>150 points</strong> for a single candidate (80 for length of Canadian work plus 70 for high-wage work) and 140 with a spouse or partner. You get points for Canadian experience <em>or</em> a qualifying job offer, whichever is higher, not both.</li>
+        <li>A job offer in an eligible high-wage occupation earns 50, 70 or 100 points, depending on how far the occupation's national median wage is above the average. It no longer needs an LMIA, and an LMIA adds nothing.</li>
+        <li>An occupation is "high-wage" if its national median wage is at least 1.3 times the average median wage. That is based on the NOC code, not your own pay.</li>
+      </ul>
+      <p>
+        The last published pool snapshot is dated October 25, 2026, before the new rules took effect, when it counted 228,724 profiles. A new distribution should appear with the first round. That is when B.C. candidates in tech, engineering and other high-wage jobs will see whether the change moved them up. You can estimate your own score with our <a href="/articles/express-entry-crs-score-calculator" class="text-blue-600 hover:text-blue-800 underline">CRS score calculator guide</a>.
+      </p>
+
+      <h2 id="bc" class="text-3xl font-bold mt-12 mb-6">What It Means for B.C. Candidates</h2>
+      <p>
+        <strong>BC PNP nominees in the Express Entry pool</strong> are the least affected by the rescoring. IRCC's CRS criteria page still lists 600 points for a provincial nomination, so nominees stay at the top whatever the new factor does. Their wait is for the next PNP round, not for a better score. 2026 PNP cutoffs ranged from 697 to 805. Our <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="text-blue-600 hover:text-blue-800 underline">Express Entry BC guide</a> explains how the federal and provincial steps fit together.
+      </p>
+      <p>
+        <strong>BC PNP candidates</strong> are not on hold. The province held a Skills Immigration draw on November 13, 2026 for childcare, health care, veterinary care and construction workers, which we covered in our <a href="/articles/bc-pnp-draw-november-13-2026" class="text-blue-600 hover:text-blue-800 underline">November 13 draw report</a>. BC PNP draws run separately from federal rounds. Follow them on our <a href="/bc-pnp-draws" class="text-blue-600 hover:text-blue-800 underline">BC PNP draws page</a> and check your registration score with the <a href="/bc-pnp-calculator" class="text-indigo-600 underline font-semibold">BC PNP Calculator</a>.
+      </p>
+      <p>
+        <strong>Canadian Experience Class candidates</strong> in B.C. face the most uncertainty: 2026 CEC cutoffs of 507 to 523 were set under the old points. See our <a href="/articles/canadian-experience-class" class="text-blue-600 hover:text-blue-800 underline">Canadian Experience Class guide</a>.
+      </p>
+
+      <h2 id="checklist" class="text-3xl font-bold mt-12 mb-6">What to Do This Week</h2>
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Check your profile is active.</strong> Sign in and confirm your profile has not expired and your language test results are still valid. An expired profile cannot be invited when rounds return.</li>
+        <li><strong>Enter a qualifying job offer correctly.</strong> If you have an offer in an eligible high-wage occupation, follow IRCC's instructions: answer yes to the LMIA question and use LMIA number 00000, issue date 2026-01-01 and expiry date 2029-01-01. The form has not caught up with the rules yet.</li>
+        <li><strong>Check your NOC against IRCC's high-wage list.</strong> High-wage points depend on the occupation code, so make sure the NOC in your profile matches the duties you actually perform.</li>
+        <li><strong>Keep documents ready.</strong> After an invitation the clock starts, and reference letters and police certificates take time to collect.</li>
+        <li><strong>Ignore precise predictions.</strong> No one has the post-reform score distribution yet. Watch IRCC's <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">rounds of invitations page</a> or our <a href="/articles/express-entry-draws" class="text-blue-600 hover:text-blue-800 underline">Express Entry draws tracker</a>.</li>
+      </ol>
+      <p>
+        We will update our draws tracker when IRCC publishes round 454.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/10/canada-refocusing-express-entry-on-top-talent-that-drives-economic-growth.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Canada refocusing Express Entry on top talent that drives economic growth (October 16, 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">2026 changes to points for Canadian work experience and job offers in Express Entry, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry rounds of invitations, IRCC</a></li>
+        <li><a href="https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Express Entry rounds data (JSON), IRCC, checked November 16, 2026</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Comprehensive Ranking System criteria, IRCC</a></li>
+        <li><a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">BC PNP invitations to apply, WelcomeBC</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Draw data as of the morning of November 16, 2026 (Pacific time). Rounds can be published at any time; confirm on IRCC's site.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/express-entry-draws" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-red-600 font-bold mb-2">Tracker</div>
+          <div class="font-bold text-gray-900">Express Entry Draws 2026: Latest Rounds and CRS Cutoffs</div>
+        </a>
+        <a href="/articles/express-entry-crs-score-calculator" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">CRS</div>
+          <div class="font-bold text-gray-900">Express Entry CRS Score Calculator: November 2026 Rules</div>
+        </a>
+        <a href="/articles/bc-pnp-draw-november-13-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">BC PNP</div>
+          <div class="font-bold text-gray-900">BC PNP Draw November 13, 2026</div>
+        </a>
+        <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-purple-600 font-bold mb-2">Express Entry BC</div>
+          <div class="font-bold text-gray-900">BC PNP Express Entry BC Guide 2026</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
