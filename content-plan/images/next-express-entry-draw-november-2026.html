@@ -1,0 +1,83 @@
+<!doctype html>
+<!--
+  Article hero image template: 1200x630, rendered to PNG by
+    node scripts/render-article-image.cjs content-plan/images/<slug>.html
+
+  Copy this file to content-plan/images/<slug>.html and design it for the post:
+  - Change the eyebrow, headline and key figure to match the article. Every number must
+    appear in the article and be verified.
+  - Replace the illustration (<svg class="art">) with one drawn for this post: a bar
+    chart of real cutoffs, a timeline, a fee breakdown, a map pin, a document stack, a
+    route diagram. Keep it simple, flat and readable at thumbnail size.
+  - Pick an accent: --accent can be red (#dc2626), indigo (#4f46e5), emerald (#059669),
+    amber (#d97706) or sky (#0284c7). Rotate accents and layouts so posts don't look identical.
+  - Headline: 4-10 words, at most 3 lines. No tiny text: the minimum font size is 22px.
+  - Text must contrast clearly with the background (light text on --bg).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a;        /* slate-900 */
+    --panel: #1e293b;     /* slate-800 */
+    --ink: #f8fafc;       /* slate-50 */
+    --muted: #cbd5e1;     /* slate-300 */
+    --accent: #dc2626;    /* red-600 (brand) */
+    --accent-soft: rgba(220, 38, 38, 0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background:
+      radial-gradient(circle at 85% 20%, var(--accent-soft), transparent 45%),
+      linear-gradient(135deg, var(--bg) 0%, #111c33 100%);
+    color: var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 470px;
+    gap: 40px;
+    padding: 64px 72px;
+    position: relative;
+  }
+  body::before { /* subtle grid texture */
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .copy, .visual { position: relative; z-index: 1; }
+  .copy { display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow {
+    display: inline-flex; align-self: flex-start; gap: 10px; align-items: center;
+    background: var(--accent); color: #fff; font-weight: 800; font-size: 22px;
+    letter-spacing: .06em; text-transform: uppercase; padding: 10px 18px; border-radius: 999px;
+  }
+  h1 { font-size: 56px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 28px; }
+  .stat { display: flex; align-items: baseline; gap: 16px; margin-top: 24px; }
+  .stat b { white-space: nowrap; font-size: 64px; font-weight: 800; color: #fff; }
+  .stat span { font-size: 24px; color: var(--muted); font-weight: 500; max-width: 340px; line-height: 1.3; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+  .visual {
+    background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 28px;
+    display: flex; align-items: center; justify-content: center; padding: 28px;
+  }
+  .art { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div>
+      <div class="eyebrow">Express Entry &middot; Nov 16 update</div>
+      <h1>When is the next Express Entry draw?</h1>
+      <div class="stat"><b>19 days</b><span>since round 453 on October 28, 2026</span></div>
+    </div>
+    <div class="brand"><i></i>bcpnpcalculator.ca</div>
+  </div>
+  <div class="visual">
+    <svg class="art" viewBox="0 0 420 500" role="img" aria-label="November 2026 calendar"><g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif" font-weight="700"><text x="210" y="40" text-anchor="middle" font-size="30" fill="#f8fafc" font-weight="800">November 2026</text><text x="33.0" y="82" text-anchor="middle" font-size="22" fill="#94a3b8">S</text><text x="91.0" y="82" text-anchor="middle" font-size="22" fill="#94a3b8">M</text><text x="149.0" y="82" text-anchor="middle" font-size="22" fill="#94a3b8">T</text><text x="207.0" y="82" text-anchor="middle" font-size="22" fill="#94a3b8">W</text><text x="265.0" y="82" text-anchor="middle" font-size="22" fill="#94a3b8">T</text><text x="323.0" y="82" text-anchor="middle" font-size="22" fill="#94a3b8">F</text><text x="381.0" y="82" text-anchor="middle" font-size="22" fill="#94a3b8">S</text><rect x="10" y="98" width="50" height="50" rx="10" fill="none"/><text x="35.0" y="131.0" text-anchor="middle" font-size="22" fill="#cbd5e1">1</text><rect x="68" y="98" width="50" height="50" rx="10" fill="none"/><text x="93.0" y="131.0" text-anchor="middle" font-size="22" fill="#cbd5e1">2</text><rect x="126" y="98" width="50" height="50" rx="10" fill="#334155" stroke="#f8fafc" stroke-width="3"/><text x="151.0" y="131.0" text-anchor="middle" font-size="22" fill="#ffffff">3</text><rect x="184" y="98" width="50" height="50" rx="10" fill="#334155"/><text x="209.0" y="131.0" text-anchor="middle" font-size="22" fill="#cbd5e1">4</text><rect x="242" y="98" width="50" height="50" rx="10" fill="#334155"/><text x="267.0" y="131.0" text-anchor="middle" font-size="22" fill="#cbd5e1">5</text><rect x="300" y="98" width="50" height="50" rx="10" fill="#334155"/><text x="325.0" y="131.0" text-anchor="middle" font-size="22" fill="#cbd5e1">6</text><rect x="358" y="98" width="50" height="50" rx="10" fill="#334155"/><text x="383.0" y="131.0" text-anchor="middle" font-size="22" fill="#cbd5e1">7</text><rect x="10" y="156" width="50" height="50" rx="10" fill="#334155"/><text x="35.0" y="189.0" text-anchor="middle" font-size="22" fill="#cbd5e1">8</text><rect x="68" y="156" width="50" height="50" rx="10" fill="#334155"/><text x="93.0" y="189.0" text-anchor="middle" font-size="22" fill="#cbd5e1">9</text><rect x="126" y="156" width="50" height="50" rx="10" fill="#334155"/><text x="151.0" y="189.0" text-anchor="middle" font-size="22" fill="#cbd5e1">10</text><rect x="184" y="156" width="50" height="50" rx="10" fill="#334155"/><text x="209.0" y="189.0" text-anchor="middle" font-size="22" fill="#cbd5e1">11</text><rect x="242" y="156" width="50" height="50" rx="10" fill="#334155"/><text x="267.0" y="189.0" text-anchor="middle" font-size="22" fill="#cbd5e1">12</text><rect x="300" y="156" width="50" height="50" rx="10" fill="#334155"/><text x="325.0" y="189.0" text-anchor="middle" font-size="22" fill="#cbd5e1">13</text><rect x="358" y="156" width="50" height="50" rx="10" fill="#334155"/><text x="383.0" y="189.0" text-anchor="middle" font-size="22" fill="#cbd5e1">14</text><rect x="10" y="214" width="50" height="50" rx="10" fill="#334155"/><text x="35.0" y="247.0" text-anchor="middle" font-size="22" fill="#cbd5e1">15</text><rect x="68" y="214" width="50" height="50" rx="10" fill="#334155"/><text x="93.0" y="247.0" text-anchor="middle" font-size="22" fill="#cbd5e1">16</text><rect x="126" y="214" width="50" height="50" rx="10" fill="#dc2626"/><text x="151.0" y="247.0" text-anchor="middle" font-size="22" fill="#ffffff">17</text><rect x="184" y="214" width="50" height="50" rx="10" fill="none"/><text x="209.0" y="247.0" text-anchor="middle" font-size="22" fill="#cbd5e1">18</text><rect x="242" y="214" width="50" height="50" rx="10" fill="none"/><text x="267.0" y="247.0" text-anchor="middle" font-size="22" fill="#cbd5e1">19</text><rect x="300" y="214" width="50" height="50" rx="10" fill="none"/><text x="325.0" y="247.0" text-anchor="middle" font-size="22" fill="#cbd5e1">20</text><rect x="358" y="214" width="50" height="50" rx="10" fill="none"/><text x="383.0" y="247.0" text-anchor="middle" font-size="22" fill="#cbd5e1">21</text><rect x="10" y="272" width="50" height="50" rx="10" fill="none"/><text x="35.0" y="305.0" text-anchor="middle" font-size="22" fill="#cbd5e1">22</text><rect x="68" y="272" width="50" height="50" rx="10" fill="none"/><text x="93.0" y="305.0" text-anchor="middle" font-size="22" fill="#cbd5e1">23</text><rect x="126" y="272" width="50" height="50" rx="10" fill="none"/><text x="151.0" y="305.0" text-anchor="middle" font-size="22" fill="#cbd5e1">24</text><rect x="184" y="272" width="50" height="50" rx="10" fill="none"/><text x="209.0" y="305.0" text-anchor="middle" font-size="22" fill="#cbd5e1">25</text><rect x="242" y="272" width="50" height="50" rx="10" fill="none"/><text x="267.0" y="305.0" text-anchor="middle" font-size="22" fill="#cbd5e1">26</text><rect x="300" y="272" width="50" height="50" rx="10" fill="none"/><text x="325.0" y="305.0" text-anchor="middle" font-size="22" fill="#cbd5e1">27</text><rect x="358" y="272" width="50" height="50" rx="10" fill="none"/><text x="383.0" y="305.0" text-anchor="middle" font-size="22" fill="#cbd5e1">28</text><rect x="10" y="330" width="50" height="50" rx="10" fill="none"/><text x="35.0" y="363.0" text-anchor="middle" font-size="22" fill="#cbd5e1">29</text><rect x="68" y="330" width="50" height="50" rx="10" fill="none"/><text x="93.0" y="363.0" text-anchor="middle" font-size="22" fill="#cbd5e1">30</text><rect x="10" y="402" width="26" height="26" rx="6" fill="#334155" stroke="#f8fafc" stroke-width="3"/><text x="48" y="423" font-size="22" fill="#e2e8f0">Nov 3: new CRS, rounds paused</text><rect x="10" y="442" width="26" height="26" rx="6" fill="#dc2626"/><text x="48" y="463" font-size="22" fill="#e2e8f0">Nov 17: two-week estimate ends</text></g></svg>
+  </div>
+</body>
+</html>

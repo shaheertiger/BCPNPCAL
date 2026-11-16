@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --ink: #f8fafc; --muted: #cbd5e1;
+    --accent: #4f46e5; --accent-lt: #a5b4fc; --accent-soft: rgba(79, 70, 229, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Plus Jakarta Sans", "DejaVu Sans", sans-serif;
+    background: radial-gradient(circle at 80% 15%, var(--accent-soft), transparent 50%), linear-gradient(135deg, var(--bg) 0%, #111c33 100%);
+    color: var(--ink); display: grid; grid-template-columns: 1fr 600px; gap: 36px; padding: 56px 60px; position: relative;
+  }
+  body::before { content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 40px 40px; }
+  .copy, .visual { position: relative; z-index: 1; }
+  .copy { display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow { display: inline-flex; align-self: flex-start; background: var(--accent); color: #fff; font-weight: 800; font-size: 22px;
+    letter-spacing: .06em; text-transform: uppercase; padding: 10px 18px; border-radius: 999px; }
+  h1 { font-size: 54px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; margin-top: 26px; }
+  .stat { display: flex; align-items: baseline; gap: 14px; margin-top: 26px; }
+  .stat b { font-size: 60px; font-weight: 800; color: var(--accent-lt); }
+  .stat span { font-size: 24px; color: var(--muted); font-weight: 500; line-height: 1.3; max-width: 230px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .brand i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); display: inline-block; }
+  .visual { background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: 28px; padding: 22px; }
+  .art { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div>
+      <div class="eyebrow">Manitoba PNP · 2026 guide</div>
+      <h1>3 streams, 7 pathways to Manitoba PR</h1>
+      <div class="stat"><b>8,000</b><span>nominations allocated for 2026</span></div>
+    </div>
+    <div class="brand"><i></i>bcpnpcalculator.ca</div>
+  </div>
+  <div class="visual">
+    <svg class="art" viewBox="0 0 556 474" role="img" aria-label="MPNP stream diagram">
+      <g font-family="Plus Jakarta Sans, DejaVu Sans, sans-serif" font-weight="800">
+        <!-- root -->
+        <rect x="178" y="6" width="200" height="56" rx="16" fill="#4f46e5"/>
+        <text x="278" y="43" text-anchor="middle" font-size="26" fill="#fff">MPNP</text>
+        <!-- connectors -->
+        <path d="M278 62 V86 M92 86 H464 M92 86 V110 M278 86 V110 M464 86 V110" stroke="#818cf8" stroke-width="3" fill="none"/>
+        <!-- stream headers -->
+        <rect x="4" y="110" width="176" height="80" rx="14" fill="#312e81" stroke="#818cf8" stroke-width="2"/>
+        <text x="92" y="144" text-anchor="middle" font-size="23" fill="#fff">Skilled</text>
+        <text x="92" y="173" text-anchor="middle" font-size="23" fill="#fff">Worker</text>
+        <rect x="190" y="110" width="176" height="80" rx="14" fill="#312e81" stroke="#818cf8" stroke-width="2"/>
+        <text x="278" y="144" text-anchor="middle" font-size="23" fill="#fff">International</text>
+        <text x="278" y="173" text-anchor="middle" font-size="23" fill="#fff">Education</text>
+        <rect x="376" y="110" width="176" height="80" rx="14" fill="#312e81" stroke="#818cf8" stroke-width="2"/>
+        <text x="464" y="144" text-anchor="middle" font-size="23" fill="#fff">Business</text>
+        <text x="464" y="173" text-anchor="middle" font-size="23" fill="#fff">Investor</text>
+        <!-- stems -->
+        <path d="M92 190 V330 M278 190 V410 M464 190 V330" stroke="#475569" stroke-width="3" fill="none"/>
+        <!-- pathway chips -->
+        <g font-size="26" text-anchor="middle">
+          <rect x="22" y="222" width="140" height="58" rx="29" fill="#4f46e5"/><text x="92" y="260" fill="#fff">SWM</text>
+          <rect x="22" y="302" width="140" height="58" rx="29" fill="#0f172a" stroke="#a5b4fc" stroke-width="2"/><text x="92" y="340" fill="#e0e7ff">SWO</text>
+          <rect x="208" y="222" width="140" height="58" rx="29" fill="#0f172a" stroke="#a5b4fc" stroke-width="2"/><text x="278" y="260" fill="#e0e7ff">CEP</text>
+          <rect x="208" y="302" width="140" height="58" rx="29" fill="#0f172a" stroke="#a5b4fc" stroke-width="2"/><text x="278" y="340" fill="#e0e7ff">GIP</text>
+          <rect x="208" y="382" width="140" height="58" rx="29" fill="#0f172a" stroke="#a5b4fc" stroke-width="2"/><text x="278" y="420" fill="#e0e7ff">ISEP</text>
+          <rect x="394" y="222" width="140" height="58" rx="29" fill="#0f172a" stroke="#a5b4fc" stroke-width="2"/><text x="464" y="260" fill="#e0e7ff">EP</text>
+          <rect x="394" y="302" width="140" height="58" rx="29" fill="#0f172a" stroke="#a5b4fc" stroke-width="2"/><text x="464" y="340" fill="#e0e7ff">FIP</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>

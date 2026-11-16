@@ -1,0 +1,342 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const title = "COPR (Confirmation of Permanent Residence) in 2026: eCOPR, Validity, Landing and Your PR Card";
+const description = "COPR and eCOPR explained for late 2026: when you get it, validity and expiry, landing in Canada, flagpoling limits, the PR card wait and using COPR in B.C.";
+const canonical = "https://bcpnpcalculator.ca/articles/copr-confirmation-of-permanent-residence";
+
+const faqs = [
+  {
+    q: "What is a COPR in Canada?",
+    a: "A Confirmation of Permanent Residence (COPR) is the document IRCC issues when your permanent residence application is approved. It shows your personal details, immigration category, destination province, any conditions, a Valid to date and the date you became a permanent resident. IRCC says it stays valid proof of status until you receive your PR card. If you're outside Canada it's the document you show at the border to complete landing.",
+  },
+  {
+    q: "What is the difference between COPR and eCOPR?",
+    a: "They record the same thing. People approved while outside Canada receive a COPR before they travel and present it at a port of entry. People approved while inside Canada confirm their status in IRCC's Permanent Residence Portal, and IRCC then uploads an electronic COPR (eCOPR) to their portal account. IRCC says the eCOPR can take up to a few weeks after you confirm you're in Canada. You print and sign it to use as proof of status.",
+  },
+  {
+    q: "How long is a COPR valid?",
+    a: "The Valid to date on the COPR is the last day you can land in Canada with it. IRCC ties that date to your travel document's expiry and your immigration medical exam, which is valid for 12 months. So a COPR usually expires on the earlier of those two dates. IRCC says it can't extend a COPR, so plan to travel before the Valid to date.",
+  },
+  {
+    q: "What happens if my COPR expires before I land in Canada?",
+    a: "You can't use an expired COPR to become a permanent resident, and IRCC says it can't extend one. Don't book travel on an expired COPR. Contact IRCC through your account or the contact details in your approval message and ask what it needs from you; this may include a new medical exam or a new passport. The outcome isn't guaranteed, so getting advice from a licensed representative is sensible.",
+  },
+  {
+    q: "Can I flagpole to activate my COPR?",
+    a: "If you're already in Canada and approved, IRCC's standard process is online: you confirm through the Permanent Residence Portal and receive an eCOPR, with no trip to the border. The December 23, 2024 end of flagpoling covered work and study permits, not PR. CBSA has also limited flagpole services to set days and hours at 12 ports since May 2024, including five in B.C. If you were told to land at a port of entry, check CBSA's current hours first.",
+  },
+  {
+    q: "How long does the PR card take after landing?",
+    a: "As of IRCC's November 12, 2026 processing-time update, the processing time for a first PR card for a new permanent resident was 30 days. You don't apply for the first card: in Canada you upload a photo in the portal, and at the border the officer confirms the Canadian mailing address it will go to. Times change, so check IRCC's tool.",
+  },
+  {
+    q: "Can I get a SIN and MSP with my COPR?",
+    a: "Yes for the SIN: Service Canada accepts a COPR as a primary document for permanent residents if it is less than one year old, as well as the PR card. For MSP, B.C. permanent residents can enrol, but new residents normally wait the rest of the month they become B.C. residents plus two months, so newcomers from abroad should buy private insurance for that gap.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ArticleLayout slug="copr-confirmation-of-permanent-residence" datePublished="2026-11-16" dateModified="2026-11-16" articleSection="Guide" keywords="copr, confirmation of permanent residence, copr canada, ecopr, copr validity, copr expiry" title={title} description={description} canonical={canonical} ogImage="/images/articles/copr-confirmation-of-permanent-residence.png">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-10">
+      <div class="inline-block bg-emerald-100 text-emerald-800 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-emerald-200 shadow-sm">
+        Permanent Residence Guide
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        COPR (Confirmation of Permanent Residence) in 2026: eCOPR, Validity, Landing and Your PR Card
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Your PR application is approved. Here is what the COPR is, how you get it from inside or outside Canada, how to land before it expires, and how to use it while you wait for your PR card.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime="2026-11-16">November 16, 2026</time>
+        <span>&bull;</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <figure class="mb-10">
+      <img src="/images/articles/copr-confirmation-of-permanent-residence.png" width="1200" height="630" alt="Illustration of a Confirmation of Permanent Residence document beside a passport, with a three-step path from approval to landing to the PR card."
+           class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm" loading="eager" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 mb-10 rounded-r-xl">
+      <p class="font-semibold text-emerald-900 mb-2">Quick answer</p>
+      <p class="text-emerald-900">
+        A COPR (Confirmation of Permanent Residence) is the document IRCC issues once your PR application is approved. If you're in Canada, you confirm through the online Permanent Residence Portal and receive an electronic eCOPR. If you're abroad, you travel to Canada and show your COPR (and a permanent resident visa, if you need one) to a border officer on or before its Valid to date, which is tied to your passport and 12-month medical exam and can't be extended. Your first PR card follows by mail; IRCC listed 30 days for a new PR card as of November 12, 2026.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-600 mb-2">12 months</div>
+        <div class="text-sm text-slate-600 font-medium">Validity of IRCC medical exam results, which caps COPR validity</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-600 mb-2">30 days</div>
+        <div class="text-sm text-slate-600 font-medium">IRCC processing time for a first PR card (update of Nov 12, 2026)</div>
+      </div>
+      <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
+        <div class="text-3xl font-black text-emerald-600 mb-2">$600</div>
+        <div class="text-sm text-slate-600 font-medium">Right of permanent residence fee for applications received on or after April 30, 2026</div>
+      </div>
+    </div>
+
+    <nav class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10" aria-label="Table of contents">
+      <p class="font-bold text-slate-900 mb-3">In this guide</p>
+      <ol class="list-decimal pl-6 space-y-1 text-blue-700">
+        <li><a href="#what" class="hover:underline">What a COPR is and what it shows</a></li>
+        <li><a href="#in-canada" class="hover:underline">Getting your eCOPR from inside Canada</a></li>
+        <li><a href="#outside" class="hover:underline">Getting your COPR from outside Canada</a></li>
+        <li><a href="#validity" class="hover:underline">COPR validity and expiry</a></li>
+        <li><a href="#landing" class="hover:underline">Landing at a port of entry, and flagpoling</a></li>
+        <li><a href="#errors" class="hover:underline">Fixing errors on your COPR</a></li>
+        <li><a href="#pr-card" class="hover:underline">Your PR card after landing</a></li>
+        <li><a href="#using" class="hover:underline">Using your COPR before the PR card arrives</a></li>
+        <li><a href="#faq" class="hover:underline">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose prose-lg max-w-none">
+
+      <p class="text-xl leading-relaxed">
+        For most people the COPR is the first piece of paper that says, in plain terms, that the long wait is over. Whether you came through Express Entry, a provincial nomination such as the BC PNP, or family sponsorship, the approval ends in the same place: a Confirmation of Permanent Residence, followed by a short final step to actually become a permanent resident. That step is where small mistakes, such as letting the document expire or travelling at the wrong moment, can cause real trouble. This guide walks through it using IRCC's current pages, checked on November 16, 2026.
+      </p>
+
+      <h2 id="what" class="text-3xl font-bold mt-12 mb-6">What a COPR Is and What It Shows</h2>
+
+      <p>
+        IRCC describes the Confirmation of Permanent Residence as proof that you've been approved for permanent residence, used to complete the final steps of becoming a permanent resident. Older paper versions carry the form numbers IMM 5292 or IMM 5688. IRCC says the COPR remains valid proof of your status until you receive your PR card, which is why it matters well after landing day.
+      </p>
+      <p>According to IRCC, the document shows:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>your personal information, such as name and date of birth (and, on the version mailed after Express Entry approval, your photograph)</li>
+        <li>your immigration category</li>
+        <li>the city and province of destination</li>
+        <li>any conditions of stay</li>
+        <li>a <strong>Valid to</strong> date and the expiry date of your travel document</li>
+        <li>the date you became a permanent resident (completed at landing or when your eCOPR is issued)</li>
+      </ul>
+      <p>
+        A COPR is not the same thing as a PR card. The COPR is a one-time record of how and when you became a permanent resident. The PR card is the wallet card you use to prove status and, importantly, to board a plane, train, bus or boat back to Canada.
+      </p>
+
+      <h2 id="in-canada" class="text-3xl font-bold mt-12 mb-6">Getting Your eCOPR from Inside Canada</h2>
+
+      <p>
+        If you're physically in Canada when your application is approved, which is common for BC PNP nominees on work permits and Canadian Experience Class applicants, IRCC handles the final step online. Most people don't need an in-person interview. You don't have to do anything until IRCC contacts you by email (from an address ending in cic.gc.ca) or phone.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">The Permanent Residence Portal steps</h3>
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Watch for two emails.</strong> IRCC says the first asks for basic information and the second tells you your status is ready to confirm. Check your spam folder, and if you got duplicate first emails, reply to the most recent one.</li>
+        <li><strong>Use the right account.</strong> If you applied through the Permanent Residence Portal, sign in with that same account. If you didn't, IRCC creates one and emails you a username and temporary password, which expires 30 days after the account is created. IRCC warns not to create your own account, because that can delay things.</li>
+        <li><strong>Declare that you're in Canada.</strong> Under Category, choose "Confirmation of permanent residence" and confirm you're physically in Canada. IRCC notes that this declaration alone doesn't make you a permanent resident.</li>
+        <li><strong>Receive your eCOPR.</strong> IRCC uploads the electronic COPR to your portal account. It says this can take up to a few weeks after you confirm.</li>
+        <li><strong>Give a Canadian address and upload a photo</strong> for your first PR card. A P.O. box is accepted only in rural areas without home delivery, and IRCC won't mail the card to a third party such as a relative or representative.</li>
+      </ol>
+      <p>
+        Once the eCOPR arrives, print it and sign it. IRCC says you use the printed eCOPR to prove your status and apply for benefits, such as a social insurance number. A representative can help you, but IRCC says they can't sign in with your credentials or declare on your behalf that you're in Canada.
+      </p>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+        <p class="font-semibold text-amber-900 mb-2">Don't leave Canada mid-process</p>
+        <p class="text-amber-800">IRCC can't confirm your PR status while you're outside Canada, and it asks you to tell it if you leave before status is granted. If you must travel before your eCOPR arrives, contact IRCC at the email address in your invitation message first. Also remember that returning by commercial carrier needs a valid PR card; if you leave after becoming a PR but before the card arrives, you'll need a permanent resident travel document to come back.</p>
+      </div>
+
+      <h2 id="outside" class="text-3xl font-bold mt-12 mb-6">Getting Your COPR from Outside Canada</h2>
+
+      <p>
+        If you're abroad when approved, IRCC issues your COPR before you travel. On its Express Entry approval page, IRCC says it will send you a COPR and, if you're from a country whose citizens need a visa to travel to Canada, a <strong>permanent resident visa</strong>. Visa-exempt travellers get the COPR alone. Your passport must be a regular, private citizen passport; IRCC doesn't accept diplomatic, government service or public affairs passports for immigration.
+      </p>
+      <p>
+        The first thing to do is read it carefully. IRCC asks you to check that the information on the COPR matches your passport exactly. Then look at the Valid to date and plan your travel around it.
+      </p>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">Situation</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">What you receive</th>
+              <th class="px-4 py-3 text-left text-sm font-bold text-slate-700">How you become a PR</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="px-4 py-3 font-medium">Approved while in Canada</td><td class="px-4 py-3">eCOPR uploaded to the PR Portal</td><td class="px-4 py-3">Online declaration that you're in Canada; no border trip in the standard process</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Approved abroad, visa-exempt</td><td class="px-4 py-3">COPR</td><td class="px-4 py-3">Present it to a CBSA officer at a port of entry by the Valid to date</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Approved abroad, visa-required</td><td class="px-4 py-3">COPR plus permanent resident visa</td><td class="px-4 py-3">Present both at a port of entry by the Valid to date</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="validity" class="text-3xl font-bold mt-12 mb-6">COPR Validity and Expiry</h2>
+
+      <p>
+        The Valid to date is the last day you can use the COPR to land. IRCC's COPR page says the expiry date reflects when your travel document expires, and IRCC has long tied COPR validity to both your passport and your immigration medical exam. IRCC's medical exam page states that results are valid for <strong>12 months</strong>. In practice, then, the COPR usually runs out on whichever comes first: your passport expiry or about a year after your medical.
+      </p>
+      <p>
+        This catches people out because the medical clock starts when you take the exam, not when you're approved. If processing took most of a year, your landing window may be short. Check the date the day your COPR arrives.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">If your COPR expires before you land</h3>
+      <p>
+        IRCC is direct about this: "We can't extend your COPR, so you should make sure to travel to Canada before it expires." An expired COPR can't be used to become a permanent resident, so don't book flights on one. Contact IRCC through your online account, or the contact details in your approval correspondence, explain why you couldn't travel, and ask what it needs. If you don't come to Canada within the medical's validity, IRCC says you may need another exam, and a new passport may also be required. Whether IRCC will reissue the document depends on your file, so consider advice from a licensed immigration representative or lawyer if you're in this position.
+      </p>
+
+      <h2 id="landing" class="text-3xl font-bold mt-12 mb-6">Landing at a Port of Entry, and Flagpoling</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">What to bring and what happens</h3>
+      <p>IRCC's current checklist for people arriving from abroad is short. Keep these with you, not in checked luggage:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>a valid passport or travel document</li>
+        <li>your COPR, and your permanent resident visa if one was issued</li>
+        <li>proof of funds to support yourself and your family, unless your program exempts you (check the proof-of-funds rules for your program on canada.ca)</li>
+      </ul>
+      <p>
+        At the border, a CBSA officer checks your identity and documents, confirms you're arriving on or before the COPR's expiry date, and may ask questions to make sure you still meet the requirements. If you're admissible, you're admitted as a permanent resident and the officer confirms the Canadian mailing address for your PR card. If you're carrying CAN$10,000 or more, you must tell the officer; failing to declare it can lead to fines and seizure. And if your address changes within 180 days of arriving, IRCC says you must tell it.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Can you still flagpole for PR in 2026?</h3>
+      <p>
+        "Flagpoling" means leaving Canada for the U.S. (or St. Pierre and Miquelon) and coming straight back to get an immigration service at the border. Three facts frame it in late 2026:
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>The December 23, 2024 change was about permits.</strong> CBSA stopped issuing work and study permits to most flagpolers from that date, with limited exemptions. The announcement did not cover PR landing.</li>
+        <li><strong>Services at busy ports are limited.</strong> Since May 27, 2024, CBSA has restricted flagpole services at 12 ports, including five in B.C.: Abbotsford-Huntingdon, Aldergrove, Boundary Bay, Douglas and Pacific Highway. The days and hours are posted on CBSA's website. A December 2024 regulation (SOR/2024-258) confirmed the minister can limit services, including processing of people seeking permanent resident status, to specific classes at specific ports.</li>
+        <li><strong>For people in Canada, the portal is the standard route.</strong> IRCC's in-Canada process doesn't need a border trip, so for most inland approvals flagpoling isn't necessary and adds risk (U.S. entry rules apply when you cross).</li>
+      </ul>
+      <p>
+        If IRCC has specifically told you to complete landing at a port of entry, check CBSA's current flagpole hours for the crossing before you go, and carry the same documents as an arrival from abroad.
+      </p>
+
+      <h2 id="errors" class="text-3xl font-bold mt-12 mb-6">Fixing Errors on Your COPR</h2>
+
+      <p>
+        A misspelled name or wrong date of birth on a COPR can follow you into your PR card, SIN and, later, citizenship records, so fix it early.
+      </p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Before landing:</strong> IRCC's Express Entry approval page says that if there's a mistake on your COPR, contact IRCC through your account. Do this as soon as you notice it, given the expiry clock.</li>
+        <li><strong>On an eCOPR:</strong> IRCC's portal page says incorrect information needs an amendment request.</li>
+        <li><strong>After landing:</strong> IRCC's Guide 5218 covers amendment requests (form IMM 1436, sent by mail). It corrects only errors made by immigration officials, for fields such as name, date of birth, place and country of birth, citizenship, sex or gender identifier and marital status. If approved, you receive a Verification of Status document free of charge, which you keep with your original COPR. Photo, height, eye colour, signature and immigration category can't be changed this way, and details that changed after you became a PR (for example, a name change after marriage) go to your provincial registrar instead.</li>
+      </ul>
+      <p>
+        Guide 5218 asks for photocopies, not originals, and warns that originals sent without a request won't be returned.
+      </p>
+
+      <h2 id="pr-card" class="text-3xl font-bold mt-12 mb-6">Your PR Card After Landing</h2>
+
+      <p>
+        You don't apply or pay separately for your first PR card. If you confirmed in Canada, IRCC starts production after your portal photo is approved. If you landed at a port of entry, the card goes to the mailing address the officer confirmed. As of IRCC's processing-time update of <strong>November 12, 2026</strong>, the processing time for a <strong>new PR card was 30 days</strong> (renewals and replacements for existing PRs showed 49 days). Times change monthly; see our <a href="/articles/ircc-processing-times-canada" class="text-blue-600 hover:text-blue-800 underline">IRCC processing times guide</a> for the wider picture.
+      </p>
+      <p>
+        Plan trips with the card in mind. Without a valid PR card you'll need a permanent resident travel document to board a commercial flight back to Canada, so it's usually wise to wait for the card before leaving.
+      </p>
+
+      <h2 id="using" class="text-3xl font-bold mt-12 mb-6">Using Your COPR Before the PR Card Arrives</h2>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Social insurance number</h3>
+      <p>
+        Service Canada lists a Confirmation of Permanent Residence as an accepted primary document for permanent residents, as long as it's <strong>less than one year old</strong>; a PR card also works. If you already have a SIN from a work or study permit, contact Service Canada to update your record with your new permanent resident status.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">MSP health coverage in B.C.</h3>
+      <p>
+        The B.C. government sets a wait period for new residents: the rest of the month you become a B.C. resident plus two more months, with the Ministry of Health deciding your residency date based on factors including immigration status. For newcomers landing from abroad, that typically means about three months without public coverage, so buy private insurance for the gap and apply for MSP as soon as you arrive. If you were already living in B.C. on a work permit with MSP, contact Health Insurance BC to update your status so your coverage continues under your new PR status. Waivers of the wait period are approved only in very serious and exceptional cases.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4">Other uses</h3>
+      <p>
+        IRCC says that if you're already in Canada, you use your COPR to apply for government services. Keep the original (or your signed eCOPR printout) somewhere safe and carry a copy. You'll need its landing date later, for example to count physical presence when you eventually apply for citizenship.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">The Right of Permanent Residence Fee</h2>
+
+      <p>
+        IRCC won't grant PR status until the right of permanent residence fee (RPRF) is paid. It rose from $575 to <strong>$600</strong> for applications received on or after April 30, 2026. Principal applicants and accompanying spouses or partners pay it; dependent children and protected persons are exempt. You can pay it with your application to avoid a delay at the end, and IRCC refunds it if you paid up front and the application isn't approved. If you didn't pay it earlier, IRCC will contact you with instructions before your COPR is issued.
+      </p>
+
+      <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 my-8">
+        <p class="font-semibold text-emerald-900 mb-2">COPR checklist</p>
+        <ul class="list-disc pl-6 space-y-1 text-emerald-900">
+          <li>Check every detail on the COPR against your passport the day it arrives.</li>
+          <li>Note the Valid to date and book travel well before it.</li>
+          <li>In Canada: don't create your own portal account, and don't leave the country mid-process.</li>
+          <li>Carry the COPR, PR visa (if issued), passport and proof of funds in your hand luggage.</li>
+          <li>Apply for or update your SIN and MSP right after becoming a PR.</li>
+          <li>Wait for your PR card before travelling abroad, or get a travel document.</li>
+        </ul>
+      </div>
+
+      <p>
+        Still at an earlier stage? See <a href="/articles/bc-pnp-after-nomination" class="text-blue-600 hover:text-blue-800 underline">what happens after a BC PNP nomination</a>, read <a href="/articles/how-long-to-get-pr-in-canada" class="text-blue-600 hover:text-blue-800 underline">how long it takes to get PR in Canada</a>, or check where you stand with the <a href="/bc-pnp-calculator" class="text-emerald-700 underline font-semibold">BC PNP Calculator</a>. If you're landing in the Lower Mainland, our guide to <a href="/articles/how-to-move-to-vancouver-bc" class="text-blue-600 hover:text-blue-800 underline">moving to Vancouver</a> covers housing, transit and your first 90 days.
+      </p>
+
+      <h2 id="faq" class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        {faqs.map((f) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-3xl font-bold mt-12 mb-6">Sources</h2>
+      <ul class="list-disc pl-6 space-y-2 text-base">
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/permanent-residents/status/copr.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Confirmation of Permanent Residence document, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/pr-confirmation-portal.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Confirm your permanent residence from within Canada, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/application-approved.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">If your Express Entry application is approved, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/application-approved/in-canada.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">If we approve your application: In Canada, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/application-approved/outside-canada.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">If we approve your application: Outside Canada, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/medical-police/medical-exams/requirements-permanent-residents.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Medical examination for permanent residence applicants, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/guide-5218-request-amend-record-landing-confirmation-permanent-residence-valid-temporary-resident-documents.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Guide 5218: Request to amend the COPR, IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Check processing times (PR card data updated November 12, 2026), IRCC</a></li>
+        <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/permanent-residence-fees-increasing.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Permanent residence fees increasing on April 30, 2026, IRCC</a></li>
+        <li><a href="https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=1396" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">What is the Right of Permanent Residence Fee?, IRCC Help Centre</a></li>
+        <li><a href="https://www.canada.ca/en/border-services-agency/news/2024/12/ending-flagpoling-for-work-and-study-permits-at-the-border.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Ending flagpoling for work and study permits at the border (December 2024), CBSA</a></li>
+        <li><a href="https://gazette.gc.ca/rp-pr/p2/2024/2024-12-18/html/sor-dors258-eng.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">SOR/2024-258, Regulations Amending the IRPR (Ports of Entry), Canada Gazette</a></li>
+        <li><a href="https://www.canada.ca/en/employment-social-development/services/sin/before-applying.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Social insurance number: before applying (primary documents), Service Canada</a></li>
+        <li><a href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/how-to-enrol/coverage-wait-period" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Coverage wait period for MSP, Government of B.C.</a></li>
+      </ul>
+      <p class="text-sm text-gray-500 mt-4">Information current as of November 16, 2026. Processing times and fees change; confirm on IRCC's website before you act. This is general information, not legal advice.</p>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/articles/bc-pnp-after-nomination" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-emerald-600 font-bold mb-2">Next Steps</div>
+          <div class="font-bold text-gray-900">After BC PNP Nomination: Complete Next Steps Guide</div>
+        </a>
+        <a href="/articles/how-long-to-get-pr-in-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-indigo-600 font-bold mb-2">Timelines</div>
+          <div class="font-bold text-gray-900">How Long Does It Take to Get PR in Canada?</div>
+        </a>
+        <a href="/articles/ircc-processing-times-canada" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-sky-600 font-bold mb-2">Processing Times</div>
+          <div class="font-bold text-gray-900">IRCC Processing Times (November 2026)</div>
+        </a>
+        <a href="/articles/how-to-move-to-vancouver-bc" class="block bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+          <div class="text-sm text-amber-600 font-bold mb-2">Relocation</div>
+          <div class="font-bold text-gray-900">How to Move to Vancouver, BC in 2026</div>
+        </a>
+      </div>
+    </div>
+  </article>
+</ArticleLayout>
