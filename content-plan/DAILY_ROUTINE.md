@@ -13,7 +13,7 @@ The run then merges everything to `main` in a single pull request. Vercel deploy
 > B.C. job offers, B.C. work permits leading to BC PNP). Do **not** write general Express
 > Entry, other-province PNP, citizenship, visitor-visa or IRCC-process articles: a batch of
 > those published Nov 11-16, 2026 coincided with a ranking drop during Google's November 2026
-> core update and was noindexed (see `src/data/noindex-articles.mjs`). If fewer than 4
+> core update. If fewer than 4
 > on-topic clusters remain, publish fewer articles; zero keyword articles is an acceptable run.
 
 Follow every step. A shorter run that publishes fewer articles which are all

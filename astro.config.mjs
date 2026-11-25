@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import { NOINDEX_ARTICLES } from './src/data/noindex-articles.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,11 +12,6 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap({
-      // Pages marked noindex must not be listed in the sitemap.
-      filter: (page) => {
-        const m = page.match(/\/articles\/([^/]+)\/?$/);
-        return !(m && NOINDEX_ARTICLES.has(m[1]));
-      },
       // Build-time timestamp used as lastmod for every page. A static site's
       // representation of each page is regenerated on every deploy, so the
       // build date is an honest "last modified" signal (the only sitemap hint
