@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import AdUnit from "../components/AdUnit.astro";
-import { NOINDEX_ARTICLES } from "../data/noindex-articles.mjs";
 
 interface Props {
   title: string;
@@ -122,7 +121,6 @@ allSchemas = [...allSchemas, ...extraSchemas];
   jsonLd={allSchemas}
   hreflangs={hreflangs}
   ogType="article"
-  noindex={NOINDEX_ARTICLES.has(slug)}
   articlePublishedTime={datePublished}
   articleModifiedTime={dateModified}
   articleSection={articleSection}
