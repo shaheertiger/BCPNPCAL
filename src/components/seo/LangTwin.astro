@@ -1,0 +1,20 @@
+---
+// In-content link between an English page and its translated twin
+// ("中文版" / "English version"), like calcultaxesquebec's
+// "version française / version anglaise".
+interface Props {
+  zh?: string;
+  hi?: string;
+  en?: string;
+  class?: string;
+}
+const { zh, hi, en, class: cls = "" } = Astro.props;
+---
+
+<p class:list={["text-sm text-slate-500", cls]}>
+  {en && <a href={en} hreflang="en" lang="en" class="underline underline-offset-2 hover:text-red-600">English version</a>}
+  {en && (zh || hi) && <span aria-hidden="true"> · </span>}
+  {zh && <a href={zh} hreflang="zh" lang="zh" class="underline underline-offset-2 hover:text-red-600">中文版</a>}
+  {zh && hi && <span aria-hidden="true"> · </span>}
+  {hi && <a href={hi} hreflang="hi" lang="hi" class="underline underline-offset-2 hover:text-red-600">हिन्दी संस्करण</a>}
+</p>

@@ -1,14 +1,16 @@
 ---
-import { Calculator } from './Calculator.client';
+import { Calculator, type LatestDraw } from './Calculator.client';
 import type { calculatorContent } from '../i18n/calculator-content';
 
 interface Props {
   t: typeof calculatorContent.en;
+  latestDraws?: LatestDraw[];
+  embedded?: boolean;
 }
 
-const { t } = Astro.props;
+const { t, latestDraws, embedded = false } = Astro.props;
 ---
 
 <div id="calculator-root">
-  <Calculator client:load t={t} />
+  <Calculator client:load t={t} latestDraws={latestDraws} embedded={embedded} />
 </div>

@@ -1,655 +1,334 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import AdUnit from "../components/AdUnit.astro";
-import { homeContent } from "../i18n/home-content";
+import CalculatorShell from "../components/CalculatorShell.astro";
+import SirsFactorTable from "../components/seo/SirsFactorTable.astro";
+import ExampleProfiles from "../components/seo/ExampleProfiles.astro";
+import RelatedLinks from "../components/seo/RelatedLinks.astro";
+import LangTwin from "../components/seo/LangTwin.astro";
+import { calculatorContent } from "../i18n/calculator-content";
+import { DRAWS_SOURCE_URL } from "../data/bcpnp-draws";
+import { LINKS } from "../data/site-links";
+import {
+  calculatorStreams,
+  latestDrawDate,
+  latestDrawRows,
+  latestDrawMinScore,
+  latestDrawMinRow,
+  streamSummaries,
+  latestFor,
+  latestHeiWage,
+  STREAM_SHORT,
+} from "../utils/draws";
 
-const content = homeContent.en;
+const SITE = "https://bcpnpcalculator.ca";
+const GUIDE_URL = "https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf";
+const SKILLS_URL = "https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration";
+const DATE_MODIFIED = "2026-11-26";
 
-const title = "BC PNP Calculator 2026";
-const description =
-  "Free BC PNP points calculator to estimate your Skills Immigration Ranking System score. Calculate your BC Provincial Nominee Program eligibility instantly with our comprehensive tool.";
+const title = "BC PNP Calculator 2026: SIRS Points Score (Free, Official Factors)";
+const description = `Get your SIRS score in 2 minutes and compare it with the latest draw minimum (${latestDrawMinScore} for ${STREAM_SHORT[latestDrawMinRow.stream]} on ${latestDrawDate}).`;
+
+const hei = latestFor("hei-points");
+const health = latestFor("health");
+const childcare = latestFor("childcare");
+const construction = latestFor("construction");
+
+const latestScored = latestDrawRows.filter((r) => r.score !== null);
+
+// FAQs: rendered visibly and as FAQPage schema from the same array.
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "What is the maximum BC PNP score?",
+    a: "200 points: 120 for human capital (work experience 40, education 40, language 40) and 80 for economic factors (hourly wage 55, area of employment 25), per Part 8 of the Skills Immigration Program Guide.",
+  },
+  {
+    q: "What score do I need for BC PNP?",
+    a: `It depends on your draw. On ${health.date} the minimums were ${health.score} for Health, ${childcare.score} for Childcare and ${construction.score} for Construction. Other skilled jobs compete in High Economic Impact draws, which needed ${hei.score} points on ${hei.date}.`,
+  },
+  {
+    q: "How often are BC PNP draws held?",
+    a: `In 2026 the BC PNP has held a Care and Build draw about once a month since May 6 and a High Economic Impact draw about once a month; the latest Skills Immigration draw was on ${latestDrawDate}. WelcomeBC does not announce dates in advance.`,
+  },
+  {
+    q: "Do I need a job offer to use the BC PNP calculator?",
+    a: "To get a real score, yes. Every Skills Immigration stream needs a full-time (30+ hours a week), indeterminate job offer from an eligible B.C. employer, and 55 of the 200 points come from its hourly wage.",
+  },
+  {
+    q: "How is the hourly wage calculated if my offer is a salary?",
+    a: "Divide the annual wage by 52, then by your weekly hours. The BC PNP won't use fewer than 30 or more than 40 hours a week, and ignores bonuses, tips, overtime and allowances (Program Guide 8.4).",
+  },
+  {
+    q: "How long does my BC PNP registration last?",
+    a: "Up to 12 months in the pool. If you are invited, you have 30 calendar days to submit a complete application, and the application fee is $1,750 (WelcomeBC).",
+  },
+  {
+    q: "Is the BC PNP score the same as the Express Entry CRS score?",
+    a: "No. The SIRS score (out of 200) is set by B.C. and ranks BC PNP registrations. The CRS (out of 1,200) is IRCC's Express Entry score. A provincial nomination adds 600 CRS points.",
+  },
+];
 
 const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "BC PNP Points Calculator",
-    description: description,
-    url: "https://bcpnpcalculator.ca",
+    name: "BC PNP Points Calculator 2026",
+    description,
+    url: `${SITE}/`,
     applicationCategory: "UtilityApplication",
     operatingSystem: "Any",
-    browserRequirements: "Requires JavaScript. Modern browser recommended.",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "CAD",
-    },
-    author: {
-      "@type": "Organization",
-      name: "BC PNP Calculator",
-      url: "https://bcpnpcalculator.ca",
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "BC PNP Calculator",
-    url: "https://bcpnpcalculator.ca",
-    logo: "https://bcpnpcalculator.ca/android-chrome-512x512.png",
-    description:
-      "Free BC Provincial Nominee Program points calculator for immigration to British Columbia",
-    address: {
-      "@type": "PostalAddress",
-      addressRegion: "British Columbia",
-      addressCountry: "CA",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "Customer Support",
-      availableLanguage: ["English", "en"],
-    },
-    sameAs: ["https://bcpnpcalculator.ca"],
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://bcpnpcalculator.ca",
-      },
-    ],
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "BC PNP Points Calculator",
-    url: "https://bcpnpcalculator.ca",
-    inLanguage: ["en", "zh", "hi", "pa", "ar"],
-    publisher: {
-      "@type": "Organization",
-      name: "BC PNP Calculator",
-      url: "https://bcpnpcalculator.ca",
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: title,
-    description: description,
-    url: "https://bcpnpcalculator.ca",
+    browserRequirements: "Requires JavaScript.",
     inLanguage: "en",
-    dateModified: "2026-11-11",
-    isPartOf: {
-      "@type": "WebSite",
-      name: "BC PNP Points Calculator",
-      url: "https://bcpnpcalculator.ca",
-    },
-    primaryImageOfPage: {
-      "@type": "ImageObject",
-      url: "https://bcpnpcalculator.ca/og-image.png",
-    },
-    speakable: {
-      "@type": "SpeakableSpecification",
-      cssSelector: ["h1", "h2"],
+    dateModified: DATE_MODIFIED,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "CAD" },
+    featureList: [
+      "SIRS score out of 200",
+      "Breakdown by factor",
+      "Comparison with the latest BC PNP draw minimum for your stream",
+    ],
+    author: {
+      "@type": "Person",
+      name: "Shaheer Ali Khan",
+      jobTitle: "Regulated Canadian Immigration Consultant (RCIC)",
+      url: `${SITE}/about`,
     },
   },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What is a competitive BC PNP score?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "It depends on your occupation. In 2026, Care and Build draws for priority health, childcare, veterinary and construction occupations had cut-offs between 72 and 115 (72 for Health and 94 for Construction on November 13, 2026). Other occupations compete in High Economic Impact draws, where the points cut-off was 131 to 138.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How often are BC PNP draws held?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Since May 2026, BC has held about two draw days a month: a Care and Build draw early in the month and a High Economic Impact draw later in the month. Dates are not announced in advance, and tech-specific draws ended in December 2024.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can I improve my BC PNP score?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. The most effective ways to boost your BC PNP calculator result include obtaining a higher hourly wage, improving your CLB language results, or choosing a job offer in a regional district outside of Metro Vancouver.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Does a high score guarantee an invitation to apply?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "While our BC PNP score calculator provides a reliable estimate, an invitation to apply (ITA) depends on your profile meeting the minimum cutoff for the specific draw period.",
-        },
-      },
-    ],
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [{ "@type": "ListItem", position: 1, name: "BC PNP Points Calculator", item: `${SITE}/` }],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "BC PNP Calculator",
+    url: `${SITE}/`,
+    inLanguage: ["en", "zh", "hi"],
   },
 ];
 
 const hreflangs = [
-  { lang: "en", href: "https://bcpnpcalculator.ca/" },
-  { lang: "zh", href: "https://bcpnpcalculator.ca/zh" },
-  { lang: "hi", href: "https://bcpnpcalculator.ca/hi" },
-  { lang: "x-default", href: "https://bcpnpcalculator.ca/" },
+  { lang: "en", href: `${SITE}/` },
+  { lang: "zh", href: `${SITE}/zh` },
+  { lang: "hi", href: `${SITE}/hi` },
+  { lang: "x-default", href: `${SITE}/` },
 ];
+
+// Guides with Search Console impressions that aren't in the related block.
+const moreGuides: { href: string; anchor: string }[] = [
+  { href: "/articles/maximize-bc-pnp-score-tips", anchor: "How to increase your BC PNP score" },
+  { href: "/articles/bc-pnp-calculator-faq", anchor: "BC PNP calculator FAQ: score questions answered" },
+  { href: "/articles/how-to-use-bc-pnp-calculator-2026", anchor: "How to use the BC PNP calculator, factor by factor" },
+  { href: "/articles/bc-pnp-vs-crs-calculator", anchor: "BC PNP score vs CRS score" },
+  { href: "/articles/bc-pnp-express-entry-vs-skills-immigration", anchor: "Express Entry BC vs Skills Immigration" },
+  { href: "/articles/bc-pnp-ineligible-occupations-employers-2027", anchor: "BC PNP ineligible occupations and employers" },
+  { href: "/articles/bc-pnp-build-skilledtradesbc-certification-2027", anchor: "BC PNP Build draws for construction trades" },
+  { href: "/articles/bc-pnp-2026-draws-recap-2027-forecast", anchor: "BC PNP 2026 draws recap and 2027 forecast" },
+  { href: "/articles/canada-pr-application-fees-2027", anchor: "Canada PR application fees 2027" },
+  { href: "/articles/bc-pnp-vs-atlantic-immigration-2026", anchor: "BC PNP vs Atlantic Immigration Program" },
+  { href: "/articles/bc-pnp-vs-manitoba-mpnp-2026", anchor: "BC PNP vs Manitoba MPNP" },
+  { href: "/articles/best-provinces-pnp-2027", anchor: "Best provinces for PNP in 2027" },
+  { href: "/articles/international-graduates-bc-pr-options-2027", anchor: "International graduates in B.C.: PR options" },
+  { href: "/articles/bc-pnp-statistical-report-2025-analysis", anchor: "BC PNP statistical report 2025" },
+  { href: "/articles/what-is-pnp-provincial-nominee-program", anchor: "What is the Provincial Nominee Program?" },
+  { href: "/articles/how-to-become-permanent-resident-canada", anchor: "How to become a permanent resident in Canada" },
+];
+
+const h2 = "text-2xl sm:text-3xl font-black text-slate-900 tracking-tight";
+const p = "text-slate-700 text-base leading-relaxed";
+const a = "text-red-700 font-semibold underline underline-offset-2 decoration-red-200 hover:decoration-red-600";
 ---
 
 <BaseLayout
   title={title}
   description={description}
   jsonLd={jsonLd}
-  keywords="BC PNP calculator, BC PNP score calculator, BC PNP points calculator, bc pnp points, pnp calculator, bc pnp scoring, SIRS calculator, BC immigration points, British Columbia PNP, BC PNP 2026, BC PNP draw, calculate bc pnp points"
+  keywords="BC PNP calculator, BC PNP points calculator, BC PNP score calculator, SIRS calculator, SIRS score calculator, how to calculate BC PNP points, BC PNP calculator 2026"
   hreflangs={hreflangs}
 >
-  <div
-    class="min-h-screen bg-gradient-to-br from-red-50 via-white to-rose-50 flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-20 relative"
-  >
-    <div class="max-w-4xl mx-auto text-center space-y-8 sm:space-y-10">
-      <!-- Hero Section -->
-      <div class="space-y-4 sm:space-y-6">
-        <div
-          class="inline-flex items-center space-x-2 sm:space-x-3 bg-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-lg shadow-red-100/50 border border-red-100"
-        >
-          <div
-            class="w-8 h-8 sm:w-10 sm:h-10 bg-red-600 rounded-xl flex items-center justify-center text-white text-xs sm:text-sm font-black shadow-lg shadow-red-200"
-          >
-            BC
-          </div>
-          <span
-            class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-widest"
-            >{content.hero.badge}</span
-          >
-        </div>
-
-        <h1
-          class="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 tracking-tight leading-none px-2"
-        >
-          {content.hero.title_prefix}<br />
-          <span class="text-red-600">{content.hero.title_highlight}</span>
-        </h1>
-
-        <p
-          class="text-lg sm:text-xl md:text-2xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto px-4"
-          set:html={content.hero.subtitle}
-        />
-      </div>
-
-      <!-- CTA Button -->
-      <div class="pt-4 sm:pt-6 flex flex-col items-center space-y-4">
-        <a
-          href="/bc-pnp-calculator"
-          class="inline-flex items-center bg-red-600 hover:bg-red-700 active:bg-red-800 text-white px-8 sm:px-12 py-5 sm:py-6 rounded-[1.5rem] sm:rounded-[2rem] font-black text-base sm:text-lg uppercase tracking-widest shadow-2xl shadow-red-600/30 active:scale-95 transition-all min-h-[44px]"
-        >
-          {content.hero.cta_primary}
-          <svg
-            class="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3"
-            aria-hidden="true"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="3"
-              d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
-
-        <a
-          href="/bc-pnp-guide"
-          class="text-slate-600 hover:text-red-600 font-bold text-sm sm:text-base underline underline-offset-4 decoration-2 decoration-red-100 hover:decoration-red-600 transition-all"
-        >
-          {content.hero.cta_secondary}
-        </a>
-      </div>
-
-      <!-- Features Grid -->
-      <div
-        class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pt-10 sm:pt-16"
-      >
-        <div
-          class="bg-white p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] border border-red-100 shadow-sm min-h-[200px]"
-        >
-          <div
-            class="w-14 h-14 mb-4 flex items-center justify-center bg-red-50 rounded-2xl"
-          >
-            <svg
-              class="w-8 h-8 text-red-600"
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <p class="font-bold text-slate-900 mb-2 text-lg">
-            {content.features.instant.title}
-          </p>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            {content.features.instant.desc}
-          </p>
-        </div>
-
-        <div
-          class="bg-white p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] border border-red-100 shadow-sm min-h-[200px]"
-        >
-          <div
-            class="w-14 h-14 mb-4 flex items-center justify-center bg-red-50 rounded-2xl"
-          >
-            <svg
-              class="w-8 h-8 text-red-600"
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <p class="font-bold text-slate-900 mb-2 text-lg">
-            {content.features.accurate.title}
-          </p>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            {content.features.accurate.desc}
-          </p>
-        </div>
-
-        <div
-          class="bg-white p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] border border-red-100 shadow-sm min-h-[200px]"
-        >
-          <div
-            class="w-14 h-14 mb-4 flex items-center justify-center bg-red-50 rounded-2xl"
-          >
-            <svg
-              class="w-8 h-8 text-red-600"
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-              ></path>
-            </svg>
-          </div>
-          <p class="font-bold text-slate-900 mb-2 text-lg">
-            {content.features.detailed.title}
-          </p>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            {content.features.detailed.desc}
-          </p>
-        </div>
-      </div>
-
-      <!-- Ad Unit -->
-      <div class="max-w-3xl mx-auto pt-8">
-        <AdUnit slot="1234567890" format="horizontal" />
-      </div>
-
-      <!-- SEO Content Section -->
-      <div
-        class="pt-12 sm:pt-20 text-left space-y-8 sm:space-y-12 max-w-3xl mx-auto"
-      >
-        <div class="space-y-4 sm:space-y-6">
-          <h2
-            class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight"
-          >
-            {content.seo_section.title}
-          </h2>
-          <div class="prose prose-slate max-w-none">
-            <p
-              class="text-slate-600 text-base leading-relaxed"
-              set:html={content.seo_section.p1}
-            />
-            <p
-              class="text-slate-600 text-base leading-relaxed"
-              set:html={content.seo_section.p2}
-            />
-          </div>
-        </div>
-
-        <!-- Point Categories -->
-        <div
-          class="bg-red-50/50 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 border border-red-100"
-        >
-          <h3
-            class="text-lg sm:text-xl font-black text-slate-900 mb-4 sm:mb-6 uppercase tracking-widest"
-          >
-            {content.points_grid.title}
-          </h3>
-          <div class="space-y-4">
-            <div
-              class="flex justify-between items-center py-3 border-b border-red-100"
-            >
-              <span class="font-bold text-slate-800"
-                >{content.points_grid.experience}</span
-              >
-              <span class="text-red-600 font-black"
-                >40 {content.points_grid.max}</span
-              >
-            </div>
-            <div
-              class="flex justify-between items-center py-3 border-b border-red-100"
-            >
-              <span class="font-bold text-slate-800"
-                >{content.points_grid.education}</span
-              >
-              <span class="text-red-600 font-black"
-                >40 {content.points_grid.max}</span
-              >
-            </div>
-            <div
-              class="flex justify-between items-center py-3 border-b border-red-100"
-            >
-              <span class="font-bold text-slate-800"
-                >{content.points_grid.language}</span
-              >
-              <span class="text-red-600 font-black"
-                >40 {content.points_grid.max}</span
-              >
-            </div>
-            <div
-              class="flex justify-between items-center py-3 border-b border-red-100"
-            >
-              <span class="font-bold text-slate-800"
-                >{content.points_grid.wage}</span
-              >
-              <span class="text-red-600 font-black"
-                >55 {content.points_grid.max}</span
-              >
-            </div>
-            <div class="flex justify-between items-center py-3">
-              <span class="font-bold text-slate-800"
-                >{content.points_grid.region}</span
-              >
-              <span class="text-red-600 font-black"
-                >25 {content.points_grid.max}</span
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- Latest Guides Section -->
-        <div class="space-y-8 sm:space-y-10">
-          <div class="text-center">
-            <h2
-              class="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-widest"
-            >
-              {content.guides.title}
-            </h2>
-            <div class="h-1 w-20 bg-red-600 mx-auto mt-4 rounded-full"></div>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-6">
-            {
-              content.guides.cards.map((card) => (
-                <a href={card.link} class="block group no-underline">
-                  <div class="h-full bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg hover:border-red-100 transition-all">
-                    <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-2">
-                      {card.title}
-                    </h3>
-                    <p class="text-sm text-slate-600">{card.desc}</p>
-                  </div>
-                </a>
-              ))
-            }
-          </div>
-
-          <div class="text-center">
-            <a
-              href="/articles/bc-pnp-calculator-faq"
-              class="text-slate-600 hover:text-red-600 text-sm font-bold underline decoration-2 underline-offset-4 decoration-red-100 hover:decoration-red-600 transition-colors"
-            >
-              {content.guides.view_all}
-            </a>
-          </div>
-        </div>
-
-        <!-- Ad Unit -->
-        <AdUnit slot="2345678901" format="auto" />
-
-        <!-- FAQ Section -->
-        <div class="space-y-8 sm:space-y-10">
-          <div class="text-center">
-            <h2
-              class="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-widest"
-            >
-              {content.faq.title}
-            </h2>
-            <div class="h-1 w-20 bg-red-600 mx-auto mt-4 rounded-full"></div>
-          </div>
-
-          <div class="space-y-4">
-            {
-              content.faq.items.map((item) => (
-                <div class="p-6 sm:p-8 bg-white border border-slate-100 rounded-[2rem] sm:rounded-[2.5rem] shadow-sm">
-                  <h3 class="text-base sm:text-lg font-extrabold text-slate-900 mb-3">
-                    {item.q}
-                  </h3>
-                  <p
-                    class="text-slate-600 text-sm leading-relaxed"
-                    set:html={item.a}
-                  />
-                </div>
-              ))
-            }
-          </div>
-        </div>
-
-        <!-- BC PNP Scoring Section -->
-        <div class="space-y-6">
-          <h2
-            class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight"
-          >
-            Understanding <span class="text-red-600">BC PNP Scoring</span>
-          </h2>
-          <p class="text-slate-600 text-base leading-relaxed">
-            <strong>BC PNP scoring</strong> is based on the Skills Immigration Ranking
-            System (SIRS), which awards points across five categories. Your total
-            <strong>score for BC PNP</strong> determines your ranking in the candidate
-            pool and your chances of receiving an Invitation to Apply (ITA).
-          </p>
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div class="p-5 bg-white rounded-2xl border border-slate-100">
-              <div class="text-2xl font-black text-red-600 mb-2">200</div>
-              <div class="text-sm text-slate-600">
-                Maximum possible <strong>BC PNP points</strong>
-              </div>
-            </div>
-            <div class="p-5 bg-white rounded-2xl border border-slate-100">
-              <div class="text-2xl font-black text-green-600 mb-2">100-130</div>
-              <div class="text-sm text-slate-600">
-                Typical competitive score range
-              </div>
-            </div>
-          </div>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Use our <strong>BC PNP score calculator</strong> to understand exactly
-            how your profile translates to points. The <strong
-              >PNP calculator</strong
-            > breaks down each category so you can identify areas for improvement.
-          </p>
-        </div>
-
-        <!-- BC PNP vs Ontario PNP -->
-        <div class="space-y-6">
-          <h2
-            class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight"
-          >
-            <span class="text-red-600">BC PNP</span> vs Ontario PNP: Which is Better?
-          </h2>
-          <p class="text-slate-600 text-base leading-relaxed">
-            Candidates often compare the <strong
-              >latest BC PNP draw vs Ontario PNP</strong
-            > to decide which province offers better immigration prospects. Here's
-            how they differ:
-          </p>
-          <div class="overflow-x-auto">
-            <table class="w-full text-sm text-left">
-              <thead class="bg-slate-100 text-slate-900 font-bold">
-                <tr>
-                  <th class="px-4 py-3 rounded-tl-xl">Factor</th>
-                  <th class="px-4 py-3">BC PNP</th>
-                  <th class="px-4 py-3 rounded-tr-xl">Ontario PNP (OINP)</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-100">
-                <tr class="bg-white">
-                  <td class="px-4 py-3 font-medium">Draw Frequency</td>
-                  <td class="px-4 py-3 text-green-700 font-bold"
-                    >About twice a month (2026)</td
-                  >
-                  <td class="px-4 py-3">Varies</td>
-                </tr>
-                <tr class="bg-slate-50">
-                  <td class="px-4 py-3 font-medium">How candidates are selected</td>
-                  <td class="px-4 py-3 text-green-700 font-bold"
-                    >Care, Build and Innovate draws</td
-                  >
-                  <td class="px-4 py-3">Ontario Workforce Priority stream (since June 25, 2026)</td>
-                </tr>
-                <tr class="bg-white">
-                  <td class="px-4 py-3 font-medium">Job Offer Required?</td>
-                  <td class="px-4 py-3">Yes (all worker streams)</td>
-                  <td class="px-4 py-3">Yes, with limited exceptions</td>
-                </tr>
-                <tr class="bg-slate-50">
-                  <td class="px-4 py-3 font-medium">Regional Bonus</td>
-                  <td class="px-4 py-3 text-green-700 font-bold"
-                    >Up to 25 points</td
-                  >
-                  <td class="px-4 py-3">Limited</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            BC PNP now runs separate draws for priority Care and Build
-            occupations and for high-wage or high-scoring candidates in any
-            skilled occupation, so tech workers compete in the Innovate draws.
-            Compare provinces in our <a href="/articles/best-provinces-pnp-2027" class="text-red-600 underline">best provinces for PNP</a> guide, and use our <strong
-              >BC PNP points calculator</strong
-            > to see where you stand.
-          </p>
-        </div>
-
-        <!-- BC PNP Processing Time -->
-        <div class="space-y-6">
-          <h2
-            class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight"
-          >
-            BC PNP Processing Time <span class="text-red-600">2026</span>
-          </h2>
-          <p class="text-slate-600 text-base leading-relaxed">
-            Understanding <strong>BC PNP processing time</strong> helps you plan your
-            immigration timeline. Here are the current estimates:
-          </p>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <div
-              class="p-5 bg-blue-50 rounded-2xl border border-blue-200 text-center"
-            >
-              <div class="text-2xl font-black text-blue-700 mb-1">
-                2-3 weeks
-              </div>
-              <div class="text-xs text-blue-600 font-bold uppercase">
-                EOI to ITA
-              </div>
-            </div>
-            <div
-              class="p-5 bg-green-50 rounded-2xl border border-green-200 text-center"
-            >
-              <div class="text-2xl font-black text-green-700 mb-1">
-                3-4 months
-              </div>
-              <div class="text-xs text-green-700 font-bold uppercase">
-                Provincial Nomination
-              </div>
-            </div>
-            <div
-              class="p-5 bg-purple-50 rounded-2xl border border-purple-200 text-center"
-            >
-              <div class="text-2xl font-black text-purple-700 mb-1">
-                12-18 months
-              </div>
-              <div class="text-xs text-purple-600 font-bold uppercase">
-                PR Approval
-              </div>
-            </div>
-          </div>
-          <div
-            class="p-4 bg-amber-50 rounded-xl border border-amber-200 text-sm text-amber-800"
-          >
-            <strong>💡 Tip:</strong> Express Entry BC candidates typically see faster
-            federal processing (6-8 months) compared to paper-based applications.
-          </div>
-          <div class="text-center">
-            <a
-              href="/articles/bc-pnp-processing-times"
-              class="text-red-600 hover:text-red-700 font-bold text-sm underline underline-offset-4"
-            >
-              View Detailed Processing Times →
-            </a>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="text-center pt-8 sm:pt-10">
-          <a
-            href="/bc-pnp-calculator"
-            class="inline-flex items-center bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white px-8 sm:px-10 py-5 rounded-[1.5rem] sm:rounded-[2rem] font-bold text-sm uppercase tracking-widest shadow-xl active:scale-95 transition-all min-h-[44px]"
-          >
-            {content.bottom_cta.text}
-            <svg
-              class="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3"
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="3"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Disclaimer -->
-        <div class="text-center pt-10 border-t border-slate-100">
-          <p
-            class="text-xs text-slate-400 font-medium uppercase tracking-[0.2em] leading-relaxed"
-          >
-            {content.disclaimer}
-          </p>
-        </div>
-      </div>
+  <!-- Compact header so the calculator sits in the first phone viewport. -->
+  <section class="bg-gradient-to-b from-red-50 to-white px-4 sm:px-6 pt-4 sm:pt-10 pb-2 sm:pb-4 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        BC PNP Points Calculator <span class="text-red-600">2026</span>
+      </h1>
+      <p class="text-slate-600 text-sm sm:text-lg mt-1.5 sm:mt-3">
+        Your SIRS score out of 200 in 2 minutes, based on WelcomeBC's 2026 factors.
+      </p>
     </div>
+  </section>
+
+  <CalculatorShell t={calculatorContent.en} latestDraws={calculatorStreams} embedded />
+
+  <div class="bg-white border-t border-red-100 px-4 sm:px-6 pt-10 sm:pt-14 pb-6">
+    <div class="max-w-3xl mx-auto space-y-14">
+      <!-- Latest draw strip -->
+      <section class="rounded-2xl border border-red-100 bg-red-50/60 p-5 sm:p-6" aria-labelledby="latest-draw">
+        <h2 id="latest-draw" class="text-lg font-black text-slate-900">Latest BC PNP draw: {latestDrawDate}</h2>
+        <ul class="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+          {
+            latestScored.map((r) => (
+              <li class="rounded-xl bg-white border border-red-100 p-3">
+                <span class="block text-2xl font-black text-red-600">{r.score}</span>
+                <span class="block text-xs font-bold text-slate-600">{STREAM_SHORT[r.stream]}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="mt-3 text-sm text-slate-700">
+          Minimum scores by stream. Every 2026 round, newest first, is on the <a href="/bc-pnp-draws" class={a}>BC PNP draws 2026</a> page
+          (source: <a href={DRAWS_SOURCE_URL} target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC</a>).
+        </p>
+      </section>
+
+      <!-- How points are calculated -->
+      <section class="space-y-4" aria-labelledby="how-calculated">
+        <h2 id="how-calculated" class={h2}>How BC PNP points are calculated</h2>
+        <p class={p}>
+          The BC PNP ranks every Skills Immigration registration with the Skills Immigration Ranking System (SIRS): up to
+          120 points for human capital (work experience, education, language) and up to 80 for economic factors (the job
+          offer's hourly wage and where in B.C. you'll work), for a maximum of 200. Here is every factor, with the points
+          WelcomeBC publishes in its <a href={GUIDE_URL} target="_blank" rel="noopener noreferrer" class={a}>Skills Immigration Program Guide</a>.
+        </p>
+        <SirsFactorTable />
+      </section>
+
+      <!-- How do I calculate -->
+      <section class="space-y-4" aria-labelledby="how-do-i">
+        <h2 id="how-do-i" class={h2}>How do I calculate BC PNP points?</h2>
+        <p class={p}>
+          Add up the five SIRS factors for your B.C. job offer. The calculator above does it in this order; to work it out by hand:
+        </p>
+        <ol class="list-decimal pl-6 space-y-2 text-slate-700">
+          <li><strong>Work experience (max 40):</strong> years of paid experience in the same NOC as your job offer in the last 10 years (part-time counts at 50%), plus 10 for a year of it in Canada and 10 if you already work full-time for the employer.</li>
+          <li><strong>Education (max 40):</strong> your highest completed credential, plus 8 if it was completed in B.C. (6 elsewhere in Canada) and 5 for an eligible B.C. professional designation.</li>
+          <li><strong>Language (max 40):</strong> the lowest of your four CLB scores (CLB 9+ = 30), plus 10 if you have CLB 4+ in both English and French.</li>
+          <li><strong>Hourly wage (max 55):</strong> $16.00 = 1 point, then 1 point per dollar up to $70.00+ = 55. For a salary, divide by 52 and by weekly hours (30 to 40).</li>
+          <li><strong>Area (max 25):</strong> 0 in Metro Vancouver, 5 in Squamish, Abbotsford, Agassiz, Mission or Chilliwack, 15 elsewhere, plus 10 for regional experience or regional alumni outside Metro Vancouver.</li>
+        </ol>
+        <p class={p}>
+          Then compare your total with the last draw for your occupation group. The SIRS score only ranks you: you also have to meet the
+          <a href={LINKS.workExperience.href} class={a}>{LINKS.workExperience.short}</a> (2 years of skilled work for the Skilled Worker stream)
+          and the <a href={LINKS.jobOffer.href} class={a}>{LINKS.jobOffer.short}</a>.
+        </p>
+      </section>
+
+      <!-- Example scores -->
+      <section class="space-y-4" aria-labelledby="examples">
+        <h2 id="examples" class={h2}>Example scores</h2>
+        <p class={p}>
+          Four profiles, each scored by this calculator and compared with the last draw for its stream. Change one input in the calculator
+          and watch how far the score moves: area and wage usually move it most.
+        </p>
+        <ExampleProfiles />
+      </section>
+
+      <!-- Good score -->
+      <section class="space-y-4" aria-labelledby="good-score">
+        <h2 id="good-score" class={h2}>What is a good BC PNP score?</h2>
+        <p class={p}>
+          A good score is one at or above the recent minimums for your draw. In 2026 that meant {health.score}+ for priority health jobs,
+          {childcare.score}+ for certified ECEs, {construction.score}+ for construction trades, and {hei.score}+ for every other skilled
+          job in High Economic Impact draws (or a wage of at least {latestHeiWage.rule?.replace(", TEER 0–3", "")} in a TEER 0–3 job).
+        </p>
+        <div class="overflow-x-auto rounded-2xl border border-slate-200">
+          <table class="w-full text-sm text-left">
+            <caption class="sr-only">BC PNP minimum scores by stream, 2026</caption>
+            <thead class="bg-slate-100 text-slate-900">
+              <tr>
+                <th scope="col" class="px-3 py-2.5 font-bold">Stream</th>
+                <th scope="col" class="px-3 py-2.5 font-bold">Latest minimum</th>
+                <th scope="col" class="px-3 py-2.5 font-bold">Last 3 draws</th>
+                <th scope="col" class="px-3 py-2.5 font-bold">Last 6 draws</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 bg-white">
+              {
+                streamSummaries.map((s) => (
+                  <tr>
+                    <th scope="row" class="px-3 py-2 font-semibold text-slate-900">{s.label}</th>
+                    <td class="px-3 py-2"><strong>{s.latest.score}</strong> <span class="text-slate-500">({s.latest.date.replace(", 2026", "")})</span></td>
+                    <td class="px-3 py-2">{s.last3.low === s.last3.high ? s.last3.low : `${s.last3.low}–${s.last3.high}`}</td>
+                    <td class="px-3 py-2">{s.last6.low === s.last6.high ? s.last6.low : `${s.last6.low}–${s.last6.high}`}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-slate-500">
+          Computed from <a href={DRAWS_SOURCE_URL} target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC's invitations to apply</a>.
+          Minimums have trended down through 2026; they are not a guarantee for the next draw.
+        </p>
+      </section>
+
+      <!-- Official? -->
+      <section class="space-y-4" aria-labelledby="official">
+        <h2 id="official" class={h2}>Is this the official IRCC calculator?</h2>
+        <p class={p}>
+          No. The BC PNP is run by the Government of British Columbia, not IRCC, and neither publishes an interactive SIRS calculator.
+          This free calculator follows the factors and point values WelcomeBC publishes in Part 8 of the
+          Skills Immigration Program Guide (effective June 10, 2026) and was built by a
+          <a href="/about" class={a}>Regulated Canadian Immigration Consultant</a> (CICC #R816383). Your official score is the one
+          the BCPNP Online portal gives you when you <a href={LINKS.howToApply.href} class={a}>apply for BC PNP</a>; IRCC's own tool is the
+          Express Entry CRS calculator, which scores out of 1,200. Requirements for the two streams are on
+          <a href={SKILLS_URL} target="_blank" rel="noopener noreferrer" class={a}>WelcomeBC's Skills Immigration page</a>.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="space-y-4" aria-labelledby="faq">
+        <h2 id="faq" class={h2}>BC PNP calculator FAQ</h2>
+        <div class="space-y-3">
+          {
+            faqs.map((f) => (
+              <details class="group rounded-2xl border border-slate-200 bg-white p-5 open:shadow-sm">
+                <summary class="cursor-pointer list-none font-bold text-slate-900 flex justify-between gap-4">
+                  <h3 class="text-base">{f.q}</h3>
+                  <span class="text-red-600 group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
+                </summary>
+                <p class="mt-3 text-sm text-slate-700 leading-relaxed">{f.a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <RelatedLinks current="/" />
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 pb-8" aria-labelledby="more-guides">
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+      <h2 id="more-guides" class="text-lg sm:text-xl font-black text-slate-900 mb-4">More BC PNP guides</h2>
+      <ul class="grid gap-x-6 gap-y-2.5 sm:grid-cols-2 text-sm leading-snug">
+        {
+          moreGuides.map((g) => (
+            <li class="flex gap-2">
+              <span class="text-red-600 font-black" aria-hidden="true">›</span>
+              <a href={g.href} class="text-slate-800 font-semibold underline decoration-red-200 underline-offset-2 hover:text-red-700">{g.anchor}</a>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="mt-5 text-sm text-slate-600">
+        Other provinces and federal programs: <a href="/guides" class="font-semibold underline underline-offset-2 hover:text-red-700">Canadian immigration guides library</a>.
+      </p>
+      <LangTwin zh="/zh" hi="/hi" class="mt-3" />
+    </div>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-4 pb-12 text-center">
+    <p class="text-xs text-slate-500 leading-relaxed">
+      Estimates only, not legal advice. Last updated November 26, 2026. Point values: WelcomeBC Skills Immigration Program Guide (June 10, 2026).
+    </p>
   </div>
 </BaseLayout>

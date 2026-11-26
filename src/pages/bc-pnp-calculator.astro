@@ -1,703 +1,216 @@
 ---
+// BC PNP draw calculator. The points calculator (query family "bc pnp
+// calculator / points calculator") lives on the homepage; this page owns
+// "bc pnp draw calculator / will my score get invited". See docs/query-map.md.
 import BaseLayout from "../layouts/BaseLayout.astro";
-import CalculatorShell from "../components/CalculatorShell.astro";
-import AdUnit from "../components/AdUnit.astro";
-import { calculatorContent } from "../i18n/calculator-content";
+import RelatedLinks from "../components/seo/RelatedLinks.astro";
+import { DRAWS_SOURCE_URL, DRAWS_LAST_UPDATED_ISO } from "../data/bcpnp-draws";
+import { LINKS } from "../data/site-links";
+import { streamRows, latestFor, STREAM_SHORT, shortDate, fmtCountShort, type StreamKey } from "../utils/draws";
 
-const title = "Free BC PNP Points Calculator | Check Your SIRS Score 2026";
-const description =
-  "BC PNP Calculator to assess your points for permanent residence under the BC PNP Skills Immigration Stream. Contact us for guidance today!";
+const SITE = "https://bcpnpcalculator.ca";
+const streams: { key: StreamKey; label: string; who: string }[] = [
+  { key: "hei-points", label: "High Economic Impact (points)", who: "Any eligible skilled job (TEER 0–3) not covered by a Care or Build draw, including tech" },
+  { key: "health", label: "Care: Health", who: "Priority health occupations with a private or non-health-authority employer" },
+  { key: "childcare", label: "Care: Childcare", who: "Early childhood educators (NOC 42202) with a One Year or Five Year ECE certificate" },
+  { key: "construction", label: "Build: Construction Trades", who: "Priority construction occupations" },
+  { key: "veterinary", label: "Care: Veterinary Care", who: "Priority veterinary care occupations" },
+];
+const data = streams.map((s) => ({ ...s, rows: streamRows(s.key), latest: latestFor(s.key) }));
+const totalDraws = data.reduce((n, s) => n + s.rows.length, 0);
 
-// Comprehensive JSON-LD for Calculator + FAQ
+const title = "BC PNP Draw Calculator 2026: Would Your Score Get Invited?";
+const description = `Enter your SIRS score to see which of ${totalDraws} BC PNP draws in 2026 it would have cleared. Latest: Health ${latestFor("health").score}, Childcare ${latestFor("childcare").score}, High Economic Impact ${latestFor("hei-points").score}.`;
+
+const faqs = [
+  {
+    q: "What does the BC PNP draw calculator do?",
+    a: `It compares a SIRS score with the minimum score of every 2026 BC PNP Skills Immigration draw in your stream and counts how many it would have cleared. It uses WelcomeBC's published results (${totalDraws} scored draws so far in 2026). It doesn't predict future draws.`,
+  },
+  {
+    q: "Is a score of 98 good for BC PNP?",
+    a: `It depends on your stream. In the latest draws, 98 cleared Health (${latestFor("health").score}), Construction (${latestFor("construction").score}) and Childcare (${latestFor("childcare").score}), but not Veterinary (${latestFor("veterinary").score}) or High Economic Impact (${latestFor("hei-points").score}).`,
+  },
+  {
+    q: "Which BC PNP draw am I in?",
+    a: "Your job offer's occupation decides it. Certified ECEs are in Childcare draws, priority health and veterinary occupations in Care draws, priority construction trades in Build draws, and every other eligible skilled job in High Economic Impact draws, which also invite by wage alone.",
+  },
+];
+
 const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "BC PNP Points Calculator",
-    description:
-      "Calculate your British Columbia Provincial Nominee Program points instantly",
-    url: "https://bcpnpcalculator.ca/bc-pnp-calculator",
+    name: "BC PNP Draw Calculator",
+    description,
+    url: `${SITE}/bc-pnp-calculator`,
     applicationCategory: "UtilityApplication",
     operatingSystem: "Any",
-    browserRequirements: "Requires JavaScript. Modern browser recommended.",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "CAD",
-    },
-    featureList: [
-      "Real-time BC PNP score calculation",
-      "Detailed points breakdown by category",
-      "Work experience scoring",
-      "Education level points",
-      "Language proficiency (CLB) scoring",
-      "Hourly wage calculation",
-      "Regional location bonus points",
-    ],
+    dateModified: DRAWS_LAST_UPDATED_ISO,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "CAD" },
   },
   {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "How to Calculate Your BC PNP Points",
-    description:
-      "Step-by-step guide to calculate your British Columbia Provincial Nominee Program points",
-    totalTime: "PT5M",
-    step: [
-      {
-        "@type": "HowToStep",
-        position: 1,
-        name: "Enter Work Experience",
-        text: "Enter your years of directly related work experience and indicate if you have Canadian experience or are currently working in BC",
-      },
-      {
-        "@type": "HowToStep",
-        position: 2,
-        name: "Select Education Level",
-        text: "Choose your highest completed credential (secondary, bachelor, master, etc.)",
-      },
-      {
-        "@type": "HowToStep",
-        position: 3,
-        name: "Enter Language Proficiency",
-        text: "Select your Canadian Language Benchmark (CLB) level from approved tests like IELTS or CELPIP",
-      },
-      {
-        "@type": "HowToStep",
-        position: 4,
-        name: "Enter Hourly Wage",
-        text: "Input your hourly wage from your BC job offer in CAD",
-      },
-      {
-        "@type": "HowToStep",
-        position: 5,
-        name: "Select Job Location",
-        text: "Choose the regional district where your BC job is located",
-      },
-      {
-        "@type": "HowToStep",
-        position: 6,
-        name: "View Your Score",
-        text: "Review your total BC PNP score out of 200 points with detailed breakdown",
-      },
-    ],
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://bcpnpcalculator.ca",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "BC PNP Calculator",
-        item: "https://bcpnpcalculator.ca/bc-pnp-calculator",
-      },
-    ],
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What is a competitive BC PNP score?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "It depends on your occupation. In 2026, Care and Build draws for priority health, childcare, veterinary and construction occupations had cut-offs between 72 and 115 (76 for Health and 94 for Construction on October 8, 2026). Other occupations compete in High Economic Impact draws, where the points cut-off was 131 to 138.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How often are BC PNP draws held?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Since May 2026, BC has held about two draw days a month: a Care and Build draw early in the month and a High Economic Impact draw later in the month. Dates are not announced in advance, and tech-specific draws ended in December 2024.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can I improve my BC PNP score?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. The most effective ways to boost your BC PNP calculator result include obtaining a higher hourly wage, improving your CLB language results, or choosing a job offer in a regional district outside of Metro Vancouver.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Does a high score guarantee an invitation to apply?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "While our BC PNP score calculator provides a reliable estimate, an invitation to apply (ITA) depends on your profile meeting the minimum cutoff for the specific draw period.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What is the maximum BC PNP score?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "The maximum possible score in the BC PNP points calculator is 200 points, distributed across five categories: Work Experience (40), Education (40), Language (40), Hourly Wage (55), and Regional Location (25).",
-        },
-      },
+      { "@type": "ListItem", position: 1, name: "BC PNP Points Calculator", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "BC PNP Draw Calculator", item: `${SITE}/bc-pnp-calculator` },
     ],
   },
 ];
+
+const th = "px-3 py-2.5 text-left text-xs font-black text-slate-600 uppercase tracking-wider whitespace-nowrap";
+const td = "px-3 py-2 text-sm text-slate-700 whitespace-nowrap";
+const h2 = "text-2xl sm:text-3xl font-black text-slate-900 tracking-tight";
+const a = "text-red-700 font-semibold underline underline-offset-2 decoration-red-200 hover:decoration-red-600";
 ---
 
 <BaseLayout
   title={title}
   description={description}
+  canonical={`${SITE}/bc-pnp-calculator`}
   jsonLd={jsonLd}
-  keywords="bc pnp calculator, bc pnp score calculator, bc pnp points calculator, calculate my bc pnp points, bcpnp score, pnp calculator, SIRS score calculator, BC PNP draw 2026, check my BC PNP score, bc pnp point calculator"
-  lang="en"
+  keywords="BC PNP draw calculator, will my BC PNP score get invited, BC PNP draw score, BC PNP cut off score 2026, is 98 a good BC PNP score"
 >
-  <!-- Compact, mobile-first header. Kept deliberately short (small H1, trust
-       chip, subtitle hidden on phones) so the interactive calculator sits in
-       the first viewport on mobile instead of below stacked hero sections. -->
-  <section
-    class="bg-gradient-to-b from-red-50 to-white px-4 sm:px-6 pt-3 sm:pt-12 pb-2 sm:pb-6 text-center"
-  >
-    <div class="max-w-3xl mx-auto">
-      <div
-        class="inline-flex items-center gap-1.5 bg-green-50 text-green-700 px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold mb-2 sm:mb-3 border border-green-100"
-      >
-        <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-          <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-        </svg>
-        Private &amp; free — data stays in your browser
-      </div>
-      <h1
-        class="text-xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight"
-      >
-        Free BC PNP <span class="text-red-600">Points Calculator</span> 2026
-      </h1>
-      <p class="hidden sm:block text-slate-500 text-base mt-2 max-w-2xl mx-auto">
-        Estimate your Skills Immigration Ranking System (SIRS) score instantly —
-        100% free, anonymous, and updated for 2026.
+  <section class="bg-gradient-to-b from-red-50 to-white px-4 sm:px-6 pt-6 sm:pt-12 pb-4">
+    <div class="max-w-4xl mx-auto space-y-3">
+      <nav class="flex items-center gap-2 text-sm text-slate-500 font-medium" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-red-600">Calculator</a>
+        <span class="text-slate-300" aria-hidden="true">/</span>
+        <span class="text-red-600 font-bold">Draw calculator</span>
+      </nav>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">BC PNP Draw Calculator 2026</h1>
+      <p class="text-lg text-slate-800 leading-relaxed">
+        Enter your SIRS score and stream to see which of the {totalDraws} scored BC PNP draws in 2026 it would have cleared.
+        Don't know your score yet? Get it first with the <a href={LINKS.calculator.href} class={a}>{LINKS.calculator.short}</a>.
       </p>
     </div>
   </section>
 
-  <!-- Calculator React Island - placed immediately so it is above the fold on mobile -->
-  <CalculatorShell t={calculatorContent.en} />
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 space-y-12">
+    <!-- Tool -->
+    <section class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 space-y-4" aria-labelledby="tool">
+      <h2 id="tool" class="text-xl font-black text-slate-900">Compare your score with every 2026 draw</h2>
+      <form id="draw-form" class="grid gap-4 sm:grid-cols-[1fr_2fr]" onsubmit="return false">
+        <label class="block text-sm font-bold text-slate-700">
+          Your SIRS score (0–200)
+          <input id="dc-score" type="number" min="0" max="200" step="1" inputmode="numeric" value="100"
+            class="mt-1 w-full rounded-xl border-2 border-slate-200 px-3 py-2.5 text-lg font-black text-slate-900 focus:border-red-600 focus:outline-none" />
+        </label>
+        <label class="block text-sm font-bold text-slate-700">
+          Your stream
+          <select id="dc-stream" class="mt-1 w-full rounded-xl border-2 border-slate-200 px-3 py-3 text-sm font-bold text-slate-900 focus:border-red-600 focus:outline-none">
+            {data.map((s) => <option value={s.key}>{s.label}</option>)}
+          </select>
+        </label>
+      </form>
+      <p id="dc-result" class="rounded-xl bg-slate-900 text-white p-4 text-base font-bold min-h-[3.5rem]" aria-live="polite">
+        A score of 100 would have cleared {data[0].rows.filter((r) => (r.score as number) <= 100).length} of {data[0].rows.length} High Economic Impact draws in 2026.
+      </p>
+    </section>
 
-  <!-- Ad Unit -->
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 pt-8">
-    <AdUnit slot="3456789012" format="horizontal" />
+    <!-- Tables per stream (all visible without JavaScript) -->
+    <section class="space-y-8" aria-labelledby="by-stream">
+      <h2 id="by-stream" class={h2}>2026 minimum scores by stream</h2>
+      {
+        data.map((s) => (
+          <div class="dc-stream space-y-2" data-stream={s.key} data-label={s.label}>
+            <h3 class="text-lg font-black text-slate-900">
+              {s.label}: latest minimum {s.latest.score} ({shortDate(s.latest.date)})
+            </h3>
+            <p class="text-sm text-slate-600">{s.who}.</p>
+            <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+              <table class="w-full">
+                <caption class="sr-only">{s.label} draws in 2026</caption>
+                <thead class="bg-slate-100">
+                  <tr>
+                    <th scope="col" class={th}>Date</th>
+                    <th scope="col" class={th}>Minimum</th>
+                    <th scope="col" class={th}>Invitations</th>
+                    <th scope="col" class={th}>Your score</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                  {s.rows.map((r) => (
+                    <tr data-min={r.score}>
+                      <td class={`${td} font-bold text-slate-900`}>{r.date.replace(", 2026", "")}</td>
+                      <td class={td}><strong>{r.score}</strong></td>
+                      <td class={td}>{fmtCountShort(r.invites)}</td>
+                      <td class={`${td} dc-verdict text-slate-400`}>–</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))
+      }
+      <p class="text-xs text-slate-500">
+        Source: <a href={DRAWS_SOURCE_URL} target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC, Invitations to apply</a>.
+        High Economic Impact draws also invite by wage alone (no score cut-off); those rounds are on the
+        <a href={LINKS.draws.href} class="underline">BC PNP draws 2026</a> page.
+      </p>
+    </section>
+
+    <section class="space-y-3" aria-labelledby="dc-faq">
+      <h2 id="dc-faq" class={h2}>Draw calculator questions</h2>
+      {
+        faqs.map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-5">
+            <h3 class="font-black text-slate-900">{f.q}</h3>
+            <p class="mt-2 text-sm text-slate-700 leading-relaxed">{f.a}</p>
+          </div>
+        ))
+      }
+    </section>
   </div>
 
-  <!-- SEO Content Section (Static HTML) -->
-  <section
-    class="bg-white border-t border-red-100 pt-12 sm:pt-20 pb-32 sm:pb-48 px-4 sm:px-6"
-  >
-    <div class="max-w-3xl mx-auto space-y-12 sm:space-y-20">
-      <!-- SEO Intro -->
-      <div class="space-y-6">
-        <h2
-          class="text-3xl font-black text-slate-900 tracking-tight leading-tight"
-        >
-          Using the <span class="text-red-600">BC PNP Calculator</span> for Your Immigration
-          Strategy
-        </h2>
-        <p class="text-slate-600 text-base leading-relaxed">
-          The British Columbia Provincial Nominee Program (BC PNP) is a
-          points-based immigration system designed to attract skilled workers to
-          the province. Our <strong>BC PNP points calculator</strong> is an essential
-          tool for prospective immigrants to estimate their Skills Immigration Ranking
-          System (SIRS) score accurately. By understanding your <strong
-            >BC PNP score calculator</strong
-          > results, you can make informed decisions about your application strategy.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-          <div class="p-6 bg-red-50 rounded-3xl border border-red-100">
-            <h3 class="font-bold text-red-900 mb-2">How Points are Awarded</h3>
-            <p class="text-sm text-slate-600">
-              Points are distributed across economic factors (work experience,
-              education, and language) and human capital factors (hourly wage
-              and regional location).
-            </p>
-          </div>
-          <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
-            <h3 class="font-bold text-slate-900 mb-2">Maximum Points</h3>
-            <p class="text-sm text-slate-600">
-              The total possible score in the <strong
-                >BC PNP point calculator</strong
-              > is 200. Most successful candidates score between 100 and 130.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Detailed Scoring Information -->
-      <div class="space-y-8">
-        <h2 class="text-2xl font-black text-slate-900 tracking-tight">
-          Point Categories Explained
-        </h2>
-
-        <div class="space-y-6">
-          <div class="p-8 bg-red-50/50 rounded-[2.5rem] border border-red-100">
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-black text-red-900">Work Experience</h3>
-              <span class="text-red-600 font-black text-xl">40 pts max</span>
-            </div>
-            <p class="text-sm text-slate-700 leading-relaxed mb-4">
-              Points are awarded based on years of directly related work
-              experience, with additional bonuses for Canadian experience and
-              current BC employment.
-            </p>
-            <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
-              <li>0-5+ years of experience: 0-20 points (4 points per year)</li>
-              <li>1+ year Canadian experience: +10 bonus points</li>
-              <li>Currently working in BC: +10 bonus points</li>
-            </ul>
-          </div>
-
-          <div
-            class="p-8 bg-rose-50/50 rounded-[2.5rem] border border-rose-100"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-black text-rose-900">Education Level</h3>
-              <span class="text-rose-600 font-black text-xl">40 pts max</span>
-            </div>
-            <p class="text-sm text-slate-700 leading-relaxed mb-4">
-              Your highest completed credential determines your education
-              points. All credentials must be recognized by Canadian standards.
-            </p>
-            <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
-              <li>PhD/Doctorate: 27 points</li>
-              <li>Master's degree: 22 points</li>
-              <li>Bachelor's or Post-grad diploma: 15 points</li>
-              <li>Associate degree or Certificate: 5 points</li>
-            </ul>
-          </div>
-
-          <div
-            class="p-8 bg-orange-50/50 rounded-[2.5rem] border border-orange-100"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-black text-orange-900">
-                Language Proficiency
-              </h3>
-              <span class="text-orange-600 font-black text-xl">40 pts max</span>
-            </div>
-            <p class="text-sm text-slate-700 leading-relaxed mb-4">
-              Based on Canadian Language Benchmark (CLB) levels from approved
-              tests like IELTS or CELPIP. Higher proficiency significantly
-              boosts your score.
-            </p>
-            <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
-              <li>CLB 9+: 30 points (Maximum)</li>
-              <li>CLB 8: 25 points (Advanced)</li>
-              <li>CLB 7: 20 points (Proficient)</li>
-              <li>CLB 6: 15 points (Intermediate)</li>
-              <li>Scored on your higher language; CLB 4+ in both English and French: +10 bonus</li>
-            </ul>
-          </div>
-
-          <div class="p-8 bg-red-50/60 rounded-[2.5rem] border border-red-100">
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-black text-red-900">Hourly Wage</h3>
-              <span class="text-red-600 font-black text-xl">55 pts max</span>
-            </div>
-            <p class="text-sm text-slate-700 leading-relaxed mb-4">
-              The highest-weighted category. Your BC job offer's hourly wage is
-              the single most important factor in your SIRS score.
-            </p>
-            <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
-              <li>$70.00+/hour: 55 points (Maximum)</li>
-              <li>$50.00/hour: 35 points (Competitive)</li>
-              <li>$35.00/hour: 20 points (Moderate)</li>
-              <li>Below $16/hour: 0 points (No points)</li>
-            </ul>
-          </div>
-
-          <div
-            class="p-8 bg-rose-50/60 rounded-[2.5rem] border border-rose-100"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-black text-rose-900">
-                Regional Location
-              </h3>
-              <span class="text-rose-600 font-black text-xl">25 pts max</span>
-            </div>
-            <p class="text-sm text-slate-700 leading-relaxed mb-4">
-              BC incentivizes regional development by offering significant bonus
-              points for jobs outside Metro Vancouver.
-            </p>
-            <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
-              <li>Area 3 (Rest of BC): 15 points</li>
-              <li>Area 2 (Squamish, Abbotsford, etc.): 5 points</li>
-              <li>Area 1 (Metro Vancouver): 0 points</li>
-              <li>Regional experience (1+ year outside Area 1) or regional alumni: +10 bonus</li>
-              <li>Only one regional bonus counts, and only if your job is in Area 2 or 3</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ Section -->
-      <div class="space-y-10">
-        <div class="text-center">
-          <h2
-            class="text-2xl font-black text-slate-900 uppercase tracking-widest"
-          >
-            Frequently Asked Questions
-          </h2>
-          <div class="h-1 w-20 bg-red-600 mx-auto mt-4 rounded-full"></div>
-        </div>
-
-        <div class="space-y-4">
-          <div
-            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 class="text-lg font-extrabold text-slate-900 mb-3">
-              What is a competitive BC PNP score?
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              It depends on your occupation. In 2026, Care and Build draws for priority health, childcare, veterinary and construction occupations had cut-offs between 72 and 115 (76 for Health and 94 for Construction on October 8, 2026). Other occupations compete in High Economic Impact draws, where the points cut-off was 131 to 138.
-            </p>
-          </div>
-
-          <div
-            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 class="text-lg font-extrabold text-slate-900 mb-3">
-              How often are BC PNP draws held?
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              Since May 2026, BC has held about two draw days a month: a Care and Build draw early in the month and a High Economic Impact draw later in the month. Dates are not announced in advance, and tech-specific draws ended in December 2024.
-            </p>
-          </div>
-
-          <div
-            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 class="text-lg font-extrabold text-slate-900 mb-3">
-              Can I improve my score in the BC PNP points calculator?
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              Yes. The most effective ways to boost your <strong
-                >BC PNP calculator</strong
-              > result include obtaining a higher hourly wage, improving your CLB
-              language results, or choosing a job offer in a regional district outside
-              of Metro Vancouver.
-            </p>
-          </div>
-
-          <div
-            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 class="text-lg font-extrabold text-slate-900 mb-3">
-              Does a high score guarantee an invitation?
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              While our <strong>BC PNP score calculator</strong> provides a reliable
-              estimate, an invitation to apply (ITA) depends on your profile meeting
-              the minimum cutoff for the specific draw period.
-            </p>
-          </div>
-
-          <div
-            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 class="text-lg font-extrabold text-slate-900 mb-3">
-              What is the minimum eligible score?
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              There is no official minimum score. Each draw sets its own
-              cut-off: in 2026, Care and Build draws ranged from 72 to 115
-              points and High Economic Impact (Innovate) draws needed 131 to
-              138 points, depending on the stream and demand.
-            </p>
-          </div>
-
-          <div
-            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 class="text-lg font-extrabold text-slate-900 mb-3">
-              How do I calculate my PNP score?
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              To <strong>calculate your PNP score</strong>, enter your details
-              in our <strong>BC PNP points calculator</strong>: work experience
-              (up to 40 pts), education level (up to 40 pts), language
-              proficiency CLB (up to 40 pts), hourly wage (up to 55 pts), and
-              job location (up to 25 pts). The calculator instantly shows your
-              total out of 200.
-            </p>
-          </div>
-
-          <div
-            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 class="text-lg font-extrabold text-slate-900 mb-3">
-              Is the BC PNP points calculator for 2025 still accurate in 2026?
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              Yes! The <strong>BC PNP points calculator 2025</strong> scoring system
-              remains largely unchanged in 2026. BC PNP uses the same SIRS categories
-              and point distributions. Our calculator is regularly updated to reflect
-              any policy changes.
-            </p>
-          </div>
-
-          <div
-            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 class="text-lg font-extrabold text-slate-900 mb-3">
-              What factors affect my BC PNP scoring the most?
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              <strong>BC PNP scoring</strong> is most heavily influenced by hourly
-              wage (55 points max), followed equally by work experience, education,
-              and language (40 points each). Regional location bonuses (25 points)
-              can significantly boost borderline profiles in our <strong
-                >PNP score calculator</strong
-              >.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ad Unit -->
-      <AdUnit slot="4567890123" format="auto" />
-
-      <!-- Strategic Tips -->
-      <div
-        class="bg-gradient-to-br from-red-600 to-red-800 p-10 rounded-[3rem] text-white"
-      >
-        <h2 class="text-2xl font-black mb-6 uppercase tracking-widest">
-          Strategic Tips
-        </h2>
-        <div class="space-y-4 text-sm leading-relaxed">
-          <p>
-            <strong>Maximize Your Wage:</strong> Negotiate the highest possible hourly
-            wage with your BC employer, as this category offers the most points (55
-            max).
-          </p>
-          <p>
-            <strong>Consider Regional Jobs:</strong> Job offers outside Metro Vancouver
-            can add up to 25 bonus points, potentially making the difference between
-            receiving an ITA or not.
-          </p>
-          <p>
-            <strong>Improve Language Scores:</strong> Investing in language training
-            to move from CLB 7 to CLB 9 can add 10 crucial points to your score.
-          </p>
-          <p>
-            <strong>Document Canadian Experience:</strong> If you have 1+ years of
-            Canadian work experience, ensure you have proper documentation for the
-            10-point bonus.
-          </p>
-        </div>
-      </div>
-
-      <!-- How to Calculate BC PNP Points Section -->
-      <div class="space-y-6">
-        <h2 class="text-2xl font-black text-slate-900 tracking-tight">
-          How to Calculate Your <span class="text-red-600">BC PNP Points</span> Step-by-Step
-        </h2>
-        <p class="text-slate-600 text-base leading-relaxed">
-          Using our <strong>BC PNP score calculator</strong> is straightforward. Follow
-          these steps to <strong>calculate your BC PNP points</strong> and understand
-          your eligibility for the British Columbia Provincial Nominee Program in
-          2026:
-        </p>
-        <div class="grid gap-4">
-          <div
-            class="flex items-start gap-4 p-6 bg-white rounded-2xl border border-slate-100"
-          >
-            <div
-              class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center text-white font-black shrink-0"
-            >
-              1
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1">
-                Enter Your Work Experience
-              </h3>
-              <p class="text-sm text-slate-600">
-                Input your years of directly related work experience. The <strong
-                  >BC PNP points calculator</strong
-                > awards up to 20 base points, with bonuses for Canadian experience
-                (+10) and current BC employment (+10).
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex items-start gap-4 p-6 bg-white rounded-2xl border border-slate-100"
-          >
-            <div
-              class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center text-white font-black shrink-0"
-            >
-              2
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1">
-                Select Your Education Level
-              </h3>
-              <p class="text-sm text-slate-600">
-                Choose your highest completed credential. Master's/PhD earns 27
-                points in the <strong>BC PNP calculator</strong>, while a
-                Bachelor's earns 15 points.
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex items-start gap-4 p-6 bg-white rounded-2xl border border-slate-100"
-          >
-            <div
-              class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center text-white font-black shrink-0"
-            >
-              3
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1">
-                Enter Your CLB Language Score
-              </h3>
-              <p class="text-sm text-slate-600">
-                Select your Canadian Language Benchmark level from IELTS or
-                CELPIP results. CLB 9+ in our <strong
-                  >BC PNP score calculator</strong
-                > earns the maximum 30 language points.
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex items-start gap-4 p-6 bg-white rounded-2xl border border-slate-100"
-          >
-            <div
-              class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center text-white font-black shrink-0"
-            >
-              4
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1">
-                Input Your Hourly Wage
-              </h3>
-              <p class="text-sm text-slate-600">
-                Enter your BC job offer's hourly wage. This is the
-                highest-weighted category in the <strong>BCPNP score</strong> system,
-                worth up to 55 points for wages of $70+/hour.
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex items-start gap-4 p-6 bg-white rounded-2xl border border-slate-100"
-          >
-            <div
-              class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center text-white font-black shrink-0"
-            >
-              5
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1">
-                Select Your Job Location
-              </h3>
-              <p class="text-sm text-slate-600">
-                Choose the regional district where your BC job is located. Jobs
-                outside Metro Vancouver earn up to 25 bonus points when you <strong
-                  >calculate BC PNP points</strong
-                >.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2026 BC PNP Draw Score Analysis -->
-      <div class="space-y-6">
-        <h2 class="text-2xl font-black text-slate-900 tracking-tight">
-          <span class="text-red-600">BC PNP Draw 2026</span>: Score Analysis &
-          Trends
-        </h2>
-        <p class="text-slate-600 text-base leading-relaxed">
-          Understanding <strong>BC PNP draw 2026</strong> patterns helps you set realistic
-          expectations when using our <strong>BC PNP points calculator</strong>.
-          Here's what recent draws tell us about competitive scores:
-        </p>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div class="p-6 bg-green-50 rounded-2xl border border-green-200">
-            <div class="text-3xl font-black text-green-700 mb-2">131-138</div>
-            <div class="font-bold text-green-800 mb-1">Innovate (High Economic Impact) Draws</div>
-            <p class="text-sm text-green-700">
-              Points cut-offs in <strong
-                >BC PNP draws 2026</strong
-              > for any TEER 0–3 occupation, including tech (tech-only draws ended in 2024)
-            </p>
-          </div>
-          <div class="p-6 bg-blue-50 rounded-2xl border border-blue-200">
-            <div class="text-3xl font-black text-blue-700 mb-2">76-108</div>
-            <div class="font-bold text-blue-800 mb-1">Healthcare Draws</div>
-            <p class="text-sm text-blue-700">
-              Care: Health cut-offs, May 6 to October 8, 2026
-            </p>
-          </div>
-          <div class="p-6 bg-purple-50 rounded-2xl border border-purple-200">
-            <div class="text-3xl font-black text-purple-700 mb-2">99-115</div>
-            <div class="font-bold text-purple-800 mb-1">
-              Childcare & ECE Draws
-            </div>
-            <p class="text-sm text-purple-700">
-              Care: Childcare cut-offs for early childhood educators, May 6 to October 8, 2026
-            </p>
-          </div>
-          <div class="p-6 bg-amber-50 rounded-2xl border border-amber-200">
-            <div class="text-3xl font-black text-amber-700 mb-2">88-108</div>
-            <div class="font-bold text-amber-800 mb-1">
-              Construction Trades Draws
-            </div>
-            <p class="text-sm text-amber-700">
-              Build: Construction Trades cut-offs, May 6 to October 8, 2026
-            </p>
-          </div>
-        </div>
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h3 class="font-bold text-slate-900 mb-3">
-            Is a Score of 98 Good for BC PNP?
-          </h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            A <strong>BCPNP score</strong> of 98 can be competitive for targeted draws:
-            on October 8, 2026 it would have cleared Health (76) and Construction (94)
-            but missed Childcare (99) by one point. It falls well short of the 131-point
-            High Economic Impact cut-off that other occupations, including tech, face. Use our <strong
-              >BC PNP calculator</strong
-            > to identify areas where you can boost your score. Even 5-10 additional
-            points from a higher CLB or regional job location can make the difference
-            between receiving an ITA or waiting for the next round.
-          </p>
-        </div>
-        <div class="text-center pt-4">
-          <a
-            href="/bc-pnp-draws"
-            class="inline-flex items-center text-red-600 hover:text-red-700 font-bold text-sm uppercase tracking-widest"
-          >
-            View All BC PNP Draws 2026 →
-          </a>
-        </div>
-      </div>
-
-      <!-- Footer Info -->
-      <div class="text-center pt-10 border-t border-slate-100">
-        <p
-          class="text-xs text-slate-500 font-medium uppercase tracking-[0.2em] leading-relaxed"
-        >
-          Disclaimer: This BC PNP point calculator is for informational purposes
-          only. Official scores are determined by the Province of British
-          Columbia.
-        </p>
-        <div class="mt-6">
-          <a
-            href="/"
-            class="text-sm text-red-600 hover:text-red-700 font-bold uppercase tracking-widest"
-            >← Back to Home</a
-          >
-        </div>
-      </div>
-    </div>
-  </section>
+  <RelatedLinks current="/bc-pnp-calculator" />
+  <p class="max-w-4xl mx-auto px-4 sm:px-6 pb-12 text-xs text-slate-500">Past draws don't guarantee future minimums. General information, not legal advice.</p>
 </BaseLayout>
+
+<script>
+  const scoreEl = document.getElementById("dc-score") as HTMLInputElement | null;
+  const streamEl = document.getElementById("dc-stream") as HTMLSelectElement | null;
+  const out = document.getElementById("dc-result");
+
+  function update() {
+    if (!scoreEl || !streamEl || !out) return;
+    const raw = parseInt(scoreEl.value, 10);
+    const score = Number.isFinite(raw) ? Math.max(0, Math.min(200, raw)) : 0;
+    const stream = streamEl.value;
+    let cleared = 0;
+    let total = 0;
+    let label = "";
+    document.querySelectorAll<HTMLElement>(".dc-stream").forEach((block) => {
+      const active = block.dataset.stream === stream;
+      block.classList.toggle("ring-2", active);
+      block.classList.toggle("ring-red-200", active);
+      block.classList.toggle("rounded-2xl", active);
+      if (active) label = block.dataset.label || "";
+      block.querySelectorAll<HTMLTableRowElement>("tr[data-min]").forEach((row) => {
+        const min = Number(row.dataset.min);
+        const cell = row.querySelector<HTMLElement>(".dc-verdict");
+        const ok = score >= min;
+        if (active) {
+          total++;
+          if (ok) cleared++;
+        }
+        if (cell) {
+          cell.textContent = ok ? `Cleared (+${score - min})` : `Missed (−${min - score})`;
+          cell.className = `px-3 py-2 text-sm whitespace-nowrap dc-verdict font-bold ${ok ? "text-green-700" : "text-amber-700"}`;
+        }
+      });
+    });
+    out.textContent = `A score of ${score} would have cleared ${cleared} of ${total} ${label} draws in 2026.`;
+  }
+
+  scoreEl?.addEventListener("input", update);
+  streamEl?.addEventListener("change", update);
+  update();
+</script>

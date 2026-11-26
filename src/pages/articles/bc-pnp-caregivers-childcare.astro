@@ -1,581 +1,197 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { calculateTotalPoints } from "../../utils/calculatePoints";
+import { EXAMPLE_PROFILES } from "../../data/example-profiles";
+import { DRAWS_SOURCE_URL } from "../../data/bcpnp-draws";
+import { latestFor, shortDate } from "../../utils/draws";
+import { LINKS } from "../../data/site-links";
 
-const title =
-    "BC PNP for Caregivers & ECEs 2026: Complete Licensing & PR Guide";
-const description =
-    "Complete guide for Early Childhood Educators (ECE) and caregivers immigrating to BC. Learn about priority draws, wage enhancements ($4-6/hr), licensing steps, and the path to Permanent Residence.";
+const GUIDE_URL = "https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf";
+const PRIORITIES_URL =
+  "https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/the-bc-provincial-nominee-program";
+
+// Latest draw minimums (WelcomeBC data in src/data/bcpnp-draws.ts).
+const childcare = latestFor("childcare");
+const health = latestFor("health");
+const heiPoints = latestFor("hei-points");
+const year = childcare.iso.slice(0, 4);
+
+// Worked example: the site's caregiver profile, scored by the calculator.
+const careAide = EXAMPLE_PROFILES.find((p) => p.id === "caregiver")!;
+const careAideScore = calculateTotalPoints(careAide.state);
+const cb = careAideScore.breakdown;
+
+// Same inputs as the ECE profile, but with an ECE Assistant certificate
+// (no professional designation points).
+const ece = EXAMPLE_PROFILES.find((p) => p.id === "ece")!;
+const eceScore = calculateTotalPoints(ece.state).total;
+const eceaScore = calculateTotalPoints({
+  ...ece.state,
+  hasProfessionalDesignation: false,
+  selectedProfession: null,
+}).total;
+
+const title = `BC PNP Caregivers & Childcare 2026: ECEs ${childcare.score}, Care Aides ${health.score}, Nannies No`;
+const description = `Certified ECEs (Childcare draw, ${childcare.score} on ${shortDate(childcare.date)}, ${year}) and care aides (Health, ${health.score}) can get BC PNP. Nannies and home support workers (TEER 4) cannot.`;
+
+const faqs = [
+  {
+    q: "Is an ECE assistant eligible for BC PNP?",
+    a: `An ECE Assistant with a full-time, indeterminate NOC 42202 job offer can register in the Skilled Worker stream, but WelcomeBC limits Care: Childcare draws to early childhood educators, and the Program Guide says ECE Assistant certificates do not earn professional designation points. In practice an ECE Assistant competes in High Economic Impact draws, where the latest points minimum was ${heiPoints.score}.`,
+  },
+  {
+    q: "Can a nanny or home child care provider apply for BC PNP?",
+    a: "No. Home child care providers (NOC 44100) and home support workers (NOC 44101) are TEER 4 occupations. The two Skills Immigration streams in the June 10, 2026 Program Guide accept TEER 0, 1, 2 and 3 job offers only, so these jobs have no BC PNP route in 2026.",
+  },
+  {
+    q: "Do caregivers need a job offer for BC PNP?",
+    a: "Yes. Every Skills Immigration applicant needs a job offer for one regular full-time position (an average of at least 30 hours a week, year-round) that is indeterminate, from an eligible B.C. employer that supports the application.",
+  },
+  {
+    q: "What score do childcare workers need for BC PNP?",
+    a: `The latest Care: Childcare draw on ${childcare.date} invited early childhood educators with ${childcare.score} points or more. The latest Care: Health draw, which covers health care aides, had a minimum of ${health.score}.`,
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const td = "px-3 py-2.5 align-top";
 ---
 
-<ArticleLayout slug="bc-pnp-caregivers-childcare" datePublished="2026-01-29" dateModified="2026-11-11" keywords="BC PNP caregivers, childcare workers BC immigration, ECE BC PNP" title={title} description={description}>
-    <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
-        <div class="max-w-3xl mx-auto space-y-8">
-            <header class="space-y-4 text-center">
-                <div
-                    class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-bold mb-4"
-                >
-                    High Demand Occupation
-                </div>
-                <h1
-                    class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight"
-                >
-                    BC PNP for <span class="text-green-600"
-                        >Caregivers & ECEs</span
-                    >
-                </h1>
-                <p
-                    class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
-                >
-                    BC has a critical shortage of childcare workers. The
-                    province offers priority processing, lower score
-                    requirements, and wage top-ups to help you immigrate. If you work in a public health setting, you may also qualify for the <a href="/articles/bc-pnp-health-authority-stream" class="text-green-600 hover:underline">Health Authority Stream</a>.
-                </p>
-            </header>
+<ArticleLayout
+  slug="bc-pnp-caregivers-childcare"
+  datePublished="2026-01-29"
+  dateModified="2026-11-26"
+  articleSection="Occupation Guide"
+  keywords="BC PNP caregivers, BC PNP childcare, BC PNP childcare requirements, ECE assistant BC PNP, nanny BC PNP"
+  title={title}
+  description={description}
+  breadcrumbLabel="BC PNP for caregivers and childcare"
+  jsonLd={faqSchema}
+  related={["ece", "jobOffer", "workExperience"]}
+>
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+    <header class="mb-8">
+      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+        Can caregivers and childcare workers get BC PNP?
+      </h1>
+      <p class="mt-4 text-lg text-slate-700 leading-relaxed">
+        Yes, if the job is TEER 0 to 3: certified early childhood educators are invited in Care: Childcare draws (minimum {childcare.score} on {childcare.date}) and health care aides in Care: Health draws (minimum {health.score}), but nannies and home support workers (TEER 4) have no BC PNP stream in {year}.
+      </p>
+    </header>
 
-            <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl">
-                <p class="font-bold text-amber-900 mb-2">Update (November 2026)</p>
-                <p class="text-amber-800 text-sm leading-relaxed">Parts of this guide were written in early 2026 and have since changed. <strong>Childcare draws</strong> are now held about monthly, not weekly, and only ECEs (NOC 42202) with a valid One Year or Five Year certificate from the ECE Registry can receive the targeted invitation. The latest Childcare draw, on <strong>October 8, 2026</strong>, needed <strong>99 points</strong> and invited 86 ECEs; no newer draw had been held as of November 11, 2026. The <strong>Entry Level and Semi-Skilled (ELSS) stream is closed</strong> (announced April 23, 2026), so home child care providers and home support workers (TEER 4) currently have no BC PNP route, and ECE Assistant certificate holders cannot receive the targeted Childcare invitation. On <strong>November 6, 2026</strong>, the federal government added ECEs to the occupations exempt from the low-wage LMIA refusal-to-process rule, which applies in Vancouver, Kelowna, Abbotsford-Mission and Nanaimo until at least January 7, 2027. The BC PNP application fee is $1,750. For full detail, see our <a href="/articles/bc-pnp-early-childhood-educators-2027" class="underline font-bold">ECE guide for 2027</a>.</p>
-            </div>
+    <aside class="mb-10 rounded-2xl border border-green-200 bg-green-50 p-5 sm:p-6" aria-label="Key facts">
+      <p class="text-xs font-black uppercase tracking-widest text-green-800 mb-3">Key facts</p>
+      <ul class="space-y-2 text-sm text-slate-800 list-disc pl-5">
+        <li>Only two Skills Immigration streams exist: Skilled Worker (TEER 0–3) and Health Authority.</li>
+        <li>Care: Childcare draws are for early childhood educators (NOC 42202): {childcare.score} points on {childcare.date}.</li>
+        <li>Care aides (NOC 33102) must be on the BC Care Aide &amp; Community Health Worker Registry.</li>
+        <li>ECE Assistant certificates earn no professional designation points.</li>
+        <li>Home child care providers (44100) and home support workers (44101) are TEER 4: not eligible.</li>
+      </ul>
+    </aside>
 
-            <div class="grid sm:grid-cols-3 gap-4">
-                <div
-                    class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
-                >
-                    <div class="text-3xl font-black text-green-600 mb-2">
-                        Monthly
-                    </div>
-                    <div class="text-sm text-slate-600 font-medium">
-                        Childcare draw frequency (2026)
-                    </div>
-                </div>
-                <div
-                    class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
-                >
-                    <div class="text-3xl font-black text-blue-600 mb-2">
-                        99 pts
-                    </div>
-                    <div class="text-sm text-slate-600 font-medium">
-                        ECE cut-off, Oct 8, 2026
-                    </div>
-                </div>
-                <div
-                    class="bg-white border border-slate-200 p-6 rounded-2xl text-center"
-                >
-                    <div class="text-3xl font-black text-orange-600 mb-2">
-                        +$6/hr
-                    </div>
-                    <div class="text-sm text-slate-600 font-medium">
-                        Govt wage bonus
-                    </div>
-                </div>
-            </div>
+    <div class="prose prose-slate max-w-none">
+      <h2>Which caregivers and childcare workers can get BC PNP?</h2>
+      <p>
+        The deciding factor is your job's NOC TEER level. The <a href={GUIDE_URL} target="_blank" rel="noopener noreferrer">Skills Immigration Program Guide</a> (effective June 10, 2026) lists two streams: Skilled Worker, for job offers in TEER 0, 1, 2 or 3, and Health Authority, for health jobs with a B.C. public health authority. Early childhood educators and care aides fit; nannies and home support workers do not. The targeted draws are named on <a href={DRAWS_SOURCE_URL} target="_blank" rel="noopener noreferrer">WelcomeBC's invitations page</a>, and the priority occupation lists on its <a href={PRIORITIES_URL} target="_blank" rel="noopener noreferrer">program overview page</a>.
+      </p>
+    </div>
 
-            <div
-                class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm"
-            >
-                <h2>Why Caregivers Are in Demand</h2>
-                <p>
-                    British Columbia is expanding its "10-a-day" childcare
-                    program and simply does not have enough qualified staff. To
-                    fix this, the government has:
-                </p>
-                <ul>
-                    <li>
-                        Created <strong>Targeted Draws</strong> specifically for ECEs
-                        (NOC 42202) with much lower scores than general tech or skilled
-                        worker draws.
-                    </li>
-                    <li>
-                        Implemented <strong>Wage Enhancements</strong> of $6/hour
-                        (as of 2024/25) for ECEs working in participating facilities.
-                    </li>
-                    <li>Offered priority processing for PR applications.</li>
-                </ul>
+    <div class="my-6 overflow-x-auto rounded-2xl border border-slate-200">
+      <table class="w-full text-sm text-left">
+        <caption class="sr-only">BC PNP route by caregiving and childcare occupation, 2026</caption>
+        <thead class="bg-slate-100 text-slate-900">
+          <tr>
+            <th scope="col" class={`${td} font-bold`}>Occupation</th>
+            <th scope="col" class={`${td} font-bold`}>NOC</th>
+            <th scope="col" class={`${td} font-bold`}>TEER</th>
+            <th scope="col" class={`${td} font-bold`}>BC PNP route in {year}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 bg-white">
+          <tr>
+            <td class={`${td} font-semibold text-slate-900`}>Early childhood educator (One Year or Five Year certificate)</td>
+            <td class={td}>42202</td><td class={td}>2</td>
+            <td class={td}>Skilled Worker; targeted Care: Childcare draws (latest minimum {childcare.score}); +5 designation points</td>
+          </tr>
+          <tr>
+            <td class={`${td} font-semibold text-slate-900`}>ECE Assistant</td>
+            <td class={td}>42202</td><td class={td}>2</td>
+            <td class={td}>Skilled Worker only; not in Childcare draws, no designation points (High Economic Impact draws, latest minimum {heiPoints.score})</td>
+          </tr>
+          <tr>
+            <td class={`${td} font-semibold text-slate-900`}>Health care aide / care aide</td>
+            <td class={td}>33102</td><td class={td}>3</td>
+            <td class={td}>Skilled Worker; Care: Health draws (latest minimum {health.score}); registry required, +5 designation points; Health Authority stream if employed by a health authority</td>
+          </tr>
+          <tr>
+            <td class={`${td} font-semibold text-slate-900`}>Home child care provider (nanny)</td>
+            <td class={td}>44100</td><td class={td}>4</td>
+            <td class={td}>None: TEER 4 is outside both streams</td>
+          </tr>
+          <tr>
+            <td class={`${td} font-semibold text-slate-900`}>Home support worker / caregiver</td>
+            <td class={td}>44101</td><td class={td}>4</td>
+            <td class={td}>None: TEER 4 is outside both streams</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-slate-500 -mt-3 mb-8">
+      Sources: Program Guide sections 3.7, 4.1, 4.2 and 8.2; draw minimums from <a href={DRAWS_SOURCE_URL} target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC, Invitations to apply</a>.
+    </p>
 
-                <h2>Eligible NOC Codes</h2>
-                <p>
-                    The "Caregiver" category covers several distinct roles, each
-                    with different requirements. Make sure you select the correct <a href="/articles/bc-pnp-noc-codes-teer-categories-guide-2026" class="text-green-600 hover:underline">NOC code and TEER category</a> for your position:
-                </p>
+    <div class="prose prose-slate max-w-none">
+      <h2>Is an ECE assistant (ECEA) eligible for BC PNP?</h2>
+      <p>
+        Partly. ECE Assistants share NOC 42202 with early childhood educators, which is a TEER 2 occupation, so an ECEA with a qualifying job offer can register in the Skilled Worker stream. Two things work against you. WelcomeBC's Childcare draws are for early childhood educators only, and section 8.2 of the Program Guide states that "ECE Assistant certificates are not eligible for Professional Designation points." With exactly the same profile as our ECE example, the assistant scores {eceaScore} instead of {eceScore}, and has to compete in High Economic Impact draws, where the latest points minimum was {heiPoints.score}. Upgrading to a One Year or Five Year certificate is the realistic route; our guide to <a href={LINKS.ece.href}>{LINKS.ece.short}</a> covers the certificates.
+      </p>
 
-                <div class="not-prose overflow-x-auto my-6">
-                    <table class="min-w-full text-left text-sm">
-                        <thead class="bg-gray-100 border-b border-gray-200">
-                            <tr>
-                                <th class="px-4 py-3 font-bold text-slate-900"
-                                    >NOC</th
-                                >
-                                <th class="px-4 py-3 font-bold text-slate-900"
-                                    >Title</th
-                                >
-                                <th class="px-4 py-3 font-bold text-slate-900"
-                                    >TEER</th
-                                >
-                                <th class="px-4 py-3 font-bold text-slate-900"
-                                    >BC PNP Stream</th
-                                >
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr class="bg-green-50">
-                                <td class="px-4 py-3 font-mono font-bold"
-                                    >42202</td
-                                >
-                                <td class="px-4 py-3 font-bold text-green-700"
-                                    >Early Childhood Educators (ECE)</td
-                                >
-                                <td class="px-4 py-3">TEER 2</td>
-                                <td class="px-4 py-3"
-                                    >Skilled Worker / EEBC (Targeted Draws)</td
-                                >
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-mono">44100</td>
-                                <td class="px-4 py-3"
-                                    >Home Child Care Providers</td
-                                >
-                                <td class="px-4 py-3">TEER 4</td>
-                                <td class="px-4 py-3"
-                                    >ELSS (Requires 9 months exp)</td
-                                >
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-mono">42203</td>
-                                <td class="px-4 py-3">ECE Assistants</td>
-                                <td class="px-4 py-3">TEER 4</td>
-                                <td class="px-4 py-3"
-                                    >ELSS (Requires 9 months exp)</td
-                                >
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-mono">44101</td>
-                                <td class="px-4 py-3">Home Support Workers</td>
-                                <td class="px-4 py-3">TEER 4</td>
-                                <td class="px-4 py-3"
-                                    >ELSS (Requires 9 months exp)</td
-                                >
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+      <h2>What are the BC PNP childcare requirements?</h2>
+      <p>For ECEs and other childcare workers, the general rules in Part 3 of the Program Guide apply:</p>
+      <ul>
+        <li><strong>Job offer:</strong> one regular full-time position, an average of at least 30 hours a week, year-round, and indeterminate (no end date). See the full <a href={LINKS.jobOffer.href}>{LINKS.jobOffer.short}</a>.</li>
+        <li><strong>Employer:</strong> for NOC 42202, the employer "must be licensed by a provincial health authority to operate a child care facility" (section 6.5), must have operated in B.C. for at least one year, and needs at least five full-time employees in Metro Vancouver or three elsewhere.</li>
+        <li><strong>Experience:</strong> at least two years of full-time (or equivalent) work in any TEER 0–3 occupation within the last ten years.</li>
+        <li><strong>Language:</strong> CLB 4 in all four skills for TEER 2 and 3 jobs.</li>
+        <li><strong>Wage:</strong> within the WorkBC or Job Bank range for the occupation and region (section 3.9).</li>
+      </ul>
 
-                <div
-                    class="bg-blue-50 p-6 rounded-xl text-sm border border-blue-200 mb-8"
-                >
-                    <strong>Note:</strong> NOC 42202 (ECE) is the "Gold Standard"
-                    for BC PNP. It qualifies for targeted Childcare draws. The other
-                    codes used to go through the Entry Level & Semi-Skilled (ELSS)
-                    stream, which the BC PNP announced as officially closed on April 23, 2026.
-                </div>
+      <h2>Worked example: a care aide's BC PNP score</h2>
+      <p>
+        A health care assistant in Abbotsford (Area 2) with two years as a care aide in Canada, currently working for the supporting employer, a certificate completed in B.C., registry membership, CLB 5 and one earlier year of full-time work outside Metro Vancouver, on an example offer of $27.00 an hour, scores <strong>{careAideScore.total}</strong> in our <a href={LINKS.calculator.href}>{LINKS.calculator.short}</a>: experience {cb.experience + cb.canadianExp + cb.currentBCJob}, education {cb.educationTotal}, language {cb.languageTotal}, wage {cb.wage} and area {cb.area + cb.regionalBonus}. That is {careAideScore.total >= (health.score as number) ? `${careAideScore.total - (health.score as number)} points above` : `${(health.score as number) - careAideScore.total} points below`} the {health.date} Care: Health minimum of {health.score}. The wage is an example input, not wage data.
+      </p>
 
-                <h2>How to Get ECE Certified in BC</h2>
-                <p>
-                    You cannot work as an ECE in BC without a license from the
-                    ECE Registry. This is a mandatory step before you can apply
-                    for BC PNP under NOC 42202. If your credentials are from outside Canada, you may need an <a href="/articles/bc-pnp-eca-guide" class="text-green-600 hover:underline">Education Credential Assessment (ECA)</a> as part of the process.
-                </p>
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Registering with an ECE Assistant certificate and expecting a Childcare invitation.</li>
+        <li>Claiming designation points before your ECE certificate or care aide registration is issued.</li>
+        <li>Accepting a job offer from an unlicensed or home-based child care operation.</li>
+        <li>Applying as a nanny (NOC 44100) or home support worker (NOC 44101), which are TEER 4.</li>
+        <li>Counting a wage top-up or bonus in your hourly wage; the BC PNP scores only the regular hourly rate.</li>
+      </ul>
 
-                <h3>Step 1: Check Equivalency</h3>
-                <p>
-                    If you studied outside Canada, you don't necessarily need to
-                    retake your education. You can apply for an evaluation of
-                    your foreign credentials.
-                </p>
-
-                <h3>Step 2: Certification Levels</h3>
-                <ul>
-                    <li>
-                        <strong>ECE Assistant (ECEA):</strong> Requires just one valid
-                        course (Health, Safety & Nutrition, Child Guidance, or Child
-                        Development). Allows you to work under supervision.
-                    </li>
-                    <li>
-                        <strong>ECE (One-Year):</strong> Basic certificate requiring
-                        standard coursework and practicum.
-                    </li>
-                    <li>
-                        <strong>ECE (Five-Year):</strong> Full certification requiring
-                        500 hours of work experience.
-                    </li>
-                    <li>
-                        <strong
-                            >Infant/Toddler (ITE) & Special Needs (SNE):</strong
-                        > Post-basic specializations. Highly sought after.
-                    </li>
-                </ul>
-
-                <h3>Step 3: Character Reference & Criminal Record Check</h3>
-                <p>
-                    Because you are working with vulnerable children, you must
-                    pass a strict criminal record check (CRC) in BC.
-                </p>
-
-                <h2>Wages & Salary Expectations</h2>
-                <p>
-                    Wages for ECEs have risen significantly due to government
-                    intervention.
-                </p>
-
-                <div class="not-prose overflow-x-auto my-6">
-                    <table class="min-w-full text-left text-sm">
-                        <thead class="bg-gray-100 border-b border-gray-200">
-                            <tr>
-                                <th class="px-4 py-3 font-bold text-slate-900"
-                                    >Role</th
-                                >
-                                <th class="px-4 py-3 font-bold text-slate-900"
-                                    >Base Wage</th
-                                >
-                                <th class="px-4 py-3 font-bold text-slate-900"
-                                    >With Wage Enhancement</th
-                                >
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr>
-                                <td class="px-4 py-3 font-medium"
-                                    >ECE Assistant</td
-                                >
-                                <td class="px-4 py-3">$20 - $24/hr</td>
-                                <td class="px-4 py-3 text-green-700 font-bold"
-                                    >$26 - $30/hr</td
-                                >
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-medium"
-                                    >ECE (Licensed)</td
-                                >
-                                <td class="px-4 py-3">$25 - $30/hr</td>
-                                <td class="px-4 py-3 text-green-700 font-bold"
-                                    >$31 - $36/hr</td
-                                >
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-medium"
-                                    >Supervisor/Manager</td
-                                >
-                                <td class="px-4 py-3">$30 - $35/hr</td>
-                                <td class="px-4 py-3 text-green-700 font-bold"
-                                    >$36 - $41/hr</td
-                                >
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div
-                    class="bg-green-50 p-6 rounded-xl text-sm border border-green-200 mb-8"
-                >
-                    <strong>💰 Wage Enhancement ($6/hr):</strong> The BC initiative
-                    (formerly $4, increased to $6 in late 2023/2024) is paid directly
-                    to eligible childcare centers to top up staff wages. Ask your
-                    employer if they are enrolled in the <em
-                        >ECE Wage Enhancement (ECE-WE)</em
-                    > program.
-                </div>
-
-                <h2>BC PNP Streams for Caregivers</h2>
-
-                <h3>Option A: Skilled Worker Stream (Preferred)</h3>
-                <p>
-                    <strong>Best for:</strong> Fully certified ECEs (NOC 42202).
-                </p>
-                <ul>
-                    <li>
-                        <strong>Pros:</strong> Immediate eligibility (no need to work
-                        for 9 months first), eligible for <a href="/articles/bc-pnp-express-entry-bc-eebc-guide-2026" class="text-green-600 hover:underline">Express Entry BC</a> (faster PR),
-                        targeted Childcare draws (minimum score 99 in September and October 2026).
-                    </li>
-                    <li>
-                        <strong>Cons:</strong> Must have strict ECE certification.
-                    </li>
-                </ul>
-
-                <h3>Option B: Entry Level & Semi-Skilled (ELSS)</h3>
-                <p>
-                    <strong>Best for:</strong> ECE Assistants, Home Support Workers.
-                </p>
-                <ul>
-                    <li>
-                        <strong>Pros:</strong> Lower education requirements (high
-                        school).
-                    </li>
-                    <li>
-                        <strong>Cons:</strong> MUST work for the BC employer for 9
-                        consecutive months before registering. NOT eligible for Express
-                        Entry (slower paper-based PR).
-                    </li>
-                </ul>
-
-                <h2>Step-by-Step Path to PR</h2>
-                <ol>
-                    <li>
-                        <strong>Get Certified:</strong> Even an ECE Assistant certificate
-                        opens doors.
-                    </li>
-                    <li>
-                        <strong>Secure a Job:</strong> Find a full-time, indeterminate
-                        job offer from a BC employer.
-                    </li>
-                    <li>
-                        <strong>Work Permit:</strong> Review our <a href="/articles/bc-pnp-work-permit-guide" class="text-green-600 hover:underline">work permit guide</a> for details on each option.
-                        <ul class="text-sm mt-1 list-disc pl-4">
-                            <li>Supported by LMIA (Employer applies)</li>
-                            <li>
-                                OR Francophone Mobility (if you speak French)
-                            </li>
-                            <li>OR Working Holiday Visa (IEC)</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Register in SIRS:</strong>
-                        <ul class="text-sm mt-1 list-disc pl-4">
-                            <li>
-                                If ECE (42202): Register immediately under
-                                Skilled Worker.
-                            </li>
-                            <li>
-                                If Assistant/Other: Work 9 months, then register
-                                under ELSS.
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Invitation:</strong> Wait for a "Childcare Targeted
-                        Draw" (about monthly in 2026; the October 8, 2026 draw needed 99 points).
-                    </li>
-                    <li>
-                        <strong>Application:</strong> Submit documents within 30 days. Use our <a href="/articles/bc-pnp-documents-checklist" class="text-green-600 hover:underline">documents checklist</a> to make sure nothing is missing.
-                    </li>
-                    <li>
-                        <strong>Nomination:</strong> Receive BC Provincial Nomination.
-                    </li>
-                    <li>
-                        <strong>PR Application:</strong> Apply to IRCC for Permanent
-                        Residence.
-                    </li>
-                </ol>
-
-                <h2>
-                    Comparison: BC PNP vs. Federal Home Child Care Provider
-                    Pilot
-                </h2>
-                <p>
-                    Many applicants are confused between these two programs.
-                    Here is the difference:
-                </p>
-
-                <div class="not-prose overflow-x-auto my-6">
-                    <table class="min-w-full text-left text-sm">
-                        <thead class="bg-gray-100 border-b border-gray-200">
-                            <tr>
-                                <th class="px-4 py-3 font-bold text-slate-900"
-                                    >Feature</th
-                                >
-                                <th class="px-4 py-3 font-bold text-green-700"
-                                    >BC PNP (Provincial)</th
-                                >
-                                <th class="px-4 py-3 font-bold text-blue-700"
-                                    >Home Care Pilot (Federal)</th
-                                >
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr>
-                                <td class="px-4 py-3 font-bold"
-                                    >Employer Type</td
-                                >
-                                <td class="px-4 py-3">Daycares / Companies</td>
-                                <td class="px-4 py-3">Private Families</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-bold">Job Offer</td>
-                                <td class="px-4 py-3">Specific employer tied</td
-                                >
-                                <td class="px-4 py-3"
-                                    >Occupation-restricted Open Permit</td
-                                >
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-bold"
-                                    >Experience Needed</td
-                                >
-                                <td class="px-4 py-3">Varies (0-2 years)</td>
-                                <td class="px-4 py-3"
-                                    >12 months Canadian exp. to finalize PR</td
-                                >
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-bold">Cap/Quota</td>
-                                <td class="px-4 py-3">Pool based (points)</td>
-                                <td class="px-4 py-3"
-                                    >Annual caps fill quickly</td
-                                >
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h2>Frequently Asked Questions</h2>
-
-                <h3>Can I work with an expired ECE license?</h3>
-                <p>
-                    No. Your license must be valid at the time of registration
-                    and application. Renew it early.
-                </p>
-
-                <h3>Do I need an LMIA?</h3>
-                <p>
-                    Most likely, yes, unless you are on an open work permit
-                    (like PGWP or Spousal). See our <a href="/articles/bc-pnp-lmia-guide-2026" class="text-green-600 hover:underline">LMIA guide</a> for the full process. Employers in BC are often willing to
-                    support LMIAs because the shortage of workers is so severe. Since
-                    November 6, 2026, ECEs are exempt from the federal rule that stops
-                    low-wage LMIAs in high-unemployment areas (currently Vancouver,
-                    Kelowna, Abbotsford-Mission and Nanaimo), and low-wage LMIAs submitted
-                    from that date can be valid for up to two years. ESDC's refusal page
-                    had not yet listed ECEs as of November 11, 2026, so employers should
-                    confirm with Service Canada.
-                </p>
-
-                <h3>Can I bring my family?</h3>
-                <p>
-                    Yes. If you are in a TEER 0, 1, 2, or 3 job (like ECE), your
-                    spouse is eligible for an Open Work Permit, and your
-                    children can attend public school for free. See our <a href="/articles/bc-pnp-spouse-family-guide-2026" class="text-green-600 hover:underline">spouse and family guide</a> for full details.
-                </p>
-            </div>
-
-            <div class="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
-                <h2 class="text-2xl font-black text-slate-900 mb-6">Related Articles</h2>
-                <ul class="space-y-3 text-base">
-                    <li><a href="/articles/bc-pnp-entry-level-semi-skilled" class="text-green-600 hover:underline">Entry Level & Semi-Skilled (ELSS) Stream Guide</a> — For ECE assistants and home support workers</li>
-                    <li><a href="/articles/bc-pnp-job-offer-requirements-2026" class="text-green-600 hover:underline">BC PNP Job Offer Requirements 2026</a> — What your employer's offer letter must include</li>
-                    <li><a href="/articles/bc-pnp-after-nomination" class="text-green-600 hover:underline">After Nomination: Next Steps</a> — What to do once you receive your provincial nomination</li>
-                </ul>
-            </div>
-
-            <div
-                class="bg-gradient-to-br from-green-600 to-green-700 p-8 rounded-2xl text-center text-white mt-12"
-            >
-                <h2 class="text-2xl font-bold mb-3">
-                    Calculate Your ECE Score
-                </h2>
-                <p class="text-green-100 mb-6">
-                    See if you meet the cut-off for the next Childcare Draw.
-                </p>
-                <a
-                    href="/bc-pnp-calculator"
-                    class="inline-block bg-white text-green-700 font-bold px-8 py-3 rounded-xl hover:bg-green-50 transition-colors"
-                >
-                    Use the Calculator →
-                </a>
-            </div>
-
-            <section class="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm space-y-6">
-                <h2 class="text-2xl font-bold text-slate-900">BC Early Childhood Educator Certification Levels</h2>
-                <p class="text-slate-700">The BC Ministry of Education and Child Care issues four distinct ECE certificates. Each level changes which NOC, which stream, and which wage you can claim under BC PNP.</p>
-                <div class="overflow-x-auto">
-                    <table class="min-w-full text-sm border-collapse border border-slate-200">
-                        <thead class="bg-slate-800 text-white"><tr><th class="p-3 text-left">Certification</th><th class="p-3 text-left">Training requirement</th><th class="p-3 text-left">NOC</th><th class="p-3 text-left">Typical 2026 wage</th><th class="p-3 text-left">BC PNP stream</th></tr></thead>
-                        <tbody class="divide-y divide-slate-200 text-slate-700">
-                            <tr><td class="p-3 font-semibold">ECE Assistant (ECEA)</td><td class="p-3">One college course in Child Growth and Development</td><td class="p-3">42202</td><td class="p-3">$21-$26/hour</td><td class="p-3">ELSS (after 9 months)</td></tr>
-                            <tr class="bg-slate-50"><td class="p-3 font-semibold">ECE 5-Year Certificate</td><td class="p-3">ECE Basic diploma + 500 supervised hours</td><td class="p-3">42202</td><td class="p-3">$26-$30/hour</td><td class="p-3">Skilled Worker - Childcare priority</td></tr>
-                            <tr><td class="p-3 font-semibold">Infant/Toddler Educator</td><td class="p-3">ECE + 250 hours infant/toddler training</td><td class="p-3">42202</td><td class="p-3">$28-$33/hour + $4 wage enhancement</td><td class="p-3">Skilled Worker - Childcare priority</td></tr>
-                            <tr class="bg-slate-50"><td class="p-3 font-semibold">Special Needs Educator</td><td class="p-3">ECE + 250 hours special needs training</td><td class="p-3">42202</td><td class="p-3">$30-$35/hour + $4 wage enhancement</td><td class="p-3">Skilled Worker - Childcare priority</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="text-slate-700">The provincial wage enhancement of $4/hour is added directly to your base pay for SIRS wage points, which helps fully certified ECEs reach the targeted Childcare cut-off (99 in September and October 2026). Confirm with the BC PNP before counting the enhancement toward wage points.</p>
-            </section>
-
-            <section class="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm space-y-6">
-                <h2 class="text-2xl font-bold text-slate-900">Case Study: Foreign ECE to BC PR in 14 Months</h2>
-                <p class="text-slate-700"><strong>Profile:</strong> Anna, 27, Filipino citizen. Three-year Bachelor of Education in Early Childhood from De La Salle University. IELTS overall 6.5 (CLB 7). No Canadian experience.</p>
-                <ol class="list-decimal pl-6 space-y-3 text-slate-700">
-                    <li><strong>Month 1-3:</strong> Submitted credentials to the BC ECE Registry for assessment. Received an ECE Basic certificate after equivalency review.</li>
-                    <li><strong>Month 3-5:</strong> Applied to three licensed daycares in Kamloops. Accepted a $27/hour offer with an Infant/Toddler-track promise once she completed 250 supervised hours.</li>
-                    <li><strong>Month 5-7:</strong> Employer obtained an LMIA in the Caregiver stream. Anna received a closed work permit and entered Canada.</li>
-                    <li><strong>Month 7:</strong> Registered in SIRS under Skilled Worker - Childcare priority. SIRS score: 84 (40 experience + 25 language CLB 7 + 28 education + 21 wage at $27 + 15 regional Area 3 - 45 cap reconciliation).</li>
-                    <li><strong>Month 8:</strong> Invited in a targeted Childcare draw (cut-off 60).</li>
-                    <li><strong>Month 11:</strong> Nominated. Employer issued bridging work permit support letter.</li>
-                    <li><strong>Month 14:</strong> Permanent residence confirmed under non-Express Entry processing.</li>
-                </ol>
-                <p class="text-slate-700">Anna's file moved this quickly because she sequenced credential recognition first, accepted an Area 3 offer, and used the LMIA-Caregiver stream that allows pathway to PR through BC PNP.</p>
-            </section>
-
-            <section class="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm space-y-6">
-                <h2 class="text-2xl font-bold text-slate-900">Documents Childcare Applicants Need (2026)</h2>
-                <ul class="list-disc pl-6 space-y-3 text-slate-700">
-                    <li><strong>BC ECE Registry certificate</strong> at your highest level (Assistant, Basic, IT, or SNE).</li>
-                    <li><strong>Criminal Record Review Program (CRRP) clearance</strong> with Ministry of Public Safety.</li>
-                    <li><strong>First Aid + CPR Level B</strong> certificate (valid within 12 months).</li>
-                    <li><strong>Tuberculosis screening</strong> dated within 12 months (required by most licensed centres).</li>
-                    <li><strong>Reference letters</strong> describing duties, hours, and dates from every prior childcare role.</li>
-                    <li><strong>Wage enhancement attestation</strong> from the employer confirming you receive the provincial $4/hour wage enhancement.</li>
-                    <li><strong>ECA (foreign-educated)</strong> from WES, ICAS, or IQAS dated within five years.</li>
-                </ul>
-            </section>
-
-            <section class="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm space-y-4">
-                <h2 class="text-2xl font-bold text-slate-900">Pro Tips for Childcare Applicants</h2>
-                <ul class="list-disc pl-6 space-y-3 text-slate-700">
-                    <li><strong>Pursue an IT or SNE certificate.</strong> The post-basic specializations unlock infant/toddler and special needs roles, where labour shortages are most acute and wages highest.</li>
-                    <li><strong>Target a $10-a-Day site.</strong> Centres in the federally funded $10-a-day program receive direct provincial subsidies, are more financially stable, and rarely default on their support letters.</li>
-                    <li><strong>Use the Francophone Mobility work permit.</strong> Bilingual ECEs can skip the LMIA and arrive in BC faster under IRCC's Francophone Mobility (formerly Mobilite Francophone) stream.</li>
-                    <li><strong>Check the status of the federal home care programs.</strong> The 2027–2029 levels plan (November 5, 2026) lists the home care worker programs among closed programs whose pending applications are covered by a one-time 2027 measure, so do not plan on opening a new application under them.</li>
-                    <li><strong>Stay in regional zones.</strong> Childcare draws have the lowest cut-offs, but adding +15 Area 3 or +25 Area 4 points still helps and gives you a stronger landing community.</li>
-                </ul>
-                <p class="text-slate-700">Run the numbers in our <a href="/bc-pnp-calculator" class="text-green-600 font-semibold underline">BC PNP points calculator</a> before signing a daycare offer to confirm your score clears recent cut-offs.</p>
-            </section>
-
-            <section class="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm space-y-4">
-                <h2 class="text-2xl font-bold text-slate-900">Expanded FAQ: Childcare and Caregiver Pathways</h2>
-                <details class="border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer text-slate-900">Can I switch from a private nanny role to BC PNP?</summary><p class="mt-3 text-slate-700">Private nanny work for a single family is not eligible for BC PNP. You must work for a licensed daycare, preschool, before/after school care, or other licensed facility. Many nannies who arrive on the federal Home Child Care Provider Pilot transition into licensed centre roles before applying to BC PNP.</p></details>
-                <details class="border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer text-slate-900">How long does the BC ECE Registry take to assess foreign credentials?</summary><p class="mt-3 text-slate-700">In 2025, processing was 8-14 weeks for fully documented applications. Filipino, Indian, and Latin American ECE diplomas are routinely recognized as ECE Basic, with bridging coursework sometimes required.</p></details>
-                <details class="border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer text-slate-900">Do home support workers (NOC 44101) qualify?</summary><p class="mt-3 text-slate-700">Yes, under the ELSS stream after nine months of Canadian work experience, provided the employer is a registered home support agency, not a private family.</p></details>
-                <details class="border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer text-slate-900">Can I count maternity leave coverage toward the nine-month ELSS requirement?</summary><p class="mt-3 text-slate-700">Yes, if it was paid, continuous, and at the registered worksite. Officers verify with T4s and ROEs.</p></details>
-                <details class="border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer text-slate-900">What if I am only ECE Assistant certified?</summary><p class="mt-3 text-slate-700">An ECE Assistant certificate does not qualify for the targeted Childcare invitation, and the ELSS stream is closed. The practical route is to upgrade to a One Year or Five Year ECE certificate, then register under the Skilled Worker stream.</p></details>
-                <details class="border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer text-slate-900">Does the wage enhancement count as base wage for SIRS?</summary><p class="mt-3 text-slate-700">Yes, BC PNP confirmed in 2024 guidance that the $4/hour provincial wage enhancement is counted as part of the base wage because it is paid every hour worked and guaranteed by provincial funding.</p></details>
-                <details class="border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer text-slate-900">Can I run my own licensed group daycare and self-sponsor under BC PNP?</summary><p class="mt-3 text-slate-700">No. You cannot be both the supporting employer and the nominee on the same file. Self-employed daycare operators should look at the BC Entrepreneur Immigration stream instead.</p></details>
-            </section>
-
-            <section class="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm space-y-6">
-                <h2 class="text-2xl font-bold text-slate-900">Why Childcare Is the Highest-Yield BC PNP Pathway in 2026</h2>
-                <p class="text-slate-700">Childcare workers occupy a unique position in the BC immigration landscape. Provincial demand for licensed Early Childhood Educators has consistently outstripped supply since the launch of the federal Canada-Wide Early Learning and Child Care Agreement in 2021. British Columbia committed to creating tens of thousands of new licensed childcare spaces by 2027, and each licensed space requires a regulated educator. The shortfall is so persistent that BC PNP runs targeted childcare draws with cut-offs that are routinely 30-50 points below the regular Skilled Worker stream. For applicants whose credentials sit at ECE Basic, Infant/Toddler, or Special Needs level, this is the single most accessible pathway to provincial nomination in the entire BC PNP catalogue.</p>
-                <p class="text-slate-700">The structural reasons go beyond cut-off arithmetic. First, the provincial wage enhancement effectively raises the SIRS wage line by $4/hour without forcing the employer to absorb the cost, so the wage points are inflated relative to other low-wage occupations. Second, the regulated nature of ECE work means foreign credentials are explicitly recognized through the BC ECE Registry, which sidesteps the lengthy professional licensing battles that plague engineers, accountants, and nurses. Third, the BC government publishes a quarterly Labour Market Information dashboard that consistently lists ECEs as critical-shortage occupations, giving officers a clear rationale to approve files quickly.</p>
-                <p class="text-slate-700">For applicants weighing childcare against another occupation, the math usually favours childcare on three dimensions. The time from arrival to permanent residence is shorter (12-18 months median, compared with 18-30 months for general Skilled Worker). The total spend is lower (no ECA needed if your foreign ECE diploma is accepted as ECE Basic, saving roughly $280). And the post-PR job market is robust, with every BC health authority, school district, and licensed centre actively recruiting. Even applicants with adjacent backgrounds in elementary education, child psychology, or family services can often complete a bridging program at a BC college in 9-15 months and qualify for ECE Basic, opening the same pathway.</p>
-                <p class="text-slate-700">The trade-offs are real. ECE wages in BC, while improving, still trail those in tech and skilled trades. The work is physically demanding and emotionally intense. And the licensing process requires patience, including a Criminal Record Review Program clearance, first aid certification, and tuberculosis screening. But for applicants who genuinely want to work with young children, the combination of fast nomination, recognized credentials, and stable post-PR employment makes childcare the most under-rated entry point into Canadian permanent residence in 2026.</p>
-            </section>
-        </div>
-        <div class="max-w-3xl mx-auto px-4 space-y-8 mt-8">
-          <section>
-            <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-              <h2 class="text-2xl font-black text-slate-900 mb-6">ECE Certification Levels in BC (2026)</h2>
-              <ul class="space-y-3 text-slate-700">
-                <li><strong>ECE Assistant:</strong> Entry-level role under supervision. No formal certification required, but Criminal Record Review and first aid mandatory.</li>
-                <li><strong>ECE Basic (NOC 42202):</strong> One-year college certificate or 47 credit hours. Wage range $22-28/hr plus $4/hr provincial wage enhancement.</li>
-                <li><strong>ECE Infant/Toddler:</strong> ECE Basic + 500 supervised hours and additional training. Wage range $26-32/hr plus enhancement.</li>
-                <li><strong>ECE Special Needs:</strong> ECE Basic + special needs specialization. Wage range $27-34/hr plus enhancement.</li>
-              </ul>
-              <p class="text-slate-600 leading-relaxed mt-4 text-sm">All levels carry the SIRS regional bonus when employed outside Metro Vancouver.</p>
-            </div>
-          </section>
-
-          <section>
-            <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-              <h2 class="text-2xl font-black text-slate-900 mb-6">Caregivers FAQ</h2>
-              <div class="space-y-4">
-                <details class="group bg-slate-50 rounded-xl border border-slate-200">
-                  <summary class="flex justify-between items-center font-bold text-slate-900 p-5 cursor-pointer list-none">Do live-in caregivers qualify for BC PNP?</summary>
-                  <div class="px-5 pb-5 text-slate-600 leading-relaxed">The federal Home Child Care Provider Pilot and Home Support Worker Pilot are separate pathways. BC PNP focuses on licensed childcare workers in centre-based settings, not in-home caregivers.</div>
-                </details>
-                <details class="group bg-slate-50 rounded-xl border border-slate-200">
-                  <summary class="flex justify-between items-center font-bold text-slate-900 p-5 cursor-pointer list-none">Can I bridge into ECE from a teaching background?</summary>
-                  <div class="px-5 pb-5 text-slate-600 leading-relaxed">Yes. Capilano, Douglas, VCC, and others offer 9-15 month bridging certificates that qualify foreign teachers for ECE Basic registration.</div>
-                </details>
-              </div>
-            </div>
-          </section>
-        </div>
-    </article>
+      <h2>Caregivers and childcare FAQ</h2>
+      {
+        faqs.map((f) => (
+          <>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </>
+        ))
+      }
+      <p class="text-sm text-slate-500">
+        Draw dates and minimums change with each round; check the <a href="/bc-pnp-draws">latest BC PNP draws</a> before you plan around a number. General information only, not legal advice.
+      </p>
+    </div>
+  </article>
 </ArticleLayout>

@@ -1,0 +1,20 @@
+---
+// "Calculate your score" call to action pointing at the homepage calculator.
+import { latestDrawMinScore, latestDrawDate } from "../../utils/draws";
+interface Props { text?: string }
+const { text } = Astro.props;
+---
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 pt-4">
+  <div class="rounded-2xl bg-slate-900 text-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
+    <div>
+      <p class="text-lg font-black">Calculate your score</p>
+      <p class="text-sm text-slate-300 mt-1">
+        {text ?? `Get your SIRS score out of 200 and compare it with the latest draw minimum (${latestDrawMinScore} on ${latestDrawDate}).`}
+      </p>
+    </div>
+    <a href="/" class="inline-flex shrink-0 items-center justify-center rounded-xl bg-red-600 hover:bg-red-700 px-5 py-3 text-sm font-black min-h-[44px]">
+      BC PNP points calculator →
+    </a>
+  </div>
+</section>

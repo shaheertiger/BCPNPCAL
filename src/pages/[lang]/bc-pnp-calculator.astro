@@ -32,11 +32,12 @@ const isRTL = lang === "ar";
 // Keeping it simple for now to avoid massive duplication without a proper content file for this page yet.
 // Ideally, we move this content to a `calculator-content.ts` later.
 
+// /bc-pnp-calculator is now the English draw calculator (a different tool),
+// and the English points calculator (/) is already paired with /zh and /hi,
+// so these two localized calculators only reference each other.
 const hreflangs = [
-    { lang: "en", href: "https://bcpnpcalculator.ca/bc-pnp-calculator" },
     { lang: "zh", href: "https://bcpnpcalculator.ca/zh/bc-pnp-calculator" },
     { lang: "hi", href: "https://bcpnpcalculator.ca/hi/bc-pnp-calculator" },
-    { lang: "x-default", href: "https://bcpnpcalculator.ca/bc-pnp-calculator" },
 ];
 ---
 
@@ -56,7 +57,7 @@ const hreflangs = [
         class="absolute top-4 right-4 z-50 flex items-center gap-3 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full border border-red-100 shadow-sm"
     >
         <a
-            href="/bc-pnp-calculator"
+            href="/"
             class="text-sm font-bold text-slate-500 hover:text-red-600 transition-colors"
             >EN</a
         >

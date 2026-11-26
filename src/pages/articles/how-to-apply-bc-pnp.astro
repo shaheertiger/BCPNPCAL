@@ -1,881 +1,213 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { calculateTotalPoints } from "../../utils/calculatePoints";
+import { BLANK } from "../../data/example-profiles";
+import { LINKS } from "../../data/site-links";
+import { latestFor, latestDrawDate } from "../../utils/draws";
 
-const title = "How to Apply for BC PNP 2026: The Step-by-Step Authority Guide";
+const title = "How to Apply for BC PNP in 2026: 6 Steps (Register → ITA → Apply)";
 const description =
-    "The only guide you need. Complete walkthrough of SIRS registration, document uploading, application fees, and what to do after you get invited.";
+  "Register free, wait for an invitation, then submit your application and the $1,750 fee within 30 days. WelcomeBC processes most in about 3 months.";
+
+const WELCOMEBC_SI = "https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration";
+const GUIDE = "https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf";
+const ITA_PAGE = "https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply";
+
+// Worked example: a cook (NOC 63200, TEER 3) in Kamloops, scored by the
+// site's calculator engine. The wage is an example offer, not wage data.
+const cookWage = 20;
+const cook = calculateTotalPoints({
+  ...BLANK,
+  experience: "2",
+  hasCanadianExp: true,
+  hasCurrentBCJob: true,
+  education: "trades_cert",
+  hasEnglishTest: true,
+  englishClb: 5,
+  hourlyWage: cookWage,
+  area: "area3",
+  hasWorkedOutsideArea1: true,
+});
+const cb = cook.breakdown;
+const cookExp = cb.experience + cb.canadianExp + cb.currentBCJob;
+const cookArea = cb.area + cb.regionalBonus;
+const hei = latestFor("hei-points");
+const heiScore = hei.score as number;
+const gap = heiScore - cook.total;
+
+const steps = [
+  { n: 1, name: "Choose your stream", what: "Skilled Worker (job offer in an eligible TEER 0–3 occupation, 2 years of skilled work experience) or Health Authority (job offer from a B.C. public health authority).", fee: "—", time: "—" },
+  { n: 2, name: "Register online", what: "Create a BCPNP Online profile and submit a registration. It is scored out of 200. Health Authority applicants skip this step and apply directly.", fee: "No fee", time: "Stays in the pool up to 12 months" },
+  { n: 3, name: "Wait for an invitation to apply (ITA)", what: "The BC PNP invites candidates from the pool in draws, by score and by selection factors such as occupation.", fee: "—", time: "No fixed wait" },
+  { n: 4, name: "Submit your BC PNP application", what: "Upload all documents, including the signed Employer Declaration Form, in BCPNP Online.", fee: "$1,750", time: "Within 30 calendar days of the ITA (cannot be extended)" },
+  { n: 5, name: "Wait for the nomination decision", what: "If approved, you receive a Confirmation of Nomination. A refusal can be reviewed once.", fee: "$500 for a request for review", time: "About 3 months (WelcomeBC posted time)" },
+  { n: 6, name: "Submit your IRCC application", what: "Apply to IRCC for permanent residence before your nomination expires. EEBC nominees apply through Express Entry.", fee: "IRCC fees", time: "Set by IRCC" },
+];
+
+const faqs = [
+  {
+    q: "How long does it take to apply for BC PNP?",
+    a: "There is no fixed wait between registering and being invited. After an invitation you have 30 calendar days to submit your application, and WelcomeBC's posted processing time for applications is about 3 months.",
+  },
+  {
+    q: "How much does it cost to apply for BC PNP?",
+    a: "Registering is free. The Skills Immigration application fee is $1,750, and a request for review costs $500. IRCC charges its own fees for the permanent residence application.",
+  },
+  {
+    q: "How long does a BC PNP registration stay valid?",
+    a: "Up to 12 months. If you are not invited within 12 months, the registration is removed from the pool and you can register again. A registration is also removed once you receive an invitation, even if you do not apply.",
+  },
+  {
+    q: "Do I need an Express Entry profile to apply for BC PNP?",
+    a: "No. Express Entry BC (EEBC) is an option for the Skilled Worker and Health Authority streams. To use it you need a valid IRCC Express Entry Profile Number and Job Seeker Validation Code, and a TEER 0–3 job offer.",
+  },
+  {
+    q: "Can I apply for BC PNP without a job offer?",
+    a: "No. Both Skills Immigration streams require a full-time, indeterminate job offer from an eligible B.C. employer, and the employer must support you before you register.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to apply for the BC PNP (Skills Immigration)",
+    description,
+    step: steps.map((s) => ({ "@type": "HowToStep", position: s.n, name: s.name, text: s.what })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  },
+];
+
+const a = "text-red-600 font-semibold underline underline-offset-2 hover:text-red-700";
+const ext = "text-red-600 underline underline-offset-2 hover:text-red-700";
+const h2 = "text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-12 mb-4";
+const p = "text-slate-700 leading-relaxed mb-4";
 ---
 
-<ArticleLayout slug="how-to-apply-bc-pnp" datePublished="2026-01-29" dateModified="2026-11-11" keywords="how to apply BC PNP, BC PNP application process, apply British Columbia PNP" title={title} description={description}>
-    <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
-        <div class="max-w-4xl mx-auto space-y-8">
-            <header class="space-y-4 text-center">
-                <div
-                    class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-bold mb-4"
-                >
-                    Official Process 2026
-                </div>
-                <h1
-                    class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight"
-                >
-                    How to Apply for <span
-                        class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
-                        >BC PNP</span
-                    >
-                </h1>
-                <p
-                    class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
-                >
-                    It's not just a form—it's a legal petition. One typo can
-                    cause a 2-year delay. This guide walks you through every
-                    single screen of the process.
-                </p>
-            </header>
+<ArticleLayout
+  slug="how-to-apply-bc-pnp"
+  datePublished="2026-01-29"
+  dateModified="2026-11-26"
+  keywords="how to apply for BC PNP, BC PNP application process, BC PNP registration, BC PNP invitation to apply"
+  title={title}
+  description={description}
+  jsonLd={jsonLd}
+  related={["jobOffer", "fees", "workExperience", "withoutJobOffer"]}
+>
+  <article class="bg-slate-50 py-10 sm:py-14 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <header class="mb-8">
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          How do you apply for BC PNP?
+        </h1>
+        <p class="mt-4 text-lg text-slate-700 leading-relaxed">
+          You apply for the BC PNP in 6 steps: choose a stream, register online for free, wait for an invitation to apply, submit your application and the $1,750 fee within 30 days, wait about 3 months for a decision, then apply to IRCC for permanent residence.
+        </p>
+      </header>
 
-            <div
-                class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm"
-            >
-                <h2>The 6-Step Roadmap to Nomination</h2>
-                <div class="not-prose space-y-4 my-8">
-                    <div class="flex relative group">
-                        <div
-                            class="flex-shrink-0 w-12 flex flex-col items-center"
-                        >
-                            <div
-                                class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold z-10 text-sm shadow-md ring-4 ring-white"
-                            >
-                                1
-                            </div>
-                            <div class="h-full w-0.5 bg-slate-200 -mt-2"></div>
-                        </div>
-                        <div class="pb-8 pl-4 flex-grow">
-                            <div
-                                class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all"
-                            >
-                                <h3
-                                    class="text-lg font-bold text-slate-900 mb-1"
-                                >
-                                    Preparation & Strategy
-                                </h3>
-                                <p class="text-slate-600 text-sm">
-                                    Gather documents, calculate potential score,
-                                    choose stream. Don't start without a plan.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+      <aside class="rounded-2xl border border-red-100 bg-white p-6 mb-10" aria-label="Key facts">
+        <p class="text-xs font-black uppercase tracking-widest text-red-600 mb-3">Key facts</p>
+        <ul class="space-y-2 text-slate-800 text-sm sm:text-base">
+          <li><strong>Streams:</strong> Skilled Worker and Health Authority, each with an Express Entry BC option.</li>
+          <li><strong>Job offer:</strong> full-time (30+ hours a week on average) and indeterminate, from an employer who supports you before you register.</li>
+          <li><strong>Fees:</strong> registration free, application $1,750, request for review $500.</li>
+          <li><strong>Deadlines:</strong> registration lasts up to 12 months; after an invitation you have 30 calendar days to apply.</li>
+        </ul>
+      </aside>
 
-                    <div class="flex relative group">
-                        <div
-                            class="flex-shrink-0 w-12 flex flex-col items-center"
-                        >
-                            <div
-                                class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold z-10 text-sm shadow-md ring-4 ring-white"
-                            >
-                                2
-                            </div>
-                            <div class="h-full w-0.5 bg-slate-200 -mt-2"></div>
-                        </div>
-                        <div class="pb-8 pl-4 flex-grow">
-                            <div
-                                class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all"
-                            >
-                                <h3
-                                    class="text-lg font-bold text-slate-900 mb-1"
-                                >
-                                    SIRS Registration
-                                </h3>
-                                <p class="text-slate-600 text-sm">
-                                    Create profile, enter data, get registration
-                                    score. Valid for 12 months.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+      <h2 class={h2}>How do I apply for BC PNP? The 6 steps</h2>
+      <p class={p}>
+        These are the steps WelcomeBC lists on its <a href={WELCOMEBC_SI} target="_blank" rel="noopener noreferrer" class={ext}>Skills Immigration page</a>, with the fees and time limits from the same page and the <a href={GUIDE} target="_blank" rel="noopener noreferrer" class={ext}>Skills Immigration Program Guide</a> (effective June 10, 2026).
+      </p>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 mb-3">
+        <table class="w-full text-sm text-left bg-white">
+          <caption class="sr-only">BC PNP application steps, fees and time limits</caption>
+          <thead class="bg-slate-100 text-slate-900">
+            <tr>
+              <th scope="col" class="px-3 py-2.5 font-bold">Step</th>
+              <th scope="col" class="px-3 py-2.5 font-bold">What you do</th>
+              <th scope="col" class="px-3 py-2.5 font-bold">Fee</th>
+              <th scope="col" class="px-3 py-2.5 font-bold">Time limit</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {steps.map((s) => (
+              <tr>
+                <th scope="row" class="px-3 py-2.5 font-black text-slate-900 align-top whitespace-nowrap">{s.n}. {s.name}</th>
+                <td class="px-3 py-2.5 text-slate-700 align-top">{s.what}</td>
+                <td class="px-3 py-2.5 text-slate-700 align-top whitespace-nowrap">{s.fee}</td>
+                <td class="px-3 py-2.5 text-slate-700 align-top">{s.time}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-500 mb-6">
+        Sources: <a href={WELCOMEBC_SI} target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC, Skills Immigration</a> (fees, steps, processing time); Program Guide sections 4.2, 7.1, 7.3 and 7.7.
+      </p>
 
-                    <div class="flex relative group">
-                        <div
-                            class="flex-shrink-0 w-12 flex flex-col items-center"
-                        >
-                            <div
-                                class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold z-10 text-sm shadow-md ring-4 ring-white"
-                            >
-                                3
-                            </div>
-                            <div class="h-full w-0.5 bg-slate-200 -mt-2"></div>
-                        </div>
-                        <div class="pb-8 pl-4 flex-grow">
-                            <div
-                                class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all"
-                            >
-                                <h3
-                                    class="text-lg font-bold text-slate-900 mb-1"
-                                >
-                                    Wait for Invitation (ITA)
-                                </h3>
-                                <p class="text-slate-600 text-sm">
-                                    Wait in the "pool" for a round (about monthly
-                                    for each of Care, Build and Innovate).
-                                    Score cut-offs vary by objective.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+      <h2 class={h2}>What do I need before I register for BC PNP?</h2>
+      <p class={p}>
+        You need a job offer that meets the <a href={LINKS.jobOffer.href} class={a}>{LINKS.jobOffer.short}</a>: one regular full-time position, averaging at least 30 hours a week year-round, with no end date, from an eligible B.C. employer (Program Guide 3.5). The employer must agree to support you before you register and will sign an Employer Declaration Form (3.6). Some occupations are excluded outright, such as administrative assistants (NOC 13110) and retail sales supervisors (62010) (3.11).
+      </p>
+      <p class={p}>
+        For a TEER 2–5 job offer you also need valid language results at CLB 4 or higher in all four skills; for TEER 0 or 1 a test is optional unless you claim points for it (3.4). Tests are valid for two years and must still be valid when you register to earn points.
+      </p>
 
-                    <div class="flex relative group">
-                        <div
-                            class="flex-shrink-0 w-12 flex flex-col items-center"
-                        >
-                            <div
-                                class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold z-10 text-sm shadow-md ring-4 ring-white"
-                            >
-                                4
-                            </div>
-                            <div class="h-full w-0.5 bg-slate-200 -mt-2"></div>
-                        </div>
-                        <div class="pb-8 pl-4 flex-grow">
-                            <div
-                                class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all"
-                            >
-                                <h3
-                                    class="text-lg font-bold text-slate-900 mb-1"
-                                >
-                                    Submit Full Application
-                                </h3>
-                                <p class="text-slate-600 text-sm">
-                                    Upload PDFs, pay fee ($1,750), submit within
-                                    30 days. No extensions.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+      <h2 class={h2}>How is the BC PNP registration scored?</h2>
+      <p class={p}>
+        Your registration gets a score out of 200 from five factors: directly related work experience (40), education (40), language (40), the hourly wage of your job offer (55) and the area of B.C. where you will work (25) (Program Guide Part 8). Draws invite the highest-scoring candidates in each selection group, so this number decides when, or whether, you are invited. You can work it out in two minutes with the <a href={LINKS.calculator.href} class={a}>{LINKS.calculator.short}</a>.
+      </p>
 
-                    <div class="flex relative group">
-                        <div
-                            class="flex-shrink-0 w-12 flex flex-col items-center"
-                        >
-                            <div
-                                class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold z-10 text-sm shadow-md ring-4 ring-white"
-                            >
-                                5
-                            </div>
-                            <div class="h-full w-0.5 bg-slate-200 -mt-2"></div>
-                        </div>
-                        <div class="pb-8 pl-4 flex-grow">
-                            <div
-                                class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all"
-                            >
-                                <h3
-                                    class="text-lg font-bold text-slate-900 mb-1"
-                                >
-                                    Nomination Decision
-                                </h3>
-                                <p class="text-slate-600 text-sm">
-                                    Processing time ~3 months. Outcome: Approved
-                                    (Nomination) or Refused.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 my-6" id="worked-example">
+        <p class="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Worked example</p>
+        <p class="text-slate-800 leading-relaxed">
+          A cook (NOC 63200) in Kamloops with 2 years of experience in B.C., currently working for the employer, a post-secondary diploma from outside Canada, CLB 5 and a full-time example offer of ${cookWage.toFixed(2)}/hr scores <strong>{cook.total}</strong>: {cookExp} for experience, {cb.educationTotal} for education, {cb.languageTotal} for language, {cb.wage} for wage and {cookArea} for working in Area 3 with a year of regional experience.
+        </p>
+        <p class="text-slate-700 leading-relaxed mt-3">
+          Cooks are not in the Care or Build occupation groups, so the comparison is the High Economic Impact points draw, which needed {heiScore} on {hei.date}. That is {gap} points away, and the gap shows why the registration score matters more than the paperwork.
+        </p>
+      </div>
 
-                    <div class="flex relative group">
-                        <div
-                            class="flex-shrink-0 w-12 flex flex-col items-center"
-                        >
-                            <div
-                                class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center font-bold z-10 text-sm shadow-md ring-4 ring-white"
-                            >
-                                ✓
-                            </div>
-                        </div>
-                        <div class="pl-4 flex-grow">
-                            <div
-                                class="bg-green-50 p-5 rounded-2xl border border-green-200 shadow-sm"
-                            >
-                                <h3
-                                    class="text-lg font-bold text-green-900 mb-1"
-                                >
-                                    Federal PR Application
-                                </h3>
-                                <p class="text-green-800 text-sm">
-                                    Apply to IRCC for Permanent Residence. You
-                                    are almost there!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <h2 class={h2}>What happens after the invitation to apply?</h2>
+      <p class={p}>
+        Invitations go out in draws. The most recent Skills Immigration draw was on {latestDrawDate}; the <a href={LINKS.draws.href} class={a}>{LINKS.draws.short}</a> show every 2026 minimum by stream, taken from the <a href={ITA_PAGE} target="_blank" rel="noopener noreferrer" class={ext}>WelcomeBC invitations page</a>. Once invited, your registration leaves the pool and you have 30 calendar days to submit a complete application. The deadline cannot be extended (Program Guide 7.3). Everything in the application is checked against the registration: if your NOC, work location or score no longer matches what got you invited, the application can be refused (7.1).
+      </p>
+      <p class={p}>
+        If anything changes after you apply, such as your employer, job title, wage or hours, you must tell the BC PNP within 15 calendar days (7.4). After nomination, you apply to IRCC for permanent residence before the nomination expires. If you used the Express Entry BC option, the nomination adds CRS points to your Express Entry profile and your PR application is processed through Express Entry (Part 5).
+      </p>
 
-                <hr class="my-12 border-slate-200" />
+      <h2 class={h2}>How much does it cost to apply for BC PNP?</h2>
+      <p class={p}>
+        Registering costs nothing. The application fee is $1,750, paid only through BCPNP Online, and it is refunded only if you withdraw before assessment starts. A request for review of a refusal costs $500 and is non-refundable; it must be filed within 30 days of the decision if you live in Canada, or 60 days if you live outside Canada (7.7). Language tests, credential assessments and IRCC fees come on top. See <a href={LINKS.fees.href} class={a}>{LINKS.fees.short}</a> for the full budget.
+      </p>
 
-                <h2>Phase 1: SIRS Registration (The "Pool")</h2>
-                <div
-                    class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl my-6 not-prose"
-                >
-                    <p
-                        class="font-bold text-amber-900 mb-1 text-sm uppercase tracking-wide"
-                    >
-                        Technical Warning
-                    </p>
-                    <p class="text-amber-800 text-sm font-medium">
-                        Do not use a phone or tablet. The <a
-                            href="https://www.pnpapplication.gov.bc.ca/"
-                            rel="nofollow"
-                            class="underline hover:text-amber-950"
-                            >BC PNP Online portal</a
-                        > is old and buggy on mobile. Use a desktop computer with
-                        Chrome or Firefox.
-                    </p>
-                </div>
+      <h2 class={h2}>Common mistakes</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 leading-relaxed mb-6">
+        <li><strong>Registering before the employer agrees.</strong> Employer support is required before you register, not after you are invited.</li>
+        <li><strong>Registration details that differ from the application.</strong> A different NOC or work location, or a lower score that falls below the draw minimum, can lead to a refusal.</li>
+        <li><strong>Counting bonuses or overtime in the wage.</strong> Only the hourly rate counts; tips, commissions, overtime and allowances are excluded (3.9).</li>
+        <li><strong>Letting a language test expire.</strong> Results are valid for two years from issue.</li>
+        <li><strong>Missing the 30-day window.</strong> An expired invitation also removes your registration from the pool.</li>
+      </ul>
 
-                <div class="grid md:grid-cols-2 gap-6 not-prose">
-                    <div
-                        class="bg-slate-50 p-6 rounded-2xl border border-slate-200"
-                    >
-                        <div
-                            class="inline-block px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider"
-                        >
-                            Screen 1
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-lg mb-2">
-                            Current Status
-                        </h3>
-                        <p class="text-slate-600 text-sm mb-4">
-                            You will be asked: <em
-                                >"Do you have valid status in Canada?"</em
-                            >
-                        </p>
-                        <ul class="text-sm text-slate-600 space-y-2">
-                            <li class="flex items-start">
-                                <span class="text-blue-500 mr-2">•</span>
-                                <strong>Visitor:</strong> Select if on Visitor Record.
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-500 mr-2">•</span>
-                                <strong>Worker:</strong> Enter expiry date carefully.
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-500 mr-2">•</span>
-                                <strong>Maintained Status:</strong> Use the specific
-                                checkbox/implied date.
-                            </li>
-                        </ul>
-                    </div>
+      <h2 class={h2}>FAQ: applying for BC PNP</h2>
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-5">
+            <h3 class="font-black text-slate-900 mb-2">{f.q}</h3>
+            <p class="text-slate-700 leading-relaxed">{f.a}</p>
+          </div>
+        ))}
+      </div>
 
-                    <div
-                        class="bg-slate-50 p-6 rounded-2xl border border-slate-200"
-                    >
-                        <div
-                            class="inline-block px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider"
-                        >
-                            Screen 2
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-lg mb-2">
-                            Job Offer Details
-                        </h3>
-                        <p class="text-slate-600 text-sm mb-4">
-                            The most critical section. Errors here cause
-                            rejections.
-                        </p>
-                        <ul class="text-sm text-slate-600 space-y-2">
-                            <li class="flex items-start">
-                                <span class="text-blue-500 mr-2">•</span>
-                                <strong>Job Title:</strong> Must match offer letter
-                                exactly.
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-500 mr-2">•</span>
-                                <strong>NOC Code:</strong> Double-check TEER level
-                                vs duties.
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-blue-500 mr-2">•</span>
-                                <strong>Wage:</strong> Hourly base wage only. No tips/bonuses.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div
-                    class="bg-blue-50 p-6 rounded-2xl border border-blue-100 mt-6 not-prose"
-                >
-                    <h3 class="font-bold text-blue-900 text-lg mb-2">
-                        Education & Language Screen
-                    </h3>
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div>
-                            <span
-                                class="block text-xs font-bold text-blue-400 uppercase tracking-wide mb-1"
-                                >Education</span
-                            >
-                            <p class="text-blue-800 text-sm">
-                                Only list education you can prove with a diploma
-                                AND an ECA (if foreign). Don't list pending
-                                degrees.
-                            </p>
-                        </div>
-                        <div>
-                            <span
-                                class="block text-xs font-bold text-blue-400 uppercase tracking-wide mb-1"
-                                >Language</span
-                            >
-                            <p class="text-blue-800 text-sm">
-                                Enter the PIN/Registration number from your
-                                IELTS/CELPIP form. System verifies this
-                                instantly.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="my-12 border-slate-200" />
-
-                <h2>Phase 2: The Full Application (Post-ITA)</h2>
-                <div
-                    class="flex items-center p-4 bg-green-50 border border-green-200 rounded-xl mb-6"
-                >
-                    <span class="text-3xl mr-4">🎉</span>
-                    <div>
-                        <p class="font-bold text-green-900">
-                            Congratulations! You received an Invitation to Apply
-                            (ITA).
-                        </p>
-                        <p class="text-green-800 text-sm">
-                            Now the real work begins. You have exactly <strong
-                                >30 days</strong
-                            > to submit.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6 not-prose">
-                    <div
-                        class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
-                    >
-                        <h3 class="font-bold text-slate-900 text-lg mb-3">
-                            💰 The $1,750 Fee
-                        </h3>
-                        <p class="text-slate-600 text-sm mb-4">
-                            You must pay this by credit card upon submission. It
-                            is <strong>non-refundable</strong> even if your application
-                            is rejected immediately.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100"
-                    >
-                        <h3 class="font-bold text-indigo-900 text-lg mb-3">
-                            📄 Document Upload Rules
-                        </h3>
-                        <ul class="space-y-2 text-sm text-indigo-800">
-                            <li class="flex items-center">
-                                <span class="mr-2">📄</span>
-                                <strong>Format:</strong> PDF only.
-                            </li>
-                            <li class="flex items-center">
-                                <span class="mr-2">⚖️</span>
-                                <strong>Size Limit:</strong> 3MB per file.
-                            </li>
-                            <li class="flex items-center">
-                                <span class="mr-2">📷</span>
-                                <strong>Quality:</strong> Color scans. No phone pics.
-                            </li>
-                            <li class="flex items-center">
-                                <span class="mr-2">🏷️</span>
-                                <strong>Naming:</strong>
-                                <code>Passport_Bio_Name.pdf</code>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="my-8">
-                    <h3>The "Job Offer Form"</h3>
-                    <p>
-                        Your employer must sign a specific 8-10 page PDF form.
-                        This is where most errors happen.
-                    </p>
-                    <div
-                        class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-xl my-4 not-prose"
-                    >
-                        <p
-                            class="font-bold text-red-800 mb-1 text-sm uppercase tracking-wide"
-                        >
-                            Employer Warning
-                        </p>
-                        <p class="text-red-900 text-sm font-medium">
-                            Many employers are lazy about this form. You need to
-                            sit with them and ensure they fill it out correctly.
-                            If they check "No" on "Business License Valid?",
-                            your application dies instantly.
-                        </p>
-                    </div>
-                </div>
-
-                <hr class="my-12 border-slate-200" />
-
-                <h2>Phase 3: The Waiting Game (Processing)</h2>
-
-                <div class="grid md:grid-cols-3 gap-4 not-prose my-6">
-                    <div class="bg-slate-100 p-4 rounded-xl text-center">
-                        <span
-                            class="block text-3xl font-black text-slate-900 mb-1"
-                            >~3 Months</span
-                        >
-                        <span
-                            class="text-sm text-slate-500 font-bold uppercase tracking-wide"
-                            >Standard Processing</span
-                        >
-                    </div>
-                    <div class="bg-blue-100 p-4 rounded-xl text-center">
-                        <span
-                            class="block text-3xl font-black text-blue-900 mb-1"
-                            >~1 Month</span
-                        >
-                        <span
-                            class="text-sm text-blue-800 font-bold uppercase tracking-wide"
-                            >Post-Nomination Requests</span
-                        >
-                    </div>
-                    <div class="bg-amber-100 p-4 rounded-xl text-center">
-                        <span
-                            class="block text-3xl font-black text-amber-900 mb-1"
-                            >Anytime</span
-                        >
-                        <span
-                            class="text-sm text-amber-800 font-bold uppercase tracking-wide"
-                            >Verification Call</span
-                        >
-                    </div>
-                </div>
-
-                <p class="text-sm text-slate-600 mb-6">
-                    <strong>Note:</strong> An officer *will* call your employer. Warn
-                    your boss. If they miss the call or sound confused about who you
-                    are, it triggers a Procedural Fairness Letter.
-                </p>
-
-                <div
-                    class="bg-slate-900 text-white p-6 rounded-2xl shadow-xl not-prose"
-                >
-                    <h3 class="font-bold text-xl mb-2 flex items-center">
-                        <span
-                            class="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded mr-3 uppercase"
-                            >Danger</span
-                        >
-                        Procedural Fairness Letter (PFL)
-                    </h3>
-                    <p class="text-slate-300 text-sm mb-4">
-                        This is a terrifying letter saying <em
-                            >"We intend to refuse your application because X.
-                            You have 7 days to respond."</em
-                        >
-                    </p>
-                    <div
-                        class="grid sm:grid-cols-3 gap-4 border-t border-slate-700 pt-4"
-                    >
-                        <div>
-                            <span
-                                class="block text-xs text-slate-400 uppercase tracking-wider mb-1"
-                                >Trigger 1</span
-                            >
-                            <span class="text-sm font-medium text-white"
-                                >Wage on paystubs != Job Offer</span
-                            >
-                        </div>
-                        <div>
-                            <span
-                                class="block text-xs text-slate-400 uppercase tracking-wider mb-1"
-                                >Trigger 2</span
-                            >
-                            <span class="text-sm font-medium text-white"
-                                >Duties don't match NOC</span
-                            >
-                        </div>
-                        <div>
-                            <span
-                                class="block text-xs text-slate-400 uppercase tracking-wider mb-1"
-                                >Trigger 3</span
-                            >
-                            <span class="text-sm font-medium text-white"
-                                >Missing Business License</span
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="my-12 border-slate-200" />
-
-                <h2>Phase 4: Nomination & Federal Application</h2>
-                <p>
-                    If approved, you get a "Nomination Certificate" via email.
-                </p>
-
-                <h3>Work Permit Support Letter</h3>
-                <p>
-                    Along with the certificate, you get a "Work Permit Support
-                    Letter" (WPSL). Use this to renew your work permit
-                    immediately if yours is expiring.
-                </p>
-
-                <h3>Applying for PR</h3>
-                <ul>
-                    <li>
-                        <strong>Express Entry:</strong> Update your EE profile with
-                        the Nomination Certificate data. You will get +600 points
-                        within 24 hours. Wait for next draw -> ITA -> Apply.
-                    </li>
-                    <li>
-                        <strong>Non-Express Entry:</strong> Submit a PR application
-                        through the <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/account.html" class="text-blue-600 underline" rel="noopener noreferrer" target="_blank"
-                            >IRCC Permanent Residence Portal</a
-                        > (New online system).
-                    </li>
-                </ul>
-
-                <hr class="my-12 border-slate-200" />
-
-                <h2 id="faq">Frequently Asked Questions</h2>
-                <div class="space-y-4 not-prose my-8">
-                    <details
-                        class="group bg-slate-50 p-5 rounded-xl border border-slate-200 open:bg-white open:ring-1 open:ring-blue-100 open:shadow-md transition-all"
-                    >
-                        <summary
-                            class="font-bold text-slate-900 text-lg cursor-pointer list-none flex justify-between items-center outline-none"
-                        >
-                            <span
-                                >Can I edit my registration after submitting?</span
-                            >
-                            <span
-                                class="transition-transform duration-300 group-open:rotate-180 text-blue-500"
-                                >▼</span
-                            >
-                        </summary>
-                        <div
-                            class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 animate-fadeIn"
-                        >
-                            Yes, you can update details like "Current Wage" or
-                            "Language Score" in your SIRS profile <strong
-                                >as long as you haven't been invited yet</strong
-                            >. Once invited, the profile locks.
-                        </div>
-                    </details>
-
-                    <details
-                        class="group bg-slate-50 p-5 rounded-xl border border-slate-200 open:bg-white open:ring-1 open:ring-blue-100 open:shadow-md transition-all"
-                    >
-                        <summary
-                            class="font-bold text-slate-900 text-lg cursor-pointer list-none flex justify-between items-center outline-none"
-                        >
-                            <span
-                                >What happens if I quit my job after applying?</span
-                            >
-                            <span
-                                class="transition-transform duration-300 group-open:rotate-180 text-blue-500"
-                                >▼</span
-                            >
-                        </summary>
-                        <div
-                            class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 animate-fadeIn"
-                        >
-                            You must inform BC PNP immediately. Your application
-                            will usually be put on "Hold" until you find a new
-                            job that also qualifies. If you don't find one, your
-                            application is refused.
-                        </div>
-                    </details>
-
-                    <details
-                        class="group bg-slate-50 p-5 rounded-xl border border-slate-200 open:bg-white open:ring-1 open:ring-blue-100 open:shadow-md transition-all"
-                    >
-                        <summary
-                            class="font-bold text-slate-900 text-lg cursor-pointer list-none flex justify-between items-center outline-none"
-                        >
-                            <span>Does BC PNP interview me?</span>
-                            <span
-                                class="transition-transform duration-300 group-open:rotate-180 text-blue-500"
-                                >▼</span
-                            >
-                        </summary>
-                        <div
-                            class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4 animate-fadeIn"
-                        >
-                            Rarely in person. They usually interview your
-                            employer by phone. They typically only interview you
-                            if they suspect immigration fraud or if your job
-                            duties are unclear.
-                        </div>
-                    </details>
-                </div>
-
-                <div
-                    class="bg-blue-900 text-white p-8 rounded-2xl text-center mt-12"
-                >
-                    <h2 class="text-2xl font-bold mb-3">Ready to Start?</h2>
-                    <p class="text-blue-200 mb-6">
-                        First step: Check your score. If it's too low, don't
-                        register yet—improve your profile first.
-                    </p>
-                    <a
-                        href="/bc-pnp-calculator"
-                        class="inline-block bg-white text-blue-900 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors"
-                    >
-                        Calculate Points →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Detailed Eligibility -->
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">Detailed Eligibility by Stream</h2>
-                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-5">
-                    <p class="text-slate-600 leading-relaxed">BC PNP is not one program but a portfolio of streams, each with its own eligibility logic. As of November 2026, the open streams are Skilled Worker and Health Authority (each with an optional Express Entry BC route) and Entrepreneur Immigration; the closed streams are listed below for reference. Knowing which one fits your profile is the most important decision you make - applying to the wrong stream wastes the $1,750 application fee and months of waiting.</p>
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-1">Skilled Worker Stream</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">For TEER 0, 1, 2, or 3 occupations. Requires a full-time, indeterminate BC job offer and at least two years of full-time work experience in any skilled (TEER 0-3) occupation within the last ten years, under the current Skills Immigration Program Guide.</p>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-1">Health Authority Stream</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">For physicians, registered nurses, midwives, and allied health professionals with a direct job offer from one of BC's six health authorities (Fraser, Interior, Northern, Island, Vancouver Coastal, Provincial Health Services). No SIRS minimum.</p>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-1">Tech Stream</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">Ended. The separate tech draws for designated tech occupations (such as software developers, NOC 21232) are no longer held. Tech workers now apply under the Skilled Worker stream and compete in Innovate: High Economic Impact rounds, by wage ($49/hr and $99,000/yr on October 29, 2026) or by points (cutoff 131).</p>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-1">International Graduate</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">Closed November 2024. It was for applicants who graduated within the past three years from a Canadian post-secondary institution, with a full-time BC job offer in a TEER 0, 1, 2, or 3 occupation.</p>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-1">International Post-Graduate</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">Closed January 2025. It was for master's or PhD graduates in natural, applied, or health sciences from a BC university, with no job offer required. BC said on April 23, 2026 it will not launch new student streams.</p>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-1">Entry Level and Semi-Skilled</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">Closed (the BC PNP announced its closure on April 23, 2026). It was for TEER 4 and 5 jobs in tourism, hospitality, and food processing, with nine months of BC work experience in the position.</p>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-1">Entrepreneur Immigration</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">For business owners with a minimum personal net worth of $600,000 and the ability to invest at least $200,000 in an eligible BC business. The Regional stream has lower thresholds ($300,000 net worth and $100,000 investment) for businesses in participating communities.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Cost Breakdown -->
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">Complete Cost Breakdown (2026)</h2>
-                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-                    <p class="text-slate-600 leading-relaxed mb-4">A common reason applications stall is underestimating the total cost. Budget for these items before starting your application. Figures are in Canadian dollars and reflect 2026 published fees.</p>
-                    <ul class="space-y-2 text-slate-700">
-                        <li class="flex justify-between border-b border-slate-100 pb-2"><span>BC PNP application fee (Skills Immigration)</span><strong>$1,750</strong></li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2"><span>BC PNP Entrepreneur Immigration fee</span><strong>$3,500</strong></li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2"><span>Federal PR processing fee (principal applicant)</span><strong>$990</strong></li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2"><span>Federal PR processing fee (spouse)</span><strong>$990</strong></li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2"><span>Federal PR processing fee (dependent child)</span><strong>$270</strong></li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2"><span>Right of Permanent Residence Fee</span><strong>$600</strong></li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2"><span>Biometrics (single applicant / family)</span><strong>$85 / $170</strong></li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2"><span>Language test (IELTS, CELPIP, TEF, or TCF)</span><strong>$300-400</strong></li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2"><span>Educational Credential Assessment (WES)</span><strong>$245</strong></li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2"><span>Police certificates (per country)</span><strong>$25-150</strong></li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2"><span>Upfront medical exam (per person)</span><strong>$250-450</strong></li>
-                        <li class="flex justify-between pt-2"><span class="font-bold">Approximate total (single applicant)</span><strong class="text-lg text-blue-600">$4,200-4,700</strong></li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Sample Timeline -->
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">Sample Application Timeline</h2>
-                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-                    <ol class="relative border-l-2 border-blue-200 pl-6 space-y-6">
-                        <li>
-                            <span class="absolute -left-3 w-5 h-5 bg-blue-600 rounded-full border-4 border-white"></span>
-                            <h3 class="font-bold text-slate-900">Month 0: Pre-Application Prep</h3>
-                            <p class="text-sm text-slate-600">Order WES ECA, book IELTS or CELPIP, request employer reference letters. Begin gathering police certificates from each country lived in 6+ months.</p>
-                        </li>
-                        <li>
-                            <span class="absolute -left-3 w-5 h-5 bg-blue-600 rounded-full border-4 border-white"></span>
-                            <h3 class="font-bold text-slate-900">Month 1-2: SIRS Registration</h3>
-                            <p class="text-sm text-slate-600">Create BCPNP Online account, complete SIRS registration, enter language and ECA results. Use the <a href="/bc-pnp-calculator" class="text-blue-600 underline">BC PNP calculator</a> first to confirm your score is competitive.</p>
-                        </li>
-                        <li>
-                            <span class="absolute -left-3 w-5 h-5 bg-blue-600 rounded-full border-4 border-white"></span>
-                            <h3 class="font-bold text-slate-900">Month 1-6: Wait for Invitation</h3>
-                            <p class="text-sm text-slate-600">BC holds Care, Build and Innovate rounds about monthly, and each has its own cutoff (2026 ranges: Care 68-108, Build 88-108, Innovate 131-138 points or a wage threshold). Health Authority stream candidates apply directly without waiting for an invitation.</p>
-                        </li>
-                        <li>
-                            <span class="absolute -left-3 w-5 h-5 bg-blue-600 rounded-full border-4 border-white"></span>
-                            <h3 class="font-bold text-slate-900">Month 2-7: Full Application Submission</h3>
-                            <p class="text-sm text-slate-600">You have 30 days from invitation to submit the full application with all supporting documents and fees through BCPNP Online.</p>
-                        </li>
-                        <li>
-                            <span class="absolute -left-3 w-5 h-5 bg-blue-600 rounded-full border-4 border-white"></span>
-                            <h3 class="font-bold text-slate-900">Month 4-10: BC PNP Decision</h3>
-                            <p class="text-sm text-slate-600">About 3 months for most complete applications (WelcomeBC). Nomination certificate is valid for 6 months.</p>
-                        </li>
-                        <li>
-                            <span class="absolute -left-3 w-5 h-5 bg-blue-600 rounded-full border-4 border-white"></span>
-                            <h3 class="font-bold text-slate-900">Month 10-18: Federal PR</h3>
-                            <p class="text-sm text-slate-600">Express Entry BC: 5-8 months to COPR. Non-Express Entry base stream: 11-18 months.</p>
-                        </li>
-                    </ol>
-                </div>
-            </section>
-
-            <!-- Pro Tips -->
-            <section class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">Pro Tips for a Strong Application</h2>
-                <ul class="space-y-3 text-slate-700 leading-relaxed">
-                    <li><strong>Confirm your NOC code precisely.</strong> Use the National Occupational Classification 2021 lookup and match at least 80% of your daily duties to the lead statement and main duties.</li>
-                    <li><strong>Submit a settlement plan even when not required.</strong> Show housing arrangements, school registration plans for children, and community ties. Optional submissions can tip borderline applications.</li>
-                    <li><strong>Use professional employer letters.</strong> The reference letter must include job title, duties matched to NOC, full-time hours per week, salary, and dates of employment - on company letterhead, signed by an authorized signatory.</li>
-                    <li><strong>Always upload PDFs under 4 MB per file.</strong> BCPNP Online has strict file-size limits and will reject larger uploads.</li>
-                    <li><strong>Keep copies of everything.</strong> Download submitted documents, screenshots of the BCPNP Online portal, and confirmation receipts.</li>
-                </ul>
-            </section>
-
-            <!-- Mistakes to Avoid -->
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">Common Application Mistakes</h2>
-                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-                    <ul class="list-disc pl-6 space-y-2 text-slate-700 leading-relaxed">
-                        <li>Mismatched NOC code on employer registration vs. applicant submission. The employer and applicant must agree on a single NOC.</li>
-                        <li>Wage below the regional median. BC PNP cross-checks wages against the Job Bank median for your NOC and region; under-paying triggers refusal.</li>
-                        <li>Submitting old or expired language results. Tests are valid only for 2 years.</li>
-                        <li>Failing to declare all family members - including non-accompanying dependents. Non-disclosure can result in lifetime inadmissibility.</li>
-                        <li>Forgetting to request a Work Permit Support Letter immediately after nomination. The letter allows you to apply for a new employer-specific work permit without LMIA.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Post-Nomination Checklist -->
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">What to Do the Day Your Nomination Arrives</h2>
-                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-4">
-                    <p class="text-slate-600 leading-relaxed">The nomination certificate triggers a tight 6-month clock to submit your federal PR application and a 30-day clock to accept it inside your Express Entry profile. Plan to act on the same day the email arrives.</p>
-                    <ol class="list-decimal pl-6 space-y-2 text-slate-700">
-                        <li>Log into your IRCC Secure Account and your Express Entry profile.</li>
-                        <li>Accept the provincial nomination inside the profile. Your CRS will jump by 600 points.</li>
-                        <li>Request a Work Permit Support Letter from BC PNP through BCPNP Online (free).</li>
-                        <li>Use that letter to apply for a new closed work permit or a Bridging Open Work Permit if eligible.</li>
-                        <li>Compile police certificates, upfront medical, biometrics, and final reference letters.</li>
-                        <li>Submit the federal e-APR within 60 days of receiving the Express Entry ITA.</li>
-                    </ol>
-                </div>
-            </section>
-
-            <!-- Real-World Case Studies -->
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">Real-World Application Examples</h2>
-                <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                        <h3 class="font-bold text-slate-900 mb-2">Example 1: Cloud Engineer, NOC 21311, Burnaby</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">Lakshmi accepted an $115,000 base offer from a Burnaby SaaS company. She registered SIRS at 134 points, was invited two weeks later in a Tech draw, submitted her full application 17 days after invitation, and received her nomination 67 days later. She had already created her Express Entry profile, so her +600 boost arrived immediately, and her PR was finalized 5.5 months after submitting the e-APR. Total elapsed time from job offer signature to landing as a permanent resident: 10 months. (Tech draws have since ended; today she would compete in an Innovate round, where her salary would clear the October 29, 2026 wage threshold of $49/hr and $99,000/yr.)</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                        <h3 class="font-bold text-slate-900 mb-2">Example 2: Personal Support Worker, NOC 33102, Surrey</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">Mariam had a full-time offer at $25/hr from a Fraser Health long-term care facility. NOC 33102 falls into TEER 3, qualifying her for the Skilled Worker stream. She scored 92 on SIRS but waited five months for an invitation in a healthcare-targeted draw. Total elapsed time from invitation to COPR: 14 months under non-Express Entry. The lesson: even essential occupations benefit from being eligible for Express Entry BC.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                        <h3 class="font-bold text-slate-900 mb-2">Example 3: Restaurant Manager (NOC 60030), Whistler</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">James had been working in Whistler for 18 months on a closed work permit. He applied through the Entry Level and Semi-Skilled stream. The 9-month BC work requirement was easily met. SIRS score of 76 placed him in a long queue, and he was invited after eight months. Total time from invitation to landing was about 16 months due to non-Express Entry processing. His takeaway: build CLB 7+ language scores before applying to switch to Skilled Worker EEBC. (The Entry Level and Semi-Skilled stream has since closed; the BC PNP announced this on April 23, 2026.)</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Extended FAQ -->
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">Application FAQ</h2>
-                <div class="space-y-4">
-                    <details class="group bg-white rounded-2xl border border-slate-200 open:border-blue-200 open:shadow-md transition-all">
-                        <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none"><span>Can I apply to BC PNP from outside Canada?</span><span class="text-blue-600">▼</span></summary>
-                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">Yes. Many applicants in the Skilled Worker stream apply from abroad with a remote-signed BC job offer. Once nominated, you apply for federal PR while still outside Canada and land in BC after receiving COPR.</div>
-                    </details>
-                    <details class="group bg-white rounded-2xl border border-slate-200 open:border-blue-200 open:shadow-md transition-all">
-                        <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none"><span>Does BC PNP charge an additional fee at nomination?</span><span class="text-blue-600">▼</span></summary>
-                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">No. The single $1,750 application fee covers the entire BC PNP process. Federal fees come later when you submit the PR application to IRCC.</div>
-                    </details>
-                    <details class="group bg-white rounded-2xl border border-slate-200 open:border-blue-200 open:shadow-md transition-all">
-                        <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none"><span>What happens if my employer registration expires before I am invited?</span><span class="text-blue-600">▼</span></summary>
-                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">Employer registrations are linked to the position and remain valid as long as the position remains open. If the role is filled by another candidate, the employer may need to re-register. Communicate with HR every 60 days while you wait in SIRS.</div>
-                    </details>
-                    <details class="group bg-white rounded-2xl border border-slate-200 open:border-blue-200 open:shadow-md transition-all">
-                        <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none"><span>Can I include my spouse and children in my BC PNP application?</span><span class="text-blue-600">▼</span></summary>
-                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">Yes. Dependents are listed in your application and included in the nomination. They receive PR alongside you in the federal step. Spouses do not need their own language test for nomination but should plan one for federal CRS bonus points.</div>
-                    </details>
-                    <details class="group bg-white rounded-2xl border border-slate-200 open:border-blue-200 open:shadow-md transition-all">
-                        <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none"><span>What happens if BC PNP refuses my application?</span><span class="text-blue-600">▼</span></summary>
-                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">You can submit a request for review ($500 fee) within 30 days of the refusal letter, or you can re-apply with a stronger application. Common refusal reasons include wages below the regional median, mismatched NOC duties, and incomplete employer documentation.</div>
-                    </details>
-                    <details class="group bg-white rounded-2xl border border-slate-200 open:border-blue-200 open:shadow-md transition-all">
-                        <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none"><span>Can I switch employers after applying?</span><span class="text-blue-600">▼</span></summary>
-                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">Before nomination, switching employers usually requires withdrawing and reapplying with the new employer's registration. After nomination but before PR, you can stay with the same employer or notify BC PNP if a job change is unavoidable; significant changes can void the nomination.</div>
-                    </details>
-                </div>
-            </section>
-
-            <!-- Related Guides -->
-            <div class="bg-white rounded-2xl p-8 border border-slate-100">
-                <h3 class="font-bold text-slate-900 mb-4">Related Guides</h3>
-                <ul class="space-y-3">
-                    <li>
-                        <a
-                            href="/articles/bc-pnp-documents-checklist"
-                            class="text-blue-600 hover:text-blue-700 font-medium"
-                        >
-                            BC PNP Document Checklist 2026 →
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="/articles/bc-pnp-processing-times"
-                            class="text-blue-600 hover:text-blue-700 font-medium"
-                        >
-                            BC PNP Processing Times 2026 →
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="/articles/bc-pnp-cost-guide-2026"
-                            class="text-blue-600 hover:text-blue-700 font-medium"
-                        >
-                            BC PNP Cost Guide: Complete Budget Breakdown →
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="/articles/bc-pnp-common-mistakes"
-                            class="text-blue-600 hover:text-blue-700 font-medium"
-                        >
-                            15 Common BC PNP Mistakes to Avoid →
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="/articles/bc-pnp-after-nomination"
-                            class="text-blue-600 hover:text-blue-700 font-medium"
-                        >
-                            After BC PNP Nomination: Next Steps →
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-3xl mx-auto px-4 mt-8">
-          <section class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-            <h2 class="text-2xl font-black text-slate-900 mb-6">Application Cost Breakdown (2026)</h2>
-            <ul class="space-y-3 text-slate-700">
-              <li class="flex justify-between border-b border-slate-100 pb-3"><span>BC PNP application fee</span><strong>$1,750</strong></li>
-              <li class="flex justify-between border-b border-slate-100 pb-3"><span>Language test (IELTS or CELPIP)</span><strong>$320-345</strong></li>
-              <li class="flex justify-between border-b border-slate-100 pb-3"><span>Educational Credential Assessment (WES, ICAS, IQAS)</span><strong>$215-320</strong></li>
-              <li class="flex justify-between border-b border-slate-100 pb-3"><span>Police certificates (per country)</span><strong>$25-100</strong></li>
-              <li class="flex justify-between border-b border-slate-100 pb-3"><span>IRCC panel medical exam (per person)</span><strong>$300-500</strong></li>
-              <li class="flex justify-between border-b border-slate-100 pb-3"><span>Federal PR processing + RPRF (per adult)</span><strong>$1,590</strong></li>
-              <li class="flex justify-between pb-3"><span>Biometrics fee</span><strong>$85 per person</strong></li>
-            </ul>
-            <p class="text-slate-700 mt-4">Total for a single adult applicant typically runs $4,300-4,700 at November 2026 fee levels. For a couple with one child, expect roughly $6,900-8,400. Run the <a href="/bc-pnp-calculator" class="text-red-600 underline">BC PNP calculator</a> first to confirm SIRS competitiveness before incurring these costs.</p>
-          </section>
-        </div>
-    </article>
+      <p class="text-xs text-slate-500 mt-8">
+        General information based on WelcomeBC and the BC PNP Skills Immigration Program Guide (effective June 10, 2026). It is not legal advice.
+      </p>
+    </div>
+  </article>
 </ArticleLayout>

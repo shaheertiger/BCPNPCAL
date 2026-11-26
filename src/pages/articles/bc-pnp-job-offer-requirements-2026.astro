@@ -1,534 +1,205 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { calculateTotalPoints } from "../../utils/calculatePoints";
+import { BLANK } from "../../data/example-profiles";
+import { latestFor, latestHeiWage } from "../../utils/draws";
+import { LINKS } from "../../data/site-links";
+import { TECH_NOCS } from "../../data/tech-nocs";
 
-const title = "BC PNP Job Offer Requirements 2026: Complete Employer & Wage Eligibility Guide";
-const description = "Everything you need to know about BC PNP job offer requirements in 2026. Learn about eligible employers, wage thresholds, NOC code alignment, full-time offers, and the most common job offer mistakes that lead to application refusals.";
+const title = "BC PNP Job Offer Requirements 2026: Full-Time, Indeterminate, Job Bank Wage";
+const description =
+  "Your offer must average 30+ hours a week year-round, have no end date and pay within the Job Bank range, from a B.C. employer operating 1+ year.";
 
-const jsonLd = [
-    {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: title,
-        description: description,
-        author: {
-            '@type': 'Organization',
-            name: 'BC PNP Calculator'
-        },
-        datePublished: '2026-02-05',
-        dateModified: '2026-11-11'
-    },
-    {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: [
-            {
-                '@type': 'Question',
-                name: 'What is the minimum wage requirement for BC PNP job offers?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'BC PNP requires your job offer wage to meet or exceed the median wage for your NOC code in BC. For TEER 0/1 occupations, this typically means $30-50+ per hour. The wage must also be comparable to what the employer pays Canadian employees in similar roles.'
-                }
-            },
-            {
-                '@type': 'Question',
-                name: 'Can a new company sponsor me for BC PNP?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Yes, new companies can sponsor BC PNP applicants, but they face additional scrutiny. The business must demonstrate genuine operations, financial ability to pay wages, and a legitimate need for the position. Companies less than 2 years old should provide extra documentation including business plans and financial statements.'
-                }
-            },
-            {
-                '@type': 'Question',
-                name: 'Does my job offer need to be permanent for BC PNP?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Yes, BC PNP requires job offers to be permanent (indeterminate) and full-time (minimum 30 hours per week). Fixed-term contracts, seasonal positions, and part-time offers do not qualify for most BC PNP streams. The only exception is certain Health Authority positions.'
-                }
-            },
-            {
-                '@type': 'Question',
-                name: 'Can I get BC PNP with a remote job offer from outside BC?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'No. The job must be physically located in British Columbia. Remote work is acceptable only if your primary work location and employer are based in BC. You cannot get BC PNP with a job offer from a company headquartered outside BC, even if you work remotely from within BC.'
-                }
-            }
-        ]
-    }
+const GUIDE = "https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf";
+const SKILLS = "https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration";
+
+// Worked example: the same licensed practical nurse offer (NOC 32101) in
+// Nanaimo (Area 3) and in Burnaby (Area 1), scored by the site's calculator.
+// The wage is an example offer, not wage data.
+const lpnState = {
+  ...BLANK,
+  experience: "2" as const,
+  hasCanadianExp: true,
+  hasCurrentBCJob: true,
+  education: "trades_cert" as const,
+  hasCanadianEducation: true,
+  educationLocation: "bc" as const,
+  hasProfessionalDesignation: true,
+  selectedProfession: "Licensed Practical Nurse (BCCNM)",
+  hasEnglishTest: true,
+  englishClb: 7 as const,
+  hourlyWage: 35,
+  area: "area3" as const,
+};
+const nanaimo = calculateTotalPoints(lpnState);
+const burnaby = calculateTotalPoints({ ...lpnState, area: "area1" });
+const offerPts = (r: typeof nanaimo) => r.breakdown.wage + r.breakdown.area + r.breakdown.regionalBonus;
+const health = latestFor("health");
+const heiWage = latestHeiWage;
+
+const faqs = [
+  {
+    q: "Does a BC PNP job offer need an LMIA?",
+    a: "No. The Skills Immigration Program Guide asks for a job offer from an eligible B.C. employer with a signed Employer Declaration Form, not a Labour Market Impact Assessment. You may still need an LMIA-based work permit to start working before nomination.",
+  },
+  {
+    q: "Can my BC PNP job offer have an end date?",
+    a: `Usually not: the offer must be indeterminate. Appendix A of the Program Guide lists exceptions (university professors, public K-12 teachers and ${TECH_NOCS.length} technology occupations) where an offer of at least one year, with at least 120 days left at application, can qualify.`,
+  },
+  {
+    q: "Can I use a part-time job offer?",
+    a: "No. The offer must be for one regular full-time position, which the BC PNP defines as an average of at least 30 hours a week, year-round. Two part-time jobs cannot be combined.",
+  },
+  {
+    q: "Can a company owned by my family support my application?",
+    a: "No, if you or your immediate or extended family have held or controlled 10% or more of the organization in the 5 years before your application (section 6.12(e)).",
+  },
+  {
+    q: "Is there a minimum wage for a BC PNP job offer?",
+    a: "There is no single wage floor. The wage must be within the WorkBC or Job Bank range for the occupation and region, and your family income must meet the BC PNP minimum (for one person, $31,264 in Metro Vancouver or $26,057 elsewhere in B.C.).",
+  },
 ];
 
-const hreflangs = [
-    { lang: 'en', href: 'https://bcpnpcalculator.ca/articles/bc-pnp-job-offer-requirements-2026' },
-    { lang: 'x-default', href: 'https://bcpnpcalculator.ca/articles/bc-pnp-job-offer-requirements-2026' },
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+
+const rows: [string, string, string][] = [
+  ["Occupation", "Skilled Worker: NOC TEER 0, 1, 2 or 3. Health Authority: eligible health occupation with a B.C. public health authority. Not one of the 12 ineligible occupations.", "3.5(a), 3.11, 4.1(b), 4.2(c)"],
+  ["Hours", "One regular full-time position: an average of at least 30 hours a week, year-round", "3.5(b)"],
+  ["Duration", "Indeterminate (no end date), except Appendix A occupations: 1+ year offer with 120+ days left", "3.5(c), Appendix A"],
+  ["Wage", "Within the WorkBC or Job Bank range for the occupation and location, comparable to Canadian workers, consistent with the employer's pay structure", "3.9"],
+  ["Employer support", "Employer agrees before you register and signs the Employer Declaration Form", "3.6, 6.4"],
+  ["Time in operation", "Employer has operated in B.C. for at least 1 year", "6.7"],
+  ["Employees", "At least 5 indeterminate full-time employees in B.C. (Metro Vancouver) or 3 (rest of B.C.)", "6.8"],
+  ["Ownership", "You and your family hold or control less than 10% of the employer, now and in the past 5 years", "3.12, 6.12(e)"],
+  ["Employer type", "Not a placement or staffing agency, sexually oriented business or (with limited exceptions) an immigration services firm", "6.12"],
 ];
+const ineligible = [
+  "12100 Executive assistants",
+  "12101 Human resources and recruitment officers",
+  "12200 Accounting technicians and bookkeepers",
+  "13100 Administrative officers",
+  "13110 Administrative assistants",
+  "13111 Legal administrative assistants",
+  "13112 Medical administrative assistants",
+  "62010 Retail sales supervisors",
+  "62020 Food service supervisors",
+  "63101 Real estate agents and salespersons",
+  "41302 Religious leaders",
+  "42204 Religious workers",
+];
+
+const h2 = "text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-12 mb-4";
+const p = "text-slate-700 text-base sm:text-lg leading-relaxed mb-4";
+const a = "text-red-600 font-semibold underline underline-offset-2 hover:text-red-700";
+const src = "underline underline-offset-2 hover:text-red-600";
 ---
 
-<ArticleLayout slug="bc-pnp-job-offer-requirements-2026" datePublished="2026-02-09" dateModified="2026-11-11" keywords="BC PNP job offer requirements, BC PNP employer requirements 2026, job offer for BC PNP" title={title} description={description} jsonLd={jsonLd} hreflangs={hreflangs} canonical="https://bcpnpcalculator.ca/articles/bc-pnp-job-offer-requirements-2026">
-    <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
-        <div class="max-w-3xl mx-auto space-y-8">
-            <header class="space-y-4 text-center">
-                <div class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-bold mb-4">
-                    Updated November 2026
-                </div>
-                <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-                    BC PNP <span class="text-blue-600">Job Offer</span> Requirements
-                </h1>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                    The complete 2026 guide to BC PNP job offer eligibility. Understand what makes a valid offer, employer requirements, and wage thresholds.
-                </p>
-            </header>
+<ArticleLayout
+  slug="bc-pnp-job-offer-requirements-2026"
+  datePublished="2026-02-09"
+  dateModified="2026-11-26"
+  articleSection="Eligibility"
+  breadcrumbLabel="Job Offer Requirements"
+  keywords="BC PNP job offer requirements, BC PNP wage requirement, BC PNP employer requirements, BC PNP job offer"
+  title={title}
+  description={description}
+  jsonLd={jsonLd}
+  related={["workExperience", "withoutJobOffer", "caregivers", "tech"]}
+  canonical="https://bcpnpcalculator.ca/articles/bc-pnp-job-offer-requirements-2026"
+>
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <header class="mb-6">
+      <p class="text-sm font-bold text-red-600 uppercase tracking-widest mb-3">Eligibility · Updated November 26, 2026</p>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        What are the BC PNP job offer requirements?
+      </h1>
+    </header>
 
-            <div class="grid sm:grid-cols-3 gap-4">
-                <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
-                    <div class="text-3xl font-black text-blue-600 mb-2">30+ hrs/wk</div>
-                    <div class="text-sm text-slate-600 font-medium">Full-time minimum</div>
-                </div>
-                <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
-                    <div class="text-3xl font-black text-green-600 mb-2">Permanent</div>
-                    <div class="text-sm text-slate-600 font-medium">Indeterminate term required</div>
-                </div>
-                <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
-                    <div class="text-3xl font-black text-purple-600 mb-2">BC-Based</div>
-                    <div class="text-sm text-slate-600 font-medium">Employer must be in BC</div>
-                </div>
-            </div>
+    <p class={p}>
+      A BC PNP job offer must be for one regular full-time position (an average of at least 30 hours a week, year-round), indeterminate (no end date), in an eligible occupation, paid within the WorkBC or Job Bank wage range, and from an eligible B.C. employer that agrees to support you. Every Skills Immigration stream needs one, and the offer's wage and location decide 80 of your 200 points in the <a href={LINKS.calculator.href} class={a}>{LINKS.calculator.short}</a>.
+    </p>
 
-            <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
-                
-                <h2>Why Your Job Offer Is the Foundation of BC PNP</h2>
-                <p>
-                    For most <strong>BC PNP Skills Immigration streams</strong>, a valid job offer from a British Columbia employer is the single most important requirement. Without an eligible job offer, you cannot register in the BC PNP system, regardless of your education, language scores, or work experience.
-                </p>
-                <p>
-                    Yet many applicants underestimate the complexity of job offer requirements. It is not enough to simply have an employer willing to hire you. Your job offer must meet specific criteria for the employer, the position, the wage, the hours, and the location. This guide breaks down every requirement so you can ensure your offer qualifies before you invest time and money in your application.
-                </p>
+    <aside class="rounded-2xl border border-red-100 bg-red-50/60 p-5 sm:p-6 my-8" aria-label="Key facts">
+      <p class="font-black text-slate-900 mb-3">Key facts</p>
+      <ul class="space-y-2 text-slate-700 text-sm sm:text-base list-disc pl-5">
+        <li><strong>Full-time:</strong> an average of 30+ hours a week, year-round (Program Guide 3.5(b)).</li>
+        <li><strong>Indeterminate:</strong> no end date, except listed occupations with a 1+ year offer (3.5(c), Appendix A).</li>
+        <li><strong>Occupation:</strong> NOC TEER 0–3 for Skilled Worker; 12 occupations are ineligible for every stream (3.11).</li>
+        <li><strong>Employer:</strong> 1+ year operating in B.C.; 5 full-time employees in Metro Vancouver, 3 elsewhere (6.7, 6.8).</li>
+        <li><strong>No LMIA</strong> is needed for the BC PNP itself.</li>
+      </ul>
+    </aside>
 
-                <div class="bg-red-50 p-6 rounded-2xl border border-red-100 my-8 not-prose">
-                    <h3 class="font-bold text-red-900 text-lg mb-2">⚠️ Common Rejection Trigger</h3>
-                    <p class="text-red-800 text-sm leading-relaxed">
-                        <strong>Invalid job offers</strong> are a leading cause of BC PNP refusals. Officers verify every aspect of the offer—and if your employer does not meet requirements or your wage is below threshold, your application will be refused regardless of your qualifications.
-                    </p>
-                </div>
+    <h2 class={h2}>What do you need in a BC PNP job offer?</h2>
+    <div class="overflow-x-auto rounded-2xl border border-slate-200 my-6">
+      <table class="w-full text-sm text-left">
+        <caption class="sr-only">BC PNP job offer and employer requirements</caption>
+        <thead class="bg-slate-100 text-slate-900">
+          <tr><th scope="col" class="px-4 py-3 font-bold">Requirement</th><th scope="col" class="px-4 py-3 font-bold">Rule</th><th scope="col" class="px-4 py-3 font-bold">Section</th></tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 bg-white">
+          {rows.map(([r, rule, sec]) => (
+            <tr><th scope="row" class="px-4 py-2.5 text-left font-bold text-slate-900 align-top">{r}</th><td class="px-4 py-2.5 text-slate-700">{rule}</td><td class="px-4 py-2.5 text-slate-500 whitespace-nowrap align-top">{sec}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-slate-500 -mt-3 mb-6">Source: <a href={GUIDE} target="_blank" rel="noopener noreferrer" class={src}>BC PNP Skills Immigration Program Guide</a> (effective June 10, 2026) and <a href={SKILLS} target="_blank" rel="noopener noreferrer" class={src}>WelcomeBC Skills Immigration</a>.</p>
 
-                <h2>The 7 Core Job Offer Requirements</h2>
-                <p>
-                    Every BC PNP job offer must satisfy these seven fundamental requirements. Missing even one can disqualify your entire application.
-                </p>
+    <h2 class={h2}>What is the BC PNP wage requirement?</h2>
+    <p class={p}>
+      There is no fixed minimum wage. Your offered wage must be within the range WorkBC or Job Bank posts for your occupation and location, comparable to what Canadians with similar experience earn, and consistent with the employer's pay structure. Bonuses, commissions, tips, overtime and housing allowances do not count. Your family income must also clear the minimum in section 3.10: for a single person, $31,264 in Metro Vancouver or $26,057 elsewhere in B.C.
+    </p>
+    <p class={p}>
+      Wage matters a second time in draws. The latest High Economic Impact draw on {heiWage.date} invited candidates earning at least {heiWage.rule}, with no score cut-off.
+    </p>
 
-                <h3>1. Permanent (Indeterminate) Position</h3>
-                <p>
-                    Your job offer must be for a <strong>permanent position</strong> with no defined end date. BC PNP does not accept fixed-term contracts, seasonal employment, or project-based work. The offer letter must clearly state that the position is "permanent" or "indeterminate."
-                </p>
-                <p>
-                    <strong>Why this matters:</strong> BC PNP's purpose is to nominate workers who will contribute to BC's economy long-term. Temporary positions do not demonstrate the ongoing labour market need that justifies provincial nomination.
-                </p>
+    <h2 class={h2}>What are the BC PNP employer requirements?</h2>
+    <p class={p}>
+      Beyond the table: two part-time employees can count as one full-time equivalent, contractors do not count, and the employer must pay you, direct your work and have a significant operational presence in B.C.
+    </p>
 
-                <h3>2. Full-Time Hours (30+ per week)</h3>
-                <p>
-                    The position must guarantee a minimum of <strong>30 hours per week</strong>. Part-time positions, even at 25 or 28 hours weekly, do not qualify. The offer letter must explicitly state the weekly hours.
-                </p>
-                <p>
-                    If the position involves variable hours (such as shift work), the employer must confirm that average weekly hours will meet or exceed 30 hours. "On-call" or "as-needed" positions are not eligible.
-                </p>
+    <h2 class={h2}>Which jobs are ineligible for BC PNP?</h2>
+    <p class={p}>
+      Section 3.11 lists 12 occupations that are not eligible for any Skills Immigration stream, for applications submitted after June 13, 2026:
+    </p>
+    <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-1 list-disc pl-6 text-slate-700 mb-4">
+      {ineligible.map((o) => <li>{o}</li>)}
+    </ul>
 
-                <h3>3. Employer Located in British Columbia</h3>
-                <p>
-                    The employer must be a <strong>legally established business operating in British Columbia</strong>. The company's registered business address must be in BC, and the physical work location must be in BC.
-                </p>
-                <p>
-                    Remote work arrangements are only acceptable if both the employer and primary work location are in BC. You cannot apply with a job offer from a company headquartered in Ontario, Alberta, or another province—even if you would work remotely from a BC address.
-                </p>
+    <h2 class={h2}>How much does the job offer add to your BC PNP score?</h2>
+    <p class={p}>
+      Consider a licensed practical nurse (NOC 32101) with a B.C. nursing diploma, BCCNM licence, 2 years with the current employer, CLB 7 and an example offer of $35.00 an hour. In Nanaimo (Area 3) the calculator gives {offerPts(nanaimo)} points for wage and area and a total of <strong>{nanaimo.total}</strong>. The identical offer in Burnaby (Area 1) gives {offerPts(burnaby)} and a total of <strong>{burnaby.total}</strong>.
+    </p>
+    <p class={p}>
+      Both clear the latest Care: Health minimum of {health.score} ({health.date}); compare other streams on the <a href={LINKS.draws.href} class={a}>{LINKS.draws.short}</a> page. Experience is the other half of eligibility, covered in <a href={LINKS.workExperience.href} class={a}>{LINKS.workExperience.short}</a>.
+    </p>
 
-                <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 my-8 not-prose">
-                    <h4 class="font-bold text-blue-900 text-lg mb-3">Work Location Examples</h4>
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div class="bg-white p-4 rounded-lg">
-                            <div class="font-bold text-green-700 text-sm mb-2">✓ Eligible</div>
-                            <p class="text-sm text-slate-700">
-                                <strong>Scenario:</strong> Vancouver company, remote work from your Vancouver home<br/>
-                                <em class="text-slate-500">Employer and work location both in BC</em>
-                            </p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg">
-                            <div class="font-bold text-red-700 text-sm mb-2">✗ Not Eligible</div>
-                            <p class="text-sm text-slate-700">
-                                <strong>Scenario:</strong> Toronto company, remote work from your Vancouver home<br/>
-                                <em class="text-slate-500">Employer not in BC = not eligible</em>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <h2 class={h2}>Common mistakes</h2>
+    <ul class="list-disc pl-6 space-y-2 text-slate-700 text-base sm:text-lg mb-4">
+      <li>Accepting a contract or term offer in an occupation that is not on the Appendix A list.</li>
+      <li>Counting bonuses, tips or overtime as part of the hourly wage.</li>
+      <li>Using an employer with too few full-time staff in B.C., or with contractors counted as employees.</li>
+      <li>An offer from a staffing agency, or from a company you or a relative own 10% or more of.</li>
+      <li>Paying for a job: in B.C. it is illegal to buy jobs or ask for money in exchange for one (section 1.7).</li>
+    </ul>
 
-                <h3>4. Wage Meets or Exceeds Median</h3>
-                <p>
-                    Your offered wage must meet or exceed the <strong>median wage for your NOC code in British Columbia</strong>. This requirement prevents employers from using immigration programs to pay below-market wages.
-                </p>
-                <p>
-                    To find the median wage for your occupation, check the <a href="https://www.jobbank.gc.ca/wagereport/occupation/" target="_blank" rel="noopener">Job Bank wage reports</a> for BC. Your offer must match or exceed the median (not the low-range) wage shown for your specific NOC code and location.
-                </p>
-
-                <div class="not-prose overflow-x-auto my-6">
-                    <table class="min-w-full text-left text-sm">
-                        <thead class="bg-gray-100 border-b border-gray-200">
-                            <tr>
-                                <th class="px-4 py-3 font-bold text-slate-900">Occupation Example</th>
-                                <th class="px-4 py-3 font-bold text-slate-900">NOC Code</th>
-                                <th class="px-4 py-3 font-bold text-slate-900">BC Median Wage</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr>
-                                <td class="px-4 py-3 font-medium">Software Developer</td>
-                                <td class="px-4 py-3">21232</td>
-                                <td class="px-4 py-3">$45.00/hour</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-medium">Accountant</td>
-                                <td class="px-4 py-3">11100</td>
-                                <td class="px-4 py-3">$38.00/hour</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-medium">Marketing Specialist</td>
-                                <td class="px-4 py-3">11202</td>
-                                <td class="px-4 py-3">$32.00/hour</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-medium">Cook</td>
-                                <td class="px-4 py-3">63200</td>
-                                <td class="px-4 py-3">$18.50/hour</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-medium">Registered Nurse</td>
-                                <td class="px-4 py-3">31301</td>
-                                <td class="px-4 py-3">$41.00/hour</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="text-sm text-slate-500">
-                    Note: These are approximate values. Always verify current median wages on Job Bank before applying.
-                </p>
-
-                <h3>5. NOC TEER Category 0, 1, 2, or 3</h3>
-                <p>
-                    For the <strong>Skilled Worker</strong> and <strong>Express Entry BC</strong> streams, your job offer must fall within NOC TEER categories 0, 1, 2, or 3. TEER 4 and 5 occupations were eligible only through the Entry Level and Semi-Skilled (ELSS) stream, which B.C. closed in April 2026, so they can no longer be nominated through Skills Immigration.
-                </p>
-                <p>
-                    Understanding your NOC TEER category is essential for determining which BC PNP stream you qualify for. TEER 0 and 1 positions typically require university education or significant management experience. TEER 2 and 3 positions usually require college diplomas, apprenticeships, or several years of experience.
-                </p>
-
-                <div class="bg-amber-50 p-6 rounded-2xl border border-amber-100 my-8 not-prose">
-                    <h4 class="font-bold text-amber-900 text-lg mb-2">Ineligible Occupations (Applications After June 13, 2026)</h4>
-                    <p class="text-amber-800 text-sm leading-relaxed">
-                        Even within TEER 0 to 3, section 3.11 of the Skills Immigration Program Guide makes 12 occupations ineligible in every Skills Immigration stream for applications submitted after June 13, 2026: executive assistants (12100), human resources and recruitment officers (12101), accounting technicians and bookkeepers (12200), administrative officers (13100), administrative assistants (13110), legal administrative assistants (13111), medical administrative assistants (13112), retail sales supervisors (62010), food service supervisors (62020), real estate agents and salespersons (63101), religious leaders (41302) and religious workers (42204). Check this list before your employer drafts the offer.
-                    </p>
-                </div>
-
-                <h3>6. Employer in Good Standing</h3>
-                <p>
-                    Your employer must be a <strong>legitimate, operational business</strong> that is in good standing with BC PNP. This means the employer has not been banned from the program and does not have pending investigations related to immigration compliance.
-                </p>
-                <p>
-                    Officers verify employers using multiple sources, including WorkSafeBC records, corporate registry filings, and previous BC PNP applications. Employers with a history of misrepresentation or non-compliance may be flagged or banned.
-                </p>
-
-                <h3>7. Genuine Labour Market Need</h3>
-                <p>
-                    The employer must demonstrate a <strong>genuine need</strong> for the position. This means the job is not created solely to enable an immigration application, and the employer has made reasonable efforts to hire Canadian citizens or permanent residents first.
-                </p>
-                <p>
-                    While BC PNP does not require a formal Labour Market Impact Assessment (LMIA) for most streams, officers still evaluate whether the position reflects a real business need. Suspicious patterns—such as creating a new senior position for a relative or hiring for a job that does not match the company's operations—will trigger additional scrutiny.
-                </p>
-                <p>
-                    <strong>Federal changes in November 2026:</strong> an LMIA may still matter for your work permit. Since November 6, 2026, low-wage stream LMIAs can cover up to 2 years of employment, and from October 9, 2026 to January 7, 2027 ESDC will not process low-wage LMIAs for jobs in Kelowna, Abbotsford-Mission, Vancouver or Nanaimo, except in health care, construction, food processing and (since November 6) early childhood education. Separately, since November 3, 2026, federal Express Entry no longer requires an LMIA for a job offer to earn CRS points; points go to offers in high-wage occupations. See our <a href="/articles/bc-pnp-lmia-guide-2026">LMIA guide</a> for details.
-                </p>
-
-                <h2>Employer Eligibility Requirements</h2>
-                <p>
-                    Your BC employer must meet specific eligibility criteria. If the employer does not qualify, your application will be refused—even if you exceed all applicant requirements.
-                </p>
-
-                <h3>Established Business Operations</h3>
-                <p>
-                    The employer must be operating an established business in BC with a permanent physical location. The business must have been operating in BC for at least one year (ideally two or more years). Newer businesses face additional scrutiny and documentation requirements.
-                </p>
-
-                <h3>Minimum Employee Thresholds</h3>
-                <div class="not-prose overflow-x-auto my-6">
-                    <table class="min-w-full text-left text-sm">
-                        <thead class="bg-gray-100 border-b border-gray-200">
-                            <tr>
-                                <th class="px-4 py-3 font-bold text-slate-900">Business Location</th>
-                                <th class="px-4 py-3 font-bold text-slate-900">Min. Full-Time Employees</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr>
-                                <td class="px-4 py-3">Metro Vancouver (Vancouver, Burnaby, Richmond, etc.)</td>
-                                <td class="px-4 py-3 font-bold">5 full-time employees</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3">Outside Metro Vancouver</td>
-                                <td class="px-4 py-3 font-bold">3 full-time employees</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p>
-                    These employees must be Canadian citizens or permanent residents. Temporary foreign workers and international students on work permits do not count toward the minimum threshold.
-                </p>
-
-                <h3>Financial Capacity to Pay</h3>
-                <p>
-                    The employer must demonstrate the financial ability to pay the offered wage. Officers may review financial statements, tax filings, and payroll records to verify the business can sustain the position.
-                </p>
-
-                <div class="bg-amber-50 p-6 rounded-2xl border border-amber-100 my-8 not-prose">
-                    <h4 class="font-bold text-amber-900 text-lg mb-2">💡 New Business Tip</h4>
-                    <p class="text-amber-800 text-sm leading-relaxed">
-                        If your employer is a newer company (less than 2 years old), proactively include extra documentation: business plan, financial projections, investor agreements, and evidence of current operations. This demonstrates legitimacy and reduces processing delays.
-                    </p>
-                </div>
-
-                <h2>The Job Offer Letter: What Must Be Included</h2>
-                <p>
-                    Your official job offer letter is a critical document. It must be on company letterhead and include all of the following elements:
-                </p>
-
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 mb-6 not-prose">
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">1.</span>
-                            <div>
-                                <strong>Company name, address, and contact information</strong> — Full legal business name and BC address
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">2.</span>
-                            <div>
-                                <strong>Your full legal name</strong> — Exactly as it appears on your passport
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">3.</span>
-                            <div>
-                                <strong>Job title and NOC code</strong> — The official position title and 5-digit NOC classification
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">4.</span>
-                            <div>
-                                <strong>Start date</strong> — When employment will begin (or confirm current employment)
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">5.</span>
-                            <div>
-                                <strong>Employment type</strong> — Must state "permanent" or "indeterminate"
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">6.</span>
-                            <div>
-                                <strong>Weekly hours</strong> — Must specify minimum 30 hours per week
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">7.</span>
-                            <div>
-                                <strong>Wage or salary</strong> — Annual salary or hourly rate, plus any benefits
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">8.</span>
-                            <div>
-                                <strong>Work location</strong> — Physical address where work will be performed
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">9.</span>
-                            <div>
-                                <strong>Job duties</strong> — Detailed list of responsibilities matching NOC code duties
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">10.</span>
-                            <div>
-                                <strong>Authorized signature</strong> — Signed by HR manager, owner, or authorized representative
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <h2>NOC Code Alignment: Why It Matters</h2>
-                <p>
-                    Your job offer's NOC code determines your eligibility, your SIRS score points, and which BC PNP streams you can apply through. <strong>The NOC code assigned to your position is not arbitrary</strong>—it must accurately reflect the actual duties of the job.
-                </p>
-                <p>
-                    Officers compare your job offer duties against the official NOC code descriptions on the Statistics Canada website. If the duties listed in your offer do not substantially match the NOC code duties, the application may be refused or the NOC code may be reassigned.
-                </p>
-
-                <h3>How Officers Verify NOC Codes</h3>
-                <ol>
-                    <li>
-                        <strong>Review job offer duties:</strong>
-                        <p class="text-sm text-slate-600 mt-1">Compare the duties listed in your offer letter to the official NOC description.</p>
-                    </li>
-                    <li>
-                        <strong>Assess title vs. duties:</strong>
-                        <p class="text-sm text-slate-600 mt-1">Job titles can be misleading. "Manager" titles without management duties may be reclassified.</p>
-                    </li>
-                    <li>
-                        <strong>Contact employer:</strong>
-                        <p class="text-sm text-slate-600 mt-1">Officers may call your employer to verify the actual job duties and confirm the position specifics.</p>
-                    </li>
-                    <li>
-                        <strong>Compare to past applications:</strong>
-                        <p class="text-sm text-slate-600 mt-1">If the employer has sponsored other workers, officers review whether NOC classifications are consistent.</p>
-                    </li>
-                </ol>
-
-                <h2>Wage Verification and Comparables</h2>
-                <p>
-                    Beyond meeting the median wage threshold, BC PNP officers also verify that your wage is <strong>comparable</strong> to what the employer pays other employees in similar roles. This prevents employers from paying immigrant workers less than domestic workers.
-                </p>
-                <p>
-                    If your employer has a "Senior Software Developer" who is a Canadian citizen earning $95,000/year, your offer for the same position at $70,000/year may raise red flags—even if $70,000 exceeds the median wage. Wage consistency within the organization matters.
-                </p>
-
-                <h2>Special Considerations by Stream</h2>
-
-                <h3>International Graduate Stream</h3>
-                <p>
-                    <strong>Closed in November 2024.</strong> The International Graduate stream offered international graduates of eligible BC post-secondary institutions <strong>reduced work experience requirements</strong>, but it no longer accepts registrations, and on April 23, 2026 B.C. said it will not launch new student streams. Graduates now use the Skilled Worker stream with a TEER 0 to 3 job offer meeting all standard requirements.
-                </p>
-
-                <h3>Tech Stream</h3>
-                <p>
-                    <strong>Dedicated tech draws have ended</strong> (the last was held December 3, 2024, as B.C. confirmed on April 23, 2026). Tech occupations remain eligible under the Skilled Worker stream, and tech candidates now compete in Innovate (High Economic Impact) rounds: on October 29, 2026 the thresholds were 131 points, or a wage of at least $49/hour and $99,000/year. The employer does not need to be a "tech company"—any BC employer can offer a qualifying tech position.
-                </p>
-
-                <h3>Entry Level and Semi-Skilled (ELSS)</h3>
-                <p>
-                    <strong>Closed in April 2026.</strong> ELSS allowed TEER 4 and 5 occupations in specific industries (tourism, hospitality, long-haul trucking, food processing) for applicants with <strong>9 months of BC work experience</strong> with the supporting employer. It no longer accepts registrations.
-                </p>
-
-                <h3>Health Authority Stream</h3>
-                <p>
-                    Healthcare workers require job offers from one of BC's regional health authorities (Fraser Health, Interior Health, etc.). These offers often have different verification processes since health authorities are public employers with standardized hiring procedures.
-                </p>
-
-                <h2>Top 5 Job Offer Mistakes to Avoid</h2>
-                <ol>
-                    <li>
-                        <strong>Wage below median threshold:</strong>
-                        <p class="text-sm text-slate-600 mt-1">Even $0.50/hour below median can disqualify your offer. Always verify current median wages before accepting an offer.</p>
-                    </li>
-                    <li>
-                        <strong>Contract or term position:</strong>
-                        <p class="text-sm text-slate-600 mt-1">Offers stating "1-year contract," "6-month probation only," or "seasonal" are not eligible. The offer must be permanent.</p>
-                    </li>
-                    <li>
-                        <strong>Incorrect NOC code:</strong>
-                        <p class="text-sm text-slate-600 mt-1">Employers often assign NOC codes incorrectly. Verify the code matches your actual duties before applying.</p>
-                    </li>
-                    <li>
-                        <strong>Missing required elements:</strong>
-                        <p class="text-sm text-slate-600 mt-1">Offer letters missing hours, wage details, or duties cause processing delays. Ensure all 10 required elements are included.</p>
-                    </li>
-                    <li>
-                        <strong>Employer not meeting employee threshold:</strong>
-                        <p class="text-sm text-slate-600 mt-1">Many small businesses or new startups do not meet the 3-5 employee minimum. Verify before investing in your application.</p>
-                    </li>
-                </ol>
-
-                <div class="bg-green-50 p-6 rounded-2xl border border-green-100 my-8 not-prose">
-                    <h4 class="font-bold text-green-900 text-lg mb-2">✓ Pre-Application Checklist</h4>
-                    <ul class="text-green-800 text-sm leading-relaxed space-y-2">
-                        <li>☐ Offer states "permanent" or "indeterminate" position</li>
-                        <li>☐ Minimum 30 hours per week confirmed</li>
-                        <li>☐ Wage meets or exceeds median for NOC code</li>
-                        <li>☐ Employer is BC-registered with physical BC location</li>
-                        <li>☐ Employer meets minimum employee threshold</li>
-                        <li>☐ NOC code duties match your actual job duties</li>
-                        <li>☐ All 10 required elements in offer letter</li>
-                    </ul>
-                </div>
-
-                <h2>Frequently Asked Questions</h2>
-
-                <h3>Can I work for a relative's company?</h3>
-                <p>
-                    Yes, but expect <strong>additional scrutiny</strong>. Applications involving family-owned businesses face extra verification to ensure the job is genuine and not created solely for immigration purposes. The company must demonstrate it existed before your involvement and has legitimate business operations.
-                </p>
-
-                <h3>What if my employer is willing but unsure about the process?</h3>
-                <p>
-                    Direct your employer to the <a href="/articles/bc-pnp-employer-guide">BC PNP Employer Guide</a>. The employer's responsibilities are straightforward: provide accurate documentation and respond to verification requests. Many employers are unfamiliar with immigration processes but find BC PNP requirements reasonable.
-                </p>
-
-                <h3>Can I change employers after receiving BC PNP nomination?</h3>
-                <p>
-                    <strong>Generally, no.</strong> Your nomination is tied to the job offer that supported your application. Changing employers before obtaining permanent residence may invalidate your nomination. However, if circumstances force a job change (employer closure, layoff), you should contact BC PNP immediately to discuss options.
-                </p>
-
-                <h3>What if I am currently working under a different NOC code?</h3>
-                <p>
-                    You can apply with a new job offer for a different position, even if your current job is under a different NOC code. Your <strong>past work experience</strong> must be directly related to the new job offer's NOC code. You cannot use your current job experience to qualify for a completely unrelated position.
-                </p>
-
-                <h3>Does my employer need to pay for immigration fees?</h3>
-                <p>
-                    <strong>No.</strong> BC PNP employer registration is free. Application fees are paid by the applicant, not the employer. However, some employers voluntarily cover fees as part of their recruitment package—this is a personal arrangement between you and your employer.
-                </p>
-
-            </div>
-
-            <!-- CTA -->
-            <div class="bg-gradient-to-br from-blue-600 to-blue-700 p-8 rounded-2xl text-center text-white">
-                <h2 class="text-2xl font-bold mb-3">Calculate Your BC PNP Score</h2>
-                <p class="text-blue-100 mb-6">
-                    See how your job offer, experience, and qualifications impact your SIRS score.
-                </p>
-                <a
-                    href="/bc-pnp-calculator"
-                    class="inline-block bg-white text-blue-700 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors"
-                >
-                    Use the Calculator →
-                </a>
-            </div>
-
-            <!-- Related Guides -->
-            <div class="bg-white rounded-2xl p-8 border border-slate-100">
-                <h3 class="font-bold text-slate-900 mb-4">Related Guides</h3>
-                <ul class="space-y-3">
-                    <li>
-                        <a href="/articles/bc-pnp-work-experience-requirements-2026" class="text-blue-600 hover:text-blue-700 font-medium">
-                            BC PNP Work Experience Requirements 2026 →
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/articles/bc-pnp-employer-guide" class="text-blue-600 hover:text-blue-700 font-medium">
-                            BC PNP Employer Guide: Supporting Your Candidate →
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/articles/bc-pnp-skilled-worker-stream" class="text-blue-600 hover:text-blue-700 font-medium">
-                            BC PNP Skilled Worker Stream: Complete Guide →
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/articles/bc-pnp-documents-checklist" class="text-blue-600 hover:text-blue-700 font-medium">
-                            BC PNP Document Checklist 2026 →
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/articles/bc-pnp-common-mistakes" class="text-blue-600 hover:text-blue-700 font-medium">
-                            Common BC PNP Application Mistakes →
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <h2 class={h2}>Frequently asked questions</h2>
+    <div class="space-y-4">
+      {faqs.map((f) => (
+        <div class="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 class="font-bold text-slate-900 mb-2">{f.q}</h3>
+          <p class="text-slate-700 leading-relaxed">{f.a}</p>
         </div>
-    </article>
+      ))}
+    </div>
+
+    <p class="text-xs text-slate-500 mt-8">
+      Sources: <a href={GUIDE} target="_blank" rel="noopener noreferrer" class={src}>Skills Immigration Program Guide</a> sections 1.7, 3.5–3.12, 6.4–6.12 and Appendix A (effective June 10, 2026); draw data from <a href="https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply" target="_blank" rel="noopener noreferrer" class={src}>WelcomeBC invitations to apply</a>. General information, not legal advice.
+    </p>
+  </article>
 </ArticleLayout>

@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import { lastmodFor } from './scripts/seo/lastmod.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,11 +13,8 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap({
-      // Build-time timestamp used as lastmod for every page. A static site's
-      // representation of each page is regenerated on every deploy, so the
-      // build date is an honest "last modified" signal (the only sitemap hint
-      // Google actually uses) and never goes stale like a hardcoded date.
-      lastmod: new Date(),
+      // lastmod is set per page in serialize() from each page's real
+      // dateModified (see scripts/seo/lastmod.mjs), not the build time.
       serialize(item) {
         // Ensure sitemap URLs never have trailing slashes (except bare root /)
         if (item.url !== 'https://bcpnpcalculator.ca/') {
@@ -24,6 +22,10 @@ export default defineConfig({
         }
 
         const path = new URL(item.url).pathname;
+
+        const lastmod = lastmodFor(path);
+        if (lastmod) item.lastmod = `${lastmod}T00:00:00.000Z`;
+        else delete item.lastmod;
 
         // Pattern-based priority + changefreq (mirrors the previous curated
         // sitemap, but auto-generated so coverage can never drift out of sync).

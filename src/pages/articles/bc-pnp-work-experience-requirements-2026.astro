@@ -1,552 +1,183 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { calculateTotalPoints } from "../../utils/calculatePoints";
+import { BLANK } from "../../data/example-profiles";
+import { latestFor } from "../../utils/draws";
+import { LINKS } from "../../data/site-links";
 
-const title = "BC PNP Work Experience Requirements 2026: Complete Documentation & Verification Guide";
-const description = "Everything you need to know about BC PNP work experience requirements. Learn what counts as eligible experience, how to document your work history, calculate part-time hours, verify international experience, and avoid the top rejection reasons in 2026.";
+const title = "BC PNP Work Experience Requirements 2026: 2 Years, Which Jobs Count";
+const description =
+  "Skilled Worker needs 2 years of full-time skilled (TEER 0–3) work from the last 10 years. Directly related experience then earns up to 40 SIRS points.";
 
-const jsonLd = [
-    {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: title,
-        description: description,
-        author: {
-            '@type': 'Organization',
-            name: 'BC PNP Calculator'
-        },
-        datePublished: '2026-02-05',
-        dateModified: '2026-11-11'
-    },
-    {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: [
-            {
-                '@type': 'Question',
-                name: 'Does self-employment count for BC PNP work experience?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Self-employment can count for BC PNP work experience, but it requires extensive documentation including contracts, invoices, tax returns, and proof of business registration. The experience must still meet the "directly related" requirement to your BC job offer.'
-                }
-            },
-            {
-                '@type': 'Question',
-                name: 'Can I use work experience from outside Canada for BC PNP?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Yes, international work experience counts for BC PNP. You will need official employer reference letters on company letterhead, translated and notarized if not in English or French, along with supporting documents like pay stubs and tax records.'
-                }
-            },
-            {
-                '@type': 'Question',
-                name: 'How do I calculate part-time work for BC PNP experience requirements?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Part-time work is converted to full-time equivalent hours. Divide your weekly part-time hours by 30 (BC PNP full-time standard), then multiply by months worked. For example, 24 months at 20 hours/week equals approximately 16 months of full-time experience.'
-                }
-            },
-            {
-                '@type': 'Question',
-                name: 'What is the most common reason for BC PNP work experience rejection?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'The #1 rejection reason is claiming experience that is not "directly related" to the BC job offer. Officers verify that your past work duties align with the NOC code of your job offer. Mismatched duties, even with matching job titles, lead to refusals.'
-                }
-            }
-        ]
-    }
+const GUIDE = "https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf";
+const SKILLS = "https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration";
+
+// Worked example: a cook (NOC 63200, TEER 3) scored by the site's calculator.
+// The wage is an example offer, not wage data.
+const cookState = {
+  ...BLANK,
+  experience: "2" as const,
+  hasCanadianExp: true,
+  hasCurrentBCJob: true,
+  education: "trades_cert" as const,
+  hasEnglishTest: true,
+  englishClb: 5 as const,
+  hourlyWage: 22,
+  area: "area3" as const,
+};
+const cook = calculateTotalPoints(cookState);
+const cook5 = calculateTotalPoints({ ...cookState, experience: "5+" });
+const cookExp = cook.breakdown.experience + cook.breakdown.canadianExp + cook.breakdown.currentBCJob;
+const cook5Exp = cook5.breakdown.experience + cook5.breakdown.canadianExp + cook5.breakdown.currentBCJob;
+const hei = latestFor("hei-points");
+
+const faqs = [
+  {
+    q: "Does work experience outside Canada count for BC PNP?",
+    a: "Yes. The two years of skilled experience the Skilled Worker stream requires can be from Canada or abroad, as long as it was gained in the last 10 years. Foreign experience also earns directly related experience points, but only experience in Canada earns the extra 10 points for one year in Canada.",
+  },
+  {
+    q: "Do my 2 years have to be in the same job as my B.C. job offer?",
+    a: "No. The 2-year minimum can be in any skilled occupation (NOC TEER 0, 1, 2 or 3). Only experience in the same NOC as your job offer, or a closely related one at the same or a higher TEER, earns directly related experience points.",
+  },
+  {
+    q: "Does unpaid or volunteer work count?",
+    a: "No. The BC PNP only counts work for which you received wages. The one exception is research or coursework during a doctoral degree from a Canadian public university, or a doctorate held by someone with a university professor offer at a B.C. public university.",
+  },
+  {
+    q: "Does parental or medical leave count toward work experience?",
+    a: "No. Time on a leave of absence or extended leave is not counted, even if you stayed employed. Reasonable vacation periods are not deducted.",
+  },
 ];
 
-const hreflangs = [
-    { lang: 'en', href: 'https://bcpnpcalculator.ca/articles/bc-pnp-work-experience-requirements-2026' },
-    { lang: 'x-default', href: 'https://bcpnpcalculator.ca/articles/bc-pnp-work-experience-requirements-2026' },
-];
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+
+const h2 = "text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-12 mb-4";
+const p = "text-slate-700 text-base sm:text-lg leading-relaxed mb-4";
+const a = "text-red-600 font-semibold underline underline-offset-2 hover:text-red-700";
+const src = "underline underline-offset-2 hover:text-red-600";
 ---
 
-<ArticleLayout slug="bc-pnp-work-experience-requirements-2026" datePublished="2026-02-09" dateModified="2026-11-11" keywords="BC PNP work experience, work experience requirements BC PNP 2026" title={title} description={description} jsonLd={jsonLd} hreflangs={hreflangs} canonical="https://bcpnpcalculator.ca/articles/bc-pnp-work-experience-requirements-2026">
-    <article class="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
-        <div class="max-w-3xl mx-auto space-y-8">
-            <header class="space-y-4 text-center">
-                <div class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-bold mb-4">
-                    Updated November 2026
-                </div>
-                <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-                    BC PNP <span class="text-blue-600">Work Experience</span> Requirements
-                </h1>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                    The complete guide to proving your work experience for BC PNP. Avoid the #1 rejection reason with proper documentation.
-                </p>
-            </header>
+<ArticleLayout
+  slug="bc-pnp-work-experience-requirements-2026"
+  datePublished="2026-02-09"
+  dateModified="2026-11-26"
+  articleSection="Eligibility"
+  breadcrumbLabel="Work Experience Requirements"
+  keywords="BC PNP work experience requirements, how much experience required for BC PNP, directly related work experience BC PNP, lowest work experience PNP 2026"
+  title={title}
+  description={description}
+  jsonLd={jsonLd}
+  related={["jobOffer", "caregivers", "tech", "ece"]}
+  canonical="https://bcpnpcalculator.ca/articles/bc-pnp-work-experience-requirements-2026"
+>
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <header class="mb-6">
+      <p class="text-sm font-bold text-red-600 uppercase tracking-widest mb-3">Eligibility · Updated November 26, 2026</p>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        How much work experience do you need for BC PNP?
+      </h1>
+    </header>
 
-            <div class="grid sm:grid-cols-3 gap-4">
-                <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
-                    <div class="text-3xl font-black text-blue-600 mb-2">2 Years</div>
-                    <div class="text-sm text-slate-600 font-medium">Skilled Worker minimum</div>
-                </div>
-                <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
-                    <div class="text-3xl font-black text-green-600 mb-2">30 hrs/wk</div>
-                    <div class="text-sm text-slate-600 font-medium">Full-time definition</div>
-                </div>
-                <div class="bg-white border border-slate-200 p-6 rounded-2xl text-center">
-                    <div class="text-3xl font-black text-purple-600 mb-2">Any Country</div>
-                    <div class="text-sm text-slate-600 font-medium">International experience accepted</div>
-                </div>
-            </div>
+    <p class={p}>
+      You need at least 2 years of full-time (or full-time equivalent) work experience in a skilled NOC TEER 0, 1, 2 or 3 occupation, gained in Canada or abroad within the last 10 years, to qualify for the BC PNP Skilled Worker stream. That minimum gets you in the door; your score then depends on how much of your experience is directly related to your B.C. job offer, which is worth up to 40 of the 200 points in our <a href={LINKS.calculator.href} class={a}>{LINKS.calculator.short}</a>.
+    </p>
 
-            <div class="prose prose-lg prose-slate max-w-none bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-sm">
-                
-                <h2>Why Work Experience Requirements Matter</h2>
-                <p>
-                    Work experience is the foundation of most <strong>BC PNP applications</strong>. Whether you are applying through the Skilled Worker stream, with or without the Express Entry BC option, your work history directly impacts your eligibility and your SIRS score. In fact, <strong>work experience issues</strong> are the single most common reason for BC PNP application refusals in 2026.
-                </p>
-                <p>
-                    This guide breaks down everything you need to know about <strong>BC PNP work experience requirements</strong>—from minimum thresholds to documentation standards, from part-time calculations to self-employment rules. Get this right, and you significantly increase your chances of receiving a provincial nomination.
-                </p>
+    <aside class="rounded-2xl border border-red-100 bg-red-50/60 p-5 sm:p-6 my-8" aria-label="Key facts">
+      <p class="font-black text-slate-900 mb-3">Key facts</p>
+      <ul class="space-y-2 text-slate-700 text-sm sm:text-base list-disc pl-5">
+        <li><strong>Skilled Worker:</strong> 2 years of full-time or equivalent skilled (TEER 0–3) experience from the last 10 years (Program Guide 4.1(c)).</li>
+        <li><strong>Health Authority:</strong> the experience your B.C. health authority employer requires for the job (4.2(f)).</li>
+        <li><strong>Points:</strong> directly related experience earns up to 20 points, plus 10 for a year in Canada and 10 for working for your B.C. employer now (8.1).</li>
+        <li><strong>Part-time</strong> work counts at 50% for points; full-time means at least 30 hours a week.</li>
+        <li><strong>Not counted:</strong> unpaid work and work done on a study permit (paid co-op terms can qualify).</li>
+      </ul>
+    </aside>
 
-                <div class="bg-red-50 p-6 rounded-2xl border border-red-100 my-8 not-prose">
-                    <h3 class="font-bold text-red-900 text-lg mb-2">⚠️ The #1 Rejection Reason</h3>
-                    <p class="text-red-800 text-sm leading-relaxed">
-                        <strong>"Not directly related"</strong> experience is the most common refusal reason. Your past work duties must match the NOC code duties of your BC job offer. Same job titles with different duties = rejection.
-                    </p>
-                </div>
+    <h2 class={h2}>How much experience is required for BC PNP?</h2>
+    <p class={p}>
+      It depends on the stream. The <a href={SKILLS} target="_blank" rel="noopener noreferrer" class={src}>WelcomeBC Skills Immigration page</a> lists two streams. The Skilled Worker stream requires a minimum of two years of full-time or full-time equivalent experience in any skilled occupation. It does not have to be the same occupation as your job offer. The Health Authority stream has no fixed number: you must meet the education, training and experience your public health authority employer requires.
+    </p>
+    <p class={p}>
+      This minimum is separate from the directly related experience scored at registration: 2 years in another skilled job meets the rule but can score 0 experience points.
+    </p>
 
-                <h2>Minimum Work Experience by Stream</h2>
-                <p>
-                    Different <strong>BC PNP streams</strong> have different work experience minimums. Understanding which stream you qualify for starts with knowing how much experience you need.
-                </p>
+    <h2 class={h2}>How many points does BC PNP work experience give?</h2>
+    <div class="overflow-x-auto rounded-2xl border border-slate-200 my-6">
+      <table class="w-full text-sm sm:text-base text-left">
+        <caption class="sr-only">BC PNP points for directly related work experience</caption>
+        <thead class="bg-slate-100 text-slate-900">
+          <tr><th scope="col" class="px-4 py-3 font-bold">Directly related experience in the job offer's occupation</th><th scope="col" class="px-4 py-3 font-bold text-right">Points</th></tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 bg-white">
+          <tr><td class="px-4 py-2.5">5 or more years</td><td class="px-4 py-2.5 text-right font-bold">20</td></tr>
+          <tr><td class="px-4 py-2.5">At least 4 but less than 5 years</td><td class="px-4 py-2.5 text-right font-bold">16</td></tr>
+          <tr><td class="px-4 py-2.5">At least 3 but less than 4 years</td><td class="px-4 py-2.5 text-right font-bold">12</td></tr>
+          <tr><td class="px-4 py-2.5">At least 2 but less than 3 years</td><td class="px-4 py-2.5 text-right font-bold">8</td></tr>
+          <tr><td class="px-4 py-2.5">At least 1 but less than 2 years</td><td class="px-4 py-2.5 text-right font-bold">4</td></tr>
+          <tr><td class="px-4 py-2.5">Less than 1 year</td><td class="px-4 py-2.5 text-right font-bold">1</td></tr>
+          <tr><td class="px-4 py-2.5">No experience</td><td class="px-4 py-2.5 text-right font-bold">0</td></tr>
+          <tr class="bg-red-50/60"><td class="px-4 py-2.5">Additional: at least 1 year of directly related experience in Canada</td><td class="px-4 py-2.5 text-right font-bold">10</td></tr>
+          <tr class="bg-red-50/60"><td class="px-4 py-2.5">Additional: currently working full-time in B.C. for the supporting employer, same occupation</td><td class="px-4 py-2.5 text-right font-bold">10</td></tr>
+          <tr class="bg-slate-900 text-white"><th scope="row" class="px-4 py-2.5 text-left font-black">Maximum</th><td class="px-4 py-2.5 text-right font-black">40</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-slate-500 -mt-3 mb-6">Source: section 8.1, <a href={GUIDE} target="_blank" rel="noopener noreferrer" class={src}>BC PNP Skills Immigration Program Guide</a> (effective June 10, 2026).</p>
 
-                <div class="not-prose overflow-x-auto my-6">
-                    <table class="min-w-full text-left text-sm">
-                        <thead class="bg-gray-100 border-b border-gray-200">
-                            <tr>
-                                <th class="px-4 py-3 font-bold text-slate-900">Stream</th>
-                                <th class="px-4 py-3 font-bold text-slate-900">Minimum Experience</th>
-                                <th class="px-4 py-3 font-bold text-slate-900">Special Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr>
-                                <td class="px-4 py-3 font-medium">Skilled Worker</td>
-                                <td class="px-4 py-3">2 years full-time</td>
-                                <td class="px-4 py-3 text-slate-600">In any skilled occupation (NOC TEER 0-3) within the last 10 years, in Canada or abroad; directly related experience earns more points</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-medium">International Graduate</td>
-                                <td class="px-4 py-3">Stream closed</td>
-                                <td class="px-4 py-3 text-slate-600">Closed November 2024; it required no work experience</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-medium">Entry Level & Semi-Skilled</td>
-                                <td class="px-4 py-3">Stream closed</td>
-                                <td class="px-4 py-3 text-slate-600">Closure announced April 23, 2026; it required 9 months with the supporting employer</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-medium">Health Authority Stream</td>
-                                <td class="px-4 py-3">Varies by role</td>
-                                <td class="px-4 py-3 text-slate-600">Health authority confirms requirements</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-medium">Express Entry BC - Skilled</td>
-                                <td class="px-4 py-3">2 years full-time</td>
-                                <td class="px-4 py-3 text-slate-600">Same as regular Skilled Worker</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+    <h2 class={h2}>What counts as directly related work experience?</h2>
+    <p class={p}>
+      Paid work classified under the same NOC code as your B.C. job offer. Experience in a related occupation at the same or a higher TEER can also count if you can show how it is directly related; for a TEER 0 offer, related TEER 1 experience may be considered. It must be from the last 10 years.
+    </p>
 
-                <h2>What Counts as "Directly Related" Experience?</h2>
-                <p>
-                    This is where most applicants get confused—and where most applications fail. <strong>BC PNP work experience</strong> must be "directly related" to the job you have been offered in British Columbia. But what does "directly related" actually mean?
-                </p>
+    <h2 class={h2}>Does part-time work count?</h2>
+    <p class={p}>
+      Yes, at half value. For directly related experience points, part-time work is credited at 50% of its duration. For the 10 extra points for experience in Canada, you need 12 months if you worked 30 or more regular hours a week, or 24 months if you worked fewer. Full-time means a minimum of 30 regular hours a week.
+    </p>
 
-                <h3>The NOC Code Connection</h3>
-                <p>
-                    "Directly related" means your past job duties align with the duties listed under the same <strong>NOC (National Occupation Classification) code</strong> as your BC job offer. Officers do not care about job titles—they compare duties.
-                </p>
+    <h2 class={h2}>Does co-op or student work count?</h2>
+    <p class={p}>
+      Work done on a study permit is not accepted, for the minimum or for points. Paid co-op terms are the exception, if you finished your program, the co-op was full-time (30+ hours a week) and it was in a skilled occupation. Unpaid doctoral research can count only for graduates of a Canadian public university or doctorate holders with a professor offer at a B.C. public university (section 3.8).
+    </p>
 
-                <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 my-8 not-prose">
-                    <h4 class="font-bold text-blue-900 text-lg mb-3">Real Example</h4>
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div class="bg-white p-4 rounded-lg">
-                            <div class="font-bold text-green-700 text-sm mb-2">✓ Acceptable</div>
-                            <p class="text-sm text-slate-700">
-                                <strong>Past Job:</strong> "Application Developer" (NOC 21232)<br/>
-                                <strong>BC Job Offer:</strong> "Software Engineer" (NOC 21232)<br/>
-                                <em class="text-slate-500">Same NOC, duties match = accepted</em>
-                            </p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg">
-                            <div class="font-bold text-red-700 text-sm mb-2">✗ Not Acceptable</div>
-                            <p class="text-sm text-slate-700">
-                                <strong>Past Job:</strong> "IT Support Technician" (NOC 22220)<br/>
-                                <strong>BC Job Offer:</strong> "Software Developer" (NOC 21232)<br/>
-                                <em class="text-slate-500">Different NOC, different duties = rejected</em>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <h2 class={h2}>What is the lowest work experience for PNP in 2026?</h2>
+    <p class={p}>
+      Within the BC PNP, 2 years for the Skilled Worker stream. The Temporary Rural/Remote Health Support Initiative asked for only nine consecutive months with the same health authority, but it covered three cleaning and security occupations and its registration closed on October 7, 2026. The Entry Level and Semi-Skilled stream is no longer offered: the June 10, 2026 Program Guide lists only the Skilled Worker and Health Authority streams.
+    </p>
 
-                <h3>When Different NOC Codes Still Work</h3>
-                <p>
-                    There are exceptions. If your past NOC is within the same "job family" and the core duties significantly overlap, your experience may still count. For example:
-                </p>
-                <ul>
-                    <li><strong>Senior role to junior role:</strong> 5 years as "Marketing Manager" counts for a "Marketing Specialist" offer</li>
-                    <li><strong>Closely related codes:</strong> "Financial Analyst" experience may count for "Accountant" if duties overlap</li>
-                    <li><strong>Promotion within field:</strong> "Junior Accountant" to "Senior Accountant" is acceptable progression</li>
-                </ul>
-                <p>
-                    However, you cannot claim that "Sales Representative" experience prepares you for an "Operations Manager" position. Even if the titles sound related, the NOC duties are fundamentally different.
-                </p>
+    <h2 class={h2}>How many points does a cook with 2 years in B.C. get?</h2>
+    <p class={p}>
+      Take a cook (NOC 63200, TEER 3) in Kamloops with 2 years of experience, all of it in B.C. with the current employer, a post-secondary certificate from abroad, CLB 5 and an example offer of $22.00 an hour. Our calculator gives {cookExp} of 40 work experience points and a total SIRS score of <strong>{cook.total}</strong>. With 5 or more years in the same job, experience rises to {cook5Exp} and the total to {cook5.total}.
+    </p>
+    <p class={p}>
+      Cooks are not on a Care or Build priority list, so they compete in High Economic Impact draws, whose latest points minimum was {hei.score} on {hei.date}. Experience alone rarely closes that gap; wage and location carry 80 points (see the <a href={LINKS.draws.href} class={a}>{LINKS.draws.short}</a>). Our guide to <a href={LINKS.jobOffer.href} class={a}>{LINKS.jobOffer.short}</a> covers the offer side.
+    </p>
 
-                <h2>Documentation Requirements</h2>
-                <p>
-                    Proving your <strong>work experience for BC PNP</strong> requires official documentation that officers can verify. Incomplete or inconsistent documentation is the second most common rejection reason after "not directly related" experience.
-                </p>
+    <h2 class={h2}>Common mistakes</h2>
+    <ul class="list-disc pl-6 space-y-2 text-slate-700 text-base sm:text-lg mb-4">
+      <li>Counting experience older than 10 years, or work done on a study permit.</li>
+      <li>Claiming full points for part-time work instead of 50%.</li>
+      <li>Matching job titles instead of NOC duties: points need the same NOC as the offer.</li>
+      <li>Claiming the "currently working" 10 points when the offer is a future promotion.</li>
+      <li>Including parental or medical leave in your total.</li>
+    </ul>
 
-                <h3>Required Documents for Each Job</h3>
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 mb-6 not-prose">
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">1.</span>
-                            <div>
-                                <strong>Official Reference Letter</strong> — On company letterhead, signed by HR or supervisor
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">2.</span>
-                            <div>
-                                <strong>Employment Contract</strong> — Showing job title, start date, salary, and duties
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">3.</span>
-                            <div>
-                                <strong>Pay Stubs or Bank Statements</strong> — To verify employment period and salary
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-600 font-bold">4.</span>
-                            <div>
-                                <strong>Tax Records</strong> — Income tax returns showing employer and income
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <h3>The Reference Letter: What Must Be Included</h3>
-                <p>
-                    The employer reference letter is your most critical document. Every letter must include:
-                </p>
-                <ul>
-                    <li><strong>Company name and address</strong> on official letterhead</li>
-                    <li><strong>Your full name</strong> as it appears on your passport</li>
-                    <li><strong>Job title(s)</strong> held during employment</li>
-                    <li><strong>Start and end dates</strong> (or "currently employed" if applicable)</li>
-                    <li><strong>Weekly hours worked</strong> — This is critical for calculating full-time equivalency</li>
-                    <li><strong>Salary/wage</strong> during employment</li>
-                    <li><strong>Detailed list of duties</strong> — At least 5-7 specific responsibilities</li>
-                    <li><strong>Signature</strong> of HR manager or direct supervisor with contact information</li>
-                </ul>
-
-                <div class="bg-amber-50 p-6 rounded-2xl border border-amber-100 my-8 not-prose">
-                    <h4 class="font-bold text-amber-900 text-lg mb-2">💡 Pro Tip: Duties Over Titles</h4>
-                    <p class="text-amber-800 text-sm leading-relaxed">
-                        The duties section is the most important part of your reference letter. Write duties that closely match the NOC code duties for your BC job offer. If your letter says "managed team communications" but the NOC lists "coordinated project timelines," officers may question the connection.
-                    </p>
-                </div>
-
-                <h2>Calculating Part-Time Work Experience</h2>
-                <p>
-                    Part-time work <strong>does count</strong> toward BC PNP experience requirements, but it must be converted to full-time equivalent hours. BC PNP defines full-time as 30 hours per week or more.
-                </p>
-
-                <h3>The Conversion Formula</h3>
-                <p>
-                    To calculate your part-time experience in full-time equivalent months:
-                </p>
-                <div class="bg-slate-900 text-white p-6 rounded-xl my-6 font-mono text-center not-prose">
-                    (Your weekly hours ÷ 30) × months worked = Full-time equivalent months
-                </div>
-
-                <h3>Part-Time Calculation Examples</h3>
-                <div class="not-prose overflow-x-auto my-6">
-                    <table class="min-w-full text-left text-sm">
-                        <thead class="bg-gray-100 border-b border-gray-200">
-                            <tr>
-                                <th class="px-4 py-3 font-bold text-slate-900">Scenario</th>
-                                <th class="px-4 py-3 font-bold text-slate-900">Calculation</th>
-                                <th class="px-4 py-3 font-bold text-slate-900">Result</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr>
-                                <td class="px-4 py-3">20 hrs/wk for 24 months</td>
-                                <td class="px-4 py-3">(20 ÷ 30) × 24</td>
-                                <td class="px-4 py-3 font-bold">16 months full-time</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3">25 hrs/wk for 18 months</td>
-                                <td class="px-4 py-3">(25 ÷ 30) × 18</td>
-                                <td class="px-4 py-3 font-bold">15 months full-time</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3">15 hrs/wk for 36 months</td>
-                                <td class="px-4 py-3">(15 ÷ 30) × 36</td>
-                                <td class="px-4 py-3 font-bold">18 months full-time</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p>
-                    You can combine multiple part-time positions, or part-time and full-time positions, to reach the 24-month (2-year) requirement. However, each position must still be documented with its own reference letter.
-                </p>
-
-                <h2>International Work Experience</h2>
-                <p>
-                    Good news: <strong>BC PNP accepts work experience from any country</strong>. You do not need Canadian experience to qualify for the Skilled Worker or Express Entry BC streams. However, documenting international experience requires extra care.
-                </p>
-
-                <h3>Additional Requirements for International Experience</h3>
-                <ul>
-                    <li><strong>Translation:</strong> All documents not in English or French must be professionally translated by a certified translator</li>
-                    <li><strong>Notarization:</strong> Translations should include a notarized affidavit from the translator</li>
-                    <li><strong>Verification:</strong> Officers may contact your international employers directly—ensure contact information is accurate and current</li>
-                    <li><strong>Currency conversion:</strong> Salary should be converted to CAD at the historical exchange rate for context</li>
-                </ul>
-
-                <div class="bg-green-50 p-6 rounded-2xl border border-green-100 my-8 not-prose">
-                    <h4 class="font-bold text-green-900 text-lg mb-2">✓ Countries with Strong Verification</h4>
-                    <p class="text-green-800 text-sm leading-relaxed">
-                        Experience from countries with strong employment documentation systems (UK, Australia, USA, EU countries, India, Philippines) is generally easier to verify. Officers are familiar with these formats. Always provide extra supporting documents for countries with less formal employment record systems.
-                    </p>
-                </div>
-
-                <h2>Self-Employment Experience</h2>
-                <p>
-                    <strong>Self-employment can count</strong> toward BC PNP work experience—but it is harder to document. If you ran your own business or worked as a freelancer, you need extensive proof that the work was "directly related" to your BC job offer.
-                </p>
-
-                <h3>Required Self-Employment Documents</h3>
-                <ul>
-                    <li><strong>Business registration:</strong> Official proof your business was legally registered</li>
-                    <li><strong>Contracts and invoices:</strong> Client contracts showing the nature of work performed</li>
-                    <li><strong>Tax returns:</strong> Business tax filings showing declared income from self-employment</li>
-                    <li><strong>Bank statements:</strong> Business account showing client payments</li>
-                    <li><strong>Portfolio:</strong> Samples of work completed (for creative/technical roles)</li>
-                    <li><strong>Client reference letters:</strong> Letters from major clients confirming the services you provided</li>
-                </ul>
-                <p>
-                    The key challenge with self-employment is proving that your duties matched the NOC code requirements. Without a traditional employer to write a reference letter, you need to create a detailed self-declaration describing your duties—supported by contracts and client letters that confirm those duties.
-                </p>
-
-                <h2>Gaps in Employment History</h2>
-                <p>
-                    Employment gaps are not automatic disqualifiers, but you <strong>must explain every gap</strong> longer than 3 months. Unexplained gaps raise red flags and may lead to additional scrutiny or requests for more documentation.
-                </p>
-
-                <h3>Acceptable Gap Explanations</h3>
-                <ul>
-                    <li><strong>Education:</strong> Pursuing a degree or certification (provide enrollment proof)</li>
-                    <li><strong>Family responsibilities:</strong> Parental leave, caregiving (provide birth certificates, medical records if applicable)</li>
-                    <li><strong>Medical leave:</strong> Recovery from illness or injury (provide medical documentation)</li>
-                    <li><strong>Job searching:</strong> Between positions after layoff (be honest, this is common)</li>
-                    <li><strong>Travel:</strong> Extended personal travel (provide passport stamps, travel records)</li>
-                </ul>
-
-                <h2>How Work Experience Affects Your SIRS Score</h2>
-                <p>
-                    Work experience directly impacts your <strong>BC PNP SIRS score</strong>. The more years of directly related experience you have, the more points you earn.
-                </p>
-
-                <div class="not-prose overflow-x-auto my-6">
-                    <table class="min-w-full text-left text-sm">
-                        <thead class="bg-gray-100 border-b border-gray-200">
-                            <tr>
-                                <th class="px-4 py-3 font-bold text-slate-900">Years of Experience</th>
-                                <th class="px-4 py-3 font-bold text-slate-900">Approximate Points</th>
-                                <th class="px-4 py-3 font-bold text-slate-900">Strategic Note</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr>
-                                <td class="px-4 py-3">2 years (minimum)</td>
-                                <td class="px-4 py-3">8 points</td>
-                                <td class="px-4 py-3 text-slate-600">Meets minimum, lower competitiveness</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3">3-4 years</td>
-                                <td class="px-4 py-3">12-16 points</td>
-                                <td class="px-4 py-3 text-slate-600">Average applicant range</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3">5+ years</td>
-                                <td class="px-4 py-3">20 points</td>
-                                <td class="px-4 py-3 text-slate-600">Maximum for directly related experience</td>
-                            </tr>
-                            <tr class="bg-green-50">
-                                <td class="px-4 py-3">Bonuses</td>
-                                <td class="px-4 py-3 font-bold">+10 and +10</td>
-                                <td class="px-4 py-3 text-green-700">At least 1 year of Canadian experience, and currently working full-time for the supporting employer (category maximum 40)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p>
-                    <strong>Important:</strong> Only "directly related" experience counts for these points. Having 15 years of work experience in unrelated fields will not increase your score—you need experience that matches your BC job offer NOC code.
-                </p>
-
-                <h2>Top 5 Work Experience Mistakes to Avoid</h2>
-                <ol>
-                    <li>
-                        <strong>Claiming unrelated experience as "transferable skills":</strong>
-                        <p class="text-sm text-slate-600 mt-1">Officers do not accept "soft skills" arguments. The duties must match the NOC code.</p>
-                    </li>
-                    <li>
-                        <strong>Missing weekly hours on reference letters:</strong>
-                        <p class="text-sm text-slate-600 mt-1">Without hours, officers cannot calculate full-time equivalency. Applications get delayed or rejected.</p>
-                    </li>
-                    <li>
-                        <strong>Inconsistent dates across documents:</strong>
-                        <p class="text-sm text-slate-600 mt-1">If your reference letter says 2019-2021 but your tax returns show income only in 2020, you have a problem.</p>
-                    </li>
-                    <li>
-                        <strong>Vague duty descriptions:</strong>
-                        <p class="text-sm text-slate-600 mt-1">"Assisted with various tasks" is not acceptable. Be specific: "Designed and implemented database systems using SQL and Python."</p>
-                    </li>
-                    <li>
-                        <strong>Unable to verify employer:</strong>
-                        <p class="text-sm text-slate-600 mt-1">If the company closed or contact information is outdated, officers may refuse your experience. Provide alternative verification methods proactively.</p>
-                    </li>
-                </ol>
-
-                <h2>Frequently Asked Questions</h2>
-
-                <h3>Does volunteer work count for BC PNP experience?</h3>
-                <p>
-                    Generally, <strong>no</strong>. Volunteer work is not considered "work experience" for BC PNP purposes because it is unpaid. The program requires paid employment to demonstrate professional-level work history.
-                </p>
-
-                <h3>Can I count co-op or internship experience?</h3>
-                <p>
-                    <strong>Paid</strong> co-op and internship positions can count toward your experience if they meet all other requirements: proper documentation, directly related duties, and verifiable hours. Unpaid internships typically do not count.
-                </p>
-
-                <h3>What if my former employer refuses to provide a reference letter?</h3>
-                <p>
-                    You can provide alternative documentation: employment contracts, pay stubs, tax records, and a statutory declaration explaining why the reference letter is unavailable. Include as much supporting evidence as possible.
-                </p>
-
-                <h3>Does experience need to be continuous?</h3>
-                <p>
-                    <strong>No.</strong> You can combine non-continuous work periods. For example, 12 months of work in 2019 and 12 months in 2022 equals 24 months total. Gaps between positions are acceptable if explained.
-                </p>
-
-                <h3>Is there a time limit on how old my experience can be?</h3>
-                <p>
-                    For the Skilled Worker stream, the two years of skilled experience must have been gained within the past <strong>10 years</strong>, according to the current Skills Immigration Program Guide. Check the guide for how older experience is treated for points.
-                </p>
-
-                <h3>How do I prove duties if my company is now closed?</h3>
-                <p>
-                    If your employer is no longer in business, you must provide alternative evidence: (1) original employment contract, (2) final pay stubs, (3) tax records, and (4) reference letters from former colleagues or supervisors who can attest to your duties, accompanied by their own ID and proof of former employment with that company.
-                </p>
-
-                <h3>Can I count experience gained while on a study permit?</h3>
-                <p>
-                    <strong>Generally no.</strong> Under the current Skills Immigration Program Guide, work on a study permit does not count for criteria or points. The exception is paid co-op: it can count if you completed your program, the co-op was full-time (at least 30 hours a week) and it was in a skilled occupation. Since May 28, 2026, research or coursework during a doctoral degree completed at a Canadian public university may also be accepted, even if unpaid.
-                </p>
-
-            </div>
-
-            <!-- CTA -->
-            <div class="bg-gradient-to-br from-blue-600 to-blue-700 p-8 rounded-2xl text-center text-white">
-                <h2 class="text-2xl font-bold mb-3">Calculate Your BC PNP Score</h2>
-                <p class="text-blue-100 mb-6">
-                    See how your work experience impacts your SIRS score and eligibility.
-                </p>
-                <a
-                    href="/bc-pnp-calculator"
-                    class="inline-block bg-white text-blue-700 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors"
-                >
-                    Use the Calculator →
-                </a>
-            </div>
-
-            <!-- Related Guides -->
-            <div class="bg-white rounded-2xl p-8 border border-slate-100">
-                <h3 class="font-bold text-slate-900 mb-4">Related Guides</h3>
-                <ul class="space-y-3">
-                    <li>
-                        <a href="/articles/bc-pnp-skilled-worker-stream" class="text-blue-600 hover:text-blue-700 font-medium">
-                            BC PNP Skilled Worker Stream: Complete Guide →
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/articles/bc-pnp-documents-checklist" class="text-blue-600 hover:text-blue-700 font-medium">
-                            BC PNP Document Checklist 2026 →
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/articles/bc-pnp-common-mistakes" class="text-blue-600 hover:text-blue-700 font-medium">
-                            Common BC PNP Application Mistakes →
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/articles/bc-pnp-refusal-appeal-reconsideration-guide-2026" class="text-blue-600 hover:text-blue-700 font-medium">
-                            BC PNP Refusal: Appeal & Reconsideration Guide →
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/articles/bc-pnp-processing-times" class="text-blue-600 hover:text-blue-700 font-medium">
-                            BC PNP Processing Times 2026 →
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <section class="bg-white p-8 rounded-2xl border border-slate-200">
-                <h2 class="text-2xl font-bold text-slate-900 mb-4">Work Experience FAQ: Edge Cases & Documentation</h2>
-                <div class="space-y-3">
-                    <details class="group border border-slate-200 rounded-xl p-4">
-                        <summary class="font-semibold text-slate-900 cursor-pointer">Does part-time work count toward BC PNP experience?</summary>
-                        <p class="mt-3 text-slate-700">Yes. BC PNP allows part-time hours to be combined to equal full-time experience. The standard equivalence is 1,560 hours = 1 year of full-time experience (based on 30 hours per week for 52 weeks). Two part-time roles at 15 hours each per week can equal one year of full-time work. You must document hours carefully with pay stubs, T4 slips, and a Record of Employment (ROE). Overtime hours do not count toward the threshold.</p>
-                    </details>
-                    <details class="group border border-slate-200 rounded-xl p-4">
-                        <summary class="font-semibold text-slate-900 cursor-pointer">Can self-employment count for BC PNP Skills Immigration?</summary>
-                        <p class="mt-3 text-slate-700">Generally no. The Skilled Worker stream under BC PNP requires employment with an arm's-length employer, demonstrated through pay stubs, T4s, and Notice of Assessment from the CRA. Self-employed work is typically excluded from the work experience calculation for these streams. The Entrepreneur Immigration stream is designed specifically for business owners and uses different criteria such as net worth, investment, and job creation rather than NOC-based experience.</p>
-                    </details>
-                    <details class="group border border-slate-200 rounded-xl p-4">
-                        <summary class="font-semibold text-slate-900 cursor-pointer">What if my reference letter is missing required details?</summary>
-                        <p class="mt-3 text-slate-700">An incomplete reference letter is the single most common reason for BC PNP refusal on work experience grounds. Your letter must include: job title, NOC code, start and end dates, hours per week, annual salary, and a detailed list of main duties that mirrors the NOC description. If your former HR contact has left the company, contact a current manager or the HR department directly and request the letter on official letterhead. If the company is closed, you can supplement with T4s, pay stubs, contracts, and a sworn statutory declaration from a former colleague.</p>
-                    </details>
-                    <details class="group border border-slate-200 rounded-xl p-4">
-                        <summary class="font-semibold text-slate-900 cursor-pointer">Do internships and co-op placements count?</summary>
-                        <p class="mt-3 text-slate-700">Paid co-op terms can count if you completed your program and the co-op was full-time (at least 30 hours a week) in a skilled occupation; other work on a study permit does not count. Paid internships completed after graduation under a Post-Graduation Work Permit (PGWP) do count, provided the NOC is TEER 0, 1, 2, or 3 and the role meets BC PNP minimum wage benchmarks. Unpaid internships never count toward BC PNP experience requirements.</p>
-                    </details>
-                    <details class="group border border-slate-200 rounded-xl p-4">
-                        <summary class="font-semibold text-slate-900 cursor-pointer">How does maternity, parental, or medical leave affect my experience calculation?</summary>
-                        <p class="mt-3 text-slate-700">Periods of authorized leave (maternity, parental, medical, or compassionate care) where you remained employed but did not actively work are not counted toward your work experience hours. However, your employment relationship is considered continuous, so the leave does not break your service. Make sure your reference letter explicitly notes any leave periods and clarifies actual hours worked, so the BC PNP officer can calculate your eligible experience accurately.</p>
-                    </details>
-                    <details class="group border border-slate-200 rounded-xl p-4">
-                        <summary class="font-semibold text-slate-900 cursor-pointer">Can I claim experience under a different NOC than what was on my work permit?</summary>
-                        <p class="mt-3 text-slate-700">Yes, BC PNP evaluates work experience based on what you actually did, not the NOC code stated on your work permit. If your duties evolved or were initially miscategorized, you can claim the correct NOC, but your reference letter must clearly describe duties matching that NOC's lead statement and main duties on the official ESDC website. Be prepared to explain the discrepancy in your application; mismatches between work permit NOC and claimed NOC are commonly flagged for procedural fairness letters.</p>
-                    </details>
-                </div>
-            </section>
-            <section class="bg-white p-8 rounded-2xl border border-slate-200">
-                <h2 class="text-2xl font-bold text-slate-900 mb-4">Pro Tips: Documenting Experience That Survives Officer Scrutiny</h2>
-                <p class="text-slate-700 mb-4">After reviewing hundreds of BC PNP refusal letters from 2023 to 2026, a clear pattern emerges: applicants who treat their work experience documentation as a legal evidentiary package, not as a routine paperwork exercise, are dramatically more likely to be nominated. Below are the specific tactics that BC PNP officers reward and the pitfalls that consistently trigger procedural fairness letters.</p>
-                <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-2">1. Mirror the NOC duties word-for-word in your reference letter</h3>
-                <p class="text-slate-700 mb-4">Pull the lead statement and main duties for your NOC from the ESDC NOC 2021 site (for example, NOC 21231 Software engineers and designers, or NOC 60010 Restaurant and food service managers). Ask your employer to use this exact wording, modified only to reflect what you genuinely did. Officers compare your letter line-by-line with the NOC; a letter that just lists "managed projects, worked with clients" will be flagged, while one that mirrors "research, design, evaluate, integrate, test and maintain software systems" reads as eligible.</p>
-                <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-2">2. Build a corroborating evidence stack</h3>
-                <p class="text-slate-700 mb-4">A reference letter alone is rarely sufficient in 2026. Build a stack: signed letter on letterhead, pay stubs covering the entire claimed period, T4s or foreign tax slips, the original employment contract, a copy of your work permit (if Canadian), and a LinkedIn export PDF showing the role timeline. For international experience, add a notarized translation and a corporate registration document showing the employer is a real, operating business. The cost to apostille and translate one foreign employment package typically runs $250 to $600 CAD but is far cheaper than a refused $1,475 application fee.</p>
-                <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-2">3. Reconcile every gap, title change, and overlap</h3>
-                <p class="text-slate-700 mb-4">Officers cross-reference your work history against your IRCC GCMS notes, prior visa applications, and tax records. If you list April 2022 to August 2023 at Employer A but your T4 shows only $18,400 of income, the math signals part-time work. Submit a one-page chronology cover letter explaining: gaps (unemployment, study, leave), title progressions, parallel roles, and any reduction in hours. Officers strongly prefer applicants who proactively explain discrepancies rather than forcing them to find anomalies themselves.</p>
-                <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-2">4. Get the wage benchmark right on day one</h3>
-                <p class="text-slate-700 mb-4">BC PNP requires that the wage for your offered job meets or exceeds the BC median wage for the NOC on the WorkBC Wage Map. As of early 2026, this means NOC 21231 software engineers must be paid at least roughly $50.00/hour in Metro Vancouver, while NOC 33102 nurse aides must reach approximately $25.95/hour. Submit a screenshot of the WorkBC wage page with the application date stamped, and include the regional figure relevant to your work location (Lower Mainland vs Northeast vs Vancouver Island).</p>
-                <h3 class="text-xl font-semibold text-slate-900 mt-6 mb-2">5. Plan for the procedural fairness letter (PFL)</h3>
-                <p class="text-slate-700">Even strong applications sometimes receive a PFL asking for clarification within 30 days. Keep your evidence stack scanned and organized in cloud storage, including originals of every document you submitted. If you receive a PFL, respond with a numbered letter that addresses each concern individually, attaches supporting evidence with clear file names (for example, "Tab 3 - 2023 T4 - Employer A.pdf"), and is signed by your representative or yourself. PFL response rates that result in nomination are above 70% when handled correctly, but below 25% when answered with a generic statement.</p>
-            </section>
+    <h2 class={h2}>Frequently asked questions</h2>
+    <div class="space-y-4">
+      {faqs.map((f) => (
+        <div class="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 class="font-bold text-slate-900 mb-2">{f.q}</h3>
+          <p class="text-slate-700 leading-relaxed">{f.a}</p>
         </div>
-    </article>
+      ))}
+    </div>
+
+    <p class="text-xs text-slate-500 mt-8">
+      Sources: <a href={GUIDE} target="_blank" rel="noopener noreferrer" class={src}>Skills Immigration Program Guide</a> sections 3.8, 4.1, 4.2, 4.3 and 8.1 (effective June 10, 2026); <a href={SKILLS} target="_blank" rel="noopener noreferrer" class={src}>WelcomeBC Skills Immigration</a>. General information, not legal advice.
+    </p>
+  </article>
 </ArticleLayout>
