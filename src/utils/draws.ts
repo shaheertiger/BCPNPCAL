@@ -172,8 +172,9 @@ const CALC_LABELS: Partial<Record<StreamKey, string>> = {
   childcare: "Care: Childcare (certified ECEs)",
   construction: "Build: Construction trades",
   veterinary: "Care: Veterinary care",
+  education: "Care: Education (priority education occupations)",
 };
-export const calculatorStreams = (["hei-points", "health", "childcare", "construction", "veterinary"] as StreamKey[]).map(
+export const calculatorStreams = (["hei-points", "health", "childcare", "construction", "veterinary", "education"] as StreamKey[]).map(
   (k) => ({ key: k, label: CALC_LABELS[k] as string, score: latestFor(k).score as number, date: latestFor(k).date }),
 );
 

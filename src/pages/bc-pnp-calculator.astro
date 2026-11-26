@@ -15,6 +15,7 @@ const streams: { key: StreamKey; label: string; who: string }[] = [
   { key: "childcare", label: "Care: Childcare", who: "Early childhood educators (NOC 42202) with a One Year or Five Year ECE certificate" },
   { key: "construction", label: "Build: Construction Trades", who: "Priority construction occupations" },
   { key: "veterinary", label: "Care: Veterinary Care", who: "Priority veterinary care occupations" },
+  { key: "education", label: "Care: Education", who: "Priority education occupations (the 2026 round targeted French-speaking teachers)" },
 ];
 const data = streams.map((s) => ({ ...s, rows: streamRows(s.key), latest: latestFor(s.key) }));
 const totalDraws = data.reduce((n, s) => n + s.rows.length, 0);
@@ -33,7 +34,7 @@ const faqs = [
   },
   {
     q: "Which BC PNP draw am I in?",
-    a: "Your job offer's occupation decides it. Certified ECEs are in Childcare draws, priority health and veterinary occupations in Care draws, priority construction trades in Build draws, and every other eligible skilled job in High Economic Impact draws, which also invite by wage alone.",
+    a: "Your job offer's occupation decides it. Certified ECEs are in Childcare draws, priority health, veterinary and education occupations in Care draws, priority construction trades in Build draws, and every other eligible skilled job in High Economic Impact draws, which also invite by wage alone.",
   },
 ];
 
