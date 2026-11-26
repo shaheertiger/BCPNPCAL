@@ -26,7 +26,7 @@ const INITIAL_STATE: CalculatorState = {
 };
 
 // Eligible B.C. professional designations (Skills Immigration Program Guide,
-// section 8.2). Only designations tied to the job offer earn the 5 points.
+// section 8.2, effective June 10, 2026). Only designations tied to the job offer earn the 5 points.
 const PROFESSIONAL_DESIGNATIONS = [
   'Health Care Assistant (BC Care Aide & Community Health Worker Registry)',
   'Licensed Practical Nurse (BCCNM)',
@@ -35,8 +35,19 @@ const PROFESSIONAL_DESIGNATIONS = [
   'Dental Technician (BC College of Oral Health Professionals)',
   'Traditional Chinese Medicine Practitioner / Acupuncturist (licensed in B.C.)',
   'Veterinary Technician (BC Veterinary Technologists Association)',
-  'Trades worker with a valid SkilledTradesBC certificate',
+  'Dental Assistant (certified, BC College of Oral Health Professionals)',
+  'Denturist (BC College of Oral Health Professionals)',
+  'Pharmacy Technician (College of Pharmacists of BC)',
+  'Trades worker with a valid SkilledTradesBC certificate (or registered apprentice)',
 ];
+
+/** Latest draw minimum per stream, from src/data/bcpnp-draws.ts. */
+export interface LatestDraw {
+  key: string;
+  label: string;
+  score: number;
+  date: string;
+}
 
 // Reusable Components
 const CardOption = ({ selected, onClick, title, subtitle, points }: any) => (
@@ -74,9 +85,19 @@ const Toggle = ({ active, onClick, title, subtitle }: any) => (
   </button>
 );
 
-export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
+export const Calculator: React.FC<{
+  t: Translation;
+  /** When set, the result compares the score with the latest draw minimum. */
+  latestDraws?: LatestDraw[];
+  /** Page that lists every draw. */
+  drawsHref?: string;
+  /** Embedded in a longer page: don't force a full-screen height. */
+  embedded?: boolean;
+}> = ({ t, latestDraws, drawsHref = '/bc-pnp-draws', embedded = false }) => {
   const [state, setState] = useState<CalculatorState>(INITIAL_STATE);
   const [currentStep, setCurrentStep] = useState(0);
+  const [drawKey, setDrawKey] = useState<string>(latestDraws?.[0]?.key ?? '');
+  const selectedDraw = latestDraws?.find((d) => d.key === drawKey);
 
   const results = useMemo(() => calculateTotalPoints(state), [state]);
   const annualWage = useMemo(() => calculateAnnualWage(state.hourlyWage), [state.hourlyWage]);
@@ -525,6 +546,35 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
               </div>
             </div>
 
+            {latestDraws && latestDraws.length > 0 && selectedDraw && (
+              <div className="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm space-y-3">
+                <label htmlFor="draw-stream" className="text-[10px] font-bold text-slate-500 uppercase tracking-widest pl-1 block">
+                  Compare with the last draw for your stream
+                </label>
+                <select
+                  id="draw-stream"
+                  value={drawKey}
+                  onChange={(e) => setDrawKey(e.target.value)}
+                  className="w-full rounded-xl border-2 border-slate-100 bg-slate-50 px-3 py-2.5 text-sm font-bold text-slate-800 focus:border-indigo-600 focus:outline-none"
+                >
+                  {latestDraws.map((d) => (
+                    <option key={d.key} value={d.key}>{d.label}</option>
+                  ))}
+                </select>
+                <p className="text-sm text-slate-700 leading-relaxed" aria-live="polite">
+                  The last draw minimum for your stream was <strong>{selectedDraw.score}</strong> on {selectedDraw.date}.{' '}
+                  {results.total >= selectedDraw.score ? (
+                    <span className="font-bold text-green-700">Your {results.total} is {results.total - selectedDraw.score} points above it.</span>
+                  ) : (
+                    <span className="font-bold text-amber-700">Your {results.total} is {selectedDraw.score - results.total} points below it.</span>
+                  )}
+                </p>
+                <a href={drawsHref} className="text-xs font-bold text-indigo-600 underline underline-offset-2">
+                  Latest BC PNP draws by stream
+                </a>
+              </div>
+            )}
+
             <div className="space-y-3">
               {/* Human Capital Section */}
               <div className="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm space-y-3">
@@ -616,7 +666,7 @@ export const Calculator: React.FC<{ t: Translation }> = ({ t }) => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans selection:bg-indigo-100">
+    <div className={`${embedded ? '' : 'min-h-screen '}bg-slate-50 flex flex-col font-sans selection:bg-indigo-100`}>
       <div className="max-w-md mx-auto w-full p-5 pt-6 flex-1 flex flex-col">
         <header className="flex justify-between items-center mb-6">
           <div className="flex items-center space-x-2">

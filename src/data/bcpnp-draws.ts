@@ -1,10 +1,15 @@
 // BC PNP draw results, as published on WelcomeBC's "Invitations to apply"
-// page (last checked against the November 3, 2026 update). Update this file
-// after each draw; the draws page and draw tables read from it.
+// page (checked against the page's November 17, 2026 update on November 26,
+// 2026). Update this file after each draw: the homepage calculator result,
+// the draws page, the draw calculator and every "latest minimum" anchor read
+// from it, so titles and snippets update with the next build.
+// Source: https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply
 // "<5" means WelcomeBC reported fewer than five invitations.
 
-export const DRAWS_LAST_UPDATED = "November 14, 2026";
-export const DRAWS_LAST_UPDATED_ISO = "2026-11-14";
+export const DRAWS_LAST_UPDATED = "November 26, 2026";
+export const DRAWS_LAST_UPDATED_ISO = "2026-11-26";
+export const DRAWS_SOURCE_URL =
+  "https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply";
 
 export type Count = number | "<5";
 
@@ -65,9 +70,10 @@ export const skillsDraws2025 = [
   { date: "May 8, 2025", invites: 94, rule: "$105/hr (TEER 0-1), or 150+ points" },
 ];
 
-// Entrepreneur Immigration rounds we have confirmed. 2026 rounds before
-// July are listed on WelcomeBC but not reproduced here.
+// Entrepreneur Immigration rounds (WelcomeBC), newest first.
 export const entrepreneurDraws = [
+  { date: "November 17, 2026", stream: "Base", score: 117, invites: 12 as Count },
+  { date: "November 17, 2026", stream: "Regional", score: 117, invites: "<5" as Count },
   { date: "October 20, 2026", stream: "Base", score: 118, invites: 10 as Count },
   { date: "October 20, 2026", stream: "Regional", score: 118, invites: "<5" as Count },
   { date: "September 22, 2026", stream: "Base", score: 119, invites: 10 as Count },
@@ -75,6 +81,18 @@ export const entrepreneurDraws = [
   { date: "August 25, 2026", stream: "Base", score: 116, invites: 11 as Count },
   { date: "August 25, 2026", stream: "Regional", score: 116, invites: 5 as Count },
   { date: "July 28, 2026", stream: "Base", score: 117, invites: 10 as Count },
+  { date: "June 30, 2026", stream: "Base", score: 118, invites: 14 as Count },
+  { date: "June 30, 2026", stream: "Regional", score: 113, invites: "<5" as Count },
+  { date: "June 2, 2026", stream: "Base", score: 117, invites: 15 as Count },
+  { date: "June 2, 2026", stream: "Regional", score: 117, invites: "<5" as Count },
+  { date: "May 5, 2026", stream: "Base", score: 115, invites: 8 as Count },
+  { date: "May 5, 2026", stream: "Regional", score: 115, invites: "<5" as Count },
+  { date: "April 14, 2026", stream: "Base", score: 115, invites: 14 as Count },
+  { date: "March 10, 2026", stream: "Base", score: 117, invites: 7 as Count },
+  { date: "March 10, 2026", stream: "Regional", score: 129, invites: "<5" as Count },
+  { date: "February 10, 2026", stream: "Base", score: 121, invites: 13 as Count },
+  { date: "February 10, 2026", stream: "Regional", score: 105, invites: "<5" as Count },
+  { date: "January 13, 2026", stream: "Base", score: 115, invites: 7 as Count },
   { date: "December 16, 2025", stream: "Base", score: 115, invites: 17 as Count },
   { date: "December 16, 2025", stream: "Regional", score: 107, invites: "<5" as Count },
   { date: "November 18, 2025", stream: "Base", score: 121, invites: 19 as Count },

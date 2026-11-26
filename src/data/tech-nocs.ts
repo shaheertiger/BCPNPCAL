@@ -1,0 +1,42 @@
+// Technology occupations listed in Appendix A ("Limited term job offers") of
+// the BC PNP Skills Immigration Program Guide (effective June 10, 2026). These
+// are the occupations from the former tech list that may qualify with a
+// limited-term job offer of at least one year.
+// Source: https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf
+export const TECH_NOCS: { noc: string; title: string }[] = [
+  { noc: "10030", title: "Telecommunication carriers managers" },
+  { noc: "20012", title: "Computer and information systems managers" },
+  { noc: "21100", title: "Physicists and astronomers" },
+  { noc: "21210", title: "Mathematicians, statisticians and actuaries" },
+  { noc: "21211", title: "Data scientists" },
+  { noc: "21220", title: "Cybersecurity specialists" },
+  { noc: "21221", title: "Business systems specialists" },
+  { noc: "21222", title: "Information systems specialists" },
+  { noc: "21223", title: "Database analysts and data administrators" },
+  { noc: "21230", title: "Computer systems developers and programmers" },
+  { noc: "21231", title: "Software engineers and designers" },
+  { noc: "21232", title: "Software developers and programmers" },
+  { noc: "21233", title: "Web designers" },
+  { noc: "21234", title: "Web developers and programmers" },
+  { noc: "21300", title: "Civil engineers" },
+  { noc: "21301", title: "Mechanical engineers" },
+  { noc: "21310", title: "Electrical and electronics engineers" },
+  { noc: "21311", title: "Computer engineers (except software engineers and designers)" },
+  { noc: "21320", title: "Chemical engineers" },
+  { noc: "21399", title: "Other professional engineers" },
+  { noc: "22110", title: "Biological technologists and technicians" },
+  { noc: "22220", title: "Computer network and web technicians" },
+  { noc: "22221", title: "User support technicians" },
+  { noc: "22222", title: "Information systems testing technicians" },
+  { noc: "22310", title: "Electrical and electronics engineering technologists and technicians" },
+  { noc: "22312", title: "Industrial instrument technicians and mechanics" },
+  { noc: "50011", title: "Managers – publishing, motion pictures, broadcasting and performing arts" },
+  { noc: "51111", title: "Authors and writers (except technical)" },
+  { noc: "51112", title: "Technical writers" },
+  { noc: "51120", title: "Producers, directors, choreographers and related occupations" },
+  { noc: "52112", title: "Broadcast technicians" },
+  { noc: "52113", title: "Audio and video recording technicians" },
+  { noc: "52119", title: "Other technical and coordinating occupations in motion pictures, broadcasting and the performing arts" },
+  { noc: "52120", title: "Graphic designers and illustrators" },
+  { noc: "53111", title: "Motion pictures, broadcasting, photography and performing arts assistants and operators" },
+];

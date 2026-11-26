@@ -1,0 +1,56 @@
+---
+// Every SIRS registration scoring factor and its maximum points, from Part 8
+// of the BC PNP Skills Immigration Program Guide (effective June 10, 2026).
+const GUIDE_URL = "https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf";
+const rows: { group: string; factor: string; points: string; max: number | null }[] = [
+  { group: "Work experience (max 40)", factor: "Directly related experience in the job offer's occupation", points: "5+ years 20 · 4 years 16 · 3 years 12 · 2 years 8 · 1 year 4 · under 1 year 1", max: 20 },
+  { group: "", factor: "At least 1 year of directly related experience in Canada", points: "10", max: 10 },
+  { group: "", factor: "Currently working full-time in B.C. for the supporting employer, same occupation", points: "10", max: 10 },
+  { group: "Education (max 40)", factor: "Highest level of education", points: "Doctoral 27 · Master's 22 · Post-graduate certificate/diploma 15 · Bachelor's 15 · Associate 5 · Post-secondary diploma/certificate 5 · High school 0", max: 27 },
+  { group: "", factor: "That education completed in B.C. (or in Canada outside B.C.)", points: "8 (or 6)", max: 8 },
+  { group: "", factor: "Eligible B.C. professional designation tied to the job offer", points: "5", max: 5 },
+  { group: "Language (max 40)", factor: "English or French, lowest of the four skills", points: "CLB 9+ 30 · CLB 8 25 · CLB 7 20 · CLB 6 15 · CLB 5 10 · CLB 4 5 · below 4 0", max: 30 },
+  { group: "", factor: "CLB 4+ in both English and French", points: "10", max: 10 },
+  { group: "Hourly wage (max 55)", factor: "Hourly wage of the B.C. job offer", points: "$70.00+ 55 · each $1 band from $16 to $69.99 adds 1 point ($16 = 1, $45 = 30) · under $16 0", max: 55 },
+  { group: "Area of employment (max 25)", factor: "Main work location", points: "Area 1 Metro Vancouver 0 · Area 2 Squamish, Abbotsford, Agassiz, Mission, Chilliwack 5 · Area 3 rest of B.C. 15", max: 15 },
+  { group: "", factor: "Regional experience or regional alumni (job offer in Area 2 or 3 only)", points: "10", max: 10 },
+];
+---
+
+<div class="overflow-x-auto rounded-2xl border border-slate-200">
+  <table class="w-full text-sm text-left">
+    <caption class="sr-only">BC PNP SIRS scoring factors and maximum points</caption>
+    <thead class="bg-slate-100 text-slate-900">
+      <tr>
+        <th scope="col" class="px-3 py-2.5 font-bold">Factor</th>
+        <th scope="col" class="px-3 py-2.5 font-bold">Points</th>
+        <th scope="col" class="px-3 py-2.5 font-bold text-right">Max</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-slate-100 bg-white">
+      {
+        rows.map((r) => (
+          <>
+            {r.group && (
+              <tr class="bg-red-50/60">
+                <th scope="rowgroup" colspan="3" class="px-3 py-2 font-black text-slate-900">{r.group}</th>
+              </tr>
+            )}
+            <tr>
+              <td class="px-3 py-2 text-slate-800">{r.factor}</td>
+              <td class="px-3 py-2 text-slate-600">{r.points}</td>
+              <td class="px-3 py-2 text-right font-bold text-slate-900">{r.max}</td>
+            </tr>
+          </>
+        ))
+      }
+      <tr class="bg-slate-900 text-white">
+        <th scope="row" colspan="2" class="px-3 py-2.5 font-black">Total (human capital 120 + economic 80)</th>
+        <td class="px-3 py-2.5 text-right font-black">200</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="mt-2 text-xs text-slate-500">
+  Source: Part 8, <a href={GUIDE_URL} target="_blank" rel="noopener noreferrer" class="underline">BC PNP Skills Immigration Program Guide</a> (WelcomeBC, effective June 10, 2026). Education points are capped at 40 and language points at 40 even if the lines add up to more.
+</p>

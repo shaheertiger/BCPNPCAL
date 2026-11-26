@@ -1,365 +1,271 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+// Hub page: one line + a link for every BC PNP guide, grouped by topic.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RelatedLinks from "../components/seo/RelatedLinks.astro";
+import LangTwin from "../components/seo/LangTwin.astro";
+import { LINKS } from "../data/site-links";
+import { DRAWS_SOURCE_URL } from "../data/bcpnp-draws";
+import { latestDrawDate, latestDrawMinScore, latestDrawMinRow, latestFor, STREAM_SHORT } from "../utils/draws";
 
-const title = 'BC PNP Guide 2026: Scoring Secrets, Deadlines & Real Draw Data';
-const description = 'Forget the generic advice. This is your deep-dive 2026 guide to the British Columbia Provincial Nominee Program. Regional hacks, priority stream deadlines, and how to actually get that ITA.';
+const SITE = "https://bcpnpcalculator.ca";
+const GUIDE_URL = "https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf";
+const SKILLS_URL = "https://www.welcomebc.ca/immigrate-to-b-c/skills-immigration";
+const NEWS_URL = "https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/news";
+const DATE_MODIFIED = "2026-11-26";
+
+const hei = latestFor("hei-points");
+const title = "BC PNP Guide 2026: Streams, Points, Draws and Fees in One Page";
+const description = `2 worker streams, a 200-point score, draws as low as ${latestDrawMinScore} (${latestDrawDate}) and a $1,750 fee. How the BC PNP works in 2026, with every guide by topic.`;
+
+type Item = { href: string; anchor: string; line: string };
+const groups: { id: string; name: string; items: Item[] }[] = [
+  {
+    id: "eligibility",
+    name: "Eligibility",
+    items: [
+      { href: LINKS.workExperience.href, anchor: "BC PNP work experience requirements", line: "2 years of skilled work for the Skilled Worker stream, and what counts." },
+      { href: LINKS.jobOffer.href, anchor: "BC PNP job offer requirements", line: "Full-time (30+ hours), indeterminate, and paid within the Job Bank range." },
+      { href: LINKS.withoutJobOffer.href, anchor: "BC PNP without a job offer", line: "Why no worker stream allows it in 2026, and what does." },
+      { href: "/articles/bc-pnp-language-requirements", anchor: "BC PNP language requirements", line: "CLB 4 minimum for TEER 2–5 jobs and the tests the BC PNP accepts." },
+      { href: "/articles/bc-pnp-noc-codes-teer-categories-guide-2026", anchor: "BC PNP NOC codes and TEER categories", line: "How to find your occupation code and why TEER decides your stream." },
+      { href: "/articles/bc-pnp-ineligible-occupations-employers-2027", anchor: "BC PNP ineligible occupations and employers", line: "The 12 NOCs and the employer types that can't support an application." },
+      { href: "/articles/bc-pnp-employer-guide", anchor: "BC PNP employer requirements", line: "What your employer must prove: years in B.C., staff count, recruitment." },
+      { href: "/articles/bc-pnp-eca-guide", anchor: "BC PNP education credential assessment (ECA)", line: "When the BC PNP asks for an ECA and which agencies issue one." },
+      { href: "/articles/bc-pnp-spouse-family-guide-2026", anchor: "BC PNP spouse and family", line: "Dependants, family income and open work permits." },
+      { href: "/articles/bc-pnp-lmia-guide-2026", anchor: "BC PNP and LMIA", line: "When you need an LMIA for your work permit and when you don't." },
+      { href: "/articles/bc-pnp-work-permit-guide", anchor: "BC PNP work permit options", line: "Staying authorized to work while you wait for a decision." },
+    ],
+  },
+  {
+    id: "streams",
+    name: "Streams and occupations",
+    items: [
+      { href: "/articles/bc-pnp-skilled-worker-stream", anchor: "BC PNP Skilled Worker stream", line: "The main stream: TEER 0–3 job offer and 2 years of skilled experience." },
+      { href: "/articles/bc-pnp-health-authority-stream", anchor: "BC PNP Health Authority stream", line: "Apply directly, without registering, with a public health authority offer." },
+      { href: LINKS.caregivers.href, anchor: "BC PNP for caregivers and childcare workers", line: "ECEs and care aides yes; nannies and home support workers no." },
+      { href: LINKS.ece.href, anchor: "BC PNP for early childhood educators", line: "ECE certificate, licensed employer and every 2026 Childcare draw." },
+      { href: "/articles/bc-pnp-nurses-health-care-assistants-2027", anchor: "BC PNP for nurses and health care assistants", line: "Registration, stream choice and Care: Health draws." },
+      { href: "/articles/bc-pnp-care-healthcare-occupations-list-2027", anchor: "BC PNP Care priority occupations list", line: "The health, childcare, education and veterinary occupations in Care draws." },
+      { href: "/articles/bc-pnp-build-skilledtradesbc-certification-2027", anchor: "BC PNP Build draws for construction trades", line: "The SkilledTradesBC credential behind a Build invitation." },
+      { href: "/articles/bc-pnp-skilled-trades-construction-pathway-2026", anchor: "BC PNP for skilled trades and construction workers", line: "NOC codes and scores for trades." },
+      { href: LINKS.tech.href, anchor: "BC PNP tech", line: "The 35 tech NOC codes and the score tech workers need now." },
+      { href: "/articles/bc-pnp-tech-stream-occupations", anchor: "BC PNP tech occupations list", line: "The former tech list and how it is used after tech draws ended." },
+      { href: "/articles/tech-workers-bc-pnp-2027-after-tech-draws-ended", anchor: "Tech workers and BC PNP in 2027", line: "PR options for tech workers outside High Economic Impact draws." },
+      { href: "/articles/bc-pnp-ai-cybersecurity-professionals-guide-2026", anchor: "BC PNP for AI and cybersecurity professionals", line: "Where AI and security roles fit in 2026." },
+      { href: "/articles/bc-pnp-veterinarians-vet-technologists-2027", anchor: "BC PNP for veterinarians and vet technologists", line: "Licensing and Care: Veterinary draws." },
+      { href: "/articles/bc-pnp-french-speaking-teachers-2027", anchor: "BC PNP for French-speaking teachers", line: "Certification and the Care: Education round." },
+      { href: "/articles/bc-pnp-express-entry-bc-eebc-guide-2026", anchor: "Express Entry BC (EEBC)", line: "Using your Express Entry profile with a BC PNP stream." },
+      { href: "/articles/bc-pnp-express-entry-vs-skills-immigration", anchor: "Express Entry BC vs Skills Immigration", line: "Which option to choose and how processing differs." },
+      { href: "/articles/bc-pnp-entrepreneur-immigration", anchor: "BC PNP Entrepreneur Immigration", line: "The business route, the only BC PNP route without a job offer." },
+      { href: "/articles/bc-pnp-international-students-graduates-pathway-2026", anchor: "BC PNP for international students and graduates", line: "What graduates can do now that student streams have closed." },
+      { href: "/articles/international-graduates-bc-pr-options-2027", anchor: "International graduates in B.C.: PR options for 2027", line: "Federal and provincial alternatives." },
+      { href: "/articles/bc-pnp-international-graduate-stream-2025", anchor: "BC PNP International Graduate stream (closed)", line: "What the old stream required, for reference." },
+      { href: "/articles/bc-pnp-entry-level-semi-skilled", anchor: "BC PNP Entry Level and Semi-Skilled stream (closed)", line: "What the old ELSS stream covered, for reference." },
+      { href: "/articles/bc-pnp-regional-priorities", anchor: "BC PNP regional priorities", line: "Area 2 and Area 3 communities and their extra points." },
+      { href: "/articles/bc-pnp-look-west-regional-nominations-2027", anchor: "Look West and BC PNP regional nominations", line: "The province's regional goal and what it may mean." },
+    ],
+  },
+  {
+    id: "draws",
+    name: "Scores and draws",
+    items: [
+      { href: LINKS.calculator.href, anchor: "BC PNP points calculator", line: "Your SIRS score out of 200 in 2 minutes." },
+      { href: LINKS.drawCalculator.href, anchor: "BC PNP draw calculator", line: "Which 2026 draws your score would have cleared." },
+      { href: LINKS.draws.href, anchor: "BC PNP draws 2026", line: `Every 2026 round, newest first; latest ${latestDrawDate}.` },
+      { href: LINKS.hei.href, anchor: "High Economic Impact draws", line: `The draw for every other skilled job: ${hei.score} points or the wage track.` },
+      { href: "/articles/bc-pnp-draw-november-13-2026", anchor: "BC PNP draw November 13, 2026", line: "The latest Care and Build round in detail." },
+      { href: "/articles/bc-pnp-2026-draws-recap-2027-forecast", anchor: "BC PNP 2026 draws recap", line: "How the 2026 minimums moved and what they suggest for 2027." },
+      { href: "/articles/bc-pnp-points-calculator-guide", anchor: "BC PNP points calculator guide", line: "Worked SIRS scenarios factor by factor." },
+      { href: "/articles/how-to-use-bc-pnp-calculator-2026", anchor: "How to use the BC PNP calculator", line: "What to enter at each step." },
+      { href: "/articles/bc-pnp-calculator-faq", anchor: "BC PNP calculator FAQ", line: "Answers to common score questions." },
+      { href: "/articles/maximize-bc-pnp-score-tips", anchor: "How to increase your BC PNP score", line: "The factors that move a score most." },
+      { href: "/articles/bc-pnp-vs-crs-calculator", anchor: "BC PNP score vs CRS score", line: "SIRS (200) and Express Entry CRS (1,200) compared." },
+      { href: "/articles/bc-pnp-2026-allocation-priorities", anchor: "BC PNP 2026 allocation", line: "The 2026 nomination allocation and program priorities." },
+      { href: "/articles/bc-pnp-statistical-report-2025-analysis", anchor: "BC PNP statistical report 2025", line: "What the 2025 numbers show." },
+      { href: "/articles/bc-pnp-2027-outlook-predictions", anchor: "BC PNP 2027 outlook", line: "What to prepare for next year." },
+      { href: "/articles/bc-pnp-march-2026-draws-immigration-update", anchor: "BC PNP March 2026 draws", line: "An early-2026 round in detail." },
+      { href: "/articles/bc-pnp-february-2026-draw-results-analysis", anchor: "BC PNP February 2026 draws", line: "The first 2026 rounds in detail." },
+    ],
+  },
+  {
+    id: "apply",
+    name: "How to apply",
+    items: [
+      { href: LINKS.howToApply.href, anchor: "How to apply for BC PNP", line: "6 steps from registration to your IRCC application." },
+      { href: "/articles/bc-pnp-documents-checklist", anchor: "BC PNP document checklist", line: "What to gather before your invitation arrives." },
+      { href: LINKS.fees.href, anchor: "BC PNP fees and costs", line: "$0 to register, $1,750 to apply, and the costs around it." },
+      { href: "/articles/bc-pnp-processing-times", anchor: "BC PNP processing times", line: "How long each stage takes." },
+      { href: "/articles/bc-pnp-after-ita-next-steps-guide-2026", anchor: "BC PNP after the invitation to apply", line: "Your 30 days after an invitation." },
+      { href: "/articles/bc-pnp-after-nomination", anchor: "After BC PNP nomination", line: "Conditions of nomination and the IRCC application." },
+      { href: "/articles/bc-pnp-refusal-appeal-reconsideration-guide-2026", anchor: "BC PNP refusal and request for review", line: "What to do after a refusal ($500 review fee)." },
+      { href: "/articles/bc-pnp-common-mistakes", anchor: "Common BC PNP mistakes", line: "Errors that lead to refusals." },
+      { href: "/articles/bc-pnp-job-offer-scams-fraud-2027", anchor: "BC PNP job offer scams", line: "Red flags and how to check an employer." },
+      { href: "/articles/bc-pnp-questions-answered", anchor: "BC PNP questions answered", line: "Short answers to common questions." },
+      { href: "/articles/ultimate-bc-pnp-guide-2026", anchor: "Ultimate BC PNP guide 2026", line: "A longer walk-through of the whole program." },
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "Can I get BC PNP without a job offer in 2026?",
+    a: "Not as a worker. The Skilled Worker and Health Authority streams both need a full-time, indeterminate B.C. job offer. Entrepreneur Immigration is the only BC PNP route without one.",
+  },
+  {
+    q: "What score do I need for BC PNP?",
+    a: `It depends on your draw. On ${latestDrawDate} the lowest minimum was ${latestDrawMinScore} (${STREAM_SHORT[latestDrawMinRow.stream]}); High Economic Impact draws, open to any other skilled job, needed ${hei.score} on ${hei.date}.`,
+  },
+  {
+    q: "How many people does the BC PNP nominate in 2026?",
+    a: "WelcomeBC announced on August 18, 2026 that the BC PNP received an additional allocation, for a 2026 total of 6,254 nominations, and plans to use it all by December 31, 2026.",
+  },
+];
 
 const jsonLd = [
   {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
+    "@context": "https://schema.org",
+    "@type": "Article",
     headline: title,
-    description: description,
-    author: {
-      '@type': 'Organization',
-      name: 'BC PNP Calculator'
-    },
-    datePublished: '2026-01-01',
-    dateModified: '2026-11-11'
+    description,
+    datePublished: "2026-01-01",
+    dateModified: DATE_MODIFIED,
+    author: { "@type": "Person", name: "Shaheer Ali Khan", url: `${SITE}/about`, jobTitle: "Regulated Canadian Immigration Consultant (RCIC)" },
+    publisher: { "@type": "Organization", name: "BC PNP Calculator", url: SITE },
+    mainEntityOfPage: `${SITE}/bc-pnp-guide`,
   },
   {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'Can I truly get PR without a job offer in 2026?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Not through the BC PNP worker streams. The old no-job-offer path for Master’s and PhD science graduates (International Post-Graduate) is closed, and the open Skilled Worker and Health Authority streams both require a B.C. job offer. Entrepreneur Immigration is the only BC PNP route without one. Do not fall for consultants promising otherwise.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Does the 200-point total matter for everyone?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'No. In 2026 the BC PNP runs separate contests. Care and Build draws for priority health, childcare, veterinary and construction occupations had cut-offs of 72 to 115, while High Economic Impact (Innovate) draws for everyone else, including tech, needed 131 to 138 points or a high wage. Tech-only draws ended in December 2024. Your effective target score depends on your occupation.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Is moving to Kelowna or Victoria actually worth it for points?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes. The regional points system penalizes Metro Vancouver. Moving just outside the zone can net you huge points for regional education and work experience.'
-        }
-      }
-    ]
-  }
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "BC PNP Points Calculator", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "BC PNP Guide 2026", item: `${SITE}/bc-pnp-guide` },
+    ],
+  },
 ];
 
 const hreflangs = [
-  { lang: 'en', href: 'https://bcpnpcalculator.ca/bc-pnp-guide' },
-  { lang: 'zh', href: 'https://bcpnpcalculator.ca/zh/bc-pnp-guide' },
-  { lang: 'hi', href: 'https://bcpnpcalculator.ca/hi/bc-pnp-guide' },
-  { lang: 'x-default', href: 'https://bcpnpcalculator.ca/bc-pnp-guide' },
+  { lang: "en", href: `${SITE}/bc-pnp-guide` },
+  { lang: "zh", href: `${SITE}/zh/bc-pnp-guide` },
+  { lang: "hi", href: `${SITE}/hi/bc-pnp-guide` },
+  { lang: "x-default", href: `${SITE}/bc-pnp-guide` },
 ];
+
+const h2 = "text-2xl sm:text-3xl font-black text-slate-900 tracking-tight";
+const p = "text-slate-700 leading-relaxed";
+const a = "text-red-700 font-semibold underline underline-offset-2 decoration-red-200 hover:decoration-red-600";
+const th = "px-3 py-2.5 text-left text-xs font-black text-slate-600 uppercase tracking-wider";
+const td = "px-3 py-2 text-sm text-slate-700";
 ---
 
-<BaseLayout title={title} description={description} jsonLd={jsonLd} hreflangs={hreflangs} canonical="https://bcpnpcalculator.ca/bc-pnp-guide">
-  <div class="min-h-screen bg-slate-50 font-sans selection:bg-red-100 selection:text-red-900">
-    <!-- Hero Section -->
-    <section class="relative bg-slate-900 pt-24 pb-32 sm:pt-32 sm:pb-40 overflow-hidden">
-      <!-- Background Elements -->
-      <div class="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-20"></div>
-      <div class="absolute -top-24 -right-24 w-96 h-96 bg-red-600/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-50 to-transparent z-10"></div>
-      
-      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white z-20">
-        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
-          <span class="px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold backdrop-blur-sm ring-1 ring-white/20">English</span>
-          <a href="/zh/bc-pnp-guide" class="px-3 py-1 bg-transparent hover:bg-white/10 text-slate-400 hover:text-white rounded-full text-xs font-bold transition-all border border-transparent hover:border-white/10">中文</a>
-          <a href="/hi/bc-pnp-guide" class="px-3 py-1 bg-transparent hover:bg-white/10 text-slate-400 hover:text-white rounded-full text-xs font-bold transition-all border border-transparent hover:border-white/10">हिंदी</a>
-        </div>
-
-        <div class="inline-flex items-center space-x-2 bg-white/10 border border-white/10 px-6 py-2 rounded-full mb-8 backdrop-blur-md">
-          <span class="w-2 h-2 bg-green-400 rounded-full shadow-[0_0_10px_rgba(74,222,128,0.5)]"></span>
-          <span class="text-sm font-bold tracking-widest uppercase text-slate-200">Updated Nov 2026</span>
-        </div>
-        
-        <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter leading-[1.05] mb-8">
-          The <span class="text-red-500">No-BS Guide</span> to<br/>
-          BC PNP in 2026
-        </h1>
-        
-        <p class="max-w-3xl mx-auto text-lg sm:text-2xl text-slate-300 leading-relaxed mb-12 font-medium">
-          Stop guessing. The <strong>BC Provincial Nominee Program</strong> isn't a lottery—it's a math problem. Here is exactly how the <strong>SIRS scoring</strong> works, why <strong>regional points</strong> are your secret weapon, and why looking at "average" scores will ruin your application.
-        </p>
-
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
-          <a href="/bc-pnp-calculator" class="w-full sm:w-auto px-10 py-5 bg-red-600 hover:bg-red-500 text-white font-black rounded-2xl transition-all shadow-[0_0_40px_rgba(220,38,38,0.4)] active:scale-95 text-lg uppercase tracking-wider border border-red-500">
-            Check Your Real Score
-          </a>
-          <a href="#strategy" class="w-full sm:w-auto px-10 py-5 bg-white text-slate-900 hover:bg-slate-100 font-black rounded-2xl transition-all shadow-xl active:scale-95 text-lg border border-slate-200">
-            Read The Strategy
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Main Content Container -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 relative z-20 -mt-20">
-      
-      <!-- Sticky TOC -->
-      <nav class="bg-white/80 backdrop-blur-xl p-6 rounded-[2rem] border border-slate-200 shadow-2xl shadow-slate-200/50 mb-16 sticky top-6 z-50">
-        <div class="flex flex-wrap gap-4 justify-center items-center text-sm font-bold text-slate-600">
-          <a href="#strategy" class="hover:text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-lg transition-colors">Strategy</a>
-          <span class="text-slate-300">/</span>
-          <a href="#regional" class="hover:text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-lg transition-colors">Regional Hacks</a>
-          <span class="text-slate-300">/</span>
-          <a href="#tech-health" class="hover:text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-lg transition-colors">Tech & Health</a>
-          <span class="text-slate-300">/</span>
-          <a href="#wage" class="hover:text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-lg transition-colors">The Wage Game</a>
-          <span class="text-slate-300">/</span>
-          <a href="#faq" class="hover:text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-lg transition-colors">Hard Truths</a>
-        </div>
+<BaseLayout title={title} description={description} jsonLd={jsonLd} hreflangs={hreflangs} canonical={`${SITE}/bc-pnp-guide`}>
+  <div class="bg-gradient-to-b from-red-50 to-white px-4 sm:px-6 pt-8 sm:pt-12 pb-6">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <nav class="flex items-center gap-2 text-sm text-slate-500 font-medium" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-red-600">Calculator</a>
+        <span class="text-slate-300" aria-hidden="true">/</span>
+        <span class="text-red-600 font-bold">BC PNP Guide 2026</span>
       </nav>
-
-      <!-- Introduction: The Reality Check -->
-      <article class="prose prose-lg prose-slate max-w-none mb-16">
-        <h2 class="text-4xl font-black text-slate-900 tracking-tight mb-8">The Hard Truth About BC PNP in 2026</h2>
-        <p>
-          Let's be clear: <strong>applying for bc pnp</strong> is harder than it was two years ago. The general draw cutoffs have crept up, and the "easy" paths are gone. But there is good news. The province has become extremely specific about what they want. They want <strong>trades</strong>, they want <strong>healthcare</strong>, and they want people willing to live outside of Vancouver.
-        </p>
-        <p>
-          If you are sitting in downtown Vancouver with a generic administrative job offer and a CLB 5, you are unlikely to get an <strong>ita</strong>. But if you're a vet tech in Kelowna, or a carpenter in Prince George, you are basically VIP.
-        </p>
-        
-        <div class="not-prose my-10 bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl">
-          <h3 class="font-black text-blue-900 text-lg mb-2 flex items-center">
-            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            The "Priority" Shift
-          </h3>
-          <p class="text-blue-800 text-base">
-            In 2026, the BC PNP runs separate Care and Build draws for priority occupations in <strong>Childcare, Construction, Healthcare and Veterinary Care</strong>, with much lower cut-offs (72 to 115 points) than the Innovate draws (131+). If you are in one of these, ignore the Innovate scores. They do not apply to you. Tech workers now compete in the Innovate draws.
-          </p>
-        </div>
-      </article>
-
-      <!-- Section 1: The Regional Advantage -->
-      <section id="regional" class="bg-white p-10 sm:p-14 rounded-[3rem] border border-slate-200 shadow-sm mb-12">
-        <h2 class="text-3xl font-black text-slate-900 mb-8">1. The "Kelowna Advantage": Regional Points</h2>
-        <div class="prose prose-slate max-w-none text-slate-600">
-          <p>
-            Everyone wants to live in Vancouver. The BC government knows this, which is why <strong>pnp bc scoring</strong> effectively penalizes you for it. Staying in the Metro Vancouver area gets you <strong>0 points</strong> for location.
-          </p>
-          <p>
-            But watch what happens when you move just a few hours away. If you work in the <strong>Okanagan (Kelowna)</strong>, on <strong>Vancouver Island (Victoria, Nanaimo)</strong>, or in the <strong>Interior</strong>, you trigger specific regional points that Vancouver candidates cannot touch.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          <div class="bg-slate-50 p-6 rounded-2xl">
-            <span class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Metro Vancouver</span>
-            <div class="flex items-baseline space-x-2">
-              <span class="text-4xl font-black text-slate-300">0</span>
-              <span class="font-bold text-slate-400">Points</span>
-            </div>
-            <p class="text-xs text-slate-400 mt-2">Burnaby, Surrey, Richmond, Coquitlam</p>
-          </div>
-          <div class="bg-red-50 p-6 rounded-2xl border border-red-100 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-4 opacity-10 text-red-600">
-              <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
-            </div>
-            <span class="block text-xs font-bold uppercase tracking-widest text-red-600 mb-2">Regional Districts</span>
-            <div class="flex items-baseline space-x-2">
-              <span class="text-4xl font-black text-red-600">+5 to 25</span>
-              <span class="font-bold text-red-600">Points</span>
-            </div>
-            <p class="text-xs text-red-500 mt-2">Squamish, Abbotsford, Chillwack, Nanaimo</p>
-          </div>
-        </div>
-
-        <div class="mt-8 p-6 bg-slate-900 rounded-2xl text-white">
-          <h4 class="font-bold text-lg mb-2">Pro Tip: The regional education bonus</h4>
-          <p class="text-slate-300 text-sm">
-             Did you graduate from a school outside Vancouver? You get bonus points for that too. A degree from UNBC (Prince George) or UVic (Victoria) is mathematically more valuable for <strong>bc pnp points</strong> than the extensive same degree from UBC (Vancouver).
-          </p>
-        </div>
-      </section>
-
-      <!-- Section 2: Priority Streams -->
-      <section id="tech-health" class="space-y-8 mb-16">
-        <h2 class="text-3xl font-black text-slate-900 px-4">2. The "Priority" List (Tech, Health, Trades)</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <!-- Tech -->
-          <div class="bg-blue-600 p-8 rounded-[2rem] text-white shadow-lg shadow-blue-200">
-            <h3 class="text-xl font-black mb-4">BC PNP Tech</h3>
-            <p class="text-blue-100 text-sm mb-6 leading-relaxed">
-              The <strong>bc pnp tech</strong> draws ended in December 2024. Developers, engineers and designers now compete in the Innovate (High Economic Impact) draws, which are open to any TEER 0–3 occupation.
-            </p>
-            <ul class="text-sm space-y-2 font-medium">
-              <li>• About monthly Innovate draws in 2026</li>
-              <li>• Points cut-off of 131–138 in 2026</li>
-              <li>• Or a wage track ($49/hr and $99,000/yr on Oct 29, 2026)</li>
-            </ul>
-          </div>
-
-          <!-- Health -->
-          <div class="bg-green-600 p-8 rounded-[2rem] text-white shadow-lg shadow-green-200">
-            <h3 class="text-xl font-black mb-4">Healthcare</h3>
-            <p class="text-green-100 text-sm mb-6 leading-relaxed">
-              Nurses, Physicians, Psychologists, and now <strong>Veterinary</strong> staff. The demand is massive.
-            </p>
-            <ul class="text-sm space-y-2 font-medium">
-              <li>• Absolute lowest cutoffs</li>
-              <li>• Often &lt; 90 points needed</li>
-              <li>• Direct Public Health Authority path</li>
-            </ul>
-          </div>
-
-          <!-- Trades -->
-          <div class="bg-orange-500 p-8 rounded-[2rem] text-white shadow-lg shadow-orange-200">
-            <h3 class="text-xl font-black mb-4">Construction</h3>
-            <p class="text-orange-100 text-sm mb-6 leading-relaxed">
-              Carpenters, Plumbers, Electricians. The province is building homes and needs specific trades.
-            </p>
-            <ul class="text-sm space-y-2 font-medium">
-              <li>• Targeted <strong>bc pnp skilled trades</strong> draws</li>
-              <li>• Experience counts heavily</li>
-              <li>• Red Seal certification is gold</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="bg-white border-l-4 border-slate-900 p-8 shadow-sm">
-          <p class="text-slate-600 italic">
-            "If you are not in one of these priority streams, your score needs to be significantly higher—often 130+. You are competing in the 'General' pool against everyone else. Optimize every single point."
-          </p>
-        </div>
-      </section>
-
-      <!-- Section 3: The Wage Game -->
-      <section id="wage" class="bg-white p-10 sm:p-14 rounded-[3rem] border border-slate-200 shadow-sm mb-16">
-        <div class="flex flex-col md:flex-row gap-10 items-center">
-          <div class="flex-1">
-             <h2 class="text-3xl font-black text-slate-900 mb-6">3. The Wage Game: $0.50 Matters</h2>
-             <p class="text-slate-600 leading-relaxed mb-6">
-               Here is a secret: The <strong>bc pnp calculator</strong> wage points are bracketed. Each $1/hour band from $16 to $70 is worth one point, so a raise of just $0.50/hour can push you into the next band.
-             </p>
-             <p class="text-slate-600 leading-relaxed">
-               For 2026, the maximum points (55) are awarded at $70/hour or more. Negotiating a slightly higher starting salary with your employer is often easier than learning French for CLB points. Check the calculator to see if you are on the edge of a point bracket.
-             </p>
-             <div class="mt-8">
-               <a href="/bc-pnp-calculator" class="text-red-600 font-black uppercase tracking-widest text-sm hover:underline">Check Wage Points Brackets →</a>
-             </div>
-          </div>
-          <div class="w-full md:w-64 h-64 bg-slate-100 rounded-full flex flex-col items-center justify-center border-8 border-slate-50 shadow-inner">
-             <span class="text-5xl font-black text-slate-900">$70<span class="text-xl text-slate-400">/hr</span></span>
-             <span class="text-xs font-bold text-red-600 uppercase tracking-widest mt-2">Max Points Zone</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 4: Step-by-Step Process -->
-      <section id="process" class="mb-16">
-        <h2 class="text-3xl font-black text-slate-900 mb-8 px-4">4. From Registration to PR: The Roadmap</h2>
-        <div class="relative border-l-4 border-slate-200 ml-4 md:ml-8 pl-8 md:pl-12 space-y-12">
-          
-          <div class="relative">
-            <span class="absolute -left-[45px] md:-left-[61px] top-0 w-8 h-8 md:w-10 md:h-10 bg-slate-900 text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-white">1</span>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Registration (SIRS)</h3>
-            <p class="text-slate-600">Create your profile in the BC PNP Online system. It is free. You are scored immediately. This is not an application; it is an expression of interest.</p>
-          </div>
-
-          <div class="relative">
-            <span class="absolute -left-[45px] md:-left-[61px] top-0 w-8 h-8 md:w-10 md:h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-white">2</span>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Invitation (ITA)</h3>
-            <p class="text-slate-600">If your score meets the cutoff for a draw, you receive an ITA. You now have <strong>30 days</strong> to submit your full application. Do not miss this window.</p>
-          </div>
-
-          <div class="relative">
-             <span class="absolute -left-[45px] md:-left-[61px] top-0 w-8 h-8 md:w-10 md:h-10 bg-slate-900 text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-white">3</span>
-             <h3 class="text-xl font-bold text-slate-900 mb-2">Application & Review</h3>
-             <p class="text-slate-600">Submit all documents (Employer forms, Transcripts, Pay stubs) and pay the $1,750 fee. WelcomeBC's estimate is about 3 months for most applications.</p>
-          </div>
-
-          <div class="relative">
-             <span class="absolute -left-[45px] md:-left-[61px] top-0 w-8 h-8 md:w-10 md:h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-white">4</span>
-             <h3 class="text-xl font-bold text-slate-900 mb-2">Nomination</h3>
-             <p class="text-slate-600">Success. You receive a Confirmation of Nomination. You now have a work permit support letter (if needed) and 600 points in Express Entry (if eligible).</p>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Section 5: Common Mistakes -->
-      <section id="mistakes" class="bg-red-50 p-10 rounded-[2.5rem] mb-16 border border-red-100">
-        <h2 class="text-3xl font-black text-red-900 mb-8">3 Fatal Mistakes to Avoid</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-           <div class="bg-white p-6 rounded-2xl shadow-sm">
-             <div class="text-red-600 text-4xl mb-4">⚠</div>
-             <h3 class="font-bold text-slate-900 mb-2">Wrong NOC Code</h3>
-             <p class="text-sm text-slate-600">Choosing a NOC that matches your *title* but not your *duties*. Officers check duties first. Instant rejection.</p>
-           </div>
-           <div class="bg-white p-6 rounded-2xl shadow-sm">
-             <div class="text-red-600 text-4xl mb-4">📉</div>
-             <h3 class="font-bold text-slate-900 mb-2">Inconsistent History</h3>
-             <p class="text-sm text-slate-600">Your LinkedIn says one thing, your CV another, and your application a third. Consistency is crucial.</p>
-           </div>
-           <div class="bg-white p-6 rounded-2xl shadow-sm">
-             <div class="text-red-600 text-4xl mb-4">⏰</div>
-             <h3 class="font-bold text-slate-900 mb-2">Expiring Docs</h3>
-             <p class="text-sm text-slate-600">Passport or Language results expiring mid-process. Renew them *before* you apply.</p>
-           </div>
-        </div>
-      </section>
-
-      <!-- Section 6: Deep FAQ -->
-      <section id="faq" class="space-y-12">
-        <h2 class="text-3xl font-black text-slate-900 text-center">Hard Truths & Common Questions</h2>
-        
-        <div class="space-y-6">
-          <!-- Question 1 -->
-          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">Does my remote work count for BC PNP experience?</h3>
-            <p class="text-slate-600 leading-relaxed">
-              It's complicated. If you are working for a BC company but sitting in Toronto, <strong>no</strong>. You must reside in BC. If you are living in BC and working remotely for a BC company, <strong>yes</strong>. If you assume "work is work," you might get rejected. The physical location of where you pay taxes and sleep matters.
-            </p>
-          </div>
-
-          <!-- Question 2 -->
-          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">What if my employer is new?</h3>
-            <p class="text-slate-600 leading-relaxed">
-              Your employer needs to be established. They generally need to have been in business for at least one year (sometimes two) and have permanent full-time employees. A "startup" that was incorporated last week cannot support your <strong>bc pnp application</strong>, no matter how much they pay you.
-            </p>
-          </div>
-
-          <!-- Question 3 -->
-          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">Can I apply for the Master's stream with an MBA?</h3>
-            <p class="text-slate-600 leading-relaxed">
-              <strong>No</strong>. The <strong>bc pnp masters stream</strong> (International Post-Graduate) is closed, and it only ever covered <strong>science, health and agricultural</strong> fields, so an MBA or a Master of Arts never qualified for the "no job offer" path. The International Graduate stream is also closed, so today you need a B.C. job offer under the Skilled Worker or Health Authority stream.
-            </p>
-          </div>
-
-          <!-- Question 4 -->
-          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">Why are processing times so vague?</h3>
-            <p class="text-slate-600 leading-relaxed">
-              Official <strong>bc pnp processing time</strong> is an average. Clean applications (perfect docs, clear NOC codes) move fast—sometimes in 2 months. Messy applications with confusing job descriptions get stuck in manual review hell for 6+ months.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Final CTA -->
-      <section class="mt-20 py-20 bg-slate-900 rounded-[3rem] text-center px-6 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div class="relative z-10 max-w-2xl mx-auto space-y-8">
-          <h2 class="text-4xl sm:text-5xl font-black text-white tracking-tight">Stop Reading. Start Calculating.</h2>
-          <p class="text-slate-300 text-lg">
-            Reading guides is procrastination. You need your number. Find out exactly where you stand in the 2026 grids right now.
-          </p>
-          <a href="/bc-pnp-calculator" class="inline-block px-12 py-6 bg-red-600 hover:bg-red-500 text-white font-black rounded-2xl transition-all shadow-2xl scale-100 hover:scale-105 active:scale-95 uppercase tracking-widest text-lg">
-            Launch Calculator
-          </a>
-        </div>
-      </section>
-
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">How does the BC PNP work in 2026?</h1>
+      <p class="text-lg text-slate-800 leading-relaxed">
+        The BC PNP nominates workers who have a full-time, indeterminate B.C. job offer through 2 Skills Immigration streams (Skilled Worker and
+        Health Authority), ranks registrations out of 200 points, invites them in Care, Build and High Economic Impact draws, and charges $1,750 to apply.
+      </p>
+      <LangTwin zh="/zh/bc-pnp-guide" hi="/hi/bc-pnp-guide" />
     </div>
   </div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-12">
+    <aside class="rounded-2xl border-l-4 border-red-600 bg-red-50/60 p-5" aria-label="Key facts">
+      <p class="font-black text-slate-900 mb-2">Key facts</p>
+      <ul class="space-y-1.5 text-sm text-slate-800 list-disc pl-5">
+        <li>2026 allocation: 6,254 nominations (<a href={NEWS_URL} target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC, August 18, 2026</a>).</li>
+        <li>Latest draw: {latestDrawDate}, minimum scores from {latestDrawMinScore}.</li>
+        <li>Registration is free and lasts up to 12 months; after an invitation you have 30 calendar days to apply.</li>
+        <li>Fees: $1,750 to apply, $500 for a request for review (<a href={SKILLS_URL} target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC</a>).</li>
+      </ul>
+    </aside>
+
+    <section class="space-y-4" aria-labelledby="streams">
+      <h2 id="streams" class={h2}>What are the BC PNP streams?</h2>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+        <table class="w-full">
+          <caption class="sr-only">BC PNP streams in 2026</caption>
+          <thead class="bg-slate-100">
+            <tr><th scope="col" class={th}>Stream</th><th scope="col" class={th}>Who it's for</th><th scope="col" class={th}>Job offer</th><th scope="col" class={th}>Registration</th></tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr><th scope="row" class={`${td} font-bold text-slate-900 text-left`}>Skilled Worker</th><td class={td}>Managers, professionals and skilled trades; 2 years of skilled experience</td><td class={td}>TEER 0–3, full-time, indeterminate</td><td class={td}>Register, wait for an invitation</td></tr>
+            <tr><th scope="row" class={`${td} font-bold text-slate-900 text-left`}>Health Authority</th><td class={td}>Health workers employed by a B.C. public health authority</td><td class={td}>Eligible health NOC, TEER 0–3</td><td class={td}>Apply directly, no registration</td></tr>
+            <tr><th scope="row" class={`${td} font-bold text-slate-900 text-left`}>Temporary Rural/Remote Health Support</th><td class={td}>Health authority cleaning and security staff in rural/remote B.C.</td><td class={td}>Current health authority job</td><td class={td}>Separate rounds</td></tr>
+            <tr><th scope="row" class={`${td} font-bold text-slate-900 text-left`}>Entrepreneur Immigration</th><td class={td}>People starting or buying a B.C. business</td><td class={td}>Not needed</td><td class={td}>Register, wait for an invitation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-500">
+        Sources: Part 4, <a href={GUIDE_URL} target="_blank" rel="noopener noreferrer" class="underline">Skills Immigration Program Guide</a> (June 10, 2026);
+        <a href={SKILLS_URL} target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC Skills Immigration</a>. Skilled Worker and Health Authority both offer an Express Entry BC option.
+      </p>
+    </section>
+
+    <section class="space-y-3" aria-labelledby="points">
+      <h2 id="points" class={h2}>How are BC PNP points calculated?</h2>
+      <p class={p}>
+        Registrations get up to 40 points for work experience, 40 for education, 40 for language, 55 for the job offer's hourly wage and 25 for
+        the area of B.C. you'll work in, 200 in all. The <a href={LINKS.calculator.href} class={a}>{LINKS.calculator.short}</a> scores all five and
+        shows the breakdown; area and wage usually move a score the most.
+      </p>
+    </section>
+
+    <section class="space-y-3" aria-labelledby="draws">
+      <h2 id="draws" class={h2}>How do BC PNP draws work?</h2>
+      <p class={p}>
+        Since May 2026 the BC PNP has run a Care and Build draw about once a month for priority health, childcare, veterinary and construction
+        occupations, and a High Economic Impact draw about once a month for every other skilled job (by points, or by a wage threshold alone).
+        The <a href={LINKS.draws.href} class={a}>{LINKS.draws.short}</a> page lists every round with its minimum score
+        (<a href={DRAWS_SOURCE_URL} target="_blank" rel="noopener noreferrer" class="underline">source: WelcomeBC</a>).
+      </p>
+    </section>
+
+    <section class="space-y-8" aria-labelledby="all-guides">
+      <h2 id="all-guides" class={h2}>Every BC PNP guide, by topic</h2>
+      {
+        groups.map((g) => (
+          <div id={g.id} class="space-y-3">
+            <h3 class="text-xl font-black text-slate-900">{g.name}</h3>
+            <ul class="divide-y divide-slate-100 rounded-2xl border border-slate-200 bg-white">
+              {g.items.map((i) => (
+                <li class="px-4 py-3 text-sm">
+                  <a href={i.href} class={a}>{i.anchor}</a>
+                  <span class="text-slate-600">: {i.line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+      <p class="text-sm text-slate-600">
+        Guides on other provinces and federal programs are in the <a href="/guides" class={a}>immigration guides library</a>.
+      </p>
+    </section>
+
+    <section class="space-y-3" aria-labelledby="guide-faq">
+      <h2 id="guide-faq" class={h2}>BC PNP questions</h2>
+      {
+        faqs.map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-5">
+            <h3 class="font-black text-slate-900">{f.q}</h3>
+            <p class="mt-2 text-sm text-slate-700 leading-relaxed">{f.a}</p>
+          </div>
+        ))
+      }
+    </section>
+  </div>
+
+  <RelatedLinks current="/bc-pnp-guide" />
+  <p class="max-w-4xl mx-auto px-4 sm:px-6 pb-12 text-xs text-slate-500">Updated November 26, 2026. General information, not legal advice.</p>
 </BaseLayout>

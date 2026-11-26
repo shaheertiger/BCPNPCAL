@@ -1,603 +1,181 @@
 ---
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { calculateTotalPoints, calculateAnnualWage } from "../../utils/calculatePoints";
+import { EXAMPLE_PROFILES } from "../../data/example-profiles";
+import { TECH_NOCS } from "../../data/tech-nocs";
+import { highImpactDraws2026 } from "../../data/bcpnp-draws";
+import { LINKS } from "../../data/site-links";
+import { latestFor, latestHeiWage } from "../../utils/draws";
 
-const title = "BC PNP Calculator for Tech Workers & High-Demand Occupations (2026)";
-const description = "Special guide for Tech, Healthcare, and Construction workers. See why your BC PNP score requirements are lower and how to qualify for targeted draws.";
+const GUIDE = "https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-si-program-guide-pdf";
+const ITA_PAGE = "https://www.welcomebc.ca/immigrate-to-b-c/about-the-bc-provincial-nominee-program/invitations-to-apply";
+
+const hei = latestFor("hei-points");
+const heiScore = hei.score as number;
+const heiWage = highImpactDraws2026.find((d) => d.date === latestHeiWage.date)!;
+const fmt = (n: number) => n.toLocaleString("en-CA");
+
+const title = "BC PNP Tech 2026: Eligible NOC Codes and Your Score";
+const description = `${TECH_NOCS.length} tech NOC codes are on the Program Guide list. Tech draws ended Dec 2024; tech workers now need ${heiScore} points or $${heiWage.hourly}/hr in High Economic Impact draws.`;
+
+// Worked example: the site's "tech" profile, scored by the calculator engine,
+// plus the same person with an example offer at the latest wage-track hourly
+// threshold. Wages are example offers, not wage data.
+const base = EXAMPLE_PROFILES.find((p) => p.id === "tech")!;
+const r1 = calculateTotalPoints(base.state);
+const variantWage = heiWage.hourly;
+const r2 = calculateTotalPoints({ ...base.state, hourlyWage: variantWage });
+const variantAnnual = calculateAnnualWage(variantWage);
+const baseAnnual = calculateAnnualWage(base.state.hourlyWage);
+const meetsWage = (h: number) => h >= heiWage.hourly && calculateAnnualWage(h) >= heiWage.annual;
+const b1 = r1.breakdown;
+const teer = (noc: string) => noc.charAt(1);
+
+const faqs = [
+  {
+    q: "Is there still a BC PNP tech stream in 2026?",
+    a: `No. There is no separate tech stream or tech draw. WelcomeBC held the last draw for priority technology occupations on December 3, 2024. Tech workers register in the Skilled Worker stream and are invited through Innovate: High Economic Impact draws.`,
+  },
+  {
+    q: "What BC PNP score do tech workers need?",
+    a: `There is no tech-specific minimum. The latest High Economic Impact points draw, on ${hei.date}, needed ${heiScore} points. The same draw also invited candidates with a TEER 0–3 job offer paying at least $${heiWage.hourly} an hour and $${fmt(heiWage.annual)} a year, whatever their score.`,
+  },
+  {
+    q: "Can a contract tech job qualify for BC PNP?",
+    a: `Yes, for the ${TECH_NOCS.length} technology occupations in Appendix A of the Program Guide, if the offer is for at least one year (365 days) and has at least 120 calendar days left when you apply. Other occupations need an indeterminate offer.`,
+  },
+  {
+    q: "Do tech workers need a job offer for BC PNP?",
+    a: "Yes. You need a full-time job offer (an average of at least 30 hours a week) from an eligible B.C. employer that supports your application.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  },
+];
+
+const a = "text-red-600 font-semibold underline underline-offset-2 hover:text-red-700";
+const ext = "text-red-600 underline underline-offset-2 hover:text-red-700";
+const h2 = "text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-12 mb-4";
+const p = "text-slate-700 leading-relaxed mb-4";
 ---
 
-<ArticleLayout slug="bc-pnp-calculator-for-tech" datePublished="2026-01-29" dateModified="2026-11-11" keywords="BC PNP calculator tech, tech worker BC PNP score, BC PNP tech draw score" title={title} description={description}>
-  <div class="max-w-4xl mx-auto px-4 py-12 sm:py-20">
-    
-    <!-- Hero Header -->
-    <header class="mb-16 text-center">
-      <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl mb-8 shadow-xl shadow-indigo-200">
-        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
-        </svg>
-      </div>
-      <h1 class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6">
-        BC PNP for <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Tech & High-Demand</span> Workers
-      </h1>
-      <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        If you're an engineer, developer, nurse, or trade worker, the rules are different for you. In a good way.
-      </p>
-    </header>
+<ArticleLayout
+  slug="bc-pnp-calculator-for-tech"
+  datePublished="2026-01-29"
+  dateModified="2026-11-26"
+  keywords="BC PNP tech, BC PNP tech NOC list, BC PNP tech draw, BC PNP score tech workers"
+  title={title}
+  description={description}
+  jsonLd={jsonLd}
+  related={["hei", "workExperience", "jobOffer"]}
+>
+  <article class="bg-slate-50 py-10 sm:py-14 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <header class="mb-8">
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          Which tech jobs are eligible for BC PNP?
+        </h1>
+        <p class="mt-4 text-lg text-slate-700 leading-relaxed">
+          {TECH_NOCS.length} technology occupations, from software developers (NOC 21232) to graphic designers (52120), are listed in the BC PNP Program Guide, but tech draws ended on December 3, 2024. Tech workers now compete in High Economic Impact draws, which on {hei.date} needed {heiScore} points or a wage of at least ${heiWage.hourly}/hr.
+        </p>
+      </header>
 
-    <!-- Main Content -->
-    <div class="space-y-16">
-
-      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl">
-        <p class="font-bold text-amber-900 mb-2">Update (November 2026)</p>
-        <p class="text-amber-800 text-sm leading-relaxed">This guide was first written for the old Tech draws. WelcomeBC says the final draw for priority technology occupations was held on December 3, 2024. Since the April 23, 2026 restructuring, workers are invited in three kinds of rounds: <strong>Care</strong> (health, childcare, education, veterinary), <strong>Build</strong> (nine certified construction trades) and <strong>Innovate: High Economic Impact</strong>, which is where most tech workers compete. Latest results as of November 11, 2026: Innovate on <strong>October 29, 2026</strong> invited 524 candidates earning at least $49 an hour and $99,000 a year in a TEER 0–3 job, plus 248 with 131 points or more; Care: Health needed <strong>76</strong> and Build: Construction Trades <strong>94</strong> on <strong>October 8, 2026</strong>, the latest Care and Build round. The application fee is $1,750, and job offers must be full-time and indeterminate.</p>
-      </div>
-      
-      <!-- Advantage Section -->
-      <section>
-        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-[2rem] p-8 sm:p-10 border border-indigo-100">
-          <h2 class="text-2xl font-black text-slate-900 mb-4">The "Targeted Draw" Advantage</h2>
-          <p class="text-slate-700 text-lg leading-relaxed">
-            In 2026, British Columbia drastically favors specific sectors. Tech and other workers outside the Care and Build lists needed <strong class="text-red-600">131 points</strong> in the October 29, 2026 Innovate points round (or a wage of at least $49 an hour and $99,000 a year), while a Registered Nurse needed only <strong class="text-green-600">76 points</strong> in the October 8, 2026 Care: Health draw. This guide explains how to calculate your "Targeted" score and navigate the special streams. For those affected by recent industry shifts, see our <a href="/articles/tech-layoffs-ai-canada-pr-opportunity-2026" class="text-indigo-600 hover:underline">Tech Layoff Opportunity Guide</a>.
-          </p>
-        </div>
-      </section>
-
-      <!-- Three Pillars -->
-      <section>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg transition-shadow">
-            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-              </svg>
-            </div>
-            <h3 class="font-black text-slate-900 text-lg mb-3">BC PNP Tech</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">No Tech-only draws in 2026. Tech roles compete in Innovate: High Economic Impact rounds: on October 29, 2026, a wage of $49/hr and $99,000/yr (TEER 0–3) or 131 points earned an invitation. <a href="/articles/bc-pnp-tech-stream-occupations" class="text-indigo-600 hover:underline font-bold">See full list →</a></p>
-          </div>
-          
-          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg transition-shadow">
-            <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-              </svg>
-            </div>
-            <h3 class="font-black text-slate-900 text-lg mb-3">Healthcare</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">Physicians, nurses, allied health. Care: Health draws had among the <strong>lowest cut-off scores</strong> in 2026: 76 on September 10 and October 8.</p>
-          </div>
-          
-          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-lg transition-shadow">
-            <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-              </svg>
-            </div>
-            <h3 class="font-black text-slate-900 text-lg mb-3">Construction</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">Carpenters, plumbers, electricians (NOCs 72xxx, 73xxx). Build: Construction Trades draws need a SkilledTradesBC certificate or registered apprenticeship; the October 8, 2026 cutoff was 94.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- NOC Table Section -->
-      <section>
-        <div class="text-center mb-10">
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Top 10 High-Demand Tech NOCs</h2>
-          <p class="text-slate-600">These codes were on the old Tech list. In 2026 they compete in Innovate: High Economic Impact rounds.</p>
-        </div>
-        
-        <div class="bg-white rounded-[2rem] border border-slate-200 overflow-hidden shadow-sm">
-          <div class="grid grid-cols-2 bg-slate-900 text-white">
-            <div class="px-6 py-4 font-bold text-sm uppercase tracking-wider">NOC Code</div>
-            <div class="px-6 py-4 font-bold text-sm uppercase tracking-wider">Job Title</div>
-          </div>
-          <div class="divide-y divide-slate-100">
-            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
-              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">20012</div>
-              <div class="px-6 py-4 text-slate-700">Computer and information systems managers</div>
-            </div>
-            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
-              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21231</div>
-              <div class="px-6 py-4 text-slate-700">Software engineers and designers</div>
-            </div>
-            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
-              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21232</div>
-              <div class="px-6 py-4 text-slate-700">Software developers and programmers</div>
-            </div>
-            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
-              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21230</div>
-              <div class="px-6 py-4 text-slate-700">Computer systems developers and programmers</div>
-            </div>
-            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
-              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21234</div>
-              <div class="px-6 py-4 text-slate-700">Web developers and programmers</div>
-            </div>
-            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
-              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21211</div>
-              <div class="px-6 py-4 text-slate-700">Data scientists</div>
-            </div>
-            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
-              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21223</div>
-              <div class="px-6 py-4 text-slate-700">Database analysts and data administrators</div>
-            </div>
-            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
-              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">21310</div>
-              <div class="px-6 py-4 text-slate-700">Electrical and electronics engineers</div>
-            </div>
-            <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
-              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">22220</div>
-              <div class="px-6 py-4 text-slate-700">Computer network technicians</div>
-            </div>
-             <div class="grid grid-cols-2 hover:bg-slate-50 transition-colors">
-              <div class="px-6 py-4 font-mono text-indigo-600 font-bold">22221</div>
-              <div class="px-6 py-4 text-slate-700">User support technicians (Helpdesk)</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- NEW: The "Tech Draw" Process Explained -->
-      <section>
-         <div class="text-center mb-10">
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Targeted Rounds in 2026: How They Work</h2>
-          <p class="text-slate-600">The old "BC PNP Tech" draws have been replaced by Care, Build and Innovate rounds.</p>
-        </div>
-
-        <div class="bg-slate-900 rounded-[2rem] p-8 sm:p-12 text-white relative overflow-hidden">
-          <div class="absolute top-0 right-0 p-32 bg-indigo-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-          
-          <div class="grid md:grid-cols-2 gap-12 relative z-10">
-            <div>
-              <h3 class="text-2xl font-black mb-6 flex items-center gap-3">
-                <span class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-sm">1</span>
-                Draw Schedule
-              </h3>
-              <p class="text-slate-300 leading-relaxed mb-6">
-                There are no weekly Tech draws in 2026. Care and Build rounds have run <strong>about monthly</strong> (August 6, September 10 and October 8, 2026), and Innovate: High Economic Impact rounds have also run roughly monthly (latest October 29, 2026).
-              </p>
-              
-              <h3 class="text-2xl font-black mb-6 flex items-center gap-3">
-                <span class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-sm">2</span>
-                Processing
-              </h3>
-              <p class="text-slate-300 leading-relaxed">
-                 WelcomeBC says about 80% of Skills Immigration applications are processed within <strong>3 months</strong>. There is no separate priority track for tech files in 2026.
-              </p>
-            </div>
-            
-            <div class="bg-white/10 rounded-xl p-8 border border-white/10">
-              <h4 class="font-bold text-indigo-300 uppercase tracking-wider text-sm mb-4">Latest Published Cut-offs</h4>
-              <div class="space-y-6">
-                <div>
-                  <div class="flex justify-between text-sm mb-2">
-                    <span>Innovate points round, Oct 29, 2026 (incl. tech)</span>
-                    <span class="font-bold">131 Points</span>
-                  </div>
-                  <div class="w-full bg-white/20 h-2 rounded-full overflow-hidden">
-                    <div class="bg-slate-500 h-full w-[95%]"></div>
-                  </div>
-                </div>
-                
-                <div>
-                  <div class="flex justify-between text-sm mb-2">
-                    <span class="text-white font-bold">Build: Construction Trades, Oct 8, 2026</span>
-                    <span class="font-bold text-green-400">94 Points</span>
-                  </div>
-                  <div class="w-full bg-white/20 h-2 rounded-full overflow-hidden">
-                    <div class="bg-green-500 h-full w-[75%] shadow-[0_0_15px_rgba(34,197,94,0.6)]"></div>
-                  </div>
-                </div>
-
-                 <div>
-                  <div class="flex justify-between text-sm mb-2">
-                    <span class="text-white font-bold">Care: Health, Oct 8, 2026</span>
-                    <span class="font-bold text-green-400">76 Points</span>
-                  </div>
-                  <div class="w-full bg-white/20 h-2 rounded-full overflow-hidden">
-                    <div class="bg-green-500 h-full w-[55%] shadow-[0_0_15px_rgba(34,197,94,0.6)]"></div>
-                  </div>
-                </div>
-              </div>
-              <p class="mt-6 text-xs text-slate-400 italic">*Minimum scores published on WelcomeBC's invitations page (last updated November 3, 2026). The October 29 Innovate round also invited 524 candidates by wage ($49/hr and $99,000/yr) regardless of score.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Scoring Tips -->
-      <section class="space-y-8">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 text-center">How to Calculate Scores for Tech Jobs</h2>
-        
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 font-black text-xl">1</div>
-              <h3 class="font-black text-slate-900 text-lg">Wage is King</h3>
-            </div>
-            <p class="text-slate-600 leading-relaxed mb-4">
-              Tech salaries in Vancouver are high. If you're earning $80,000+, you're likely maximizing the Wage Points category.
-            </p>
-            <div class="bg-green-50 rounded-xl p-4 border border-green-100">
-              <p class="text-green-800 font-bold text-sm">$55.00/hr = Max 55 points</p>
-            </div>
-          </div>
-          
-          <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 font-black text-xl">2</div>
-              <h3 class="font-black text-slate-900 text-lg">Education Points</h3>
-            </div>
-            <p class="text-slate-600 leading-relaxed mb-4">
-              Most Tech stream applicants have a Bachelor's degree. A Master's gives you an edge.
-            </p>
-            <div class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="text-slate-600">Bachelor's Degree</span>
-                <span class="font-bold text-slate-900">15 points</span>
-              </div>
-              <div class="flex justify-between text-sm">
-                <span class="text-slate-600">Master's Degree</span>
-                <span class="font-bold text-slate-900">22 points</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Application Process Roadmap -->
-       <section>
-        <div class="text-center mb-10">
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Your Application Roadmap</h2>
-          <p class="text-slate-600">From job offer to Permanent Residence.</p>
-        </div>
-        
-        <div class="relative max-w-3xl mx-auto">
-          <div class="absolute left-[20px] top-0 bottom-0 w-1 bg-slate-100"></div>
-          
-          <div class="space-y-12">
-            <div class="relative pl-16">
-              <div class="absolute left-0 top-1 w-11 h-11 bg-white border-4 border-indigo-500 rounded-full flex items-center justify-center font-bold text-indigo-700 z-10">1</div>
-              <h3 class="font-bold text-xl text-slate-900 mb-2">Get a Valid Job Offer</h3>
-              <p class="text-slate-600 leading-relaxed">
-                You need a full-time, indeterminate (no end date) offer from an eligible BC employer in a TEER 0–3 occupation. The old Tech rule allowing 1-year contracts no longer applies.
-              </p>
-            </div>
-
-            <div class="relative pl-16">
-              <div class="absolute left-0 top-1 w-11 h-11 bg-white border-4 border-indigo-500 rounded-full flex items-center justify-center font-bold text-indigo-700 z-10">2</div>
-              <h3 class="font-bold text-xl text-slate-900 mb-2">Register with SIRS</h3>
-              <p class="text-slate-600 leading-relaxed">
-                Create a profile on BC PNP Online. It's free. You'll get a score immediately. This is where you enter the "Pool".
-              </p>
-            </div>
-
-            <div class="relative pl-16">
-              <div class="absolute left-0 top-1 w-11 h-11 bg-white border-4 border-indigo-500 rounded-full flex items-center justify-center font-bold text-indigo-700 z-10">3</div>
-              <h3 class="font-bold text-xl text-slate-900 mb-2">Wait for an Invitation</h3>
-              <p class="text-slate-600 leading-relaxed">
-                Tech workers are invited in Innovate: High Economic Impact rounds. In the October 29, 2026 round, a wage of at least $49 an hour and $99,000 a year (TEER 0–3) or a score of 131 earned an ITA (Invitation to Apply).
-              </p>
-            </div>
-
-            <div class="relative pl-16">
-               <div class="absolute left-0 top-1 w-11 h-11 bg-green-500 border-4 border-white rounded-full flex items-center justify-center text-white z-10">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <h3 class="font-bold text-xl text-slate-900 mb-2">Submit Full Application</h3>
-              <p class="text-slate-600 leading-relaxed">
-                You have 30 days to pay the $1,750 fee and upload all documents. WelcomeBC says about 80% of applications are processed within 3 months.
-              </p>
-            </div>
-             <div class="relative pl-16">
-              <div class="absolute left-0 top-1 w-11 h-11 bg-slate-200 border-4 border-white rounded-full flex items-center justify-center font-bold text-slate-500 z-10">5</div>
-              <h3 class="font-bold text-xl text-slate-900 mb-2">Apply for PR</h3>
-              <p class="text-slate-600 leading-relaxed">
-                Once nominated, you get a "Work Permit Support Letter" (to keep working) and apply to IRCC for federal Permanent Residence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Employer Requirements -->
-      <section>
-        <div class="bg-orange-50 rounded-[2rem] p-8 sm:p-10 border border-orange-100">
-          <div class="flex items-start gap-6">
-            <div class="hidden sm:block w-16 h-16 bg-orange-100 rounded-2xl flex-shrink-0 flex items-center justify-center text-3xl">🏢</div>
-            <div>
-              <h3 class="text-2xl font-black text-slate-900 mb-4">Does My Employer Need a LMIA?</h3>
-              <p class="text-slate-700 leading-relaxed mb-6">
-                <strong>Usually, NO.</strong> This is the biggest benefit of BC PNP. Unlike the federal system which often requires a Labour Market Impact Assessment (LMIA), BC PNP Tech exempts employers from this lengthy process if they support your provincial nomination.
-              </p>
-              <div class="bg-white/60 p-6 rounded-xl space-y-2">
-                <p class="font-bold text-orange-900">Your Employer Must:</p>
-                <ul class="space-y-2">
-                  <li class="flex items-center gap-2 text-sm text-slate-700"><span class="text-orange-500">✓</span> Be established in BC for at least 1 year.</li>
-                  <li class="flex items-center gap-2 text-sm text-slate-700"><span class="text-orange-500">✓</span> Have at least 5 full-time employees (or 3 if you are Tech).</li>
-                  <li class="flex items-center gap-2 text-sm text-slate-700"><span class="text-orange-500">✓</span> Offer you a market-rate wage.</li>
-                  <li class="flex items-center gap-2 text-sm text-slate-700"><span class="text-orange-500">✓</span> Sign the "Job Offer Form" for your application.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Strategies -->
-      <section>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 text-center mb-10">Strategic Tips</h2>
-        
-        <div class="space-y-4">
-          <div class="bg-white p-6 rounded-[1.5rem] border border-slate-100 shadow-sm flex gap-6">
-            <div class="w-12 h-12 bg-red-50 rounded-xl flex-shrink-0 flex items-center justify-center">
-              <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1">Don't lowball your salary</h3>
-              <p class="text-slate-600 text-sm">If you're negotiating a job offer, aim for $55/hr as your "golden number" for max points.</p>
-            </div>
-          </div>
-          
-          <div class="bg-white p-6 rounded-[1.5rem] border border-slate-100 shadow-sm flex gap-6">
-            <div class="w-12 h-12 bg-purple-50 rounded-xl flex-shrink-0 flex items-center justify-center">
-              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1">Consider the startup scene</h3>
-              <p class="text-slate-600 text-sm">BC PNP Tech doesn't require the employer to have a specific LMIA in many cases, but the company must be established.</p>
-            </div>
-          </div>
-          
-          <div class="bg-white p-6 rounded-[1.5rem] border border-slate-100 shadow-sm flex gap-6">
-            <div class="w-12 h-12 bg-teal-50 rounded-xl flex-shrink-0 flex items-center justify-center">
-              <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1">Look at Victoria</h3>
-              <p class="text-slate-600 text-sm">Vancouver has high tech wages, but Victoria has a growing tech hub (VIATEC) and offers <strong>Regional Points</strong> which Vancouver does not.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA -->
-      <section>
-        <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-[2rem] p-10 sm:p-12 text-center text-white">
-          <h3 class="text-2xl sm:text-3xl font-black mb-4">Calculate Your Tech Score</h3>
-          <p class="text-red-100 mb-8 max-w-md mx-auto">See if you meet the cut-off for the next Tech Draw.</p>
-          <a href="/" class="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-[1.5rem] font-black text-lg hover:bg-red-50 transition-colors shadow-xl">
-            Open Calculator
-            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </a>
-        </div>
-      </section>
-
-      <!-- 35 Tech Occupations -->
-      <section>
-        <h2 class="text-2xl font-black text-slate-900 mb-6">The 35 BC PNP Tech Occupations (2026)</h2>
-        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-          <p class="text-slate-600 leading-relaxed mb-4">BC PNP's Tech stream targeted 35 specific NOC codes. As of November 2026 there have been no Tech-only draws in 2026; these occupations now compete in Innovate: High Economic Impact rounds. Knowing the precise NOC list helps you confirm your eligibility and structure your job offer correctly.</p>
-          <div class="grid sm:grid-cols-2 gap-3 text-sm text-slate-700">
-            <div>NOC 20012 - Computer and Information Systems Managers</div>
-            <div>NOC 21100 - Physicists and Astronomers</div>
-            <div>NOC 21210 - Mathematicians, Statisticians, and Actuaries</div>
-            <div>NOC 21211 - Data Scientists</div>
-            <div>NOC 21220 - Cybersecurity Specialists</div>
-            <div>NOC 21221 - Business Systems Specialists</div>
-            <div>NOC 21222 - Information Systems Specialists</div>
-            <div>NOC 21223 - Database Analysts and Data Administrators</div>
-            <div>NOC 21230 - Computer Systems Developers and Programmers</div>
-            <div>NOC 21231 - Software Engineers and Designers</div>
-            <div>NOC 21232 - Software Developers and Programmers</div>
-            <div>NOC 21233 - Web Designers</div>
-            <div>NOC 21234 - Web Developers and Programmers</div>
-            <div>NOC 21300 - Civil Engineers</div>
-            <div>NOC 21301 - Mechanical Engineers</div>
-            <div>NOC 21310 - Electrical and Electronics Engineers</div>
-            <div>NOC 21311 - Computer Engineers</div>
-            <div>NOC 21321 - Industrial and Manufacturing Engineers</div>
-            <div>NOC 21331 - Petroleum Engineers</div>
-            <div>NOC 21399 - Other Professional Engineers</div>
-            <div>NOC 22220 - Computer Network and Web Technicians</div>
-            <div>NOC 22221 - User Support Technicians</div>
-            <div>NOC 22222 - Information Systems Testing Technicians</div>
-            <div>NOC 22310 - Electrical and Electronics Engineering Technologists</div>
-            <div>NOC 51120 - Producers, Directors, Choreographers</div>
-            <div>NOC 52111 - Broadcast Technicians</div>
-            <div>NOC 52112 - Audio and Video Recording Technicians</div>
-            <div>NOC 52113 - Other Technical Occupations in Motion Pictures</div>
-            <div>NOC 52120 - Graphic Designers and Illustrators</div>
-            <div>NOC 53111 - Motion Picture Production</div>
-            <div>NOC 53124 - Other Performers</div>
-            <div>NOC 11202 - Professional Occupations in Advertising/Marketing</div>
-            <div>NOC 50011 - Managers in Publishing, Motion Pictures</div>
-            <div>NOC 60010 - Corporate Sales Managers (Tech only)</div>
-            <div>NOC 70010 - Construction Managers (Tech employers)</div>
-          </div>
-          <p class="text-slate-600 leading-relaxed mt-4">Any TEER 0–3 job offer that is not on the BC PNP's ineligible occupations list can qualify under the Skilled Worker stream; being on this list no longer brings a separate draw.</p>
-        </div>
-      </section>
-
-      <!-- Salary Benchmarks -->
-      <section>
-        <h2 class="text-2xl font-black text-slate-900 mb-6">2026 Salary Benchmarks for Top Tech NOCs</h2>
-        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-          <p class="text-slate-600 leading-relaxed mb-4">SIRS allocates up to 60 points based on hourly wage relative to the regional median for your NOC. The higher your wage above the median, the more points you score. These benchmarks reflect BC Job Bank medians as of early 2026 for the Lower Mainland-Southwest region; offers in Greater Victoria and Kelowna may be slightly lower.</p>
-          <ul class="space-y-2 text-slate-700">
-            <li class="flex justify-between border-b border-slate-100 pb-2"><span>NOC 21232 Software Developer</span><strong>Median $44.23/hr ($92,000)</strong></li>
-            <li class="flex justify-between border-b border-slate-100 pb-2"><span>NOC 21231 Software Engineer</span><strong>Median $51.92/hr ($108,000)</strong></li>
-            <li class="flex justify-between border-b border-slate-100 pb-2"><span>NOC 21311 Computer Engineer</span><strong>Median $50.00/hr ($104,000)</strong></li>
-            <li class="flex justify-between border-b border-slate-100 pb-2"><span>NOC 21211 Data Scientist</span><strong>Median $48.08/hr ($100,000)</strong></li>
-            <li class="flex justify-between border-b border-slate-100 pb-2"><span>NOC 21220 Cybersecurity</span><strong>Median $47.12/hr ($98,000)</strong></li>
-            <li class="flex justify-between border-b border-slate-100 pb-2"><span>NOC 22221 User Support Tech</span><strong>Median $28.85/hr ($60,000)</strong></li>
-            <li class="flex justify-between pb-2"><span>NOC 20012 IT Manager</span><strong>Median $62.50/hr ($130,000)</strong></li>
-          </ul>
-          <p class="text-slate-600 leading-relaxed mt-4">Negotiating $4-6/hr above the median is a fast way to move from a 95 SIRS score to 105+ without changing anything else about your profile. Many BC tech employers are willing to adjust salary slightly when they understand it directly affects the candidate's PR pathway.</p>
-        </div>
-      </section>
-
-      <!-- Tech Tip Strategies -->
-      <section>
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Top Tech-Specific Score-Boosting Strategies</h2>
-        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-          <ol class="list-decimal pl-6 space-y-3 text-slate-700 leading-relaxed">
-            <li><strong>Negotiate a signing bonus or annualized wage upgrade.</strong> SIRS counts base hourly wage. Converting a signing bonus into base salary can push you over a median threshold.</li>
-            <li><strong>Optimize your NOC choice.</strong> If you write code daily but lead a team, NOC 20012 (IT Manager) typically pays more than NOC 21232 (Software Developer). Match the NOC to your actual duties for maximum points.</li>
-            <li><strong>Stack a master's degree.</strong> Even a one-year coursework master's adds 8-22 CRS combination points and increases SIRS education from 17 to 23.</li>
-            <li><strong>Boost language one CLB level.</strong> Moving from CLB 8 to CLB 9 across all four skills adds up to 22 CRS points and roughly 4-6 SIRS points.</li>
-            <li><strong>Apply outside Metro Vancouver.</strong> SIRS awards 10 regional points for jobs in the Northeast Development Region or other rural BC zones. Many tech startups in Kelowna, Nanaimo, and Victoria qualify.</li>
-            <li><strong>Time your Express Entry profile.</strong> Submit your federal profile two to four weeks before SIRS registration so you have the EE Profile Number ready.</li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- Tech Case Studies -->
-      <section>
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Tech Applicant Case Studies</h2>
-        <div class="space-y-4">
-          <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-            <h3 class="font-bold text-slate-900 mb-2">Case 1: Backend Developer, NOC 21232, Vancouver</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Ahmed, 30, with a master's in computer science and 4 years of Canadian work experience, negotiated $52/hr (above $44.23 median). SIRS: 134. Invited in the next Tech draw (when Tech draws still ran), nominated in 8 weeks, COPR in 6 months.</p>
-          </div>
-          <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-            <h3 class="font-bold text-slate-900 mb-2">Case 2: UX Designer, NOC 21233, Victoria</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Priya, 34, with a bachelor's degree and 5 years of UX experience, accepted $38/hr in Victoria (median $34/hr for NOC 21233). SIRS: 108. Invited in 3 weeks. The Victoria regional bump added 3 points beyond a Vancouver offer.</p>
-          </div>
-          <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-            <h3 class="font-bold text-slate-900 mb-2">Case 3: Cybersecurity Analyst, NOC 21220, Kelowna</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Olu, 37, working for a managed-services firm in Kelowna at $46/hr. Northeast/Interior regional points plus strong CLB 9 language gave him SIRS 121. Nominated and PR finalized in 11 months total.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Tech FAQ -->
-      <section>
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Tech Stream Frequently Asked Questions</h2>
-        <div class="space-y-4">
-          <details class="group bg-white rounded-2xl border border-slate-200 open:border-red-200 open:shadow-md transition-all">
-            <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none"><span>Does my employer need to be a tech company?</span><span class="text-red-600">▼</span></summary>
-            <div class="px-6 pb-6 text-slate-600 leading-relaxed">No. The Tech stream looks at your occupation, not your employer's industry. A software developer working for a bank, retailer, or municipal government qualifies as long as the NOC matches the designated list and the job duties align.</div>
-          </details>
-          <details class="group bg-white rounded-2xl border border-slate-200 open:border-red-200 open:shadow-md transition-all">
-            <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none"><span>Are remote tech jobs eligible?</span><span class="text-red-600">▼</span></summary>
-            <div class="px-6 pb-6 text-slate-600 leading-relaxed">The employer must be a BC-based business and the position must be primarily based in BC. Hybrid roles are common; fully remote roles where the worker lives in another province generally do not qualify.</div>
-          </details>
-          <details class="group bg-white rounded-2xl border border-slate-200 open:border-red-200 open:shadow-md transition-all">
-            <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none"><span>Is the job offer required to be at least one year long?</span><span class="text-red-600">▼</span></summary>
-            <div class="px-6 pb-6 text-slate-600 leading-relaxed">It must be indeterminate. As of November 2026, WelcomeBC says Skilled Worker job offers must be full-time and indeterminate (no end date); the old 12-month Tech option no longer applies.</div>
-          </details>
-          <details class="group bg-white rounded-2xl border border-slate-200 open:border-red-200 open:shadow-md transition-all">
-            <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none"><span>How often does BC PNP run Tech-only draws?</span><span class="text-red-600">▼</span></summary>
-            <div class="px-6 pb-6 text-slate-600 leading-relaxed">It doesn't any more. The BC PNP has held no Tech-only draws in 2026. Tech workers are invited in Innovate: High Economic Impact rounds, which have run roughly monthly. The latest, on October 29, 2026, invited 524 candidates by wage ($49 an hour and $99,000 a year, TEER 0–3) and 248 by points (minimum 131).</div>
-          </details>
-          <details class="group bg-white rounded-2xl border border-slate-200 open:border-red-200 open:shadow-md transition-all">
-            <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none"><span>Can a startup founder qualify?</span><span class="text-red-600">▼</span></summary>
-            <div class="px-6 pb-6 text-slate-600 leading-relaxed">A founder hiring themselves is not eligible. However, an early-stage employee with a genuine arm's-length employment relationship can qualify. Founders should look at the BC PNP Entrepreneur Immigration stream instead.</div>
-          </details>
-        </div>
-      </section>
-
-      <!-- Pro Tips Specific to Tech Workers -->
-      <section class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Quick Pro Tips for Tech Applicants</h2>
-        <ul class="space-y-3 text-slate-700 leading-relaxed">
-          <li><strong>Confirm NOC alignment with HR.</strong> Ask your hiring manager to list specific duties from the NOC 2021 main duties section in your offer letter.</li>
-          <li><strong>Front-load your Express Entry profile.</strong> Create it within 30 days of accepting your job offer so the EE Profile Number is ready when you register SIRS.</li>
-          <li><strong>Negotiate beyond base salary.</strong> Stock options and bonuses do not count for SIRS wage points - push for hourly base.</li>
-          <li><strong>Document everything in writing.</strong> A signed offer letter and the BC PNP employer registration confirmation are your two most important documents.</li>
+      <aside class="rounded-2xl border border-red-100 bg-white p-6 mb-10" aria-label="Key facts">
+        <p class="text-xs font-black uppercase tracking-widest text-red-600 mb-3">Key facts</p>
+        <ul class="space-y-2 text-slate-800 text-sm sm:text-base">
+          <li><strong>Tech list:</strong> {TECH_NOCS.length} NOC codes in Appendix A of the Program Guide; these can qualify with a job offer of at least one year instead of an indeterminate one.</li>
+          <li><strong>Stream:</strong> Skilled Worker, which needs 2 years of full-time skilled (TEER 0–3) experience from the last 10 years.</li>
+          <li><strong>Tech draws:</strong> none since December 3, 2024.</li>
+          <li><strong>Latest High Economic Impact draw ({hei.date}):</strong> {heiScore} points, or ${heiWage.hourly}/hr and ${fmt(heiWage.annual)}/yr in a TEER 0–3 job.</li>
         </ul>
-      </section>
+      </aside>
 
-      <!-- Detailed Tech Stream Explanation -->
-      <section>
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Understanding the Tech Stream in Depth</h2>
-        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-5">
-          <p class="text-slate-600 leading-relaxed">Note (November 2026): this section describes the Tech stream as it worked before 2026. The BC PNP has held no Tech-only draws in 2026. The BC PNP Tech stream was long one of the fastest provincial nomination pathways in Canada. It exists because British Columbia's technology sector accounts for more than 12 percent of provincial GDP and continues to face acute labour shortages, particularly in software engineering, data science, and cybersecurity roles. The province responded by carving out a Tech-only invitation track inside the Skilled Worker and Express Entry BC streams, with weekly draws that consistently invite candidates at SIRS scores 20-30 points below the equivalent general Skilled Worker cut-off.</p>
-          <p class="text-slate-600 leading-relaxed">To qualify, your job offer must fall inside one of the 35 designated NOC codes, last at least 12 months, and be full-time at 30 or more hours per week. The employer must register the position on BCPNP Online before you can complete your application. The most common applicant mistake is mismatching the NOC code: a person with the title "Senior Engineer" may actually fall under NOC 21232 (Software Developers and Programmers) or NOC 21311 (Computer Engineers) depending on whether their duties are primarily coding or systems-level hardware design. Use the NOC 2021 lead statement to confirm the right code before your employer registers.</p>
-          <p class="text-slate-600 leading-relaxed">Wage is the other lever applicants frequently underplay. SIRS allocates points for hourly wage relative to the BC Job Bank median for your specific NOC and region. Each dollar above the median typically translates to two SIRS points, with a maximum effective ceiling around $15/hr above median. A negotiated wage of $52/hr for an NOC 21232 role in Vancouver (median $44.23/hr) yields roughly 14 more points than the same offer at the median. For applicants whose SIRS score sits between 85 and 100, this single change frequently moves them from a multi-month wait into the very next weekly Tech draw.</p>
-          <p class="text-slate-600 leading-relaxed">Regional location also matters. Vancouver tech roles are saturated and offer no regional bonus. Victoria, Kelowna, Nanaimo, and Prince George roles each unlock additional SIRS regional points, and they often come with lower cost of living and easier housing. A SIRS score of 95 with a Kelowna offer can outscore a 105 Vancouver offer once regional and median-wage interplay is accounted for. Use the <a href="/bc-pnp-calculator" class="text-red-600 underline">BC PNP calculator</a> to model both scenarios before signing your offer.</p>
-          <p class="text-slate-600 leading-relaxed">Finally, the Tech stream is one of the few BC PNP pathways where Express Entry BC is the default. Federal Express Entry-linked PR processing for nominated tech workers typically completes in five to six months, compared to the 11-18 months for non-Express Entry base stream applicants. The combination of a fast provincial nomination plus the Express Entry federal PR pathway is the reason most tech workers complete the journey from job offer to permanent residence in under 12 months.</p>
-        </div>
-      </section>
+      <h2 class={h2}>Is there still a BC PNP tech draw?</h2>
+      <p class={p}>
+        No. WelcomeBC's <a href={ITA_PAGE} target="_blank" rel="noopener noreferrer" class={ext}>invitations page</a> records the final draw for priority technology occupations on December 3, 2024. In 2026, BC invites skilled workers in three kinds of rounds: Care (health, childcare, veterinary and education occupations), Build (construction trades) and Innovate: High Economic Impact. Tech occupations are not in the Care or Build groups, so tech workers are invited in the <a href={LINKS.hei.href} class={a}>{LINKS.hei.short}</a>, which have two tracks: a points cut-off and a wage rule.
+      </p>
 
-      <!-- Related Guides -->
-      <section class="pt-8 border-t border-slate-200">
-        <h2 class="text-xl font-black text-slate-900 uppercase tracking-widest mb-8 text-center">Related Guides</h2>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <a href="/articles/how-to-use-bc-pnp-calculator-2026" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
-            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">How to Use the Calculator</h3>
-            <p class="text-slate-500 text-sm">Step-by-step instructions for 2026.</p>
-          </a>
-          <a href="/articles/bc-pnp-vs-crs-calculator" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
-            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">BC PNP vs CRS</h3>
-            <p class="text-slate-500 text-sm">Which system is right for you?</p>
-          </a>
-          <a href="/articles/maximize-bc-pnp-score-tips" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
-            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">Maximize Your Score</h3>
-            <p class="text-slate-500 text-sm">Hidden points and Reddit strategies.</p>
-          </a>
-          <a href="/articles/bc-pnp-calculator-faq" class="group bg-white p-6 rounded-[1.5rem] border border-slate-100 hover:border-red-200 hover:shadow-lg transition-all">
-            <h3 class="font-bold text-slate-900 group-hover:text-red-600 mb-1">FAQ & Troubleshooting</h3>
-            <p class="text-slate-500 text-sm">Answers to common errors.</p>
-          </a>
-        </div>
-      </section>
+      <h2 class={h2}>Which tech jobs are eligible for BC PNP? The {TECH_NOCS.length} NOC codes</h2>
+      <p class={p}>
+        Appendix A of the <a href={GUIDE} target="_blank" rel="noopener noreferrer" class={ext}>Skills Immigration Program Guide</a> (effective June 10, 2026) lists these technology occupations. For them, the job offer does not have to be indeterminate if it is for a single job lasting at least 365 days with at least 120 calendar days left at the time of application. Any other TEER 0–3 occupation can also use the Skilled Worker stream with an indeterminate offer, unless it is on the ineligible list in section 3.11.
+      </p>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 mb-3 max-h-[32rem] overflow-y-auto">
+        <table class="w-full text-sm text-left bg-white">
+          <caption class="sr-only">BC PNP technology occupations (Program Guide Appendix A)</caption>
+          <thead class="bg-slate-100 text-slate-900 sticky top-0">
+            <tr>
+              <th scope="col" class="px-3 py-2.5 font-bold">NOC</th>
+              <th scope="col" class="px-3 py-2.5 font-bold">Occupation</th>
+              <th scope="col" class="px-3 py-2.5 font-bold">TEER</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {TECH_NOCS.map((n) => (
+              <tr>
+                <td class="px-3 py-2 font-bold text-slate-900">{n.noc}</td>
+                <td class="px-3 py-2 text-slate-700">{n.title}</td>
+                <td class="px-3 py-2 text-slate-700">{teer(n.noc)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-500 mb-6">
+        Source: Appendix A, <a href={GUIDE} target="_blank" rel="noopener noreferrer" class="underline">BC PNP Skills Immigration Program Guide</a>. TEER is the second digit of the 2021 NOC code.
+      </p>
 
-      <!-- Tech Wage Negotiation Deep Dive -->
-      <section>
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Wage Negotiation Playbook for Tech Applicants</h2>
-        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-4">
-          <p class="text-slate-600 leading-relaxed">Because SIRS wage points are tied to the BC Job Bank median, the most powerful lever for tech workers is the hourly rate. A move from $44 to $52 per hour for NOC 21232 typically adds 12-16 SIRS points. Approach the negotiation in three steps: first, document the BC Job Bank median for your specific NOC and region; second, attach a market comp report from Levels.fyi, Glassdoor, or Robert Half; third, frame the request as a PR-aligned adjustment rather than a raise, since many BC employers are familiar with the SIRS wage curve.</p>
-          <p class="text-slate-600 leading-relaxed">Stock options, RSUs, signing bonuses, and discretionary bonuses do not count toward the SIRS wage assessment. Convert as much of the package as possible to base hourly wage. A $10,000 signing bonus rolled into base salary equals roughly $4.80/hr more across a 40-hour workweek over one year, often the difference between a mid-90s and a 105+ SIRS score.</p>
-          <p class="text-slate-600 leading-relaxed">If your employer insists on the original number, ask for a written commitment to a wage review at six months and request that the offer letter list duties pulled directly from NOC 2021 lead statements. Both items strengthen your file even if the wage cannot move further. Model your before-and-after scenarios in the <a href="/bc-pnp-calculator" class="text-red-600 underline">BC PNP calculator</a> before signing.</p>
-        </div>
-      </section>
+      <h2 class={h2}>What score do tech workers need for BC PNP?</h2>
+      <p class={p}>
+        In the latest High Economic Impact round, on {hei.date}, the points track invited candidates with {heiScore} or more, and the wage track invited anyone with a TEER 0–3 job offer paying at least ${heiWage.hourly} an hour and ${fmt(heiWage.annual)} a year, regardless of score. Earlier 2026 rounds and every other stream are on the <a href={LINKS.draws.href} class={a}>{LINKS.draws.short}</a> page. Because both tracks run in the same draw, a high wage can get a tech worker invited even with a modest score.
+      </p>
 
-      <!-- Common Tech Application Mistakes -->
-      <section>
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Common Mistakes Tech Applicants Make</h2>
-        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-          <ul class="space-y-3 text-slate-700 leading-relaxed">
-            <li><strong>Wrong NOC selection.</strong> Picking NOC 21231 when duties are 80 percent coding and only 20 percent design causes refusals. Use the NOC 2021 lead statement, not the job title.</li>
-            <li><strong>Short contracts.</strong> Tech offers must be indeterminate or for at least 12 months. A nine-month contract bridging probation does not qualify, even if extension is likely.</li>
-            <li><strong>Missing employer registration.</strong> Some applicants submit before the employer completes the BCPNP Online employer registration. The application is returned without refund.</li>
-            <li><strong>Overstating remote eligibility.</strong> If the position permits the employee to live anywhere, the job is not BC-based and the application will be refused.</li>
-            <li><strong>Outdated language tests.</strong> IELTS, CELPIP, and TEF results expire after two years. A test result from more than 24 months before application date is invalid.</li>
-            <li><strong>Forgetting the Express Entry profile.</strong> EEBC tech applicants must hold a valid EE profile at the time of registration. Submit the federal profile first.</li>
-          </ul>
-        </div>
-      </section>
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 my-6" id="worked-example">
+        <p class="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Worked example</p>
+        <p class="text-slate-800 leading-relaxed">
+          A software developer (NOC 21232) in Vancouver with 4 years of experience (1 in Canada), working for the employer now, a bachelor's degree from outside Canada, CLB 8 and an example offer of ${base.state.hourlyWage.toFixed(2)}/hr scores <strong>{r1.total}</strong>: {b1.experience + b1.canadianExp + b1.currentBCJob} for experience, {b1.educationTotal} for education, {b1.languageTotal} for language, {b1.wage} for wage and {b1.area + b1.regionalBonus} for working in Metro Vancouver.
+        </p>
+        <p class="text-slate-700 leading-relaxed mt-3">
+          That is {heiScore - r1.total} points short of the {heiScore} points cut-off, and ${base.state.hourlyWage.toFixed(2)}/hr (${fmt(baseAnnual)} a year at 40 hours a week) {meetsWage(base.state.hourlyWage) ? "meets" : "does not meet"} the wage rule. With an example offer of ${variantWage.toFixed(2)}/hr the same person scores {r2.total}, still {r2.total >= heiScore ? "above" : "below"} the points cut-off, but ${fmt(variantAnnual)} a year at 40 hours a week {meetsWage(variantWage) ? `meets both parts of the $${heiWage.hourly}/hr and $${fmt(heiWage.annual)}/yr wage rule, so they would have qualified on the wage track` : "still does not meet the wage rule"}.
+        </p>
+      </div>
 
-      <!-- Step-by-Step Tech PR Timeline -->
-      <section>
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Realistic Tech Stream Timeline (2026)</h2>
-        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-3 text-slate-700 leading-relaxed">
-          <p><strong>Week 0:</strong> Job offer signed, NOC confirmed, language test completed (IELTS General or CELPIP), ECA ordered if foreign degree.</p>
-          <p><strong>Weeks 1-3:</strong> Employer registers position on BCPNP Online. Applicant prepares Express Entry profile and SIRS registration.</p>
-          <p><strong>Week 4:</strong> SIRS registration submitted. Innovate rounds (roughly monthly in 2026) monitored.</p>
-          <p><strong>Weeks 5-8:</strong> Invitation to Apply (ITA) received. Applicant has 30 days to submit complete application with $1,750 fee.</p>
-          <p><strong>Weeks 9-20:</strong> BC PNP officer review. Tech files prioritized; typical nomination decision in 8-12 weeks.</p>
-          <p><strong>Weeks 21-24:</strong> Nomination certificate issued. Express Entry profile updated with 600 PNP points; ITA from IRCC follows in 2-3 weeks.</p>
-          <p><strong>Weeks 25-50:</strong> Federal PR application submitted within 60 days of federal ITA. Biometrics, medicals, security checks. EE nominees typically receive COPR in 5-6 months.</p>
-          <p><strong>Total:</strong> Most BC PNP Tech applicants move from signed offer to COPR in 10-12 months. Compare this against the 18-24 months typical for base-stream provincial nominees in other provinces.</p>
-        </div>
-      </section>
+      <h2 class={h2}>How do tech workers qualify for the Skilled Worker stream?</h2>
+      <p class={p}>
+        You need a full-time job offer (an average of at least 30 hours a week) from an eligible B.C. employer, at least 2 years of full-time or equivalent experience in any TEER 0–3 occupation within the last 10 years, and the qualifications for the job (Program Guide 4.1). The <a href={LINKS.workExperience.href} class={a}>{LINKS.workExperience.short}</a> explain how that minimum differs from the directly related experience that earns points. Your offered wage must sit within the WorkBC or Job Bank range for the occupation and location (3.9). For TEER 0 and 1 jobs, a language test is optional unless you claim points for it (3.4).
+      </p>
 
-      <!-- Decision Framework -->
-      <section>
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Decision Framework: Tech Stream vs Federal Express Entry Only</h2>
-        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-4 text-slate-600 leading-relaxed">
-          <p>Express Entry changed on November 3, 2026: the CRS now has a maximum of 1,270 points, including a new labour market integration factor worth up to 150 points for Canadian work experience or a job offer in a high-wage occupation, so CRS thresholds from before that date no longer apply. Rounds were paused while IRCC recalculates scores and had not restarted as of November 11, 2026. A provincial nomination remains the most reliable way to secure a federal ITA once rounds resume.</p>
-          <p>Apply for both simultaneously when possible. Holding a strong Express Entry profile while registering for SIRS does not disadvantage you and gives you two parallel chances. STEM is not one of IRCC's 2026 Express Entry categories; the 2026 categories include French speakers, healthcare and social services, trades, transport, education, physicians and senior managers. Check IRCC's published draw history to see whether your NOC has been called recently.</p>
-        </div>
-      </section>
+      <h2 class={h2}>How to calculate your BC PNP score as a tech worker</h2>
+      <p class={p}>
+        Wage is scored in $1 bands: $16.00 to $16.99 earns 1 point, each extra dollar adds 1, and $70 or more earns the maximum 55 (Program Guide 8.4). There is no bonus for earning above the median wage. Directly related experience must be in the same NOC as the offer, or a related one at the same or a higher TEER (8.1). Enter your details in the <a href={LINKS.calculator.href} class={a}>{LINKS.calculator.short}</a> to see each factor.
+      </p>
 
+      <h2 class={h2}>Common mistakes</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 leading-relaxed mb-6">
+        <li><strong>Waiting for a tech draw.</strong> None has been held since December 3, 2024.</li>
+        <li><strong>Counting stock options or bonuses as wage.</strong> Only the hourly rate counts; bonuses, commissions and profit-sharing are excluded (3.9).</li>
+        <li><strong>Using a contract offer in a non-tech occupation.</strong> The limited-term exception covers only Appendix A occupations, and only for offers of at least 365 days.</li>
+        <li><strong>Choosing a NOC by title, not duties.</strong> Points for directly related experience depend on the NOC matching your past work.</li>
+        <li><strong>Working remotely for a company outside B.C.</strong> The employer must have a significant operational presence in B.C. and direct your work (3.12).</li>
+      </ul>
+
+      <h2 class={h2}>FAQ: BC PNP for tech workers</h2>
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-5">
+            <h3 class="font-black text-slate-900 mb-2">{f.q}</h3>
+            <p class="text-slate-700 leading-relaxed">{f.a}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-xs text-slate-500 mt-8">
+        Draw results from <a href={ITA_PAGE} target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC</a>; eligibility rules from the BC PNP Skills Immigration Program Guide (effective June 10, 2026). General information, not legal advice.
+      </p>
     </div>
-  </div>
+  </article>
 </ArticleLayout>

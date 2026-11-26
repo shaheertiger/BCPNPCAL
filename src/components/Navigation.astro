@@ -9,7 +9,7 @@ const { lang = "en" } = Astro.props;
 const t = ui[lang as keyof typeof ui] || ui.en;
 
 const homeLink = lang === "en" ? "/" : `/${lang}`;
-const calculatorLink = lang === "en" ? "/bc-pnp-calculator" : `/${lang}/bc-pnp-calculator`;
+const calculatorLink = lang === "en" ? "/" : `/${lang}/bc-pnp-calculator`;
 // Draws page only exists in English; localized routes are not built.
 const drawsLink = "/bc-pnp-draws";
 const guidesLink = "/guides";

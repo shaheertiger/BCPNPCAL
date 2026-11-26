@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import AdUnit from "../components/AdUnit.astro";
+import RelatedLinks from "../components/seo/RelatedLinks.astro";
+import ScoreCta from "../components/seo/ScoreCta.astro";
+import type { LinkKey } from "../data/site-links";
 
 interface Props {
   title: string;
@@ -15,6 +18,10 @@ interface Props {
   slug: string;
   jsonLd?: object | object[];
   hreflangs?: { href: string; lang: string }[];
+  /** Links to list first in the "Related calculators and guides" block. */
+  related?: LinkKey[];
+  /** Hide the automatic "Calculate your score" CTA (page has its own). */
+  hideCta?: boolean;
 }
 
 const {
@@ -30,6 +37,8 @@ const {
   slug,
   jsonLd: extraJsonLd,
   hreflangs = [],
+  related = [],
+  hideCta = false,
 } = Astro.props;
 
 const pageUrl = `https://bcpnpcalculator.ca/articles/${slug}`;
@@ -158,6 +167,9 @@ allSchemas = [...allSchemas, ...extraSchemas];
   </div>
 
   <slot />
+
+  {!hideCta && <ScoreCta />}
+  <RelatedLinks current={`/articles/${slug}`} first={related} />
 
   <!-- Author bio -->
   <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10">

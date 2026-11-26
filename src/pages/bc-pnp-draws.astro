@@ -1,257 +1,221 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import RelatedLinks from "../components/seo/RelatedLinks.astro";
+import { DRAWS_LAST_UPDATED, DRAWS_LAST_UPDATED_ISO, DRAWS_SOURCE_URL, skillsDraws2025, poolSnapshot } from "../data/bcpnp-draws";
+import { LINKS } from "../data/site-links";
 import {
-  DRAWS_LAST_UPDATED,
-  DRAWS_LAST_UPDATED_ISO,
-  targetedDraws2026,
-  otherTargetedDraws2026,
-  highImpactDraws2026,
-  skillsDraws2025,
-  entrepreneurDraws,
-  poolSnapshot,
-} from "../data/bcpnp-draws";
+  skillsDraws2026,
+  latestDrawRows,
+  latestDrawDate,
+  latestDrawInvites,
+  latestDrawHasUnderFive,
+  latestDrawMinScore,
+  shortDate,
+  streamSummaries,
+  lowest2026,
+  drawDays2026,
+  latestFor,
+  latestHeiWage,
+  entrepreneurDraws2026,
+  fmtCountShort,
+  STREAM_SHORT,
+} from "../utils/draws";
 
-const title = "Latest BC PNP Draws 2026: Cut-off Scores, Invitations & Next Draw";
-const description =
-  "Every 2026 BC PNP draw: Care, Build and High Economic Impact cut-offs, invitations, the current pool, and when the next BC PNP draw is likely to happen.";
-
-const latestTargeted = targetedDraws2026[0];
-const latestImpact = highImpactDraws2026[0];
+const SITE = "https://bcpnpcalculator.ca";
 const fmt = (n: number) => n.toLocaleString("en-CA");
-const cnt = (c: number | "<5") => (c === "<5" ? "<5" : fmt(c));
+
+const scoredLatest = latestDrawRows.filter((r) => r.score !== null);
+const latestKind = latestDrawRows.some((r) => r.stream === "hei-points") ? "Innovate: High Economic Impact" : "Care and Build";
+const byScore = [...scoredLatest].sort((x, y) => (x.score as number) - (y.score as number));
+const listJoin = (xs: string[]) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}` : xs[0]);
+const latestScoresText = listJoin(byScore.map((r) => `${r.score} for ${STREAM_SHORT[r.stream]}`));
+const invitesText = `${fmt(latestDrawInvites)}${latestDrawHasUnderFive ? "+" : ""}`;
+
+const title = `BC PNP Draws 2026: Latest Draw ${shortDate(latestDrawDate)}, Minimum Score ${latestDrawMinScore}`;
+const description = `${latestDrawDate}: ${byScore.map((r) => `${STREAM_SHORT[r.stream]} ${r.score}`).join(", ")}; ${invitesText} invitations. Every 2026 round and the score each stream needs.`;
+
+const hei = latestFor("hei-points");
+const entLatest = entrepreneurDraws2026[0];
+const highPool = poolSnapshot.bands.filter((b) => ["150+", "140–149", "130–139"].includes(b.range)).reduce((n, b) => n + b.count, 0);
+const under110 = poolSnapshot.bands
+  .filter((b) => ["100–109", "90–99", "80–89", "70–79", "60–69", "0–59"].includes(b.range))
+  .reduce((n, b) => n + b.count, 0);
 
 const faqs = [
   {
     q: "When is the next BC PNP draw?",
-    a: "The BC PNP does not publish draw dates in advance. Since May 2026 it has held about two draw days a month: a Care and Build draw early in the month (May 6, June 2, July 9, August 6, September 10, October 8 and November 13) and an Innovate (High Economic Impact) draw later in the month (May 14 to October 29). The latest Care and Build draw was on November 13, 2026, and the pattern points to another High Economic Impact round in late November, though the BC PNP has not announced one. The program has said it plans to use its full 2026 allocation of 6,254 nominations by December 31. In both 2025 and 2026 there were no draws in January, so early 2027 may be quiet.",
+    a: `WelcomeBC does not announce draw dates. In 2026 a Care and Build draw has followed roughly every month since May 6 (latest ${latestFor("health").date}) and a High Economic Impact draw has followed roughly every month since April 22 (latest ${hei.date}). WelcomeBC said on August 18, 2026 that it plans to use its full 2026 allocation of 6,254 nominations by December 31, 2026.`,
   },
   {
-    q: "How often are BC PNP draws held?",
-    a: "In 2026 there were 19 Skills Immigration draw dates between February 4 and November 13, roughly two a month from May onward, plus occasional one-off rounds such as the Rural/Remote Health Support Initiative draws. Entrepreneur Immigration rounds are separate and have been about monthly. There is no fixed schedule, and the program can change draw frequency at any time.",
+    q: "How often are BC PNP draws?",
+    a: `There have been ${drawDays2026} Skills Immigration draw dates in 2026 so far, about two a month since May: one Care and Build round and one High Economic Impact round, plus occasional rural/remote health rounds. Entrepreneur Immigration rounds are separate and run about monthly (latest ${entLatest.date}).`,
+  },
+  {
+    q: "What was the lowest BC PNP score in 2026?",
+    a: `The lowest minimum of any 2026 Skills Immigration draw was ${lowest2026.score}, in the ${STREAM_SHORT[lowest2026.stream]} round on ${lowest2026.date}. Among the regular draws, Health reached ${streamSummaries.find((s) => s.stream === "health")!.lowest2026.score} on ${streamSummaries.find((s) => s.stream === "health")!.lowest2026.date}.`,
   },
   {
     q: "What is the minimum score for BC PNP?",
-    a: "There is no fixed pass mark. Each draw sets its own cut-off. In the November 13, 2026 draw the minimums were 72 for Health, 94 for Construction trades, 95 for Childcare and 100 for Veterinary. The October 29 High Economic Impact draw needed 131 points, or a wage of at least $49 an hour and $99,000 a year in a TEER 0–3 job. Which contest you are in depends on your occupation and credentials.",
-  },
-  {
-    q: "Is a score of 98 good for BC PNP?",
-    a: "It depends on your occupation. On November 13, 2026, a 98 would have cleared the Health (72), Construction trades (94) and Childcare (95) cut-offs but missed Veterinary (100). It is far below the 131-point High Economic Impact cut-off, so if your occupation is not on the Care or Build priority lists, 98 is unlikely to be enough without a wage that meets the wage track.",
+    a: `There is no fixed pass mark: every draw sets its own. On ${latestDrawDate} the minimums were ${latestScoresText}. The ${hei.date} High Economic Impact draw needed ${hei.score} points, or a wage of at least ${latestHeiWage.rule}.`,
   },
   {
     q: "Does the BC PNP still hold tech draws?",
-    a: "No. The last tech-targeted draw was on December 3, 2024. Tech workers now compete in the Innovate (High Economic Impact) draws, which have no occupation list and invite candidates by wage or by points.",
-  },
-  {
-    q: "How do I get into a BC PNP draw?",
-    a: "You need a qualifying full-time B.C. job offer and an eligible employer, then you register in BCPNP Online and receive a score. Your registration stays in the pool for 12 months. If you are invited, you have 30 calendar days to submit a complete application, and that deadline cannot be extended.",
+    a: "No. WelcomeBC held the last draw for priority technology occupations on December 3, 2024. Tech workers now compete in High Economic Impact draws, which invite by wage or by points.",
   },
 ];
 
 const jsonLd = [
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: title,
-    description,
-    datePublished: "2026-01-07",
-    dateModified: DRAWS_LAST_UPDATED_ISO,
-    author: {
-      "@type": "Person",
-      name: "Shaheer Ali Khan",
-      url: "https://bcpnpcalculator.ca/about",
-      jobTitle: "Regulated Canadian Immigration Consultant (RCIC)",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "BC PNP Calculator",
-      url: "https://bcpnpcalculator.ca",
-      logo: { "@type": "ImageObject", url: "https://bcpnpcalculator.ca/android-chrome-512x512.png" },
-    },
-    mainEntityOfPage: "https://bcpnpcalculator.ca/bc-pnp-draws",
-  },
-  {
-    "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://bcpnpcalculator.ca" },
-      { "@type": "ListItem", position: 2, name: "BC PNP Draws", item: "https://bcpnpcalculator.ca/bc-pnp-draws" },
+      { "@type": "ListItem", position: 1, name: "BC PNP Points Calculator", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "BC PNP Draws 2026", item: `${SITE}/bc-pnp-draws` },
     ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description,
+    url: `${SITE}/bc-pnp-draws`,
+    datePublished: "2026-01-07",
+    dateModified: DRAWS_LAST_UPDATED_ISO,
   },
 ];
 
-const th = "px-4 py-3 text-left text-xs font-black text-slate-500 uppercase tracking-wider whitespace-nowrap";
-const td = "px-4 py-3 text-sm text-slate-700 whitespace-nowrap";
+const th = "px-3 py-2.5 text-left text-xs font-black text-slate-600 uppercase tracking-wider whitespace-nowrap";
+const td = "px-3 py-2 text-sm text-slate-700";
+const h2 = "text-2xl sm:text-3xl font-black text-slate-900 tracking-tight";
+const a = "text-red-700 font-semibold underline underline-offset-2 decoration-red-200 hover:decoration-red-600";
 ---
 
 <BaseLayout
   title={title}
   description={description}
-  canonical="https://bcpnpcalculator.ca/bc-pnp-draws"
+  canonical={`${SITE}/bc-pnp-draws`}
   jsonLd={jsonLd}
-  keywords="BC PNP draw 2026, latest BC PNP draw, when is the next BC PNP draw, how often is BC PNP draw, BC PNP cut-off score, BC PNP minimum score, BC PNP invitations, 98 score in BC PNP"
+  keywords="BC PNP draws 2026, latest BC PNP draw, BC PNP draw minimum score, BC PNP cut off score, when is the next BC PNP draw, how often are BC PNP draws"
 >
-  <div class="min-h-screen bg-slate-50">
-    <div class="bg-gradient-to-b from-red-50 to-white pt-16 pb-12 px-4 sm:px-6">
-      <div class="max-w-5xl mx-auto text-center space-y-6">
-        <nav class="flex justify-center items-center space-x-2 text-sm text-slate-500 font-medium" aria-label="Breadcrumb">
-          <a href="/" class="hover:text-red-600">Home</a>
-          <span class="text-slate-300">/</span>
-          <span class="text-red-600 font-bold">BC PNP Draws</span>
+  <div class="bg-slate-50">
+    <div class="bg-gradient-to-b from-red-50 to-white pt-8 sm:pt-12 pb-8 px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto space-y-4">
+        <nav class="flex items-center gap-2 text-sm text-slate-500 font-medium" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-red-600">Calculator</a>
+          <span class="text-slate-300" aria-hidden="true">/</span>
+          <span class="text-red-600 font-bold">BC PNP Draws 2026</span>
         </nav>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight">
-          Latest BC PNP Draws <span class="text-red-600">2026</span>
-        </h1>
-        <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Every 2026 Skills Immigration and Entrepreneur draw, with cut-off scores, invitation counts and what to expect next. Updated {DRAWS_LAST_UPDATED}.
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">BC PNP Draws 2026</h1>
+        <p class="text-lg text-slate-800 leading-relaxed">
+          The latest BC PNP draw was on <strong>{latestDrawDate}</strong>, a {latestKind} Skills Immigration round: minimum scores were
+          {latestScoresText}, with {invitesText} invitations{latestDrawHasUnderFive ? " (WelcomeBC reports some counts only as fewer than 5)" : ""}.
         </p>
-        <div class="flex flex-wrap justify-center gap-3">
-          <a href="#latest" class="inline-flex px-6 py-3 rounded-full bg-red-600 text-white font-bold text-sm uppercase tracking-wider hover:bg-red-700 shadow-lg shadow-red-200">Latest results</a>
-          <a href="#next-draw" class="inline-flex px-6 py-3 rounded-full bg-white text-slate-900 border border-slate-200 font-bold text-sm uppercase tracking-wider hover:bg-slate-50">Next draw</a>
-        </div>
+        <p class="text-sm text-slate-600">
+          The latest Entrepreneur Immigration round was on {entLatest.date} (minimum {entLatest.score}). Updated {DRAWS_LAST_UPDATED} from
+          <a href={DRAWS_SOURCE_URL} target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC's invitations to apply</a>.
+        </p>
+        <a href="/" class="inline-flex items-center gap-2 rounded-xl bg-red-600 hover:bg-red-700 px-5 py-3 text-sm font-black text-white min-h-[44px]">
+          Check your score: BC PNP points calculator →
+        </a>
       </div>
     </div>
 
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 pb-24 space-y-16">
-
-      <!-- Quick stats -->
-      <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center">
-          <div class="text-3xl font-black text-red-600">7,085+</div>
-          <div class="text-xs text-slate-600 mt-1">Skills Immigration invitations, Feb 4 – Oct 29, 2026</div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 space-y-14">
+      <!-- Every 2026 draw -->
+      <section class="space-y-4" aria-labelledby="all-draws">
+        <h2 id="all-draws" class={h2}>Every 2026 BC PNP draw</h2>
+        <p class="text-slate-700">
+          All {drawDays2026} Skills Immigration draw dates of 2026, newest first. High Economic Impact draws invite on two tracks: a wage track with no
+          score cut-off, and a points track.
+        </p>
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+          <table class="w-full">
+            <caption class="sr-only">Every 2026 BC PNP Skills Immigration draw</caption>
+            <thead class="bg-slate-100">
+              <tr>
+                <th scope="col" class={th}>Date</th>
+                <th scope="col" class={th}>Stream</th>
+                <th scope="col" class={th}>Minimum score</th>
+                <th scope="col" class={th}>Invitations</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              {
+                skillsDraws2026.map((r, i) => (
+                  <tr class={i > 0 && skillsDraws2026[i - 1].iso !== r.iso ? "border-t-2 border-slate-200" : ""}>
+                    <td class={`${td} font-bold text-slate-900 whitespace-nowrap`}>{r.date.replace(", 2026", "")}</td>
+                    <td class={td}>{r.label}</td>
+                    <td class={`${td} whitespace-nowrap`}>{r.score !== null ? <strong>{r.score}</strong> : <span class="text-slate-500">Wage: {r.rule}</span>}</td>
+                    <td class={`${td} whitespace-nowrap`}>{fmtCountShort(r.invites)}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
         </div>
-        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center">
-          <div class="text-3xl font-black text-slate-900">18</div>
-          <div class="text-xs text-slate-600 mt-1">Skills Immigration draw dates in 2026</div>
-        </div>
-        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center">
-          <div class="text-3xl font-black text-slate-900">{fmt(poolSnapshot.total)}</div>
-          <div class="text-xs text-slate-600 mt-1">Registrations in the pool ({poolSnapshot.date})</div>
-        </div>
-        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center">
-          <div class="text-3xl font-black text-slate-900">6,254</div>
-          <div class="text-xs text-slate-600 mt-1">BC PNP nominations allocated for 2026</div>
-        </div>
-      </section>
-
-      <!-- Latest draws -->
-      <section id="latest" class="space-y-6">
-        <h2 class="text-3xl font-black text-slate-900 tracking-tight">Latest BC PNP draw results</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-            <div class="text-xs font-bold text-red-600 uppercase tracking-widest mb-1">Care &amp; Build · {latestTargeted.date}</div>
-            <h3 class="text-xl font-black text-slate-900 mb-4">Targeted occupation draw</h3>
-            <ul class="space-y-2 text-sm">
-              <li class="flex justify-between"><span>Health</span><span class="font-bold">{latestTargeted.health.score} pts · {cnt(latestTargeted.health.invites)} ITAs</span></li>
-              <li class="flex justify-between"><span>Construction trades</span><span class="font-bold">{latestTargeted.construction.score} pts · {cnt(latestTargeted.construction.invites)} ITAs</span></li>
-              <li class="flex justify-between"><span>Childcare (ECEs)</span><span class="font-bold">{latestTargeted.childcare.score} pts · {cnt(latestTargeted.childcare.invites)} ITAs</span></li>
-              <li class="flex justify-between"><span>Veterinary</span><span class="font-bold">{latestTargeted.veterinary.score} pts · {cnt(latestTargeted.veterinary.invites)} ITAs</span></li>
-            </ul>
-          </div>
-          <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-            <div class="text-xs font-bold text-indigo-600 uppercase tracking-widest mb-1">Innovate · {latestImpact.date}</div>
-            <h3 class="text-xl font-black text-slate-900 mb-4">High Economic Impact draw</h3>
-            <ul class="space-y-2 text-sm">
-              <li class="flex justify-between gap-4"><span>Wage track (TEER 0–3 job)</span><span class="font-bold text-right">${latestImpact.hourly}/hr and ${fmt(latestImpact.annual)}/yr · {latestImpact.wageInvites} ITAs</span></li>
-              <li class="flex justify-between gap-4"><span>Points track</span><span class="font-bold">{latestImpact.pointsCutoff}+ pts · {latestImpact.pointsInvites} ITAs</span></li>
-              <li class="flex justify-between gap-4"><span>Total</span><span class="font-bold">{latestImpact.wageInvites + latestImpact.pointsInvites} ITAs</span></li>
-            </ul>
-          </div>
-        </div>
-        <p class="text-slate-600 text-sm">
-          Other recent rounds: a Temporary Rural/Remote Health Support Initiative draw on October 15, 2026 (16 invitations, minimum score 54) and an Entrepreneur Immigration round on October 20, 2026 (Base and Regional, minimum score 118). The October 29 Innovate round, with 772 invitations, was the largest BC PNP round of 2026. Since the April 23, 2026 restructuring, the BC PNP selects workers under three priorities: <strong>Care</strong> (health, childcare, education and veterinary occupations), <strong>Build</strong> (construction trades) and <strong>Innovate</strong> (high economic impact candidates in any TEER 0–3 occupation). Your occupation and credentials decide which draw you compete in; your score decides your rank within it. Check where you stand with the <a href="/bc-pnp-calculator" class="text-red-600 underline font-semibold">BC PNP points calculator</a>.
+        <p class="text-xs text-slate-500">
+          Source: <a href={DRAWS_SOURCE_URL} target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC, Invitations to apply</a> (page updated
+          November 17, 2026). "&lt;5" means WelcomeBC reported fewer than five invitations.
         </p>
       </section>
 
-      <!-- Next draw -->
-      <section id="next-draw" class="bg-indigo-900 rounded-[2rem] p-8 sm:p-12 text-white">
-        <h2 class="text-3xl font-black mb-4">When is the next BC PNP draw?</h2>
-        <p class="text-indigo-100 leading-relaxed mb-4">
-          British Columbia does not announce draw dates in advance. Since May 2026, though, the program has followed a steady rhythm of about two draw days a month:
+      <!-- What score do I need -->
+      <section class="space-y-4" aria-labelledby="score-needed">
+        <h2 id="score-needed" class={h2}>What score do I need for BC PNP?</h2>
+        <p class="text-slate-700">
+          You need at least the minimum of the draw your occupation is in. Over the last three draws of each stream the minimums were:
         </p>
-        <ul class="space-y-2 text-indigo-100 mb-6 list-disc pl-6">
-          <li><strong class="text-white">Care and Build draws early in the month:</strong> May 6, June 2, July 9, August 6, September 10 and October 8.</li>
-          <li><strong class="text-white">High Economic Impact draws later in the month:</strong> May 14, June 18, July 16, August 20, September 24 and October 29.</li>
-        </ul>
-        <div class="bg-indigo-800/60 border border-indigo-700 rounded-xl p-5">
-          <p class="text-xs font-bold uppercase tracking-widest text-indigo-300 mb-2">Our reading of the pattern (not an official date)</p>
-          <p class="text-white">
-            No Care and Build round had been published as of November 11, 2026, so one looks due soon, and the next High Economic Impact round would fall in late November. The BC PNP has said it plans to use all 6,254 of its 2026 nominations by December 31. There were no draws in January 2025 or January 2026, so expect a quiet start to 2027 until the new allocation is confirmed.
-          </p>
-        </div>
-      </section>
-
-      <!-- Care & Build table -->
-      <section class="space-y-4">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Care and Build draws 2026</h2>
-        <p class="text-slate-600">Minimum score, with the number of invitations in brackets. Only registrants in a priority occupation who meet the extra condition (for example an ECE certificate, Care Aide Registry registration or a SkilledTradesBC credential) are considered.</p>
-        <div class="overflow-x-auto rounded-2xl border border-slate-100 shadow-sm bg-white">
-          <table class="min-w-full divide-y divide-slate-100">
-            <thead class="bg-slate-50"><tr><th class={th}>Date</th><th class={th}>Health</th><th class={th}>Construction</th><th class={th}>Childcare</th><th class={th}>Veterinary</th></tr></thead>
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+          <table class="w-full">
+            <caption class="sr-only">Minimum BC PNP score per stream over the last 3 and 6 draws</caption>
+            <thead class="bg-slate-100">
+              <tr>
+                <th scope="col" class={th}>Stream</th>
+                <th scope="col" class={th}>Latest</th>
+                <th scope="col" class={th}>Last 3 draws</th>
+                <th scope="col" class={th}>Last 6 draws</th>
+                <th scope="col" class={th}>Lowest 2026</th>
+              </tr>
+            </thead>
             <tbody class="divide-y divide-slate-100">
-              {targetedDraws2026.map((d) => (
-                <tr>
-                  <td class={`${td} font-bold text-slate-900`}>{d.date}</td>
-                  <td class={td}>{d.health.score} ({cnt(d.health.invites)})</td>
-                  <td class={td}>{d.construction.score} ({cnt(d.construction.invites)})</td>
-                  <td class={td}>{d.childcare.score} ({cnt(d.childcare.invites)})</td>
-                  <td class={td}>{d.veterinary.score} ({cnt(d.veterinary.invites)})</td>
-                </tr>
-              ))}
+              {
+                streamSummaries.map((s) => (
+                  <tr>
+                    <th scope="row" class={`${td} font-bold text-slate-900 text-left`}>{s.label}</th>
+                    <td class={`${td} whitespace-nowrap`}><strong>{s.latest.score}</strong> ({shortDate(s.latest.date)})</td>
+                    <td class={`${td} whitespace-nowrap`}>{s.last3.low === s.last3.high ? s.last3.low : `${s.last3.low}–${s.last3.high}`}</td>
+                    <td class={`${td} whitespace-nowrap`}>{s.last6.low === s.last6.high ? s.last6.low : `${s.last6.low}–${s.last6.high}`}{s.last6.n < 6 ? ` (${s.last6.n} draws)` : ""}</td>
+                    <td class={`${td} whitespace-nowrap`}>{s.lowest2026.score} ({shortDate(s.lowest2026.date)})</td>
+                  </tr>
+                ))
+              }
             </tbody>
           </table>
         </div>
-        <div class="overflow-x-auto rounded-2xl border border-slate-100 shadow-sm bg-white">
-          <table class="min-w-full divide-y divide-slate-100">
-            <thead class="bg-slate-50"><tr><th class={th}>Date</th><th class={th}>Other targeted round</th><th class={th}>Min. score</th><th class={th}>Invitations</th></tr></thead>
-            <tbody class="divide-y divide-slate-100">
-              {otherTargetedDraws2026.map((d) => (
-                <tr><td class={`${td} font-bold text-slate-900`}>{d.date}</td><td class={td}>{d.category}</td><td class={td}>{d.score}</td><td class={td}>{cnt(d.invites)}</td></tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p class="text-sm text-slate-500">The Rural/Remote Health Support Initiative is a one-time measure capped at 250 nominations; its registration window closed on October 7, 2026.</p>
-      </section>
-
-      <!-- High Economic Impact table -->
-      <section class="space-y-4">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">High Economic Impact (Innovate) draws 2026</h2>
-        <p class="text-slate-600">Candidates qualify on <em>either</em> track. The wage track needs both the hourly and the annual minimum and a job offer in NOC TEER 0–3; bonuses and overtime do not count.</p>
-        <div class="overflow-x-auto rounded-2xl border border-slate-100 shadow-sm bg-white">
-          <table class="min-w-full divide-y divide-slate-100">
-            <thead class="bg-slate-50"><tr><th class={th}>Date</th><th class={th}>Wage track</th><th class={th}>Wage ITAs</th><th class={th}>Points cut-off</th><th class={th}>Points ITAs</th></tr></thead>
-            <tbody class="divide-y divide-slate-100">
-              {highImpactDraws2026.map((d) => (
-                <tr>
-                  <td class={`${td} font-bold text-slate-900`}>{d.date}</td>
-                  <td class={td}>${d.hourly}/hr and ${fmt(d.annual)}/yr</td>
-                  <td class={td}>{d.wageInvites}</td>
-                  <td class={td}>{d.pointsCutoff}</td>
-                  <td class={td}>{d.pointsInvites}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p class="text-sm text-slate-500">There were no Skills Immigration draws in January or March 2026. The February and April rounds ran before the Care, Build and Innovate priorities were announced.</p>
+        <p class="text-slate-700">
+          Computed from the table above. To see which of this year's draws your own score would have cleared, use the
+          <a href={LINKS.drawCalculator.href} class={a}>{LINKS.drawCalculator.short}</a>. Care draws are limited to priority occupations: certified
+          ECEs for Childcare, priority health occupations for Health. Every other skilled job competes in High Economic Impact draws
+          (see <a href={LINKS.hei.href} class={a}>{LINKS.hei.short}</a>).
+        </p>
       </section>
 
       <!-- Pool -->
-      <section class="space-y-4">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Who is in the pool</h2>
-        <p class="text-slate-600">WelcomeBC's snapshot from {poolSnapshot.date} shows {fmt(poolSnapshot.total)} Skills Immigration registrations. Only 119 scored 130 or more, which is why the High Economic Impact points cut-off moves slowly, while about 73% scored under 110. The pool is down 460 from 7,695 on October 6, 2026.</p>
-        <div class="overflow-x-auto rounded-2xl border border-slate-100 shadow-sm bg-white">
-          <table class="min-w-full divide-y divide-slate-100">
-            <thead class="bg-slate-50"><tr><th class={th}>Score range</th><th class={th}>Registrations</th></tr></thead>
+      <section class="space-y-4" aria-labelledby="pool">
+        <h2 id="pool" class={h2}>How many people are in the BC PNP pool?</h2>
+        <p class="text-slate-700">
+          WelcomeBC's snapshot from {poolSnapshot.date} shows {fmt(poolSnapshot.total)} Skills Immigration registrations. Only {fmt(highPool)} scored 130 or
+          more, and {fmt(under110)} ({Math.round((under110 / poolSnapshot.total) * 100)}%) scored under 110.
+        </p>
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white max-w-md">
+          <table class="w-full">
+            <caption class="sr-only">BC PNP Skills Immigration pool by score, {poolSnapshot.date}</caption>
+            <thead class="bg-slate-100"><tr><th scope="col" class={th}>Score</th><th scope="col" class={th}>Registrations</th></tr></thead>
             <tbody class="divide-y divide-slate-100">
               {poolSnapshot.bands.map((b) => (<tr><td class={`${td} font-bold text-slate-900`}>{b.range}</td><td class={td}>{fmt(b.count)}</td></tr>))}
             </tbody>
@@ -260,75 +224,53 @@ const td = "px-4 py-3 text-sm text-slate-700 whitespace-nowrap";
       </section>
 
       <!-- Entrepreneur -->
-      <section class="space-y-4">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Entrepreneur Immigration draws</h2>
-        <p class="text-slate-600">Recent Base and Regional rounds. Entrepreneur draws are separate from Skills Immigration and use their own scoring. See our <a href="/articles/bc-pnp-entrepreneur-immigration" class="text-red-600 underline">Entrepreneur Immigration guide</a>.</p>
-        <div class="overflow-x-auto rounded-2xl border border-slate-100 shadow-sm bg-white">
-          <table class="min-w-full divide-y divide-slate-100">
-            <thead class="bg-slate-50"><tr><th class={th}>Date</th><th class={th}>Stream</th><th class={th}>Min. score</th><th class={th}>Invitations</th></tr></thead>
+      <section class="space-y-4" aria-labelledby="entrepreneur">
+        <h2 id="entrepreneur" class={h2}>BC PNP Entrepreneur draws 2026</h2>
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+          <table class="w-full">
+            <caption class="sr-only">2026 BC PNP Entrepreneur Immigration rounds</caption>
+            <thead class="bg-slate-100"><tr><th scope="col" class={th}>Date</th><th scope="col" class={th}>Stream</th><th scope="col" class={th}>Minimum score</th><th scope="col" class={th}>Invitations</th></tr></thead>
             <tbody class="divide-y divide-slate-100">
-              {entrepreneurDraws.map((d) => (<tr><td class={`${td} font-bold text-slate-900`}>{d.date}</td><td class={td}>{d.stream}</td><td class={td}>{d.score}</td><td class={td}>{cnt(d.invites)}</td></tr>))}
+              {entrepreneurDraws2026.map((d) => (<tr><td class={`${td} font-bold text-slate-900 whitespace-nowrap`}>{d.date.replace(", 2026", "")}</td><td class={td}>{d.stream}</td><td class={td}>{d.score}</td><td class={td}>{fmtCountShort(d.invites)}</td></tr>))}
             </tbody>
           </table>
         </div>
       </section>
 
       <!-- 2025 -->
-      <section class="space-y-4">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">2025 Skills Immigration draws</h2>
-        <p class="text-slate-600">For comparison: 2025 had only three Skills Immigration rounds and 978 invitations in total.</p>
-        <div class="overflow-x-auto rounded-2xl border border-slate-100 shadow-sm bg-white">
-          <table class="min-w-full divide-y divide-slate-100">
-            <thead class="bg-slate-50"><tr><th class={th}>Date</th><th class={th}>Who was invited</th><th class={th}>Invitations</th></tr></thead>
+      <section class="space-y-4" aria-labelledby="draws-2025">
+        <h2 id="draws-2025" class={h2}>Late-2025 Skills Immigration draws</h2>
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+          <table class="w-full">
+            <caption class="sr-only">Selected 2025 BC PNP Skills Immigration draws</caption>
+            <thead class="bg-slate-100"><tr><th scope="col" class={th}>Date</th><th scope="col" class={th}>Selection</th><th scope="col" class={th}>Invitations</th></tr></thead>
             <tbody class="divide-y divide-slate-100">
-              {skillsDraws2025.map((d) => (<tr><td class={`${td} font-bold text-slate-900`}>{d.date}</td><td class={td}>{d.rule}</td><td class={td}>{d.invites}</td></tr>))}
+              {skillsDraws2025.map((d) => (<tr><td class={`${td} font-bold text-slate-900 whitespace-nowrap`}>{d.date}</td><td class={td}>{d.rule}</td><td class={td}>{d.invites}</td></tr>))}
             </tbody>
           </table>
         </div>
-        <p class="text-sm text-slate-600">For the full analysis, read our <a href="/articles/bc-pnp-2026-draws-recap-2027-forecast" class="text-red-600 underline">2026 draws recap and 2027 forecast</a>.</p>
-      </section>
-
-      <!-- Streams -->
-      <section class="space-y-4">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Which streams are open in 2026</h2>
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-            <h3 class="font-bold text-lg text-slate-900 mb-3">Skills Immigration</h3>
-            <ul class="space-y-2 text-sm text-slate-700">
-              <li><strong>Skilled Worker</strong>: open, job offer in TEER 0–3 required (Express Entry BC option available)</li>
-              <li><strong>Health Authority</strong>: open, apply directly with a B.C. health authority job offer</li>
-              <li><strong>Entry Level and Semi-Skilled</strong>: closed</li>
-              <li><strong>International Graduate / Post-Graduate</strong>: closed</li>
-            </ul>
-          </div>
-          <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-            <h3 class="font-bold text-lg text-slate-900 mb-3">Entrepreneur Immigration</h3>
-            <ul class="space-y-2 text-sm text-slate-700">
-              <li><strong>Base</strong>: open, regular rounds</li>
-              <li><strong>Regional</strong>: open, regular rounds</li>
-            </ul>
-          </div>
-        </div>
-        <p class="text-sm text-slate-600">No job offer? See <a href="/articles/bc-pnp-without-job-offer" class="text-red-600 underline">BC PNP without a job offer</a>. More quick answers are in <a href="/articles/bc-pnp-questions-answered" class="text-red-600 underline">BC PNP Questions Answered</a>.</p>
+        <p class="text-xs text-slate-500">
+          Source: <a href="https://www.welcomebc.ca/immigrate-to-b-c/bc-pnp-invitations-to-apply-si-2025-pdf" target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC 2025 invitations archive (PDF)</a>.
+        </p>
       </section>
 
       <!-- FAQ -->
-      <section class="max-w-3xl mx-auto space-y-4">
-        <h2 class="text-2xl font-black text-slate-900 text-center mb-6">Common questions about BC PNP draws</h2>
-        {faqs.map((f) => (
-          <details class="group bg-white rounded-2xl border border-slate-100 p-6">
-            <summary class="cursor-pointer text-slate-900 font-bold">{f.q}</summary>
-            <p class="mt-4 leading-relaxed text-slate-600 text-sm">{f.a}</p>
-          </details>
-        ))}
-      </section>
-
-      <section class="text-center space-y-4">
-        <a href="/bc-pnp-calculator" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest shadow-lg shadow-red-200">Calculate your BC PNP score →</a>
-        <p class="text-xs text-slate-500 max-w-2xl mx-auto">
-          Source: <a href="https://www.welcomebc.ca/immigrate-to-b-c/invitations-to-apply" target="_blank" rel="noopener noreferrer" class="underline">WelcomeBC, Invitations to apply</a>. Results last checked {DRAWS_LAST_UPDATED}; the latest Skills Immigration draw listed is October 29, 2026 (Innovate), and the latest Care and Build draw is October 8, 2026. General information only, not legal advice.
-        </p>
+      <section class="space-y-4" aria-labelledby="draw-faq">
+        <h2 id="draw-faq" class={h2}>BC PNP draw questions</h2>
+        <div class="space-y-3">
+          {
+            faqs.map((f) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-5">
+                <h3 class="font-black text-slate-900">{f.q}</h3>
+                <p class="mt-2 text-sm text-slate-700 leading-relaxed">{f.a}</p>
+              </div>
+            ))
+          }
+        </div>
       </section>
     </div>
+
+    <RelatedLinks current="/bc-pnp-draws" />
+    <p class="max-w-4xl mx-auto px-4 sm:px-6 pb-12 text-xs text-slate-500">General information, not legal advice.</p>
   </div>
 </BaseLayout>
